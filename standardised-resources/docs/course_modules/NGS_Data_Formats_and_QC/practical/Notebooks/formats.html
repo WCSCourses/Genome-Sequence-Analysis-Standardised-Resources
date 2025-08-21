@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Data formats for NGS data – Genome Sequence Analysis Course</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<script src="../../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../../site_libs/quarto-contrib/quarto-project/img/WCS_Logo-Primary_Black.jpg" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../../../index.html">
+    <span class="navbar-title">Genome Sequence Analysis Course</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../welcome.html"> 
+<span class="menu-text">Learning paths</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-modules" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Modules</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-modules">    
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Module1/module1.html">
+ <span class="dropdown-text">File formats</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Module2/module2.html">
+ <span class="dropdown-text">Reads alignment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Module3/module3.html">
+ <span class="dropdown-text">Variant calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Module4/module4.html">
+ <span class="dropdown-text">Structural Variation Calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Module5/module5.html">
+ <span class="dropdown-text">Genome assembly</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Module6/module6.html">
+ <span class="dropdown-text">RNA-seq</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Module7/module7.html">
+ <span class="dropdown-text">CHiP-Seq</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Glossary/glossary.html">
+ <span class="dropdown-text">Glossary of terms</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-informatics-guide" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Informatics Guide</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-informatics-guide">    
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/VM_guide/VM_Guide.html">
+ <span class="dropdown-text">How to setup a VM</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/VM_guide/Software_list.html">
+ <span class="dropdown-text">Software list</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-train-the-trainer" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Train-the-trainer</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-train-the-trainer">    
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Train-the-trainer/introduction.html">
+ <span class="dropdown-text">Introduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Train-the-trainer/strategies.html">
+ <span class="dropdown-text">Strategies for training professionals</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Train-the-trainer/elements.html">
+ <span class="dropdown-text">Elements of effective training</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Train-the-trainer/training_design.html">
+ <span class="dropdown-text">Training design</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data formats for NGS data</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">File formats</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module1/module1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module1/module1_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module1/module1_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module1/module1_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module1/module1_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module1/module1_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module1/module1_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Read alignment</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module2/module2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module2/module2_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module2/module2_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module2/module2_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module2/module2_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module2/module2_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module2/module2_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Variant calling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module3/module3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module3/module3_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module3/module3_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module3/module3_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module3/module3_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module3/module3_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module3/module3_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Structural Variation Calling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module4/module4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module4/module4_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module4/module4_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module4/module4_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module4/module4_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module4/module4_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module4/module4_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Genome Assembly</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module5/module5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module5/module5_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module5/module5_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module5/module5_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module5/module5_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module5/module5_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module5/module5_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">RNA-Seq</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module6/module6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module6/module6_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module6/module6_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module6/module6_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module6/module6_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module6/module6_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module6/module6_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">CHiP-Seq</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module7/module7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module7/module7_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module7/module7_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module7/module7_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module7/module7_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module7/module7_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Module7/module7_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">How to setup a VM</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/VM_guide/VM_Guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Oracle VM VirtualBox Installation Guide</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/VM_guide/Software_list.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Software list</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Train-the-trainer</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Train-the-trainer/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Train-the-trainer/strategies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Strategies for training professionals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Train-the-trainer/elements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Elements of effective training</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../course_modules/Train-the-trainer/training_design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training design</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Contributors</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../meet the team.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#fasta" id="toc-fasta" class="nav-link active" data-scroll-target="#fasta">FASTA</a>
+  <ul class="collapse">
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  </ul></li>
+  <li><a href="#fastq" id="toc-fastq" class="nav-link" data-scroll-target="#fastq">FASTQ</a>
+  <ul class="collapse">
+  <li><a href="#exercises-1" id="toc-exercises-1" class="nav-link" data-scroll-target="#exercises-1">Exercises</a></li>
+  </ul></li>
+  <li><a href="#sam" id="toc-sam" class="nav-link" data-scroll-target="#sam">SAM</a>
+  <ul class="collapse">
+  <li><a href="#header-section" id="toc-header-section" class="nav-link" data-scroll-target="#header-section">Header Section</a></li>
+  <li><a href="#exercises-2" id="toc-exercises-2" class="nav-link" data-scroll-target="#exercises-2">Exercises</a></li>
+  <li><a href="#alignment-section" id="toc-alignment-section" class="nav-link" data-scroll-target="#alignment-section">Alignment Section</a></li>
+  <li><a href="#exercises-3" id="toc-exercises-3" class="nav-link" data-scroll-target="#exercises-3">Exercises</a></li>
+  <li><a href="#cigar-string" id="toc-cigar-string" class="nav-link" data-scroll-target="#cigar-string">CIGAR string</a></li>
+  <li><a href="#exercises-4" id="toc-exercises-4" class="nav-link" data-scroll-target="#exercises-4">Exercises</a></li>
+  <li><a href="#flags" id="toc-flags" class="nav-link" data-scroll-target="#flags">Flags</a></li>
+  </ul></li>
+  <li><a href="#bam" id="toc-bam" class="nav-link" data-scroll-target="#bam">BAM</a>
+  <ul class="collapse">
+  <li><a href="#exercises-5" id="toc-exercises-5" class="nav-link" data-scroll-target="#exercises-5">Exercises</a></li>
+  </ul></li>
+  <li><a href="#cram" id="toc-cram" class="nav-link" data-scroll-target="#cram">CRAM</a></li>
+  <li><a href="#indexing" id="toc-indexing" class="nav-link" data-scroll-target="#indexing">Indexing</a>
+  <ul class="collapse">
+  <li><a href="#exercises-6" id="toc-exercises-6" class="nav-link" data-scroll-target="#exercises-6">Exercises</a></li>
+  </ul></li>
+  <li><a href="#vcf" id="toc-vcf" class="nav-link" data-scroll-target="#vcf">VCF</a>
+  <ul class="collapse">
+  <li><a href="#vcf-header" id="toc-vcf-header" class="nav-link" data-scroll-target="#vcf-header">VCF header</a></li>
+  <li><a href="#body" id="toc-body" class="nav-link" data-scroll-target="#body">Body</a></li>
+  </ul></li>
+  <li><a href="#bcf" id="toc-bcf" class="nav-link" data-scroll-target="#bcf">BCF</a>
+  <ul class="collapse">
+  <li><a href="#bcftools-view" id="toc-bcftools-view" class="nav-link" data-scroll-target="#bcftools-view">bcftools view</a></li>
+  <li><a href="#bcftools-query" id="toc-bcftools-query" class="nav-link" data-scroll-target="#bcftools-query">bcftools query</a></li>
+  <li><a href="#exercises-7" id="toc-exercises-7" class="nav-link" data-scroll-target="#exercises-7">Exercises</a></li>
+  </ul></li>
+  <li><a href="#gvcf" id="toc-gvcf" class="nav-link" data-scroll-target="#gvcf">gVCF</a>
+  <ul class="collapse">
+  <li><a href="#exercises-8" id="toc-exercises-8" class="nav-link" data-scroll-target="#exercises-8">Exercises</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data formats for NGS data</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Here we will take a closer look at some of the most common NGS data formats. First, check you are in the correct directory.</p>
+<div id="cell-2" class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>It should display something like:</p>
+<p><code>/home/manager/course_data/data_formats/</code></p>
+<section id="fasta" class="level2">
+<h2 class="anchored" data-anchor-id="fasta">FASTA</h2>
+<p>The FASTA format is used to store both nucleotide data and protein sequences. Each sequence in a FASTA file is represented by two parts, a header line and the actual sequence. The header always starts with the symbol “&gt;” and is followed by information about the sequence, such as a unique identifier. The following lines show two sequences represented in FASTA format:</p>
+<pre><code>&gt;Sequence_1
+CTTGACGACTTGAAAAATGACGAAATCACTAAAAAACGTGAAAAATGAGAAATG
+AAAATGACGAAATCACTAAAAAACGTGACGACTTGAAAAATGACCAC
+&gt;Sequence_2
+CTTGAGACGAAATCACTAAAAAACGTGACGACTTGAAGTGAAAAATGAGAAATG
+AAATCATGACGACTTGAAGTGAAAAAGTGAAAAATGAGAAATGAACGTGACGAC
+AAAATGACGAAATCATGACGACTTGAAGTGAAAAATAAATGACC</code></pre>
+<section id="exercises" class="level3">
+<h3 class="anchored" data-anchor-id="exercises">Exercises</h3>
+<p><strong>Q1: How many sequences are there in the fasta file data/example.fasta? (Hint: is there a grep option you can use?)</strong></p>
+</section>
+</section>
+<section id="fastq" class="level2">
+<h2 class="anchored" data-anchor-id="fastq">FASTQ</h2>
+<p>FASTQ is a data format for sequencing reads. It is an extension to the FASTA file format, and includes a quality score for each base. Have a look at the example below, containing two reads:</p>
+<pre><code>@ERR007731.739 IL16_2979:6:1:9:1684/1
+CTTGACGACTTGAAAAATGACGAAATCACTAAAAAACGTGAAAAATGAGAAATG
++
+BBCBCBBBBBBBABBABBBBBBBABBBBBBBBBBBBBBABAAAABBBBB=@&gt;B
+@ERR007731.740 IL16_2979:6:1:9:1419/1
+AAAAAAAAAGATGTCATCAGCACATCAGAAAAGAAGGCAACTTTAAAACTTTTC
++
+BBABBBABABAABABABBABBBAAA&gt;@B@BBAA@4AAA&gt;.&gt;BAA@779:AAA@A</code></pre>
+<p>We can see that for each read we get four lines:</p>
+<ol type="1">
+<li>The read metadata, such as the read ID. Starts with <code>@</code> and, for paired-end Illumina reads, is terminated with /1 or /2 to show that the read is the member of a pair.</li>
+<li>The read</li>
+<li>Starts with <code>+</code> and optionally contains the ID again</li>
+<li>The per base <a href="https://en.wikipedia.org/wiki/Phred_quality_score">Phred quality score</a></li>
+</ol>
+<p>The quality scores range (in theory) from 1 to 94 and are encoded as <a href="https://en.wikipedia.org/wiki/ASCII">ASCII characters</a>. The first 32 ASCII codes are reserved for control characters which are not printable, and the 33rd is reserved for space. Neither of these can be used in the quality string, so we need to subtract 33 from whatever the value of the quality character is. For example, the ASCII code of “A” is 65, so the corresponding quality is:</p>
+<pre><code>Q = 65 - 33 = 32</code></pre>
+<p>The Phred quality score <code>Q</code> relates to the base-calling error probability <code>P</code> as</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P = 10<sup>-Q/10</sup></p>
+<p>The Phred quality score is a measure of the quality of base calls. For example, a base assigned with a Phred quality score of 30 tells us that there is a 1 in 1000 chance that this base was called incorrectly.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Phred Quality Score</th>
+<th>Probability of incorrect base call</th>
+<th>Base call accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10</td>
+<td>1 in 10</td>
+<td>90%</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>1 in 100</td>
+<td>99%</td>
+</tr>
+<tr class="odd">
+<td>30</td>
+<td>1 in 1000</td>
+<td>99.9%</td>
+</tr>
+<tr class="even">
+<td>40</td>
+<td>1 in 10,000</td>
+<td>99.99%</td>
+</tr>
+<tr class="odd">
+<td>50</td>
+<td>1 in 100,000</td>
+<td>99.999%</td>
+</tr>
+<tr class="even">
+<td>60</td>
+<td>1 in 1,000,000</td>
+<td>99.9999%</td>
+</tr>
+</tbody>
+</table>
+<section id="exercises-1" class="level3">
+<h3 class="anchored" data-anchor-id="exercises-1">Exercises</h3>
+<p><strong>Q2: How many reads are there in the file example.fastq? (Hint: remember that <code>@</code> is a possible quality score. Is there something else in the header that is unique?)</strong></p>
+</section>
+</section>
+<section id="sam" class="level2">
+<h2 class="anchored" data-anchor-id="sam">SAM</h2>
+<p><a href="https://samtools.github.io/hts-specs/SAMv1.pdf">SAM (Sequence Alignment/Map)</a> format is a unified format for storing read alignments to a reference genome. It is a standard format for storing NGS sequencing reads, base qualities, associated meta-data and alignments of the data to a reference genome. If no reference genome is available, the data can also be stored unaligned.</p>
+<p>The files consist of a header section (optional) and an alignment section. The alignment section contains one record (a single DNA fragment alignment) per line describing the alignment between fragment and reference. Each record has 11 fixed columns and optional key:type:value tuples. Open the SAM/BAM file specification document <a href="https://samtools.github.io/hts-specs/SAMv1.pdf">https://samtools.github.io/hts-specs/SAMv1.pdf</a> either in a web browser or you can find a copy in the QC directory as you may need to refer to it throughout this tutorial.</p>
+<p>Now let us have a closer look at the different parts of the SAM/BAM format.</p>
+<section id="header-section" class="level3">
+<h3 class="anchored" data-anchor-id="header-section">Header Section</h3>
+<p>The header section of a SAM file looks like:</p>
+<pre><code>@HD VN:1.0  SO:coordinate
+@SQ SN:test_ref LN:17637
+@RG ID:ERR003612 PL:ILLUMINA LB:g1k-sc-NA20538-TOS-1 PI:2000 DS:SRP000540 SM:NA20538 CN:SC</code></pre>
+<p>Each line in the SAM header begins with an <code>@</code>, followed by a two-letter header record type code as defined in the <a href="https://samtools.github.io/hts-specs/SAMv1.pdf">SAM/BAM format specification document</a>. Each record type can contain meta-data captured as a series of key-value pairs in the format of ‘TAG:VALUE’.</p>
+<section id="read-groups" class="level4">
+<h4 class="anchored" data-anchor-id="read-groups">Read groups</h4>
+<p>One useful record type is RG which can be used to describe each lane of sequencing. The RG code can be used to capture extra meta-data for the sequencing lane. Some common RG TAGs are:</p>
+<ul>
+<li>ID: SRR/ERR number</li>
+<li>PL: Sequencing platform</li>
+<li>PU: Run name</li>
+<li>LB: Library name</li>
+<li>PI: Insert fragment size</li>
+<li>SM: Individual/Sample</li>
+<li>CN: Sequencing centre</li>
+</ul>
+<p>While most of these are self explanitory, insert fragment size may occasionally be negative. This simply indicates that the reads found are overlapping while its size is less than 2 x read length.</p>
+</section>
+</section>
+<section id="exercises-2" class="level3">
+<h3 class="anchored" data-anchor-id="exercises-2">Exercises</h3>
+<p>Look at the following line from the header of a SAM file and answering the questions that follow:</p>
+<pre><code>@RG ID:ERR003612 PL:ILLUMINA LB:g1k-sc-NA20538-TOS-1 PI:2000 DS:SRP000540 SM:NA20538 CN:SC</code></pre>
+<p><strong>Q3: What does RG stand for?</strong></p>
+<p><strong>Q4: What is the sequencing platform?</strong></p>
+<p><strong>Q5: What is the sequencing centre?</strong></p>
+<p><strong>Q6: What is the lane identifier?</strong></p>
+<p><strong>Q7: What is the expected fragment insert size?</strong></p>
+</section>
+<section id="alignment-section" class="level3">
+<h3 class="anchored" data-anchor-id="alignment-section">Alignment Section</h3>
+<p>The alignment section of SAM files contains one line per read alignment, an example is</p>
+<p><code>ERR005816.1408831 163 Chr1    19999970    23  40M5D30M2I28M   =   20000147    213 GGTGGGTGGATCACCTGAGATCGGGAGTTTGAGACTAGGTGG...    &lt;=@A@??@=@A@A&gt;@BAA@ABA:&gt;@&lt;&gt;=BBB9@@2B3&lt;=@A@...</code></p>
+<p>Each of the lines are composed of multiple columns listed below. The first 11 columns are mandatory.</p>
+<ol type="1">
+<li>QNAME: Query NAME of the read or the read pair i.e.&nbsp;DNA sequence</li>
+<li>FLAG: Bitwise FLAG (pairing, strand, mate strand, etc.)</li>
+<li>RNAME: Reference sequence NAME</li>
+<li>POS: 1-Based leftmost POSition of clipped alignment</li>
+<li>MAPQ: MAPping Quality (Phred-scaled)</li>
+<li>CIGAR: Extended CIGAR string (operations: MIDNSHPX=)</li>
+<li>MRNM: Mate Reference NaMe (’=’ if same as RNAME)</li>
+<li>MPOS: 1-Based leftmost Mate POSition</li>
+<li>ISIZE: Inferred Insert SIZE</li>
+<li>SEQ: Query SEQuence on the same strand as the reference</li>
+<li>QUAL: Query QUALity (ASCII-33=Phred base quality)</li>
+<li>OTHER: Optional fields</li>
+</ol>
+<p>The image below provides a visual guide to some of the columns of the SAM format.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/SAM_BAM.png" class="img-fluid figure-img"></p>
+<figcaption>SAM format</figcaption>
+</figure>
+</div>
+</section>
+<section id="exercises-3" class="level3">
+<h3 class="anchored" data-anchor-id="exercises-3">Exercises</h3>
+<p>Let’s have a look at example.sam. Notice that we can use the standard UNIX operations like <strong>cat</strong> on this file.</p>
+<div id="cell-23" class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> data/example.sam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Q8: What is the mapping quality of ERR003762.5016205? (Hint: can you use grep and awk to find this?)</strong></p>
+<p><strong>Q9: What is the CIGAR string for ERR003814.6979522? (Hint: we will go through the meaning of CIGAR strings in the next section)</strong></p>
+<p><strong>Q10: What is the inferred insert size of ERR003814.1408899?</strong></p>
+</section>
+<section id="cigar-string" class="level3">
+<h3 class="anchored" data-anchor-id="cigar-string">CIGAR string</h3>
+<p>Column 6 of the alignment is the CIGAR string for that alignment. The CIGAR string provides a compact representation of sequence alignment. Have a look at the table below. It contains the meaning of all different symbols of a CIGAR string:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>M</td>
+<td>alignment match or mismatch</td>
+</tr>
+<tr class="even">
+<td>=</td>
+<td>sequence match</td>
+</tr>
+<tr class="odd">
+<td>X</td>
+<td>sequence mismatch</td>
+</tr>
+<tr class="even">
+<td>I</td>
+<td>insertion into the read (sample sequenced)</td>
+</tr>
+<tr class="odd">
+<td>D</td>
+<td>deletion from the read (sample sequenced)</td>
+</tr>
+<tr class="even">
+<td>S</td>
+<td>soft clipping (clipped sequences present in SEQ)</td>
+</tr>
+<tr class="odd">
+<td>H</td>
+<td>hard clipping (clipped sequences NOT present in SEQ)</td>
+</tr>
+<tr class="even">
+<td>N</td>
+<td>skipped region from the reference</td>
+</tr>
+<tr class="odd">
+<td>P</td>
+<td>padding (silent deletion from padded reference)</td>
+</tr>
+</tbody>
+</table>
+<p>Below are two examples describing the CIGAR string in more detail.</p>
+<p><strong>Example 1:</strong><br>
+Ref:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ACGTACGTACGTACGT<br>
+Read:&nbsp;&nbsp;ACGT-&nbsp;-&nbsp;-&nbsp;-&nbsp;ACGTACGA<br>
+Cigar: 4M 4D 8M</p>
+<p>The first four bases in the read are the same as in the reference, so we can represent these as 4M in the CIGAR string. Next comes 4 deletions, represented by 4D, followed by 7 alignment matches and one alignment mismatch, represented by 8M. Note that the mismatch at position 16 is included in 8M. This is because it still aligns to the reference.</p>
+<p><strong>Example 2:</strong><br>
+Ref:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ACTCAGTG-&nbsp;-&nbsp;GT<br>
+Read:&nbsp;&nbsp;ACGCA-&nbsp;TGCAGTtagacgt<br>
+Cigar: 5M 1D 2M 2I 2M 7S</p>
+<p>Here we start off with 5 alignment matches and mismatches, followed by one deletion. Then we have two more alignment matches, two insertions and two more matches. At the end, we have seven soft clippings, 7S. These are clipped sequences that are present in the SEQ (Query SEQuence on the same strand as the reference).</p>
+</section>
+<section id="exercises-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercises-4">Exercises</h3>
+<p><strong>Q11: What does the CIGAR from Q9 mean?</strong></p>
+<p><strong>Q12: How would you represent the following alignment with a CIGAR string?</strong></p>
+<p>Ref:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ACGT-&nbsp;-&nbsp;-&nbsp;-&nbsp;ACGTACGT<br>
+Read:&nbsp;&nbsp;ACGTACGTACGTACGT</p>
+</section>
+<section id="flags" class="level3">
+<h3 class="anchored" data-anchor-id="flags">Flags</h3>
+<p>Column 2 of the alignment contains a combination of bitwise FLAGs describing the alignment. The following table contains the information you can get from the bitwise FLAGs:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Hex</th>
+<th>Dec</th>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0x1</td>
+<td>1</td>
+<td>PAIRED</td>
+<td>paired-end (or multiple-segment) sequencing technology</td>
+</tr>
+<tr class="even">
+<td>0x2</td>
+<td>2</td>
+<td>PROPER_PAIR</td>
+<td>each segment properly aligned according to the aligner</td>
+</tr>
+<tr class="odd">
+<td>0x4</td>
+<td>4</td>
+<td>UNMAP</td>
+<td>segment unmapped</td>
+</tr>
+<tr class="even">
+<td>0x8</td>
+<td>8</td>
+<td>MUNMAP</td>
+<td>next segment in the template unmapped</td>
+</tr>
+<tr class="odd">
+<td>0x10</td>
+<td>16</td>
+<td>REVERSE</td>
+<td>SEQ is reverse complemented</td>
+</tr>
+<tr class="even">
+<td>0x20</td>
+<td>32</td>
+<td>MREVERSE</td>
+<td>SEQ of the next segment in the template is reversed</td>
+</tr>
+<tr class="odd">
+<td>0x40</td>
+<td>64</td>
+<td>READ1</td>
+<td>the first segment in the template</td>
+</tr>
+<tr class="even">
+<td>0x80</td>
+<td>128</td>
+<td>READ2</td>
+<td>the last segment in the template</td>
+</tr>
+<tr class="odd">
+<td>0x100</td>
+<td>256</td>
+<td>SECONDARY</td>
+<td>secondary alignment</td>
+</tr>
+<tr class="even">
+<td>0x200</td>
+<td>512</td>
+<td>QCFAIL</td>
+<td>not passing quality controls</td>
+</tr>
+<tr class="odd">
+<td>0x400</td>
+<td>1024</td>
+<td>DUP</td>
+<td>PCR or optical duplicate</td>
+</tr>
+<tr class="even">
+<td>0x800</td>
+<td>2048</td>
+<td>SUPPLEMENTARY</td>
+<td>supplementary alignment</td>
+</tr>
+</tbody>
+</table>
+<p>For example, if you have an alignment with FLAG set to 113, this can only be represented by decimal codes <code>64 + 32 + 16 + 1</code>, so we know that these four flags apply to the alignment and the alignment is paired-end, reverse complemented, sequence of the next template/mate of the read is reversed and the read aligned is the first segment in the template.</p>
+<section id="primary-secondary-and-supplementary-alignments" class="level4">
+<h4 class="anchored" data-anchor-id="primary-secondary-and-supplementary-alignments">Primary, secondary and supplementary alignments</h4>
+<p>A read that aligns to a single reference sequence (including insertions, deletions, skips and clipping but not direction changes), is a <strong>linear alignment</strong>. If a read cannot be represented as a linear alignment, but instead is represented as a group of linear alignments without large overlaps, it is called a <strong>chimeric alignment</strong>. These can for instance be caused by structural variations. Usually, one of the linear alignments in a chimeric alignment is considered to be the <strong>representative</strong> alignment, and the others are called <strong>supplementary</strong>.</p>
+<p>Sometimes a read maps equally well to more than one spot. In these cases, one of the possible alignments is marked as the <strong>primary</strong> alignment and the rest are marked as <strong>secondary</strong> alignments.</p>
+</section>
+</section>
+</section>
+<section id="bam" class="level2">
+<h2 class="anchored" data-anchor-id="bam">BAM</h2>
+<p>BAM (Binary Alignment/Map) format, is a compressed binary version of SAM. This means that, while SAM is human readable, BAM is only readable for computers. BAM files can be viewed using samtools, and will then have the same format as a SAM file. The key features of BAM are:</p>
+<ul>
+<li>Can store alignments from most mappers</li>
+<li>Supports multiple sequencing technologies</li>
+<li>Supports indexing for quick retrieval/viewing</li>
+<li>Compact size (e.g.&nbsp;112Gbp Illumina = 116GB disk space)</li>
+<li>Reads can be grouped into logical groups e.g.&nbsp;lanes, libraries, samples</li>
+<li>Widely supported by variant calling packages and viewers</li>
+</ul>
+<p>Since BAM is a binary format, we can’t use the standard UNIX operations directly on this file format. <strong>Samtools</strong> is a set of programs for interacting with SAM and BAM files. Using the samtools view command, print the header of the BAM file:</p>
+<div id="cell-36" class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> view <span class="at">-H</span> data/NA20538.bam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="exercises-5" class="level3">
+<h3 class="anchored" data-anchor-id="exercises-5">Exercises</h3>
+<p><strong>Q13: What version of the human assembly was used to perform the alignments? (Hint: Can you spot this somewhere in the <span class="citation" data-cites="SQ">@SQ</span> records?)</strong></p>
+<p><strong>Q14: How many lanes are in this BAM file? (Hint: Do you recall what RG represents?)</strong></p>
+<p><strong>Q15: What programs were used to create this BAM file? (Hint: have a look for the program record, <span class="citation" data-cites="PG">@PG</span>)</strong></p>
+<p><strong>Q16: What version of bwa was used to align the reads? (Hint: is there anything in the <span class="citation" data-cites="PG">@PG</span> record that looks like it could be a version tag?)</strong></p>
+<p>The output from running samtools view on a BAM file without any options is a headerless SAM file. This gets printed to STDOUT in the terminal, so we will want to pipe it to something. Let’s have a look at the first read of the BAM file:</p>
+<div id="cell-47" class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> view data/NA20538.bam <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Q17: What is the name of the first read? (Hint: have a look at the <a href="../../../../course_modules/NGS_Data_Formats_and_QC/practical/Notebooks/formats.html#Alignment-Section">alignment section</a> if you can’t recall the different fields)</strong></p>
+<p><strong>Q18: What position does the alignment of the read start at?</strong></p>
+</section>
+</section>
+<section id="cram" class="level2">
+<h2 class="anchored" data-anchor-id="cram">CRAM</h2>
+<p>Even though BAM files are compressed, they are still very large. Typically they use 1.5-2 bytes for each base pair of sequencing data that they contain, and while disk capacity is ever improving, increases in disk capacity are being far outstripped by sequencing technologies.</p>
+<p>BAM stores all of the data, this includes every read base, every base quality, and it uses a single conventional compression technique for all types of data. CRAM was designed for better compression of genomic data than SAM/BAM. CRAM uses three important concepts:</p>
+<ul>
+<li>Reference based compression</li>
+<li>Controlled loss of quality information</li>
+<li>Different compression methods to suit the type of data, e.g.&nbsp;base qualities vs.&nbsp;metadata vs.&nbsp;extra tags</li>
+</ul>
+<p>The figure below displays how reference-based compression works. Instead of saving all the bases of all the reads, only the nucleotides that differ from the reference, and their positions, are kept.</p>
+<p><img src="img/CRAM_format.png" class="img-fluid"></p>
+<p><img src="img/CRAM_format2.png" class="img-fluid"></p>
+<p>In lossless (no information is lost) mode a CRAM file is 60% of the size of a BAM file, so archives and sequencing centres have moved from BAM to CRAM.</p>
+<p>Since samtools 1.3, CRAM files can be read in the same way that BAM files can. We will look closer at how you can convert between SAM, BAM and CRAM formats in the next section.</p>
+</section>
+<section id="indexing" class="level2">
+<h2 class="anchored" data-anchor-id="indexing">Indexing</h2>
+<p>To allow for fast random access of regions in BAM and CRAM files, they can be indexed. The files must first be coordinate-sorted rather that sorted by read name. This can be done using <strong>samtools sort</strong>. If no options are supplied, it will by default sort by the left-most position of the reference.</p>
+<div id="cell-58" class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> sort <span class="at">-o</span> data/NA20538_sorted.bam data/NA20538.bam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now we can use <strong>samtools index</strong> to create an index file (.bai) for our sorted BAM file:</p>
+<div id="cell-60" class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> index data/NA20538_sorted.bam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To look for reads mapped to a specific region, we can use <strong>samtools view</strong> and specify the region we are interested in as: RNAME[:STARTPOS[-ENDPOS]]. For example, to look at all the reads mapped to a region called chr4, we could use:</p>
+<p><code>samtools view alignment.bam chr4</code></p>
+<p>To look at the region on chr4 beginning at position 1,000,000 and ending at the end of the chromosome, we can do:</p>
+<p><code>samtools view alignment.bam chr4:1000000</code></p>
+<p>And to explore the 1001bp long region on chr4 beginning at position 1,000 and ending at position 2,000, we can use:</p>
+<p><code>samtools view alignment.bam chr4:1000-2000</code></p>
+<section id="exercises-6" class="level3">
+<h3 class="anchored" data-anchor-id="exercises-6">Exercises</h3>
+<p><strong>Q19: How many reads are mapped to region 20025000-20030000 on chromosome 1?</strong></p>
+</section>
+</section>
+<section id="vcf" class="level2">
+<h2 class="anchored" data-anchor-id="vcf">VCF</h2>
+<p>The VCF file format was introduced to store variation data. VCF consists of tab-delimited text and is parsable by standard UNIX commands which makes it flexible and user-extensible. The figure below provides an overview of the different components of a VCF file:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/VCF1.png" class="img-fluid figure-img"></p>
+<figcaption>VCF format</figcaption>
+</figure>
+</div>
+<section id="vcf-header" class="level3">
+<h3 class="anchored" data-anchor-id="vcf-header">VCF header</h3>
+<p>The VCF header consists of meta-information lines (starting with <code>##</code>) and a header line (starting with <code>#</code>). All meta-information lines are optional and can be put in any order, except for <em>fileformat</em>. This holds the information about which version of VCF is used and must come first.</p>
+<p>The meta-information lines consist of key=value pairs. Examples of meta-information lines that can be included are ##INFO, ##FORMAT and ##reference. The values can consist of multiple fields enclosed by <code>&lt;&gt;</code>. More information about these fields is available in the VCF specification <a href="http://samtools.github.io/hts-specs/VCFv4.3.pdf">http://samtools.github.io/hts-specs/VCFv4.3.pdf</a>. This can be accessed using a web browser and there is a copy in the QC directory.</p>
+<section id="header-line" class="level4">
+<h4 class="anchored" data-anchor-id="header-line">Header line</h4>
+<p>The header line starts with <code>#</code> and consists of 8 required fields:</p>
+<ol type="1">
+<li>CHROM: an identifier from the reference genome</li>
+<li>POS: the reference position</li>
+<li>ID: a list of unique identifiers (where available)</li>
+<li>REF: the reference base(s)</li>
+<li>ALT: the alternate base(s)</li>
+<li>QUAL: a phred-scaled quality score</li>
+<li>FILTER: filter status</li>
+<li>INFO: additional information</li>
+</ol>
+<p>If the file contains genotype data, the required fields are also followed by a FORMAT column header, and then a number of sample IDs. The FORMAT field specifies the data types and order. Some examples of these data types are:</p>
+<ul>
+<li>GT: Genotype, encoded as allele values separated by either / or |</li>
+<li>DP: Read depth at this position for this sample</li>
+<li>GQ: Conditional genotype quality, encoded as a phred quality</li>
+</ul>
+</section>
+</section>
+<section id="body" class="level3">
+<h3 class="anchored" data-anchor-id="body">Body</h3>
+<p>In the body of the VCF, each row contains information about a position in the genome along with genotype information on samples for each position, all according to the fields in the header line.</p>
+</section>
+</section>
+<section id="bcf" class="level2">
+<h2 class="anchored" data-anchor-id="bcf">BCF</h2>
+<p>BCF is a compressed binary representation of VCF.</p>
+<p>VCF can be compressed with BGZF (bgzip) and indexed with TBI or CSI (tabix), but even compressed it can still be very big. For example, a compressed VCF with 3781 samples of human data will be 54 GB for chromosome 1, and 680 GB for the whole genome. VCFs can also be slow to parse, as text conversion is slow. The main bottleneck is the “FORMAT” fields. For this reason the BCF format was developed.</p>
+<p>In BCF files the fields are rearranged for fast access. The following images show the process of converting a VCF file into a BCF file.</p>
+<p><img src="img/VCF2.png" class="img-fluid"></p>
+<p><img src="img/VCF3.png" class="img-fluid"></p>
+<p>Bcftools comprises a set of programs for interacting with VCF and BCF files. It can be used to convert between VCF and BCF and to view or extract records from a region.</p>
+<section id="bcftools-view" class="level3">
+<h3 class="anchored" data-anchor-id="bcftools-view">bcftools view</h3>
+<p>Let’s have a look at the header of the file 1kg.bcf in the data directory. Note that bcftools uses <strong><code>-h</code></strong> to print only the header, while samtools uses <strong><code>-H</code></strong> for this.</p>
+<div id="cell-75" class="cell" data-scrolled="true">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> view <span class="at">-h</span> data/1kg.bcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Similarly to BAM, BCF supports random access, that is, fast retrieval from a given region. For this, the file must be indexed:</p>
+<div id="cell-77" class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> index data/1kg.bcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now we can extract all records from the region 20:24042765-24043073, using the <strong><code>-r</code></strong> option. The <strong><code>-H</code></strong> option will make sure we don’t include the header in the output:</p>
+<div id="cell-79" class="cell" data-scrolled="true">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> view <span class="at">-H</span> <span class="at">-r</span> 20:24042765-24043073 data/1kg.bcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="bcftools-query" class="level3">
+<h3 class="anchored" data-anchor-id="bcftools-query">bcftools query</h3>
+<p>The versatile <strong>bcftools query</strong> command can be used to extract any VCF field. Combined with standard UNIX commands, this gives a powerful tool for quick querying of VCFs. Have a look at the usage options:</p>
+<div id="cell-81" class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> query <span class="at">-h</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s try out some useful options. As you can see from the usage, <strong><code>-l</code></strong> will print a list of all the samples in the file. Give this a go:</p>
+<div id="cell-83" class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> query <span class="at">-l</span> data/1kg.bcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Another very useful option is <strong><code>-s</code></strong> which allows you to extract all the data relating to a particular sample. This is a <a href="http://samtools.github.io/bcftools/bcftools.html#common_options">common option</a> meaning it can be used for many bcftools commands, like <code>bcftools view</code>. Try this for sample HG00131:</p>
+<div id="cell-85" class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> view <span class="at">-s</span> HG00131 data/1kg.bcf <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 50</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The format option, <strong><code>-f</code></strong> can be used to select what gets printed from your query command. For example, the following will print the position, reference base and alternate base for sample HG00131, separated by tabs:</p>
+<div id="cell-87" class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> query <span class="at">-f</span><span class="st">'%POS\t%REF\t%ALT\n'</span> <span class="at">-s</span> HG00131 data/1kg.bcf <span class="kw">|</span> <span class="fu">head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Finally, let’s look at the <strong><code>-i</code></strong> option. With this option we can select only sites for which a particular expression is true. For instance, if we only want to look at sites that have at least 2 alternate alleles across all samples, we can use the following expression (piped to <code>head</code> to only show a subset of the output):</p>
+<div id="cell-89" class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> query <span class="at">-f</span><span class="st">'%CHROM\t%POS\n'</span> <span class="at">-i</span> <span class="st">'AC[0]&gt;2'</span> data/1kg.bcf <span class="kw">|</span> <span class="fu">head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We use <strong><code>-i</code></strong> with the expression <code>AC[0]&gt;2</code>. AC is an info field that holds the __a__llele __c__ount. Some fields can hold multiple values, so we use <code>AC[0]&gt;2</code> to indicate that we are looking for the first value (this is zero indexed, and hence starts at 0 instead of 1), and that this value should be &gt; 2. To format our output, we use <strong><code>-f</code></strong> to specify that we want to print the chromosome name and position.</p>
+<p>There is more information about expressions on the bcftools manual page <a href="http://samtools.github.io/bcftools/bcftools.html#expressions">http://samtools.github.io/bcftools/bcftools.html#expressions</a></p>
+</section>
+<section id="exercises-7" class="level3">
+<h3 class="anchored" data-anchor-id="exercises-7">Exercises</h3>
+<p>Now, try and answer the following questions about the file 1kg.bcf in the data directory. For more information about the different usage options you can open the bcftools query manual page <a href="http://samtools.github.io/bcftools/bcftools.html#query">http://samtools.github.io/bcftools/bcftools.html#query</a> in a web browser.</p>
+<p><strong>Q20: What version of the human assembly do the coordinates refer to?</strong></p>
+<p><strong>Q21: How many samples are there in the BCF?</strong></p>
+<p><strong>Q22: What is the genotype of the sample HG00107 at the position 20:24019472? (Hint: use the combination of -r, -s, and -f options)</strong></p>
+<p><strong>Q23: How many positions are there with more than 10 alternate alleles? (Hint: use the -i filtering option)</strong></p>
+<p><strong>Q24: In how many positions does HG00107 have a non-reference genotype and a read depth bigger than 10? (Hint: you can use pipes to combine bcftools queries)</strong></p>
+</section>
+</section>
+<section id="gvcf" class="level2">
+<h2 class="anchored" data-anchor-id="gvcf">gVCF</h2>
+<p>Often it is not enough to know variant sites only. For instance, we don’t know if a site was dropped because it matches the reference or because the data is missing. We sometimes need evidence for both variant and non-variant positions in the genome. In gVCF format, blocks of reference-only sites can be represented in a single record using the “INFO/END” tag. Symbolic alleles (&lt;*&gt;) are used for incremental calling:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/gVCF.png" class="img-fluid figure-img"></p>
+<figcaption>gVCF</figcaption>
+</figure>
+</div>
+<section id="exercises-8" class="level3">
+<h3 class="anchored" data-anchor-id="exercises-8">Exercises</h3>
+<p><strong>Q25: In the above example, what is the size of the reference-only block starting at position 9923?</strong></p>
+<p><strong>Q26: For the same block, what is the first base?</strong></p>
+<p><strong>Q27: How many reference reads does the block have?</strong></p>
+<p>Now continue to the next section of the tutorial: <a href="../../../../course_modules/NGS_Data_Formats_and_QC/practical/Notebooks/assessment.html">QC assessment of NGS data</a>.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>This work is licensed under a Creative Commons Attribution 4.0 International License. Reuse is encouraged with acknowledgement</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

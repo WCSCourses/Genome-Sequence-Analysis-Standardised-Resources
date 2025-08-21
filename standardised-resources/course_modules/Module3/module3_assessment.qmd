@@ -1,0 +1,124 @@
+---
+title: "Quiz"
+format: html
+---
+
+### Q1
+
+What is the main difference between germline mutations and somatic mutations?
+
+A. Germline mutations occur in non-reproductive cells, while somatic mutations occur in reproductive cells.
+
+B. Germline mutations are heritable as they occur in egg or sperm cells, while somatic mutations occur in non-germline tissues and are not passed to offspring.
+
+C. Germline mutations only occur in bacteria, while somatic mutations are found only in humans.
+
+D. Both types of mutations are heritable but affect different chromosomes.
+
+### Q2
+
+Which of the following is an example of a large-scale genomic variation?
+
+A. A point mutation in a single base.
+
+B. A duplication involving 2 kilobases of DNA (CNV).
+
+C. A small insertion or deletion of 10 base pairs.
+
+D. A single nucleotide polymorphism (SNP).
+
+### Q3
+
+Which statement best describes the difference between single nucleotide variants (SNVs) and indels?
+
+A. SNVs involve changes in multiple adjacent bases; indels involve changes in just one base.
+
+B. SNVs are large deletions; indels are large insertions.
+
+C. SNVs involve single base substitutions, while indels are small insertions or deletions typically less than 50 base pairs.
+
+D. SNVs occur only in coding regions; indels occur only in non-coding regions.
+
+### Q4
+
+Which of the following is NOT a practical application of variant calling?
+
+A. Cataloging biological diversity in population genetics.
+
+B. Identifying pathogenic mutations for disease diagnosis.
+
+C. Determining the speed of DNA replication during cell division.
+
+D. Tailoring drug dosages in pharmacogenomics.
+
+### Q5
+
+What is the benefit of resolving phased haplotypes in variant calling analyses?
+
+A. It provides information about the total number of chromosomes in the organism.
+
+B. It determines which variants are inherited together on the same chromosome, thereby clarifying genotype information.
+
+C. It helps to identify only somatic mutations exclusively.
+
+D. It replaces the need for any sequencing data.
+
+### Q6
+
+Which key field is NOT typically included in a Variant Call Format (VCF) file?
+
+A. CHROM (chromosome)
+
+B. POS (position)
+
+C. TEMP (temperature of the sample)
+
+D. ALT (alternate allele)
+
+### Q7
+
+Which sequence correctly describes the process from raw sequencing data to final variant calls?
+
+A. Alignment, Quality Control, Generate Sequencing Data, Pileup, Variant Calling.
+
+B. Generate Sequencing Data, Alignment, Quality Control, Variant Calling, Pileup.
+
+C. Generate Sequencing Data, Quality Control, Alignment, Pileup, Variant Calling.
+
+D. Pileup, Generate Sequencing Data, Quality Control, Alignment, Variant Calling.
+
+### Q8
+
+Which of the following is a common source of error in variant calling?
+
+A. Uniform base composition across the genome.
+
+B. Homopolymers and repetitive regions causing sequencing and mapping errors.
+
+C. Excessively high mapping quality in all reads.
+
+D. Infrequent occurrence of strand bias in high-quality datasets.
+
+### Q9
+
+The transition/transversion (Ts/Tv) ratio is used as a quality metric in SNP datasets. What Ts/Tv ratio is typically expected in high-quality human SNP calls?
+
+A. Approximately 0.5–1
+
+B. Approximately 1–2
+
+C. Approximately 2–3
+
+D. Approximately 4–5
+
+### Q10
+
+How do population-level datasets like those from the 1000 Genomes Project and gnomAD aid researchers?
+
+A. They provide a comprehensive snapshot of human genetic diversity and variant frequencies across various populations.
+
+B. They measure the metabolic rates of individuals in diverse populations.
+
+C. They only include data from European populations.
+
+D. They offer real-time monitoring of gene expression levels.

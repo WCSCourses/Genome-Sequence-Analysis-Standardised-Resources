@@ -1,0 +1,24 @@
+---
+title: "template_module"
+format: html
+---
+
+Title of session/module
+
+  - Duration 
+
+  - Key topics
+
+  - Activities (lectures, hands-on, discussions) - Use GHRU template here 
+
+\- Presentation slides (PPT/PDF)
+
+\- Lecture notes or scripts
+
+\- Videos (prerecorded lectures, screencasts, youtube etc, with transcripts)
+
+\- Practical/lab exercises (e.g., Jupyter notebooks, Google Colab walkthrough, command line walkthroughs)
+
+\- Datasets (example files or open data repositories)
+
+\- Case studies or examples

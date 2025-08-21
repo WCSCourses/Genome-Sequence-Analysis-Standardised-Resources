@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Manual – Genome Sequence Analysis Course</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../course_modules/Module3/module3_exercises.html" rel="next">
+<link href="../../course_modules/Module3/module3.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../site_libs/quarto-contrib/quarto-project/img/WCS_Logo-Primary_Black.jpg" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Genome Sequence Analysis Course</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../welcome.html"> 
+<span class="menu-text">Learning paths</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-modules" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Modules</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-modules">    
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module1/module1.html">
+ <span class="dropdown-text">File formats</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module2/module2.html">
+ <span class="dropdown-text">Reads alignment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module3/module3.html">
+ <span class="dropdown-text">Variant calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module4/module4.html">
+ <span class="dropdown-text">Structural Variation Calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module5/module5.html">
+ <span class="dropdown-text">Genome assembly</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module6/module6.html">
+ <span class="dropdown-text">RNA-seq</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module7/module7.html">
+ <span class="dropdown-text">CHiP-Seq</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Glossary/glossary.html">
+ <span class="dropdown-text">Glossary of terms</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-informatics-guide" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Informatics Guide</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-informatics-guide">    
+        <li>
+    <a class="dropdown-item" href="../../course_modules/VM_guide/VM_Guide.html">
+ <span class="dropdown-text">How to setup a VM</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/VM_guide/Software_list.html">
+ <span class="dropdown-text">Software list</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-train-the-trainer" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Train-the-trainer</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-train-the-trainer">    
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Train-the-trainer/introduction.html">
+ <span class="dropdown-text">Introduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Train-the-trainer/strategies.html">
+ <span class="dropdown-text">Strategies for training professionals</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Train-the-trainer/elements.html">
+ <span class="dropdown-text">Elements of effective training</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Train-the-trainer/training_design.html">
+ <span class="dropdown-text">Training design</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../course_modules/Module3/module3.html">Variant calling</a></li><li class="breadcrumb-item"><a href="../../course_modules/Module3/module3_manual.html">Manual</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">File formats</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Read alignment</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Variant calling</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_manual.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Structural Variation Calling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Genome Assembly</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">RNA-Seq</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">CHiP-Seq</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">How to setup a VM</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/VM_guide/VM_Guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Oracle VM VirtualBox Installation Guide</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/VM_guide/Software_list.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Software list</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Train-the-trainer</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Train-the-trainer/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Train-the-trainer/strategies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Strategies for training professionals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Train-the-trainer/elements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Elements of effective training</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Train-the-trainer/training_design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training design</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Contributors</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../meet the team.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#dna-variations-definitions-and-types" id="toc-dna-variations-definitions-and-types" class="nav-link active" data-scroll-target="#dna-variations-definitions-and-types">DNA Variations: Definitions and Types</a></li>
+  <li><a href="#how-to-dna-sequences-change" id="toc-how-to-dna-sequences-change" class="nav-link" data-scroll-target="#how-to-dna-sequences-change">How to DNA sequences change?</a></li>
+  <li><a href="#germline-versus-somatic-mutations" id="toc-germline-versus-somatic-mutations" class="nav-link" data-scroll-target="#germline-versus-somatic-mutations">Germline versus somatic mutations</a></li>
+  <li><a href="#types-of-genomic-variations" id="toc-types-of-genomic-variations" class="nav-link" data-scroll-target="#types-of-genomic-variations">Types of genomic variations</a></li>
+  <li><a href="#structural-variants" id="toc-structural-variants" class="nav-link" data-scroll-target="#structural-variants">Structural variants</a></li>
+  <li><a href="#small-nucleotide-variants-snvs" id="toc-small-nucleotide-variants-snvs" class="nav-link" data-scroll-target="#small-nucleotide-variants-snvs">Small nucleotide variants (SNVs)</a></li>
+  <li><a href="#ancestral-and-derived-alleles" id="toc-ancestral-and-derived-alleles" class="nav-link" data-scroll-target="#ancestral-and-derived-alleles"><strong>Ancestral and derived alleles</strong></a></li>
+  <li><a href="#microsatellites-or-short-tandem-repeats-strs" id="toc-microsatellites-or-short-tandem-repeats-strs" class="nav-link" data-scroll-target="#microsatellites-or-short-tandem-repeats-strs"><strong>Microsatellites</strong> or <strong>Short Tandem Repeats (STRs)</strong></a></li>
+  <li><a href="#snps-vs-strs" id="toc-snps-vs-strs" class="nav-link" data-scroll-target="#snps-vs-strs"><strong>SNPs vs STRs</strong></a></li>
+  <li><a href="#genetic-makeup-of-an-individual" id="toc-genetic-makeup-of-an-individual" class="nav-link" data-scroll-target="#genetic-makeup-of-an-individual"><strong>Genetic makeup of an individual</strong></a></li>
+  <li><a href="#practical-applications-of-variant-calling" id="toc-practical-applications-of-variant-calling" class="nav-link" data-scroll-target="#practical-applications-of-variant-calling">3. Practical Applications of Variant Calling</a></li>
+  <li><a href="#how-do-we-detect-change" id="toc-how-do-we-detect-change" class="nav-link" data-scroll-target="#how-do-we-detect-change">How do we detect change?</a></li>
+  <li><a href="#variant-calling-basics" id="toc-variant-calling-basics" class="nav-link" data-scroll-target="#variant-calling-basics">4. Variant Calling Basics</a></li>
+  <li><a href="#the-variant-call-format-vcf" id="toc-the-variant-call-format-vcf" class="nav-link" data-scroll-target="#the-variant-call-format-vcf">The <strong>Variant Call Format (VCF)</strong></a></li>
+  <li><a href="#allelic-depth" id="toc-allelic-depth" class="nav-link" data-scroll-target="#allelic-depth"><strong>Allelic depth</strong></a></li>
+  <li><a href="#germline-versus-somatic-mutations-1" id="toc-germline-versus-somatic-mutations-1" class="nav-link" data-scroll-target="#germline-versus-somatic-mutations-1"><strong>Germline versus somatic mutations</strong></a></li>
+  <li><a href="#naive-variant-calling-versus-fixed-allele-thresholds" id="toc-naive-variant-calling-versus-fixed-allele-thresholds" class="nav-link" data-scroll-target="#naive-variant-calling-versus-fixed-allele-thresholds"><strong>Naive variant calling versus fixed allele thresholds</strong></a></li>
+  <li><a href="#base-quality-filtering" id="toc-base-quality-filtering" class="nav-link" data-scroll-target="#base-quality-filtering"><strong>Base Quality Filtering</strong></a></li>
+  <li><a href="#variant-calling-models" id="toc-variant-calling-models" class="nav-link" data-scroll-target="#variant-calling-models">Variant calling models</a></li>
+  <li><a href="#genotype-likelihoods" id="toc-genotype-likelihoods" class="nav-link" data-scroll-target="#genotype-likelihoods"><strong>Genotype likelihoods</strong></a></li>
+  <li><a href="#errors-in-variant-calling" id="toc-errors-in-variant-calling" class="nav-link" data-scroll-target="#errors-in-variant-calling"><strong>Errors in variant calling</strong></a></li>
+  <li><a href="#variant-calling-workflows" id="toc-variant-calling-workflows" class="nav-link" data-scroll-target="#variant-calling-workflows">Variant calling workflows</a></li>
+  <li><a href="#factors-to-consider-in-variant-calling" id="toc-factors-to-consider-in-variant-calling" class="nav-link" data-scroll-target="#factors-to-consider-in-variant-calling"><strong>Factors to Consider in Variant Calling</strong></a></li>
+  <li><a href="#estimating-the-quality-of-called-snps" id="toc-estimating-the-quality-of-called-snps" class="nav-link" data-scroll-target="#estimating-the-quality-of-called-snps"><strong>Estimating the quality of called SNPs</strong></a></li>
+  <li><a href="#indel-calling-challenges" id="toc-indel-calling-challenges" class="nav-link" data-scroll-target="#indel-calling-challenges"><strong>Indel calling</strong> challenges</a></li>
+  <li><a href="#maximum-depth" id="toc-maximum-depth" class="nav-link" data-scroll-target="#maximum-depth">Maximum depth</a></li>
+  <li><a href="#mapping-errors" id="toc-mapping-errors" class="nav-link" data-scroll-target="#mapping-errors">Mapping errors</a></li>
+  <li><a href="#strand-bias" id="toc-strand-bias" class="nav-link" data-scroll-target="#strand-bias">Strand bias</a></li>
+  <li><a href="#variant-distance-bias" id="toc-variant-distance-bias" class="nav-link" data-scroll-target="#variant-distance-bias">Variant Distance Bias</a></li>
+  <li><a href="#false-snps-caused-by-incorrect-alignment" id="toc-false-snps-caused-by-incorrect-alignment" class="nav-link" data-scroll-target="#false-snps-caused-by-incorrect-alignment">False SNPs Caused by Incorrect Alignment</a></li>
+  <li><a href="#the-future-of-variant-calling" id="toc-the-future-of-variant-calling" class="nav-link" data-scroll-target="#the-future-of-variant-calling">The future of variant calling</a></li>
+  <li><a href="#functional-annotation" id="toc-functional-annotation" class="nav-link" data-scroll-target="#functional-annotation"><strong>Functional annotation</strong></a></li>
+  <li><a href="#snps-in-ensembl---types" id="toc-snps-in-ensembl---types" class="nav-link" data-scroll-target="#snps-in-ensembl---types">SNPs in Ensembl - Types</a></li>
+  <li><a href="#variant-pathogenicity" id="toc-variant-pathogenicity" class="nav-link" data-scroll-target="#variant-pathogenicity"><strong>Variant pathogenicity</strong></a></li>
+  <li><a href="#human-population-specific-variation" id="toc-human-population-specific-variation" class="nav-link" data-scroll-target="#human-population-specific-variation"><strong>Human Population Specific Variation</strong></a>
+  <ul class="collapse">
+  <li><a href="#genomes-project" id="toc-genomes-project" class="nav-link" data-scroll-target="#genomes-project"><strong>1000 Genomes Project</strong></a></li>
+  <li><a href="#gnomad" id="toc-gnomad" class="nav-link" data-scroll-target="#gnomad"><strong>gnomAD</strong></a></li>
+  <li><a href="#ensembl-variation" id="toc-ensembl-variation" class="nav-link" data-scroll-target="#ensembl-variation"><strong>Ensembl Variation</strong></a></li>
+  <li><a href="#references-and-additional-resources" id="toc-references-and-additional-resources" class="nav-link" data-scroll-target="#references-and-additional-resources">References and Additional Resources</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../course_modules/Module3/module3.html">Variant calling</a></li><li class="breadcrumb-item"><a href="../../course_modules/Module3/module3_manual.html">Manual</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Manual</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="dna-variations-definitions-and-types" class="level3">
+<h3 class="anchored" data-anchor-id="dna-variations-definitions-and-types">DNA Variations: Definitions and Types</h3>
+<p>Mutations refer to any alteration in the DNA base sequence and can be broadly classified into germline and somatic mutations.</p>
+</section>
+<section id="how-to-dna-sequences-change" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-dna-sequences-change">How to DNA sequences change?</h3>
+</section>
+<section id="germline-versus-somatic-mutations" class="level3">
+<h3 class="anchored" data-anchor-id="germline-versus-somatic-mutations">Germline versus somatic mutations</h3>
+<p>Germline mutations occur in the egg or sperm cells and are heritable, meaning they can be passed on to subsequent generations. In contrast, somatic mutations arise in non-germline tissues and do not get inherited by offspring.</p>
+<p>DNA replication errors are changes introduced into the genome during the process of cell division. These include <strong>de novo replication errors</strong>, mistakes made when DNA is copied, as well as structural changes such as <strong>recombination</strong>, <strong>gene conversion</strong>, and <strong>transposition</strong>. Additionally, <strong>non-replicative DNA damage</strong> can occur due to <strong>chemical exposure</strong> or <strong>radiation</strong>, independently of cell division. In <strong>sexually reproducing organisms</strong>, such mutations are only <strong>heritable</strong> if they occur in the <strong>gametes</strong> (sperm or egg cells), allowing them to be passed on to the next generation. Understanding the sources of these errors is crucial for studying genetic variation and disease.</p>
+</section>
+<section id="types-of-genomic-variations" class="level3">
+<h3 class="anchored" data-anchor-id="types-of-genomic-variations">Types of genomic variations</h3>
+<p>When examining the types of genomic variations, it is essential to differentiate between large-scale and small-scale changes. Large-scale variations include chromosomal gains or losses (such as aneuploidies), various forms of translocations (for instance, reciprocal and Robertsonian), and copy number variants (CNVs), which are duplications or deletions typically ranging from approximately 1 kilobase to several megabases—collectively accounting for roughly 12% of the human genome.</p>
+<p>Structural variants (SVs), including insertions, inversions, translocations, and tandem duplications larger than 50 base pairs, also fall into this category. On the other hand, small-scale variations involve more subtle changes such as single nucleotide variants (SNVs), which are simple base substitutions (for example, A→C or G→T), indels that represent small insertions or deletions (less than 50 base pairs), multinucleotide polymorphisms (MNPs) which involve multiple adjacent base substitutions, and microsatellites or short tandem repeats (STRs). STRs are characterized by the repetition of small motifs of 2–6 base pairs—like the “GATA” sequence repeated 7 versus 8 times—which are inherently more variable. Notably, while single nucleotide polymorphisms (SNPs) are usually biallelic with a relatively low mutation rate (around 10^-8 per base pair per generation), STRs are multiallelic with higher mutation rates, making their ancestral states more challenging to infer.</p>
+<p>To summarise:</p>
+<p><strong>Mutation / Variation</strong>: Any change in the DNA base sequence.</p>
+<p><strong>Germline mutation</strong>: Heritable variation present in egg or sperm cells.</p>
+<p><strong>Somatic mutation</strong>: Variation in non-germline tissues; not passed to offspring.</p>
+<p><strong>Copy number variants (CNVs)</strong>: Duplications or deletions ranging from ~1 kb to many Mb, accounting for roughly 12% of the human genome.</p>
+<p><strong>Structural Variants (SVs)</strong>: Insertions, inversions, translocations, tandem duplications, etc. (often &gt;50 bp).</p>
+<p><strong>Single Nucleotide Variants (SNVs)</strong>: Base substitutions (A→C, G→T, etc.).</p>
+<p><strong>Indels</strong>: Small insertions or deletions (&lt;50 bp).</p>
+<p><strong>Multinucleotide Polymorphisms (MNPs):</strong> Multiple adjacent base substitutions.</p>
+<p><strong>Microsatellites / STRs</strong>: Short-tandem repeats of 2–6 bp repeated multiple times (e.g., “GATA” repeated 7 vs 8 times).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DNA variation.png" class="img-fluid figure-img" width="294"></p>
+<figcaption><strong>DNA variation</strong></figcaption>
+</figure>
+</div>
+<p><strong>Large-scale genomic variations</strong> refer to substantial alterations in the structure or quantity of genetic material within a cell. These include <strong>gain or loss of entire chromosomes</strong>, <strong>chromothripsis</strong> (massive chromosomal rearrangements occurring in a single event), <strong>translocations</strong>, and other <strong>structural variants (SVs)</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/large scale variation.png" class="img-fluid figure-img" width="301"></p>
+<figcaption><strong>Example of a large scale variation.</strong> This karyotype image shows <strong>trisomy 21</strong>, where three copies of chromosome 21 are present instead of the usual two. This <strong>large-scale chromosomal variation</strong> is characteristic of <strong>Down syndrome</strong> and illustrates how <strong>chromosome gain</strong> can lead to developmental and genetic disorders in humans.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/copy number variation.png" class="img-fluid figure-img" width="211"></p>
+<figcaption><strong>Copy number variation.</strong> This image illustrates a <strong>chromosomal duplication</strong>, a type of <strong>copy number variation (CNV)</strong>. A segment of the chromosome is duplicated, resulting in extra genetic material. Such duplications can affect gene dosage and lead to developmental disorders or disease, depending on the genes involved and the size of the duplicated region.</figcaption>
+</figure>
+</div>
+<p>A key type of large-scale variation is <strong>Copy Number Variants (CNVs)</strong>, which involve abnormal numbers of copies of specific DNA segments. CNVs can span from around 1 kilobase to several megabases and collectively account for approximately <strong>12% of human genomic DNA</strong>. Structural variants are defined as DNA segments larger than 50 base pairs that differ from the reference genome in sequence <strong>content, order, or orientation</strong>, and they play a significant role in genetic diversity and disease susceptibility.</p>
+</section>
+<section id="structural-variants" class="level3">
+<h3 class="anchored" data-anchor-id="structural-variants">Structural variants</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/structural variants.png" class="img-fluid figure-img" width="425"></p>
+<figcaption><strong>Structural variants</strong></figcaption>
+</figure>
+</div>
+<p><strong>Translocation:</strong> A structural variation in which a segment of DNA is moved from one chromosome to another, often involving two different chromosomes.</p>
+<p><strong>Local Translocation:</strong> A DNA segment is relocated to a different position <strong>within the same chromosome</strong>, rather than between different chromosomes.</p>
+<p><strong>Tandem Duplication:</strong> A type of duplication where the copied DNA segment is inserted <strong>directly adjacent</strong> to the original sequence.</p>
+<p><strong>Dispersed Duplication:</strong> A duplicated DNA segment is inserted <strong>elsewhere in the genome</strong>, not next to the original sequence—can be on the same or different chromosome.</p>
+<p><strong>VNTR (Variable Number Tandem Repeat):</strong> Short sequences of DNA that are repeated in a <strong>tandem array</strong>; the number of repeats varies among individuals and can be used in DNA fingerprinting.</p>
+<p><strong>Deletion:</strong> A mutation in which a segment of DNA is <strong>missing or removed</strong>, potentially disrupting gene function or regulation.</p>
+<p><strong>Novel Insertion:</strong> A new DNA segment not present in the reference genome is <strong>inserted</strong> into a genomic location.</p>
+<p><strong>Repeat Insertion:</strong> Insertion of a <strong>repetitive DNA element</strong>, such as a transposable element or tandem repeat, into a new genomic location.</p>
+<p><strong>Inversion:</strong> A structural variation in which a segment of a chromosome is <strong>reversed end to end</strong>, altering gene orientation and potentially affecting function.</p>
+</section>
+<section id="small-nucleotide-variants-snvs" class="level3">
+<h3 class="anchored" data-anchor-id="small-nucleotide-variants-snvs">Small nucleotide variants (SNVs)</h3>
+<p><strong>Small-scale variations</strong> refer to changes in the genome that affect a small number of base pairs. These include <strong>Single Nucleotide Variants (SNVs)</strong>, where a single base is altered. SNVs can be further classified as <strong>substitutions</strong> (commonly known as SNPs), <strong>insertions</strong>, or <strong>deletions</strong>, with the latter two grouped as <strong>indels</strong>. Variations can also involve multiple bases, such as <strong>multinucleotide polymorphisms (MNPs)</strong>, <strong>mini-satellites</strong>, and <strong>micro-satellites</strong>. These changes contribute to genetic diversity and can influence phenotype and disease. In diploid organisms, a variant is <strong>homozygous</strong> if both chromosomes carry the same base, and <strong>heterozygous</strong> if the bases differ. An <strong>allele</strong> refers to a specific version of a DNA sequence at a given <strong>locus</strong> in the genome.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/SNP.png" class="img-fluid figure-img" width="353"></p>
+<figcaption><strong>Example of a SNP</strong></figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Insertion.png" class="img-fluid figure-img" width="355"></p>
+<figcaption><strong>Example of an insertion</strong></figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Deletion.png" class="img-fluid figure-img" width="357"></p>
+<figcaption><strong>Example of a deletion</strong></figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/MNP.png" class="img-fluid figure-img" width="358"></p>
+<figcaption><strong>Example of a multi-nucleotide polymorphism</strong></figcaption>
+</figure>
+</div>
+</section>
+<section id="ancestral-and-derived-alleles" class="level3">
+<h3 class="anchored" data-anchor-id="ancestral-and-derived-alleles"><strong>Ancestral and derived alleles</strong></h3>
+<p><strong>Ancestral and derived alleles</strong> describe the evolutionary history of genetic variants. The <strong>ancestral allele</strong> represents the original state of a DNA sequence before any mutation occurred, while the <strong>derived allele</strong> is the new version that arose through mutation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ancestral alleles.png" class="img-fluid figure-img" width="430"></p>
+<figcaption><strong>This image shows a G to A variant (rs80356779) in the <em>CPT1A</em> gene. Comparative sequence alignment across multiple primates indicates that G is the ancestral allele, conserved across species. The derived A allele is unique to some human populations, highlighting the use of evolutionary comparison to infer ancestral states.</strong></figcaption>
+</figure>
+</div>
+</section>
+<section id="microsatellites-or-short-tandem-repeats-strs" class="level3">
+<h3 class="anchored" data-anchor-id="microsatellites-or-short-tandem-repeats-strs"><strong>Microsatellites</strong> or <strong>Short Tandem Repeats (STRs)</strong></h3>
+<p><strong>Microsatellites</strong>, also known as <strong>Short Tandem Repeats (STRs)</strong>, are short, repetitive DNA sequences. The number of repeats varies between individuals, making them useful for genetic fingerprinting. However, the <strong>flanking regions</strong>—where <strong>PCR primers</strong> bind—are conserved, allowing reliable amplification across different samples for analysis and comparison.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/microsattelites.png" class="img-fluid figure-img" width="410"></p>
+<figcaption><strong>Micro-satellites example.</strong></figcaption>
+</figure>
+</div>
+</section>
+<section id="snps-vs-strs" class="level3">
+<h3 class="anchored" data-anchor-id="snps-vs-strs"><strong>SNPs vs STRs</strong></h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>SNPs</strong></th>
+<th>STRs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Usually biallelic; Seldom recurrent.</td>
+<td>Multiallelic</td>
+</tr>
+<tr class="even">
+<td>Low mutation rate: 1-1.25 x 10-8 /bp/generation.</td>
+<td>Higher mutation rate: 2 x 10-4 – 1.3 x 10-2 /marker/generation.</td>
+</tr>
+<tr class="odd">
+<td>~ 3,000,000 in humans</td>
+<td>~500,000 in humans</td>
+</tr>
+<tr class="even">
+<td>Ancestral state deduced from an out-group.</td>
+<td>Difficult to deduce.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="genetic-makeup-of-an-individual" class="level3">
+<h3 class="anchored" data-anchor-id="genetic-makeup-of-an-individual"><strong>Genetic makeup of an individual</strong></h3>
+<p>In genetic analysis, we ascertain the <strong>genetic makeup of an individual</strong>, which refers to their specific DNA sequence. The <strong>human genome is diploid</strong>, meaning individuals inherit one set of chromosomes from each parent. A <strong>genotype</strong> describes the specific genetic constitution at a given position in the genome, while a <strong>haplotype</strong> refers to a group of linked variants (alleles) inherited together on the same chromosome segment. Haplotypes are particularly informative because they capture patterns of <strong>SNP co-occurrence</strong> and can often be represented as <strong>binary strings</strong>, with each position reflecting one of two possible alleles. Understanding genotypes and haplotypes is fundamental in population genetics, disease association studies, and ancestry inference.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Genotypes and haplotypes.png" class="img-fluid figure-img" width="478"></p>
+<figcaption><strong>Genotypes and haplotypes.</strong> This image illustrates the distinction between <strong>genotypes</strong> and <strong>haplotypes</strong>, showing how <strong>phasing and imputation</strong> resolve which alleles are inherited together on the same chromosome. The process identifies paternal and maternal <strong>haplotypes</strong> from genotype data, enabling a clearer understanding of genetic inheritance and variation across linked loci.</figcaption>
+</figure>
+</div>
+</section>
+<section id="practical-applications-of-variant-calling" class="level3">
+<h3 class="anchored" data-anchor-id="practical-applications-of-variant-calling">3. Practical Applications of Variant Calling</h3>
+<p>Genetic data is essential for a wide range of applications that help us understand and utilize biological diversity. It enables <strong>disease diagnosis</strong> by identifying genetic mutations linked to specific conditions, supports <strong>genotype-phenotype association studies</strong> to uncover the genetic basis of traits, and advances <strong>pharmacogenomics</strong> by guiding personalized medicine based on genetic profiles. In <strong>DNA forensics</strong>, genetic markers are used for individual identification, while in <strong>population genetics</strong> and <strong>evolutionary studies</strong>, they reveal patterns of ancestry, migration, and species divergence. Additionally, <strong>marker-assisted selection</strong> leverages genetic information to improve breeding outcomes in agriculture by selecting individuals with desirable traits.</p>
+</section>
+<section id="how-do-we-detect-change" class="level3">
+<h3 class="anchored" data-anchor-id="how-do-we-detect-change">How do we detect change?</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/genotyping.png" class="img-fluid figure-img" width="521"></p>
+<figcaption><strong>The evolution of genotyping technologies</strong></figcaption>
+</figure>
+</div>
+<p>This image above illustrates the evolution of <strong>genotyping technologies</strong>. Previously, genotyping was performed on a small scale using <strong>PCR amplification and agarose gel electrophoresis</strong>, which allowed detection of specific variants (e.g., A or C alleles) in <strong>hundreds of individuals</strong>. Today, high-throughput platforms such as the <strong>Affymetrix Human SNP Array 6.0</strong> and the <strong>Omni 5M Quad SNP Chip</strong> enable genotyping of <strong>millions of variants</strong> across <strong>thousands of individuals</strong> simultaneously. These modern microarray-based methods dramatically increase scale, efficiency, and data resolution, making them essential tools in large-scale genetic studies like genome-wide association studies (GWAS).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/next generation vs traditional.png" class="img-fluid figure-img" width="428"></p>
+<figcaption><strong>Next generation sequencing versus Sanger sequencing</strong></figcaption>
+</figure>
+</div>
+<p>The image above compares <strong>next-generation sequencing (NGS)</strong> and <strong>traditional Sanger sequencing</strong> in detecting a specific <strong>A &gt; C variant</strong>. The top panel shows NGS data with <strong>29X coverage</strong>, where multiple aligned reads consistently support the C allele at the variant position. The bottom panel displays a <strong>Sanger electropherogram</strong>, where the base change is visible as a peak shift at the same position. NGS offers higher throughput and greater coverage depth, allowing for more sensitive and accurate variant detection across the genome, while traditional sequencing is limited to single-gene or small-region analysis.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gel image.png" class="img-fluid figure-img" width="505"></p>
+<figcaption><strong>Gel image. This image shows an ABI 377 4% denaturing PAGE gel, used for analyzing microsatellite markers (STRs) in a DNA fragment analysis experiment. Different colors represent different markers: DYS19 and DYS388 (green), and DYS391 (blue), while TAMRA350 (red) serves as the internal lane standard for sizing. DNA fragments are separated by size in base pairs (bp), visible along the vertical axis. Each lane represents a different individual or sample, and the discrete colored bands indicate alleles of varying repeat lengths. This high-resolution method allows precise genotyping of STR loci, widely used in forensics, population genetics, and Y-chromosome haplotyping.</strong></figcaption>
+</figure>
+</div>
+</section>
+<section id="variant-calling-basics" class="level3">
+<h3 class="anchored" data-anchor-id="variant-calling-basics">4. Variant Calling Basics</h3>
+<p><strong>Variant calling</strong> is the process of identifying differences in DNA sequences by comparing a sample’s sequence to a <strong>reference genome</strong>. The goal is to determine the <strong>genotype</strong>—the specific combination of alleles—at each genomic position. In diploid organisms, which carry two copies of each chromosome, genotypes are classified as <strong>RR</strong> (homozygous reference), <strong>RA</strong> (heterozygous), or <strong>AA</strong> (homozygous alternate), based on whether the alleles match the reference (<strong>Ref</strong>) or differ (<strong>Alt</strong>). This analysis provides insight into an organism’s <strong>genetic makeup</strong>, enabling downstream applications such as disease association studies, ancestry inference, and personalized medicine.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ref and alt alleles.png" class="img-fluid figure-img"></p>
+<figcaption><strong>Reference and alternative alleles. This image illustrates how differences between a reference genome and a sequenced genome are represented in variant calling. Genotypes are shown with corresponding VCF notation (e.g., 0/0, 1/0, 1/1) and alternate allele dosage values (0, 1, 2), indicating homozygous reference, heterozygous, and homozygous alternate states, respectively.</strong></figcaption>
+</figure>
+</div>
+</section>
+<section id="the-variant-call-format-vcf" class="level3">
+<h3 class="anchored" data-anchor-id="the-variant-call-format-vcf">The <strong>Variant Call Format (VCF)</strong></h3>
+<p>The <strong>Variant Call Format (VCF)</strong> is a standardized text format used to store genetic variation data, including single nucleotide variants (SNVs), insertions, deletions, and structural variants. Each entry captures information about genomic position, reference and alternate alleles, quality metrics, and sample genotypes. Tools such as <strong>VCFTools</strong> (<a href="http://vcftools.sourceforge.net/" class="uri">http://vcftools.sourceforge.net/</a>) and <strong>vcfCTools</strong> (<a href="https://github.com/AlistairNWard/vcfCTools" class="uri">https://github.com/AlistairNWard/vcfCTools</a>) are widely used for processing, filtering, and analyzing VCF files.</p>
+</section>
+<section id="allelic-depth" class="level3">
+<h3 class="anchored" data-anchor-id="allelic-depth"><strong>Allelic depth</strong></h3>
+<p><strong>Allelic depth</strong> refers to the number of sequencing reads supporting each allele at a given genomic position. It is a key measure in variant calling, where <strong>variant depth</strong> typically indicates the <strong>average read coverage</strong> at that position, helping assess the confidence and reliability of the identified genetic variant.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/allelic depth.png" class="img-fluid figure-img" width="370"></p>
+<figcaption><strong>Allelic depth</strong></figcaption>
+</figure>
+</div>
+</section>
+<section id="germline-versus-somatic-mutations-1" class="level3">
+<h3 class="anchored" data-anchor-id="germline-versus-somatic-mutations-1"><strong>Germline versus somatic mutations</strong></h3>
+<p><strong>Germline and somatic mutations</strong> differ in their origin and variant calling expectations. In <strong>germline variant calling</strong>, the alternate allele frequency (AF) typically aligns with predictable ratios: <strong>0.0</strong> for homozygous reference (RR), <strong>1.0</strong> for homozygous alternate (AA), and <strong>0.5</strong> for heterozygous (RA), with minor deviations due to sequencing errors and sampling variability. In contrast, <strong>somatic variant calling</strong>, often used in cancer genomics, must account for <strong>variable allele frequencies</strong>, as mutations can be <strong>subclonal</strong> (present in a subset of cells) and influenced by <strong>admixture of normal and tumor cells</strong>. This makes somatic variant detection more complex and requires sensitive analytical methods.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/somatic mutations.png" class="img-fluid figure-img" width="476"></p>
+<figcaption><strong>Example of somatic mutations</strong></figcaption>
+</figure>
+</div>
+</section>
+<section id="naive-variant-calling-versus-fixed-allele-thresholds" class="level3">
+<h3 class="anchored" data-anchor-id="naive-variant-calling-versus-fixed-allele-thresholds"><strong>Naive variant calling versus fixed allele thresholds</strong></h3>
+<p><strong>Naive variant calling</strong> typically relies on straightforward interpretation of observed sequencing data, often assuming ideal conditions and using limited filtering or statistical modeling. In contrast, approaches using <strong>fixed allele thresholds</strong> apply predefined allele frequency cutoffs to assign genotypes—commonly using values like 0.0, 0.5, and 1.0 to denote homozygous reference, heterozygous, and homozygous alternate genotypes, respectively. While fixed thresholds simplify analysis, they may miss low-frequency variants or misclassify genotypes in noisy data, unlike more advanced methods that incorporate probabilistic models or quality metrics for greater accuracy.</p>
+<p>There are several problems associated with traditional variant calling methods that rely on hard thresholds. First, they often <strong>undercall heterozygotes</strong>, especially in <strong>low-coverage data</strong>, where insufficient read depth can make it difficult to detect both alleles. Second, using <strong>fixed quality cutoffs</strong> may <strong>discard valuable information</strong>, potentially overlooking true variants that fall just below the threshold. Lastly, these methods typically <strong>provide no measure of confidence</strong>, making it difficult to assess the reliability of the genotype calls or prioritize variants for further analysis.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fixed allele threshold.png" class="img-fluid figure-img" width="500"></p>
+<figcaption><strong>Example of fixed allele threshold.</strong></figcaption>
+</figure>
+</div>
+</section>
+<section id="base-quality-filtering" class="level3">
+<h3 class="anchored" data-anchor-id="base-quality-filtering"><strong>Base Quality Filtering</strong></h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/filter low base quality.png" class="img-fluid figure-img" width="466"></p>
+<figcaption><strong>Image showing filtering low base quality</strong></figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/quality by cycle.png" class="img-fluid figure-img" width="330"></p>
+<figcaption><strong>Image showing quality dropping with addition of more cycles</strong></figcaption>
+</figure>
+</div>
+<p>Before calling genotypes, it is essential to filter out <strong>low-quality base calls</strong> to ensure accurate variant detection. Sequencing errors are more likely to occur at low-quality positions, which can lead to incorrect genotype assignments. Base quality is measured using the <strong>Phred quality score</strong>, where higher scores indicate greater confidence in the accuracy of the base call. For example, a Q20 score corresponds to a 1% error rate (accuracy of 99%), while Q30 represents a 0.1% error rate. In practice, bases with a <strong>quality score below Q20</strong> are typically excluded from analysis. The figure above shows how base quality filtering improves allelic count accuracy and genotype prediction. The accompanying plot of <strong>average quality by sequencing cycle</strong> illustrates a common pattern: base quality is highest at the start of sequencing and declines toward the end. Applying this filter helps reduce noise and increases the reliability of variant calling results.</p>
+</section>
+<section id="variant-calling-models" class="level3">
+<h3 class="anchored" data-anchor-id="variant-calling-models">Variant calling models</h3>
+<p>More sophisticated models apply a statistical framework</p>
+<p><img src="images/formula1.png" class="img-fluid" width="296"></p>
+<p>To determine: 1. the most likely genotype g ∈ {RR, RA, AA} given the observed data D</p>
+<p><img src="images/formula3.png" class="img-fluid" width="176"></p>
+<ol start="2" type="1">
+<li>and the genotype quality</li>
+</ol>
+<p><img src="images/formula2.png" class="img-fluid" width="157"></p>
+<p><img src="images/formula4.png" class="img-fluid" width="266"></p>
+</section>
+<section id="genotype-likelihoods" class="level3">
+<h3 class="anchored" data-anchor-id="genotype-likelihoods"><strong>Genotype likelihoods</strong></h3>
+<p><strong>Genotype likelihoods</strong> are used to determine which of the possible genotypes—<strong>homozygous reference (RR)</strong>, <strong>heterozygous (RA)</strong>, or <strong>homozygous alternate (AA)</strong>—best explains the observed sequencing data. These likelihoods are calculated from sequence alignments and account for various sources of error, including <strong>base calling errors</strong>, <strong>mapping inaccuracies</strong>, <strong>random sampling fluctuations</strong>, and <strong>local misalignments</strong>, such as those corrected by <strong>base alignment quality (BAQ)</strong>. Alongside these likelihoods, <strong>prior probabilities</strong> estimate how likely a variant is to occur at a given site in the genome, often assuming <strong>Hardy-Weinberg equilibrium</strong></p>
+<p><img src="images/Hardy-Weinberg equilibrium.png" class="img-fluid" width="317"></p>
+<p>to model expected genotype frequencies based on allele frequency (f). These priors can also incorporate <strong>population-level genetic diversity</strong>. The combination of genotype likelihood and prior probability enables more accurate and confident genotype calling, as represented by the Bayesian formula</p>
+<p><img src="images/formula1.png" class="img-fluid" width="296"></p>
+</section>
+<section id="errors-in-variant-calling" class="level3">
+<h3 class="anchored" data-anchor-id="errors-in-variant-calling"><strong>Errors in variant calling</strong></h3>
+<p><strong>Errors in variant calling</strong> can arise from various sources, with <strong>homopolymers</strong> and <strong>tandem repeats</strong> being among the most problematic. These repetitive sequence regions are prone to <strong>systematic sequencing errors</strong>, where the sequencing technology struggles to accurately count the number of repeated bases. Additionally, <strong>mapping errors</strong> often occur in these regions, as reads may align incorrectly due to the repetitive nature of the DNA. These challenges can lead to <strong>false-positive</strong> or <strong>false-negative variant calls</strong>, underscoring the importance of using robust alignment algorithms and applying appropriate quality filters during variant analysis.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/errors.png" class="img-fluid figure-img"></p>
+<figcaption><strong>This figure illustrates different types of tandem repeats based on the unit size of the repeating DNA sequence. Homopolymers (unit size = 1) consist of a single nucleotide repeated multiple times, such as a stretch of adenines (A). Dinucleotide repeats (unit size = 2) involve two nucleotides, like AC, repeating in tandem. Trinucleotide repeats (unit size = 3) contain three nucleotides, such as ACG, repeated in sequence. The final category, tandem repeats, represents a general case with any repeat unit size (N), encompassing more complex and variable repeat structures.</strong></figcaption>
+</figure>
+</div>
+</section>
+<section id="variant-calling-workflows" class="level3">
+<h3 class="anchored" data-anchor-id="variant-calling-workflows">Variant calling workflows</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/variant calling workflows copy.png" class="img-fluid figure-img"></p>
+<figcaption><strong>Variant calling workflows</strong></figcaption>
+</figure>
+</div>
+<p>There are two major approaches to <strong>variant calling</strong>: <strong>mapping-based</strong> and <strong>assembly-based</strong>, each using either a <strong>linear reference genome</strong> or a <strong>pangenome</strong>. In mapping-based calling, raw sequencing reads are aligned directly to a reference genome. When using a <strong>linear reference</strong>, reads corresponding to novel insertions (e.g., sequence B) may remain <strong>unmapped</strong>, leading to <strong>missed variants</strong>. In contrast, mapping to a <strong>pangenome</strong>—which incorporates known genomic diversity—allows these sequences to align correctly, improving variant detection. In assembly-based calling, the genome is first assembled de novo and then aligned to either a linear or pangenome reference. This method can more accurately detect complex variants, such as insertions, by comparing <strong>assembled contigs</strong> to the reference. Overall, pangenome and assembly-based strategies enhance the sensitivity and completeness of variant discovery, especially in regions not well represented by a single linear reference.</p>
+</section>
+<section id="factors-to-consider-in-variant-calling" class="level3">
+<h3 class="anchored" data-anchor-id="factors-to-consider-in-variant-calling"><strong>Factors to Consider in Variant Calling</strong></h3>
+<p><strong>Variant calling</strong> is a complex process influenced by several technical and biological factors, and not all detected variants are real. Therefore, a <strong>filtering step</strong> is essential to eliminate <strong>false positives</strong>, which can arise from multiple sources. These include <strong>contamination</strong>, <strong>PCR amplification errors</strong>, and <strong>sequencing artifacts</strong>, especially in <strong>homopolymer regions</strong>. <strong>Mapping errors</strong> can occur in <strong>repetitive or structurally variable regions</strong>, and <strong>alignment issues</strong> often result in <strong>false SNPs near indels</strong> or <strong>ambiguous indel placements</strong>. Additionally, the concept of the <strong>callable genome</strong> is important—only certain regions of the genome can be confidently assessed. For example, the <strong>Genome in a Bottle (GIAB)</strong> project defines high-confidence regions that cover about <strong>89% of the reference genome</strong>, focusing on shorter, well-characterized intervals. These limitations must be considered when interpreting variant calls to ensure reliable genomic analysis.</p>
+</section>
+<section id="estimating-the-quality-of-called-snps" class="level3">
+<h3 class="anchored" data-anchor-id="estimating-the-quality-of-called-snps"><strong>Estimating the quality of called SNPs</strong></h3>
+<p>One common method for <strong>estimating the quality of called SNPs</strong> is by calculating the <strong>transitions-to-transversions (Ts/Tv) ratio</strong>. <strong>Transitions</strong> are substitutions between purines (A↔︎G) or between pyrimidines (C↔︎T), while <strong>transversions</strong> are substitutions between a purine and a pyrimidine (e.g., A↔︎C, G↔︎T). Transitions occur <strong>2 to 3 times more frequently</strong> than transversions in the genome. Therefore, a <strong>high Ts/Tv ratio</strong> is generally indicative of a <strong>high-quality SNP dataset</strong>, whereas a low ratio may suggest an excess of false-positive calls due to sequencing or alignment errors.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/transitions1.png" class="img-fluid figure-img" width="125"></p>
+<figcaption><strong>This image shows substitution patterns in random, normal, and ancient DNA. Normal DNA displays a strong bias for transitions (A↔︎G, C↔︎T), while ancient DNA shows even stronger C→T and G→A transitions due to damage. In contrast, random data shows uniform substitution frequencies, lacking the biological patterns seen in real samples.</strong></figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/transitions2.png" class="img-fluid figure-img" width="209"></p>
+<figcaption><strong>This image illustrates transitions (purine↔︎purine or pyrimidine↔︎pyrimidine, in blue) and transversions (purine↔︎pyrimidine, in red) among DNA bases. Transitions occur between A↔︎G and C↔︎T, while transversions involve exchanges like A↔︎C or G↔︎T. Base structures of adenine, guanine, cytosine, and thymine are also shown, categorised as purines or pyrimidines.</strong></figcaption>
+</figure>
+</div>
+</section>
+<section id="indel-calling-challenges" class="level3">
+<h3 class="anchored" data-anchor-id="indel-calling-challenges"><strong>Indel calling</strong> challenges</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/indel calling challenges.png" class="img-fluid figure-img" width="398"></p>
+<figcaption><strong>Indel calling challenges. This image highlights challenges in indel calling, showing multiple read alignments around a potential deletion. Inconsistent gaps and alignment shifts illustrate the ambiguity in representing indels, especially in repetitive regions.</strong></figcaption>
+</figure>
+</div>
+<p><strong>Indel calling</strong> presents significant challenges due to both biological and technical factors. Sequencing errors are more frequent in <strong>microsatellite regions</strong>, which are highly repetitive and prone to polymerase slippage. Furthermore, <strong>low reproducibility</strong> across variant callers—such as HapCaller, SOAPindel, and Scalpel—has been observed, with only <strong>37.1% agreement</strong> reported in a comparative study by Narzisi et al.&nbsp;(2014). One major difficulty lies in the <strong>mapping and alignment of reads containing indels</strong>, as aligners may favor aligning mismatches over introducing gaps, leading to incorrect or inconsistent representations. Additionally, <strong>indel representation can be ambiguous</strong>, complicating downstream analyses and standardization across tools.</p>
+</section>
+<section id="maximum-depth" class="level3">
+<h3 class="anchored" data-anchor-id="maximum-depth">Maximum depth</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/maximum depth.png" class="img-fluid figure-img"></p>
+<figcaption><strong>Maximum depth</strong></figcaption>
+</figure>
+</div>
+<p>The <strong>thousandfold increase in sequencing depth</strong> at certain genomic regions, as shown by the sharp spike in this plot, is often due to <strong>alignment artifacts</strong> or <strong>repetitive sequences</strong>. Common causes include:</p>
+<ul>
+<li><p><strong>Collapsed repeats</strong> – Reads from multiple identical or nearly identical regions in the genome map to a single location, artificially inflating coverage.</p></li>
+<li><p><strong>Segmental duplications</strong> – Highly similar duplicated sequences can confuse the aligner, leading to read pileups at one preferred site.</p></li>
+<li><p><strong>Low-complexity regions</strong> – Simple repetitive motifs (e.g., homopolymers) can attract misaligned reads.</p></li>
+<li><p><strong>Mapping bias</strong> – Aligners may preferentially map ambiguous reads to specific locations.</p></li>
+</ul>
+<p>These high-coverage anomalies are <strong>not biologically meaningful</strong> and must be carefully filtered during variant analysis to avoid false positives.</p>
+</section>
+<section id="mapping-errors" class="level3">
+<h3 class="anchored" data-anchor-id="mapping-errors">Mapping errors</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mapping error.png" class="img-fluid figure-img"></p>
+<figcaption><strong>An example of mapping errors</strong></figcaption>
+</figure>
+</div>
+<p>The image above compares <strong>RNA-Seq (top panel)</strong> and <strong>DNA-Seq (bottom panel)</strong> data from the same sample, aligned to the reference genome. The <strong>novel SNVs (single nucleotide variants)</strong> seen only in the <strong>RNA-Seq reads</strong> (e.g., consistent A&gt;G or T&gt;C changes not present in the DNA) likely represent <strong>RNA editing events</strong>, rather than true genomic mutations.</p>
+<ul>
+<li><p><strong>RNA editing</strong> can introduce sequence changes <strong>post-transcriptionally</strong> that are <strong>not encoded in the DNA</strong>.</p></li>
+<li><p>The <strong>DNA-Seq panel</strong> shows the <strong>reference sequence</strong> without these changes, confirming the absence of true genomic variation at those sites.</p></li>
+<li><p>These mismatches are <strong>reproducible across multiple RNA reads</strong>, strengthening the case that they are <strong>biological modifications</strong> rather than sequencing errors.</p></li>
+</ul>
+<p>Thus, these SNVs are best explained by <strong>post-transcriptional RNA editing</strong>, a common and functionally important phenomenon in some tissues and genes.</p>
+</section>
+<section id="strand-bias" class="level3">
+<h3 class="anchored" data-anchor-id="strand-bias">Strand bias</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/strand bias.png" class="img-fluid figure-img"></p>
+<figcaption><strong>Example of a strand bias</strong></figcaption>
+</figure>
+</div>
+<p>The image above shows a pileup of sequencing reads at a genomic locus, with a focus on a potential variant call. Here are key observations:</p>
+<ul>
+<li><p>The supposed variant (e.g., a C base differing from reference) appears only in the top strand of aligned reads.</p></li>
+<li><p>The alternate allele is supported exclusively by reads on one side of the coverage (left side), suggesting strand or positional bias.</p></li>
+</ul>
+<p>This is not a reliable or valid variant call. The variant lacks strand balance, shows positional bias, and may be the result of mapping artifacts or low-complexity sequence effects. Proper variant filtering would likely exclude this candidate.</p>
+</section>
+<section id="variant-distance-bias" class="level3">
+<h3 class="anchored" data-anchor-id="variant-distance-bias">Variant Distance Bias</h3>
+<p>Variant Distance Bias measures whether alternate alleles (variants) tend to cluster near the start or end of reads, or within a small region of the read, rather than being randomly distributed. A high VDB score (low bias) means variants are scattered randomly; a low VDB score indicates positional clustering, which is often a hallmark of artifacts.</p>
+<p><img src="images/variant distance bias.png" class="img-fluid" alt="Variant distance bias"> In the image above, in both RNA-seq replicates, the alternate allele (T) appears clustered at the start of the reads (left side of the alignments). In contrast, the DNA reads show no such variant and match the reference (C).</p>
+<p>The clustering of T bases suggests strong positional bias, which would trigger low VDB scores if passed through a variant caller like GATK or bcftools.</p>
+<p>This non-random distribution of variants across the read length is a classic red flag. While in this case, the clustering is due to a true biological RNA editing event, in general, low VDB scores can indicate:</p>
+<ul>
+<li><p>Technical artifacts (e.g., primer bias, reverse transcription errors)</p></li>
+<li><p>Systematic sequencing or alignment issues</p></li>
+<li><p>Or, real post-transcriptional modifications like RNA editing</p></li>
+</ul>
+</section>
+<section id="false-snps-caused-by-incorrect-alignment" class="level3">
+<h3 class="anchored" data-anchor-id="false-snps-caused-by-incorrect-alignment">False SNPs Caused by Incorrect Alignment</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/real SNPs.png" class="img-fluid figure-img"></p>
+<figcaption><strong>False SNPs. All the mismatches are clustered near an indel (a large gap in the alignment: —–), suggesting misalignment. The true variation is likely an indel, and the SNPs are artifacts of how the aligner tried to force the reads to match the reference. Using tools that perform local indel realignment or apply Base Alignment Quality (BAQ)) would likely correct these false mismatches.</strong></figcaption>
+</figure>
+</div>
+<p>False SNPs can arise from incorrect alignments, especially in regions with insertions, deletions, or low complexity. These alignment artifacts occur when sequencing reads are incorrectly matched to the reference genome, causing mismatches that appear as false single SNP. While multiple sequence alignment could reduce such errors by considering the context of all reads, it is computationally intensive and not practical for large-scale data. Instead, a more efficient approach is to apply Base Alignment Quality (BAQ), which adjusts the quality scores of bases that are likely misaligned. By downgrading the confidence of questionable base calls, BAQ helps prevent spurious SNP calls during variant analysis.</p>
+</section>
+<section id="the-future-of-variant-calling" class="level3">
+<h3 class="anchored" data-anchor-id="the-future-of-variant-calling">The future of variant calling</h3>
+<p>The future of variant calling is shifting toward more sophisticated methods that overcome the limitations of traditional, alignment-based approaches. Current tools rely heavily on aligners that process one read at a time and focus on individual sites, often missing the broader context of local haplotypes and linked variants. Emerging approaches like local de novo assembly-based variant callers (e.g., GATK HaplotypeCaller, Scalpel, Octopus) reconstruct short regions of the genome directly from reads, enabling simultaneous detection of SNPs, indels, MNPs, and small structural variants, while reducing false positives caused by misalignment. Additionally, variation graphs, which allow reads to align to a graph representation of multiple reference paths rather than a single linear genome, promise improved sensitivity and accuracy, particularly in complex or polymorphic regions.</p>
+</section>
+<section id="functional-annotation" class="level3">
+<h3 class="anchored" data-anchor-id="functional-annotation"><strong>Functional annotation</strong></h3>
+<p>Functional annotation is a critical step in variant interpretation, where additional biological context is added to variants stored in a VCF file. VCFs can include INFO tags (per variant site) and FORMAT tags (per sample) that describe features such as whether a variant is in a coding region, intron, or UTR, and predict the functional consequence—for example, whether the variant is synonymous, missense, or causes a start codon loss. While many tools exist for annotating VCF files, only a few are haplotype-aware, meaning they consider the combined effects of variants on the same haplotype. Notable tools include <a href="https://samtools.github.io/bcftools/howtos/csq-calling.html">BCFtools/csq</a> and <a href="https://www.ensembl.org/info/docs/tools/vep/haplo/index.html">VEP Haplosaurus</a>, which provide richer, more accurate annotations by evaluating variant effects in their haplotypic context, particularly in complex coding regions where combinations of variants can alter protein function.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/haplotype-aware annotation.png" class="img-fluid figure-img"></p>
+<figcaption><strong>Haplotype-aware annotation. A. A scenario where two variants appear to cause harmful amino acid changes (red), but only when interpreted individually. When considered together as part of the same haplotype, they restore the correct codon, resulting in a synonymous or tolerated amino acid change (green) B. A more complex example, where individual variants appear highly disruptive, altering the amino acid sequence across a large region. A haplotype-aware approach reveals that the combined variant effect is much less damaging than previously thought. C. A variant near an intron-exon boundary. Interpreting this variant alone gives misleading results (e.g., introducing a premature stop codon). When all nearby variants are considered together in context, the predicted effect is a benign amino acid substitution.</strong></figcaption>
+</figure>
+</div>
+<p>You can read more about the typical variant calling process in the following article: Olson, N.D., Wagner, J., Dwarshuis, N. <em>et al.</em> Variant calling and benchmarking in an era of complete human genome sequences. <em>Nat Rev Genet</em> <strong>24</strong>, 464–483 (2023). <a href="https://www.nature.com/articles/s41576-023-00590-0">https://doi.org/10.1038/s41576-023-00590-0</a></p>
+</section>
+<section id="snps-in-ensembl---types" class="level3">
+<h3 class="anchored" data-anchor-id="snps-in-ensembl---types">SNPs in Ensembl - Types</h3>
+<p><a href="https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html" class="uri">https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html</a></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 27%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>SO Term</td>
+<td>SO Description</td>
+<td>SO Accession</td>
+<td>Display Term</td>
+<td>IMPACT</td>
+</tr>
+<tr class="even">
+<td>transcript_ablation</td>
+<td>A feature ablation whereby the deleted region includes a transcript feature</td>
+<td>SO:0001893</td>
+<td>Transcript ablation</td>
+<td>HIGH</td>
+</tr>
+<tr class="odd">
+<td>splice_acceptor_variant</td>
+<td>A splice variant that changes the 2 base region at the 3’ end of an intron</td>
+<td>SO:0001574</td>
+<td>Splice acceptor variant</td>
+<td>HIGH</td>
+</tr>
+<tr class="even">
+<td>splice_donor_variant</td>
+<td>A splice variant that changes the 2 base region at the 5’ end of an intron</td>
+<td>SO:0001575</td>
+<td>Splice donor variant</td>
+<td>HIGH</td>
+</tr>
+<tr class="odd">
+<td>stop_gained</td>
+<td>A sequence variant resulting in a premature stop codon</td>
+<td>SO:0001587</td>
+<td>Stop gained</td>
+<td>HIGH</td>
+</tr>
+<tr class="even">
+<td>frameshift_variant</td>
+<td>A sequence variant causing a disruption of the translational reading frame</td>
+<td>SO:0001589</td>
+<td>Frameshift variant</td>
+<td>HIGH</td>
+</tr>
+<tr class="odd">
+<td>stop_lost</td>
+<td>A sequence variant whereby the stop codon is changed resulting in the extension of the translated product</td>
+<td>SO:0001578</td>
+<td>Stop lost</td>
+<td>HIGH</td>
+</tr>
+<tr class="even">
+<td>start_lost</td>
+<td>A sequence variant whereby the start codon is changed</td>
+<td>SO:0002012</td>
+<td>Start lost</td>
+<td>HIGH</td>
+</tr>
+<tr class="odd">
+<td>transcript_amplification</td>
+<td>A feature amplification of a region containing a transcript</td>
+<td>SO:0001889</td>
+<td>Transcript amplification</td>
+<td>HIGH</td>
+</tr>
+<tr class="even">
+<td>inframe_insertion</td>
+<td>An inframe non-disruptive insertion of bases into the coding sequence</td>
+<td>SO:0001821</td>
+<td>Inframe insertion</td>
+<td>MODERATE</td>
+</tr>
+<tr class="odd">
+<td>inframe_deletion</td>
+<td>An inframe non-disruptive deletion of bases from the coding sequence</td>
+<td>SO:0001822</td>
+<td>Inframe deletion</td>
+<td>MODERATE</td>
+</tr>
+<tr class="even">
+<td>missense_variant</td>
+<td>A sequence variant that changes one or more amino acids in a protein</td>
+<td>SO:0001583</td>
+<td>Missense variant</td>
+<td>MODERATE</td>
+</tr>
+<tr class="odd">
+<td>protein_altering_variant</td>
+<td>A sequence variant that is predicted to change the protein sequence</td>
+<td>SO:0001818</td>
+<td>Protein altering variant</td>
+<td>MODERATE</td>
+</tr>
+<tr class="even">
+<td>splice_region_variant</td>
+<td>A sequence variant in which a change has occurred within the region of the splice site</td>
+<td>SO:0001630</td>
+<td>Splice region variant</td>
+<td>LOW</td>
+</tr>
+<tr class="odd">
+<td>synonymous_variant</td>
+<td>A sequence variant where there is no resulting change to the encoded amino acid</td>
+<td>SO:0001819</td>
+<td>Synonymous variant</td>
+<td>LOW</td>
+</tr>
+<tr class="even">
+<td>5_prime_UTR_variant</td>
+<td>A UTR variant of the 5’ untranslated region</td>
+<td>SO:0001623</td>
+<td>5’ UTR variant</td>
+<td>MODIFIER</td>
+</tr>
+<tr class="odd">
+<td>3_prime_UTR_variant</td>
+<td>A UTR variant of the 3’ untranslated region</td>
+<td>SO:0001624</td>
+<td>3’ UTR variant</td>
+<td>MODIFIER</td>
+</tr>
+<tr class="even">
+<td>intron_variant</td>
+<td>A sequence variant occurring within an intron</td>
+<td>SO:0001627</td>
+<td>Intron variant</td>
+<td>MODIFIER</td>
+</tr>
+<tr class="odd">
+<td>upstream_gene_variant</td>
+<td>A sequence variant located upstream of a gene</td>
+<td>SO:0001631</td>
+<td>Upstream gene variant</td>
+<td>MODIFIER</td>
+</tr>
+<tr class="even">
+<td>downstream_gene_variant</td>
+<td>A sequence variant located downstream of a gene</td>
+<td>SO:0001632</td>
+<td>Downstream gene variant</td>
+<td>MODIFIER</td>
+</tr>
+<tr class="odd">
+<td>intergenic_variant</td>
+<td>A sequence variant located in the intergenic region</td>
+<td>SO:0001628</td>
+<td>Intergenic variant</td>
+<td>MODIFIER</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="variant-pathogenicity" class="level3">
+<h3 class="anchored" data-anchor-id="variant-pathogenicity"><strong>Variant pathogenicity</strong></h3>
+<p>Variant pathogenicity refers to the classification of genetic variants based on their potential to cause disease. Variants are typically categorized into five main groups. Pathogenic variants are known to cause disease, while likely pathogenic variants are suspected to be harmful but lack full evidence. On the opposite end, benign variants are considered non-disease causing, and likely benign variants are those unlikely to be associated with disease. The most ambiguous category is Variants of Uncertain Significance (VUS), which lack sufficient evidence for classification or show conflicting features of both pathogenic and benign variants. These classifications are essential for clinical decision-making and genetic counseling.</p>
+<p><strong>Classification of Disease Variants (ACMG/AMP Guidelines)</strong></p>
+<p>(Richards S, Aziz N, Bale S, et al.&nbsp;(2015). Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation. <em>Genetics in Medicine</em>, 17(5), 405–424. <a href="https://doi.org/10.1038/gim.2015.30" class="uri">https://doi.org/10.1038/gim.2015.30</a>)</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 31%">
+<col style="width: 22%">
+<col style="width: 22%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Category</td>
+<td>Description</td>
+<td>Interpretation</td>
+<td>Clinical Actionability</td>
+</tr>
+<tr class="even">
+<td>Pathogenic</td>
+<td>Strong evidence supports a disease-causing role.</td>
+<td>Disease-causing</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Likely Pathogenic</td>
+<td>Evidence suggests the variant is likely to cause disease.</td>
+<td>Probably disease-causing</td>
+<td>Often</td>
+</tr>
+<tr class="even">
+<td>Uncertain Significance (VUS)</td>
+<td>Limited/conflicting evidence; cannot classify as pathogenic or benign.</td>
+<td>Unknown effect</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>Likely Benign</td>
+<td>Evidence indicates it is probably not disease-causing.</td>
+<td>Probably benign</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Benign</td>
+<td>Strong evidence shows the variant is not associated with disease.</td>
+<td>Not disease-causing</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="human-population-specific-variation" class="level2">
+<h2 class="anchored" data-anchor-id="human-population-specific-variation"><strong>Human Population Specific Variation</strong></h2>
+<section id="genomes-project" class="level3">
+<h3 class="anchored" data-anchor-id="genomes-project"><strong>1000 Genomes Project</strong></h3>
+<p><strong>(<a href="http://www.internationalgenome.org/" class="uri">http://www.internationalgenome.org/</a>):</strong><br>
+</p>
+<p>This global collaboration catalogs human genetic variation across diverse populations. It provides open-access data on common and rare variants, supporting studies in population genetics, ancestry, and disease. The project has greatly advanced our understanding of population-specific variation by sequencing individuals from over 25 populations.</p>
+</section>
+<section id="gnomad" class="level3">
+<h3 class="anchored" data-anchor-id="gnomad"><strong>gnomAD</strong></h3>
+<p><strong>(<a href="https://gnomad.broadinstitute.org/" class="uri">https://gnomad.broadinstitute.org/</a>):</strong><br>
+</p>
+<p>The Genome Aggregation Database (gnomAD) aggregates and harmonizes exome and genome sequencing data from over 140,000 individuals. It provides allele frequencies across populations, helping researchers filter out common variants in rare disease studies and identify population-specific variation, making it a crucial reference for clinical and research genomics.</p>
+</section>
+<section id="ensembl-variation" class="level3">
+<h3 class="anchored" data-anchor-id="ensembl-variation"><strong>Ensembl Variation</strong></h3>
+<p><strong>(<a href="https://grch37.ensembl.org/info/genome/variation/index.html" class="uri">https://grch37.ensembl.org/info/genome/variation/index.html</a>):</strong><br>
+</p>
+<p>Ensembl Variation provides access to annotated genetic variants across species, with a focus on human data. It integrates information from projects like dbSNP and 1000 Genomes, offering functional annotations, allele frequencies, and phenotype associations, helping researchers explore the genomic context and population distribution of variants.</p>
+</section>
+<section id="references-and-additional-resources" class="level3">
+<h3 class="anchored" data-anchor-id="references-and-additional-resources">References and Additional Resources</h3>
+<p>Olson, N.D., et al.&nbsp;(2023) Nature Reviews Genetics 24:464–483.</p>
+<p>The 1000 Genomes Project Consortium. (2015) Nature 526:68–74.</p>
+<p>Cann, H.M., et al.&nbsp;(2002) Science 296:261–262. (HGDP-CEPH)</p>
+<p>Ensembl Variation documentation: https://www.ensembl.org/info/docs/variation/index.html</p>
+<p>BCFtools: <a href="https://github.com/samtools/bcftools" class="uri">https://github.com/samtools/bcftools</a></p>
+<p>VEP (Variant Effect Predictor): <a href="https://github.com/willmclaren/ensembl-vep" class="uri">https://github.com/willmclaren/ensembl-vep</a></p>
+<p>gnomAD: <a href="https://gnomad.broadinstitute.org/about" class="uri">https://gnomad.broadinstitute.org/about</a></p>
+<p>For course-related inquiries, contact: qasim.ayub@monash.edu</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../course_modules/Module3/module3.html" class="pagination-link" aria-label="Overview">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Overview</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../course_modules/Module3/module3_exercises.html" class="pagination-link" aria-label="Exercises">
+        <span class="nav-page-text">Exercises</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>This work is licensed under a Creative Commons Attribution 4.0 International License. Reuse is encouraged with acknowledgement</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

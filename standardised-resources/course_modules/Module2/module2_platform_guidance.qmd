@@ -1,0 +1,12 @@
+---
+title: "Platform guidance"
+format: html
+---
+
+This exercise can be done on any Unix-like environment (Linux, macOS, or Windows 10+ with WSL). Ensure BWA and Samtools are installed.
+
+Alternatively, use the provided Docker image or a cloud-based environment (e.g., a pre-configured GitHub Codespace) which has these tools pre-installed.
+
+IGV is a Java-based tool available on all major OS; ensure learners have it installed or use IGV-Web if installation is an issue.\
+\
+\

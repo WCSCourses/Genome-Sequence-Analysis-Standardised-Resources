@@ -1,0 +1,18 @@
+---
+title: "Instructor notes"
+format: html
+---
+
+**Clarify Jargon:** The field has a lot of terminology (SNV vs SNP, mutation vs variant, etc.). Take time to clarify these. A tip for trainers is to gauge the audience’s background – if they seem lost in terminology, use simpler language or analogies (e.g., “think of the reference genome as a book and a variant as a typo or an extra sentence in your copy compared to the reference copy”).
+
+**Common Misconceptions:** Address the idea that variant calling is always straightforward. For instance, explain why repetitive regions are hard for variant callers, or why a variant in only 2 out of 20 reads might be a false positive (or a low-frequency mosaic variant depending on context). Encourage questions like “what if two variant callers disagree?” to discuss reliability.
+
+**Interactive Discussion:** When covering variant annotation, rather than just lecturing, ask the group how they would prioritize variants if given thousands of results. This can lead into explaining annotation, databases, and predicting impact. It keeps learners engaged and thinking like a researcher.
+
+**Link to Downstream Analysis:** Note to instructors: highlight that variant calling is not the end – results must be filtered and interpreted. If there’s a subsequent module on interpretation or clinical genomics, mention that connection. If not, at least mention what one would do next (validation experiments, etc.),
+
+**Trainer Tips**
+
+-   When discussing mutation types, ask learners for examples of diseases or traits known to be caused by each type (e.g., a single nucleotide change causing sickle-cell anemia). This makes it more relatable.
+
+-   During variant calling theory, mention common misconceptions: “Learners may think all variants are found with 100% certainty. Emphasize the uncertainties and the need for quality scores/filters.

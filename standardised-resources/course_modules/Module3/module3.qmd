@@ -1,0 +1,81 @@
+---
+title: "Overview"
+format: html
+---
+
+# Module Title
+
+**Variant calling**
+
+# Authors
+
+Content by Qasim Ayub, qasim.ayub\@monash.edu
+
+# Duration
+
+3h
+
+# Key topics
+
+In this module, learners will look at
+
+-   DNA variation
+
+-   Variant calling basics and steps in variant detection
+
+-   Common sources of error in variant calling
+
+-   Population level variant data, genomic context and clinical relevance of variants.
+
+# Learning outcomes
+
+By the end of this module, you should be able to:
+
+-   Understand various types of variation and how they are ascertained.
+-   Understand how variant calls are made.
+-   Assess variant quality and visualise variants.
+-   Annotate variants and assess consequences.
+
+# Activities
+
+-   Lecture 0.5h
+
+-   Practical exercises 2h
+
+-   Quiz 0.5h
+
+# Manual and practical exercises
+
+[Module manual](module3_manual.qmd)
+
+[Exercises](module3_exercises.qmd)
+
+[Solutions](module3_solutions.qmd)
+
+# Presentation slides
+
+(PPT/PDF, to be generated from the module manual)
+
+# Lecture notes or scripts
+
+Pre-recorded lecture
+
+# Assessment quiz
+
+[Questions](module3_assessment.qmd)
+
+[Answers](module3_assessement_answers.qmd)
+
+# Summary of this module
+
+# Teaching guidance
+
+[Instructor notes](module3_instructor_notes.qmd)
+
+# Datasets
+
+Practice files for this module can be found on [Github](https://github.com/WCSCourses/Precourses_DataRepo/tree/main/course_data_2025/linux_googlecolab_data).
+
+# Platform Guidance
+
+[Guide](module3_platform_guidance.qmd)

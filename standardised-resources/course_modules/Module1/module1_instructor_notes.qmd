@@ -1,0 +1,16 @@
+---
+title: "Instructor notes"
+format: html
+---
+
+Learners often confuse FASTA vs FASTQ. Emphasize that FASTA has no quality scores, whereas FASTQ includes them
+
+**Trainer Tips:**
+
+**Use Visual Aids:** When teaching, show real examples. For instance, open a FASTQ file in a text editor or slide to illustrate the four-line structure. If possible, bring up an ASCII table chart during the quality score discussion so learners can see character codes.
+
+**Emphasize Connections:** Tie this module to downstream analysis – e.g., explain that understanding FASTQ is foundational since those files feed into aligners (module 2) and BAM files produced will be used in variant calling (module 3). This helps learners see the big picture pipeline.
+
+**Interactive Demonstration**: If time and resources allow, demonstrate using head/tail or samtools view commands on a sample file in class. For instance, show the first reads of a FASTQ and how they appear in a SAM after alignment, to reinforce how the formats are connected. This live demo can engage learners and clarify abstract concepts.
+
+**Link to QC:** Even though explicit quality control tools (e.g., FastQC) were not covered in text, you can mention them verbally. E.g., “After obtaining FASTQ files, typically one would run quality control (FastQC) to get an overview of base quality distribution.” This sets the stage that file formats are not just static info, but used in workflows.

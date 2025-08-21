@@ -1,0 +1,6 @@
+---
+title: "Platform guidance"
+format: html
+---
+
+For the hands-on exercise, you will need a variant calling tool (such as bcftools or GATK) and a visualization tool (IGV) installed. These run on Linux/Mac, and Windows users can use WSL or a Docker container we provide.

@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Manual – Genome Sequence Analysis Course</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../course_modules/Module7/module7_exercises.html" rel="next">
+<link href="../../course_modules/Module7/module7.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../site_libs/quarto-contrib/quarto-project/img/WCS_Logo-Primary_Black.jpg" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Genome Sequence Analysis Course</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../welcome.html"> 
+<span class="menu-text">Learning paths</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-modules" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Modules</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-modules">    
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module1/module1.html">
+ <span class="dropdown-text">File formats</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module2/module2.html">
+ <span class="dropdown-text">Reads alignment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module3/module3.html">
+ <span class="dropdown-text">Variant calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module4/module4.html">
+ <span class="dropdown-text">Structural Variation Calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module5/module5.html">
+ <span class="dropdown-text">Genome assembly</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module6/module6.html">
+ <span class="dropdown-text">RNA-seq</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module7/module7.html">
+ <span class="dropdown-text">CHiP-Seq</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Glossary/glossary.html">
+ <span class="dropdown-text">Glossary of terms</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-informatics-guide" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Informatics Guide</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-informatics-guide">    
+        <li>
+    <a class="dropdown-item" href="../../course_modules/VM_guide/VM_Guide.html">
+ <span class="dropdown-text">How to setup a VM</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/VM_guide/Software_list.html">
+ <span class="dropdown-text">Software list</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-train-the-trainer" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Train-the-trainer</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-train-the-trainer">    
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Train-the-trainer/introduction.html">
+ <span class="dropdown-text">Introduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Train-the-trainer/strategies.html">
+ <span class="dropdown-text">Strategies for training professionals</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Train-the-trainer/elements.html">
+ <span class="dropdown-text">Elements of effective training</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Train-the-trainer/training_design.html">
+ <span class="dropdown-text">Training design</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../course_modules/Module7/module7.html">CHiP-Seq</a></li><li class="breadcrumb-item"><a href="../../course_modules/Module7/module7_manual.html">Manual</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">File formats</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Read alignment</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Variant calling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Structural Variation Calling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Genome Assembly</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">RNA-Seq</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">CHiP-Seq</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_manual.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">How to setup a VM</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/VM_guide/VM_Guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Oracle VM VirtualBox Installation Guide</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/VM_guide/Software_list.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Software list</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Train-the-trainer</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Train-the-trainer/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Train-the-trainer/strategies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Strategies for training professionals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Train-the-trainer/elements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Elements of effective training</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Train-the-trainer/training_design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training design</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Contributors</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../meet the team.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#transcriptional-regulation-and-chromatin-interactions" id="toc-transcriptional-regulation-and-chromatin-interactions" class="nav-link active" data-scroll-target="#transcriptional-regulation-and-chromatin-interactions">Transcriptional Regulation and Chromatin Interactions</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a>
+  <ul class="collapse">
+  <li><a href="#applications-of-chip-seq" id="toc-applications-of-chip-seq" class="nav-link" data-scroll-target="#applications-of-chip-seq">Applications of <strong>ChiP-seq</strong></a></li>
+  <li><a href="#chip-seq-for-transcription-factors-key-considerations-and-applications" id="toc-chip-seq-for-transcription-factors-key-considerations-and-applications" class="nav-link" data-scroll-target="#chip-seq-for-transcription-factors-key-considerations-and-applications">ChIP-seq for Transcription Factors: Key Considerations and Applications</a></li>
+  <li><a href="#histone-modifications-and-their-detection-by-chip-seq" id="toc-histone-modifications-and-their-detection-by-chip-seq" class="nav-link" data-scroll-target="#histone-modifications-and-their-detection-by-chip-seq">Histone Modifications and Their Detection by ChIP-seq</a></li>
+  <li><a href="#epigenetic-jargon-cheat-sheet" id="toc-epigenetic-jargon-cheat-sheet" class="nav-link" data-scroll-target="#epigenetic-jargon-cheat-sheet">Epigenetic jargon cheat-sheet</a></li>
+  <li><a href="#the-histone-code-and-chromatin-state-annotation" id="toc-the-histone-code-and-chromatin-state-annotation" class="nav-link" data-scroll-target="#the-histone-code-and-chromatin-state-annotation">The Histone Code and Chromatin State Annotation</a></li>
+  <li><a href="#histone-mark-cheat-sheet" id="toc-histone-mark-cheat-sheet" class="nav-link" data-scroll-target="#histone-mark-cheat-sheet">Histone mark cheat sheet</a></li>
+  <li><a href="#chip-seq-experimental-considerations" id="toc-chip-seq-experimental-considerations" class="nav-link" data-scroll-target="#chip-seq-experimental-considerations">ChIP-seq Experimental Considerations</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
+  <li><a href="#signal-vs.-noise-in-chip-seq-experiments" id="toc-signal-vs.-noise-in-chip-seq-experiments" class="nav-link" data-scroll-target="#signal-vs.-noise-in-chip-seq-experiments">Signal vs.&nbsp;Noise in ChIP-seq Experiments</a></li>
+  <li><a href="#frip-score-and-library-complexity" id="toc-frip-score-and-library-complexity" class="nav-link" data-scroll-target="#frip-score-and-library-complexity">FRiP Score and Library Complexity</a></li>
+  <li><a href="#measuring-library-complexity-and-basic-chip-seq-data-analysis" id="toc-measuring-library-complexity-and-basic-chip-seq-data-analysis" class="nav-link" data-scroll-target="#measuring-library-complexity-and-basic-chip-seq-data-analysis">Measuring Library Complexity and Basic ChIP-seq Data Analysis</a></li>
+  <li><a href="#visualisation-of-chip-seq-data-in-genome-browsers" id="toc-visualisation-of-chip-seq-data-in-genome-browsers" class="nav-link" data-scroll-target="#visualisation-of-chip-seq-data-in-genome-browsers">Visualisation of ChIP-seq Data in Genome Browsers</a></li>
+  <li><a href="#peak-calling-in-chip-seq-analysis" id="toc-peak-calling-in-chip-seq-analysis" class="nav-link" data-scroll-target="#peak-calling-in-chip-seq-analysis">Peak Calling in ChIP-seq Analysis</a></li>
+  <li><a href="#motif-analysis-in-chip-seq" id="toc-motif-analysis-in-chip-seq" class="nav-link" data-scroll-target="#motif-analysis-in-chip-seq">Motif Analysis in ChIP-seq</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../course_modules/Module7/module7.html">CHiP-Seq</a></li><li class="breadcrumb-item"><a href="../../course_modules/Module7/module7_manual.html">Manual</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Manual</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="transcriptional-regulation-and-chromatin-interactions" class="level3">
+<h3 class="anchored" data-anchor-id="transcriptional-regulation-and-chromatin-interactions">Transcriptional Regulation and Chromatin Interactions</h3>
+<p><img src="images/ChiP.png" class="img-fluid" width="384"></p>
+<p>Transcriptional regulation in eukaryotic cells is a dynamic process governed by the interaction between DNA and specific regulatory proteins, most notably transcription factors (TFs). These proteins recognize and bind to specific DNA sequences, typically located in accessible regions of chromatin. Chromatin can exist in a compact (heterochromatin) or relaxed (euchromatin) state, with the latter allowing regulatory proteins to access the DNA.</p>
+<p>Regions of open chromatin are often characterized by DNase I hypersensitivity, meaning they are more readily cleaved by the DNase I enzyme due to reduced nucleosome occupancy. These hypersensitive sites frequently correspond to functionally important regulatory elements, such as promoters, enhancers, silencers, and insulators (Gross &amp; Garrard, 1988).</p>
+<p>To study these protein–DNA interactions in a cellular context, researchers use Chromatin Immunoprecipitation (ChIP). This technique involves crosslinking DNA and associated proteins, fragmenting the chromatin, and using antibodies specific to the protein of interest to isolate the bound DNA fragments. These fragments can then be analyzed by quantitative PCR, microarray (ChIP-chip), or sequencing (ChIP-seq), allowing for genome-wide mapping of protein-binding sites (Orlando, 2000; Barski et al., 2007; Johnson et al., 2007).</p>
+<p><strong>References:</strong></p>
+<p>Gross, D. S., &amp; Garrard, W. T. (1988). Nuclease hypersensitive sites in chromatin. <em>Annual Review of Biochemistry</em>, 57(1), 159–197.</p>
+<p>Orlando, V. (2000). Mapping chromosomal proteins in vivo by formaldehyde-crosslinked-chromatin immunoprecipitation. <em>Trends in Biochemical Sciences</em>, 25(3), 99–104.</p>
+<p>Barski, A., et al.&nbsp;(2007). High-resolution profiling of histone methylations in the human genome. <em>Cell</em>, 129(4), 823–837.</p>
+<p>Johnson, D. S., et al.&nbsp;(2007). Genome-wide mapping of in vivo protein-DNA interactions. <em>Science</em>, 316(5830), 1497–1502.</p>
+<p>Here is an instructional text suitable for a teaching module, explaining how ChIP-seq works, based on the concepts illustrated in your figure:</p>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+<p>Overview of ChIP-seq: Chromatin Immunoprecipitation Followed by Sequencing</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ChiP-seq.png" class="img-fluid figure-img" width="258"></p>
+<figcaption><strong>ChiP-seq</strong></figcaption>
+</figure>
+</div>
+<p>Chromatin Immunoprecipitation followed by sequencing (ChIP-seq) is a powerful method used to analyze protein-DNA interactions on a genome-wide scale. It allows researchers to determine the binding sites of DNA-associated proteins, such as transcription factors and histone modifications, across the entire genome (Johnson et al., 2007; Barski et al., 2007).</p>
+<p>The ChIP-seq workflow consists of five main steps:</p>
+<p><strong>Crosslinking and Chromatin Shearing</strong>: Cells are first treated with a crosslinking agent, typically formaldehyde, to stabilize protein-DNA interactions. The chromatin is then sheared into small fragments via sonication or enzymatic digestion (Solomon et al., 1988).</p>
+<p><strong>Formation of DNA-Protein Complexes</strong>: The fragmented chromatin contains various protein-DNA complexes that reflect in vivo interactions.</p>
+<p><strong>Immunoprecipitation</strong>: Specific antibodies are used to selectively enrich DNA fragments bound by the protein of interest. These antibodies recognize and bind to the target protein, allowing the associated DNA to be co-precipitated and separated from non-specific chromatin (Orlando, 2000).</p>
+<p><strong>DNA Purification and Sequencing</strong>: The crosslinks are reversed, and the purified DNA is subjected to high-throughput sequencing, producing millions of short reads that represent the protein-bound regions.</p>
+<p><strong>Data Analysis and Mapping</strong>: The sequencing reads are aligned to a reference genome to identify regions of enrichment—termed “peaks”—which indicate protein-binding sites. These data are further analyzed to determine patterns of binding and regulatory function (Park, 2009).</p>
+<p><strong>References:</strong></p>
+<p>Johnson, D. S., Mortazavi, A., Myers, R. M., &amp; Wold, B. (2007). Genome-wide mapping of in vivo protein-DNA interactions. <em>Science</em>, 316(5830), 1497–1502.</p>
+<p>Barski, A., Cuddapah, S., Cui, K., Roh, T. Y., Schones, D. E., Wang, Z., … &amp; Zhao, K. (2007). High-resolution profiling of histone methylations in the human genome. <em>Cell</em>, 129(4), 823–837.</p>
+<p>Orlando, V. (2000). Mapping chromosomal proteins in vivo by formaldehyde-crosslinked-chromatin immunoprecipitation. <em>Trends in Biochemical Sciences</em>, 25(3), 99–104.</p>
+<p>Park, P. J. (2009). ChIP-seq: advantages and challenges of a maturing technology. <em>Nature Reviews Genetics</em>, 10(10), 669–680.</p>
+<p>Solomon, M. J., Larsen, P. L., &amp; Varshavsky, A. (1988). Mapping protein-DNA interactions in vivo with formaldehyde: evidence that histone H4 is retained on a highly transcribed gene. <em>Cell</em>, 53(6), 937–947.</p>
+<section id="applications-of-chip-seq" class="level3">
+<h3 class="anchored" data-anchor-id="applications-of-chip-seq">Applications of <strong>ChiP-seq</strong></h3>
+<p>ChIP-seq is a widely used technique for identifying gene regulatory regions by mapping protein–DNA interactions across the genome. It is particularly valuable for studying transcription factors, which bind specific DNA sequences to regulate gene expression, and histone modifications, which influence chromatin structure and accessibility. By capturing these interactions, ChIP-seq provides insights into the mechanisms controlling gene activity, making it a fundamental tool in functional genomics, epigenetics, and developmental biology.</p>
+</section>
+<section id="chip-seq-for-transcription-factors-key-considerations-and-applications" class="level3">
+<h3 class="anchored" data-anchor-id="chip-seq-for-transcription-factors-key-considerations-and-applications">ChIP-seq for Transcription Factors: Key Considerations and Applications</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ChiP-seq for transcription factors.png" class="img-fluid figure-img" width="367"></p>
+<figcaption><strong>ChiP-seq for transcription factors</strong></figcaption>
+</figure>
+</div>
+<p>ChIP-seq is a powerful tool for studying transcription factors (TFs) and their roles in gene regulation. By identifying where TFs bind across the genome, researchers can infer regulatory networks and understand transcriptional control mechanisms in specific cellular contexts. Accurate ChIP-seq profiling of TFs critically depends on the availability of high-quality, ChIP-grade antibodies. Each TF requires a specific antibody with strong affinity and low background binding. However, only about 40% of commercially available antibodies meet the stringent criteria for ChIP-seq applications, making antibody validation a crucial step in experimental design (Landt et al., 2012). Poor-quality antibodies can result in nonspecific binding and misleading data, compromising the biological interpretation.</p>
+<p>When properly performed, ChIP-seq for transcription factors enables the discovery of regulatory elements, transcriptional enhancers, and promoter architecture, and facilitates the construction of gene regulatory networks essential for understanding cellular identity, development, and disease.</p>
+<p><strong>References:</strong></p>
+<p>Landt, S. G., et al.&nbsp;(2012). ChIP-seq guidelines and practices of the ENCODE and modENCODE consortia. <em>Genome Research</em>, 22(9), 1813–1831.</p>
+<p>Whyte, W. A., et al.&nbsp;(2013). Master transcription factors and mediator establish super-enhancers at key cell identity genes. <em>Cell</em>, 153(2), 307–319.</p>
+<p>Kim, T. H., &amp; Ren, B. (2006). Genome-wide analysis of protein-DNA interactions. <em>Annual Review of Genomics and Human Genetics</em>, 7, 81–102.</p>
+</section>
+<section id="histone-modifications-and-their-detection-by-chip-seq" class="level3">
+<h3 class="anchored" data-anchor-id="histone-modifications-and-their-detection-by-chip-seq">Histone Modifications and Their Detection by ChIP-seq</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Histone modifications.png" class="img-fluid figure-img" width="304"></p>
+<figcaption><strong>Histone modifications</strong></figcaption>
+</figure>
+</div>
+<p>In eukaryotic cells, DNA is wrapped around histone proteins to form nucleosomes, the fundamental units of chromatin. The histone tails—flexible amino-terminal regions of histone proteins—are subject to a variety of post-translational modifications, including methylation, acetylation, phosphorylation, and ubiquitination. These histone modifications play a central role in regulating chromatin structure and gene expression by influencing the accessibility of DNA to transcriptional machinery (Kouzarides, 2007).</p>
+<p>Specific histone modifications are associated with distinct functional states of chromatin. For example, trimethylation of lysine 4 on histone H3 (H3K4me3) is typically found near the promoters of actively transcribed genes, whereas trimethylation of H3K27 (H3K27me3) is associated with gene repression (Barski et al., 2007). These modifications serve as binding platforms for chromatin-associated proteins and contribute to the epigenetic regulation of gene activity.</p>
+<p>ChIP-seq can be used to map these modifications genome-wide by using antibodies that specifically recognize individual histone marks. These antibodies must be rigorously validated for ChIP-seq to ensure they bind selectively to the modification of interest without cross-reactivity. This approach enables researchers to define chromatin states, identify regulatory elements such as enhancers and promoters, and explore how epigenetic changes contribute to development and disease (Rando &amp; Chang, 2009).</p>
+<p><strong>References:</strong></p>
+<p>Kouzarides, T. (2007). Chromatin modifications and their function. <em>Cell</em>, 128(4), 693–705.</p>
+<p>Barski, A., et al.&nbsp;(2007). High-resolution profiling of histone methylations in the human genome. <em>Cell</em>, 129(4), 823–837.</p>
+<p>Rando, O. J., &amp; Chang, H. Y. (2009). Genome-wide views of chromatin structure. <em>Annual Review of Biochemistry</em>, 78, 245–271.</p>
+</section>
+<section id="epigenetic-jargon-cheat-sheet" class="level3">
+<h3 class="anchored" data-anchor-id="epigenetic-jargon-cheat-sheet">Epigenetic jargon cheat-sheet</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 86%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Regulatory Element</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Promoter</td>
+<td><p>DNA Sequence (100-1kb), initial secure binding site for: RNA Pol complex and Transfacs.</p>
+<p>Adjacent regulated gene, defined relative to TSS.</p>
+<p>Poised: simultaneous activation/repressive histone mods.</p></td>
+</tr>
+<tr class="even">
+<td>Enhancer/Silencer</td>
+<td><p>DNA Seq (50-1.5kb), bound by transfacs (activator / repressor)</p>
+<p>Can act on gene up to 1Mb away: DNA folding brings it close to promoter.</p>
+<p>Enhancer: Bound by activator, which interacts with complex initiating transcription.</p>
+<p>Silencer: bound by repressor, which interferes with GTF assembly.</p></td>
+</tr>
+<tr class="odd">
+<td>Insulator</td>
+<td>DNA, 300-2kb, Block enhancers from acting on promoters: positioned between enhancer and promoter, form chromatin-loop domains.</td>
+</tr>
+<tr class="even">
+<td>Polycomb-repressed</td>
+<td>Polycomb – group proteins actively remodel chromatin to silence genes.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-histone-code-and-chromatin-state-annotation" class="level3">
+<h3 class="anchored" data-anchor-id="the-histone-code-and-chromatin-state-annotation">The Histone Code and Chromatin State Annotation</h3>
+<p>Histone modifications can be used to define functional elements across the genome by decoding the so-called “histone code.” Specific combinations of histone marks are associated with distinct regulatory roles, such as promoters, enhancers, and repressive elements. The seminal work by Ernst et al.&nbsp;(2011) introduced a systematic method for interpreting these combinations using a computational approach called ChromHMM (Chromatin Hidden Markov Model).</p>
+<p>In this framework, ChIP-seq data for multiple histone modifications are collected across various cell types. For example, the analysis shown integrates data from 9 cell lines and 9 histone marks, including H3K4me1, H3K4me3, H3K27ac, H3K36me3, and others. These data are used to segment the genome into discrete chromatin states based on recurring patterns of histone modifications. Each chromatin state is then functionally annotated post hoc—for instance, State 1 corresponds to active promoters (high H3K4me3 and H3K27ac), while States 4 and 5 reflect strong enhancers (enriched in H3K4me1 and H3K27ac).</p>
+<p>This approach allows for genome-wide annotation of regulatory elements in an unsupervised manner, without prior knowledge of genomic function. Once chromatin states are defined, researchers can assess how often specific genomic features (e.g., TF binding sites) overlap with these states to infer biological relevance.</p>
+<p>By integrating epigenomic data into unified chromatin state models, this method provides a powerful tool for interpreting gene regulation and understanding the epigenetic landscape of different cell types.</p>
+<p><strong>References:</strong></p>
+<p>Ernst, J., &amp; Kellis, M. (2011). ChromHMM: automating chromatin-state discovery and characterization. <em>Nature Methods</em>, 9(3), 215–216.</p>
+<p>Bernstein, B. E., et al.&nbsp;(2007). The mammalian epigenome. <em>Cell</em>, 128(4), 669–681.</p>
+<p>Roadmap Epigenomics Consortium et al.&nbsp;(2015). Integrative analysis of 111 reference human epigenomes. <em>Nature</em>, 518(7539), 317–330.</p>
+</section>
+<section id="histone-mark-cheat-sheet" class="level3">
+<h3 class="anchored" data-anchor-id="histone-mark-cheat-sheet">Histone mark cheat sheet</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 39%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Histone mark</th>
+<th>Candidate State</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>H3K9me2,3</td>
+<td>-</td>
+<td>Silenced genes</td>
+</tr>
+<tr class="even">
+<td>H3K27me3</td>
+<td>Inactive/poised promoter, polycomb repressed</td>
+<td>Downregulation of nearby genes</td>
+</tr>
+<tr class="odd">
+<td>H3K36me3</td>
+<td>Transcriptional transition</td>
+<td>Actively transcribed gene bodies.</td>
+</tr>
+<tr class="even">
+<td>H4K20me1</td>
+<td>Transcriptional transition</td>
+<td>Transcriptional activation</td>
+</tr>
+<tr class="odd">
+<td>H3K4me1,2,3</td>
+<td>Strong enhancer</td>
+<td>Promoter of active genes</td>
+</tr>
+<tr class="even">
+<td>H3K27ac</td>
+<td>Active promoter/strong enhancer</td>
+<td>Active transcription</td>
+</tr>
+<tr class="odd">
+<td>H3K9ac</td>
+<td>Active promoter</td>
+<td>Switch from transcription initiation to elongation.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="chip-seq-experimental-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="chip-seq-experimental-considerations">ChIP-seq Experimental Considerations</h3>
+<p>Successful ChIP-seq experiments require careful optimization of several key parameters to ensure data quality and reproducibility. A critical factor is the <strong>quality of the antibody</strong> used for immunoprecipitation. Only high-affinity, ChIP-grade antibodies should be used, as approximately 60% of commercially available antibodies do not meet the required specificity and sensitivity standards, especially for transcription factors (Landt et al., 2012).</p>
+<p><strong>Cell number</strong> is another important consideration. For histone modification ChIP, 2–3 million cells are typically sufficient. However, transcription factor ChIP requires more material—often between 5 and 10 million cells—due to the lower abundance and weaker DNA-binding affinity of many TFs.</p>
+<p><strong>Crosslinking conditions</strong> must also be optimized. A standard protocol involves treating cells with 1% formaldehyde for about 10 minutes at room temperature to preserve protein-DNA interactions without causing excessive crosslinking, which can impair downstream shearing and DNA recovery.</p>
+<p>Finally, the <strong>fragmentation of chromatin</strong> by sonication or enzymatic digestion should be monitored to ensure consistent fragment sizes (typically 100–500 bp), which are necessary for optimal resolution and accurate peak calling. Fragment size should be confirmed before proceeding to immunoprecipitation and sequencing.</p>
+<p><strong>Reference:</strong></p>
+<p>Landt, S. G., et al.&nbsp;(2012). ChIP-seq guidelines and practices of the ENCODE and modENCODE consortia. <em>Genome Research</em>, 22(9), 1813–1831.</p>
+</section>
+<section id="section-1" class="level3">
+<h3 class="anchored" data-anchor-id="section-1"></h3>
+<p>Chromatin Shearing and Sequencing Considerations in ChIP-seq</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/shearing.png" class="img-fluid figure-img" width="320"></p>
+<figcaption><strong>Shearing</strong></figcaption>
+</figure>
+</div>
+<p>Effective chromatin shearing is essential for ChIP-seq success, as it determines the resolution and reliability of the resulting data. The <strong>target fragment size</strong> after shearing should fall within the 150–400 base pair (bp) range to ensure optimal resolution and efficient sequencing. Shearing efficiency can vary significantly depending on <strong>cell type, chromatin accessibility, and buffer conditions</strong>, so it must be empirically optimized.</p>
+<p>To achieve consistent shearing, vary the <strong>number of sonication cycles</strong> or digestion times, and evaluate results by running input DNA on a <strong>Bioanalyzer or agarose gel</strong>. This step is critical to confirm that the fragment size distribution is within the desired range and that over- or under-shearing is avoided.</p>
+<p>When proceeding to sequencing, <strong>longer reads</strong> improve the ability to uniquely map sequences to the genome, particularly in repetitive or complex regions. Additionally, <strong>paired-end (PE) reads</strong> are preferred over single-end (SE) reads, as PE sequencing increases mapping accuracy and helps resolve ambiguous regions by anchoring both ends of each DNA fragment.</p>
+</section>
+<section id="signal-vs.-noise-in-chip-seq-experiments" class="level3">
+<h3 class="anchored" data-anchor-id="signal-vs.-noise-in-chip-seq-experiments">Signal vs.&nbsp;Noise in ChIP-seq Experiments</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/signal-noise1.png" class="img-fluid figure-img" width="340"></p>
+<figcaption><strong>Signal to noise ratio in ChiP-seq experiments</strong></figcaption>
+</figure>
+</div>
+<p>In ChIP-seq, distinguishing true biological signal from background noise is essential for accurate interpretation of protein–DNA interactions. The signal represents DNA fragments that are specifically bound by the protein of interest and successfully captured during immunoprecipitation using a targeted antibody (step 3). These fragments are enriched in sequencing data and typically appear as peaks when mapped to the reference genome (step 5).</p>
+<p>In contrast, noise arises from non-specific DNA–protein interactions, incomplete washing, or the presence of DNA fragments not associated with the protein of interest. These fragments are also sequenced but contribute to background signal that can obscure true binding events (step 2). Noise can originate from non-specific antibody binding, over-crosslinking, or poor chromatin shearing, and must be minimized through careful optimization of experimental conditions.</p>
+<p>High signal-to-noise ratio is critical for reliable peak calling and downstream analyses. This can be achieved by using validated, high-affinity antibodies, optimizing crosslinking and shearing conditions, and including appropriate controls (e.g., input DNA or IgG controls). Computational tools further help in distinguishing true signal from noise during data analysis by modeling background distribution and correcting for technical artifacts.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/signal-noise2.png" class="img-fluid figure-img" width="313"></p>
+<figcaption><strong>Signal to noise ratio in ChiP-seq experiments</strong></figcaption>
+</figure>
+</div>
+<p>In the high signal-to-noise case (top panel), sequencing reads (represented as blue bars) are densely clustered over the true binding site—the genomic region where the protein of interest genuinely interacts with DNA. The surrounding regions show relatively few nonspecific reads, resulting in a distinct and confident peak that is easily identified during data analysis.</p>
+<p>In the low signal-to-noise case (bottom panel), the signal over the true binding site is diluted or obscured by widespread background noise—reads scattered across surrounding regions not bound by the protein of interest. This makes it harder to distinguish real binding events from artifacts, reducing the reliability of peak calling and biological interpretation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/signal-noise3.png" class="img-fluid figure-img" width="315"></p>
+<figcaption><strong>Signal to noise ration in ChiP-seq experiments</strong></figcaption>
+</figure>
+</div>
+<p>The signal-to-noise ratio in ChIP-seq data can be visually assessed using genome browser tracks, where sequencing reads are aligned and displayed across genomic regions. In the figure above, each horizontal track represents a different ChIP-seq experiment or sample. The vertical spikes indicate enrichment of sequencing reads, corresponding to protein–DNA binding events or histone modification peaks.</p>
+<p>A high signal-to-noise ratio is characterized by distinct, narrow peaks rising well above a low background, which is typically observed in well-optimized ChIP experiments using high-quality antibodies. These peaks clearly mark regions of specific protein-DNA interaction or histone modification.</p>
+<p>In contrast, high background noise, as indicated by the label on the right, results in elevated read coverage across large portions of the genome without clear peak definition. This can obscure true binding events and complicate data interpretation. High background may result from non-specific antibody binding, over-crosslinking, poor chromatin shearing, or insufficient washing during immunoprecipitation.</p>
+</section>
+<section id="frip-score-and-library-complexity" class="level3">
+<h3 class="anchored" data-anchor-id="frip-score-and-library-complexity">FRiP Score and Library Complexity</h3>
+<p>A key metric for evaluating ChIP-seq data quality is the FRiP score—Fragments In Peaks. This metric quantifies the proportion of total sequencing fragments that fall within confidently called peak regions, serving as a proxy for signal-to-noise ratio. It is calculated as:</p>
+<p>FRiP = (Number of fragments in peaks) / (Total number of mapped fragments)</p>
+<p>A FRiP score greater than 1% is generally considered acceptable, although higher values are expected in high-quality experiments, particularly for histone modifications and well-enriched transcription factors (Landt et al., 2012).</p>
+<p>Another important consideration is library complexity, which reflects how diverse the sequenced fragments are. Low complexity may indicate that too few unique DNA fragments were captured, often due to limited starting material or low antibody efficiency. This leads to excessive duplication and poor coverage.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/library complexity1.png" class="img-fluid figure-img" width="407"></p>
+<figcaption><strong>Library complexity. This figure illustrates the difference between high and low library complexity in ChIP-seq experiments. In the high complexity example (top), many unique DNA fragments are sequenced at the true binding site, providing a strong and reliable signal with broad coverage and minimal redundancy. In contrast, the low complexity example (bottom) shows the same fragment repeated many times—these are PCR duplicates, often resulting from limited starting material or poor immunoprecipitation efficiency. Although a signal is still detected at the true binding site, it lacks diversity and may artificially inflate peak strength while reducing biological confidence.</strong></figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/library complexity2.png" class="img-fluid figure-img" width="454"></p>
+<figcaption><strong>Library complexity. Tracks at the top display sharp, well-defined peaks and low background, indicating high complexity with many unique DNA fragments. In contrast, tracks at the bottom show broader, noisier profiles with less defined peaks—hallmarks of low complexity, often caused by excessive PCR duplication or insufficient starting material.</strong></figcaption>
+</figure>
+</div>
+</section>
+<section id="measuring-library-complexity-and-basic-chip-seq-data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="measuring-library-complexity-and-basic-chip-seq-data-analysis">Measuring Library Complexity and Basic ChIP-seq Data Analysis</h3>
+<p>A key metric for evaluating <strong>library complexity</strong> in ChIP-seq is the <strong>Non-Redundant Fraction (NRF)</strong>, which assesses how many unique fragments are present relative to the total number of reads. It is calculated as:</p>
+<p><strong>NRF = (Number of unique fragment positions) / (Total number of mapped fragments)</strong></p>
+<p>An NRF value <strong>greater than 0.8</strong> is recommended by ENCODE standards, indicating high library complexity and low duplication levels. Low NRF values suggest that a large proportion of reads are duplicates—often due to over-amplification or limited input material—and may compromise the quality of downstream analysis.</p>
+<p>Once data quality is confirmed, ChIP-seq analysis typically follows these key steps:</p>
+<p><strong>Read Alignment</strong>: Sequence reads are aligned to a reference genome using tools like BWA or Bowtie.</p>
+<p><strong>Visualization</strong>: Mapped reads are inspected in genome browsers (e.g., IGV, UCSC) to assess enrichment patterns and signal quality.</p>
+<p><strong>Peak Calling</strong>: Statistical algorithms (e.g., MACS2) are used to identify regions with significant read enrichment—representing protein–DNA binding sites or histone modification peaks.</p>
+<p><strong>Peak Annotation</strong>: Peaks are assigned to nearby genes or genomic features to interpret functional relevance.</p>
+<p><strong>Motif Analysis</strong>: For transcription factors, enriched sequence motifs can be identified within peaks using tools like MEME or HOMER.</p>
+<p><strong>Differential Binding Analysis</strong>: Comparative analysis between conditions (e.g., treated vs.&nbsp;control, naïve vs.&nbsp;stimulated) is performed to identify regions with statistically significant changes in binding patterns.</p>
+</section>
+<section id="visualisation-of-chip-seq-data-in-genome-browsers" class="level3">
+<h3 class="anchored" data-anchor-id="visualisation-of-chip-seq-data-in-genome-browsers">Visualisation of ChIP-seq Data in Genome Browsers</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/genome browser.png" class="img-fluid figure-img"></p>
+<figcaption><strong>Visualisation in a genome browser</strong></figcaption>
+</figure>
+</div>
+<p>Once ChIP-seq reads have been aligned to the reference genome, the resulting data can be visualized using genome browsers such as IGV, Ensembl, or the UCSC Genome Browser. These platforms allow researchers to view read coverage—often called “signal”—across specific genomic regions.</p>
+<p>To enable visualization, mapped reads (BAM files) must be converted into signal tracks that reflect read depth at each base pair or across defined windows. This is typically done using file formats such as WIG or bedGraph, which summarize read density and can be readily interpreted by genome browsers.</p>
+<p>As shown in the figure, the purple track displays ChIP-seq enrichment (signal) across the genome, overlaid with gene annotations and regulatory features. Peaks in the signal correspond to regions of protein-DNA interaction, and their location relative to gene features (e.g., promoters) can be easily inspected.</p>
+</section>
+<section id="peak-calling-in-chip-seq-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="peak-calling-in-chip-seq-analysis">Peak Calling in ChIP-seq Analysis</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/peak calling.png" class="img-fluid figure-img" width="439"></p>
+<figcaption><strong>Peak calling</strong></figcaption>
+</figure>
+</div>
+<p>Peak calling is the computational process used to identify genomic regions enriched in sequencing reads, representing potential protein–DNA interaction sites or histone modifications. The figure illustrates how peak calling algorithms scan across the genome using a sliding window approach to count fragments and evaluate statistical enrichment.</p>
+<p>Within each window, the observed read counts are compared to expected counts under a background model (typically assuming random distribution of reads). A Poisson test or similar statistical method is applied to calculate a p-value, which reflects the probability of observing that many fragments by chance. Peaks are defined where the signal exceeds a specified false discovery rate (FDR)-corrected p-value threshold.</p>
+<p><strong>Key Considerations and Challenges in Peak Calling</strong></p>
+<ul>
+<li><p>Control Samples: Accurate peak calling depends on defining what is “expected.” This often involves comparing the treatment sample (immunoprecipitated with antibody) to an input or control sample (DNA without immunoprecipitation) to account for background signal.</p></li>
+<li><p>Biological Replicates: Including at least two biological replicates is strongly recommended to ensure reproducibility and reduce false positives. More replicates increase statistical power.</p></li>
+<li><p>Variable Peak Sizes: Peak size can vary considerably depending on the target:</p></li>
+<li><p>Small peaks are typical for transcription factors, which bind narrow DNA motifs.</p></li>
+<li><p>Broader peaks occur with histone modifications or RNA polymerase II, which can span larger chromatin domains.</p></li>
+</ul>
+</section>
+<section id="motif-analysis-in-chip-seq" class="level3">
+<h3 class="anchored" data-anchor-id="motif-analysis-in-chip-seq">Motif Analysis in ChIP-seq</h3>
+<p>Motif analysis is a key step in ChIP-seq data interpretation, particularly for transcription factor (TF) binding studies. It helps identify short, recurring DNA sequences (motifs) that are recognized by TFs. The process begins by <strong>extracting sequences from peak summits</strong>, which represent the highest enrichment points and are likely to contain the core TF binding site.</p>
+<p>These sequences from multiple peaks are then <strong>aligned</strong> to detect conserved patterns. From this alignment, computational tools generate a <strong>consensus motif</strong>, typically visualized as a <strong>sequence logo</strong>.</p>
+<p>In the logo:</p>
+<p><strong>Letter height</strong> indicates the <strong>relative frequency</strong> of each base (A, T, C, G) at a given position.</p>
+<p><strong>Stack height</strong> represents <strong>information content</strong>, calculated as 2 minus the Shannon entropy of the base distribution at that position:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/entropy.png" width="47" height="12" class="figure-img"></p>
+<figcaption><strong>Entropy formula</strong></figcaption>
+</figure>
+</div>
+<p>Lower entropy (more conserved) yields taller stacks; higher entropy (more variable) results in shorter stacks.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../course_modules/Module7/module7.html" class="pagination-link" aria-label="Overview">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Overview</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../course_modules/Module7/module7_exercises.html" class="pagination-link" aria-label="Exercises">
+        <span class="nav-page-text">Exercises</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>This work is licensed under a Creative Commons Attribution 4.0 International License. Reuse is encouraged with acknowledgement</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

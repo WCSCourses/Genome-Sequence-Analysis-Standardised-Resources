@@ -1,0 +1,70 @@
+---
+title: "Overview"
+format: html
+---
+
+# Module Title
+
+Structural Variation Calling
+
+# Authors
+
+This tutorial was written by Jacqui Keane based on material from Thomas Keane.
+
+# Duration
+
+3 hours
+
+# Key topics
+
+# Learning outcomes
+
+-   Understand the background and theory of structural variation
+
+-   Call structural variants using standard tools
+
+-   Visualise structural variants using standard tools
+
+-   Call structural variants from long read data
+
+-   Use bedtools to do regional comparisons over genomic coordinates
+
+# Activities
+
+-   Lecture: 1 hour
+
+-   Practical exercises: 1.5 hours
+
+-   Assessment quiz: 0.5 hours
+
+# Manual
+
+[Module manual](module4_manual.qmd)
+
+[Exercises](module4_exercises.qmd)
+
+[Solutions](module4_solutions.qmd)
+
+# Presentation slides
+
+(PPT/PDF, to be generated from the module manual. Instructions on how to that will be added here.)
+
+# Lecture recording, notes and scripts
+
+# Check you knowledge quiz
+
+[Questions](module4_assessment.qmd)
+
+# Summary of this module
+
+# Teaching guidance
+
+[Instructor notes](module4_instructor_notes.qmd)
+
+# Datasets
+
+Practice files for this module can be found on [Github](https://github.com/WCSCourses/Precourses_DataRepo/tree/main/course_data_2025/linux_googlecolab_data).
+
+# Platform Guidance
+
+[Guide](module4_platform_guidance.qmd)

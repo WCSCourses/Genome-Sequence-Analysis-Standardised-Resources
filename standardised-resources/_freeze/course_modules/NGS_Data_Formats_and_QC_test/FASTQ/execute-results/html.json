@@ -1,0 +1,15 @@
+{
+  "hash": "a98a696457714987364c10ccc91b24be",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"FASTQ\"\n---\n\n\n![](images/fastq.png)\n\nFASTQ format\n\n-   Simple format for raw unaligned sequencing reads\n\n<!-- -->\n\n-   Paired-end sequencing: two FASTQ files or one interleaved file\n\n-   \n\nQuality encoded in ASCII characters with decimal\n\nASCII code of “A” is 65, the corresponding quality is Q = 65− 33 = 32\n\n![](images/fastq2.png)\n\nQuality = Phred-scaled probability of an error\n\n![](images/phred.png){width=\"411\"}\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

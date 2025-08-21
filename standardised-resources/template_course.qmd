@@ -1,0 +1,88 @@
+---
+title: "template_course"
+format: html
+---
+
+**Course Overview**
+
+\- Course Title
+
+\- Course Description: Short and extended versions
+
+\- Course format 
+
+\- Target Audience: (e.g., clinicians, researchers, students)
+
+\- Prerequisites: Knowledge or skills expected
+
+ 
+
+**Learning Outcomes**
+
+\- Clearly defined, measurable outcomes using Blooms action verbs 
+
+\- Mapped to competencies if relevant
+
+**Assessment**
+
+\- Formative assessments (quizzes, exercises, peer review)
+
+\- Summative assessments (final project, test, reflection)
+
+\- Rubrics and grading templates for instructors 
+
+\- Submission methods/platform
+
+\- Model answers or guides 
+
+ 
+
+**Teaching Platform & Tech Tools**
+
+\- Platforms guide: e.g., GitHub Classroom, Google classroom, Moodle, Zoom etc 
+
+\- Accounts/Access setup instructions
+
+\- Tools used in communication and teaching: e.g., Zoom, Slack, BLAST, RStudio
+
+\- Instructions for setting up any required environments (Docker, Conda, virtual machines)
+
+ 
+
+**Resources & References**
+
+\- Core readings (articles, textbooks)
+
+\- Supplementary materials (websites, tools, videos)
+
+\- Glossary of terms
+
+\- FAQs and Troubleshooting guide (tech and teaching)
+
+ 
+
+**Instructor & Facilitator Guide - important to include**
+
+\- Adult learning strategies \[see T3 resource\] 
+
+\- Teaching tips for each module
+
+\- Common learner questions/issues 
+
+\- Discussion prompts
+
+\- Inclusivity guidance \[see T3 resource, UDL\] 
+
+ 
+
+ 
+
+**Evaluation & Feedback Templates**
+
+\- Evaluation questions \[what do we want to know\] 
+
+\- Data collection: learner feedback forms, instructor reflection log/observation structured notes, ost course survey etc)
+
+\- Plan for data analysis 
+
+\- Plan for results dissemination

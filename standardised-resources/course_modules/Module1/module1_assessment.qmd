@@ -1,0 +1,34 @@
+---
+title: "Assessment Quiz"
+format: html
+---
+
+# Quiz
+
+1.  Look at the following FASTQ line:
+
+`@ERR007731.740 IL16_2979:6:1:9:1419/1`
+
+`TAAAAAAAAGATGTCATCAGCACATCAGAAAAGAAGGCAACTTTAAAACTTTTC`
+
+`+`
+
+`DBABBBABABAABABABBABBBAAA>@B@BBAA@4AAA>.>BAA@779:AAA@A`
+
+What is the quality of the first base (T)?
+
+2.  Look at the following FASTQ line:
+
+`@ERR007731.740 IL16_2979:6:1:9:1419/1  TAAAAAAAAGATGTCATCAGCACATCAGAAAAGAAGGCAACTTTAAAACTTTTC`
+
+`+`
+
+`DBABBBABABAABABABBABBBAAA>@B@BBAA@4AAA>.>BAA@779:AAA@A`
+
+What is the probability that there was a base call error for the first base (T)?
+
+3.  Look at the following line from the header of a SAM file.
+
+@RG`ID:ERR003612 PL:ILLUMINA LB:g1k-sc-NA20538-TOS-1 PI:2000 DS:SRP000540 SM:NA20538 CN:SC`
+
+`What does RG stand for?`

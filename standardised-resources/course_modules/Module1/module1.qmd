@@ -1,0 +1,78 @@
+---
+title: "Overview"
+format: html
+---
+
+# Module Title
+
+**NGS Data formats and QC**
+
+# Authors
+
+This tutorial was written by Jacqui Keane and Sara Sjunnebo based on material from Petr Danecek and Thomas Keane.
+
+# Duration
+
+3 hours
+
+# Key topics
+
+In this module, learners will look at data formats in detail. At the end of the theory, there is a mandatory to test their knowledge.
+
+**FASTQ:** Unaligned read sequences with base qualities
+
+**SAM/BAM:** Unaligned or aligned reads, text and binary formats
+
+**CRAM:** Better compression than BAM
+
+**VCF/BCF:** Flexible variant call format; SNPs, indels, structural variations
+
+# Learning outcomes
+
+• Describe the different NGS data formats available (FASTQ, SAM/BAM, CRAM, VCF/BCF)
+
+• Perform a QC assessment of high throughput sequence data
+
+• Perform conversions between the different data formats
+
+# Activities
+
+-   Lecture: 1 hour
+
+-   Practical exercises: 1.5 hours
+
+-   Assessment quiz: 0.5 hours
+
+# Manual and practical execises
+
+[Module manual](module1_manual.qmd)
+
+[Exercises](module1_exercises.qmd)
+
+[Solutions](module1_solutions.qmd)
+
+# Presentation slides
+
+(PPT/PDF, to be generated from the module manual. Instructions on how to that will be added here.)
+
+# Lecture recording, notes and scripts
+
+[Pre-recorded lecture, temporally stored on the LMS](https://lms.wellcomeconnectingscience.org/mod/page/view.php?id=8519)
+
+# Check you knowledge quiz
+
+[Questions](module1_assessment.qmd)
+
+# Summary of this module
+
+# Teaching guidance
+
+[Instructor notes](module1_instructor_notes.qmd)
+
+# Datasets
+
+Practice files for this module can be found on [Github](https://github.com/WCSCourses/Precourses_DataRepo/tree/main/course_data_2025/linux_googlecolab_data).
+
+# Platform Guidance
+
+[Guide](module1_platform_guidance.qmd)

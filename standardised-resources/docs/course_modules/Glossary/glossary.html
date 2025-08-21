@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Glossary – Genome Sequence Analysis Course</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../site_libs/quarto-contrib/quarto-project/img/WCS_Logo-Primary_Black.jpg" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Genome Sequence Analysis Course</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../welcome.html"> 
+<span class="menu-text">Learning paths</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-modules" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Modules</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-modules">    
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module1/module1.html">
+ <span class="dropdown-text">File formats</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module2/module2.html">
+ <span class="dropdown-text">Reads alignment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module3/module3.html">
+ <span class="dropdown-text">Variant calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module4/module4.html">
+ <span class="dropdown-text">Structural Variation Calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module5/module5.html">
+ <span class="dropdown-text">Genome assembly</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module6/module6.html">
+ <span class="dropdown-text">RNA-seq</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module7/module7.html">
+ <span class="dropdown-text">CHiP-Seq</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Glossary/glossary.html">
+ <span class="dropdown-text">Glossary of terms</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-informatics-guide" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Informatics Guide</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-informatics-guide">    
+        <li>
+    <a class="dropdown-item" href="../../course_modules/VM_guide/VM_Guide.html">
+ <span class="dropdown-text">How to setup a VM</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/VM_guide/Software_list.html">
+ <span class="dropdown-text">Software list</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-train-the-trainer" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Train-the-trainer</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-train-the-trainer">    
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Train-the-trainer/introduction.html">
+ <span class="dropdown-text">Introduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Train-the-trainer/strategies.html">
+ <span class="dropdown-text">Strategies for training professionals</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Train-the-trainer/elements.html">
+ <span class="dropdown-text">Elements of effective training</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Train-the-trainer/training_design.html">
+ <span class="dropdown-text">Training design</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Glossary</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">File formats</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Read alignment</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Variant calling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Structural Variation Calling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Genome Assembly</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">RNA-Seq</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module6/module6_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">CHiP-Seq</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module7/module7_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">How to setup a VM</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/VM_guide/VM_Guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Oracle VM VirtualBox Installation Guide</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/VM_guide/Software_list.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Software list</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Train-the-trainer</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Train-the-trainer/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Train-the-trainer/strategies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Strategies for training professionals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Train-the-trainer/elements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Elements of effective training</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Train-the-trainer/training_design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training design</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Contributors</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../meet the team.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Glossary</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Here is a glossary of key terms based on the information in the provided sources:</p>
+<ul>
+<li><p><strong>1000 Genomes Project</strong>: A global collaboration that catalogs human genetic variation across diverse populations. It provides <strong>open-access data</strong> on common and rare variants, supporting studies in population genetics, ancestry, and disease, and has sequenced individuals from over 25 populations.</p></li>
+<li><p><strong>10X Genomics</strong>: A technology that generates barcoded libraries where multiple short reads are derived from the same long (~100 kb) DNA fragment, allowing reads from the same molecule to be grouped. This provides long-range sequencing information using standard short-read platforms. The resulting “read clouds” improve resolution of complex repeats, structural variants, and haplotypes, and facilitate scaffolding genome assemblies. Also referred to as linked-reads.</p></li>
+<li><p><strong>Alignment and Mapping Formats</strong>: File formats that store sequence alignments against a reference genome, such as SAM and BAM.</p></li>
+<li><p><strong>Ancestral allele</strong>: The original state of a DNA sequence before any mutation occurred, describing the evolutionary history of a genetic variant.</p></li>
+<li><p><strong>Assembly Metrics</strong>: Key quantitative measures used to assess the quality and completeness of a genome assembly, including total length, number of sequences, average length, and N50/NG50.</p></li>
+<li><p><strong>BAM (Binary Alignment/Map)</strong>: A binary version of the SAM format. It is compact, designed to save disk space. BAM files are indexed, allowing for rapid retrieval and visualization of specific genomic regions. They are widely compatible with tools for genomic data analysis, variant calling, and visualization tools like IGV, Ensembl, and UCSC Genome Browser. It is a file format standard maintained by GA4GH.</p></li>
+<li><p><strong>Base Quality Filtering</strong>: The process of filtering out low-quality base calls (typically below a Phred score of Q20) before genotype calling to ensure accurate variant detection.</p></li>
+<li><p><strong>BCF (Binary Call Format)</strong>: A binary version of VCF. It rearranges fields for faster access and compresses data more effectively, making it ideal for large-scale studies. It is a file format standard maintained by GA4GH.</p></li>
+<li><p><strong>Benign variant</strong>: A variant classification indicating strong evidence that the variant is not associated with disease.</p></li>
+<li><p><strong>BreakDancer</strong>: A structural variant (SV) caller that uses paired-end read information to detect SV types including deletions, insertions, inversions, and translocations.</p></li>
+<li><p><strong>Burrows-Wheeler Transform (BWT)</strong>: A data transformation used in the construction of the FM-index, a memory-efficient structure used by suffix/prefix tree-based aligners like BWA and Bowtie.</p></li>
+<li><p><strong>Callable genome</strong>: Refers to regions of the genome that can be confidently assessed for variants.</p></li>
+<li><p><strong>ChIP-seq</strong>: Chromatin Immunoprecipitation followed by sequencing. A powerful method to analyze protein-DNA interactions on a genome-wide scale, allowing mapping of transcription factor binding sites and histone modifications.</p></li>
+<li><p><strong>Chromatin shearing</strong> (ChIP-seq): Fragmenting chromatin into small pieces (typically 100-500 bp) via sonication or enzymatic digestion, a critical step in the ChIP-seq workflow.</p></li>
+<li><p><strong>CIGAR string (Compact Idiosyncratic Gapped Alignment Report)</strong>: A sequence of operations used in SAM/BAM files to describe how a read is aligned to a reference genome. It specifies matches (M,=,X), insertions (I), deletions (D), soft/hard clipping (S,H), skipped regions (N), and padding (P).</p></li>
+<li><p><strong>Circular consensus sequencing (CCS)</strong>: A PacBio sequencing mode where the same DNA molecule is read multiple times to generate high-accuracy consensus reads (HiFi reads).</p></li>
+<li><p><strong>Compute</strong> (IT Cost): Refers to the CPU time needed for sequence data analysis, estimated in CPU hours per gigabase of data.</p></li>
+<li><p><strong>Contig</strong>: A contiguous stretch of assembled sequence formed by overlapping reads with no gaps. It represents the first level of genome assembly.</p></li>
+<li><p><strong>Contig generation</strong>: The initial step in genome assembly where overlapping sequencing reads are stitched together into continuous sequences.</p></li>
+<li><p><strong>CRAM</strong>: A highly efficient file format for storing aligned sequencing data, offering significant compression improvements over BAM. It incorporates reference-based compression, controlled loss of quality information, and optimized compression methods. It is a file format standard maintained by GA4GH.</p></li>
+<li><p><strong>DESeq2</strong>: A statistical tool for differential gene expression (DGE) analysis in RNA-Seq that uses size factors to account for sequencing depth and advanced statistical modeling to estimate gene-specific variance.</p></li>
+<li><p><strong>Differential gene expression (DGE)</strong>: The step in RNA-Seq analysis that assesses whether gene or transcript expression levels differ between sample groups using statistical tools.</p></li>
+<li><p><strong>Diploid assembly</strong>: Genome assembly that aims to reconstruct both sets of chromosomes separately, generating two haplotype-phased genomes that preserve allelic variation.</p></li>
+<li><p><strong>DNA replication errors</strong>: Changes introduced into the genome during the process of cell division.</p></li>
+<li><p><strong>DNase I hypersensitivity</strong>: Regions of open chromatin that are more readily cleaved by the DNase I enzyme due to reduced nucleosome occupancy, often corresponding to functional regulatory elements.</p></li>
+<li><p><strong>FASTA</strong>: A file format that stores raw or processed nucleotide and protein sequences. It consists of a header line (starting with “&gt;”) followed by sequence lines.</p></li>
+<li><p><strong>FASTQ</strong>: A simple file format for raw unaligned sequencing reads. It is an extension of FASTA, composed of the sequence and an associated per base quality score encoded in ASCII characters.</p></li>
+<li><p><strong>Filtering step</strong> (Variant Calling): An essential step in variant calling to eliminate false positives that can arise from contamination, PCR errors, sequencing artifacts, or mapping errors.</p></li>
+<li><p><strong>Fiber-FISH</strong>: A high-resolution cytogenetic technique used to visualize the physical arrangement and organization of genomic regions along stretched DNA molecules using fluorescent probes.</p></li>
+<li><p><strong>Fixed allele thresholds</strong>: An approach in variant calling that applies predefined allele frequency cutoffs (e.g., 0.0, 0.5, 1.0) to assign genotypes.</p></li>
+<li><p><strong>FM-index</strong>: A more compact and memory-efficient data structure built on the Burrows-Wheeler Transform (BWT), commonly used in suffix/prefix tree-based aligners.</p></li>
+<li><p><strong>FPKM (Fragments Per Kilobase per Million)</strong>: A normalization method for RNA-Seq data, a refinement of RPKM designed for paired-end sequencing that accounts for two reads mapping to a single fragment.</p></li>
+<li><p><strong>Fragment size quality control (QC)</strong> (SV): A method for detecting potential structural variation by examining the insert size distribution from paired-end reads in BAM files.</p></li>
+<li><p><strong>FRiP score (Fragments In Peaks)</strong>: A metric for ChIP-seq data quality that quantifies the proportion of total sequencing fragments that fall within confidently called peak regions. A score &gt;1% is generally acceptable.</p></li>
+<li><p><strong>Functional annotation</strong> (Variants): A critical step in variant interpretation where additional biological context (e.g., location in coding region, predicted consequence) is added to variants in a VCF file.</p></li>
+<li><p><strong>Functional enrichment</strong>: Interpreting lists of differentially expressed genes by using tools for Gene Ontology (GO) term enrichment or pathway analysis.</p></li>
+<li><p><strong>Gap (N)</strong>: A placeholder for missing or unresolvable sequence in scaffolds, represented by the letter “N” in assembled genomes.</p></li>
+<li><p><strong>GA4GH (Global Alliance for Genomics and Health)</strong>: An international coalition dedicated to creating frameworks and standards for sharing genomic and clinical data. It maintains file format standards like CRAM, SAM/BAM, and VCF/BCF.</p></li>
+<li><p><strong>Genome assembly</strong>: The process of reconstructing an organism’s genome from millions or billions of short DNA sequences generated by sequencing.</p></li>
+<li><p><strong>Genome browsers</strong>: Tools such as IGV, Ensembl, or UCSC Genome Browser that allow visualization of aligned reads and signal tracks from ChIP-seq data.</p></li>
+<li><p><strong>Genomic structural variation (SV)</strong>: Any rearrangement of chromosome structure, including insertions, deletions, inversions, translocations, and copy number changes. SVs are often defined as being &gt;50 bp.</p></li>
+<li><p><strong>Genotype-phenotype association studies</strong>: Applications using genetic data to uncover the genetic basis of traits by linking genotype information to observable characteristics.</p></li>
+<li><p><strong>GERMQ (Germline Quality)</strong>: In cancer genomics VCF annotations, a Phred-scaled quality score indicating whether alternate alleles are unlikely to be germline variants.</p></li>
+<li><p><strong>Germline mutation</strong>: Mutations that occur in egg or sperm cells and are heritable, meaning they can be passed on to subsequent generations.</p></li>
+<li><p><strong>gnomAD (Genome Aggregation Database)</strong>: Aggregates and harmonizes exome and genome sequencing data to provide allele frequencies across populations, helping researchers filter out common variants.</p></li>
+<li><p><strong>Haplotype</strong>: A group of linked variants (alleles) inherited together on the same chromosome segment.</p></li>
+<li><p><strong>Hash Table-Based Alignment</strong>: A common NGS alignment approach that relies on indexing short, fixed-length sequences (k-mers) from the reference or reads to rapidly find candidate mapping positions.</p></li>
+<li><p><strong>Hi-C</strong>: A sequencing technique that captures the three-dimensional organization of chromatin through proximity ligation, used for scaffolding genome assemblies into chromosome-scale sequences.</p></li>
+<li><p><strong>HISAT2</strong>: A widely used splice-aware genome aligner for RNA-Seq reads, known for balancing speed, accuracy, and low memory usage, and good at discovering novel splice junctions.</p></li>
+<li><p><strong>Histone Code</strong>: The concept that specific combinations of histone modifications are associated with distinct functional states of chromatin and can be used to define functional elements across the genome.</p></li>
+<li><p><strong>Histone modifications</strong>: Post-translational modifications (methylation, acetylation, etc.) on histone tails that play a central role in regulating chromatin structure and gene expression.</p></li>
+<li><p><strong>Homopolymers</strong>: Stretches of the same base in a DNA sequence, which are prone to systematic sequencing errors and mapping errors.</p></li>
+<li><p><strong>IGV (Integrative Genomics Viewer)</strong>: A popular genome browser and visualization tool compatible with BAM files and used for visualizing structural variants and RNA-Seq/ChIP-seq data.</p></li>
+<li><p><strong>Insert Size</strong>: The distance between the start of Read 1 and the end of Read 2, excluding adapter sequences.</p></li>
+<li><p><strong>Insertion</strong>: A structural variant where a new DNA segment is added into a genomic location.</p></li>
+<li><p><strong>Intergenic variant</strong>: A sequence variant located in the region between genes.</p></li>
+<li><p><strong>Intron variant</strong>: A sequence variant occurring within an intron.</p></li>
+<li><p><strong>Inversion</strong>: A structural variant where a segment of DNA is reversed in orientation. Can cause paired reads to map with incorrect orientation.</p></li>
+<li><p><strong>Kallisto</strong>: A tool that maps RNA-Seq reads to a reference transcriptome using pseudoalignment, providing a much faster alternative to genome mapping and including quantification as part of the process.</p></li>
+<li><p><strong>k-mers</strong>: Short, fixed-length nucleotide sequences (e.g., a 31-mer is 31 nucleotides) used in hash table-based alignment approaches.</p></li>
+<li><p><strong>Linear reference genome</strong>: A standard single reference sequence representation of a genome.</p></li>
+<li><p><strong>Local de novo assembly-based variant callers</strong>: Emerging variant calling approaches that reconstruct short regions of the genome directly from reads to detect variants simultaneously.</p></li>
+<li><p><strong>Local realignment</strong>: A step sometimes performed on BAM files to correct misalignments that occur near insertions and deletions (indels).</p></li>
+<li><p><strong>Low-quality base calls</strong>: Sequencing errors are more likely to occur at these positions, which can lead to incorrect genotype assignments if not filtered.</p></li>
+<li><p><strong>LUMPY</strong>: A flexible and probabilistic structural variant (SV) caller that integrates multiple sources of alignment evidence (read pairs, split reads, read depth) into a unified discovery process.</p></li>
+<li><p><strong>Mapping-based variant calling</strong>: An approach to variant calling where raw sequencing reads are aligned directly to a reference genome.</p></li>
+<li><p><strong>Mapping Quality</strong>: A score that reflects how confident the aligner is that a sequencing read has been correctly placed on the reference genome. Expressed as a Phred-scaled score (higher values = greater confidence).</p></li>
+<li><p><strong>Mapping RNA-Seq Reads</strong>: The process of determining which genes or transcripts sequencing reads belong to, done through mapping to a reference genome or transcriptome</p></li>
+<li><p><strong>Metagenomic assembly</strong>: Reconstructing genomic sequences from DNA extracted from complex samples often containing multiple uncultured microbial species.</p></li>
+<li><p><strong>Microsatellites / Short Tandem Repeats (STRs)</strong>: Short, repetitive DNA sequences (2–6 bp repeats) where the number of repeats varies between individuals, useful for genetic fingerprinting. Prone to sequencing errors.</p></li>
+<li><p><strong>Missense variant</strong>: A sequence variant that changes one or more amino acids in a protein.</p></li>
+<li><p><strong>Motif Analysis</strong> (ChIP-seq analysis): A step in ChIP-seq data interpretation to identify short, recurring DNA sequences (motifs) that are recognized by transcription factors.</p></li>
+<li><p><strong>Mutation / Variation</strong>: Any change in the DNA base sequence.</p></li>
+<li><p><strong>Naive variant calling</strong>: A straightforward interpretation of observed sequencing data, often assuming ideal conditions and using limited filtering or statistical modeling.</p></li>
+<li><p><strong>Nanopore sequencing</strong>: A technology offering real-time, portable DNA/RNA sequencing with ultra-long reads (up to 1 megabase) and detection of base modifications. It has a high raw error rate, particularly in homopolymers.</p></li>
+<li><p><strong>NG50</strong>: A variant of the N50 assembly metric that is calculated using the expected genome size rather than the total assembly length.</p></li>
+<li><p><strong>NGMLR (Next-Generation Mapping and Long Read aligner)</strong>: An aligner specifically designed for long-read sequencing data. It uses a convex gap-cost scoring model to better handle large insertions, deletions, and complex rearrangements commonly found in long reads.</p></li>
+<li><p><strong>Noise</strong> (ChIP-seq): Background signal in ChIP-seq experiments arising from non-specific DNA–protein interactions, incomplete washing, or DNA fragments not associated with the protein of interest.</p></li>
+<li><p><strong>Non-Redundant Fraction (NRF)</strong>: A metric for library complexity in ChIP-seq, calculated as the number of unique fragment positions divided by the total number of mapped fragments. An NRF &gt; 0.8 is recommended.</p></li>
+<li><p><strong>Normalization</strong> (RNA-Seq): A crucial step in RNA-Seq analysis to correct for technical biases like sequencing depth and gene length. Common methods include RPKM, FPKM, and TPM.</p></li>
+<li><p><strong>Novel Insertion</strong>: A new DNA segment not present in the reference genome that is inserted into a genomic location.</p></li>
+<li><p><strong>N50</strong>: An assembly metric representing the length X such that 50% of the total assembly is contained in contigs or scaffolds of at least that length.</p></li>
+<li><p><strong>Open chromatin</strong>: A relaxed state of chromatin that allows regulatory proteins to access the DNA.</p></li>
+<li><p><strong>Optical mapping</strong>: A genome analysis technique that uses high molecular weight DNA fragments to generate a physical map of the genome based on the location of specific sequence motifs, useful for scaffolding and validating SVs.</p></li>
+<li><p><strong>PacBio (Pacific Biosciences) sequencing</strong>: Sequencing technology based on single-molecule real-time (SMRT) sequencing that generates long reads and can detect methylated bases.</p></li>
+<li><p><strong>Paired-end sequencing</strong>: Sequencing both ends of a DNA fragment. Improves mapping accuracy, especially in repetitive regions, and provides information for detecting SVs.</p></li>
+<li><p><strong>Parallel computing</strong>: Using multiple CPU cores or splitting data across computers to speed up computational workflows.</p></li>
+<li><p><strong>Pathogenic variant</strong>: A variant classification indicating strong evidence supports a disease-causing role.</p></li>
+<li><p><strong>PCA (Principal Component Analysis)</strong>: A dimensionality reduction technique used to transform high-dimensional data and spot outlying samples by visualizing principal components.</p></li>
+<li><p><strong>Peak Calling</strong> (ChIP-seq analysis): The computational process to identify genomic regions enriched in sequencing reads (peaks), representing potential protein–DNA interaction sites or histone modifications. Uses statistical algorithms to compare read counts to background.</p></li>
+<li><p><strong>Peak summits</strong> (Motif Analysis): The highest enrichment points within peaks in ChIP-seq data, which are likely to contain the core transcription factor binding site for motif analysis.</p></li>
+<li><p><strong>Phred quality score</strong>: A score used to encode the quality of sequenced nucleotides in FASTQ files, translated from ASCII characters. Also used for base quality filtering (e.g., Q20) and mapping quality. Higher values indicate greater confidence in accuracy.</p></li>
+<li><p><strong>PON (Panel of Normals)</strong>: In cancer genomics VCF annotations, marks sites that are found in a reference panel of normal samples, helping to identify potential artifacts.</p></li>
+<li><p><strong>(Pseudo)chromosome assignment</strong>: The process of assembling scaffolds into chromosome-scale sequences (pseudomolecules) using external evidence like a reference genome or genetic maps.</p></li>
+<li><p><strong>Pseudoalignment</strong> (Kallisto): An efficient method used by Kallisto to determine which transcripts reads belong to without calculating exact alignment positions.</p></li>
+<li><p><strong>Q-values</strong>: Adjusted p-values reported by RNA-Seq differential expression tools to control false discovery rates when performing multiple testing.</p></li>
+<li><p><strong>Read 1 / Read 2</strong>: The two ends of the same DNA fragment that are sequenced separately in paired-end sequencing.</p></li>
+<li><p><strong>Read depth</strong>: The number of reads that align to a specific genomic position.</p></li>
+<li><p><strong>Reference allele</strong>: The original allele at a given position in the reference genome. In VCF format, it is always denoted as 0.</p></li>
+<li><p><strong>Reference Genome</strong>: A digital version of a species’ DNA used as a standard for comparison.</p></li>
+<li><p><strong>Reference-Based Compression</strong>: A method used in formats like CRAM that leverages the reference genome to reduce storage redundancy. Instead of storing full sequences, only deviations or differences from the reference are stored.</p></li>
+<li><p><strong>Repeat Insertion</strong>: Insertion of a repetitive DNA element, such as a transposable element or tandem repeat, into a new genomic location.</p></li>
+<li><p><strong>Repetitive elements</strong>: Regions of the genome, such as transposable elements, that are repeated and can make it difficult to determine the true origin of a read during alignment.</p></li>
+<li><p><strong>Retrotransposition</strong>: The movement of transposable elements (TEs) within the genome via an RNA intermediate.</p></li>
+<li><p><strong>Ribosomal RNA (rRNA)</strong>: A major component of total RNA in a cell, often constituting over 90%, which needs to be depleted during library preparation for mRNA sequencing.</p></li>
+<li><p><strong>RPKM (Reads Per Kilobase per Million)</strong>: A normalization method for RNA-Seq data that adjusts for sequencing depth and gene length.</p></li>
+<li><p><strong>SAM (Sequence Alignment/Map)</strong>: A text-based format for storing biological sequences aligned to a reference genome. It consists of a header section (starting with @) and an alignment section (one line per read). It is a file format standard maintained by GA4GH.</p></li>
+<li><p><strong>Scaffold</strong>: An ordered set of contigs that are connected by gaps (usually filled with Ns) representing unknown or unsequenced regions. Also called a supercontig.</p></li>
+<li><p><strong>Scaffolding</strong>: A crucial step in genome assembly that aims to order and orient contigs into larger, more complete sequences called scaffolds using long-range data like paired-end reads, linked reads, Hi-C, or optical maps.</p></li>
+<li><p><strong>Seed and Extend</strong>: A foundational alignment strategy (e.g., used in BLAST) where short matching subsequences (seeds) identify candidate regions in a database, which are then extended to find high-scoring alignments.</p></li>
+<li><p><strong>Sequence logo</strong> (Motif Analysis): A visual representation of a consensus motif identified in ChIP-seq data, where letter height indicates relative frequency and stack height represents information content at each position.</p></li>
+<li><p><strong>Sequencing coverage</strong> (Assembly): Critical in genome assembly; higher coverage improves assembly reliability and helps resolve ambiguities.</p></li>
+<li><p><strong>Sequencing depth</strong> (RNA-Seq): Determines how well transcripts can be detected in RNA-Seq experiments.</p></li>
+<li><p><strong>Sheared Fragment</strong>: A random piece of genomic DNA produced by physically or enzymatically breaking the genome into smaller segments for sequencing library preparation.</p></li>
+<li><p><strong>Short reads</strong>: Reads generated by sequencing technologies that are short in length, making them challenging to align confidently, especially in low-complexity or repetitive genomes.</p></li>
+<li><p><strong>Signal</strong> (ChIP-seq): Represents DNA fragments that are specifically bound by the protein of interest and are enriched in sequencing data, typically appearing as peaks.</p></li>
+<li><p><strong>Signal tracks</strong> (ChIP-seq visualization): Files (e.g., WIG or bedGraph) that convert mapped reads into a format reflecting read density, used by genome browsers to display ChIP-seq enrichment.</p></li>
+<li><p><strong>Single Nucleotide Variants (SNVs)</strong>: Base substitutions (e.g., A→C).</p></li>
+<li><p><strong>Size Fractionation</strong>: A method to select DNA fragments of a particular length range to improve consistency of read lengths for sequencing.</p></li>
+<li><p><strong>Size factors</strong> (DGE tools): Used by RNA-Seq differential expression tools (e.g., DESeq2) to account for differences in sequencing depth between samples.</p></li>
+<li><p><strong>Sleuth</strong>: A tool for DGE and QC analysis specifically designed to work with data from pseudoalignment tools like Kallisto.</p></li>
+<li><p><strong>Smith-Waterman Algorithm</strong>: A local alignment algorithm used to compute the optimal pairwise alignment between a read and a reference in a specific region, helping determine the precise match structure and CIGAR string. It is computationally intensive.</p></li>
+<li><p><strong>Sniffles</strong>: A structural variant (SV) caller specifically designed to detect SVs from long-read sequencing data using a multi-evidence approach.</p></li>
+<li><p><strong>SNP co-occurrence</strong>: Patterns of single nucleotide polymorphisms (SNPs) inherited together, captured by haplotypes.</p></li>
+<li><p><strong>SNPs</strong>: Single nucleotide polymorphisms, variants involving a single base change.</p></li>
+<li><p><strong>Soft clipping (S)</strong>: A CIGAR operation indicating query sequence bases that are not aligned but are present in the sequence. Often seen at structural variant breakpoints.</p></li>
+<li><p><strong>Somatic mutation</strong>: Mutations that arise in non-germline tissues and do not get inherited by offspring.</p></li>
+<li><p><strong>Splice acceptor variant</strong>: A splice variant that changes the 2 base region at the 3’ end of an intron.</p></li>
+<li><p><strong>Splice donor variant</strong>: A splice variant that changes the 2 base region at the 5’ end of an intron.</p></li>
+<li><p><strong>Splice region variant</strong>: A sequence variant in which a change has occurred within the region of the splice site.</p></li>
+<li><p><strong>Splice-aware aligners</strong> (RNA-Seq): Alignment tools required for RNA-Seq reads mapping to a genome (especially eukaryotic) to handle introns that are spliced out of mature mRNA.</p></li>
+<li><p><strong>Split-read alignments</strong> (SV): Occur when a single sequencing read spans a structural variant junction and aligns in two separate parts to different positions on the reference genome, providing evidence for SVs and breakpoints.</p></li>
+<li><p><strong>Start lost</strong>: A sequence variant whereby the start codon is changed.</p></li>
+<li><p><strong>Stop gained</strong>: A sequence variant resulting in a premature stop codon.</p></li>
+<li><p><strong>Stop lost</strong>: A sequence variant whereby the stop codon is changed, resulting in the extension of the translated product.</p></li>
+<li><p><strong>Stranded library</strong> (RNA-Seq): A library preparation protocol that preserves the information about which DNA strand the RNA was transcribed from, valuable for distinguishing overlapping or antisense transcripts.</p></li>
+<li><p><strong>Subclonal</strong> (somatic): In somatic variant calling (e.g., in cancer), mutations present in a subset of cells within the sample, leading to variable allele frequencies.</p></li>
+<li><p><strong>Suffix/Prefix Tree-Based Aligners</strong>: Use specialized data structures like the suffix tree or FM-index to enable rapid and efficient string matching during sequence alignment.</p></li>
+<li><p><strong>SV visualisation</strong>: Visualizing structural variants in genome browsers (like IGV) by inspecting discordant read pairs, split reads, and soft-clipped bases.</p></li>
+<li><p><strong>Synonymous variant</strong>: A sequence variant where there is no resulting change to the encoded amino acid.</p></li>
+<li><p><strong>Technical replicates</strong>: Repeated measurements of the same sample, used to assess variation introduced by equipment or protocols.</p></li>
+<li><p><strong>Third-generation sequencing</strong> (SV): Technologies (e.g., PacBio, Oxford Nanopore) that generate long reads (several kilobases), which can span complex or repetitive regions, enabling more accurate detection and mapping of structural variants.</p></li>
+<li><p><strong>Total Length</strong> (Assembly): The combined length of all contigs or scaffolds in a genome assembly.</p></li>
+<li><p><strong>Total RNA</strong>: A mixture of RNA types present in a cell, including mRNA, rRNA, tRNA, and regulatory RNAs.</p></li>
+<li><p><strong>Transcript abundance</strong>: A measure of how much of a particular RNA molecule is present, revealed by aligning RNA-Seq reads to the genome or transcriptome.</p></li>
+<li><p><strong>Transcript amplification</strong>: A feature amplification of a region containing a transcript.</p></li>
+<li><p><strong>Transcript ablation</strong>: A feature ablation whereby the deleted region includes a transcript feature.</p></li>
+<li><p><strong>Transcriptome assembly</strong>: Reconstructing expressed RNA sequences (cDNA) from a biological sample, complicated by varying transcript abundance and alternative splicing.</p></li>
+<li><p><strong>Transcriptome mapping</strong> (RNA-Seq): Mapping reads to a reference transcriptome rather than the genome, often much faster.</p></li>
+<li><p><strong>Transcriptome</strong>: The complete set of transcripts present in a cell, along with their quantities, at a specific developmental stage or under specific conditions.</p></li>
+<li><p><strong>Transcription factors (TFs)</strong>: Specific regulatory proteins that recognize and bind to specific DNA sequences (often in accessible chromatin regions) to regulate gene expression.</p></li>
+<li><p><strong>Transcriptional regulation</strong>: A dynamic process governed by the interaction between DNA and specific regulatory proteins, most notably transcription factors, and influenced by chromatin state.</p></li>
+<li><p><strong>Transitions (Ts)</strong>: Base substitutions between purines (A↔︎G) or between pyrimidines (C↔︎T).</p></li>
+<li><p><strong>Transitions-to-Transversions (Ts/Tv) ratio</strong>: A common method for estimating the quality of called SNPs; a high ratio (typically 2-3:1 in the genome) is generally indicative of a high-quality SNP dataset.</p></li>
+<li><p><strong>Translocation</strong>: A type of structural variation where a segment of a chromosome is moved to a different location, either within the same chromosome or to a different chromosome.</p></li>
+<li><p><strong>Transposable elements (TEs)</strong>: Segments of DNA capable of changing their position within the genome. They are a dominant feature of mammalian genomes. Also referred to as repetitive elements.</p></li>
+<li><p><strong>Transversions (Tv)</strong>: Base substitutions between a purine and a pyrimidine (e.g., A↔︎C, G↔︎T).</p></li>
+<li><p><strong>TPM (Transcripts Per Million)</strong>: A normalization method for RNA-Seq data.</p></li>
+<li><p><strong>Undercall heterozygotes</strong>: A problem associated with traditional variant calling methods, especially in low-coverage data, where it is difficult to detect both alleles.</p></li>
+<li><p><strong>Unstranded library</strong> (RNA-Seq): A library preparation protocol that does not preserve information about the DNA strand the RNA was transcribed from.</p></li>
+<li><p><strong>Upstream gene variant</strong>: A sequence variant located upstream of a gene.</p></li>
+<li><p><strong>UTR variant (3’/5’)</strong>: A sequence variant in the 3’ or 5’ untranslated region of a gene.</p></li>
+<li><p><strong>Variant Call Format (VCF)</strong>: A widely-used, standardized text file format for storing genetic variation data, including SNPs, indels, and structural variants. It is a tab-delimited format and integral to genomic workflows. It is compressed using BGZF and indexed with TBI/CSI. It is a file format standard maintained by GA4GH.</p></li>
+<li><p><strong>Variant calling</strong>: The process of identifying differences in DNA sequences by comparing a sample’s sequence to a reference genome to determine the genotype at each position.</p></li>
+<li><p><strong>Variant depth</strong>: Typically indicates the average read coverage at a variant position, helping assess the confidence of the identified variant.</p></li>
+<li><p><strong>Variant pathogenicity</strong>: The classification of genetic variants based on their potential to cause disease, typically categorized into pathogenic, likely pathogenic, uncertain significance (VUS), likely benign, and benign.</p></li>
+<li><p><strong>Variant calling workflows</strong>: Approaches to variant calling, including mapping-based and assembly-based, using either a linear reference genome or a pangenome.</p></li>
+<li><p><strong>Variants of Uncertain Significance (VUS)</strong>: Variant classification where there is limited or conflicting evidence; cannot be classified as pathogenic or benign.</p></li>
+<li><p><strong>Variation graphs</strong>: Emerging approaches in variant calling that allow reads to align to a graph representation of multiple reference paths (a pangenome) rather than a single linear genome, promising improved sensitivity.</p></li>
+<li><p><strong>Visualization</strong> (ChIP-seq analysis): Inspecting mapped reads in genome browsers (e.g., IGV, UCSC) to assess enrichment patterns and signal quality.</p></li>
+<li><p><strong>VNTR (Variable Number Tandem Repeat)</strong>: Short sequences of DNA repeated in a tandem array, where the number of repeats varies among individuals, useful for DNA fingerprinting.</p></li>
+<li><p><strong>Volcano plots</strong>: Visualization tools useful for identifying differentially expressed genes by plotting effect size (e.g., log fold-change) against significance (e.g., p-value).</p></li>
+<li><p><strong>Whole-genome shotgun assembly</strong>: A genome assembly strategy involving randomly fragmenting the entire genome, sequencing all fragments, and using computational methods to assemble them.</p></li>
+</ul>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>This work is licensed under a Creative Commons Attribution 4.0 International License. Reuse is encouraged with acknowledgement</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

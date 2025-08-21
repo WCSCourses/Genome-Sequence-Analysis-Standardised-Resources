@@ -1,0 +1,17 @@
+{
+  "hash": "e4e33e485d9ac8da14ad1a58db337561",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Data formats\n\n### 0bjectives\n\n### Theoretical background: Key NGS data formats\n\n<details>\n\n<summary>FASTA</summary>\n\n\n\n\n\n\n\n\nFASTA - reference genome\n\n\\>1 dna:chromosome chromosome:GRCh37:1:1:249250621:1\n\nNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN\n\nNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN\n\nNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN\n\nTATTCAAAAAATTGAGAATTTCTGACCACTTAACAAACCCACAGAAAATCCACCCGAGTG\n\nCACTGAGCACGCCAGAAATCAGGTGGCCTCAAAGAGCTGCTCCCACCTGAAGGAGACGCG\n\nCTGCTGCTGCTGTCGTCCTGCCTGGCGCCTTGGCCTACAGGGGCCGCGGTTGAGGGTGGG\n\nAGTGGGGGTGCACTGGCCAGCACCTCAGGAGCTGGGGGTGGTGGTGGGGGCGGTGGGGGT\n\nGGTGTTAGTACCCCATCTTGTAGGTCTGAAACACAAAGTGTGGGGTGTCTAGGGAAGAAG\n\n\\>2\n\nNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN\n\nNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN\n\nNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN\n\nAAAAGCATTTATGCTACAAATTACTATGGTAATTATGCTACAAATTTATGGTACCATAAA\n\nTTACCATAGTAATTTGTAGCATAAATTTGTACTATGGTACAAATTACATGGGAGAGTGAA\n\nGGTGGGTTAAAACATTCATATTAAAGAACTTCCACTCAGATTGCAAGAAAAGAGAGAGGA\n\nATGGAGATGGTAGCACAAGTCCCTACAATAAAAGTAGATGTTTTGAGATCAGTTCTATTT\n\n\n\n</details>\n\n<details>\n\n<summary>FASTQ</summary>\n\n\n\n\n\n\n\n\n![](images/fastq.png)\n\nFASTQ format\n\n-   Simple format for raw unaligned sequencing reads\n\n<!-- -->\n\n-   Paired-end sequencing: two FASTQ files or one interleaved file\n\n-   \n\nQuality encoded in ASCII characters with decimal\n\nASCII code of “A” is 65, the corresponding quality is Q = 65− 33 = 32\n\n![](images/fastq2.png)\n\nQuality = Phred-scaled probability of an error\n\n![](images/phred.png){width=\"411\"}\n\n\n\n</details>\n\n<details>\n\n<summary>SAM_BAM</summary>\n\n\n\n\n\n\n\n\n</details>\n\n<details>\n\n<summary>CRAM</summary>\n\n\n\n\n\n\n\n\n</details>\n\n<details>\n\n<summary>VCF</summary>\n\n\n\n\n\n\n\n\n</details>\n\n<details>\n\n<summary>Summary</summary>\n\n\n\n\n\n\n\n\n</details>\n\n### Tips for instructors: how to present the theoretical concepts on file formats\n\n### Practical exercises\n\n### Tips for instructors: how to offer assistance during the practical exercises\n\n### Summary\n",
+    "supporting": [
+      "data_formats_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

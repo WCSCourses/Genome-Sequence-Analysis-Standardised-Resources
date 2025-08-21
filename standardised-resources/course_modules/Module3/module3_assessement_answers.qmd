@@ -1,0 +1,54 @@
+---
+title: "Quiz answers"
+format: html
+---
+
+### Q1.
+
+Correct Answer: B
+Explanation: Germline mutations occur in egg or sperm cells, meaning they are heritable, while somatic mutations occur in non-reproductive tissues and are not passed on.
+
+### Q2. 
+
+Correct Answer: B
+Explanation: A duplication involving 2 kb is an example of a copy number variant, which is considered a large-scale variation.
+
+### Q3.
+
+Correct Answer: C
+Explanation: SNVs refer to single base substitutions, and indels refer to small insertions or deletions generally less than 50 bp.
+
+### Q4.
+
+Correct Answer: C
+Explanation: Determining the speed of DNA replication is not a direct application of variant calling.
+
+### Q5.
+
+Correct Answer: B
+Explanation: Phased haplotypes allow for the determination of which variants are inherited together on the same chromosome, enhancing genotype interpretation.
+
+### Q6.
+
+Correct Answer: C
+Explanation: "TEMP" is not a standard field in the VCF format, while CHROM, POS, and ALT are.
+
+### Q7.
+
+Correct Answer: C
+Explanation: The correct order is to generate sequencing data, perform quality control, align the reads, generate a pileup, and then call variants.
+
+### Q8.
+
+Correct Answer: B
+Explanation: Homopolymers and repetitive regions are known to cause systematic errors in sequencing and mapping, leading to inaccuracies in variant calling.
+
+### Q9.
+
+Correct Answer: C
+Explanation: High-quality human SNP datasets typically have a Ts/Tv ratio of around 2 to 3.
+
+### Q10.
+
+Correct Answer: A
+Explanation: Population-level datasets provide valuable insights into human genetic diversity and help determine variant frequencies across various populations.

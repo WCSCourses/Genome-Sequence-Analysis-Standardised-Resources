@@ -1,0 +1,172 @@
+project:
+  type: website
+  output-dir: docs
+  
+  
+website:
+  title: "Genome Sequence Analysis Course"
+  navbar:
+    logo: "_extensions/img/WCS_Logo-Primary_Black.jpg"
+    background: light
+    left:
+      - href: index.qmd
+        text: Home
+      - href: welcome.qmd
+        text: Learning paths
+      - text: Modules
+        menu:
+          - href: course_modules/Module1/module1.qmd
+            text: "File formats"
+          - href: course_modules/Module2/module2.qmd
+            text: "Reads alignment"
+          - href: course_modules/Module3/module3.qmd
+            text: "Variant calling"
+          - href: course_modules/Module4/module4.qmd
+            text: "Structural Variation Calling"
+          - href: course_modules/Module5/module5.qmd
+            text: "Genome assembly"
+          - href: course_modules/Module6/module6.qmd
+            text: "RNA-seq"
+          - href: course_modules/Module7/module7.qmd
+            text: "CHiP-Seq"
+          - href: course_modules/Glossary/glossary.qmd
+            text: "Glossary of terms"
+      - text: Informatics Guide
+        menu:
+          - href: course_modules/VM_guide/VM_Guide.qmd
+            text: "How to setup a VM"
+          - href: course_modules/VM_guide/Software_list.qmd
+            text: "Software list"
+      - text: Train-the-trainer
+        menu: 
+          - href: course_modules/Train-the-trainer/introduction.qmd
+            text: "Introduction"
+          - href: course_modules/Train-the-trainer/strategies.qmd
+            text: "Strategies for training professionals"
+          - href: course_modules/Train-the-trainer/elements.qmd
+            text: "Elements of effective training"
+          - href: course_modules/Train-the-trainer/training_design.qmd
+            text: "Training design"
+  sidebar:
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - section: "File formats"
+        contents:
+          - course_modules/Module1/module1.qmd
+          - course_modules/Module1/module1_manual.qmd
+          - course_modules/Module1/module1_exercises.qmd
+          - course_modules/Module1/module1_solutions.qmd
+          - course_modules/Module1/module1_instructor_notes.qmd
+          - course_modules/Module1/module1_datasets.qmd
+          - course_modules/Module1/module1_platform_guidance.qmd
+      - section: "Read alignment"
+        contents:
+          - course_modules/Module2/module2.qmd
+          - course_modules/Module2/module2_manual.qmd
+          - course_modules/Module2/module2_exercises.qmd
+          - course_modules/Module2/module2_solutions.qmd
+          - course_modules/Module2/module2_instructor_notes.qmd
+          - course_modules/Module2/module2_datasets.qmd
+          - course_modules/Module2/module2_platform_guidance.qmd
+      - section: "Variant calling"
+        contents:
+          - course_modules/Module3/module3.qmd
+          - course_modules/Module3/module3_manual.qmd
+          - course_modules/Module3/module3_exercises.qmd
+          - course_modules/Module3/module3_solutions.qmd
+          - course_modules/Module3/module3_instructor_notes.qmd
+          - course_modules/Module3/module3_datasets.qmd
+          - course_modules/Module3/module3_platform_guidance.qmd
+      - section: "Structural Variation Calling"
+        contents:
+          - course_modules/Module4/module4.qmd
+          - course_modules/Module4/module4_manual.qmd
+          - course_modules/Module4/module4_exercises.qmd
+          - course_modules/Module4/module4_solutions.qmd
+          - course_modules/Module4/module4_instructor_notes.qmd
+          - course_modules/Module4/module4_datasets.qmd
+          - course_modules/Module4/module4_platform_guidance.qmd
+      - section: "Genome Assembly"
+        contents:
+          - course_modules/Module5/module5.qmd
+          - course_modules/Module5/module5_manual.qmd
+          - course_modules/Module5/module5_exercises.qmd
+          - course_modules/Module5/module5_solutions.qmd
+          - course_modules/Module5/module5_instructor_notes.qmd
+          - course_modules/Module5/module5_datasets.qmd
+          - course_modules/Module5/module5_platform_guidance.qmd
+      - section: "RNA-Seq"
+        contents:
+          - course_modules/Module6/module6.qmd
+          - course_modules/Module6/module6_manual.qmd
+          - course_modules/Module6/module6_exercises.qmd
+          - course_modules/Module6/module6_solutions.qmd
+          - course_modules/Module6/module6_instructor_notes.qmd
+          - course_modules/Module6/module6_datasets.qmd
+          - course_modules/Module6/module6_platform_guidance.qmd
+      - section: "CHiP-Seq"
+        contents:
+          - course_modules/Module7/module7.qmd
+          - course_modules/Module7/module7_manual.qmd
+          - course_modules/Module7/module7_exercises.qmd
+          - course_modules/Module7/module7_solutions.qmd
+          - course_modules/Module7/module7_instructor_notes.qmd
+          - course_modules/Module7/module7_datasets.qmd
+          - course_modules/Module7/module7_platform_guidance.qmd
+      - section: "How to setup a VM"
+        contents:
+          - course_modules/VM_guide/VM_Guide.qmd
+          - course_modules/VM_guide/Software_list.qmd
+      - section: "Train-the-trainer"
+        contents:
+          - course_modules/Train-the-trainer/introduction.qmd
+          - course_modules/Train-the-trainer/strategies.qmd
+          - course_modules/Train-the-trainer/elements.qmd
+          - course_modules/Train-the-trainer/training_design.qmd
+      - section: 'Contributors'
+        contents:
+          - "meet the team.qmd"
+  
+  page-navigation: true 
+  page-footer: 
+    left: "This work is licensed under a Creative Commons Attribution 4.0 International License. Reuse is encouraged with acknowledgement" 
+  search:
+    location: navbar
+    type: textbox
+
+output:
+  html_document:
+    highlight: pygments
+    css: "_extensions/styles.css"
+    toc: true
+    toc_float:
+      collapsed: false
+
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+      #light: [theme_lter-edu-light, _extensions/lter/lter_scss-theme/theme_lter-edu-light.scss]
+      #dark: [theme_lter-edu-dark, _extensions/lter/lter_scss-theme/theme_lter-edu-dark.scss]
+    anchor-sections: true
+    toc: true
+    footnotes-hover: true
+    code-copy: true
+    code-link: true
+    code-overflow: wrap
+    fig-align: center
+    link-external-icon: false
+    link-external-newwindow: true
+
+editor: visual
+
+execute:
+  freeze: auto
+  
+sidebar:
+  contents: auto
+
+link-external-newwindow: true

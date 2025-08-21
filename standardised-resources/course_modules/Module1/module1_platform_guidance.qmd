@@ -1,0 +1,6 @@
+---
+title: "Platform guidance"
+format: html
+---
+
+You can use any text editor or command-line tools (on Linux/Mac or Windows Subsystem for Linux) to view FASTA/FASTQ files. Ensure samtools (or an equivalent tool) is available to view and index BAM files; these tools run on any OS (or via Docker) so learners can follow along regardless of platform.

@@ -1,0 +1,82 @@
+---
+title: "Overview"
+format: html
+---
+
+# Module Title
+
+**Read alignment**
+
+# Authors
+
+This tutorial was written by Jacqui Keane based on material from Thomas Keane, Vivek Iyer and Victoria Offord.
+
+# Duration
+
+4 hours
+
+# Key topics
+
+In this module, learners will look at:
+
+-   Read alignment theory and tools
+
+-   Challenges in alignment and quality assessment
+
+-   Data processing and scalability
+
+# Learning outcomes
+
+On completion of the tutorial, you can expect to be able to:
+
+-   Understand the background and theory of read alignment
+
+-   Perform read alignment using standard tools (BWA-MEM)
+
+-   Perform the following task and understand their effect on analysis results (e.g. Mark Duplicates)
+
+-   Visualise read alignments using IGV (Integrated Visualisation Tool)
+
+-   Merge the results from multiple alignments and understand when it is appropriate to perform a merge
+
+# Activities
+
+-   Lecture: 1h
+
+-   Practical exercises: 2.5h
+
+-   Quiz: 0.5h
+
+# Manual and practical execises
+
+[Module manual](module2_manual.qmd)
+
+[Exercises](module2_exercises.qmd)
+
+[Solutions](module2_solutions.qmd)
+
+# Presentation slides
+
+(PPT/PDF, to be generated from the module manual)
+
+# Lecture notes or scripts
+
+Pre-recorded lecture
+
+# Check you knowledge quiz
+
+Questions
+
+# Summary of this module
+
+# Teaching guidance
+
+[Instructor notes](module2_instructor_notes.qmd)
+
+# Datasets
+
+Practice files for this module can be found on [Github](https://github.com/WCSCourses/Precourses_DataRepo/tree/main/course_data_2025/linux_googlecolab_data).
+
+# Platform Guidance
+
+[Guide](module2_platform_guidance.qmd)

@@ -1,0 +1,352 @@
+---
+title: "Glossary"
+format: html
+---
+
+Here is a glossary of key terms based on the information in the provided sources:
+
+-   **1000 Genomes Project**: A global collaboration that catalogs human genetic variation across diverse populations. It provides **open-access data** on common and rare variants, supporting studies in population genetics, ancestry, and disease, and has sequenced individuals from over 25 populations.
+
+-   **10X Genomics**: A technology that generates barcoded libraries where multiple short reads are derived from the same long (\~100 kb) DNA fragment, allowing reads from the same molecule to be grouped. This provides long-range sequencing information using standard short-read platforms. The resulting "read clouds" improve resolution of complex repeats, structural variants, and haplotypes, and facilitate scaffolding genome assemblies. Also referred to as linked-reads.
+
+-   **Alignment and Mapping Formats**: File formats that store sequence alignments against a reference genome, such as SAM and BAM.
+
+-   **Ancestral allele**: The original state of a DNA sequence before any mutation occurred, describing the evolutionary history of a genetic variant.
+
+-   **Assembly Metrics**: Key quantitative measures used to assess the quality and completeness of a genome assembly, including total length, number of sequences, average length, and N50/NG50.
+
+-   **BAM (Binary Alignment/Map)**: A binary version of the SAM format. It is compact, designed to save disk space. BAM files are indexed, allowing for rapid retrieval and visualization of specific genomic regions. They are widely compatible with tools for genomic data analysis, variant calling, and visualization tools like IGV, Ensembl, and UCSC Genome Browser. It is a file format standard maintained by GA4GH.
+
+-   **Base Quality Filtering**: The process of filtering out low-quality base calls (typically below a Phred score of Q20) before genotype calling to ensure accurate variant detection.
+
+-   **BCF (Binary Call Format)**: A binary version of VCF. It rearranges fields for faster access and compresses data more effectively, making it ideal for large-scale studies. It is a file format standard maintained by GA4GH.
+
+-   **Benign variant**: A variant classification indicating strong evidence that the variant is not associated with disease.
+
+-   **BreakDancer**: A structural variant (SV) caller that uses paired-end read information to detect SV types including deletions, insertions, inversions, and translocations.
+
+-   **Burrows-Wheeler Transform (BWT)**: A data transformation used in the construction of the FM-index, a memory-efficient structure used by suffix/prefix tree-based aligners like BWA and Bowtie.
+
+-   **Callable genome**: Refers to regions of the genome that can be confidently assessed for variants.
+
+-   **ChIP-seq**: Chromatin Immunoprecipitation followed by sequencing. A powerful method to analyze protein-DNA interactions on a genome-wide scale, allowing mapping of transcription factor binding sites and histone modifications.
+
+-   **Chromatin shearing** (ChIP-seq): Fragmenting chromatin into small pieces (typically 100-500 bp) via sonication or enzymatic digestion, a critical step in the ChIP-seq workflow.
+
+-   **CIGAR string (Compact Idiosyncratic Gapped Alignment Report)**: A sequence of operations used in SAM/BAM files to describe how a read is aligned to a reference genome. It specifies matches (M,=,X), insertions (I), deletions (D), soft/hard clipping (S,H), skipped regions (N), and padding (P).
+
+-   **Circular consensus sequencing (CCS)**: A PacBio sequencing mode where the same DNA molecule is read multiple times to generate high-accuracy consensus reads (HiFi reads).
+
+-   **Compute** (IT Cost): Refers to the CPU time needed for sequence data analysis, estimated in CPU hours per gigabase of data.
+
+-   **Contig**: A contiguous stretch of assembled sequence formed by overlapping reads with no gaps. It represents the first level of genome assembly.
+
+-   **Contig generation**: The initial step in genome assembly where overlapping sequencing reads are stitched together into continuous sequences.
+
+-   **CRAM**: A highly efficient file format for storing aligned sequencing data, offering significant compression improvements over BAM. It incorporates reference-based compression, controlled loss of quality information, and optimized compression methods. It is a file format standard maintained by GA4GH.
+
+-   **DESeq2**: A statistical tool for differential gene expression (DGE) analysis in RNA-Seq that uses size factors to account for sequencing depth and advanced statistical modeling to estimate gene-specific variance.
+
+-   **Differential gene expression (DGE)**: The step in RNA-Seq analysis that assesses whether gene or transcript expression levels differ between sample groups using statistical tools.
+
+-   **Diploid assembly**: Genome assembly that aims to reconstruct both sets of chromosomes separately, generating two haplotype-phased genomes that preserve allelic variation.
+
+-   **DNA replication errors**: Changes introduced into the genome during the process of cell division.
+
+-   **DNase I hypersensitivity**: Regions of open chromatin that are more readily cleaved by the DNase I enzyme due to reduced nucleosome occupancy, often corresponding to functional regulatory elements.
+
+-   **FASTA**: A file format that stores raw or processed nucleotide and protein sequences. It consists of a header line (starting with "\>") followed by sequence lines.
+
+-   **FASTQ**: A simple file format for raw unaligned sequencing reads. It is an extension of FASTA, composed of the sequence and an associated per base quality score encoded in ASCII characters.
+
+-   **Filtering step** (Variant Calling): An essential step in variant calling to eliminate false positives that can arise from contamination, PCR errors, sequencing artifacts, or mapping errors.
+
+-   **Fiber-FISH**: A high-resolution cytogenetic technique used to visualize the physical arrangement and organization of genomic regions along stretched DNA molecules using fluorescent probes.
+
+-   **Fixed allele thresholds**: An approach in variant calling that applies predefined allele frequency cutoffs (e.g., 0.0, 0.5, 1.0) to assign genotypes.
+
+-   **FM-index**: A more compact and memory-efficient data structure built on the Burrows-Wheeler Transform (BWT), commonly used in suffix/prefix tree-based aligners.
+
+-   **FPKM (Fragments Per Kilobase per Million)**: A normalization method for RNA-Seq data, a refinement of RPKM designed for paired-end sequencing that accounts for two reads mapping to a single fragment.
+
+-   **Fragment size quality control (QC)** (SV): A method for detecting potential structural variation by examining the insert size distribution from paired-end reads in BAM files.
+
+-   **FRiP score (Fragments In Peaks)**: A metric for ChIP-seq data quality that quantifies the proportion of total sequencing fragments that fall within confidently called peak regions. A score \>1% is generally acceptable.
+
+-   **Functional annotation** (Variants): A critical step in variant interpretation where additional biological context (e.g., location in coding region, predicted consequence) is added to variants in a VCF file.
+
+-   **Functional enrichment**: Interpreting lists of differentially expressed genes by using tools for Gene Ontology (GO) term enrichment or pathway analysis.
+
+-   **Gap (N)**: A placeholder for missing or unresolvable sequence in scaffolds, represented by the letter "N" in assembled genomes.
+
+-   **GA4GH (Global Alliance for Genomics and Health)**: An international coalition dedicated to creating frameworks and standards for sharing genomic and clinical data. It maintains file format standards like CRAM, SAM/BAM, and VCF/BCF.
+
+-   **Genome assembly**: The process of reconstructing an organism’s genome from millions or billions of short DNA sequences generated by sequencing.
+
+-   **Genome browsers**: Tools such as IGV, Ensembl, or UCSC Genome Browser that allow visualization of aligned reads and signal tracks from ChIP-seq data.
+
+-   **Genomic structural variation (SV)**: Any rearrangement of chromosome structure, including insertions, deletions, inversions, translocations, and copy number changes. SVs are often defined as being \>50 bp.
+
+-   **Genotype-phenotype association studies**: Applications using genetic data to uncover the genetic basis of traits by linking genotype information to observable characteristics.
+
+-   **GERMQ (Germline Quality)**: In cancer genomics VCF annotations, a Phred-scaled quality score indicating whether alternate alleles are unlikely to be germline variants.
+
+-   **Germline mutation**: Mutations that occur in egg or sperm cells and are heritable, meaning they can be passed on to subsequent generations.
+
+-   **gnomAD (Genome Aggregation Database)**: Aggregates and harmonizes exome and genome sequencing data to provide allele frequencies across populations, helping researchers filter out common variants.
+
+-   **Haplotype**: A group of linked variants (alleles) inherited together on the same chromosome segment.
+
+-   **Hash Table-Based Alignment**: A common NGS alignment approach that relies on indexing short, fixed-length sequences (k-mers) from the reference or reads to rapidly find candidate mapping positions.
+
+-   **Hi-C**: A sequencing technique that captures the three-dimensional organization of chromatin through proximity ligation, used for scaffolding genome assemblies into chromosome-scale sequences.
+
+-   **HISAT2**: A widely used splice-aware genome aligner for RNA-Seq reads, known for balancing speed, accuracy, and low memory usage, and good at discovering novel splice junctions.
+
+-   **Histone Code**: The concept that specific combinations of histone modifications are associated with distinct functional states of chromatin and can be used to define functional elements across the genome.
+
+-   **Histone modifications**: Post-translational modifications (methylation, acetylation, etc.) on histone tails that play a central role in regulating chromatin structure and gene expression.
+
+-   **Homopolymers**: Stretches of the same base in a DNA sequence, which are prone to systematic sequencing errors and mapping errors.
+
+-   **IGV (Integrative Genomics Viewer)**: A popular genome browser and visualization tool compatible with BAM files and used for visualizing structural variants and RNA-Seq/ChIP-seq data.
+
+-   **Insert Size**: The distance between the start of Read 1 and the end of Read 2, excluding adapter sequences.
+
+-   **Insertion**: A structural variant where a new DNA segment is added into a genomic location.
+
+-   **Intergenic variant**: A sequence variant located in the region between genes.
+
+-   **Intron variant**: A sequence variant occurring within an intron.
+
+-   **Inversion**: A structural variant where a segment of DNA is reversed in orientation. Can cause paired reads to map with incorrect orientation.
+
+-   **Kallisto**: A tool that maps RNA-Seq reads to a reference transcriptome using pseudoalignment, providing a much faster alternative to genome mapping and including quantification as part of the process.
+
+-   **k-mers**: Short, fixed-length nucleotide sequences (e.g., a 31-mer is 31 nucleotides) used in hash table-based alignment approaches.
+
+-   **Linear reference genome**: A standard single reference sequence representation of a genome.
+
+-   **Local de novo assembly-based variant callers**: Emerging variant calling approaches that reconstruct short regions of the genome directly from reads to detect variants simultaneously.
+
+-   **Local realignment**: A step sometimes performed on BAM files to correct misalignments that occur near insertions and deletions (indels).
+
+-   **Low-quality base calls**: Sequencing errors are more likely to occur at these positions, which can lead to incorrect genotype assignments if not filtered.
+
+-   **LUMPY**: A flexible and probabilistic structural variant (SV) caller that integrates multiple sources of alignment evidence (read pairs, split reads, read depth) into a unified discovery process.
+
+-   **Mapping-based variant calling**: An approach to variant calling where raw sequencing reads are aligned directly to a reference genome.
+
+-   **Mapping Quality**: A score that reflects how confident the aligner is that a sequencing read has been correctly placed on the reference genome. Expressed as a Phred-scaled score (higher values = greater confidence).
+
+-   **Mapping RNA-Seq Reads**: The process of determining which genes or transcripts sequencing reads belong to, done through mapping to a reference genome or transcriptome
+
+-   **Metagenomic assembly**: Reconstructing genomic sequences from DNA extracted from complex samples often containing multiple uncultured microbial species.
+
+-   **Microsatellites / Short Tandem Repeats (STRs)**: Short, repetitive DNA sequences (2–6 bp repeats) where the number of repeats varies between individuals, useful for genetic fingerprinting. Prone to sequencing errors.
+
+-   **Missense variant**: A sequence variant that changes one or more amino acids in a protein.
+
+-   **Motif Analysis** (ChIP-seq analysis): A step in ChIP-seq data interpretation to identify short, recurring DNA sequences (motifs) that are recognized by transcription factors.
+
+-   **Mutation / Variation**: Any change in the DNA base sequence.
+
+-   **Naive variant calling**: A straightforward interpretation of observed sequencing data, often assuming ideal conditions and using limited filtering or statistical modeling.
+
+-   **Nanopore sequencing**: A technology offering real-time, portable DNA/RNA sequencing with ultra-long reads (up to 1 megabase) and detection of base modifications. It has a high raw error rate, particularly in homopolymers.
+
+-   **NG50**: A variant of the N50 assembly metric that is calculated using the expected genome size rather than the total assembly length.
+
+-   **NGMLR (Next-Generation Mapping and Long Read aligner)**: An aligner specifically designed for long-read sequencing data. It uses a convex gap-cost scoring model to better handle large insertions, deletions, and complex rearrangements commonly found in long reads.
+
+-   **Noise** (ChIP-seq): Background signal in ChIP-seq experiments arising from non-specific DNA–protein interactions, incomplete washing, or DNA fragments not associated with the protein of interest.
+
+-   **Non-Redundant Fraction (NRF)**: A metric for library complexity in ChIP-seq, calculated as the number of unique fragment positions divided by the total number of mapped fragments. An NRF \> 0.8 is recommended.
+
+-   **Normalization** (RNA-Seq): A crucial step in RNA-Seq analysis to correct for technical biases like sequencing depth and gene length. Common methods include RPKM, FPKM, and TPM.
+
+-   **Novel Insertion**: A new DNA segment not present in the reference genome that is inserted into a genomic location.
+
+-   **N50**: An assembly metric representing the length X such that 50% of the total assembly is contained in contigs or scaffolds of at least that length.
+
+-   **Open chromatin**: A relaxed state of chromatin that allows regulatory proteins to access the DNA.
+
+-   **Optical mapping**: A genome analysis technique that uses high molecular weight DNA fragments to generate a physical map of the genome based on the location of specific sequence motifs, useful for scaffolding and validating SVs.
+
+-   **PacBio (Pacific Biosciences) sequencing**: Sequencing technology based on single-molecule real-time (SMRT) sequencing that generates long reads and can detect methylated bases.
+
+-   **Paired-end sequencing**: Sequencing both ends of a DNA fragment. Improves mapping accuracy, especially in repetitive regions, and provides information for detecting SVs.
+
+-   **Parallel computing**: Using multiple CPU cores or splitting data across computers to speed up computational workflows.
+
+-   **Pathogenic variant**: A variant classification indicating strong evidence supports a disease-causing role.
+
+-   **PCA (Principal Component Analysis)**: A dimensionality reduction technique used to transform high-dimensional data and spot outlying samples by visualizing principal components.
+
+-   **Peak Calling** (ChIP-seq analysis): The computational process to identify genomic regions enriched in sequencing reads (peaks), representing potential protein–DNA interaction sites or histone modifications. Uses statistical algorithms to compare read counts to background.
+
+-   **Peak summits** (Motif Analysis): The highest enrichment points within peaks in ChIP-seq data, which are likely to contain the core transcription factor binding site for motif analysis.
+
+-   **Phred quality score**: A score used to encode the quality of sequenced nucleotides in FASTQ files, translated from ASCII characters. Also used for base quality filtering (e.g., Q20) and mapping quality. Higher values indicate greater confidence in accuracy.
+
+-   **PON (Panel of Normals)**: In cancer genomics VCF annotations, marks sites that are found in a reference panel of normal samples, helping to identify potential artifacts.
+
+-   **(Pseudo)chromosome assignment**: The process of assembling scaffolds into chromosome-scale sequences (pseudomolecules) using external evidence like a reference genome or genetic maps.
+
+-   **Pseudoalignment** (Kallisto): An efficient method used by Kallisto to determine which transcripts reads belong to without calculating exact alignment positions.
+
+-   **Q-values**: Adjusted p-values reported by RNA-Seq differential expression tools to control false discovery rates when performing multiple testing.
+
+-   **Read 1 / Read 2**: The two ends of the same DNA fragment that are sequenced separately in paired-end sequencing.
+
+-   **Read depth**: The number of reads that align to a specific genomic position.
+
+-   **Reference allele**: The original allele at a given position in the reference genome. In VCF format, it is always denoted as 0.
+
+-   **Reference Genome**: A digital version of a species’ DNA used as a standard for comparison. 
+
+-   **Reference-Based Compression**: A method used in formats like CRAM that leverages the reference genome to reduce storage redundancy. Instead of storing full sequences, only deviations or differences from the reference are stored.
+
+-   **Repeat Insertion**: Insertion of a repetitive DNA element, such as a transposable element or tandem repeat, into a new genomic location.
+
+-   **Repetitive elements**: Regions of the genome, such as transposable elements, that are repeated and can make it difficult to determine the true origin of a read during alignment.
+
+-   **Retrotransposition**: The movement of transposable elements (TEs) within the genome via an RNA intermediate.
+
+-   **Ribosomal RNA (rRNA)**: A major component of total RNA in a cell, often constituting over 90%, which needs to be depleted during library preparation for mRNA sequencing.
+
+-   **RPKM (Reads Per Kilobase per Million)**: A normalization method for RNA-Seq data that adjusts for sequencing depth and gene length.
+
+-   **SAM (Sequence Alignment/Map)**: A text-based format for storing biological sequences aligned to a reference genome. It consists of a header section (starting with \@) and an alignment section (one line per read). It is a file format standard maintained by GA4GH.
+
+-   **Scaffold**: An ordered set of contigs that are connected by gaps (usually filled with Ns) representing unknown or unsequenced regions. Also called a supercontig.
+
+-   **Scaffolding**: A crucial step in genome assembly that aims to order and orient contigs into larger, more complete sequences called scaffolds using long-range data like paired-end reads, linked reads, Hi-C, or optical maps.
+
+-   **Seed and Extend**: A foundational alignment strategy (e.g., used in BLAST) where short matching subsequences (seeds) identify candidate regions in a database, which are then extended to find high-scoring alignments.
+
+-   **Sequence logo** (Motif Analysis): A visual representation of a consensus motif identified in ChIP-seq data, where letter height indicates relative frequency and stack height represents information content at each position.
+
+-   **Sequencing coverage** (Assembly): Critical in genome assembly; higher coverage improves assembly reliability and helps resolve ambiguities.
+
+-   **Sequencing depth** (RNA-Seq): Determines how well transcripts can be detected in RNA-Seq experiments.
+
+-   **Sheared Fragment**: A random piece of genomic DNA produced by physically or enzymatically breaking the genome into smaller segments for sequencing library preparation.
+
+-   **Short reads**: Reads generated by sequencing technologies that are short in length, making them challenging to align confidently, especially in low-complexity or repetitive genomes.
+
+-   **Signal** (ChIP-seq): Represents DNA fragments that are specifically bound by the protein of interest and are enriched in sequencing data, typically appearing as peaks.
+
+-   **Signal tracks** (ChIP-seq visualization): Files (e.g., WIG or bedGraph) that convert mapped reads into a format reflecting read density, used by genome browsers to display ChIP-seq enrichment.
+
+-   **Single Nucleotide Variants (SNVs)**: Base substitutions (e.g., A→C).
+
+-   **Size Fractionation**: A method to select DNA fragments of a particular length range to improve consistency of read lengths for sequencing.
+
+-   **Size factors** (DGE tools): Used by RNA-Seq differential expression tools (e.g., DESeq2) to account for differences in sequencing depth between samples.
+
+-   **Sleuth**: A tool for DGE and QC analysis specifically designed to work with data from pseudoalignment tools like Kallisto.
+
+-   **Smith-Waterman Algorithm**: A local alignment algorithm used to compute the optimal pairwise alignment between a read and a reference in a specific region, helping determine the precise match structure and CIGAR string. It is computationally intensive.
+
+-   **Sniffles**: A structural variant (SV) caller specifically designed to detect SVs from long-read sequencing data using a multi-evidence approach.
+
+-   **SNP co-occurrence**: Patterns of single nucleotide polymorphisms (SNPs) inherited together, captured by haplotypes.
+
+-   **SNPs**: Single nucleotide polymorphisms, variants involving a single base change.
+
+-   **Soft clipping (S)**: A CIGAR operation indicating query sequence bases that are not aligned but are present in the sequence. Often seen at structural variant breakpoints.
+
+-   **Somatic mutation**: Mutations that arise in non-germline tissues and do not get inherited by offspring.
+
+-   **Splice acceptor variant**: A splice variant that changes the 2 base region at the 3' end of an intron.
+
+-   **Splice donor variant**: A splice variant that changes the 2 base region at the 5' end of an intron.
+
+-   **Splice region variant**: A sequence variant in which a change has occurred within the region of the splice site.
+
+-   **Splice-aware aligners** (RNA-Seq): Alignment tools required for RNA-Seq reads mapping to a genome (especially eukaryotic) to handle introns that are spliced out of mature mRNA.
+
+-   **Split-read alignments** (SV): Occur when a single sequencing read spans a structural variant junction and aligns in two separate parts to different positions on the reference genome, providing evidence for SVs and breakpoints.
+
+-   **Start lost**: A sequence variant whereby the start codon is changed.
+
+-   **Stop gained**: A sequence variant resulting in a premature stop codon.
+
+-   **Stop lost**: A sequence variant whereby the stop codon is changed, resulting in the extension of the translated product.
+
+-   **Stranded library** (RNA-Seq): A library preparation protocol that preserves the information about which DNA strand the RNA was transcribed from, valuable for distinguishing overlapping or antisense transcripts.
+
+-   **Subclonal** (somatic): In somatic variant calling (e.g., in cancer), mutations present in a subset of cells within the sample, leading to variable allele frequencies.
+
+-   **Suffix/Prefix Tree-Based Aligners**: Use specialized data structures like the suffix tree or FM-index to enable rapid and efficient string matching during sequence alignment.
+
+-   **SV visualisation**: Visualizing structural variants in genome browsers (like IGV) by inspecting discordant read pairs, split reads, and soft-clipped bases.
+
+-   **Synonymous variant**: A sequence variant where there is no resulting change to the encoded amino acid.
+
+-   **Technical replicates**: Repeated measurements of the same sample, used to assess variation introduced by equipment or protocols.
+
+-   **Third-generation sequencing** (SV): Technologies (e.g., PacBio, Oxford Nanopore) that generate long reads (several kilobases), which can span complex or repetitive regions, enabling more accurate detection and mapping of structural variants.
+
+-   **Total Length** (Assembly): The combined length of all contigs or scaffolds in a genome assembly.
+
+-   **Total RNA**: A mixture of RNA types present in a cell, including mRNA, rRNA, tRNA, and regulatory RNAs.
+
+-   **Transcript abundance**: A measure of how much of a particular RNA molecule is present, revealed by aligning RNA-Seq reads to the genome or transcriptome.
+
+-   **Transcript amplification**: A feature amplification of a region containing a transcript.
+
+-   **Transcript ablation**: A feature ablation whereby the deleted region includes a transcript feature.
+
+-   **Transcriptome assembly**: Reconstructing expressed RNA sequences (cDNA) from a biological sample, complicated by varying transcript abundance and alternative splicing.
+
+-   **Transcriptome mapping** (RNA-Seq): Mapping reads to a reference transcriptome rather than the genome, often much faster.
+
+-   **Transcriptome**: The complete set of transcripts present in a cell, along with their quantities, at a specific developmental stage or under specific conditions.
+
+-   **Transcription factors (TFs)**: Specific regulatory proteins that recognize and bind to specific DNA sequences (often in accessible chromatin regions) to regulate gene expression.
+
+-   **Transcriptional regulation**: A dynamic process governed by the interaction between DNA and specific regulatory proteins, most notably transcription factors, and influenced by chromatin state.
+
+-   **Transitions (Ts)**: Base substitutions between purines (A↔G) or between pyrimidines (C↔T).
+
+-   **Transitions-to-Transversions (Ts/Tv) ratio**: A common method for estimating the quality of called SNPs; a high ratio (typically 2-3:1 in the genome) is generally indicative of a high-quality SNP dataset.
+
+-   **Translocation**: A type of structural variation where a segment of a chromosome is moved to a different location, either within the same chromosome or to a different chromosome.
+
+-   **Transposable elements (TEs)**: Segments of DNA capable of changing their position within the genome. They are a dominant feature of mammalian genomes. Also referred to as repetitive elements.
+
+-   **Transversions (Tv)**: Base substitutions between a purine and a pyrimidine (e.g., A↔C, G↔T).
+
+-   **TPM (Transcripts Per Million)**: A normalization method for RNA-Seq data.
+
+-   **Undercall heterozygotes**: A problem associated with traditional variant calling methods, especially in low-coverage data, where it is difficult to detect both alleles.
+
+-   **Unstranded library** (RNA-Seq): A library preparation protocol that does not preserve information about the DNA strand the RNA was transcribed from.
+
+-   **Upstream gene variant**: A sequence variant located upstream of a gene.
+
+-   **UTR variant (3'/5')**: A sequence variant in the 3' or 5' untranslated region of a gene.
+
+-   **Variant Call Format (VCF)**: A widely-used, standardized text file format for storing genetic variation data, including SNPs, indels, and structural variants. It is a tab-delimited format and integral to genomic workflows. It is compressed using BGZF and indexed with TBI/CSI. It is a file format standard maintained by GA4GH.
+
+-   **Variant calling**: The process of identifying differences in DNA sequences by comparing a sample's sequence to a reference genome to determine the genotype at each position.
+
+-   **Variant depth**: Typically indicates the average read coverage at a variant position, helping assess the confidence of the identified variant.
+
+-   **Variant pathogenicity**: The classification of genetic variants based on their potential to cause disease, typically categorized into pathogenic, likely pathogenic, uncertain significance (VUS), likely benign, and benign.
+
+-   **Variant calling workflows**: Approaches to variant calling, including mapping-based and assembly-based, using either a linear reference genome or a pangenome.
+
+-   **Variants of Uncertain Significance (VUS)**: Variant classification where there is limited or conflicting evidence; cannot be classified as pathogenic or benign.
+
+-   **Variation graphs**: Emerging approaches in variant calling that allow reads to align to a graph representation of multiple reference paths (a pangenome) rather than a single linear genome, promising improved sensitivity.
+
+-   **Visualization** (ChIP-seq analysis): Inspecting mapped reads in genome browsers (e.g., IGV, UCSC) to assess enrichment patterns and signal quality.
+
+-   **VNTR (Variable Number Tandem Repeat)**: Short sequences of DNA repeated in a tandem array, where the number of repeats varies among individuals, useful for DNA fingerprinting.
+
+-   **Volcano plots**: Visualization tools useful for identifying differentially expressed genes by plotting effect size (e.g., log fold-change) against significance (e.g., p-value).
+
+-   **Whole-genome shotgun assembly**: A genome assembly strategy involving randomly fragmenting the entire genome, sequencing all fragments, and using computational methods to assemble them.
