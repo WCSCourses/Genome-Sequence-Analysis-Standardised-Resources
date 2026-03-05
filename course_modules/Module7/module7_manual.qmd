@@ -139,23 +139,15 @@ Roadmap Epigenomics Consortium et al. (2015). Integrative analysis of 111 refere
 
 ### Histone mark cheat sheet
 
-+---------------+----------------------------------------------+-----------------------------------------------------+
-| Histone mark  | Candidate State                              | Interpretation                                      |
-+===============+==============================================+=====================================================+
-| H3K9me2,3     | \-                                           | Silenced genes                                      |
-+---------------+----------------------------------------------+-----------------------------------------------------+
-| H3K27me3      | Inactive/poised promoter, polycomb repressed | Downregulation of nearby genes                      |
-+---------------+----------------------------------------------+-----------------------------------------------------+
-| H3K36me3      | Transcriptional transition                   | Actively transcribed gene bodies.                   |
-+---------------+----------------------------------------------+-----------------------------------------------------+
-| H4K20me1      | Transcriptional transition                   | Transcriptional activation                          |
-+---------------+----------------------------------------------+-----------------------------------------------------+
-| H3K4me1,2,3   | Strong enhancer                              | Promoter of active genes                            |
-+---------------+----------------------------------------------+-----------------------------------------------------+
-| H3K27ac       | Active promoter/strong enhancer              | Active transcription                                |
-+---------------+----------------------------------------------+-----------------------------------------------------+
-| H3K9ac        | Active promoter                              | Switch from transcription initiation to elongation. |
-+---------------+----------------------------------------------+-----------------------------------------------------+
+| Histone mark | Candidate State | Interpretation |
+|----|----|----|
+| H3K9me2,3 | \- | Silenced genes |
+| H3K27me3 | Inactive/poised promoter, polycomb repressed | Downregulation of nearby genes |
+| H3K36me3 | Transcriptional transition | Actively transcribed gene bodies. |
+| H4K20me1 | Transcriptional transition | Transcriptional activation |
+| H3K4me1,2,3 | Strong enhancer | Promoter of active genes |
+| H3K27ac | Active promoter/strong enhancer | Active transcription |
+| H3K9ac | Active promoter | Switch from transcription initiation to elongation. |
 
 ### ChIP-seq Experimental Considerations
 

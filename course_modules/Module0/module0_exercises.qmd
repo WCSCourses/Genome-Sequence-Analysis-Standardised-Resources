@@ -1,0 +1,8 @@
+---
+title: "Exercises"
+format: html
+---
+
+### Introduction
+
+***For the following exercises, you would need access to the course Virtual Machine.***

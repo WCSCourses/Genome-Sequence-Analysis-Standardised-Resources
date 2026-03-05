@@ -1,0 +1,58 @@
+---
+title: "Overview"
+format: html
+---
+
+# Module Title
+
+Introduction to Linux
+
+# Authors
+
+This tutorial was written by Jacqui Keane and Sara Sjunnebo based on material from Petr Danecek and Thomas Keane.
+
+# Duration
+
+2 hours
+
+# Key topics
+
+# Learning outcomes
+
+# Activities
+
+-   Lecture: 30 minutes
+
+-   Practical exercises: 1 hour
+
+-   Assessment quiz: 30 minutes
+
+# Manual and practical execises
+
+[Module manual](module0_manual.qmd)
+
+[Exercises](module0_exercises.qmd)
+
+# Presentation slides
+
+(PPT/PDF, to be generated from the module manual. Instructions on how to that will be added here.)
+
+# Lecture recording, notes and scripts
+
+# Summary of this module
+
+# Teaching guidance
+
+[Instructor notes](module0_instructor_notes.qmd)
+
+# Datasets
+
+We recommend that you follow the exercises using the course virtual machine.
+
+The datasets used in this exercise are stored on the virtual machine.
+
+Alternatively, for this module, if you are working on your own Linux system, you can use the exercise input files available on [GitHub](https://github.com/WCSCourses/Precourses_DataRepo/tree/main/course_data_2025/linux_googlecolab_data).
+
+# Platform Guidance
+
+[Guide](module0_platform_guidance.qmd)

@@ -1,0 +1,6 @@
+---
+title: "Platform guidance"
+format: html
+---
+
+Please check the [VM guide](../VM_guide/VM_Guide.qmd) on how to download and install the course VM.
