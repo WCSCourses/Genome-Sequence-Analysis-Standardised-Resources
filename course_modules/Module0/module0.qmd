@@ -9,7 +9,7 @@ Introduction to Linux
 
 # Authors
 
-This tutorial was written by Jacqui Keane and Sara Sjunnebo based on material from Petr Danecek and Thomas Keane.
+This tutorial was written by Jacqui Keane.
 
 # Duration
 
@@ -18,6 +18,12 @@ This tutorial was written by Jacqui Keane and Sara Sjunnebo based on material fr
 # Key topics
 
 # Learning outcomes
+
+-   Understand what a computer operating system is.
+
+-   Understand the structure of Linux file system.
+
+-   Use basic Linux commands to navigate the file system and examine data.
 
 # Activities
 

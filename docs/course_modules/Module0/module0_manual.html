@@ -551,7 +551,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a></li>
+  <li><a href="#what-is-an-operating-system-os" id="toc-what-is-an-operating-system-os" class="nav-link active" data-scroll-target="#what-is-an-operating-system-os">What is an Operating System (OS) ?</a></li>
+  <li><a href="#what-is-linux" id="toc-what-is-linux" class="nav-link" data-scroll-target="#what-is-linux">What is Linux</a></li>
+  <li><a href="#why-use-linux" id="toc-why-use-linux" class="nav-link" data-scroll-target="#why-use-linux">Why use Linux?</a></li>
+  <li><a href="#shell" id="toc-shell" class="nav-link" data-scroll-target="#shell">Shell</a></li>
+  <li><a href="#working-with-the-terminal" id="toc-working-with-the-terminal" class="nav-link" data-scroll-target="#working-with-the-terminal">Working with the Terminal</a></li>
+  <li><a href="#understanding-linux-file-system" id="toc-understanding-linux-file-system" class="nav-link" data-scroll-target="#understanding-linux-file-system">Understanding Linux File System</a></li>
   </ul>
 </nav>
     </div>
@@ -577,8 +582,74 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
+<section id="what-is-an-operating-system-os" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-an-operating-system-os">What is an Operating System (OS) ?</h2>
+<p>An operating system is a set of software programs that controls the computer and enables it to function effectively. It manages the computer’s hardware and software resources, coordinates system activities, and ensures that different programs run smoothly. Acting as an interface between the hardware and the user, the operating system allows users to interact with the computer in a simple and efficient way.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/os.png" class="img-fluid figure-img" width="161"></p>
+<figcaption><em>Definition of an Operating System</em></figcaption>
+</figure>
+</div>
+</section>
+<section id="what-is-linux" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-linux">What is Linux</h2>
+<p>Linux is a standard operating system, similar to Windows or macOS, that allows users to interact with and manage a computer. It is an open-source, Unix-like system, meaning its source code is freely available for anyone to use, modify, and distribute. Due to its open nature, there are currently over 600 different Linux distributions, each tailored to specific needs and use cases.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/linux distributions.png" class="img-fluid figure-img" width="573"></p>
+<figcaption><em>Linux distributions</em></figcaption>
+</figure>
+</div>
+<p>A Linux system is made up of several key components that work together to operate the computer:</p>
+<ul>
+<li><p>The hardware includes all physical devices such as the CPU, RAM, and storage drives.</p></li>
+<li><p>The kernel is the core of the operating system, interacting directly with the hardware and managing essential system operations.</p></li>
+<li><p>System libraries provide special functions that allow programs to access kernel features without needing direct interaction with the hardware.</p></li>
+<li><p>Finally, system utilities perform specialized tasks and provide users with most of the practical functionalities of the operating system, enabling everyday system management and use.</p></li>
+</ul>
+<p>The <strong>UNIX</strong> operating system was developed in the late 1960s.</p>
+<ul>
+<li><p>It originally began as a one-man project led by Ken Thompson of Bell Labs and has since grown to become the most widely used operating system.</p></li>
+<li><p>In the time since UNIX was first developed, it has gone through many different generations and versions.</p></li>
+<li><p>An interesting and rather up-to-date timeline of these variations of UNIX can be found at:</p>
+<p><a href="https://www.computerhope.com/history/unix.htm" class="uri">https://www.computerhope.com/history/unix.htm</a></p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Ken Thompson.png" class="img-fluid figure-img" width="407"></p>
+<figcaption>Ken Thompson (sitting) and Dennis Ritchie, the fathers of Unix. PDP-11 mini computer on which the first edition of Unix (Credit: Sheila Gibbon/lexleader.net)</figcaption>
+</figure>
+</div>
+<p><em>Ken Thompson (sitting) and Dennis Ritchie, the fathers of Unix. PDP-11 mini computer on which the first edition of Unix (Credit: Sheila Gibbon/lexleader.net)</em></p>
+<p>Linus Benedict Torvalds began developing Linux as a hobby while he was a student at the University of Helsinki, aiming to create a system similar to UNIX. In 1991, at just 21 years old, he released the source code for Linux 0.0.1 to the public, introducing a freely available Unix-like operating system kernel. This marked the beginning of Linux, a project that would go on to transform the history of UNIX and the broader world of computing forever.</p>
+</section>
+<section id="why-use-linux" class="level2">
+<h2 class="anchored" data-anchor-id="why-use-linux">Why use Linux?</h2>
+<p>Linux is widely used because it is open-source, secure, and highly reliable. It offers strong performance and regular software updates, making it suitable for both personal and professional use. In fields such as bioinformatics, many tools are developed specifically for Linux, increasing its practicality for research. With hundreds of distributions available and support from a large global community, Linux provides flexibility, stability, and continuous improvement.</p>
+</section>
+<section id="shell" class="level2">
+<h2 class="anchored" data-anchor-id="shell">Shell</h2>
+<p>The terms“<strong>terminal</strong>”, <strong>“shell”</strong> and“<strong>command line interface</strong>” are often used interchangeably, but there are subtle differences between them:</p>
+<ul>
+<li><p><strong>A terminal</strong> is an input and output environment that presents a text-only window running a shell.</p></li>
+<li><p><strong>A shell</strong> is a command line interpreter, used to launch software in Linux.</p></li>
+<li><p><strong>A command line interface</strong> is a user interface (managed by a command line interpreter program) that processes commands to a computer program and outputs the results.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/terminal.png" class="img-fluid figure-img" width="612"></p>
+<figcaption><em>The Linux terminal</em></figcaption>
+</figure>
+</div>
+</section>
+<section id="working-with-the-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-the-terminal">Working with the Terminal</h2>
+<p>The terminal interprets commands the user types and manages their execution. Commands are case sensitive.</p>
+</section>
+<section id="understanding-linux-file-system" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-linux-file-system">Understanding Linux File System</h2>
+<p>The Linux file system is organized as a hierarchical structure of directories (folders) arranged in a tree-like format. Each directory can contain files as well as other subdirectories. Unlike some operating systems, drives in Linux do not appear as separate root locations but are mounted at specific points within the file system, allowing them to integrate seamlessly into the overall directory structure. <img src="images/linux file system.png" class="img-fluid" alt="A Simple Linux File System"> <em>A Simple Linux File System</em></p>
 
 
 </section>
