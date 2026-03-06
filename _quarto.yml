@@ -15,7 +15,7 @@ website:
         text: Learning paths
       - text: Modules
         menu:
-          - href: course_modules/Module0/module0.qmd
+          - href: course_modules/Introduction-to-linux/module0.qmd
             text: "Introduction to Linux"
           - href: course_modules/Module1/module1.qmd
             text: "File formats"
@@ -42,13 +42,13 @@ website:
     contents:
       - section: "Introduction to Linux"
         contents:
-          - course_modules/Module0/module0.qmd
-          - course_modules/Module0/module0_manual.qmd
-          - course_modules/Module0/module0_exercises.qmd
-          - course_modules/Module0/module0_solutions.qmd
-          - course_modules/Module0/module0_instructor_notes.qmd
-          - course_modules/Module0/module0_datasets.qmd
-          - course_modules/Module0/module0_platform_guidance.qmd
+          - course_modules/Introduction-to-linux/module0.qmd
+          - course_modules/Introduction-to-linux/module0_manual.qmd
+          - course_modules/Introduction-to-linux/module0_exercises.qmd
+          - course_modules/Introduction-to-linux/module0_solutions.qmd
+          - course_modules/Introduction-to-linux/module0_instructor_notes.qmd
+          - course_modules/Introduction-to-linux/module0_datasets.qmd
+          - course_modules/Introduction-to-linux/module0_platform_guidance.qmd
       - section: "File formats"
         contents:
           - course_modules/Module1/module1.qmd
