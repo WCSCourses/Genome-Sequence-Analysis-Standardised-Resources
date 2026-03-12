@@ -601,6 +601,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#processing-the-data" id="toc-processing-the-data" class="nav-link" data-scroll-target="#processing-the-data">Processing the data</a></li>
   <li><a href="#exercises-3" id="toc-exercises-3" class="nav-link" data-scroll-target="#exercises-3">Exercises</a></li>
   </ul></li>
+  <li><a href="#advanced-bash" id="toc-advanced-bash" class="nav-link" data-scroll-target="#advanced-bash">Advanced BASH</a>
+  <ul class="collapse">
+  <li><a href="#repeating-analysis-with-loops" id="toc-repeating-analysis-with-loops" class="nav-link" data-scroll-target="#repeating-analysis-with-loops">Repeating analysis with loops</a></li>
+  <li><a href="#getting-options-from-the-terminal-and-printing-a-help-message" id="toc-getting-options-from-the-terminal-and-printing-a-help-message" class="nav-link" data-scroll-target="#getting-options-from-the-terminal-and-printing-a-help-message">Getting options from the terminal and printing a help message</a></li>
+  <li><a href="#checking-options-from-the-user" id="toc-checking-options-from-the-user" class="nav-link" data-scroll-target="#checking-options-from-the-user">Checking options from the user</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1242,6 +1248,68 @@ ul.task-list li input[type="checkbox"] {
 <p>10. How many repeats are in contig-1?</p>
 <p>11. What is the mean score of the repeats in contig-1?</p>
 <p>When you have completed the exercises move on to the next part of the tutorial, BASH scripts.</p>
+</section>
+</section>
+<section id="advanced-bash" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-bash">Advanced BASH</h2>
+<p>This section is additional material and provided for anyone who would like to learn more advanced bash scripting.</p>
+<p>Before you start this section change into the advanced_bash directory:</p>
+<p><code>cd ../advanced_bash</code></p>
+<section id="repeating-analysis-with-loops" class="level3">
+<h3 class="anchored" data-anchor-id="repeating-analysis-with-loops">Repeating analysis with loops</h3>
+<p>It is common in Bioinformatics to run the same analysis on many files. Suppose we had a script that ran one type of analysis, and wanted to repeat the same analysis on 100 different files. It would be tedious, and error-prone, to write the same command 100 times. Instead we can use a loop. As an example, we will just run the Unix command <code>wc</code> on each file but instead, in reality this would be a script that runs in-depth analysis. We can run <code>wc</code> on each of the files in the directory <code>loop_files/</code> with the following command.</p>
+<p><code>for filename in loop_files/*;</code></p>
+<p><code>do wc $filename;</code></p>
+<p><code>done</code></p>
+</section>
+<section id="getting-options-from-the-terminal-and-printing-a-help-message" class="level3">
+<h3 class="anchored" data-anchor-id="getting-options-from-the-terminal-and-printing-a-help-message">Getting options from the terminal and printing a help message</h3>
+<p>Usually, we would like a script to read in options from the user, such as the name of an input file. This would mean a script can be run like this:</p>
+<p><code>my_script.sh input_file</code></p>
+<p>Inside the script, the parameters provided by the user are given the names $1, $2, $3 etc (do not confuse these with column names used by <code>awk</code>!). Here is a simple example that expects the user to provide a filename and a number. The script simply prints the filename to the screen, and then the first few lines of the file (the number of lines is determined by the number given by the user).</p>
+<p><code>cat options_example.sh</code></p>
+<p><code>options_example.sh test_file 2</code></p>
+<p>The options have been used by the script, but the script itself is not very readable. It is better to use names instead of $1 and $2. Here is an improved version of the script that does exactly the same as the previous script, but is more readable.</p>
+<p><code>cat options_example.2.sh</code></p>
+</section>
+<section id="checking-options-from-the-user" class="level3">
+<h3 class="anchored" data-anchor-id="checking-options-from-the-user">Checking options from the user</h3>
+<p>The previous scripts will have strange behaviour if the input is not as expected by the script. Many things could go wrong. For example:</p>
+<p>• The wrong number of options are given by the user</p>
+<p>• The input file does not exist.</p>
+<p>Try running the script with different options and see what happens.</p>
+<p>A convention with scripts is that it should output a help message if it is not run correctly. This shows anyone how the script should be run (including you!) without having to look at the code inside the script.</p>
+<p>A basic check for this script would be to verify that two options were supplied, and if not then print a help message. The code looks like this:</p>
+<p><code>if [ $# -ne 2 ]</code></p>
+<p><code>then</code></p>
+<p><code>echo "usage: options_example.3.sh filename number_of_lines"</code></p>
+<p><code>echo</code></p>
+<p><code>exit</code></p>
+<p><code>echo "Prints the filename, and the given first number of lines of the file"</code></p>
+<p><code>fi</code></p>
+<p>You can copy this code into the start of any of your scripts, and easily modify it to work for that script. A little explanation:</p>
+<p>• A special variable $# has been used, which is the number of options that were given by the user.</p>
+<p>• The whole block of code has the form “if [ $# -ne 2 ] then …. fi”. This only runs the code between the then and fi, if $# (the number of options) is not 2.</p>
+<p>• The line exit simply makes the script end, so that no more code is run.</p>
+<p><code>options_example.3.sh</code></p>
+<p>Another check is that the input file really does exist. If it does not exist, then there is no point in</p>
+<p>trying to run any more code. This can be checked with another if … then … fi block of code:</p>
+<p>if [ ! -f $filename ]</p>
+<p>then</p>
+<p>echo “File ‘$filename’ not found! Cannot continue”</p>
+<p>exit</p>
+<p>fi</p>
+<p>Putting this all together, the script now looks like this:</p>
+<p>� cat options_example.3.sh</p>
+<p>Two new features have also been introduced in this file:</p>
+<p>1. The second line is “set -eu”. Without this line, if any line produces an error, the script will</p>
+<p>carry on regardless to the end of the script. Using the -e option, an error anywhere in the file</p>
+<p>will result in the script stopping at the line that produced the error, instead of continuing. In</p>
+<p>general, it is best that the script stops at any error. The -u creates an error if you try to use a</p>
+<p>variable which doesn’t exist. This helps to stop typos doing bad things to your analysis.</p>
+<p>2. There are several lines starting with a hash #. These lines are “comment lines” that are not</p>
+<p>run. They are used to document the code, containing explanations of what is happening. It is</p>
+<p>good practice to comment your scripts!</p>
 
 
 </section>

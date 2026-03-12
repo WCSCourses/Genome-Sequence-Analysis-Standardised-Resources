@@ -130,6 +130,7 @@ For the file called index.ipynb under the unix directory, the location or full p
 ![*Directories structure*](images/directories.png){width="424"}
 
 ### 
+
 pwd - find where you are
 
 The command pwd stands for print working directory. A command (also known as a program) is something which tells the computer to do something. Commands are therefore often the first thing that you type into the terminal.
@@ -202,7 +203,7 @@ Every file and directory have a set of permissions which restrict what can be do
 
 -   Write (w): permission to modify a file/directory
 
--    Execute (x): Tells the operating system that the file contains code for the computer to run, as opposed to a file of text which you open in a text editor.
+-   Execute (x): Tells the operating system that the file contains code for the computer to run, as opposed to a file of text which you open in a text editor.
 
 In the terminal window type:
 
@@ -389,7 +390,7 @@ Saving time while typing may not seem important, but the longer that you spend i
 
 -   Pressing the up/down arrows will let you scroll through previous commands entered.
 
--    If you highlight some text, middle clicking on the mouse will paste it on the command line.
+-   If you highlight some text, middle clicking on the mouse will paste it on the command line.
 
 -   Tab completion doesn’t just work on directory and file names, it also works on commands. Try it by typing tai and pressing yhe tab key.
 
@@ -974,3 +975,112 @@ Use awk to find the answers to the following questions about the file exercises.
 11\. What is the mean score of the repeats in contig-1?
 
 When you have completed the exercises move on to the next part of the tutorial, BASH scripts.
+
+## Advanced BASH
+
+This section is additional material and provided for anyone who would like to learn more advanced bash scripting.
+
+Before you start this section change into the advanced_bash directory:
+
+`cd ../advanced_bash`
+
+### Repeating analysis with loops
+
+It is common in Bioinformatics to run the same analysis on many files. Suppose we had a script that ran one type of analysis, and wanted to repeat the same analysis on 100 different files. It would be tedious, and error-prone, to write the same command 100 times. Instead we can use a loop. As an example, we will just run the Unix command `wc` on each file but instead, in reality this would be a script that runs in-depth analysis. We can run `wc` on each of the files in the directory `loop_files/` with the following command.
+
+`for filename in loop_files/*;`
+
+`do wc $filename;`
+
+`done`
+
+### Getting options from the terminal and printing a help message
+
+Usually, we would like a script to read in options from the user, such as the name of an input file.
+This would mean a script can be run like this:
+
+`my_script.sh input_file`
+
+Inside the script, the parameters provided by the user are given the names \$1, \$2, \$3 etc (do not confuse these with column names used by `awk`!). Here is a simple example that expects the user to provide a filename and a number. The script simply prints the filename to the screen, and then the first few lines of the file (the number of lines is determined by the number given by the user).
+
+`cat options_example.sh`
+
+`options_example.sh test_file 2`
+
+The options have been used by the script, but the script itself is not very readable. It is better to use names instead of \$1 and \$2. Here is an improved version of the script that does exactly the same as the previous script, but is more readable.
+
+`cat options_example.2.sh`
+
+### Checking options from the user
+
+The previous scripts will have strange behaviour if the input is not as expected by the script. Many things could go wrong. For example:
+
+• The wrong number of options are given by the user
+
+• The input file does not exist.
+
+Try running the script with different options and see what happens.
+
+A convention with scripts is that it should output a help message if it is not run correctly. This shows anyone how the script should be run (including you!) without having to look at the code inside the script.
+
+A basic check for this script would be to verify that two options were supplied, and if not then print a help message. The code looks like this:
+
+`if [ $# -ne 2 ]`
+
+`then`
+
+`echo "usage: options_example.3.sh filename number_of_lines"`
+
+`echo`
+
+`exit`
+
+`echo "Prints the filename, and the given first number of lines of the file"`
+
+`fi`
+
+You can copy this code into the start of any of your scripts, and easily modify it to work for that script. A little explanation:
+
+• A special variable \$# has been used, which is the number of options that were given by the user.
+
+• The whole block of code has the form “if \[ \$# -ne 2 \] then .... fi”. This only runs the code between the then and fi, if \$# (the number of options) is not 2.
+
+• The line exit simply makes the script end, so that no more code is run.
+
+`options_example.3.sh`
+
+Another check is that the input file really does exist. If it does not exist, then there is no point in
+
+trying to run any more code. This can be checked with another if ... then ... fi block of code:
+
+if \[ ! -f \$filename \]
+
+then
+
+echo "File '\$filename' not found! Cannot continue"
+
+exit
+
+fi
+
+Putting this all together, the script now looks like this:
+
+� cat options_example.3.sh
+
+Two new features have also been introduced in this file:
+
+1\. The second line is “set -eu”. Without this line, if any line produces an error, the script will
+
+carry on regardless to the end of the script. Using the -e option, an error anywhere in the file
+
+will result in the script stopping at the line that produced the error, instead of continuing. In
+
+general, it is best that the script stops at any error. The -u creates an error if you try to use a
+
+variable which doesn’t exist. This helps to stop typos doing bad things to your analysis.
+
+2\. There are several lines starting with a hash #. These lines are “comment lines” that are not
+
+run. They are used to document the code, containing explanations of what is happening. It is
+
+good practice to comment your scripts!
