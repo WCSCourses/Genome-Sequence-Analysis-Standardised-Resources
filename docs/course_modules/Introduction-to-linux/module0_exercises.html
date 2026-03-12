@@ -606,6 +606,25 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#repeating-analysis-with-loops" id="toc-repeating-analysis-with-loops" class="nav-link" data-scroll-target="#repeating-analysis-with-loops">Repeating analysis with loops</a></li>
   <li><a href="#getting-options-from-the-terminal-and-printing-a-help-message" id="toc-getting-options-from-the-terminal-and-printing-a-help-message" class="nav-link" data-scroll-target="#getting-options-from-the-terminal-and-printing-a-help-message">Getting options from the terminal and printing a help message</a></li>
   <li><a href="#checking-options-from-the-user" id="toc-checking-options-from-the-user" class="nav-link" data-scroll-target="#checking-options-from-the-user">Checking options from the user</a></li>
+  <li><a href="#using-variables-to-store-output-from-commands" id="toc-using-variables-to-store-output-from-commands" class="nav-link" data-scroll-target="#using-variables-to-store-output-from-commands">Using variables to store output from commands</a></li>
+  <li><a href="#exercises-4" id="toc-exercises-4" class="nav-link" data-scroll-target="#exercises-4">Exercises</a></li>
+  </ul></li>
+  <li><a href="#bash-scripts" id="toc-bash-scripts" class="nav-link" data-scroll-target="#bash-scripts">BASH scripts</a>
+  <ul class="collapse">
+  <li><a href="#first-script" id="toc-first-script" class="nav-link" data-scroll-target="#first-script">First script</a></li>
+  <li><a href="#setting-up-a-scripts-directory" id="toc-setting-up-a-scripts-directory" class="nav-link" data-scroll-target="#setting-up-a-scripts-directory">Setting up a scripts directory</a></li>
+  </ul></li>
+  <li><a href="#unix-quick-reference-guide" id="toc-unix-quick-reference-guide" class="nav-link" data-scroll-target="#unix-quick-reference-guide">UNIX Quick Reference Guide</a>
+  <ul class="collapse">
+  <li><a href="#looking-at-files-and-moving-them-around" id="toc-looking-at-files-and-moving-them-around" class="nav-link" data-scroll-target="#looking-at-files-and-moving-them-around">Looking at files and moving them around</a></li>
+  <li><a href="#looking-in-files" id="toc-looking-in-files" class="nav-link" data-scroll-target="#looking-in-files">Looking in files</a></li>
+  <li><a href="#grep" id="toc-grep" class="nav-link" data-scroll-target="#grep">Grep</a></li>
+  <li><a href="#awk" id="toc-awk" class="nav-link" data-scroll-target="#awk">Awk</a></li>
+  <li><a href="#piping-redirection-and-more-advanced-queries" id="toc-piping-redirection-and-more-advanced-queries" class="nav-link" data-scroll-target="#piping-redirection-and-more-advanced-queries">Piping, redirection and more advanced queries</a></li>
+  <li><a href="#a-script" id="toc-a-script" class="nav-link" data-scroll-target="#a-script">A script</a></li>
+  <li><a href="#pro-tips" id="toc-pro-tips" class="nav-link" data-scroll-target="#pro-tips">Pro tips</a></li>
+  <li><a href="#build-commands-slowly" id="toc-build-commands-slowly" class="nav-link" data-scroll-target="#build-commands-slowly">Build commands slowly</a></li>
+  <li><a href="#which-tool-should-i-use" id="toc-which-tool-should-i-use" class="nav-link" data-scroll-target="#which-tool-should-i-use">Which tool should I use?</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1292,24 +1311,277 @@ ul.task-list li input[type="checkbox"] {
 <p>• The whole block of code has the form “if [ $# -ne 2 ] then …. fi”. This only runs the code between the then and fi, if $# (the number of options) is not 2.</p>
 <p>• The line exit simply makes the script end, so that no more code is run.</p>
 <p><code>options_example.3.sh</code></p>
-<p>Another check is that the input file really does exist. If it does not exist, then there is no point in</p>
-<p>trying to run any more code. This can be checked with another if … then … fi block of code:</p>
-<p>if [ ! -f $filename ]</p>
-<p>then</p>
-<p>echo “File ‘$filename’ not found! Cannot continue”</p>
-<p>exit</p>
-<p>fi</p>
+<p>Another check is that the input file really does exist. If it does not exist, then there is no point in trying to run any more code. This can be checked with another if … then … fi block of code:</p>
+<p><code>if [ ! -f $filename ]</code></p>
+<p><code>then</code></p>
+<p><code>echo "File '$filename' not found! Cannot continue"</code></p>
+<p><code>exit</code></p>
+<p><code>fi</code></p>
 <p>Putting this all together, the script now looks like this:</p>
-<p>� cat options_example.3.sh</p>
+<p><code>cat options_example.3.sh</code></p>
 <p>Two new features have also been introduced in this file:</p>
-<p>1. The second line is “set -eu”. Without this line, if any line produces an error, the script will</p>
-<p>carry on regardless to the end of the script. Using the -e option, an error anywhere in the file</p>
-<p>will result in the script stopping at the line that produced the error, instead of continuing. In</p>
-<p>general, it is best that the script stops at any error. The -u creates an error if you try to use a</p>
-<p>variable which doesn’t exist. This helps to stop typos doing bad things to your analysis.</p>
-<p>2. There are several lines starting with a hash #. These lines are “comment lines” that are not</p>
-<p>run. They are used to document the code, containing explanations of what is happening. It is</p>
-<p>good practice to comment your scripts!</p>
+<p>1. The second line is “set -eu”. Without this line, if any line produces an error, the script will carry on regardless to the end of the script. Using the -e option, an error anywhere in the file will result in the script stopping at the line that produced the error, instead of continuing. In general, it is best that the script stops at any error. The -u creates an error if you try to use a variable which doesn’t exist. This helps to stop typos doing bad things to your analysis.</p>
+<p>2. There are several lines starting with a hash #. These lines are “comment lines” that are not run. They are used to document the code, containing explanations of what is happening. It is good practice to comment your scripts!</p>
+<p>The above script provides a template for writing your own scripts. The general method is:</p>
+<p>1. Tell Unix that this is a BASH script, and to stop at the first error.</p>
+<p>2. Check if the user ran the script correctly. If not, output a message telling the user how to run the script.</p>
+<p>3. Check the input looks OK (in this case, that the input file exists).</p>
+<p>4. Process the input.</p>
+</section>
+<section id="using-variables-to-store-output-from-commands" class="level3">
+<h3 class="anchored" data-anchor-id="using-variables-to-store-output-from-commands">Using variables to store output from commands</h3>
+<p>It can be useful to run a command and put the results into a variable. Recall that we stored the input from the user in sensibly named variables:</p>
+<p><code>filename=$1</code></p>
+<p>The part after the equals sign could actually be any command that returns some output. For example, running this in Unix</p>
+<p><code>wc -l filename | awk '{print $1}'</code></p>
+<p>returns the number of lines. In case you are wondering why the command includes | $1}’, check what happens with and without the pipe to awk:</p>
+<p><code>awk '{print</code></p>
+<p><code>wc -l options_example.3.sh</code></p>
+<p><code>wc -l options_example.3.sh | awk '{print $1}'</code></p>
+<p>With a small change, this can be stored in a variable and then used later.</p>
+<p><code>filename=options_example.3.sh</code></p>
+<p><code>line_count=$(wc -l $filename | awk '{print $1}')</code></p>
+<p><code>echo There are $line_count lines in the file $filename</code></p>
+</section>
+<section id="exercises-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercises-4">Exercises</h3>
+<p>1. Write a script that gets a filename from the user. If the file exists, it prints a nice human-readable message telling the user how many lines are in the file.</p>
+<p>2. Use a loop to run the script from Exercise 1 on the files in the directory loop_files/.</p>
+<p>3. Write a script that takes a GFF filename as input. Make the script produce a summary of various properties of the file. There is an example input file provided called <code>bash_scripts/exercise_3.gff</code>. Use your imagination! You could have a look back at the <code>awk</code> section of the course for inspiration. Here are some ideas you may wish to try:</p>
+<p>• Does the file exist?</p>
+<p>• How many records (ie lines) are in the file?</p>
+<p>• How many genes are in the file?</p>
+<p>• Is the file badly formatted in any way (eg wrong number of columns, do the coordinates look like numbers)?</p>
+</section>
+</section>
+<section id="bash-scripts" class="level2">
+<h2 class="anchored" data-anchor-id="bash-scripts">BASH scripts</h2>
+<p>So far, we have run single commands in a terminal. However, it is useful to be able to run multiple commands that process some data and produce output. These commands can be put into a file (i.e.&nbsp;a script), and run on input data. This has the advantage of reproducibility, so that the same analysis can be run on many input data sets.</p>
+<section id="first-script" class="level3">
+<h3 class="anchored" data-anchor-id="first-script">First script</h3>
+<p>It is traditional when learning a new language (in this case BASH), to write a script that says “Hello World!”. Open a terminal and make a new directory in your home called scripts, by typing</p>
+<p><code>cd</code></p>
+<p><code>mkdir ~/scripts</code></p>
+<p>Next open a text editor, which you will use to write the script. What text editors are available will depend on your system. For example, gedit in Linux. Do not try to use a word processor, such as Word! If you don’t already have a favorite, try gedit by running the following command:</p>
+<p><code>gedit &amp;</code></p>
+<p>Type this into the text editor:</p>
+<p><code>echo Hello World!</code></p>
+<p>and save this to a file called hello.sh in your new scripts directory. This script will print <em>Hello World!</em> to the screen when we run it. First, check that the script is saved in the correct place.</p>
+<p><code>cd scripts</code></p>
+<p><code>ls hello.sh</code></p>
+<p>Now try to run the script. For now, we need to tell Unix that this is a BASH script and where it is:</p>
+<p><code>bash hello.sh</code></p>
+</section>
+<section id="setting-up-a-scripts-directory" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up-a-scripts-directory">Setting up a scripts directory</h3>
+<p>It would be nice if our scripts could be run from anywhere in the filesystem, without having to tell Unix where the script is, or that it is a BASH script. This is how built-in commands work, like <code>cd</code> or <code>ls</code>.</p>
+<p>To tell Unix that the script is a BASH script, make this the first line of the script:</p>
+<p><code>#!/usr/bin/env bash</code></p>
+<p>and remember to save the script again. This special line at the start of the file tells Unix that the file is a bash script, so that it expects bash commands throughout the file. There is one more change to be made to the file to tell Unix that it is a program to be run (it is “executable”). This is done with the command chmod. Type this into the terminal to make the file executable:</p>
+<p><code>chmod +x hello.sh</code></p>
+<p>Now, the script can be run, but we must still tell Unix where the script is in the filesystem. In this case, it is in the current working directory, which is called “./”.</p>
+<p><code>./hello.sh</code></p>
+<p>We need to change our setup so that Unix can find the script without us having to explicitly say where it is. Whenever a command is typed into Unix, it has a list of directories that it searches through to look for the command. We need to add the new scripts directory to this list using:</p>
+<p><code>echo $PATH</code></p>
+<p>It returns a list of directories, which are all the places Unix will look for a command. First, check what happens if we try to run the script without telling Unix where it is:</p>
+<p><code>hello.sh</code></p>
+<p><code>bash: hello.sh: command not found</code></p>
+<p>Unix did not find it! The command to run to add the scripts directory to $PATH is:</p>
+<p><code>export PATH=$PATH:~/scripts/</code></p>
+<p>If you want this change to be permanent, ie so that Unix finds your scripts after you restart or logout and login, add that line to the end of a file called <code>~/.bashrc</code>. If you are using a Mac, then the file should instead be <code>~/.bash_profile</code>. If the file does not already exist, then create it and put that line into it.</p>
+<p>Now the script works, no matter where we are in the filesystem. Unix will check the scripts directory and find the file <code>hello.sh</code>. You can be anywhere in your filesystem, and simply running <code>hello.sh</code>will always work. Try it now.</p>
+<p><code>hello.sh</code></p>
+<p>In general, when making a new script, you can now copy and edit an existing script, or make a new one like this:</p>
+<p><code>cd ~/scripts</code></p>
+<p><code>touch my_new_script.sh</code></p>
+<p><code>chmod +x my_new_script.sh</code></p>
+<p>and then open my_new_script.sh in a text editor.</p>
+<p>Congratulations you have reached the end of the Unix tutorial! If you would like to learn more advanced bash scripting we have provided some optional material in Advanced BASH.</p>
+</section>
+</section>
+<section id="unix-quick-reference-guide" class="level2">
+<h2 class="anchored" data-anchor-id="unix-quick-reference-guide">UNIX Quick Reference Guide</h2>
+<section id="looking-at-files-and-moving-them-around" class="level3">
+<h3 class="anchored" data-anchor-id="looking-at-files-and-moving-them-around">Looking at files and moving them around</h3>
+<p><code>pwd</code> # Tell me which directory I’m in</p>
+<p><code>ls</code> # What else is in this directory</p>
+<p><code>ls ..</code> # What is in the directory above me</p>
+<p><code>ls foo/bar</code>/ # What is inside the bar directory which is inside the foo/ directory</p>
+<p><code>ls -lah foo</code>/ # Give the the details (-l) of all files and folders (-a) using humanvv# readable file sizes (-h)</p>
+<p><code>cd ../..</code> # Move up two directories</p>
+<p><code>cd ../foo/bar</code> # Move up one directory and down into the foo/bar/ subdirectories</p>
+<p><code>cp -r foo/ baz/</code> # Copy the foo/ directory into the baz/ directory</p>
+<p><code>mv baz/foo ..</code> # Move the foo directory into the parent directory</p>
+<p><code>rm -r ../foo</code> # remove the directory called foo/ from the parent directory</p>
+<p><code>find foo/ -name "*.gff"</code> # find all the files with a gff extension in the directory foo/</p>
+</section>
+<section id="looking-in-files" class="level3">
+<h3 class="anchored" data-anchor-id="looking-in-files">Looking in files</h3>
+<p><code>less bar.bed</code> # scroll through bar.bed</p>
+<p><code>grep chrom bar.bed | less -S</code> # Only look at lines in bar.bed which have ‘chrom’ and # don’t wrap lines (-S)</p>
+<p><code>head -20 bar.bed</code> # show me the first 20 lines of bar.bed</p>
+<p><code>tail -20 bar.bed</code> # show me the last 20 lines</p>
+<p><code>cat bar.bed</code> # show me all of the lines (bad for big files)</p>
+<p><code>wc -l bar.bed</code> # how many lines are there</p>
+<p><code>sort -k 2 -n bar.bed</code> # sort by the second column in numerical order</p>
+<p><code>awk '{print $1}' bar.bed | sort | uniq</code> # show the unique entries in the first column</p>
+</section>
+<section id="grep" class="level3">
+<h3 class="anchored" data-anchor-id="grep">Grep</h3>
+<p><code>grep foo bar.bed</code> # show me the lines in bar.bed with ‘foo’ in them</p>
+<p><code>grep foo baz/*</code> # show me all examples of foo in the files immediately within baz/</p>
+<p><code>grep -r foo baz/</code> # show me all examples of foo in baz/ and every subdirectory within it</p>
+<p><code>grep '^foo' bar.bed</code> # show me all of the lines begining with foo</p>
+<p>grep ‘foo$’ bar.bed # show me all of the lines ending in foo</p>
+<p><code>grep -i '^[acgt]$' bar.bed</code> # show me all of the lines which only have the characters # a,c,g and t (ignoring their case)</p>
+<p><code>grep -v foo bar.bed</code> # don’t show me any files with foo in them</p>
+</section>
+<section id="awk" class="level3">
+<h3 class="anchored" data-anchor-id="awk">Awk</h3>
+<p><code>awk '{print $1}' bar.bed</code> # just the first column</p>
+<p><code>awk '$4 ~ /^foo/' bar.bed</code> # just rows where the 4th column starts with foo</p>
+<p><code>awk '$4 == "foo" {print $1}' bar.bed</code> # the first column of rows where the 4th column is foo</p>
+<p><code>awk -F"\t" '{print $NF}' bar.bed</code> # ignore spaces and print the last column</p>
+<p><code>awk -F"\t" '{print $(NF-1)}' bar.bed</code> # print the penultimate column</p>
+<p><code>awk '{sum+=$2} END {print sum}' bar.bed</code> # print the sum of the second column</p>
+<p><code>awk '/^foo/ {sum+=$2; count+=1} END {print sum/count}' bar.bed</code> # print the average of the second value of lines starting with foo</p>
+</section>
+<section id="piping-redirection-and-more-advanced-queries" class="level3">
+<h3 class="anchored" data-anchor-id="piping-redirection-and-more-advanced-queries">Piping, redirection and more advanced queries</h3>
+<p><code>grep -hv '^#' bar/*.gff | awk -F"\t" '{print $1}' | sort -u</code></p>
+<p>Explanation:</p>
+<p># grep =&gt; -h: don’t print file names</p>
+<p># -v: don’t give me matching files</p>
+<p># ‘^#’: get rid of the header rows</p>
+<p># ‘bar/*.gff’: only look in the gff files in bar/</p>
+<p># awk =&gt; print the first column</p>
+<p># sort =&gt; -u: give me unique values</p>
+<p><code>awk 'NR%10 == 0' bar.bed | head -20</code></p>
+<p>Explanation:</p>
+<p># awk =&gt; NR: is the row number</p>
+<p># NR%10: is the modulo (remander) of dividing my 10</p>
+<p># awk is therefore giving you every 10th line</p>
+<p># head =&gt; only show the first 20</p>
+<p><code>awk '{l=($3-$2+1)}; (l&lt;300 &amp;&amp; $2&gt;200000 &amp;&amp; $3&lt;250000)' exercises.bed</code></p>
+<p># Gives:</p>
+<p># contig-2 201156 201359 gene-67 24.7 -</p>
+<p># contig-4 245705 245932 gene-163 24.8 +</p>
+<p># Finds all of the lines with features less than 300 bases long which start</p>
+<p># after base 200,000 and end before base 250,000</p>
+<p># Note that this appears to have the action before the pattern. This is because we need to calculate the length of each feature before we use it for filtering. If they were the other way around, you’d get the line immediatly after the one you want:</p>
+<p><code>awk '(l&lt;300 &amp;&amp; $2&gt;200000 &amp;&amp; $3&lt;250000) {l=($3-$2+1); print $0}' exercises.bed</code></p>
+<p># Gives:</p>
+<p># contig-2 201156 201359 gene-67 24.7 -</p>
+<p># contig-2 242625 243449 gene-68 46.5 +</p>
+</section>
+<section id="a-script" class="level3">
+<h3 class="anchored" data-anchor-id="a-script">A script</h3>
+<pre><code>#!/usr/bin/env bash
+
+set -e \# stop running the script if there are errors
+
+set -u \# stop running the script if it uses an unknown variable
+
+set -x \# print every line before you run it (useful for debugging but annoying)
+
+if \[ \$# -ne 2 \]
+
+then
+
+  echo "You must provide two files"
+
+  exit 1 \# exit the programme (and number \&gt; 0 reports that this is a failure)
+
+fi
+
+file_one=\$1
+
+file_two=\$2
+
+if \[ ! -f \$file_one \]
+
+then
+
+  exit 2
+
+  echo "The first file couldn't be found"
+
+fi
+
+if \[ ! -f \$file_two \]
+
+  then
+
+  echo "The second file couldn't be found"
+
+  exit 2
+
+fi
+
+\# Get the lines which aren't headers,
+
+\# take the first column and return the unique values
+
+number_of_contigs_in_one=\$(awk '\$1 !\~ /\^#/ {print \$1}' \$file_one \| sort -u \| wc -l)
+
+number_of_contigs_in_two=\$(awk '/\^\[\^#\]/ {print \$1}' \$file_two \| sort -u \| wc -l)
+
+if \[ \$number_of_contigs_in_one -gt \$number_of_contigs_in_two \]
+
+then
+  echo "The first file had more unique contigs than the second"
+  exit
+
+elif \[ \$number_of_contigs_in_one -lt \$number_of_contigs_in_two \]
+then
+
+  echo "The second file had more unique contigs"
+  exit
+else
+  echo "The two files had the same number of contigs"
+  exit
+fi</code></pre>
+</section>
+<section id="pro-tips" class="level3">
+<h3 class="anchored" data-anchor-id="pro-tips">Pro tips</h3>
+<p>• Use tab completion - it will save you time!</p>
+<p>• Always have a quick look at files with less or head to double check their format</p>
+<p>• Watch out for data in headers and that you don’t accidentally grep some if you don’t want them</p>
+<p>• Watch out for spaces, especially if you’re using awk; if in doubt, use -F”\t”</p>
+<p>• Regular expressions are wierd, build them up slowly bit by bit</p>
+<p>• If you did something smart but can’t remember what it was, try typing history and it might have a record</p>
+<p>• man the_name_of_a_command often gives you help</p>
+</section>
+<section id="build-commands-slowly" class="level3">
+<h3 class="anchored" data-anchor-id="build-commands-slowly">Build commands slowly</h3>
+<p>If you wanted me to calculate the sum of all of the scores for genes on contig-1 in a bed file, I’d probably run each of the following commands before moving onto the next:</p>
+<p><code>head -20 bar.bed</code> # check which column is which and if there are any headers</p>
+<p><code>head -20 bar.bed</code> | awk ‘{print $5}’ # have a look at the scores</p>
+<p><code>awk '{print $1}' bar.bed | sort -u | less</code> # check the contigs don’t look wierd</p>
+<p><code>awk '{print $4}' bar.bed | sort -u | less</code> # check the genes don’t look wierd</p>
+<p><code>awk '$4 ~ /gene-/' bar.bed | head -20</code> # check that I can spot genes</p>
+<p><code>awk '($1 == "contig-1" &amp;&amp; $4 ~ /gene-/)' bar.bed | head -20</code> # check I can find genes on contig-1</p>
+<p># check my algorithm works on a subset of the data</p>
+<p><code>head -20 bar.bed | awk '($1 == "contig-1" &amp;&amp; $4 ~ /gene-/) {sum+=$5}; END {print sum}'</code></p>
+<p># apply the algorithm to all of the data</p>
+<p><code>awk '($1 == "contig-1" &amp;&amp; $4 ~ /gene-/) {sum+=$5}; END {print sum}' bar.bed</code></p>
+</section>
+<section id="which-tool-should-i-use" class="level3">
+<h3 class="anchored" data-anchor-id="which-tool-should-i-use">Which tool should I use?</h3>
+<p>You should probably use <code>awk</code> if:</p>
+<p>• your data has columns</p>
+<p>• you need to do simple maths</p>
+<p>You should probable use <code>grep</code> if:</p>
+<p>• you’re looking for files which contain some specific text (e.g.&nbsp;grep -r foo bar/: look in all the files in bar/ for any with the word ‘foo’)</p>
+<p>You should use <code>find</code> if:</p>
+<p>• you know something about a file (like it’s name or creation date) but not where it is</p>
+<p>• you want a list of all the files in a subdirectory and its subdirectories etc.</p>
+<p>You should write a script if:</p>
+<p>• your code doesn’t fit on one line</p>
+<p>• it’s doing something you might want to do again in 3 months</p>
+<p>• you want someone else to be able to do it without asking loads of questions</p>
+<p>• you’re doing something sensitive (e.g.&nbsp;deleting loads of files)</p>
+<p>• you’re doing something lots of times</p>
 
 
 </section>
