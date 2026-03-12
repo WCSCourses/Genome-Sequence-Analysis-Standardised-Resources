@@ -63,6 +63,16 @@ The terminal interprets commands the user types and manages their execution. Com
 
 ## Understanding Linux File System
 
-The Linux file system is organized as a hierarchical structure of directories (folders) arranged in a tree-like format. Each directory can contain files as well as other subdirectories. Unlike some operating systems, drives in Linux do not appear as separate root locations but are mounted at specific points within the file system, allowing them to integrate seamlessly into the overall directory structure.
-![A Simple Linux File System](images/linux file system.png)
-*A Simple Linux File System*
+The Linux file system is organized as a hierarchical structure of directories (folders) arranged in a tree-like format. Each directory can contain files as well as other subdirectories. Unlike some operating systems, drives in Linux do not appear as separate root locations but are mounted at specific points within the file system, allowing them to integrate seamlessly into the overall directory structure. ![A Simple Linux File System](images/linux%20file%20system.png){width="506"}
+
+*A illustration of the Linux File System*
+
+## Specifying File Paths
+
+When working in a Unix or Linux file system, there are different ways to specify the location of a file.
+
+An **absolute path** starts from the root of the file system (shown as `/`) and provides the full path to the file, such as `/home/username/Documents/Data/some_file.txt`. This path will always point to the same file, no matter which directory you are currently in.
+
+A **relative path** is defined from your current working directory. For example, if you are already in `/home/username/Documents/`, you can refer to the same file simply as `Data/some_file.txt`.
+
+Finally, the tilde symbol (`~`) is a shortcut that represents your home directory (e.g., `/home/username/`), so `~/Documents/Data/some_file.txt` is another way to write the full path without typing the entire home directory name.

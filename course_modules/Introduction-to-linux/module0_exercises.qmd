@@ -131,7 +131,7 @@ For the file called index.ipynb under the unix directory, the location or full p
 
 ### 
 
-pwd - find where you are
+#### pwd - find where you are
 
 The command pwd stands for print working directory. A command (also known as a program) is something which tells the computer to do something. Commands are therefore often the first thing that you type into the terminal.
 
@@ -145,7 +145,7 @@ Remember that Unix is case sensitive, *PWD* is not the same as *pwd*.
 
 `pwd` will list each of the folders you would need to navigate through to get from the root (top level directory) of the file system to your current directory. This is sometimes refered to as your ‘absolute path’ to distinguish that it gives a complete route rather than a ‘relative path’ which tells you how to get from the current working directory to another directory. More on that shortly.
 
-### ls - list the contents of a directory
+#### ls - list the contents of a directory
 
 The command ls stands for list. The ls command can be used to list the contents of a directory.
 
@@ -211,7 +211,7 @@ In the terminal window type:
 
 This shows the permissions associate with each file and directory. The first set of permissions (characters 2,3,4) refer to what the owner of the file can do, the second set of permissions (5,6,7) refers to what members of the Unix group can do and the third set of permissions (8,9,10) refers to what everyone else can do.
 
-### cd - change current working directory
+#### cd - change current working directory
 
 The command `cd` stands for change directory.
 
@@ -259,7 +259,7 @@ It should return the result below, if not then you are not in the Styphi directo
 
 `/home/manager/pathogen-informatics-training/Notebooks/Unix/basic/Styphi`
 
-### cp - copy a file
+#### cp - copy a file
 
 The command `cp` stands for copy.
 
@@ -273,7 +273,7 @@ Use ls to check the contents of the current directory for the copied file:
 
 `ls`
 
-### mv - move a file
+#### mv - move a file
 
 The `mv` command stand for move.
 
@@ -291,7 +291,7 @@ Use the ls command to check the contents of the Styphi directory and the current
 
 `ls`
 
-### rm - delete a file
+#### rm - delete a file
 
 The command `rm` stands for remove.
 
@@ -307,7 +307,7 @@ Use the `ls` command to check the contents of the current directory to see that 
 
 Unfortunately there is no “recycle bin” on the command line to recover the file from, so you have to be careful!
 
-### find - find a file
+#### find - find a file
 
 The `find` command can be used to find files matching a given pattern. It can be used to recursively search the directory tree for a specified name, seeking files and directories that match the given name.
 
@@ -350,7 +350,7 @@ But first, change directory into the files directory. You may find Figure 1 usef
 
 `cd ../files`
 
-### less
+#### less
 
 The less command displays the contents of a specified file one screen at a time. To test this command type the following command followed by the enter key:
 
@@ -360,7 +360,7 @@ The less command displays the contents of a specified file one screen at a time.
 
 The contents of the file Styphi.gff is displayed one screen at a time, to view the next screen press the space bar. As Styphi.gff is a large file this will take a while, therefore you may want to escape or exit from this command. To do this, press the q key, this kills the less command and returns you to the Unix prompt. The less command can also scroll backwards if you hit the **b** key. Another useful feature is the slash key, `/`, to search for an expression in the file. Try it, search for the gene with locus tag t0038. ***What is the start and end position of this gene?***
 
-### head and tail
+#### head and tail
 
 Sometimes you may just want to view the text at the beginning or the end of a file, without having to display all of the file. The head and tail commands can be used to do this.
 
@@ -414,7 +414,7 @@ Type this:
 
 It may look like nothing has happened. This is because the **`>`** character has redirected the output of the `head` command. Instead of writing to the standard output (in this case your terminal) it sent the output into the file *first_Styphi_line.txt*. Note that tab completion works for ***Styphi.gff*** because it exists but doesn’t work for ***first_Styphi_line.txt*** because it doesn’t exist yet.
 
-### cat
+#### cat
 
 `cat` is another way of reading files, but unlike less it just throws the entire contents of the file to your standard output. Try it on ***first_Styphi_line.txt***
 
@@ -438,7 +438,7 @@ The `>` symbol in the command line directs the output of the cat program to the 
 
 `ls`
 
-### wc - counting
+#### wc - counting
 
 The command `wc` counts lines, words or characters.
 
@@ -462,7 +462,7 @@ You can connect as many commands as you want. For example, type:
 
 ***What does this command do?*** You will learn more about the `grep` command later in this course.
 
-### sort - sorting values
+#### sort - sorting values
 
 The `sort` lets you sort the contents of the input. When you sort the input, lines with identical content end up next to each other in the output. This is useful as the output can then be fed to the `uniq`command (see below) to count the number of unique lines in the input.
 
@@ -490,7 +490,7 @@ Why not have a look at the manual for sort to see what these `-k` and `-n` optio
 
 `man sort`
 
-### uniq - finding unique values
+#### uniq - finding unique values
 
 The uniq command extracts unique lines from the input. It is usually used in combination with sort to count unique values in the input.
 
@@ -510,7 +510,7 @@ To get the list of chromosomes in the Pfalciparum bed file type:
 
 `awk '{ print $1 }' Pfalciparum.bed | sort | uniq | less`
 
-### Exercises
+#### Exercises
 
 Open up a new terminal window, navigate to the files directory under the unix directory and complete the following exercises:
 
@@ -526,7 +526,7 @@ Open up a new terminal window, navigate to the files directory under the unix di
 
 When you have completed these exercises move on to the next part of the tutorial, searching inside files with `grep`.
 
-### Searching inside files with grep
+#### Searching inside files with grep
 
 A common task is to extract information from large files. This can be achieved using the Unix command `grep`, which stands for “Globally search for a Regular Expression and Print”. The meaning of this acronym will become clear later, when we discuss Regular Expressions. First, we will consider simpler examples.
 
@@ -534,7 +534,7 @@ Before we start, change into the grep directory:
 
 `cd ../grep`
 
-### Simple pattern matching
+#### Simple pattern matching
 
 We will use a small example file (in “BED” format), which contains the expression levels of some genes. This is a column-based file, with a tab character between each column. There can be more than 10 columns, but only the first three are required to be a valid file. The file format is described in full here: ***http://genome.ucsc.edu/FAQ/FAQformat#format1***. We will use the first 5 columns:
 
@@ -606,7 +606,7 @@ To find the genes on the negative strand, all that remains is to match a minus s
 
 `grep $'^chr1\t' gene_expression_sneaky.bed | grep '\-$'`
 
-### Wildcards and alphabets
+#### Wildcards and alphabets
 
 Another special character in regular expressions is the dot: “.”. This stands for any single character.
 
@@ -648,13 +648,13 @@ The Unix command `grep` and regular expressions are extremely powerful and we ha
 
 `man grep`
 
-### Counting matches
+#### Counting matches
 
 A common use-case is counting matches within files. Instead of output each matching line, the option “-c” tells grep to report the number of lines that matched. For example, the number of genes in the autosomes in the above example can be found by simply adding -c to the command.
 
 `grep -c $'^chr[0-9]\+\t' gene_expression.bed`
 
-### Case sensitivity
+#### Case sensitivity
 
 By default, grep is case-sensitive. It can be useful to ignore the distinction between upper and lower case using the option “-i”. Suppose we have a file of sequences, and want to find the sequences that contain the string ACGT. It is not unusual to come across files that have a mix of upper and lower case nucleotides. Consider this FASTA file:
 
@@ -668,7 +668,7 @@ However, making the search case-insensitive solves the problem.
 
 `grep -i ACGT sequences.fasta`
 
-### Searching in more than one file
+#### Searching in more than one file
 
 So far, we have restricted to searches in one file, but grep can be given a list of files in which to search. As an example, we are given three files called list_example.1, list_example.2, and list_example.3. They are simple lists of genes, for illustrative purposes. For example, the first file looks like this:
 
@@ -694,13 +694,13 @@ How about gene42?
 
 gene42 appears once in list_example.2 and twice in list_example.3.
 
-### Inverting matches
+#### Inverting matches
 
 By default, grep reports all lines that do match the regular expression. Sometimes it is useful to filter a file, by reporting lines that do not match the regular expression. Using the option “-v” makes grep “invert” the output. For example, we could exclude genes from autosomes in the BED file from earlier.
 
 `grep -v $'^chr[0-9]\+\t' gene_expression.bed`
 
-### Replacing matches to regular expressions
+#### Replacing matches to regular expressions
 
 Finally, we show how to replace every match to a regular expression with something else, using the command “sed”. The general form of this is:
 
@@ -710,7 +710,7 @@ This will output a new version of the input file, with each match to the regular
 
 `sed 's/^chr/chromosome/' gene_expression.bed`
 
-### Exercises
+#### Exercises
 
 The following exercises all use the FASTA file exercises.fasta. Before starting the exercises, open a new terminal and navigate to the grep directory, which contains exercises.fasta. Use `grep` to find the answers. Hint: some questions require you to use grep twice, and possibly some other Unix commands.
 
@@ -742,7 +742,7 @@ Before we start, change into the awk directory:
 
 `cd ../awk`
 
-### Extracting columns from files
+#### Extracting columns from files
 
 `awk` reads a file line-by-line, splitting each line into columns. This makes it easy to do simple things like extract a column from a file. We will use the following GFF file for our examples.
 
@@ -784,7 +784,7 @@ The repeated chromosome names are not nice. It is more likely to want to know ju
 
 `awk -F"\t" '{print $1}' genes.gff | sort -u`
 
-### Filtering the input file
+#### Filtering the input file
 
 Similarly to grep, awk can be used to filter out lines of a file. However, since awk is column-based, it makes it easy to filter based on properties of any columns of interest. The filtering criteria can be added before the braces. For example, the following extracts just chromosome 1 from the file.
 
@@ -874,7 +874,7 @@ One more sanity check: each line should have 8 or 9 columns (remembering to use 
 
 There was no output, which means that every line does indeed have 8 or 9 columns.
 
-### Changing the output
+#### Changing the output
 
 In addition to filtering, `awk` can be used to change the output.
 
@@ -886,7 +886,7 @@ This is close, but look carefully at the output. What happened? The output is no
 
 `awk -F"\t" 'BEGIN{OFS="\t"} {$2="new_source"; print $0}' genes.gff`
 
-### Processing the data
+#### Processing the data
 
 More in-depth processing is possible. For example, we could print the length of each repeat (and then sort the results numerically)
 
@@ -946,7 +946,7 @@ Finally, awk has a default behaviour that means we do not even need the BEGIN bl
 
 If this confuses you, then be explicit and use the BEGIN block of code. The result is the same.
 
-### Exercises
+#### Exercises
 
 The following exercises all use the BED file exercises.bed. Before starting the exercises, open a new terminal and navigate to the awk directory, which contains exercises.bed.
 

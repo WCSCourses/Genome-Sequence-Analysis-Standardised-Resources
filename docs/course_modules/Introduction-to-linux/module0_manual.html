@@ -557,6 +557,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#shell" id="toc-shell" class="nav-link" data-scroll-target="#shell">Shell</a></li>
   <li><a href="#working-with-the-terminal" id="toc-working-with-the-terminal" class="nav-link" data-scroll-target="#working-with-the-terminal">Working with the Terminal</a></li>
   <li><a href="#understanding-linux-file-system" id="toc-understanding-linux-file-system" class="nav-link" data-scroll-target="#understanding-linux-file-system">Understanding Linux File System</a></li>
+  <li><a href="#specifying-file-paths" id="toc-specifying-file-paths" class="nav-link" data-scroll-target="#specifying-file-paths">Specifying File Paths</a></li>
   </ul>
 </nav>
     </div>
@@ -649,7 +650,15 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="understanding-linux-file-system" class="level2">
 <h2 class="anchored" data-anchor-id="understanding-linux-file-system">Understanding Linux File System</h2>
-<p>The Linux file system is organized as a hierarchical structure of directories (folders) arranged in a tree-like format. Each directory can contain files as well as other subdirectories. Unlike some operating systems, drives in Linux do not appear as separate root locations but are mounted at specific points within the file system, allowing them to integrate seamlessly into the overall directory structure. <img src="images/linux file system.png" class="img-fluid" alt="A Simple Linux File System"> <em>A Simple Linux File System</em></p>
+<p>The Linux file system is organized as a hierarchical structure of directories (folders) arranged in a tree-like format. Each directory can contain files as well as other subdirectories. Unlike some operating systems, drives in Linux do not appear as separate root locations but are mounted at specific points within the file system, allowing them to integrate seamlessly into the overall directory structure. <img src="images/linux file system.png" class="img-fluid" width="506" alt="A Simple Linux File System"></p>
+<p><em>A illustration of the Linux File System</em></p>
+</section>
+<section id="specifying-file-paths" class="level2">
+<h2 class="anchored" data-anchor-id="specifying-file-paths">Specifying File Paths</h2>
+<p>When working in a Unix or Linux file system, there are different ways to specify the location of a file.</p>
+<p>An <strong>absolute path</strong> starts from the root of the file system (shown as <code>/</code>) and provides the full path to the file, such as <code>/home/username/Documents/Data/some_file.txt</code>. This path will always point to the same file, no matter which directory you are currently in.</p>
+<p>A <strong>relative path</strong> is defined from your current working directory. For example, if you are already in <code>/home/username/Documents/</code>, you can refer to the same file simply as <code>Data/some_file.txt</code>.</p>
+<p>Finally, the tilde symbol (<code>~</code>) is a shortcut that represents your home directory (e.g., <code>/home/username/</code>), so <code>~/Documents/Data/some_file.txt</code> is another way to write the full path without typing the entire home directory name.</p>
 
 
 </section>
