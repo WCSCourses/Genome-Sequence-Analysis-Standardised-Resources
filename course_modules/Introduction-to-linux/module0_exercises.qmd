@@ -189,7 +189,7 @@ In this case we gave ls an argument describing the relative path to the director
 
 *How many files are there in this directory?*
 
-### Tab completion
+#### Tab completion
 
 Typing out directory or file names is really boring and you’re likely to make typos which will at best make your command fail with a strange error and at worst overwrite some of your carefully crafted analysis. Tab completion is a trick which normally reduces this risk significantly.
 
@@ -229,7 +229,7 @@ Now use the pwd command to check your location in the directory hierarchy and th
 
 You should see that there are 3 files called: Styphi.fa, Stypi.gff, Styphi.noseq.gff
 
-### Tips
+#### Tips
 
 There are some short cuts for referring to directories:
 
@@ -323,7 +323,7 @@ To find all the subdirectories contained in the current directory type:
 
 *How many subdirectories did you find?*
 
-### Exercises
+#### Exercises
 
 Many people panic when they are confronted with a Unix prompt! Don’t! All the commands you need to solve these exercises are provided above and don’t be afraid to make a mistake. If you get lost ask an instructor. If you are a person skilled at Unix, be patient this is only a short exercise.
 
@@ -384,7 +384,7 @@ In this case you’ve given tail an option in two parts. In this case the -n say
 
 The `-n` option is such a common option for tail and head that it even has a shorthand: `-n 25` and `-25` mean the same thing.
 
-### Saving time
+#### Saving time
 
 Saving time while typing may not seem important, but the longer that you spend in front of a computer, the happier you will be if you can reduce the time you spend at the keyboard.
 

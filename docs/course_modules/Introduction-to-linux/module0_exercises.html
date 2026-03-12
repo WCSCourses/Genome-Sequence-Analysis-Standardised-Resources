@@ -563,12 +563,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
   <li><a href="#files-and-directories" id="toc-files-and-directories" class="nav-link" data-scroll-target="#files-and-directories">Files and directories</a></li>
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
-  <li><a href="#tab-completion" id="toc-tab-completion" class="nav-link" data-scroll-target="#tab-completion">Tab completion</a></li>
   <li><a href="#file-permissions" id="toc-file-permissions" class="nav-link" data-scroll-target="#file-permissions">File permissions</a></li>
-  <li><a href="#tips" id="toc-tips" class="nav-link" data-scroll-target="#tips">Tips</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
   <li><a href="#looking-inside-files" id="toc-looking-inside-files" class="nav-link" data-scroll-target="#looking-inside-files">Looking inside files</a></li>
-  <li><a href="#saving-time" id="toc-saving-time" class="nav-link" data-scroll-target="#saving-time">Saving time</a></li>
   <li><a href="#getting-help-man" id="toc-getting-help-man" class="nav-link" data-scroll-target="#getting-help-man">Getting help man</a></li>
   <li><a href="#writing-to-files" id="toc-writing-to-files" class="nav-link" data-scroll-target="#writing-to-files">Writing to files</a></li>
   <li><a href="#regular-expressions" id="toc-regular-expressions" class="nav-link" data-scroll-target="#regular-expressions">Regular expressions</a></li>
@@ -760,11 +756,11 @@ ul.task-list li input[type="checkbox"] {
 <p>In this case we gave ls an argument describing the relative path to the directory Pfalciparum from our current working directory. Arguments are very similar to options but they often refer to things which are not prefixed with dashes.</p>
 <p><em>How many files are there in this directory?</em></p>
 </section>
-</section>
-<section id="tab-completion" class="level3">
-<h3 class="anchored" data-anchor-id="tab-completion">Tab completion</h3>
+<section id="tab-completion" class="level4">
+<h4 class="anchored" data-anchor-id="tab-completion">Tab completion</h4>
 <p>Typing out directory or file names is really boring and you’re likely to make typos which will at best make your command fail with a strange error and at worst overwrite some of your carefully crafted analysis. Tab completion is a trick which normally reduces this risk significantly.</p>
 <p>Instead of typing out ls Pfalciparum/, try typing ls P and then press the tab key (instead of Enter). The rest of the folder name should just appear. If you have two files of directories with simiar names (e.g.&nbsp;directory_structure.png and directory_structure2.png) then you might need to give your terminal a bit of a hand to work out which one you want. In this case you would type <code>ls -l</code> d, when you press tab the terminal would read <code>ls -l directory_structure,</code> you could then type 2 followed by another tab and it would work out that you meant <strong><em>directory_structure2.png</em></strong></p>
+</section>
 </section>
 <section id="file-permissions" class="level3">
 <h3 class="anchored" data-anchor-id="file-permissions">File permissions</h3>
@@ -788,9 +784,8 @@ ul.task-list li input[type="checkbox"] {
 <p><code>ls</code></p>
 <p>You should see that there are 3 files called: Styphi.fa, Stypi.gff, Styphi.noseq.gff</p>
 </section>
-</section>
-<section id="tips" class="level3">
-<h3 class="anchored" data-anchor-id="tips">Tips</h3>
+<section id="tips" class="level4">
+<h4 class="anchored" data-anchor-id="tips">Tips</h4>
 <p>There are some short cuts for referring to directories:</p>
 <p>• <code>.</code> Current directory (one full stop)</p>
 <p>• <code>..</code> Directory above in the hierarchy (two full stops)</p>
@@ -805,6 +800,7 @@ ul.task-list li input[type="checkbox"] {
 <p><code>pwd</code></p>
 <p>It should return the result below, if not then you are not in the Styphi directory.</p>
 <p><code>/home/manager/pathogen-informatics-training/Notebooks/Unix/basic/Styphi</code></p>
+</section>
 <section id="cp---copy-a-file" class="level4">
 <h4 class="anchored" data-anchor-id="cp---copy-a-file">cp - copy a file</h4>
 <p>The command <code>cp</code> stands for copy.</p>
@@ -845,9 +841,8 @@ ul.task-list li input[type="checkbox"] {
 <p><code>find . -type d</code></p>
 <p><em>How many subdirectories did you find?</em></p>
 </section>
-</section>
-<section id="exercises" class="level3">
-<h3 class="anchored" data-anchor-id="exercises">Exercises</h3>
+<section id="exercises" class="level4">
+<h4 class="anchored" data-anchor-id="exercises">Exercises</h4>
 <p>Many people panic when they are confronted with a Unix prompt! Don’t! All the commands you need to solve these exercises are provided above and don’t be afraid to make a mistake. If you get lost ask an instructor. If you are a person skilled at Unix, be patient this is only a short exercise.</p>
 <p>To begin, open a terminal window and navigate to the basic directory under the the unix directory (remember use the Unix command cd) and then complete the exercise below.</p>
 <ol type="1">
@@ -863,6 +858,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Use the find command to find all the fasta files in the Unix directory, how many files did you find?</li>
 </ol>
 <p>When you have completed these exercises move on to the next part of the tutorial, <strong><em>looking inside files</em></strong>.</p>
+</section>
 </section>
 <section id="looking-inside-files" class="level3">
 <h3 class="anchored" data-anchor-id="looking-inside-files">Looking inside files</h3>
@@ -890,9 +886,8 @@ ul.task-list li input[type="checkbox"] {
 <p>In this case you’ve given tail an option in two parts. In this case the -n says that you want to specify the number of lines to show and the 25 bit tells it how many. Unlike earlier when we merged options like ls -lha together, it’s not a good idea to merge multiple two part options together because otherwise it is ambiguous which value goes with which option.</p>
 <p>The <code>-n</code> option is such a common option for tail and head that it even has a shorthand: <code>-n 25</code> and <code>-25</code> mean the same thing.</p>
 </section>
-</section>
-<section id="saving-time" class="level3">
-<h3 class="anchored" data-anchor-id="saving-time">Saving time</h3>
+<section id="saving-time" class="level4">
+<h4 class="anchored" data-anchor-id="saving-time">Saving time</h4>
 <p>Saving time while typing may not seem important, but the longer that you spend in front of a computer, the happier you will be if you can reduce the time you spend at the keyboard.</p>
 <ul>
 <li><p>Pressing the up/down arrows will let you scroll through previous commands entered.</p></li>
@@ -900,6 +895,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Tab completion doesn’t just work on directory and file names, it also works on commands. Try it by typing tai and pressing yhe tab key.</p></li>
 </ul>
 <p>Although tab completion works on commands and filenames, unfortunately it does not work on options or other arguments.</p>
+</section>
 </section>
 <section id="getting-help-man" class="level3">
 <h3 class="anchored" data-anchor-id="getting-help-man">Getting help man</h3>
