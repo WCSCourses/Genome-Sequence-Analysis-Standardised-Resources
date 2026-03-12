@@ -2,3 +2,101 @@
 title: "Instructor notes"
 format: html
 ---
+
+## 10 lessons for teaching the Linux for Bioinformatics module:
+
+1.  **Prioritize Confidence Over Expertise:** The primary goal is to build the learners' confidence with the command line rather than making them experts. Success is measured by whether a beginner is willing to open a terminal window again after the session.
+
+2.  **Focus on Foundational Concepts Early:** Spend the first hour or two covering "foundational" concepts like file structures, data hierarchy, and how to invoke commands, as these are essential for all subsequent genomics modules.
+
+3.  **Keep Lectures Short and Prioritize Hands-on Time:** Limit introductory talks to 15–20 minutes. Because Linux is best learned by "doing," the majority of the session should be dedicated to practical, hands-on exercises.
+
+4.  **Manage Mixed Abilities with "Core" and "Additional" Content:** To handle groups with varying experience levels, clearly distinguish between **core sections** (essential for the rest of the course) and **additional sections** (for advanced or fast learners). Ensure beginners know it is normal not to finish everything.
+
+5.  **Reassure Learners and Mitigate Fear:** Many beginners fear they will "break the computer". Instructors must reassure them that they cannot break the system and that the command line is a tool they can master through repetition.
+
+6.  **Discourage Copy-Pasting:** Encourage learners to **manually type commands** rather than copying and pasting from the manual. Typing helps them better process the commands they are using, even if it is a slower process.
+
+7.  **Frame Mistakes as Learning Moments:** Normalize making mistakes on the command line. When demonstrating solutions, instructors should occasionally **deliberately introduce small errors** to show that even experts make mistakes and to model how to fix them.
+
+8.  **Use Probing Questions Instead of Providing Answers:** When learners ask for help, avoid giving them the solution immediately. Instead, ask probing questions—such as "What does this command do?"—to encourage them to solve the problem themselves.
+
+9.  **Build Commands Incrementally During Demonstrations:** When showing solutions, especially for complex piped commands, build them one step at a time. Ask learners to **predict the output** before running the command to check their understanding.
+
+10. **Incorporate Low-Stakes, Fun Assessments:** End the session with a fun, non-graded quiz (such as a **Kahoot quiz**). This allows learners to assess their own understanding and gives trainers a sense of how well the material was grasped without the pressure of formal grading.
+
+## Common hurdles encountered by course participants
+
+### **Technical Syntax and Typing Errors**
+
+-   **Case Sensitivity and Typos:** Beginners often struggle with the case-sensitive nature of Linux or make simple typographical errors.
+
+-   **Spacing Issues:** Mistakes frequently involve placing **spaces where they should not be** or omitting them when they are required.
+
+-   **Character Confusion:** A very common error is confusing the **lowercase letter "L" (l) with the number "1"**.
+
+-   **Copy-Pasting Artifacts:** When participants copy and paste commands from manuals, double dashes (`--`) can sometimes be converted into **em-dashes** (—), causing commands like `--help` to fail.
+
+### **Navigation and Conceptual Errors**
+
+-   **Path Confusion:** Learners often get stuck on the difference between **absolute and relative paths**.
+
+-   **Directory Shorthand:** Understanding the meaning of **`.` (current directory)** and **`..` (one level up)** is a frequent sticking point.
+
+-   **Misinterpreting "No Output":** Many beginners assume a command has failed if it provides no feedback (such as the `rm` command), not realising that in Linux, **no output often signifies success**.
+
+### **Command Usage and Workflow**
+
+-   **Passing Arguments:** Grasping how to correctly provide **options and arguments** to a command can be difficult for new users.
+
+-   **Redirects vs. Pipes:** Participants often confuse the functionality of **redirects (`>`) and pipes (`|`)**.
+
+-   **Getting "Stuck":** Learners frequently do not know how to exit interactive sessions, such as the `less` command, or how to stop a process using **`CTRL-C` or `q`**.
+
+### **Bioinformatics-Specific Format Errors**
+
+-   **CIGAR Strings:** The notation used in CIGAR strings (like M for match/mismatch or I/D for insertions/deletions) can be very confusing for those new to the data.
+
+-   **SAM Flags:** Interpreting the **binary values** of SAM flags and how they are calculated is noted as a particularly challenging concept.
+
+-   **File Headers:** Participants often feel overwhelmed by the **large amount of text in VCF or SAM headers** and may struggle to find specific information like genotype (GT) or quality (GQ) fields.
+
+-   **Inconsistent Naming:** Confusion can arise when reference files use different naming conventions for chromosomes (e.g., **"chr1" vs. just "1"**).
+
+## FAQs and common sticking points for students during the Linux for Bioinformatics module
+
+### **Navigation and Command-Line Basics**
+
+-   **"Where am I on the system?"** Students often lose track of their current location in the file hierarchy and need to be reminded to use the `pwd` command.
+
+-   **"What is the difference between an absolute and a relative path?"** Understanding how to point to files depending on their current directory is a major conceptual hurdle.
+
+-   **"What do `.` and `..` mean?"** The shorthand for the current directory and the parent directory is frequently confusing for beginners.
+
+-   **"How do I get out of this?"** Students often get "stuck" in interactive sessions like the `less` command or don't know how to stop a running process using **`q` or `CTRL-C`**.
+
+-   **"Is a lack of output a failure?"** Many beginners assume a command (like `rm`) has failed if it provides no feedback, not realising that **no output often signifies success** in Linux.
+
+### **Technical Syntax and Errors**
+
+-   **"Why isn't my command working?"** This is often due to **case sensitivity**, typographical errors, or incorrect spacing (either missing spaces or adding them where they shouldn't be).
+
+-   **"Is this a letter 'l' or the number '1'?"** Confusing the lowercase "L" with the number "1" is noted as one of the most common typing errors.
+
+-   **"Why did copy-pasting fail?"** Copying commands from manuals can convert double-dashes (`--`) into **em-dashes**, causing commands like `--help` to fail.
+
+-   **"What is the difference between a redirect (`>`) and a pipe (`|`)?"** Beginners struggle to distinguish between sending output to a file versus sending it to another command.
+
+### **Bioinformatics Data Formats**
+
+-   **"Why are the chromosome names different?"** Confusion arises when different files use different naming conventions, such as **"chr1" vs. just "1"**.
+
+-   **"How do I read these SAM flags?"** Interpreting the integer values of SAM flags and how they are calculated from binary is a particularly challenging concept.
+
+-   **"What do the letters in a CIGAR string mean?"** Students find the notation for matches, mismatches, insertions, and deletions (e.g., M, I, D) confusing.
+
+-   **"What is the difference between soft and hard clipping?"** Understanding whether unmatched sequences are kept in the file or removed is a common query.
+
+-   **"What do the fields in a VCF file signify?"** Students often ask for clarification on genotype fields such as **GT (Genotype), DP (Read Depth), and GQ (Genotype Quality)**.
+
+-   **"What is the difference between VCF and BCF (or SAM and BAM)?"** Learners often ask about the distinction between **human-readable text formats** and their **compressed binary versions** used by computers.

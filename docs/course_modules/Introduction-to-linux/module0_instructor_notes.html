@@ -546,8 +546,27 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lessons-for-teaching-the-linux-for-bioinformatics-module" id="toc-lessons-for-teaching-the-linux-for-bioinformatics-module" class="nav-link active" data-scroll-target="#lessons-for-teaching-the-linux-for-bioinformatics-module">10 lessons for teaching the Linux for Bioinformatics module:</a></li>
+  <li><a href="#common-hurdles-encountered-by-course-participants" id="toc-common-hurdles-encountered-by-course-participants" class="nav-link" data-scroll-target="#common-hurdles-encountered-by-course-participants">Common hurdles encountered by course participants</a>
+  <ul class="collapse">
+  <li><a href="#technical-syntax-and-typing-errors" id="toc-technical-syntax-and-typing-errors" class="nav-link" data-scroll-target="#technical-syntax-and-typing-errors"><strong>Technical Syntax and Typing Errors</strong></a></li>
+  <li><a href="#navigation-and-conceptual-errors" id="toc-navigation-and-conceptual-errors" class="nav-link" data-scroll-target="#navigation-and-conceptual-errors"><strong>Navigation and Conceptual Errors</strong></a></li>
+  <li><a href="#command-usage-and-workflow" id="toc-command-usage-and-workflow" class="nav-link" data-scroll-target="#command-usage-and-workflow"><strong>Command Usage and Workflow</strong></a></li>
+  <li><a href="#bioinformatics-specific-format-errors" id="toc-bioinformatics-specific-format-errors" class="nav-link" data-scroll-target="#bioinformatics-specific-format-errors"><strong>Bioinformatics-Specific Format Errors</strong></a></li>
+  </ul></li>
+  <li><a href="#faqs-and-common-sticking-points-for-students-during-the-linux-for-bioinformatics-module" id="toc-faqs-and-common-sticking-points-for-students-during-the-linux-for-bioinformatics-module" class="nav-link" data-scroll-target="#faqs-and-common-sticking-points-for-students-during-the-linux-for-bioinformatics-module">FAQs and common sticking points for students during the Linux for Bioinformatics module</a>
+  <ul class="collapse">
+  <li><a href="#navigation-and-command-line-basics" id="toc-navigation-and-command-line-basics" class="nav-link" data-scroll-target="#navigation-and-command-line-basics"><strong>Navigation and Command-Line Basics</strong></a></li>
+  <li><a href="#technical-syntax-and-errors" id="toc-technical-syntax-and-errors" class="nav-link" data-scroll-target="#technical-syntax-and-errors"><strong>Technical Syntax and Errors</strong></a></li>
+  <li><a href="#bioinformatics-data-formats" id="toc-bioinformatics-data-formats" class="nav-link" data-scroll-target="#bioinformatics-data-formats"><strong>Bioinformatics Data Formats</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -571,8 +590,93 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="lessons-for-teaching-the-linux-for-bioinformatics-module" class="level2">
+<h2 class="anchored" data-anchor-id="lessons-for-teaching-the-linux-for-bioinformatics-module">10 lessons for teaching the Linux for Bioinformatics module:</h2>
+<ol type="1">
+<li><p><strong>Prioritize Confidence Over Expertise:</strong> The primary goal is to build the learners’ confidence with the command line rather than making them experts. Success is measured by whether a beginner is willing to open a terminal window again after the session.</p></li>
+<li><p><strong>Focus on Foundational Concepts Early:</strong> Spend the first hour or two covering “foundational” concepts like file structures, data hierarchy, and how to invoke commands, as these are essential for all subsequent genomics modules.</p></li>
+<li><p><strong>Keep Lectures Short and Prioritize Hands-on Time:</strong> Limit introductory talks to 15–20 minutes. Because Linux is best learned by “doing,” the majority of the session should be dedicated to practical, hands-on exercises.</p></li>
+<li><p><strong>Manage Mixed Abilities with “Core” and “Additional” Content:</strong> To handle groups with varying experience levels, clearly distinguish between <strong>core sections</strong> (essential for the rest of the course) and <strong>additional sections</strong> (for advanced or fast learners). Ensure beginners know it is normal not to finish everything.</p></li>
+<li><p><strong>Reassure Learners and Mitigate Fear:</strong> Many beginners fear they will “break the computer”. Instructors must reassure them that they cannot break the system and that the command line is a tool they can master through repetition.</p></li>
+<li><p><strong>Discourage Copy-Pasting:</strong> Encourage learners to <strong>manually type commands</strong> rather than copying and pasting from the manual. Typing helps them better process the commands they are using, even if it is a slower process.</p></li>
+<li><p><strong>Frame Mistakes as Learning Moments:</strong> Normalize making mistakes on the command line. When demonstrating solutions, instructors should occasionally <strong>deliberately introduce small errors</strong> to show that even experts make mistakes and to model how to fix them.</p></li>
+<li><p><strong>Use Probing Questions Instead of Providing Answers:</strong> When learners ask for help, avoid giving them the solution immediately. Instead, ask probing questions—such as “What does this command do?”—to encourage them to solve the problem themselves.</p></li>
+<li><p><strong>Build Commands Incrementally During Demonstrations:</strong> When showing solutions, especially for complex piped commands, build them one step at a time. Ask learners to <strong>predict the output</strong> before running the command to check their understanding.</p></li>
+<li><p><strong>Incorporate Low-Stakes, Fun Assessments:</strong> End the session with a fun, non-graded quiz (such as a <strong>Kahoot quiz</strong>). This allows learners to assess their own understanding and gives trainers a sense of how well the material was grasped without the pressure of formal grading.</p></li>
+</ol>
+</section>
+<section id="common-hurdles-encountered-by-course-participants" class="level2">
+<h2 class="anchored" data-anchor-id="common-hurdles-encountered-by-course-participants">Common hurdles encountered by course participants</h2>
+<section id="technical-syntax-and-typing-errors" class="level3">
+<h3 class="anchored" data-anchor-id="technical-syntax-and-typing-errors"><strong>Technical Syntax and Typing Errors</strong></h3>
+<ul>
+<li><p><strong>Case Sensitivity and Typos:</strong> Beginners often struggle with the case-sensitive nature of Linux or make simple typographical errors.</p></li>
+<li><p><strong>Spacing Issues:</strong> Mistakes frequently involve placing <strong>spaces where they should not be</strong> or omitting them when they are required.</p></li>
+<li><p><strong>Character Confusion:</strong> A very common error is confusing the <strong>lowercase letter “L” (l) with the number “1”</strong>.</p></li>
+<li><p><strong>Copy-Pasting Artifacts:</strong> When participants copy and paste commands from manuals, double dashes (<code>--</code>) can sometimes be converted into <strong>em-dashes</strong> (—), causing commands like <code>--help</code> to fail.</p></li>
+</ul>
+</section>
+<section id="navigation-and-conceptual-errors" class="level3">
+<h3 class="anchored" data-anchor-id="navigation-and-conceptual-errors"><strong>Navigation and Conceptual Errors</strong></h3>
+<ul>
+<li><p><strong>Path Confusion:</strong> Learners often get stuck on the difference between <strong>absolute and relative paths</strong>.</p></li>
+<li><p><strong>Directory Shorthand:</strong> Understanding the meaning of <strong><code>.</code> (current directory)</strong> and <strong><code>..</code> (one level up)</strong> is a frequent sticking point.</p></li>
+<li><p><strong>Misinterpreting “No Output”:</strong> Many beginners assume a command has failed if it provides no feedback (such as the <code>rm</code> command), not realising that in Linux, <strong>no output often signifies success</strong>.</p></li>
+</ul>
+</section>
+<section id="command-usage-and-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="command-usage-and-workflow"><strong>Command Usage and Workflow</strong></h3>
+<ul>
+<li><p><strong>Passing Arguments:</strong> Grasping how to correctly provide <strong>options and arguments</strong> to a command can be difficult for new users.</p></li>
+<li><p><strong>Redirects vs.&nbsp;Pipes:</strong> Participants often confuse the functionality of <strong>redirects (<code>&gt;</code>) and pipes (<code>|</code>)</strong>.</p></li>
+<li><p><strong>Getting “Stuck”:</strong> Learners frequently do not know how to exit interactive sessions, such as the <code>less</code> command, or how to stop a process using <strong><code>CTRL-C</code> or <code>q</code></strong>.</p></li>
+</ul>
+</section>
+<section id="bioinformatics-specific-format-errors" class="level3">
+<h3 class="anchored" data-anchor-id="bioinformatics-specific-format-errors"><strong>Bioinformatics-Specific Format Errors</strong></h3>
+<ul>
+<li><p><strong>CIGAR Strings:</strong> The notation used in CIGAR strings (like M for match/mismatch or I/D for insertions/deletions) can be very confusing for those new to the data.</p></li>
+<li><p><strong>SAM Flags:</strong> Interpreting the <strong>binary values</strong> of SAM flags and how they are calculated is noted as a particularly challenging concept.</p></li>
+<li><p><strong>File Headers:</strong> Participants often feel overwhelmed by the <strong>large amount of text in VCF or SAM headers</strong> and may struggle to find specific information like genotype (GT) or quality (GQ) fields.</p></li>
+<li><p><strong>Inconsistent Naming:</strong> Confusion can arise when reference files use different naming conventions for chromosomes (e.g., <strong>“chr1” vs.&nbsp;just “1”</strong>).</p></li>
+</ul>
+</section>
+</section>
+<section id="faqs-and-common-sticking-points-for-students-during-the-linux-for-bioinformatics-module" class="level2">
+<h2 class="anchored" data-anchor-id="faqs-and-common-sticking-points-for-students-during-the-linux-for-bioinformatics-module">FAQs and common sticking points for students during the Linux for Bioinformatics module</h2>
+<section id="navigation-and-command-line-basics" class="level3">
+<h3 class="anchored" data-anchor-id="navigation-and-command-line-basics"><strong>Navigation and Command-Line Basics</strong></h3>
+<ul>
+<li><p><strong>“Where am I on the system?”</strong> Students often lose track of their current location in the file hierarchy and need to be reminded to use the <code>pwd</code> command.</p></li>
+<li><p><strong>“What is the difference between an absolute and a relative path?”</strong> Understanding how to point to files depending on their current directory is a major conceptual hurdle.</p></li>
+<li><p><strong>“What do <code>.</code> and <code>..</code> mean?”</strong> The shorthand for the current directory and the parent directory is frequently confusing for beginners.</p></li>
+<li><p><strong>“How do I get out of this?”</strong> Students often get “stuck” in interactive sessions like the <code>less</code> command or don’t know how to stop a running process using <strong><code>q</code> or <code>CTRL-C</code></strong>.</p></li>
+<li><p><strong>“Is a lack of output a failure?”</strong> Many beginners assume a command (like <code>rm</code>) has failed if it provides no feedback, not realising that <strong>no output often signifies success</strong> in Linux.</p></li>
+</ul>
+</section>
+<section id="technical-syntax-and-errors" class="level3">
+<h3 class="anchored" data-anchor-id="technical-syntax-and-errors"><strong>Technical Syntax and Errors</strong></h3>
+<ul>
+<li><p><strong>“Why isn’t my command working?”</strong> This is often due to <strong>case sensitivity</strong>, typographical errors, or incorrect spacing (either missing spaces or adding them where they shouldn’t be).</p></li>
+<li><p><strong>“Is this a letter ‘l’ or the number ‘1’?”</strong> Confusing the lowercase “L” with the number “1” is noted as one of the most common typing errors.</p></li>
+<li><p><strong>“Why did copy-pasting fail?”</strong> Copying commands from manuals can convert double-dashes (<code>--</code>) into <strong>em-dashes</strong>, causing commands like <code>--help</code> to fail.</p></li>
+<li><p><strong>“What is the difference between a redirect (<code>&gt;</code>) and a pipe (<code>|</code>)?”</strong> Beginners struggle to distinguish between sending output to a file versus sending it to another command.</p></li>
+</ul>
+</section>
+<section id="bioinformatics-data-formats" class="level3">
+<h3 class="anchored" data-anchor-id="bioinformatics-data-formats"><strong>Bioinformatics Data Formats</strong></h3>
+<ul>
+<li><p><strong>“Why are the chromosome names different?”</strong> Confusion arises when different files use different naming conventions, such as <strong>“chr1” vs.&nbsp;just “1”</strong>.</p></li>
+<li><p><strong>“How do I read these SAM flags?”</strong> Interpreting the integer values of SAM flags and how they are calculated from binary is a particularly challenging concept.</p></li>
+<li><p><strong>“What do the letters in a CIGAR string mean?”</strong> Students find the notation for matches, mismatches, insertions, and deletions (e.g., M, I, D) confusing.</p></li>
+<li><p><strong>“What is the difference between soft and hard clipping?”</strong> Understanding whether unmatched sequences are kept in the file or removed is a common query.</p></li>
+<li><p><strong>“What do the fields in a VCF file signify?”</strong> Students often ask for clarification on genotype fields such as <strong>GT (Genotype), DP (Read Depth), and GQ (Genotype Quality)</strong>.</p></li>
+<li><p><strong>“What is the difference between VCF and BCF (or SAM and BAM)?”</strong> Learners often ask about the distinction between <strong>human-readable text formats</strong> and their <strong>compressed binary versions</strong> used by computers.</p></li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
