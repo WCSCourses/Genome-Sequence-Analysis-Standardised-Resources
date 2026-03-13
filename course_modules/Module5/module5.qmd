@@ -13,7 +13,7 @@ This tutorial was written by Jacqui Keane, Shane McCarthy and Thomas Otto.
 
 # Duration
 
-3 hours
+2.5 hours
 
 # Key topics
 
@@ -33,11 +33,9 @@ On completion of the tutorial, you can expect to be able to:
 
 # Activities
 
--   Lecture: 1 hour
+-   Lecture: .5 hours
 
--   Practical exercises: 1.5 hours
-
--   Assessment quiz: 0.5 hours
+-   Practical exercises: 2 hours
 
 # Manual
 
@@ -45,13 +43,9 @@ On completion of the tutorial, you can expect to be able to:
 
 [Exercises](module5_exercises.qmd)
 
-# Presentation slides
-
-(PPT/PDF, to be generated from the module manual. Instructions on how to that will be added here.)
-
 # Lecture recording, notes and scripts
 
-# Summary of this module
+[Lecture on Genome Assembly from the 2022 NGS Asia course, delivered by Thomas Keane](https://www.youtube.com/watch?v=xE9pxUs_wHE&list=PLfovZnX0TvKtCjKYWitzUN6f_PwdUHeSu&index=8)
 
 # Teaching guidance
 

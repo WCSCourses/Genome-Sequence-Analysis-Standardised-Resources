@@ -3,3 +3,66 @@ title: "Instructor notes"
 format: html
 ---
 
+## How to teach the Genome Assembly module (by Carlo Lapid)
+
+Teaching the genome assembly module requires a shift in focus from mere computational execution to **critical assessment and strategic adaptation**. Because the actual bioinformatics commands are often straightforward, the primary pedagogical goal is to help participants understand the concepts informing a high-quality assembly.
+
+### **Core Teaching Philosophy**
+
+-   **Prioritize Assessment over Execution:** While running a command is simple, understanding how to **evaluate the results** and adapt the strategy is the real challenge for students.
+
+-   **Target Audience Mindset:** Most participants are expected to be bench scientists with minimal coding experience. Instructors should focus on laying a foundation of understanding rather than expecting full mastery of complex algorithms.
+
+-   **Emphasize "No One-Size-Fits-All":** Every genome is different (e.g., due to heterozygosity or repeats), so students must learn that there is no single perfect workflow; trial and error are part of the process.
+
+### **Curriculum and Exercises**
+
+-   **Sequencing Technology Context:** Use the lecture to explain how different read lengths (short-read Illumina vs. long-read PacBio) affect the assembly approach.
+
+-   **The "Paper and Pen" Exercise:** To teach complex algorithms like **De Bruijn graphs**, use a simplified manual exercise where students break dummy reads into k-mers and build a graph by hand.
+
+-   **Hands-on Tool Comparison:**
+
+    -   **Velvet (Short-read):** Use this to have students manually test different **k-mer lengths** to see how they impact assembly metrics.
+
+    -   **Kanu and WTDBG2 (Long-read):** Compare these two assemblers, focusing on how their underlying algorithms differ.
+
+    -   **Polishing:** Demonstrate how to use accurate short reads to correct errors in long-read assemblies using tools like **BCFTools**.
+
+-   **Quality Metrics:** Teach students to look beyond basic statistics like **N50** and compare their assemblies against biological expectations, such as estimated genome size and heterozygosity.
+
+### **Practical Tips for Instructors**
+
+-   **Manage Time Constraints:** Start the **Kanu assembly** at the very beginning of the practical session, as it can take approximately 30 minutes to run.
+
+-   **Provide a Fallback:** Always have **pre-generated assemblies** available in a folder in case the live commands fail or run too slowly on the students' machines.
+
+-   **Clarify the Sample Data:** Explicitly inform students they are assembling **Chromosome 5 of *Plasmodium falciparum***, not the entire genome, to avoid confusion when they estimate the total genome size.
+
+-   **Test Environment:** Pre-test the workflow on the specific virtual machines (VMs) or hardware the students will use, as resource requirements for tools like Kanu can be high.
+
+## Common hurdles course participants face in the Genome Assembly module
+
+Students participating in the genome assembly module encounter several hurdles, ranging from technical computational challenges to deep-seated conceptual misunderstandings.
+
+**Technical and Resource Hurdles**
+
+-   **Minimal Coding Experience:** Most participants are bench scientists with **minimal to no experience in coding** or running computational workflows. This can make the transition to command-line bioinformatics tools intimidating.
+
+-   **High Computational Requirements:** Certain tools, specifically **Kanu, have large processing and time requirements** for memory and processors. This often leads to issues where the software fails to run correctly on standard virtual machines, requiring more robust infrastructure like the Google Cloud Platform.
+
+-   **Fragmented Initial Results:** Students may be discouraged to find that the first results of any assembly are **typically very fragmented** and require significant additional work to reach a full chromosome structure.
+
+### **Conceptual and Algorithmic Hurdles**
+
+-   **Complexity of Algorithms:** The mathematical and algorithmic foundations of assembly, such as **Overlap Layout Consensus (OLC) or De Bruijn graphs**, are difficult for non-specialists to grasp fully.
+
+-   **Biological Complexity:** Challenges arise when dealing with **diploid or polyploid genomes**, where factors like **heterozygosity and repetitive regions** complicate the assembly process and can lead to errors like haplotype duplication.
+
+-   **Rote Execution vs. Critical Assessment:** A common pitfall is students focusing on the "satisfaction of a command that was executed correctly" rather than **critically assessing the results** and understanding why specific commands were run.
+
+### **Contextual Misunderstandings**
+
+-   **Scale of the Task:** Students often hold the "misguided idea" that the simplified classroom exercises represent the entire assembly process, whereas producing a reference-quality genome is a much **larger and more complex endeavor**.
+
+-   **Sample Data Confusion:** In specific exercises, such as those involving *Plasmodium falciparum*, students may become confused when their estimated genome size is much shorter than expected because they are **assembling only a single chromosome** rather than the entire genome.
