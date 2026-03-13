@@ -1,9 +1,9 @@
 ---
-title: "Instructor notes"
+title: "Instructor's notes"
 format: html
 ---
 
-## 10 lessons for teaching the Linux for Bioinformatics module:
+## How to deliver the Linux for Bioinformatics module (by Jacqui Keane)
 
 1.  **Prioritize Confidence Over Expertise:** The primary goal is to build the learners' confidence with the command line rather than making them experts. Success is measured by whether a beginner is willing to open a terminal window again after the session.
 

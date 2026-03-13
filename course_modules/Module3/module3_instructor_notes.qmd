@@ -3,16 +3,102 @@ title: "Instructor notes"
 format: html
 ---
 
-**Clarify Jargon:** The field has a lot of terminology (SNV vs SNP, mutation vs variant, etc.). Take time to clarify these. A tip for trainers is to gauge the audience’s background – if they seem lost in terminology, use simpler language or analogies (e.g., “think of the reference genome as a book and a variant as a typo or an extra sentence in your copy compared to the reference copy”).
+## How to deliver the Variant Calling module (by Arporn Wangwiwatsin)
 
-**Common Misconceptions:** Address the idea that variant calling is always straightforward. For instance, explain why repetitive regions are hard for variant callers, or why a variant in only 2 out of 20 reads might be a false positive (or a low-frequency mosaic variant depending on context). Encourage questions like “what if two variant callers disagree?” to discuss reliability.
+The variant calling module is structured to move students from core fundamentals to complex interpretations, focusing on providing enough confidence for self-directed exploration rather than total mastery.
 
-**Interactive Discussion:** When covering variant annotation, rather than just lecturing, ask the group how they would prioritize variants if given thousands of results. This can lead into explaining annotation, databases, and predicting impact. It keeps learners engaged and thinking like a researcher.
+The key lessons and topics for teaching this module include:
 
-**Link to Downstream Analysis:** Note to instructors: highlight that variant calling is not the end – results must be filtered and interpreted. If there’s a subsequent module on interpretation or clinical genomics, mention that connection. If not, at least mention what one would do next (validation experiments, etc.),
+### **1. Core Fundamentals and Jargon**
 
-**Trainer Tips**
+-   **Terminology:** Familiarise students with a wide range of "jargons" and definitions, such as **germline vs somatic mutations**, **ploidy**, and specific variant types like **SNV, SNP, and Indels**.
 
--   When discussing mutation types, ask learners for examples of diseases or traits known to be caused by each type (e.g., a single nucleotide change causing sickle-cell anemia). This makes it more relatable.
+-   **File Formats:** Introduce the **VCF (Variant Call Format)** file type, specifically VCF5, and teach how to work with these files.
 
--   During variant calling theory, mention common misconceptions: “Learners may think all variants are found with 100% certainty. Emphasize the uncertainties and the need for quality scores/filters.
+-   **Software Tools:** The primary software used is **BCFtools** (with some mention of SAMtools for handling input from the read alignment module).
+
+### **2. The Variant Calling Workflow**
+
+-   **Step-by-Step Commands:** Students should learn the progression of BCFtools commands: starting with `mpileup`, followed by `call`, then exploring and filtering the variants.
+
+-   **Filtering Techniques:** A crucial lesson involves understanding the difference between **annotating filters** (marking variants as pass/fail) and **hard filters** using `bcftools view`.
+
+-   **Individual vs Joint Calling:** Teach the practicalities of performing variant calling on individual samples versus **joint calling** on multiple samples simultaneously, including the benefits of the latter.
+
+### **3. Biological and Technical Complexities**
+
+-   **Biological Factors:** Discuss how **mutation rates**, **ploidy**, and **genomic regions** (e.g., difficult-to-map areas) affect calling.
+
+-   **Technical Artifacts:** Address how **library preparation**, **PCR artifacts**, and **mapping errors** can create noise in the data.
+
+-   **Mathematical Concepts:** Introduce the underlying **Bayesian thinking** and probabilities used in statistical models to assess quality, though the module avoids going too deep into complex equations.
+
+### **4. Assessment and Visualization**
+
+-   **Reliability Criteria:** Teach students how to assess whether called variants are reliable by looking at quality scores and specific criteria.
+
+-   **Visualization:** Use **IGV (Integrative Genomics Viewer)** to visualize variants, which helps students distinguish between real variations and data noise.
+
+-   **Annotation (Bonus):** Advanced sessions may cover how to annotate variants to assess their biological consequences.
+
+### **5. Common Pitfalls and Misconceptions**
+
+-   **The "Pass" Filter:** Clarify that a "Pass" status only means a variant met specific user-defined criteria and does not guarantee it is real.
+
+-   **Reference Mismatches:** Warn students about the common error of using mismatched versions of a **reference genome** during mapping and annotation.
+
+-   **Ambiguous Terms:** Clarify terms that may have different meanings depending on the field, such as **MAF**, which can refer to "Minor Allele Frequency" or "Mutation Annotation Format".
+
+### **Teaching Strategies**
+
+-   **Go Slow:** Teachers are advised to be patient and prioritize understanding over speed.
+
+-   **Focus on Documentation:** Rather than memorizing syntax (like specific command-line flags), teach students **how to look through the manual** as tools and syntax often change.
+
+-   **Active Recall:** Use opportunities to ask students to explain terms (e.g., "What is an SNP?") to reinforce learning.
+
+-   **Scenario-Based Learning:** Pose questions about how different platforms (like Oxford Nanopore) or specific errors might affect data interpretation to encourage critical thinking.
+
+## Common hurdles encountered by course participants
+
+### **1. Terminology and Jargon Overload**
+
+-   **Vocabulary Burdens:** One of the primary challenges is the sheer volume of **new jargons and terms** students must learn, such as germline vs. somatic mutations, ploidy, and various mutation types like SNV, SNP, and Indels.
+
+-   **Ambiguous Acronyms:** Terms like **MAF** can be confusing because they have different meanings (Minor Allele Frequency vs. Mutation Annotation Format) depending on whether the student is coming from a general genomics or cancer genomics background.
+
+-   **Inconsistent Tool Language:** Different software tools often use **different terminologies** to describe the same biological variants, adding to the confusion.
+
+### **2. Technical and Command-Line Challenges**
+
+-   **Counterintuitive Syntax:** Students often find BCFtools commands **counterintuitive**; for example, using a query to explore a file, while "filters" are used for annotation rather than actual filtering.
+
+-   **Command Confusion:** There is often confusion regarding `bcftools view`, which is used both to view BCF files and to perform "hard filters".
+
+-   **Syntax Memorization:** Students struggle with remembering specific **command-line flags** (e.g., `-S`, `-I`, or `-U`) rather than knowing how to navigate the manual for answers.
+
+-   **VCF Formatting:** The structure and formatting of **VCF files** themselves can appear confusing to beginners.
+
+### **3. Biological and Mathematical Complexity**
+
+-   **Messy Data:** Sequencing data is inherently messy due to **biological complexities** like varying mutation rates across the genome and different ploidy levels.
+
+-   **Technical Artifacts:** Students must learn to distinguish real variants from **technical noise**, such as PCR artifacts, mapping errors, and sequencing quality issues.
+
+-   **Mathematical "Off-putting" Concepts:** The underlying statistical models—specifically **Bayesian thinking, probabilities, and complex equations**—can be intimidating or "off-putting" for some learners.
+
+-   **Context-Specific Interpretation:** Determining if a variant is "real" requires specific knowledge of the disease or organism, which can be overwhelming for students.
+
+### **4. Visualization and Practical Implementation**
+
+-   **IGV Configuration:** In the structural variation module, a major hurdle is learning how to **reconfigure IGV settings** (e.g., grouping alignments by strand or squishing views) to properly visualize large-scale variants.
+
+-   **Theory vs. Data:** Students often struggle to translate the **theoretical schematics** of variants into what they actually see in real sequencing data.
+
+-   **Infrastructure Issues:** Technical difficulties, such as **difficulties loading reference files** into IGV when using cloud-based environments, can stall practical progress.
+
+### **5. Common Misconceptions**
+
+-   **The "Pass" Filter Myth:** A common misconception is that any variant marked with a **"Pass" filter** is definitively real, when it actually only means the variant met the specific (and potentially low) criteria set by the user.
+
+-   **Reference Mismatches:** A frequent error involves using **mismatched versions of a reference genome** between the mapping and annotation stages.

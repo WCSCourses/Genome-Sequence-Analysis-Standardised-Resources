@@ -2,3 +2,91 @@
 title: "Instructor notes"
 format: html
 ---
+
+## How to teach the Structural Variation module (by Thomas Keane)
+
+Teaching the structural variants (SV) module involves transitioning students from single-base variations to **large-scale genomic changes**, requiring a heavy emphasis on **visual interpretation and conceptual understanding**. Because structural variation is more specialized, the module is designed to be highly graphical rather than command-heavy.
+
+The key lessons for teaching this module include:
+
+### **1. Conceptual Foundations and Theory**
+
+-   **Defining Structural Variation:** Introduce SVs as variations that are much larger than SNPs, often spanning **kilobases** (e.g., 10kb to 50kb).
+
+-   **Types of Variants:** Use graphical schematics to explain the different types of structural variants, specifically **insertions, deletions, and inversions**.
+
+-   **Biological and Historical Context:** Cover the biological relevance of these variants and the history of experimental assays used to detect them before next-generation sequencing.
+
+-   **Short Reads vs. Long Reads:** Teach the fundamental differences between these technologies, specifically explaining why **long reads are generally more accurate** for structural variation calling.
+
+### **2. Advanced Visualization in IGV**
+
+The core of this module is moving from theoretical schematics to **real sequencing data**.
+
+-   **Configuring Views:** Students must learn to move from single-base views to viewing **entire genomic regions**.
+
+-   **Advanced IGV Settings:** A critical lesson involves teaching students how to reconfigure IGV to see SV patterns clearly. This includes:
+
+    -   **Squishing** alignments to fit more data into the view.
+
+    -   **Grouping alignments by read strand** to see forward and reverse read patterns.
+
+    -   **Viewing mismatched bases** to identify breakpoints.
+
+-   **Pattern Recognition:** Use "fun" interactive quizzes and screenshots to help students figure out what type of variant they are looking at based on **read colours and alignment patterns**.
+
+### **3. Technical Workflow and Tools**
+
+-   **Simplified Commands:** Unlike other modules, the command-line syntax here is relatively straightforward, so the focus should remain on **understanding the output** rather than memorizing flags.
+
+-   **VCF for Structural Variants:** Teach how the VCF format differs when representing larger, complex structural changes compared to standard SNPs.
+
+-   **Calling and Comparison:**
+
+    -   Call structural variants from both **short-read and long-read data** using standard tools.
+
+    -   Compare calls from **different SV callers** to understand why some tools might detect a variant that others miss.
+
+    -   Use **bedtools** for regional comparisons of call sets.
+
+### **4. Teaching Strategies and Expectations**
+
+-   **Prerequisites:** Ensure students are proficient in **Linux, data QC, and read alignment** before starting, as this module builds directly on those skills.
+
+-   **Quality over Quantity:** The goal is not necessarily to finish the entire practical; it is better for students to get halfway through while **truly understanding the concepts** and what they are seeing in IGV.
+
+-   **Focus on Interpretation:** Since the commands are simple, the instructor's primary role is to help students distinguish between **real variants and technical pitfalls** or noise.
+
+-   **Interactive Learning:** Encourage students to stop and ask questions during the visual portions of the lecture to ensure they aren't lost when the data looks "complicated".
+
+## Common hurdles encountered by students in the Structural Variation module
+
+In the **structural variation (SV)** module, students encounter several hurdles that stem from the transition from small-scale variants to large-scale genomic changes. These challenges range from conceptual shifts to technical configuration and visualization issues.
+
+### **1. Conceptual and Theoretical Shifts**
+
+-   **Scale of Variation:** Students must move from thinking about single-base changes (SNPs) to understanding **much larger variations** that span kilobases, typically ranging from 10kb to 50kb.
+
+-   **New Concepts:** Because structural variation is a more specialized topic, many of the core ideas are entirely new to participants, making the lecture portion a significant challenge.
+
+-   **Translating Theory to Data:** A major hurdle is the difficulty of **translating theoretical schematics** or simplified diagrams shown in lectures into the "messy" reality of actual sequencing data.
+
+### **2. Visualization and IGV Interpretation**
+
+-   **Navigating Regional Views:** Students often struggle with moving from a single-base view to a **regional genomic view**, which requires adjusting their perspective to look at much larger sections of the genome.
+
+-   **Advanced IGV Configuration:** Unlike standard variant calling, SV analysis requires participants to master **advanced IGV settings**, such as "squishing" alignments, grouping by read strand, and identifying mismatched bases. These configurations are often "quite new" to students.
+
+-   **Pattern Recognition:** Distinguishing between different types of variants (insertions, deletions, and inversions) based on the **complex patterns of colours and read alignments** in IGV can be very difficult.
+
+### **3. Technical and Tool-Based Challenges**
+
+-   **VCF Format Differences:** Students must learn how the **VCF format** is adapted to represent large structural changes, which differs from how it handles standard SNPs.
+
+-   **Comparing Callers:** Understanding why different software tools produce **conflicting results**—where one caller detects a variant that another misses—is a common point of confusion.
+
+-   **Prerequisite Knowledge:** To succeed, students must already be proficient in **Linux, data quality control, and read alignment**; a lack of these foundational skills acts as a barrier to progressing through the SV module.
+
+### **4. Practical and Infrastructural Issues**
+
+-   **Time Constraints:** Due to the complexity of the material, almost all students find it difficult to complete the full practical exercise; most only reach the **halfway or two-thirds point**.

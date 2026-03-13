@@ -219,7 +219,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../course_modules/Introduction-to-linux/module0_instructor_notes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Instructor notes</span></a>
+ <span class="menu-text">Instructor’s notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -546,8 +546,32 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#how-to-deliver-the-read-alignment-module-by-carlo-lapid" id="toc-how-to-deliver-the-read-alignment-module-by-carlo-lapid" class="nav-link active" data-scroll-target="#how-to-deliver-the-read-alignment-module-by-carlo-lapid">How to deliver the Read Alignment module (by Carlo Lapid)</a>
+  <ul class="collapse">
+  <li><a href="#situating-the-module-within-a-broader-workflow" id="toc-situating-the-module-within-a-broader-workflow" class="nav-link" data-scroll-target="#situating-the-module-within-a-broader-workflow"><strong>1. Situating the Module within a Broader Workflow</strong></a></li>
+  <li><a href="#instilling-bioinformatic-thinking" id="toc-instilling-bioinformatic-thinking" class="nav-link" data-scroll-target="#instilling-bioinformatic-thinking"><strong>2. Instilling “Bioinformatic Thinking”</strong></a></li>
+  <li><a href="#connecting-to-bench-science-expertise" id="toc-connecting-to-bench-science-expertise" class="nav-link" data-scroll-target="#connecting-to-bench-science-expertise"><strong>3. Connecting to Bench Science Expertise</strong></a></li>
+  <li><a href="#using-visualization-as-a-teaching-tool" id="toc-using-visualization-as-a-teaching-tool" class="nav-link" data-scroll-target="#using-visualization-as-a-teaching-tool"><strong>4. Using Visualization as a Teaching Tool</strong></a></li>
+  <li><a href="#managing-information-overload" id="toc-managing-information-overload" class="nav-link" data-scroll-target="#managing-information-overload"><strong>5. Managing Information Overload</strong></a></li>
+  <li><a href="#encouraging-active-engagement-with-commands" id="toc-encouraging-active-engagement-with-commands" class="nav-link" data-scroll-target="#encouraging-active-engagement-with-commands"><strong>6. Encouraging Active Engagement with Commands</strong></a></li>
+  <li><a href="#clarifying-technical-nuances" id="toc-clarifying-technical-nuances" class="nav-link" data-scroll-target="#clarifying-technical-nuances"><strong>7. Clarifying Technical Nuances</strong></a></li>
+  <li><a href="#redefining-success" id="toc-redefining-success" class="nav-link" data-scroll-target="#redefining-success"><strong>8. Redefining Success</strong></a></li>
+  </ul></li>
+  <li><a href="#common-hurdles-encountered-by-course-participants" id="toc-common-hurdles-encountered-by-course-participants" class="nav-link" data-scroll-target="#common-hurdles-encountered-by-course-participants">Common hurdles encountered by course participants</a>
+  <ul class="collapse">
+  <li><a href="#information-overload" id="toc-information-overload" class="nav-link" data-scroll-target="#information-overload"><strong>1. Information Overload</strong></a></li>
+  <li><a href="#surface-level-understanding" id="toc-surface-level-understanding" class="nav-link" data-scroll-target="#surface-level-understanding"><strong>2. Surface-Level Understanding</strong></a></li>
+  <li><a href="#technical-and-format-confusion" id="toc-technical-and-format-confusion" class="nav-link" data-scroll-target="#technical-and-format-confusion"><strong>3. Technical and Format Confusion</strong></a></li>
+  <li><a href="#procedural-and-interpretational-omissions" id="toc-procedural-and-interpretational-omissions" class="nav-link" data-scroll-target="#procedural-and-interpretational-omissions"><strong>4. Procedural and Interpretational Omissions</strong></a></li>
+  <li><a href="#algorithmic-complexity" id="toc-algorithmic-complexity" class="nav-link" data-scroll-target="#algorithmic-complexity"><strong>5. Algorithmic Complexity</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -571,17 +595,95 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>If learners haven’t used IGV before, spend a few minutes showing how to load a BAM and navigate to a gene locus.</p>
-<p>Many think a higher alignment rate always means better data – remind them that quality filtering and reference completeness also play roles.</p>
-<p>Running the alignment on the sample data should take ~5 minutes; ensure everyone has the reference indexed beforehand to save time.</p>
-<p><strong>Trainer Tips:</strong></p>
-<p><strong>Connect Theory to Practice:</strong> Start with a high-level example – e.g., show how a short read aligns to a reference by drawing it on the board, then relate that to what BWA-MEM does at scale. This helps demystify the aligner’s “black box.”</p>
-<p><strong>Address Common Errors:</strong> Warn about pitfalls like forgetting to index the reference (a very common mistake that causes BWA to error). Also, if learners will run commands, remind them about file paths and available disk space (alignment can generate large files).</p>
-<p><strong>Use Analogies:</strong> When explaining the seed-and-extend algorithm or hash tables, analogies can help. For instance, “finding a seed match is like finding the first few letters of a word in a big book index, then checking the surrounding text for a full match.”</p>
-<p><strong>Time Management:</strong> Aligners on large data can take a long time; ensure any live runs use small data. Test the exercise beforehand and maybe have an output ready in case running it live fails or is slow. Also, if short on time, the actual running can be skipped and results provided for interpretation instead – the key is understanding the process and output, not just executing commands.</p>
-<p>Ask the students questions (“Why do you think long reads have a higher error rate? How might that affect alignment?”) to keep learners engaged and check comprehension.</p>
+<section id="how-to-deliver-the-read-alignment-module-by-carlo-lapid" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-deliver-the-read-alignment-module-by-carlo-lapid">How to deliver the Read Alignment module (by Carlo Lapid)</h2>
+<section id="situating-the-module-within-a-broader-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="situating-the-module-within-a-broader-workflow"><strong>1. Situating the Module within a Broader Workflow</strong></h3>
+<p>It is essential to emphasize that read alignment does not happen in a vacuum; it is the <strong>“first foray” into the actual analysis pipeline</strong>. Instructors should build on previous modules—such as Linux basics and Quality Control (QC)—and explicitly connect alignment to future steps like <strong>variant calling</strong>. Drawing these connections helps participants retain lessons better than teaching the module in isolation.</p>
+</section>
+<section id="instilling-bioinformatic-thinking" class="level3">
+<h3 class="anchored" data-anchor-id="instilling-bioinformatic-thinking"><strong>2. Instilling “Bioinformatic Thinking”</strong></h3>
+<p>Beyond teaching technical skills, use this module to help students <strong>think like bioinformaticians</strong>. This involves:</p>
+<ul>
+<li><p><strong>Algorithmic Thinking:</strong> Briefly touching on how the computer “sees” the data through approaches like hash tables or the Smith-Waterman algorithm.</p></li>
+<li><p><strong>Resource Management:</strong> Discussing the <strong>computational costs</strong> (time, storage, and money) associated with handling large genomic datasets.</p></li>
+<li><p><strong>Pipeline Logic:</strong> Using Unix pipes in exercises to demonstrate how data “flows” from one tool to another.</p></li>
+</ul>
+</section>
+<section id="connecting-to-bench-science-expertise" class="level3">
+<h3 class="anchored" data-anchor-id="connecting-to-bench-science-expertise"><strong>3. Connecting to Bench Science Expertise</strong></h3>
+<p>Since the audience often consists of bench scientists, instructors should link bioinformatics concepts to <strong>laboratory procedures</strong> they already understand. For example:</p>
+<ul>
+<li><p>Relate <strong>PCR duplicates</strong> in the data to the PCR amplification step in library preparation.</p></li>
+<li><p>Explain the necessity of <strong>merging files</strong> by discussing experimental designs, such as splitting samples across multiple sequencing lanes or runs.</p></li>
+</ul>
+</section>
+<section id="using-visualization-as-a-teaching-tool" class="level3">
+<h3 class="anchored" data-anchor-id="using-visualization-as-a-teaching-tool"><strong>4. Using Visualization as a Teaching Tool</strong></h3>
+<p>The use of a genome browser like <strong>IGV</strong> is a critical pedagogical tool. It provides a “break” from the command line and allows participants to <strong>visualize the results</strong> of their work. Instructors should encourage students to “smell the flowers”—to simply explore the genome and see how deletions, insertions, or clipping manifest visually.</p>
+</section>
+<section id="managing-information-overload" class="level3">
+<h3 class="anchored" data-anchor-id="managing-information-overload"><strong>5. Managing Information Overload</strong></h3>
+<p>Read alignment involves a high risk of <strong>information overload</strong> due to the complexity of file formats (SAM/BAM), CIGAR strings, and mapping qualities. Instructors should be patient and focus on the <strong>fundamentals</strong>. A sign of overload is when a student is happy just because a command ran without an error; the goal is to move them toward a deeper understanding of the output.</p>
+</section>
+<section id="encouraging-active-engagement-with-commands" class="level3">
+<h3 class="anchored" data-anchor-id="encouraging-active-engagement-with-commands"><strong>6. Encouraging Active Engagement with Commands</strong></h3>
+<p>To prevent participants from mindlessly copy-pasting or typing commands without comprehension, instructors should ask <strong>probing questions</strong>. For instance, ask: <em>“Why did you use the -M parameter? What does it do?”</em>. Encourage them to examine inputs and outputs—such as looking at the reference genome or the SAM file—before moving to the next step.</p>
+</section>
+<section id="clarifying-technical-nuances" class="level3">
+<h3 class="anchored" data-anchor-id="clarifying-technical-nuances"><strong>7. Clarifying Technical Nuances</strong></h3>
+<p>Certain technical aspects are frequent points of confusion and require explicit attention:</p>
+<ul>
+<li><p><strong>Sorting and Indexing:</strong> These are technically separate from alignment but are required for downstream analysis; students often forget their importance.</p></li>
+<li><p><strong>Qualities:</strong> Ensure students distinguish between <strong>read quality</strong> (from the sequencer) and <strong>mapping quality</strong> (from the aligner), even though both use the Phred scale.</p></li>
+<li><p><strong>Flags and CIGAR Strings:</strong> Use visualization to explain what specific SAM flags (e.g., 163 vs.&nbsp;99) or CIGAR string notations actually mean in a biological context.</p></li>
+</ul>
+</section>
+<section id="redefining-success" class="level3">
+<h3 class="anchored" data-anchor-id="redefining-success"><strong>8. Redefining Success</strong></h3>
+<p>The ultimate metric of success is not just finishing the exercise, but the <strong>“aha moment”</strong> when a student understands a concept, such as seeing a variant for the first time in a browser. Success is achieved when participants leave with a better appreciation of the <strong>bioinformatician’s perspective</strong> on data and workflows.</p>
+</section>
+</section>
+<section id="common-hurdles-encountered-by-course-participants" class="level2">
+<h2 class="anchored" data-anchor-id="common-hurdles-encountered-by-course-participants">Common hurdles encountered by course participants</h2>
+<section id="information-overload" class="level3">
+<h3 class="anchored" data-anchor-id="information-overload"><strong>1. Information Overload</strong></h3>
+<p>A significant hurdle is the <strong>risk of information overload</strong> because read alignment does not happen in a vacuum. To understand the process, students must simultaneously grasp:</p>
+<ul>
+<li><p><strong>Underlying read technology</strong> and laboratory workflows.</p></li>
+<li><p>The <strong>theory of read mapping</strong> versus the practical execution of commands.</p></li>
+<li><p>The complex <strong>structure of data files</strong>, including CIGAR strings and SAM flags.</p></li>
+<li><p><strong>Downstream connections</strong>, such as how alignment affects variant calling.</p></li>
+</ul>
+</section>
+<section id="surface-level-understanding" class="level3">
+<h3 class="anchored" data-anchor-id="surface-level-understanding"><strong>2. Surface-Level Understanding</strong></h3>
+<p>A common sign of a struggling student is a focus on <strong>command execution rather than comprehension</strong>. Participants are often happy simply because a command ran without an error, without truly understanding what the program did or what the output signifies. This often leads to a reliance on <strong>copy-pasting commands</strong> rather than understanding what specific parameters actually do.</p>
+</section>
+<section id="technical-and-format-confusion" class="level3">
+<h3 class="anchored" data-anchor-id="technical-and-format-confusion"><strong>3. Technical and Format Confusion</strong></h3>
+<p>Specific technical aspects of the data formats are frequent sticking points:</p>
+<ul>
+<li><p><strong>Quality Metrics:</strong> While both <strong>read quality</strong> and <strong>mapping quality</strong> use the Phred scale, students often confuse the two or struggle to distinguish their different meanings.</p></li>
+<li><p><strong>SAM Flags and CIGAR Strings:</strong> The binary-based SAM flags (e.g., why a pair is 163/83 versus 99/147) and the notation in CIGAR strings are difficult to interpret.</p></li>
+<li><p><strong>Visual Complexity:</strong> Even graphical tools like <strong>IGV</strong> can be intimidating because there is “so much to explore” and a large amount of information presented at once.</p></li>
+</ul>
+</section>
+<section id="procedural-and-interpretational-omissions" class="level3">
+<h3 class="anchored" data-anchor-id="procedural-and-interpretational-omissions"><strong>4. Procedural and Interpretational Omissions</strong></h3>
+<ul>
+<li><p><strong>Sorting and Indexing:</strong> Participants often <strong>forget or misunderstand sorting and indexing</strong> because these are technically separate steps from the alignment itself, yet they are essential for downstream analysis.</p></li>
+<li><p><strong>QC Interpretation:</strong> Students frequently struggle to interpret quality control results, asking for guidance on what constitutes “good” or “bad” data, such as whether a specific <strong>duplication rate</strong> is acceptable for their research.</p></li>
+<li><p><strong>Merging Logic:</strong> Understanding <strong>when it is appropriate to merge results</strong> from multiple alignments—and how this relates to experimental design or sequencing lanes—is a common conceptual challenge.</p></li>
+</ul>
+</section>
+<section id="algorithmic-complexity" class="level3">
+<h3 class="anchored" data-anchor-id="algorithmic-complexity"><strong>5. Algorithmic Complexity</strong></h3>
+<p>Participants with little programming experience may find it difficult to <strong>think algorithmically</strong>. Concepts like hash tables, suffix trees, and the <strong>Smith-Waterman algorithm</strong> can be confusing, particularly regarding how scores are calculated or how gaps are identified in a sequence.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
