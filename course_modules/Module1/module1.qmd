@@ -9,7 +9,7 @@ NGS Data formats and QC
 
 # Authors
 
-This tutorial was written by Jacqui Keane and Sara Sjunnebo based on material from Petr Danecek and Thomas Keane.
+This tutorial was written by Jacqui Keane, Sara Sjunnebo, Petr Danecek and Thomas Keane.
 
 # Duration
 
@@ -49,15 +49,9 @@ In this module, learners will look at data formats in detail. At the end of the 
 
 [Exercises](module1_exercises.qmd)
 
-# Presentation slides
-
-(PPT/PDF, to be generated from the module manual. Instructions on how to that will be added here.)
-
 # Lecture recording, notes and scripts
 
-[Pre-recorded lecture, temporally stored on the LMS](https://lms.wellcomeconnectingscience.org/mod/page/view.php?id=8519)
-
-# Summary of this module
+[Lecture on Data Formats and QC from the 2022 NGS Asia course, delivered by Petr Danacek](https://www.youtube.com/watch?v=mmjzJ0OjSow&list=PLfovZnX0TvKtCjKYWitzUN6f_PwdUHeSu&index=4)
 
 # Teaching guidance
 
@@ -68,8 +62,6 @@ In this module, learners will look at data formats in detail. At the end of the 
 We recommend that you follow the exercises using the course virtual machine.
 
 The datasets used in this exercise are stored on the virtual machine.
-
-Alternatively, for this module, if you are working on your own Linux system, you can use the exercise input files available on [GitHub](https://github.com/WCSCourses/Precourses_DataRepo/tree/main/course_data_2025/linux_googlecolab_data).
 
 # Platform Guidance
 

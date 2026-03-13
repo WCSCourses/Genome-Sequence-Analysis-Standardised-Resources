@@ -9,7 +9,7 @@ Genome Assembly
 
 # Authors
 
-This tutorial was written by Jacqui Keane based on material from Shane McCarthy and Thomas Otto.
+This tutorial was written by Jacqui Keane, Shane McCarthy and Thomas Otto.
 
 # Duration
 

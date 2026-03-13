@@ -9,7 +9,7 @@ format: html
 
 # Authors
 
-This tutorial was written by Jacqui Keane based on material from Thomas Keane, Vivek Iyer and Victoria Offord.
+This tutorial was written by Jacqui Keane, Thomas Keane, Vivek Iyer and Victoria Offord.
 
 # Duration
 
@@ -45,21 +45,15 @@ On completion of the tutorial, you can expect to be able to:
 
 -   Practical exercises: 2 hours
 
--   Quiz: 30 minutes
-
 # Manual and practical execises
 
 [Module manual](module2_manual.qmd)
 
 [Exercises](module2_exercises.qmd)
 
-# Presentation slides
-
-(PPT/PDF, to be generated from the module manual)
-
 # Lecture notes or scripts
 
-Pre-recorded lecture
+[Recording of the Read Alignment module from the 2022 NGS Asia Course, delivered by Thomas Keane.](https://www.youtube.com/watch?v=o6MefkXfL2A&list=PLfovZnX0TvKtCjKYWitzUN6f_PwdUHeSu&index=5)
 
 # Teaching guidance
 

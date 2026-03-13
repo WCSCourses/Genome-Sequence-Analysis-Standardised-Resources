@@ -9,11 +9,11 @@ format: html
 
 # Authors
 
-Content by Qasim Ayub, qasim.ayub\@monash.edu
+Content by Qasim Ayub
 
 # Duration
 
-3h
+2.5h
 
 # Key topics
 
@@ -42,21 +42,15 @@ By the end of this module, you should be able to:
 
 -   Practical exercises 2h
 
--   Quiz 0.5h
-
 # Manual and practical exercises
 
 [Module manual](module3_manual.qmd)
 
 [Exercises](module3_exercises.qmd)
 
-# Presentation slides
-
-(PPT/PDF, to be generated from the module manual)
-
 # Lecture notes or scripts
 
-Pre-recorded lecture
+[Recording of the Variant Calling module from the 2022 NGS Asia Course delivered by Petr Danecek.](https://www.youtube.com/watch?v=2l3vbLyO8Sg&list=PLfovZnX0TvKtCjKYWitzUN6f_PwdUHeSu&index=6)
 
 # Teaching guidance
 

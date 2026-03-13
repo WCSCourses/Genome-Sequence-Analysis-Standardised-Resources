@@ -9,7 +9,7 @@ Structural Variation Calling
 
 # Authors
 
-This tutorial was written by Jacqui Keane based on material from Thomas Keane.
+This tutorial was written by Jacqui Keane and Thomas Keane.
 
 # Duration
 
@@ -33,9 +33,7 @@ This tutorial was written by Jacqui Keane based on material from Thomas Keane.
 
 -   Lecture: 1 hour
 
--   Practical exercises: 2 hours
-
--   Assessment quiz: 0.5 hours
+-   Practical exercises: 2.5 hours
 
 # Manual
 
@@ -43,11 +41,9 @@ This tutorial was written by Jacqui Keane based on material from Thomas Keane.
 
 [Exercises](module4_exercises.qmd)
 
-# Presentation slides
-
-(PPT/PDF, to be generated from the module manual. Instructions on how to that will be added here.)
-
 # Lecture recording, notes and scripts
+
+[Lecture on Structural Variant Calling from the 2022 NGS Asia course, delivered by Thomas Keane](https://www.youtube.com/watch?v=80tpolAIJ8E&list=PLfovZnX0TvKtCjKYWitzUN6f_PwdUHeSu&index=7)
 
 # Teaching guidance
 

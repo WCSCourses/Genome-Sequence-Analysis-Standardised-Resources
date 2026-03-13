@@ -13,7 +13,7 @@ This tutorial was written by Jacqui Keane.
 
 # Duration
 
-2 hours
+3.5 hours
 
 # Key topics
 
@@ -29,23 +29,13 @@ This tutorial was written by Jacqui Keane.
 
 -   Lecture: 30 minutes
 
--   Practical exercises: 1 hour
-
--   Assessment quiz: 30 minutes
+-   Practical exercises: 2.5 hours
 
 # Manual and practical execises
 
 [Module manual](module0_manual.qmd)
 
 [Exercises](module0_exercises.qmd)
-
-# Presentation slides
-
-(PPT/PDF, to be generated from the module manual. Instructions on how to that will be added here.)
-
-# Lecture recording, notes and scripts
-
-# Summary of this module
 
 # Teaching guidance
 
@@ -56,8 +46,6 @@ This tutorial was written by Jacqui Keane.
 We recommend that you follow the exercises using the course virtual machine.
 
 The datasets used in this exercise are stored on the virtual machine.
-
-Alternatively, for this module, if you are working on your own Linux system, you can use the exercise input files available on [GitHub](https://github.com/WCSCourses/Precourses_DataRepo/tree/main/course_data_2025/linux_googlecolab_data).
 
 # Platform Guidance
 
