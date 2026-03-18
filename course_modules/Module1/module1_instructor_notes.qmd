@@ -3,14 +3,64 @@ title: "Instructor notes"
 format: html
 ---
 
-Learners often confuse FASTA vs FASTQ. Emphasize that FASTA has no quality scores, whereas FASTQ includes them
+## How to deliver the File Formats and QC module (by Gokce Oguz and Burton Chia Kuan Hui)
 
-**Trainer Tips:**
+### **1. Content-Specific Teaching Tips**
 
-**Use Visual Aids:** When teaching, show real examples. For instance, open a FASTQ file in a text editor or slide to illustrate the four-line structure. If possible, bring up an ASCII table chart during the quality score discussion so learners can see character codes.
+Instructors should highlight these common areas of confusion for each format:
 
-**Emphasize Connections:** Tie this module to downstream analysis – e.g., explain that understanding FASTQ is foundational since those files feed into aligners (module 2) and BAM files produced will be used in variant calling (module 3). This helps learners see the big picture pipeline.
+-   **FASTA:** Note that chromosome naming conventions (e.g., "chr1" vs. just "1") can vary between reference files, which often confuses students.
 
-**Interactive Demonstration**: If time and resources allow, demonstrate using head/tail or samtools view commands on a sample file in class. For instance, show the first reads of a FASTQ and how they appear in a SAM after alignment, to reinforce how the formats are connected. This live demo can engage learners and clarify abstract concepts.
+-   **FASTQ & Quality Scores:** Explain the four-line structure and how **Phred scores** (derived from ASCII codes) indicate sequencing accuracy. While students may feel overwhelmed by the math, reassure them that the sequencer handles it automatically.
 
-**Link to QC:** Even though explicit quality control tools (e.g., FastQC) were not covered in text, you can mention them verbally. E.g., “After obtaining FASTQ files, typically one would run quality control (FastQC) to get an overview of base quality distribution.” This sets the stage that file formats are not just static info, but used in workflows.
+-   **SAM/BAM/CRAM:**
+
+    -   **SAM vs. BAM:** Explain that SAM is human-readable but large, whereas BAM is a compressed binary version for efficient processing.
+
+    -   **CRAM:** Highlight this as a space-saving format (saving \~60%) that only records differences from a reference genome.
+
+    -   **Flags:** This is identified as a **challenging concept**. Guide students through reading the binary values from right to left to interpret alignment properties.
+
+    -   **CIGAR Strings:** Another **difficult concept** for beginners. Use examples to explain characters like M (match/mismatch), I (insertion), and D (deletion). Specifically, explain **soft vs. hard clipping**: soft clipping keeps unmatched sequences in the file for downstream analysis, while hard clipping removes them to save space.
+
+-   **VCF & BCF:** Explain genotype representations (e.g., 0/0 for homozygous reference, 1/1 for homozygous alternate, and 0/1 for heterozygous). For tumor-specific files, clarify terms like **AF** (allelic frequency) and **PON** (Panel of Normals).
+
+### **2. Practical Session Delivery**
+
+-   **Discourage Copy-Pasting:** Encourage students to **type out commands** from the code blocks. Copying and pasting can lead to encoding errors, such as a double dash (`--`) being converted into an em dash (—), which will cause the command to fail.
+
+-   **Focus on Headers:** Take time to guide students through file headers in VCF, BCF, and SAM files. Even though they look like a "bunch of text," understanding headers is a vital skill for navigating data in the field.
+
+-   **Promote Creative Problem Solving:** Remind students that there are often multiple ways to reach an answer (e.g., using `awk` versus `cut`) and encourage them to experiment with different Linux functions.
+
+-   **Use Visual Aids:** Utilize the **Cheat Sheet** provided in the LMS as a summary table for students. Additionally, use visual figures to show the data flow from the sequencing instrument (FASTQ) to alignment (BAM) and variant calling (VCF).
+
+### **3. General Facilitation Advice**
+
+-   **Peer Support:** If you have experienced or fast learners, encourage them to provide peer support to their neighbors.
+
+-   **Incremental Solutions:** When demonstrating solutions, build the commands **incrementally** (e.g., show the output of the first command before piping it into a second) rather than just providing the final string.
+
+## Common hurdles encountered by course participants
+
+-   **CIGAR Strings:** The notation used in CIGAR strings (like M for match/mismatch or I/D for insertions/deletions) can be very confusing for those new to the data.
+
+-   **SAM Flags:** Interpreting the **binary values** of SAM flags and how they are calculated is noted as a particularly challenging concept.
+
+-   **File Headers:** Participants often feel overwhelmed by the **large amount of text in VCF or SAM headers** and may struggle to find specific information like genotype (GT) or quality (GQ) fields.
+
+-   **Inconsistent Naming:** Confusion can arise when reference files use different naming conventions for chromosomes (e.g., **"chr1" vs. just "1"**).
+
+## FAQs and common sticking points for students during the File formats and QC module
+
+-   **"Why are the chromosome names different?"** Confusion arises when different files use different naming conventions, such as **"chr1" vs. just "1"**.
+
+-   **"How do I read these SAM flags?"** Interpreting the integer values of SAM flags and how they are calculated from binary is a particularly challenging concept.
+
+-   **"What do the letters in a CIGAR string mean?"** Students find the notation for matches, mismatches, insertions, and deletions (e.g., M, I, D) confusing.
+
+-   **"What is the difference between soft and hard clipping?"** Understanding whether unmatched sequences are kept in the file or removed is a common query.
+
+-   **"What do the fields in a VCF file signify?"** Students often ask for clarification on genotype fields such as **GT (Genotype), DP (Read Depth), and GQ (Genotype Quality)**.
+
+-   **"What is the difference between VCF and BCF (or SAM and BAM)?"** Learners often ask about the distinction between **human-readable text formats** and their **compressed binary versions** used by computers.

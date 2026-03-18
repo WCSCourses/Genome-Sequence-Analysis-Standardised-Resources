@@ -53,16 +53,6 @@ format: html
 
 -   **Getting "Stuck":** Learners frequently do not know how to exit interactive sessions, such as the `less` command, or how to stop a process using **`CTRL-C` or `q`**.
 
-### **Bioinformatics-Specific Format Errors**
-
--   **CIGAR Strings:** The notation used in CIGAR strings (like M for match/mismatch or I/D for insertions/deletions) can be very confusing for those new to the data.
-
--   **SAM Flags:** Interpreting the **binary values** of SAM flags and how they are calculated is noted as a particularly challenging concept.
-
--   **File Headers:** Participants often feel overwhelmed by the **large amount of text in VCF or SAM headers** and may struggle to find specific information like genotype (GT) or quality (GQ) fields.
-
--   **Inconsistent Naming:** Confusion can arise when reference files use different naming conventions for chromosomes (e.g., **"chr1" vs. just "1"**).
-
 ## FAQs and common sticking points for students during the Linux for Bioinformatics module
 
 ### **Navigation and Command-Line Basics**
@@ -86,17 +76,3 @@ format: html
 -   **"Why did copy-pasting fail?"** Copying commands from manuals can convert double-dashes (`--`) into **em-dashes**, causing commands like `--help` to fail.
 
 -   **"What is the difference between a redirect (`>`) and a pipe (`|`)?"** Beginners struggle to distinguish between sending output to a file versus sending it to another command.
-
-### **Bioinformatics Data Formats**
-
--   **"Why are the chromosome names different?"** Confusion arises when different files use different naming conventions, such as **"chr1" vs. just "1"**.
-
--   **"How do I read these SAM flags?"** Interpreting the integer values of SAM flags and how they are calculated from binary is a particularly challenging concept.
-
--   **"What do the letters in a CIGAR string mean?"** Students find the notation for matches, mismatches, insertions, and deletions (e.g., M, I, D) confusing.
-
--   **"What is the difference between soft and hard clipping?"** Understanding whether unmatched sequences are kept in the file or removed is a common query.
-
--   **"What do the fields in a VCF file signify?"** Students often ask for clarification on genotype fields such as **GT (Genotype), DP (Read Depth), and GQ (Genotype Quality)**.
-
--   **"What is the difference between VCF and BCF (or SAM and BAM)?"** Learners often ask about the distinction between **human-readable text formats** and their **compressed binary versions** used by computers.
