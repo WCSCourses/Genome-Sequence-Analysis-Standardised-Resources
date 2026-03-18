@@ -18,7 +18,7 @@ website:
           - href: course_modules/Introduction-to-linux/module0.qmd
             text: "Introduction to Linux"
           - href: course_modules/Module1/module1.qmd
-            text: "File formats"
+            text: "File formats and QC"
           - href: course_modules/Module2/module2.qmd
             text: "Reads alignment"
           - href: course_modules/Module3/module3.qmd
