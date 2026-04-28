@@ -583,17 +583,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#breakdancer" id="toc-breakdancer" class="nav-link active" data-scroll-target="#breakdancer">Breakdancer</a>
+  <li><a href="#breakdancer" id="toc-breakdancer" class="nav-link active" data-scroll-target="#breakdancer"><span class="header-section-number">1</span> Breakdancer</a>
   <ul class="collapse">
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">1.1</span> Exercises</a></li>
   </ul></li>
-  <li><a href="#inspecting-svs-with-igv" id="toc-inspecting-svs-with-igv" class="nav-link" data-scroll-target="#inspecting-svs-with-igv">Inspecting SVs with IGV</a>
+  <li><a href="#inspecting-svs-with-igv" id="toc-inspecting-svs-with-igv" class="nav-link" data-scroll-target="#inspecting-svs-with-igv"><span class="header-section-number">2</span> Inspecting SVs with IGV</a>
   <ul class="collapse">
-  <li><a href="#exercises-1" id="toc-exercises-1" class="nav-link" data-scroll-target="#exercises-1">Exercises</a></li>
+  <li><a href="#exercises-1" id="toc-exercises-1" class="nav-link" data-scroll-target="#exercises-1"><span class="header-section-number">2.1</span> Exercises</a></li>
   </ul></li>
-  <li><a href="#dysgu" id="toc-dysgu" class="nav-link" data-scroll-target="#dysgu">Dysgu</a>
+  <li><a href="#dysgu" id="toc-dysgu" class="nav-link" data-scroll-target="#dysgu"><span class="header-section-number">3</span> Dysgu</a>
   <ul class="collapse">
-  <li><a href="#exercises-2" id="toc-exercises-2" class="nav-link" data-scroll-target="#exercises-2">Exercises</a></li>
+  <li><a href="#exercises-2" id="toc-exercises-2" class="nav-link" data-scroll-target="#exercises-2"><span class="header-section-number">3.1</span> Exercises</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -621,8 +621,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>There are several software tools available for calling structural variants. We will use two callers in this part of the tutorial, <code>breakdancer</code> and <code>lumpy</code></p>
-<section id="breakdancer" class="level2">
-<h2 class="anchored" data-anchor-id="breakdancer">Breakdancer</h2>
+<section id="breakdancer" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="breakdancer"><span class="header-section-number">1</span> Breakdancer</h2>
 <p>BreakDancer predicts five types of structural variants: insertions (INS), deletions (DEL), inversions (INV), inter-chromosomal translocations (CTX) and intra-chromosomal translocations (ITX) from next-generation short paired-end sequencing reads using read pairs that are mapped with unexpected separation distances or orientation.</p>
 <p>Navigate to the <code>exercise2</code> directory:</p>
 <div id="cell-2" class="cell">
@@ -643,8 +643,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>head ERR1015121.breakdancer.out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Note that the output from Breakdancer is NOT VCF format, instead it is a simple text format with one line per SV event.</p>
-<section id="exercises" class="level3">
-<h3 class="anchored" data-anchor-id="exercises">Exercises</h3>
+<section id="exercises" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.1</span> Exercises</h3>
 <ol type="1">
 <li><p>What type of SV event is predicted at position III:83065?</p></li>
 <li><p>What is the size of this SV?</p></li>
@@ -656,8 +656,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>To complete this task, create a command that: 1. Extracts all the deletions from the breakdancer.out file (<strong>Hint:</strong> use grep) 2. Prints columns: 1, 2, 5, 7, and 9 to create a BED file with columns: chromosome, start, end, name, and score. (<strong>Hint:</strong> use awk to do this, e.g.&nbsp;<code>awk '{print $1"\t"$2}'</code>) 3. Print the resulting bed output into a file called: breakdancer.dels.bed</p>
 </section>
 </section>
-<section id="inspecting-svs-with-igv" class="level2">
-<h2 class="anchored" data-anchor-id="inspecting-svs-with-igv">Inspecting SVs with IGV</h2>
+<section id="inspecting-svs-with-igv" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="inspecting-svs-with-igv"><span class="header-section-number">2</span> Inspecting SVs with IGV</h2>
 <p>Now we will open the IGV genome browser and inspect some of the predicted structural variants.</p>
 <p>To do this type:</p>
 <div id="cell-13" class="cell">
@@ -666,8 +666,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Open the reference genome. <strong>Go to ’ <em>Genomes -&gt; Load Genome From Server…</em> ’ and select “S. cerevisiae (SacCer3)”.</strong></p>
 <p>Load the BAM file. <strong>Go to ’ <em>File -&gt; Load from File…</em> ‘. Select the “ERR1015121.bam” BAM file and click’ <em>Open</em> ’.</strong></p>
 <p>Load the BED file for the deletion calls that you created in the exercise 5 above. <strong>Go to ’ <em>File -&gt; Load from File…</em> ‘. Select the “breakdancer.dels.bed” BED file and click’ <em>Open</em> ’.</strong></p>
-<section id="exercises-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercises-1">Exercises</h3>
+<section id="exercises-1" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="exercises-1"><span class="header-section-number">2.1</span> Exercises</h3>
 <p>Using the navigation bar, go to region II:258,500-266,700.</p>
 <ol type="1">
 <li><p>Can you see the structural variant? What type of structural variant is it? (<strong>Hint:</strong> you may need to zoom out a little to see the full structural variant).</p></li>
@@ -686,8 +686,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 </section>
 </section>
-<section id="dysgu" class="level2">
-<h2 class="anchored" data-anchor-id="dysgu">Dysgu</h2>
+<section id="dysgu" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="dysgu"><span class="header-section-number">3</span> Dysgu</h2>
 <p>We will use the Dysgu (pronounced duss-key) software package (https://github.com/kcleal/dysgu) to call structural variants on a yeast sample that was paired-end sequenced on the Illumina Hiseq 2000. Dysgu is designed to take BAM files that have been aligned with <code>BWA-mem</code>.</p>
 <p>Navigate to the <code>exercise 3</code> directory:</p>
 <div id="cell-16" class="cell">
@@ -702,8 +702,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>dysgu run ..<span class="op">/</span>ref<span class="op">/</span>Saccharomyces_cerevisiae.R64<span class="op">-</span><span class="dv">1</span><span class="op">-</span><span class="fl">1.</span><span class="er">dna</span>.toplevel.fa temp ERR1015069.bam <span class="op">&gt;</span> ERR1015069.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Dysgu is a multi-stage pipeline * The first stage of the “run” pipeline is to separate SV-associated reads - split/discordant reads, and reads with a soft-clip &gt;= clip_length (15 bp by default). * The next stage of the pipeline is to call and genotype SVs using the reads from the first stage. The run command above combines both of these stages together.</p>
-<section id="exercises-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercises-2">Exercises</h3>
+<section id="exercises-2" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="exercises-2"><span class="header-section-number">3.1</span> Exercises</h3>
 <ol type="1">
 <li><p>What was the total number of SVs identified? How many PASS SVs were identified by Dysgu? Why did the rest of the SVs fail?</p></li>
 <li><p>What type of SV event occurs at position IV:384221? What is the length of the SV event? What is the genotype quality?</p></li>

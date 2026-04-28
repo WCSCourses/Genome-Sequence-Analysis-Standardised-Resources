@@ -583,8 +583,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#first-script" id="toc-first-script" class="nav-link active" data-scroll-target="#first-script">First script</a></li>
-  <li><a href="#setting-up-a-scripts-directory" id="toc-setting-up-a-scripts-directory" class="nav-link" data-scroll-target="#setting-up-a-scripts-directory">Setting up a scripts directory</a></li>
+  <li><a href="#first-script" id="toc-first-script" class="nav-link active" data-scroll-target="#first-script"><span class="header-section-number">1</span> First script</a></li>
+  <li><a href="#setting-up-a-scripts-directory" id="toc-setting-up-a-scripts-directory" class="nav-link" data-scroll-target="#setting-up-a-scripts-directory"><span class="header-section-number">2</span> Setting up a scripts directory</a></li>
   </ul>
 </nav>
     </div>
@@ -611,8 +611,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>So far, we have run single commands in a terminal. However, it is useful to be able to run multiple commands that process some data and produce output. These commands can be put into a file (i.e.&nbsp;a script), and run on input data. This has the advantage of reproducibility, so that the same analysis can be run on many input data sets.</p>
-<section id="first-script" class="level2">
-<h2 class="anchored" data-anchor-id="first-script">First script</h2>
+<section id="first-script" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="first-script"><span class="header-section-number">1</span> First script</h2>
 <p>It is traditional when learning a new language (in this case BASH), to write a script that says “Hello World!”. Open a terminal and make a new directory in your home called <code>scripts</code>, by typing</p>
 <div id="cell-2" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span></span>
@@ -636,8 +636,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> hello.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="setting-up-a-scripts-directory" class="level2">
-<h2 class="anchored" data-anchor-id="setting-up-a-scripts-directory">Setting up a scripts directory</h2>
+<section id="setting-up-a-scripts-directory" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="setting-up-a-scripts-directory"><span class="header-section-number">2</span> Setting up a scripts directory</h2>
 <p>It would be nice if our scripts could be run from anywhere in the filesystem, without having to tell Unix where the script is, or that it is a BASH script. This is how built-in commands work, like <code>cd</code> or <code>ls</code>.</p>
 <p>To tell Unix that the script is a BASH script, make this the first line of the script:</p>
 <pre><code>#!/usr/bin/env bash</code></pre>

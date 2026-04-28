@@ -583,12 +583,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning outcomes</a></li>
-  <li><a href="#tutorial-sections" id="toc-tutorial-sections" class="nav-link" data-scroll-target="#tutorial-sections">Tutorial sections</a></li>
-  <li><a href="#authors" id="toc-authors" class="nav-link" data-scroll-target="#authors">Authors</a></li>
-  <li><a href="#running-the-commands-from-this-tutorial" id="toc-running-the-commands-from-this-tutorial" class="nav-link" data-scroll-target="#running-the-commands-from-this-tutorial">Running the commands from this tutorial</a></li>
-  <li><a href="#lets-get-started" id="toc-lets-get-started" class="nav-link" data-scroll-target="#lets-get-started">Let’s get started!</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes"><span class="header-section-number">2</span> Learning outcomes</a></li>
+  <li><a href="#tutorial-sections" id="toc-tutorial-sections" class="nav-link" data-scroll-target="#tutorial-sections"><span class="header-section-number">3</span> Tutorial sections</a></li>
+  <li><a href="#authors" id="toc-authors" class="nav-link" data-scroll-target="#authors"><span class="header-section-number">4</span> Authors</a></li>
+  <li><a href="#running-the-commands-from-this-tutorial" id="toc-running-the-commands-from-this-tutorial" class="nav-link" data-scroll-target="#running-the-commands-from-this-tutorial"><span class="header-section-number">5</span> Running the commands from this tutorial</a></li>
+  <li><a href="#lets-get-started" id="toc-lets-get-started" class="nav-link" data-scroll-target="#lets-get-started"><span class="header-section-number">6</span> Let’s get started!</a></li>
   </ul>
 </nav>
     </div>
@@ -614,8 +614,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>There are several file formats for storing Next Generation Sequencing (NGS) data. In this tutorial we will look at some of the most common formats for storing NGS reads and variant data. We will cover the following formats:</p>
 <p><strong>FASTQ</strong> - This format stores unaligned read sequences with base qualities<br>
 <strong>SAM/BAM</strong> - This format stores unaligned or aligned reads (text and binary formats)<br>
@@ -624,8 +624,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Following this, we will work through some examples of converting between the different formats.</p>
 <p>Further to understanding the different file formats, it is important to remember that all sequencing platforms have technical limitations that can introduce biases in your sequencing data. Because of this it is very important to check the quality of the data before starting any analysis, whether you are planning to use something you have sequenced yourself or publicly available data. In the latter part of this tutorial we will describe how to perform a QC assessment for your NGS data.</p>
 </section>
-<section id="learning-outcomes" class="level2">
-<h2 class="anchored" data-anchor-id="learning-outcomes">Learning outcomes</h2>
+<section id="learning-outcomes" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="learning-outcomes"><span class="header-section-number">2</span> Learning outcomes</h2>
 <p>On completion of the tutorial, you can expect to be able to:</p>
 <ul>
 <li>Describe the different NGS data formats available (FASTQ, SAM/BAM, CRAM, VCF/BCF)</li>
@@ -633,8 +633,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Perform conversions between the different data formats</li>
 </ul>
 </section>
-<section id="tutorial-sections" class="level2">
-<h2 class="anchored" data-anchor-id="tutorial-sections">Tutorial sections</h2>
+<section id="tutorial-sections" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="tutorial-sections"><span class="header-section-number">3</span> Tutorial sections</h2>
 <p>This tutorial comprises the following sections:<br>
 1. <a href="../../../../course_modules/NGS_Data_Formats_and_QC/practical/Notebooks/formats.html">Data formats</a><br>
 2. <a href="../../../../course_modules/NGS_Data_Formats_and_QC/practical/Notebooks/assessment.html">QC assessment</a></p>
@@ -643,12 +643,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="../../../../course_modules/NGS_Data_Formats_and_QC/practical/Notebooks/conversion.html">File conversion</a></li>
 </ol>
 </section>
-<section id="authors" class="level2">
-<h2 class="anchored" data-anchor-id="authors">Authors</h2>
+<section id="authors" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="authors"><span class="header-section-number">4</span> Authors</h2>
 <p>This tutorial was written by <a href="https://github.com/jacquikeane">Jacqui Keane</a> and <a href="https://github.com/ssjunnebo">Sara Sjunnebo</a> based on material from <a href="https://github.com/pd3">Petr Danecek</a> and <a href="https://github.com/tk2">Thomas Keane</a>.</p>
 </section>
-<section id="running-the-commands-from-this-tutorial" class="level2">
-<h2 class="anchored" data-anchor-id="running-the-commands-from-this-tutorial">Running the commands from this tutorial</h2>
+<section id="running-the-commands-from-this-tutorial" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="running-the-commands-from-this-tutorial"><span class="header-section-number">5</span> Running the commands from this tutorial</h2>
 <p>You can follow this tutorial by typing all the commands you see into a terminal window. This is similar to the “Command Prompt” window on MS Windows systems, which allows the user to type DOS commands to manage files.</p>
 <p>To get started, open a new terminal on your computer and type the command below:</p>
 <div id="cell-2" class="cell">
@@ -656,8 +656,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Now you can follow the instructions in the tutorial from here.</p>
 </section>
-<section id="lets-get-started" class="level2">
-<h2 class="anchored" data-anchor-id="lets-get-started">Let’s get started!</h2>
+<section id="lets-get-started" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="lets-get-started"><span class="header-section-number">6</span> Let’s get started!</h2>
 <p>This tutorial assumes that you have samtools, bcftools and Picard tools installed on your computer. These are already installed on the VM you are using. To check that these are installed, you can run the following commands:</p>
 <div id="cell-4" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

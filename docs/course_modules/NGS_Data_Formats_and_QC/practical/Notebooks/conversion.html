@@ -583,14 +583,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sam-to-bam" id="toc-sam-to-bam" class="nav-link active" data-scroll-target="#sam-to-bam">SAM to BAM</a></li>
-  <li><a href="#bam-to-cram" id="toc-bam-to-cram" class="nav-link" data-scroll-target="#bam-to-cram">BAM to CRAM</a>
+  <li><a href="#sam-to-bam" id="toc-sam-to-bam" class="nav-link active" data-scroll-target="#sam-to-bam"><span class="header-section-number">1</span> SAM to BAM</a></li>
+  <li><a href="#bam-to-cram" id="toc-bam-to-cram" class="nav-link" data-scroll-target="#bam-to-cram"><span class="header-section-number">2</span> BAM to CRAM</a>
   <ul class="collapse">
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">2.1</span> Exercises</a></li>
   </ul></li>
-  <li><a href="#fastq-to-sam" id="toc-fastq-to-sam" class="nav-link" data-scroll-target="#fastq-to-sam">FASTQ to SAM</a></li>
-  <li><a href="#cram-to-fastq" id="toc-cram-to-fastq" class="nav-link" data-scroll-target="#cram-to-fastq">CRAM to FASTQ</a></li>
-  <li><a href="#vcf-to-bcf" id="toc-vcf-to-bcf" class="nav-link" data-scroll-target="#vcf-to-bcf">VCF to BCF</a></li>
+  <li><a href="#fastq-to-sam" id="toc-fastq-to-sam" class="nav-link" data-scroll-target="#fastq-to-sam"><span class="header-section-number">3</span> FASTQ to SAM</a></li>
+  <li><a href="#cram-to-fastq" id="toc-cram-to-fastq" class="nav-link" data-scroll-target="#cram-to-fastq"><span class="header-section-number">4</span> CRAM to FASTQ</a></li>
+  <li><a href="#vcf-to-bcf" id="toc-vcf-to-bcf" class="nav-link" data-scroll-target="#vcf-to-bcf"><span class="header-section-number">5</span> VCF to BCF</a></li>
   </ul>
 </nav>
     </div>
@@ -617,8 +617,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>In this section we are going to look at how to convert from one file format to another. There are many tools available for converting between file formats, and we will use some of the most common ones: samtools, bcftools and Picard.</p>
-<section id="sam-to-bam" class="level2">
-<h2 class="anchored" data-anchor-id="sam-to-bam">SAM to BAM</h2>
+<section id="sam-to-bam" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="sam-to-bam"><span class="header-section-number">1</span> SAM to BAM</h2>
 <p>To convert from SAM to BAM format we are going to use the <strong><code>samtools view</code></strong> command. In this instance, we would like to include the SAM header, so we use the <strong><code>-h</code></strong> option:</p>
 <div id="cell-2" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> view <span class="at">-h</span> data/NA20538.bam <span class="op">&gt;</span> data/NA20538.sam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -633,8 +633,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Samtools is very well documented, so for more usage options and functions, have a look at the samtools manual <a href="http://www.htslib.org/doc/samtools-1.0.html">http://www.htslib.org/doc/samtools-1.0.html</a>.</p>
 </section>
-<section id="bam-to-cram" class="level2">
-<h2 class="anchored" data-anchor-id="bam-to-cram">BAM to CRAM</h2>
+<section id="bam-to-cram" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="bam-to-cram"><span class="header-section-number">2</span> BAM to CRAM</h2>
 <p>The samtools view command can be used to convert a BAM file to CRAM format. In the data directory there is a BAM file called yeast.bam that was created from S. cerevisiae Illumina sequencing data. There is also a reference genome in the directory, called Saccharomyces_cerevisiae.EF4.68.dna.toplevel.fa. For the conversion, an index file (.fai) for the reference must be created. This can be done using <strong><code>samtools faidx</code></strong>. However, as we will see, samtools will generate this file on the fly when we specify a reference file using the <code>-F</code> option.</p>
 <p>To convert to CRAM, we use the <strong><code>-C</code></strong> option to tell samtools we want the output as CRAM, and the <strong><code>-T</code></strong> option to specify what reference file to use for the conversion. We also use the <strong><code>-o</code></strong> option to specify the name of the output file. Give this a try:</p>
 <div id="cell-9" class="cell">
@@ -645,16 +645,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>As you can see, this has created an index file for the reference genome called Saccharomyces_cerevisiae.EF4.68.dna.toplevel.fa.fai and the CRAM file yeast.cram.</p>
-<section id="exercises" class="level3">
-<h3 class="anchored" data-anchor-id="exercises">Exercises</h3>
+<section id="exercises" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2.1</span> Exercises</h3>
 <p><strong>Q1: Since CRAM files use reference-based compression, we expect the CRAM file to be smaller than the BAM file. What is the size of the CRAM file?</strong></p>
 <p><strong>Q2: Is your CRAM file smaller than the original BAM file?</strong></p>
 <p>To convert CRAM back to BAM, simply change <code>-C</code> to <code>-b</code> and change places for the input and output CRAM/BAM:</p>
 <pre><code>samtools view -b -T data/Saccharomyces_cerevisiae.EF4.68.dna.toplevel.fa -o data/yeast.bam data/yeast.cram</code></pre>
 </section>
 </section>
-<section id="fastq-to-sam" class="level2">
-<h2 class="anchored" data-anchor-id="fastq-to-sam">FASTQ to SAM</h2>
+<section id="fastq-to-sam" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="fastq-to-sam"><span class="header-section-number">3</span> FASTQ to SAM</h2>
 <p>SAM format is mainly used to store alignment data, however in some cases we may want to store the unaligned data in SAM format and for this we can use the picard tools <strong><code>FastqToSam</code></strong> application. <a href="https://broadinstitute.github.io/picard/">Picard tools</a> is a Java application that comes with a number of useful options for manipulating high-throughput sequencing data. .</p>
 <p>To convert the FASTQ files of lane 13681_1#18 to unaligned SAM format, run:</p>
 <div id="cell-19" class="cell">
@@ -665,8 +665,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">picard</span> FastqToSam <span class="at">-h</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="cram-to-fastq" class="level2">
-<h2 class="anchored" data-anchor-id="cram-to-fastq">CRAM to FASTQ</h2>
+<section id="cram-to-fastq" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="cram-to-fastq"><span class="header-section-number">4</span> CRAM to FASTQ</h2>
 <p>It is possible to convert CRAM to FASTQ directly using the <code>samtools fastq</code> command. However, for many applications we need the fastq files to be ordered so that the order of the reads in the first file match the order of the reads in the mate file. For this reason, we first use <code>samtools collate</code> to produce a collated BAM file.</p>
 <div id="cell-23" class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> collate data/yeast.cram data/yeast.collated</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -677,8 +677,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>For further information and usage options, have a look at the samtools manual page <a href="http://www.htslib.org/doc/samtools.html">(http://www.htslib.org/doc/samtools.html)</a>.</p>
 </section>
-<section id="vcf-to-bcf" class="level2">
-<h2 class="anchored" data-anchor-id="vcf-to-bcf">VCF to BCF</h2>
+<section id="vcf-to-bcf" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="vcf-to-bcf"><span class="header-section-number">5</span> VCF to BCF</h2>
 <p>In a similar way that samtools view can be used to convert between SAM, BAM and CRAM, <strong><code>bcftools view</code></strong> can be used to convert between VCF and BCF. To convert the file called 1kg.bcf to a compressed VCF file called 1kg.vcf.gz, run:</p>
 <div id="cell-28" class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> view <span class="at">-O</span> z <span class="at">-o</span> data/1kg.vcf.gz data/1kg.bcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

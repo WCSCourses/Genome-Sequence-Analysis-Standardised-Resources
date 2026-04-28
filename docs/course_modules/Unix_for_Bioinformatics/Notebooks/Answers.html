@@ -549,12 +549,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#basic-unix" id="toc-basic-unix" class="nav-link active" data-scroll-target="#basic-unix">Basic Unix</a></li>
-  <li><a href="#looking-inside-files" id="toc-looking-inside-files" class="nav-link" data-scroll-target="#looking-inside-files">Looking inside files</a></li>
-  <li><a href="#searching-inside-files-with-grep" id="toc-searching-inside-files-with-grep" class="nav-link" data-scroll-target="#searching-inside-files-with-grep">Searching inside files with <code>grep</code></a></li>
-  <li><a href="#file-processing-with-awk" id="toc-file-processing-with-awk" class="nav-link" data-scroll-target="#file-processing-with-awk">File processing with <code>awk</code></a></li>
-  <li><a href="#bash-scripts" id="toc-bash-scripts" class="nav-link" data-scroll-target="#bash-scripts">BASH scripts</a></li>
-  <li><a href="#advanced-bash" id="toc-advanced-bash" class="nav-link" data-scroll-target="#advanced-bash">Advanced BASH</a></li>
+  <li><a href="#basic-unix" id="toc-basic-unix" class="nav-link active" data-scroll-target="#basic-unix"><span class="header-section-number">1</span> Basic Unix</a></li>
+  <li><a href="#looking-inside-files" id="toc-looking-inside-files" class="nav-link" data-scroll-target="#looking-inside-files"><span class="header-section-number">2</span> Looking inside files</a></li>
+  <li><a href="#searching-inside-files-with-grep" id="toc-searching-inside-files-with-grep" class="nav-link" data-scroll-target="#searching-inside-files-with-grep"><span class="header-section-number">3</span> Searching inside files with <code>grep</code></a></li>
+  <li><a href="#file-processing-with-awk" id="toc-file-processing-with-awk" class="nav-link" data-scroll-target="#file-processing-with-awk"><span class="header-section-number">4</span> File processing with <code>awk</code></a></li>
+  <li><a href="#bash-scripts" id="toc-bash-scripts" class="nav-link" data-scroll-target="#bash-scripts"><span class="header-section-number">5</span> BASH scripts</a></li>
+  <li><a href="#advanced-bash" id="toc-advanced-bash" class="nav-link" data-scroll-target="#advanced-bash"><span class="header-section-number">6</span> Advanced BASH</a></li>
   </ul>
 </nav>
     </div>
@@ -581,8 +581,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>No questions in this section.</p>
-<section id="basic-unix" class="level1">
-<h1>Basic Unix</h1>
+<section id="basic-unix" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Basic Unix</h1>
 <p><strong>1.</strong> <code>ls -al</code><br>
 <strong>2.</strong> There are 4 files in the directory (and 2 subdirectories). You can use <code>ls -l</code> to look inside the directory. This will show you which of the contents are files and which are directories. Don’t forget to also include the <code>-a</code> option to show any hidden files:</p>
 <p><code>ls -la Pfalciparum</code></p>
@@ -597,8 +597,8 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>10.</strong> There are 7 fasta files in the unix directory. Note that fasta files normally end with <code>.fa</code> OR <code>.fasta</code>, so wee need to make sure we look for both of these, by adding a wildcard after <code>fa</code>:</p>
 <p><code>find ../../.. -name *.fa*</code></p>
 </section>
-<section id="looking-inside-files" class="level1">
-<h1>Looking inside files</h1>
+<section id="looking-inside-files" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Looking inside files</h1>
 <p><strong>1.</strong> <code>head -n 500 Styphi.gff &gt; Styphi.500.gff</code></p>
 <p><strong>2.</strong> There are 6213 lines in the file. Use the <code>-l</code> option:</p>
 <p><code>wc -l Pfalciparum.bed</code></p>
@@ -621,8 +621,8 @@ ul.task-list li input[type="checkbox"] {
  773 13
  857 14</code></pre>
 </section>
-<section id="searching-inside-files-with-grep" class="level1">
-<h1>Searching inside files with <code>grep</code></h1>
+<section id="searching-inside-files-with-grep" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Searching inside files with <code>grep</code></h1>
 <p><strong>1.</strong> <code>grep "^&gt;" exercises.fasta</code></p>
 <p><strong>2.</strong> There are 1000 sequences. We can use -c to count the number of matches:</p>
 <p><code>grep -c "^&gt;" exercises.fasta</code></p>
@@ -653,8 +653,8 @@ ul.task-list li input[type="checkbox"] {
 <p>… which outputs 999.</p>
 <p>Therefore there is 1000 - 999 = 1 name repeated.</p>
 </section>
-<section id="file-processing-with-awk" class="level1">
-<h1>File processing with <code>awk</code></h1>
+<section id="file-processing-with-awk" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> File processing with <code>awk</code></h1>
 <p><strong>1.</strong> Using:</p>
 <p><code>awk -F"\t" '{print $1}' exercises.bed | sort -u</code></p>
 <p>Should give you:</p>
@@ -688,12 +688,12 @@ scaffold-2</code></pre>
 <p><strong>12.</strong> The mean score is 560.833. Try:</p>
 <p><code>awk -F"\t" '$1 == "contig-1" &amp;&amp; $4 == "repeat" {score+=$5; count++} END{print score/count}' exercises.bed</code></p>
 </section>
-<section id="bash-scripts" class="level1">
-<h1>BASH scripts</h1>
+<section id="bash-scripts" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> BASH scripts</h1>
 <p>No questions in this section.</p>
 </section>
-<section id="advanced-bash" class="level1">
-<h1>Advanced BASH</h1>
+<section id="advanced-bash" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Advanced BASH</h1>
 <p><strong>1.</strong> Here is an example of what this script could look like:</p>
 <pre><code>#!/usr/bin/env bash
 set -e

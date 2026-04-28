@@ -583,11 +583,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#extracting-columns-from-files" id="toc-extracting-columns-from-files" class="nav-link active" data-scroll-target="#extracting-columns-from-files">Extracting columns from files</a></li>
-  <li><a href="#filtering-the-input-file" id="toc-filtering-the-input-file" class="nav-link" data-scroll-target="#filtering-the-input-file">Filtering the input file</a></li>
-  <li><a href="#changing-the-output" id="toc-changing-the-output" class="nav-link" data-scroll-target="#changing-the-output">Changing the output</a></li>
-  <li><a href="#processing-the-data" id="toc-processing-the-data" class="nav-link" data-scroll-target="#processing-the-data">Processing the data</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#extracting-columns-from-files" id="toc-extracting-columns-from-files" class="nav-link active" data-scroll-target="#extracting-columns-from-files"><span class="header-section-number">1</span> Extracting columns from files</a></li>
+  <li><a href="#filtering-the-input-file" id="toc-filtering-the-input-file" class="nav-link" data-scroll-target="#filtering-the-input-file"><span class="header-section-number">2</span> Filtering the input file</a></li>
+  <li><a href="#changing-the-output" id="toc-changing-the-output" class="nav-link" data-scroll-target="#changing-the-output"><span class="header-section-number">3</span> Changing the output</a></li>
+  <li><a href="#processing-the-data" id="toc-processing-the-data" class="nav-link" data-scroll-target="#processing-the-data"><span class="header-section-number">4</span> Processing the data</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -619,8 +619,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="cell-2" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../awk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="extracting-columns-from-files" class="level2">
-<h2 class="anchored" data-anchor-id="extracting-columns-from-files">Extracting columns from files</h2>
+<section id="extracting-columns-from-files" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="extracting-columns-from-files"><span class="header-section-number">1</span> Extracting columns from files</h2>
 <p><code>awk</code> reads a file line-by-line, splitting each line into columns. This makes it easy to do simple things like extract a column from a file. We will use the following GFF file for our examples.</p>
 <div id="cell-4" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> genes.gff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -652,8 +652,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="at">-F</span><span class="st">"\t"</span> <span class="st">'{print $1}'</span> genes.gff <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-u</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="filtering-the-input-file" class="level2">
-<h2 class="anchored" data-anchor-id="filtering-the-input-file">Filtering the input file</h2>
+<section id="filtering-the-input-file" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="filtering-the-input-file"><span class="header-section-number">2</span> Filtering the input file</h2>
 <p>Similarly to <code>grep</code>, <code>awk</code> can be used to filter out lines of a file. However, since <code>awk</code> is column-based, it makes it easy to filter based on properties of any columns of interest. The filtering criteria can be added before the braces. For example, the following extracts just chromosome 1 from the file.</p>
 <div id="cell-10" class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="at">-F</span><span class="st">"\t"</span> <span class="st">'$1=="chr1" {print $0}'</span> genes.gff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -739,8 +739,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>There was no output, which means that every line does indeed have 8 or 9 columns.</p>
 </section>
-<section id="changing-the-output" class="level2">
-<h2 class="anchored" data-anchor-id="changing-the-output">Changing the output</h2>
+<section id="changing-the-output" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="changing-the-output"><span class="header-section-number">3</span> Changing the output</h2>
 <p>In addition to filtering, <code>awk</code> can be used to change the output.</p>
 <p>Every value in a column could be changed to something else, for example suppose we want to change the source column (column number 2) to something else.</p>
 <div id="cell-47" class="cell">
@@ -751,8 +751,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="at">-F</span><span class="st">"\t"</span> <span class="st">'BEGIN{OFS="\t"} {$2="new_source"; print $0}'</span> genes.gff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="processing-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="processing-the-data">Processing the data</h2>
+<section id="processing-the-data" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="processing-the-data"><span class="header-section-number">4</span> Processing the data</h2>
 <p>More in-depth processing is possible. For example, we could print the length of each repeat (and then sort the results numerically)</p>
 <div id="cell-51" class="cell" data-scrolled="false">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="at">-F</span><span class="st">"\t"</span> <span class="st">'$3=="repeat" {print $5 - $4 + 1}'</span> genes.gff <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -797,8 +797,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>If this confuses you, then be explicit and use the <code>BEGIN</code> block of code. The result is the same.</p>
 </section>
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<section id="exercises" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">5</span> Exercises</h2>
 <p>The following exercises all use the BED file <code>exercises.bed</code>. Before starting the exercises, open a new terminal and navigate to the <code>awk</code> directory, which contains <code>exercises.bed</code>.</p>
 <p>Use <code>awk</code> to find the answers to the following questions about the file <code>exercises.bed</code>. Many questions will require using pipes (eg “<code>awk ... | sort -u</code>” for question 1).</p>
 <ol type="1">

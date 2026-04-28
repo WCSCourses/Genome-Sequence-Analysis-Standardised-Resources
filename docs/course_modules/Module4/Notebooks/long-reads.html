@@ -583,11 +583,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introducing-the-dataset" id="toc-introducing-the-dataset" class="nav-link active" data-scroll-target="#introducing-the-dataset">Introducing the dataset</a></li>
-  <li><a href="#align-the-data" id="toc-align-the-data" class="nav-link" data-scroll-target="#align-the-data">Align the data</a></li>
-  <li><a href="#call-structural-variants" id="toc-call-structural-variants" class="nav-link" data-scroll-target="#call-structural-variants">Call structural variants</a></li>
-  <li><a href="#inspecting-svs-with-igv" id="toc-inspecting-svs-with-igv" class="nav-link" data-scroll-target="#inspecting-svs-with-igv">Inspecting SVs with IGV</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#introducing-the-dataset" id="toc-introducing-the-dataset" class="nav-link active" data-scroll-target="#introducing-the-dataset"><span class="header-section-number">1</span> Introducing the dataset</a></li>
+  <li><a href="#align-the-data" id="toc-align-the-data" class="nav-link" data-scroll-target="#align-the-data"><span class="header-section-number">2</span> Align the data</a></li>
+  <li><a href="#call-structural-variants" id="toc-call-structural-variants" class="nav-link" data-scroll-target="#call-structural-variants"><span class="header-section-number">3</span> Call structural variants</a></li>
+  <li><a href="#inspecting-svs-with-igv" id="toc-inspecting-svs-with-igv" class="nav-link" data-scroll-target="#inspecting-svs-with-igv"><span class="header-section-number">4</span> Inspecting SVs with IGV</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -621,16 +621,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="cell-4" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="introducing-the-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="introducing-the-dataset">Introducing the dataset</h2>
+<section id="introducing-the-dataset" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introducing-the-dataset"><span class="header-section-number">1</span> Introducing the dataset</h2>
 <p>We will use data from a Saccharomyces cerevisiae strain (YPS128) that was sequenced at the Wellcome Sanger Institute and deposited in the ENA (Project: PRJEB7245, sample: SAMEA2757770, analysis: ERZ448241).</p>
 <p>The sequencing reads are contained in a fastq file:</p>
 <p><code>YPS128.filtered_subreads.10x.fastq.gz</code></p>
 <p>The reference genome is in the <code>../ref</code> directory in a fasta file:</p>
 <p><code>Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa</code></p>
 </section>
-<section id="align-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="align-the-data">Align the data</h2>
+<section id="align-the-data" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="align-the-data"><span class="header-section-number">2</span> Align the data</h2>
 <p>Before you can use Sniffles to call SVs, it is very important that the reads are aligned with an aligner suitable for long reads.</p>
 <p>The software minimap2 is a long-read aligner designed to align PacBio or Oxford Nanopore (standard and ultra-long) to a reference genome.</p>
 <p>You can find the usage of minimap2 by typing:</p>
@@ -647,8 +647,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Finally, use samtools to index this BAM file. <strong>Hint</strong> Use samtools index</p>
 </section>
-<section id="call-structural-variants" class="level2">
-<h2 class="anchored" data-anchor-id="call-structural-variants">Call structural variants</h2>
+<section id="call-structural-variants" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="call-structural-variants"><span class="header-section-number">3</span> Call structural variants</h2>
 <p>Sniffles is a structural variation (SV) caller that is designed for long reads (Pacbio or Oxford Nanopore). It detects all types of SVs (10bp+) using evidence from split-read alignments, high-mismatch regions, and coverage analysis. Sniffles takes the BAM file as input and outputs VCF.</p>
 <p>To find the usage for Sniffles, type:</p>
 <div id="cell-20" class="cell">
@@ -657,16 +657,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Using the default parameters, call SVs with Sniffles and output the results to a VCF file called <code>YPS128.10x.vcf</code>.</p>
 <p><strong>Hint:</strong> You don’t need to change any of the default parameters, but you will need to work out how to provide the input BAM file and specify the output VCF file. The documentation on sniffles is here : <a href="https://github.com/fritzsedlazeck/Sniffles/wiki/Parameter">https://github.com/fritzsedlazeck/Sniffles/wiki/Parameter</a>.</p>
 </section>
-<section id="inspecting-svs-with-igv" class="level2">
-<h2 class="anchored" data-anchor-id="inspecting-svs-with-igv">Inspecting SVs with IGV</h2>
+<section id="inspecting-svs-with-igv" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="inspecting-svs-with-igv"><span class="header-section-number">4</span> Inspecting SVs with IGV</h2>
 <p>Open IGV:</p>
 <div id="cell-25" class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>igv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Open the reference genome <code>ref/Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa</code> and load the BAM file <code>YPS128.filtered_subreads.10x.fastq.sorted.calmd.bam</code> and the VCF file <code>YPS128.filtered_subreads.10x.vcf</code>. Now answer the questions that follow using either the command line or IGV.</p>
 </section>
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<section id="exercises" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">5</span> Exercises</h2>
 <ol type="1">
 <li>What sort of SV was called at on chromosome ‘XV’ at position 854272?</li>
 <li>What is the length of the SV?</li>

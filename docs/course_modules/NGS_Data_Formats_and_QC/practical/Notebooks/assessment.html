@@ -583,21 +583,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#base-quality" id="toc-base-quality" class="nav-link active" data-scroll-target="#base-quality">Base quality</a></li>
-  <li><a href="#other-base-calling-errors" id="toc-other-base-calling-errors" class="nav-link" data-scroll-target="#other-base-calling-errors">Other base calling errors</a></li>
-  <li><a href="#mismatches-per-cycle" id="toc-mismatches-per-cycle" class="nav-link" data-scroll-target="#mismatches-per-cycle">Mismatches per cycle</a></li>
-  <li><a href="#gc-content" id="toc-gc-content" class="nav-link" data-scroll-target="#gc-content">GC content</a></li>
-  <li><a href="#gc-content-by-cycle" id="toc-gc-content-by-cycle" class="nav-link" data-scroll-target="#gc-content-by-cycle">GC content by cycle</a></li>
-  <li><a href="#fragment-size" id="toc-fragment-size" class="nav-link" data-scroll-target="#fragment-size">Fragment size</a>
+  <li><a href="#base-quality" id="toc-base-quality" class="nav-link active" data-scroll-target="#base-quality"><span class="header-section-number">1</span> Base quality</a></li>
+  <li><a href="#other-base-calling-errors" id="toc-other-base-calling-errors" class="nav-link" data-scroll-target="#other-base-calling-errors"><span class="header-section-number">2</span> Other base calling errors</a></li>
+  <li><a href="#mismatches-per-cycle" id="toc-mismatches-per-cycle" class="nav-link" data-scroll-target="#mismatches-per-cycle"><span class="header-section-number">3</span> Mismatches per cycle</a></li>
+  <li><a href="#gc-content" id="toc-gc-content" class="nav-link" data-scroll-target="#gc-content"><span class="header-section-number">4</span> GC content</a></li>
+  <li><a href="#gc-content-by-cycle" id="toc-gc-content-by-cycle" class="nav-link" data-scroll-target="#gc-content-by-cycle"><span class="header-section-number">5</span> GC content by cycle</a></li>
+  <li><a href="#fragment-size" id="toc-fragment-size" class="nav-link" data-scroll-target="#fragment-size"><span class="header-section-number">6</span> Fragment size</a>
   <ul class="collapse">
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">6.1</span> Exercises</a></li>
   </ul></li>
-  <li><a href="#insertionsdeletions-per-cycle" id="toc-insertionsdeletions-per-cycle" class="nav-link" data-scroll-target="#insertionsdeletions-per-cycle">Insertions/Deletions per cycle</a></li>
-  <li><a href="#generating-qc-stats" id="toc-generating-qc-stats" class="nav-link" data-scroll-target="#generating-qc-stats">Generating QC stats</a>
+  <li><a href="#insertionsdeletions-per-cycle" id="toc-insertionsdeletions-per-cycle" class="nav-link" data-scroll-target="#insertionsdeletions-per-cycle"><span class="header-section-number">7</span> Insertions/Deletions per cycle</a></li>
+  <li><a href="#generating-qc-stats" id="toc-generating-qc-stats" class="nav-link" data-scroll-target="#generating-qc-stats"><span class="header-section-number">8</span> Generating QC stats</a>
   <ul class="collapse">
-  <li><a href="#summary-numbers-sn" id="toc-summary-numbers-sn" class="nav-link" data-scroll-target="#summary-numbers-sn">Summary Numbers (SN)</a></li>
-  <li><a href="#exercises-1" id="toc-exercises-1" class="nav-link" data-scroll-target="#exercises-1">Exercises</a></li>
-  <li><a href="#generating-qc-plots" id="toc-generating-qc-plots" class="nav-link" data-scroll-target="#generating-qc-plots">Generating QC plots</a></li>
+  <li><a href="#summary-numbers-sn" id="toc-summary-numbers-sn" class="nav-link" data-scroll-target="#summary-numbers-sn"><span class="header-section-number">8.1</span> Summary Numbers (SN)</a></li>
+  <li><a href="#exercises-1" id="toc-exercises-1" class="nav-link" data-scroll-target="#exercises-1"><span class="header-section-number">8.2</span> Exercises</a></li>
+  <li><a href="#generating-qc-plots" id="toc-generating-qc-plots" class="nav-link" data-scroll-target="#generating-qc-plots"><span class="header-section-number">8.3</span> Generating QC plots</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -625,8 +625,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>QC is an important part of any analysis. In this section we are going to look at some of the metrics and graphs that can be used to assess the QC of NGS data.</p>
-<section id="base-quality" class="level2">
-<h2 class="anchored" data-anchor-id="base-quality">Base quality</h2>
+<section id="base-quality" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="base-quality"><span class="header-section-number">1</span> Base quality</h2>
 <p><a href="https://en.wikipedia.org/wiki/Illumina_dye_sequencing">Illumina sequencing</a> technology relies on sequencing by synthesis. One of the most common problems with this is <strong>dephasing</strong>. For each sequencing cycle, there is a possibility that the replication machinery slips and either incorporates more than one nucleotide or perhaps misses to incorporate one at all. The more cycles that are run (i.e.&nbsp;the longer the read length gets), the greater the accumulation of these types of errors gets. This leads to a heterogeneous population in the cluster, and a decreased signal purity, which in turn reduces the precision of the base calling. The figure below shows an example of this.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -643,8 +643,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-<section id="other-base-calling-errors" class="level2">
-<h2 class="anchored" data-anchor-id="other-base-calling-errors">Other base calling errors</h2>
+<section id="other-base-calling-errors" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="other-base-calling-errors"><span class="header-section-number">2</span> Other base calling errors</h2>
 <p>There are several different reasons for a base to be called incorrectly, as shown in the figure below. <strong>Phasing noise</strong> and <strong>signal decay</strong> is a result of the dephasing issue described above. During library preparation, <strong>mixed clusters</strong> can occur if multiple templates get co-located. These clusters should be removed from the downstream analysis. <strong>Boundary effects</strong> occur due to optical effects when the intensity is uneven across each tile, resulting in higher intensity found toward the center. <strong>Cross-talk</strong> occurs because the emission frequency spectra for each of the four base dyes partly overlap, creating uncertainty. Finally, for previous sequencing cycle methods <strong>T fluorophore accumulation</strong> was an issue, where incomplete removal of the dye coupled to thymine lead to an ambient accumulation the nucleotides, causing a false high Thymine trend.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -654,8 +654,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><em>Base-calling for next-generation sequencing platforms</em>, doi: <a href="https://academic.oup.com/bib/article/12/5/489/268399">10.1093/bib/bbq077</a></p>
 </section>
-<section id="mismatches-per-cycle" class="level2">
-<h2 class="anchored" data-anchor-id="mismatches-per-cycle">Mismatches per cycle</h2>
+<section id="mismatches-per-cycle" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="mismatches-per-cycle"><span class="header-section-number">3</span> Mismatches per cycle</h2>
 <p>Aligning reads to a high-quality reference genome can provide insight to the quality of a sequencing run by showing you the mismatches to the reference sequence. This can help you detect cycle-specific errors. Mismatches can occur due to two main causes, sequencing errors and differences between your sample and the reference genome, which is important to bear in mind when interpreting mismatch graphs. The figure below shows an example of a good run (left) and a bad one (right). In the graph on the left, the distribution of the number of mismatches is even between the cycles, which is what we would expect from a good run. However, in the graph on the right, two cycles stand out with a lot of mismatches compared to the other cycles.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -664,8 +664,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-<section id="gc-content" class="level2">
-<h2 class="anchored" data-anchor-id="gc-content">GC content</h2>
+<section id="gc-content" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="gc-content"><span class="header-section-number">4</span> GC content</h2>
 <p>It is a good idea to compare the GC content of the reads against the expected distribution in a reference sequence. The GC content varies between species, so a shift in GC content like the one seen below could be an indication of sample contamination. In the left graph below, we can see that the GC content of the sample is about the same as for the reference, at ~38%. However, in the right graph, the GC content of the sample is closer to 55%, indicating that there is an issue with this sample.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -674,8 +674,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-<section id="gc-content-by-cycle" class="level2">
-<h2 class="anchored" data-anchor-id="gc-content-by-cycle">GC content by cycle</h2>
+<section id="gc-content-by-cycle" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="gc-content-by-cycle"><span class="header-section-number">5</span> GC content by cycle</h2>
 <p>Looking at the GC content per cycle can help detect if the adapter sequence was trimmed. For a random library, it is expected to be little to no difference between the different bases of a sequence run, so the lines in this plot should be parallel with each other like in the graph on the left below. In the graph on the right, the initial spikes are likely due to adapter sequences that have not been removed.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -684,8 +684,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-<section id="fragment-size" class="level2">
-<h2 class="anchored" data-anchor-id="fragment-size">Fragment size</h2>
+<section id="fragment-size" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="fragment-size"><span class="header-section-number">6</span> Fragment size</h2>
 <p>For paired-end sequencing the size of DNA fragments also matters. In the first of the examples below, the fragment size peaks around 440 bp. In the second however, there is also a peak at around 200 bp. This indicates that there was an issue with the fragment size selection during library prep.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -693,8 +693,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption>Fragment size distribution</figcaption>
 </figure>
 </div>
-<section id="exercises" class="level3">
-<h3 class="anchored" data-anchor-id="exercises">Exercises</h3>
+<section id="exercises" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="exercises"><span class="header-section-number">6.1</span> Exercises</h3>
 <p><strong>Q1: The figure below is from a 100bp paired-end sequencing. Can you spot any problems?</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -704,8 +704,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="insertionsdeletions-per-cycle" class="level2">
-<h2 class="anchored" data-anchor-id="insertionsdeletions-per-cycle">Insertions/Deletions per cycle</h2>
+<section id="insertionsdeletions-per-cycle" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="insertionsdeletions-per-cycle"><span class="header-section-number">7</span> Insertions/Deletions per cycle</h2>
 <p>Sometimes, air bubbles occur in the flow cell, which can manifest as false indels. The spike in the right image provides an example of how this can look.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -714,8 +714,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-<section id="generating-qc-stats" class="level2">
-<h2 class="anchored" data-anchor-id="generating-qc-stats">Generating QC stats</h2>
+<section id="generating-qc-stats" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="generating-qc-stats"><span class="header-section-number">8</span> Generating QC stats</h2>
 <p>Now let’s try this out! We will generate QC stats for two lanes of Illumina paired-end sequencing data from yeast. The reads have already been aligned to the <a href="ftp://ftp.ensembl.org/pub/current_fasta/saccharomyces_cerevisiae/dna">Saccromyces cerevisiae reference genome</a> to produce the BAM file lane1.sorted.bam.</p>
 <p>Now we will use <strong><code>samtools stats</code></strong> to generate the stats for the primary alignments. The option <strong><code>-f</code></strong> can be used to filter reads with specific tags, while <strong><code>-F</code></strong> can be used to <em>filter out</em> reads with specific tags. The following command will include only primary alignments:</p>
 <div id="cell-21" class="cell">
@@ -729,12 +729,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="cell-25" class="cell" data-scrolled="false">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> ^<span class="st">'#'</span> data/lane1.sorted.bam.bchk <span class="kw">|</span> <span class="fu">grep</span> <span class="st">'Use'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="summary-numbers-sn" class="level3">
-<h3 class="anchored" data-anchor-id="summary-numbers-sn">Summary Numbers (SN)</h3>
+<section id="summary-numbers-sn" class="level3" data-number="8.1">
+<h3 data-number="8.1" class="anchored" data-anchor-id="summary-numbers-sn"><span class="header-section-number">8.1</span> Summary Numbers (SN)</h3>
 <p>This initial section contains a summary of the alignment and includes some general statistics. In particular, you can see how many bases mapped, and how much of the genome that was covered.</p>
 </section>
-<section id="exercises-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercises-1">Exercises</h3>
+<section id="exercises-1" class="level3" data-number="8.2">
+<h3 data-number="8.2" class="anchored" data-anchor-id="exercises-1"><span class="header-section-number">8.2</span> Exercises</h3>
 <p>Now look at the output and try to answer the questions below.</p>
 <p><strong>Q2: What is the total number of reads?</strong></p>
 <p><strong>Q3: What proportion of the reads were mapped?</strong></p>
@@ -742,8 +742,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Q5: What is the insert size mean and standard deviation?</strong></p>
 <p><strong>Q6: How many reads were paired properly?</strong></p>
 </section>
-<section id="generating-qc-plots" class="level3">
-<h3 class="anchored" data-anchor-id="generating-qc-plots">Generating QC plots</h3>
+<section id="generating-qc-plots" class="level3" data-number="8.3">
+<h3 data-number="8.3" class="anchored" data-anchor-id="generating-qc-plots"><span class="header-section-number">8.3</span> Generating QC plots</h3>
 <p>Finally, we will create some QC plots from the output of the stats command using the command <strong>plot-bamstats</strong> which is included in the samtools package:</p>
 <div id="cell-38" class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">plot-bamstats</span> <span class="at">-p</span> data/lane1-plots/ data/lane1.sorted.bam.bchk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

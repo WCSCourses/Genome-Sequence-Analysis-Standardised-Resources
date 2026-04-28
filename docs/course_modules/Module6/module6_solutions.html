@@ -549,14 +549,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introducing-the-tutorial-dataset" id="toc-introducing-the-tutorial-dataset" class="nav-link active" data-scroll-target="#introducing-the-tutorial-dataset">Introducing the tutorial dataset</a></li>
-  <li><a href="#mapping-rna-seq-reads-to-the-genome-using-hisat2" id="toc-mapping-rna-seq-reads-to-the-genome-using-hisat2" class="nav-link" data-scroll-target="#mapping-rna-seq-reads-to-the-genome-using-hisat2">Mapping RNA-Seq reads to the genome using HISAT2</a></li>
-  <li><a href="#map-convert-sam-to-bam-sort-and-index-using-the-reads-from-the-mt2-sample." id="toc-map-convert-sam-to-bam-sort-and-index-using-the-reads-from-the-mt2-sample." class="nav-link" data-scroll-target="#map-convert-sam-to-bam-sort-and-index-using-the-reads-from-the-mt2-sample.">Map, convert (SAM to BAM), sort and index using the reads from the MT2 sample.</a></li>
-  <li><a href="#visualising-transcriptomes-with-igv" id="toc-visualising-transcriptomes-with-igv" class="nav-link" data-scroll-target="#visualising-transcriptomes-with-igv">Visualising transcriptomes with IGV</a></li>
-  <li><a href="#transcript-quantification-with-kallisto" id="toc-transcript-quantification-with-kallisto" class="nav-link" data-scroll-target="#transcript-quantification-with-kallisto">Transcript quantification with Kallisto</a></li>
-  <li><a href="#identifying-differentially-expressed-genes-with-sleuth" id="toc-identifying-differentially-expressed-genes-with-sleuth" class="nav-link" data-scroll-target="#identifying-differentially-expressed-genes-with-sleuth">Identifying differentially expressed genes with Sleuth</a></li>
-  <li><a href="#interpreting-the-results" id="toc-interpreting-the-results" class="nav-link" data-scroll-target="#interpreting-the-results">Interpreting the results</a></li>
-  <li><a href="#normalisation" id="toc-normalisation" class="nav-link" data-scroll-target="#normalisation">Normalisation</a></li>
+  <li><a href="#introducing-the-tutorial-dataset" id="toc-introducing-the-tutorial-dataset" class="nav-link active" data-scroll-target="#introducing-the-tutorial-dataset"><span class="header-section-number">0.1</span> Introducing the tutorial dataset</a></li>
+  <li><a href="#mapping-rna-seq-reads-to-the-genome-using-hisat2" id="toc-mapping-rna-seq-reads-to-the-genome-using-hisat2" class="nav-link" data-scroll-target="#mapping-rna-seq-reads-to-the-genome-using-hisat2"><span class="header-section-number">0.2</span> Mapping RNA-Seq reads to the genome using HISAT2</a></li>
+  <li><a href="#map-convert-sam-to-bam-sort-and-index-using-the-reads-from-the-mt2-sample." id="toc-map-convert-sam-to-bam-sort-and-index-using-the-reads-from-the-mt2-sample." class="nav-link" data-scroll-target="#map-convert-sam-to-bam-sort-and-index-using-the-reads-from-the-mt2-sample."><span class="header-section-number">0.3</span> Map, convert (SAM to BAM), sort and index using the reads from the MT2 sample.</a></li>
+  <li><a href="#visualising-transcriptomes-with-igv" id="toc-visualising-transcriptomes-with-igv" class="nav-link" data-scroll-target="#visualising-transcriptomes-with-igv"><span class="header-section-number">0.4</span> Visualising transcriptomes with IGV</a></li>
+  <li><a href="#transcript-quantification-with-kallisto" id="toc-transcript-quantification-with-kallisto" class="nav-link" data-scroll-target="#transcript-quantification-with-kallisto"><span class="header-section-number">0.5</span> Transcript quantification with Kallisto</a></li>
+  <li><a href="#identifying-differentially-expressed-genes-with-sleuth" id="toc-identifying-differentially-expressed-genes-with-sleuth" class="nav-link" data-scroll-target="#identifying-differentially-expressed-genes-with-sleuth"><span class="header-section-number">0.6</span> Identifying differentially expressed genes with Sleuth</a></li>
+  <li><a href="#interpreting-the-results" id="toc-interpreting-the-results" class="nav-link" data-scroll-target="#interpreting-the-results"><span class="header-section-number">0.7</span> Interpreting the results</a></li>
+  <li><a href="#normalisation" id="toc-normalisation" class="nav-link" data-scroll-target="#normalisation"><span class="header-section-number">0.8</span> Normalisation</a></li>
   </ul>
 </nav>
     </div>
@@ -583,8 +583,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>To run the commands alongside the answers you must first have run all of the tutorial commands for that section and generated the output files they reference.</p>
-<section id="introducing-the-tutorial-dataset" class="level3">
-<h3 class="anchored" data-anchor-id="introducing-the-tutorial-dataset">Introducing the tutorial dataset</h3>
+<section id="introducing-the-tutorial-dataset" class="level3" data-number="0.1">
+<h3 data-number="0.1" class="anchored" data-anchor-id="introducing-the-tutorial-dataset"><span class="header-section-number">0.1</span> Introducing the tutorial dataset</h3>
 <p><strong>Q1: Why is there more than one FASTQ file per sample?</strong></p>
 <p>There are 2 FASTQ files for each sample e.g.&nbsp;MT1_1.fastq and MT1_2.fastq. This is because this was paired-end sequence data.</p>
 <p><code>ls data/MT1*.fastq.gz</code></p>
@@ -619,11 +619,11 @@ ul.task-list li input[type="checkbox"] {
 <p><code>zgrep -c '/[12]$' data/MT1*.fastq.gz</code></p>
 <p>Note: Don’t forget to use the -c option for grep to count the occurences and $ to make sure you’re only looking for \1 or \2 at the end of the line.</p>
 </section>
-<section id="mapping-rna-seq-reads-to-the-genome-using-hisat2" class="level3">
-<h3 class="anchored" data-anchor-id="mapping-rna-seq-reads-to-the-genome-using-hisat2">Mapping RNA-Seq reads to the genome using HISAT2</h3>
+<section id="mapping-rna-seq-reads-to-the-genome-using-hisat2" class="level3" data-number="0.2">
+<h3 data-number="0.2" class="anchored" data-anchor-id="mapping-rna-seq-reads-to-the-genome-using-hisat2"><span class="header-section-number">0.2</span> Mapping RNA-Seq reads to the genome using HISAT2</h3>
 </section>
-<section id="map-convert-sam-to-bam-sort-and-index-using-the-reads-from-the-mt2-sample." class="level3">
-<h3 class="anchored" data-anchor-id="map-convert-sam-to-bam-sort-and-index-using-the-reads-from-the-mt2-sample.">Map, convert (SAM to BAM), sort and index using the reads from the MT2 sample.</h3>
+<section id="map-convert-sam-to-bam-sort-and-index-using-the-reads-from-the-mt2-sample." class="level3" data-number="0.3">
+<h3 data-number="0.3" class="anchored" data-anchor-id="map-convert-sam-to-bam-sort-and-index-using-the-reads-from-the-mt2-sample."><span class="header-section-number">0.3</span> Map, convert (SAM to BAM), sort and index using the reads from the MT2 sample.</h3>
 <p>You can do this with several, individual steps:</p>
 <p><code>hisat2 --max-intronlen 10000 -x data/PccAS_v3_hisat2.idx \-1 data/MT2_1.fastq.gz -2 data/MT2_2.fastq.gz -S data/MT2.sam</code></p>
 <p><code>samtools view -b -o data/MT2.bam data/MT2.sam</code></p>
@@ -741,8 +741,8 @@ done</code></pre>
 <p>• That means 146,078 (5.84%) of the 2,500,000 reads (or 70.33% of the unaligned pairs) do not align anywhere in the genome</p>
 <p><code>146078 (70.33%) aligned 0 times</code></p>
 </section>
-<section id="visualising-transcriptomes-with-igv" class="level3">
-<h3 class="anchored" data-anchor-id="visualising-transcriptomes-with-igv">Visualising transcriptomes with IGV</h3>
+<section id="visualising-transcriptomes-with-igv" class="level3" data-number="0.4">
+<h3 data-number="0.4" class="anchored" data-anchor-id="visualising-transcriptomes-with-igv"><span class="header-section-number">0.4</span> Visualising transcriptomes with IGV</h3>
 <p><strong>Q1: How many CDS features are there in “PCHAS_1402500”?</strong></p>
 <p>There are 8 CDS features in PCHAS_1402500. You can get this in several ways:</p>
 <p>Count the number of exons/CDS features in the gene annotation.</p>
@@ -756,8 +756,8 @@ done</code></pre>
 <p><strong>Q3: Do you think this gene is differentially expressed and is looking at the coverage plots alone a reliable way to assess differential expression?</strong></p>
 <p>Possibly. But, you can’t tell differential expression by the counts alone as there may be differences in the sequencing depths of the samples.</p>
 </section>
-<section id="transcript-quantification-with-kallisto" class="level3">
-<h3 class="anchored" data-anchor-id="transcript-quantification-with-kallisto">Transcript quantification with Kallisto</h3>
+<section id="transcript-quantification-with-kallisto" class="level3" data-number="0.5">
+<h3 data-number="0.5" class="anchored" data-anchor-id="transcript-quantification-with-kallisto"><span class="header-section-number">0.5</span> Transcript quantification with Kallisto</h3>
 <p>Use <code>kallisto quant</code> four more times, for the MT2 sample and the three SBP samples.</p>
 <p>You can run the individual <strong><code>kallisto quant</code></strong> commands as you did for MT1 for each of the remaining samples:</p>
 <p><code>kallisto quant -i data/PccAS_v3_kallisto -o data/MT2 -b 100 data/MT2_1.fastq.gz data/MT2_2.fastq.gz</code></p>
@@ -854,8 +854,8 @@ done</code></pre>
 <p><strong>Q4: Do you think PCHAS_1402500 is differentially expressed?</strong></p>
 <p>Probably not. We would need to run statistical tests to really be sure though.</p>
 </section>
-<section id="identifying-differentially-expressed-genes-with-sleuth" class="level3">
-<h3 class="anchored" data-anchor-id="identifying-differentially-expressed-genes-with-sleuth">Identifying differentially expressed genes with Sleuth</h3>
+<section id="identifying-differentially-expressed-genes-with-sleuth" class="level3" data-number="0.6">
+<h3 data-number="0.6" class="anchored" data-anchor-id="identifying-differentially-expressed-genes-with-sleuth"><span class="header-section-number">0.6</span> Identifying differentially expressed genes with Sleuth</h3>
 <p><strong>Q1: Is our gene from earlier, PCHAS_1402500, significantly differentially expressed?</strong></p>
 <p>No.</p>
 <p>Look at the transcript table:</p>
@@ -865,8 +865,8 @@ done</code></pre>
 <p>In this case, it was the lower number of reads mapping to MT samples that mislead us in the IGV view. Luckily, careful normalisation and appropriate use of statistics saved the day!</p>
 <p><code>grep PCHAS_1402500 data/kallisto.results | cut -f1,4</code></p>
 </section>
-<section id="interpreting-the-results" class="level3">
-<h3 class="anchored" data-anchor-id="interpreting-the-results">Interpreting the results</h3>
+<section id="interpreting-the-results" class="level3" data-number="0.7">
+<h3 data-number="0.7" class="anchored" data-anchor-id="interpreting-the-results"><span class="header-section-number">0.7</span> Interpreting the results</h3>
 <p><strong>Q1: How many genes are more highly expressed in the SBP samples?</strong></p>
 <p>127. We can use awk to filter our Kallisto/sleuth results and wc -l to count the number of lines</p>
 <p>returned.</p>
@@ -884,8 +884,8 @@ done</code></pre>
 <p>Perhaps the CIR proteins are interesting. There are only 2 CIR proteins upregulated in the SBP samples and 25 CIR in the MT samples.</p>
 <p>The <strong><em>cir</em></strong> family is a large, malaria-specific gene family which had previously been proposed to be involved in immune evasion (Lawton et al., 2012). Here, however, we see many of these genes upregulated in a form of the parasite which seems to cause the immune system to better control the parasite. This suggests that these genes interact with the immune system in a subtler way, preventing the immune system from damaging the host.</p>
 </section>
-<section id="normalisation" class="level3">
-<h3 class="anchored" data-anchor-id="normalisation">Normalisation</h3>
+<section id="normalisation" class="level3" data-number="0.8">
+<h3 data-number="0.8" class="anchored" data-anchor-id="normalisation"><span class="header-section-number">0.8</span> Normalisation</h3>
 <p><strong>How we got the information to help the questions</strong></p>
 <p>To answer the questions you needed the following for each sample:</p>
 <p>• Number of reads assigned to PCHAS_1402500</p>

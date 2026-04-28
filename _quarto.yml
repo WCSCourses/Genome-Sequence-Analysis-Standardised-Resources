@@ -119,6 +119,8 @@ output:
 
 format:
   html:
+    number-sections: true
+    number-depth: 5
     theme:
       light: flatly
       dark: darkly

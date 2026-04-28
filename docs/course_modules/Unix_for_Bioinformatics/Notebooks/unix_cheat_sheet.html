@@ -549,15 +549,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#looking-at-files-and-moving-them-around" id="toc-looking-at-files-and-moving-them-around" class="nav-link active" data-scroll-target="#looking-at-files-and-moving-them-around">Looking at files and moving them around</a></li>
-  <li><a href="#looking-in-files" id="toc-looking-in-files" class="nav-link" data-scroll-target="#looking-in-files">Looking in files</a></li>
-  <li><a href="#grep" id="toc-grep" class="nav-link" data-scroll-target="#grep">Grep</a></li>
-  <li><a href="#awk" id="toc-awk" class="nav-link" data-scroll-target="#awk">Awk</a></li>
-  <li><a href="#piping-redirection-and-more-advanced-queries" id="toc-piping-redirection-and-more-advanced-queries" class="nav-link" data-scroll-target="#piping-redirection-and-more-advanced-queries">Piping, redirection and more advanced queries</a></li>
-  <li><a href="#a-script" id="toc-a-script" class="nav-link" data-scroll-target="#a-script">A script</a></li>
-  <li><a href="#pro-tips" id="toc-pro-tips" class="nav-link" data-scroll-target="#pro-tips">Pro tips</a></li>
-  <li><a href="#build-commands-slowly" id="toc-build-commands-slowly" class="nav-link" data-scroll-target="#build-commands-slowly">Build commands slowly</a></li>
-  <li><a href="#which-tool-should-i-use" id="toc-which-tool-should-i-use" class="nav-link" data-scroll-target="#which-tool-should-i-use">Which tool should I use?</a></li>
+  <li><a href="#looking-at-files-and-moving-them-around" id="toc-looking-at-files-and-moving-them-around" class="nav-link active" data-scroll-target="#looking-at-files-and-moving-them-around"><span class="header-section-number">1</span> Looking at files and moving them around</a></li>
+  <li><a href="#looking-in-files" id="toc-looking-in-files" class="nav-link" data-scroll-target="#looking-in-files"><span class="header-section-number">2</span> Looking in files</a></li>
+  <li><a href="#grep" id="toc-grep" class="nav-link" data-scroll-target="#grep"><span class="header-section-number">3</span> Grep</a></li>
+  <li><a href="#awk" id="toc-awk" class="nav-link" data-scroll-target="#awk"><span class="header-section-number">4</span> Awk</a></li>
+  <li><a href="#piping-redirection-and-more-advanced-queries" id="toc-piping-redirection-and-more-advanced-queries" class="nav-link" data-scroll-target="#piping-redirection-and-more-advanced-queries"><span class="header-section-number">5</span> Piping, redirection and more advanced queries</a></li>
+  <li><a href="#a-script" id="toc-a-script" class="nav-link" data-scroll-target="#a-script"><span class="header-section-number">6</span> A script</a></li>
+  <li><a href="#pro-tips" id="toc-pro-tips" class="nav-link" data-scroll-target="#pro-tips"><span class="header-section-number">7</span> Pro tips</a></li>
+  <li><a href="#build-commands-slowly" id="toc-build-commands-slowly" class="nav-link" data-scroll-target="#build-commands-slowly"><span class="header-section-number">8</span> Build commands slowly</a></li>
+  <li><a href="#which-tool-should-i-use" id="toc-which-tool-should-i-use" class="nav-link" data-scroll-target="#which-tool-should-i-use"><span class="header-section-number">9</span> Which tool should I use?</a></li>
   </ul>
 </nav>
     </div>
@@ -583,8 +583,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="looking-at-files-and-moving-them-around" class="level2">
-<h2 class="anchored" data-anchor-id="looking-at-files-and-moving-them-around">Looking at files and moving them around</h2>
+<section id="looking-at-files-and-moving-them-around" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="looking-at-files-and-moving-them-around"><span class="header-section-number">1</span> Looking at files and moving them around</h2>
 <pre><code>pwd # Tell me which directory I'm in
 ls # What else is in this directory
 ls .. # What is in the directory above me
@@ -598,8 +598,8 @@ mv baz/foo .. # Move the foo directory into the parent directory
 rm -r ../foo # remove the directory called foo/ from the parent directory
 find foo/ -name "*.gff" # find all the files with a gff extension in the directory foo/</code></pre>
 </section>
-<section id="looking-in-files" class="level2">
-<h2 class="anchored" data-anchor-id="looking-in-files">Looking in files</h2>
+<section id="looking-in-files" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="looking-in-files"><span class="header-section-number">2</span> Looking in files</h2>
 <pre><code>less bar.bed # scroll through bar.bed
 grep chrom bar.bed | less -S # Only look at lines in bar.bed which have 'chrom' and
                              # don't wrap lines (-S)
@@ -610,8 +610,8 @@ wc -l bar.bed # how many lines are there
 sort -k 2 -n bar.bed # sort by the second column in numerical order
 awk '{print $1}' bar.bed | sort | uniq # show the unique entries in the first column</code></pre>
 </section>
-<section id="grep" class="level2">
-<h2 class="anchored" data-anchor-id="grep">Grep</h2>
+<section id="grep" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="grep"><span class="header-section-number">3</span> Grep</h2>
 <pre><code>grep foo bar.bed # show me the lines in bar.bed with 'foo' in them
 grep foo baz/* # show me all examples of foo in the files immediately within baz/
 grep -r foo baz/ # show me all examples of foo in baz/ and every subdirectory within it
@@ -621,8 +621,8 @@ grep -i '^[acgt]$' bar.bed # show me all of the lines which only have the charac
                            # a,c,g and t (ignoring their case)
 grep -v foo bar.bed # don't show me any files with foo in them</code></pre>
 </section>
-<section id="awk" class="level2">
-<h2 class="anchored" data-anchor-id="awk">Awk</h2>
+<section id="awk" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="awk"><span class="header-section-number">4</span> Awk</h2>
 <pre><code>awk '{print $1}' bar.bed # just the first column
 awk '$4 ~ /^foo/' bar.bed # just rows where the 4th column starts with foo
 awk '$4 == "foo" {print $1}' bar.bed # the first column of rows where the 4th column is foo
@@ -633,8 +633,8 @@ awk '/^foo/ {sum+=$2; count+=1} END {print sum/count}' bar.bed # print the avera
                                                                # second value of lines starting
                                                                # with foo</code></pre>
 </section>
-<section id="piping-redirection-and-more-advanced-queries" class="level2">
-<h2 class="anchored" data-anchor-id="piping-redirection-and-more-advanced-queries">Piping, redirection and more advanced queries</h2>
+<section id="piping-redirection-and-more-advanced-queries" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="piping-redirection-and-more-advanced-queries"><span class="header-section-number">5</span> Piping, redirection and more advanced queries</h2>
 <pre><code>grep -hv '^#' bar/*.gff | awk -F"\t" '{print $1}' | sort -u
 #  grep =&gt; -h: don't print file names
 #          -v: don't give me matching files
@@ -664,8 +664,8 @@ awk '(l&lt;300 &amp;&amp; $2&gt;200000 &amp;&amp; $3&lt;250000) {l=($3-$2+1); pr
 # contig-2  201156  201359  gene-67 24.7    -
 # contig-2  242625  243449  gene-68 46.5    +</code></pre>
 </section>
-<section id="a-script" class="level2">
-<h2 class="anchored" data-anchor-id="a-script">A script</h2>
+<section id="a-script" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="a-script"><span class="header-section-number">6</span> A script</h2>
 <pre><code>#!/usr/bin/env bash
 
 set -e # stop running the script if there are errors
@@ -711,8 +711,8 @@ else
   exit
 fi</code></pre>
 </section>
-<section id="pro-tips" class="level2">
-<h2 class="anchored" data-anchor-id="pro-tips">Pro tips</h2>
+<section id="pro-tips" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="pro-tips"><span class="header-section-number">7</span> Pro tips</h2>
 <ul>
 <li>Use tab completion - it will save you time!</li>
 <li>Always have a quick look at files with <code>less</code> or <code>head</code> to double check their format</li>
@@ -724,8 +724,8 @@ fi</code></pre>
 <li>Google is normally better at giving examples (prioritise stackoverflow.com results, they’re normally good)</li>
 </ul>
 </section>
-<section id="build-commands-slowly" class="level2">
-<h2 class="anchored" data-anchor-id="build-commands-slowly">Build commands slowly</h2>
+<section id="build-commands-slowly" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="build-commands-slowly"><span class="header-section-number">8</span> Build commands slowly</h2>
 <p>If you wanted me to calculate the sum of all of the scores for genes on contig-1 in a bed file, I’d probably run each of the following commands before moving onto the next:</p>
 <pre><code>head -20 bar.bed # check which column is which and if there are any headers
 head -20 bar.bed | awk '{print $5}' # have a look at the scores
@@ -739,8 +739,8 @@ head -20 bar.bed | awk '($1 == "contig-1" &amp;&amp; $4 ~ /gene-/) {sum+=$5}; EN
 # apply the algorithm to all of the data
 awk '($1 == "contig-1" &amp;&amp; $4 ~ /gene-/) {sum+=$5}; END {print sum}' bar.bed</code></pre>
 </section>
-<section id="which-tool-should-i-use" class="level2">
-<h2 class="anchored" data-anchor-id="which-tool-should-i-use">Which tool should I use?</h2>
+<section id="which-tool-should-i-use" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="which-tool-should-i-use"><span class="header-section-number">9</span> Which tool should I use?</h2>
 <p>You should probably use awk if:</p>
 <ul>
 <li>your data has columns</li>

@@ -583,12 +583,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning outcomes</a></li>
-  <li><a href="#tutorial-sections" id="toc-tutorial-sections" class="nav-link" data-scroll-target="#tutorial-sections">Tutorial sections</a></li>
-  <li><a href="#authors" id="toc-authors" class="nav-link" data-scroll-target="#authors">Authors</a></li>
-  <li><a href="#running-the-commands-in-this-tutorial" id="toc-running-the-commands-in-this-tutorial" class="nav-link" data-scroll-target="#running-the-commands-in-this-tutorial">Running the commands in this tutorial</a></li>
-  <li><a href="#lets-get-started" id="toc-lets-get-started" class="nav-link" data-scroll-target="#lets-get-started">Let’s get started!</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes"><span class="header-section-number">2</span> Learning outcomes</a></li>
+  <li><a href="#tutorial-sections" id="toc-tutorial-sections" class="nav-link" data-scroll-target="#tutorial-sections"><span class="header-section-number">3</span> Tutorial sections</a></li>
+  <li><a href="#authors" id="toc-authors" class="nav-link" data-scroll-target="#authors"><span class="header-section-number">4</span> Authors</a></li>
+  <li><a href="#running-the-commands-in-this-tutorial" id="toc-running-the-commands-in-this-tutorial" class="nav-link" data-scroll-target="#running-the-commands-in-this-tutorial"><span class="header-section-number">5</span> Running the commands in this tutorial</a></li>
+  <li><a href="#lets-get-started" id="toc-lets-get-started" class="nav-link" data-scroll-target="#lets-get-started"><span class="header-section-number">6</span> Let’s get started!</a></li>
   </ul>
 </nav>
     </div>
@@ -614,12 +614,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>Structural variants (SVs) are large genomic alterations of at least 50 bp or larger in size. There are several types of SVs, including deletions, duplications, insertions, inversions, and translocations which describe different combinations of DNA gains, losses, or rearrangements. Copy number variations (CNVs) are a particular subtype of SV mainly represented by deletions and duplications. SVs are typically described as single events, although more complex scenarios involving combinations of SV types exist.</p>
 </section>
-<section id="learning-outcomes" class="level2">
-<h2 class="anchored" data-anchor-id="learning-outcomes">Learning outcomes</h2>
+<section id="learning-outcomes" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="learning-outcomes"><span class="header-section-number">2</span> Learning outcomes</h2>
 <p>On completion of the tutorial, you can expect to be able to:</p>
 <ul>
 <li>Call structural variants using standard tools</li>
@@ -628,26 +628,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Use bedtools to do regional comparisons over genomic co-ordinates</li>
 </ul>
 </section>
-<section id="tutorial-sections" class="level2">
-<h2 class="anchored" data-anchor-id="tutorial-sections">Tutorial sections</h2>
+<section id="tutorial-sections" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="tutorial-sections"><span class="header-section-number">3</span> Tutorial sections</h2>
 <p>This tutorial comprises the following sections: 1. <a href="../../../course_modules/Module4/Notebooks/vcfs.html">Looking at structural variants in VCF</a> 2. <a href="../../../course_modules/Module4/Notebooks/sv-calling.html">Calling structural variants</a><br>
 3. <a href="../../../course_modules/Module4/Notebooks/long-reads.html">Structural variants from long reads</a><br>
 4. <a href="../../../course_modules/Module4/Notebooks/bedtools.html">Bedtools</a></p>
 </section>
-<section id="authors" class="level2">
-<h2 class="anchored" data-anchor-id="authors">Authors</h2>
+<section id="authors" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="authors"><span class="header-section-number">4</span> Authors</h2>
 <p>This tutorial was written by <a href="https://github.com/jacquikeane">Jacqui Keane</a> based on material from <a href="https://github.com/tk2">Thomas Keane</a>.</p>
 </section>
-<section id="running-the-commands-in-this-tutorial" class="level2">
-<h2 class="anchored" data-anchor-id="running-the-commands-in-this-tutorial">Running the commands in this tutorial</h2>
+<section id="running-the-commands-in-this-tutorial" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="running-the-commands-in-this-tutorial"><span class="header-section-number">5</span> Running the commands in this tutorial</h2>
 <p>You can follow this tutorial by typing all the commands you see into a terminal window. This is similar to the “Command Prompt” window on MS Windows systems, which allows the user to type DOS commands to manage files.</p>
 <p>To get started, open a new terminal window and type the command below:</p>
 <div id="cell-3" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /home/manager/course_data/structural_variation/data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="lets-get-started" class="level2">
-<h2 class="anchored" data-anchor-id="lets-get-started">Let’s get started!</h2>
+<section id="lets-get-started" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="lets-get-started"><span class="header-section-number">6</span> Let’s get started!</h2>
 <p>This tutorial requires that you have breakdancer, lumpy, minimap2, sniffles, bedtools and igv installed on your computer. These are already installed on the virtual machine you are using. To check that these are installed, run the following commands:</p>
 <div id="cell-5" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">breakdancer-max</span> <span class="at">-h</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

@@ -583,12 +583,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bedtools-intersect" id="toc-bedtools-intersect" class="nav-link active" data-scroll-target="#bedtools-intersect">bedtools intersect</a>
+  <li><a href="#bedtools-intersect" id="toc-bedtools-intersect" class="nav-link active" data-scroll-target="#bedtools-intersect"><span class="header-section-number">1</span> bedtools intersect</a>
   <ul class="collapse">
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">1.1</span> Exercises</a></li>
   </ul></li>
-  <li><a href="#bedtools-closest" id="toc-bedtools-closest" class="nav-link" data-scroll-target="#bedtools-closest">bedtools closest</a></li>
-  <li><a href="#exercises-1" id="toc-exercises-1" class="nav-link" data-scroll-target="#exercises-1">Exercises</a></li>
+  <li><a href="#bedtools-closest" id="toc-bedtools-closest" class="nav-link" data-scroll-target="#bedtools-closest"><span class="header-section-number">2</span> bedtools closest</a></li>
+  <li><a href="#exercises-1" id="toc-exercises-1" class="nav-link" data-scroll-target="#exercises-1"><span class="header-section-number">3</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -627,8 +627,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In this directory, there are two VCF files and the yeast genome annotation in GFF3 format <code>Saccharomyces_cerevisiae.R64-1-1.82.genes.gff3</code>.</p>
-<section id="bedtools-intersect" class="level2">
-<h2 class="anchored" data-anchor-id="bedtools-intersect">bedtools intersect</h2>
+<section id="bedtools-intersect" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="bedtools-intersect"><span class="header-section-number">1</span> bedtools intersect</h2>
 <p>Given two sets of genomic features, the <code>bedtools intersect</code> command can be used to determine whether or not any of the features in the two sets “overlap” with one another. For the intersect command, the -a and -b parameters are used to denote the input files A and B.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -654,8 +654,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="cell-15" class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>bedtools intersect <span class="op">-</span>h</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="exercises" class="level3">
-<h3 class="anchored" data-anchor-id="exercises">Exercises</h3>
+<section id="exercises" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.1</span> Exercises</h3>
 <ol type="1">
 <li><p>How many SVs found in <code>ERR1015069.dels.vcf</code> overlap with a gene? (<strong>Hint:</strong> Use bedtools intersect command)</p></li>
 <li><p>How many SVs found in <code>ERR1015069.dels.vcf</code> do not overlap with a gene? (<strong>Hint:</strong> note the -v parameter to bedtools intersect)</p></li>
@@ -665,8 +665,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 </section>
 </section>
-<section id="bedtools-closest" class="level2">
-<h2 class="anchored" data-anchor-id="bedtools-closest">bedtools closest</h2>
+<section id="bedtools-closest" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="bedtools-closest"><span class="header-section-number">2</span> bedtools closest</h2>
 <p>Similar to intersect, <code>bedtools closest</code> searches for overlapping features in A and B. In the event that no feature in B overlaps the current feature in A, closest will report the nearest (that is, least genomic distance from the start or end of A) feature in B.</p>
 <p>An example of the usage of <code>bedtools closest</code> is:</p>
 <div id="cell-18" class="cell">
@@ -683,8 +683,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>bedtools closest <span class="op">-</span>h</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="exercises-1" class="level2">
-<h2 class="anchored" data-anchor-id="exercises-1">Exercises</h2>
+<section id="exercises-1" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="exercises-1"><span class="header-section-number">3</span> Exercises</h2>
 <ol start="6" type="1">
 <li><p>What is the closest gene to the structural variant at IV:384220 in <code>ERR1015069.dels.vcf</code>?</p></li>
 <li><p>How many SVs overlap between the two files <code>ERR1015069.dels.vcf</code> and <code>ERR1015121.dels.vcf</code>?</p></li>

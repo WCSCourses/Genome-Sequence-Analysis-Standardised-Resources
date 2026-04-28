@@ -583,21 +583,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#simple-pattern-matching" id="toc-simple-pattern-matching" class="nav-link active" data-scroll-target="#simple-pattern-matching">Simple pattern matching</a></li>
-  <li><a href="#regular-expressions" id="toc-regular-expressions" class="nav-link" data-scroll-target="#regular-expressions">Regular expressions</a>
+  <li><a href="#simple-pattern-matching" id="toc-simple-pattern-matching" class="nav-link active" data-scroll-target="#simple-pattern-matching"><span class="header-section-number">1</span> Simple pattern matching</a></li>
+  <li><a href="#regular-expressions" id="toc-regular-expressions" class="nav-link" data-scroll-target="#regular-expressions"><span class="header-section-number">2</span> Regular expressions</a>
   <ul class="collapse">
-  <li><a href="#matching-the-start-and-end-of-lines" id="toc-matching-the-start-and-end-of-lines" class="nav-link" data-scroll-target="#matching-the-start-and-end-of-lines">Matching the start and end of lines</a></li>
-  <li><a href="#wildcards-and-alphabets" id="toc-wildcards-and-alphabets" class="nav-link" data-scroll-target="#wildcards-and-alphabets">Wildcards and alphabets</a></li>
+  <li><a href="#matching-the-start-and-end-of-lines" id="toc-matching-the-start-and-end-of-lines" class="nav-link" data-scroll-target="#matching-the-start-and-end-of-lines"><span class="header-section-number">2.1</span> Matching the start and end of lines</a></li>
+  <li><a href="#wildcards-and-alphabets" id="toc-wildcards-and-alphabets" class="nav-link" data-scroll-target="#wildcards-and-alphabets"><span class="header-section-number">2.2</span> Wildcards and alphabets</a></li>
   </ul></li>
-  <li><a href="#other-grep-options" id="toc-other-grep-options" class="nav-link" data-scroll-target="#other-grep-options">Other <code>grep</code> options</a>
+  <li><a href="#other-grep-options" id="toc-other-grep-options" class="nav-link" data-scroll-target="#other-grep-options"><span class="header-section-number">3</span> Other <code>grep</code> options</a>
   <ul class="collapse">
-  <li><a href="#counting-matches" id="toc-counting-matches" class="nav-link" data-scroll-target="#counting-matches">Counting matches</a></li>
-  <li><a href="#case-sensitivity" id="toc-case-sensitivity" class="nav-link" data-scroll-target="#case-sensitivity">Case sensitivity</a></li>
-  <li><a href="#searching-in-more-than-one-file" id="toc-searching-in-more-than-one-file" class="nav-link" data-scroll-target="#searching-in-more-than-one-file">Searching in more than one file</a></li>
-  <li><a href="#inverting-matches" id="toc-inverting-matches" class="nav-link" data-scroll-target="#inverting-matches">Inverting matches</a></li>
+  <li><a href="#counting-matches" id="toc-counting-matches" class="nav-link" data-scroll-target="#counting-matches"><span class="header-section-number">3.1</span> Counting matches</a></li>
+  <li><a href="#case-sensitivity" id="toc-case-sensitivity" class="nav-link" data-scroll-target="#case-sensitivity"><span class="header-section-number">3.2</span> Case sensitivity</a></li>
+  <li><a href="#searching-in-more-than-one-file" id="toc-searching-in-more-than-one-file" class="nav-link" data-scroll-target="#searching-in-more-than-one-file"><span class="header-section-number">3.3</span> Searching in more than one file</a></li>
+  <li><a href="#inverting-matches" id="toc-inverting-matches" class="nav-link" data-scroll-target="#inverting-matches"><span class="header-section-number">3.4</span> Inverting matches</a></li>
   </ul></li>
-  <li><a href="#replacing-matches-to-regular-expressions" id="toc-replacing-matches-to-regular-expressions" class="nav-link" data-scroll-target="#replacing-matches-to-regular-expressions">Replacing matches to regular expressions</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#replacing-matches-to-regular-expressions" id="toc-replacing-matches-to-regular-expressions" class="nav-link" data-scroll-target="#replacing-matches-to-regular-expressions"><span class="header-section-number">4</span> Replacing matches to regular expressions</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -628,8 +628,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="cell-2" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../grep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="simple-pattern-matching" class="level2">
-<h2 class="anchored" data-anchor-id="simple-pattern-matching">Simple pattern matching</h2>
+<section id="simple-pattern-matching" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="simple-pattern-matching"><span class="header-section-number">1</span> Simple pattern matching</h2>
 <p>We will use a small example file (in “BED” format), which contains the expression levels of some genes. This is a column-based file, with a tab character between each column. There can be more than 10 columns, but only the first three are required to be a valid file. The file format is described in full here: <a href="http://genome.ucsc.edu/FAQ/FAQformat#format1">http://genome.ucsc.edu/FAQ/FAQformat#format1</a>. We will use the first 5 columns:</p>
 <ol type="1">
 <li>Sequence name</li>
@@ -667,11 +667,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The extra lines are found by <code>grep</code> because of matches in columns we were not expecting to match. Remember, <code>grep</code> is reporting these lines because they each contain the strings “chr1” and “-” <em>somewhere</em>.</p>
 <p>We need a way to make searching with <code>grep</code> more specific.</p>
 </section>
-<section id="regular-expressions" class="level2">
-<h2 class="anchored" data-anchor-id="regular-expressions">Regular expressions</h2>
+<section id="regular-expressions" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="regular-expressions"><span class="header-section-number">2</span> Regular expressions</h2>
 <p>Regular expressions provide the solution to the above problems. They are a way of defining more specific patterns to search for.</p>
-<section id="matching-the-start-and-end-of-lines" class="level3">
-<h3 class="anchored" data-anchor-id="matching-the-start-and-end-of-lines">Matching the start and end of lines</h3>
+<section id="matching-the-start-and-end-of-lines" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="matching-the-start-and-end-of-lines"><span class="header-section-number">2.1</span> Matching the start and end of lines</h3>
 <p>First, we can specify that a match must be at the start of a line using the symbol “<code>^</code>”, which means “start of line”. Without the <code>^</code>, we find any match to “chr1”:</p>
 <div id="cell-16" class="cell" data-scrolled="true">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> chr1 gene_expression_sneaky.bed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -689,8 +689,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">$'^chr1</span><span class="dt">\t</span><span class="st">'</span> gene_expression_sneaky.bed <span class="kw">|</span> <span class="fu">grep</span> <span class="st">'\-$'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="wildcards-and-alphabets" class="level3">
-<h3 class="anchored" data-anchor-id="wildcards-and-alphabets">Wildcards and alphabets</h3>
+<section id="wildcards-and-alphabets" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="wildcards-and-alphabets"><span class="header-section-number">2.2</span> Wildcards and alphabets</h3>
 <p>Another special character in regular expressions is the dot: “.”. This stands for any single character. For example, this finds all matches to chromosomes 1-9, and chromosomes X and Y:</p>
 <div id="cell-24" class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">$'^chr.</span><span class="dt">\t</span><span class="st">'</span> gene_expression.bed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -721,21 +721,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="other-grep-options" class="level2">
-<h2 class="anchored" data-anchor-id="other-grep-options">Other <code>grep</code> options</h2>
+<section id="other-grep-options" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="other-grep-options"><span class="header-section-number">3</span> Other <code>grep</code> options</h2>
 <p>The Unix command <code>grep</code> and regular expressions are extremely powerful and we have only scratched the surface of what they can do. Take a look at the manual (by typing <code>man grep</code>) to get an idea. A few particularly useful options are discussed below.</p>
 <div id="cell-32" class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> grep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="counting-matches" class="level3">
-<h3 class="anchored" data-anchor-id="counting-matches">Counting matches</h3>
+<section id="counting-matches" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="counting-matches"><span class="header-section-number">3.1</span> Counting matches</h3>
 <p>A common use-case is counting matches within files. Instead of output each matching line, the option “<code>-c</code>” tells <code>grep</code> to report the number of lines that matched. For example, the number of genes in the autosomes in the above example can be found by simply adding <code>-c</code> to the command.</p>
 <div id="cell-34" class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">$'^chr[0-9]\+</span><span class="dt">\t</span><span class="st">'</span> gene_expression.bed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="case-sensitivity" class="level3">
-<h3 class="anchored" data-anchor-id="case-sensitivity">Case sensitivity</h3>
+<section id="case-sensitivity" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="case-sensitivity"><span class="header-section-number">3.2</span> Case sensitivity</h3>
 <p>By default, <code>grep</code> is case-sensitive. It can be useful to ignore the distinction between upper and lower case using the option “<code>-i</code>”. Suppose we have a file of sequences, and want to find the sequences that contain the string ACGT. It is not unusual to come across files that have a mix of upper and lower case nucleotides. Consider this FASTA file:</p>
 <div id="cell-36" class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> sequences.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -749,8 +749,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-i</span> ACGT sequences.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="searching-in-more-than-one-file" class="level3">
-<h3 class="anchored" data-anchor-id="searching-in-more-than-one-file">Searching in more than one file</h3>
+<section id="searching-in-more-than-one-file" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="searching-in-more-than-one-file"><span class="header-section-number">3.3</span> Searching in more than one file</h3>
 <p>So far, we have restricted to searches in one file, but <code>grep</code> can be given a list of files in which to search. As an example, we are given three files called <code>list_example.1</code>, <code>list_example.2</code>, and <code>list_example.3</code>. They are simple lists of genes, for illustrative purposes. For example, the first file looks like this:</p>
 <div id="cell-42" class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> list_example.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -777,16 +777,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>gene42 appears once in <code>list_example.2</code> and twice in <code>list_example.3</code>.</p>
 </section>
-<section id="inverting-matches" class="level3">
-<h3 class="anchored" data-anchor-id="inverting-matches">Inverting matches</h3>
+<section id="inverting-matches" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="inverting-matches"><span class="header-section-number">3.4</span> Inverting matches</h3>
 <p>By default, <code>grep</code> reports all lines that do match the regular expression. Sometimes it is useful to filter a file, by reporting lines that <em>do not</em> match the regular expression. Using the option “<code>-v</code>” makes <code>grep</code> “invert” the output. For example, we could exclude genes from autosomes in the BED file from earlier.</p>
 <div id="cell-52" class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-v</span> <span class="st">$'^chr[0-9]\+</span><span class="dt">\t</span><span class="st">'</span> gene_expression.bed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="replacing-matches-to-regular-expressions" class="level2">
-<h2 class="anchored" data-anchor-id="replacing-matches-to-regular-expressions">Replacing matches to regular expressions</h2>
+<section id="replacing-matches-to-regular-expressions" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="replacing-matches-to-regular-expressions"><span class="header-section-number">4</span> Replacing matches to regular expressions</h2>
 <p>Finally, we show how to replace every match to a regular expression with something else, using the command “<code>sed</code>”. The general form of this is:</p>
 <pre><code>sed 's/regular expression/new string/' input_file</code></pre>
 <p>This will output a new version of the input file, with each match to the regular expression replaced with “<code>new string</code>”. For example:</p>
@@ -794,8 +794,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="st">'s/^chr/chromosome/'</span> gene_expression.bed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<section id="exercises" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">5</span> Exercises</h2>
 <p>The following exercises all use the FASTA file <code>exercises.fasta</code>. Before starting the exercises, open a new terminal and navigate to the <code>grep</code> directory, which contains <code>exercises.fasta</code>.</p>
 <p>Use <code>grep</code> to find the answers. Hint: some questions require you to use <code>grep</code> twice, and possibly some other Unix commands.</p>
 <ol type="1">

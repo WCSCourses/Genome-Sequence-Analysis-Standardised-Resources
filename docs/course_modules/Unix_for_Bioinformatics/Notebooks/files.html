@@ -583,16 +583,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#less" id="toc-less" class="nav-link active" data-scroll-target="#less">less</a></li>
-  <li><a href="#head-and-tail" id="toc-head-and-tail" class="nav-link" data-scroll-target="#head-and-tail">head and tail</a></li>
-  <li><a href="#saving-time" id="toc-saving-time" class="nav-link" data-scroll-target="#saving-time">Saving time</a></li>
-  <li><a href="#getting-help-man" id="toc-getting-help-man" class="nav-link" data-scroll-target="#getting-help-man">Getting help man</a></li>
-  <li><a href="#writing-to-files" id="toc-writing-to-files" class="nav-link" data-scroll-target="#writing-to-files">Writing to files</a></li>
-  <li><a href="#cat" id="toc-cat" class="nav-link" data-scroll-target="#cat">cat</a></li>
-  <li><a href="#wc---counting" id="toc-wc---counting" class="nav-link" data-scroll-target="#wc---counting">wc - counting</a></li>
-  <li><a href="#sort---sorting-values" id="toc-sort---sorting-values" class="nav-link" data-scroll-target="#sort---sorting-values">sort - sorting values</a></li>
-  <li><a href="#uniq---finding-unique-values" id="toc-uniq---finding-unique-values" class="nav-link" data-scroll-target="#uniq---finding-unique-values">uniq - finding unique values</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#less" id="toc-less" class="nav-link active" data-scroll-target="#less"><span class="header-section-number">1</span> less</a></li>
+  <li><a href="#head-and-tail" id="toc-head-and-tail" class="nav-link" data-scroll-target="#head-and-tail"><span class="header-section-number">2</span> head and tail</a></li>
+  <li><a href="#saving-time" id="toc-saving-time" class="nav-link" data-scroll-target="#saving-time"><span class="header-section-number">3</span> Saving time</a></li>
+  <li><a href="#getting-help-man" id="toc-getting-help-man" class="nav-link" data-scroll-target="#getting-help-man"><span class="header-section-number">4</span> Getting help man</a></li>
+  <li><a href="#writing-to-files" id="toc-writing-to-files" class="nav-link" data-scroll-target="#writing-to-files"><span class="header-section-number">5</span> Writing to files</a></li>
+  <li><a href="#cat" id="toc-cat" class="nav-link" data-scroll-target="#cat"><span class="header-section-number">6</span> cat</a></li>
+  <li><a href="#wc---counting" id="toc-wc---counting" class="nav-link" data-scroll-target="#wc---counting"><span class="header-section-number">7</span> wc - counting</a></li>
+  <li><a href="#sort---sorting-values" id="toc-sort---sorting-values" class="nav-link" data-scroll-target="#sort---sorting-values"><span class="header-section-number">8</span> sort - sorting values</a></li>
+  <li><a href="#uniq---finding-unique-values" id="toc-uniq---finding-unique-values" class="nav-link" data-scroll-target="#uniq---finding-unique-values"><span class="header-section-number">9</span> uniq - finding unique values</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">10</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -623,8 +623,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="cell-2" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="less" class="level2">
-<h2 class="anchored" data-anchor-id="less">less</h2>
+<section id="less" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="less"><span class="header-section-number">1</span> less</h2>
 <p>The <code>less</code> command displays the contents of a specified file one screen at a time. To test this command type the following command followed by the enter key:</p>
 <div id="cell-4" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">less</span> Styphi.gff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -634,8 +634,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>The contents of the file <code>Styphi.gff</code> is displayed one screen at a time, to view the next screen press the space bar. As <code>Styphi.gff</code> is a large file this will take a while, therefore you may want to escape or exit from this command. To do this, press the q key, this kills the <code>less</code> command and returns you to the Unix prompt. The <code>less</code> command can also scroll backwards if you hit the <code>b</code> key. Another useful feature is the slash key, <code>/</code>, to search for an expression in the file. Try it, search for the gene with locus tag t0038. What is the start and end position of this gene?</p>
 </section>
-<section id="head-and-tail" class="level2">
-<h2 class="anchored" data-anchor-id="head-and-tail">head and tail</h2>
+<section id="head-and-tail" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="head-and-tail"><span class="header-section-number">2</span> head and tail</h2>
 <p>Sometimes you may just want to view the text at the beginning or the end of a file, without having to display all of the file. The <code>head</code> and <code>tail</code> commands can be used to do this.</p>
 <p>The <code>head</code> command displays the first ten lines of a file.</p>
 <p>To look at the beginning of the fie <code>Styphi.gff</code> file type:</p>
@@ -654,8 +654,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In this case you’ve given tail an option in two parts. In this case the <code>-n</code> says that you want to specify the number of lines to show and the <code>25</code> bit tells it how many. Unlike earlier when we merged options like <code>ls -lha</code> together, it’s not a good idea to merge multiple two part options together because otherwise it is ambiguous which value goes with which option.</p>
 <p>The <code>-n</code> option is such a common option for <code>tail</code> and <code>head</code> that it even has a shorthand: <code>-n 25</code> and <code>-25</code> mean the same thing.</p>
 </section>
-<section id="saving-time" class="level2">
-<h2 class="anchored" data-anchor-id="saving-time">Saving time</h2>
+<section id="saving-time" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="saving-time"><span class="header-section-number">3</span> Saving time</h2>
 <p>Saving time while typing may not seem important, but the longer that you spend in front of a computer, the happier you will be if you can reduce the time you spend at the keyboard.</p>
 <ul>
 <li><p>Pressing the up/down arrows will let you scroll through previous commands entered.</p></li>
@@ -664,16 +664,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Although tab completion works on commands and filenames, unfortunately it does not work on options or other arguments.</p>
 </section>
-<section id="getting-help-man" class="level2">
-<h2 class="anchored" data-anchor-id="getting-help-man">Getting help man</h2>
+<section id="getting-help-man" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="getting-help-man"><span class="header-section-number">4</span> Getting help man</h2>
 <p>To obtain further information on any of the Unix commands introduced in this course you can use the <code>man</code> command. For example, to get a full description and examples of how to use the <code>tail</code> command type the following command in a terminal window.</p>
 <div id="cell-17" class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> tail</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>There are several other useful commands that can be used to manipulate and summarise information inside files and we will introduce some of these next, <code>cat</code>, <code>sort</code>, <code>wc</code> and <code>uniq</code>.</p>
 </section>
-<section id="writing-to-files" class="level2">
-<h2 class="anchored" data-anchor-id="writing-to-files">Writing to files</h2>
+<section id="writing-to-files" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="writing-to-files"><span class="header-section-number">5</span> Writing to files</h2>
 <p>So far we’ve been running commands and outputting the results into the terminal. That’s obviously useful but what if you want to save the results to another file?</p>
 <p>Type this:</p>
 <div id="cell-20" class="cell">
@@ -681,8 +681,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>It may look like nothing has happened. This is because the <code>&gt;</code> character has <em>redirected</em> the output of the <code>head</code> command. Instead of writing to the <em>standard output</em> (in this case your terminal) it sent the output into the file <code>first_Styphi_line.txt</code>. Note that tab completion works for <code>Styphi.gff</code> because it exists but doesn’t work for <code>first_Styphi_line.txt</code> because it doesn’t exist yet.</p>
 </section>
-<section id="cat" class="level2">
-<h2 class="anchored" data-anchor-id="cat">cat</h2>
+<section id="cat" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="cat"><span class="header-section-number">6</span> cat</h2>
 <p><code>cat</code> is another way of reading files, but unlike <code>less</code> it just throws the entire contents of the file to your standard output. Try it on <code>first_Styphi_line.txt</code></p>
 <div id="cell-23" class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> first_Styphi_line.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -703,8 +703,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="wc---counting" class="level2">
-<h2 class="anchored" data-anchor-id="wc---counting">wc - counting</h2>
+<section id="wc---counting" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="wc---counting"><span class="header-section-number">7</span> wc - counting</h2>
 <p>The command <code>wc</code> counts lines, words or characters.</p>
 <p>There are two ways you could use it:</p>
 <div id="cell-31" class="cell">
@@ -725,8 +725,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>What does this command do? You will learn more about the <code>grep</code> command later in this course.</p>
 </section>
-<section id="sort---sorting-values" class="level2">
-<h2 class="anchored" data-anchor-id="sort---sorting-values">sort - sorting values</h2>
+<section id="sort---sorting-values" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="sort---sorting-values"><span class="header-section-number">8</span> sort - sorting values</h2>
 <p>The <code>sort</code> lets you sort the contents of the input. When you sort the input, lines with identical content end up next to each other in the output. This is useful as the output can then be fed to the <code>uniq</code> command (see below) to count the number of unique lines in the input.</p>
 <p>To sort the contents of a BED file type:</p>
 <div id="cell-40" class="cell">
@@ -755,8 +755,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> sort</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="uniq---finding-unique-values" class="level2">
-<h2 class="anchored" data-anchor-id="uniq---finding-unique-values">uniq - finding unique values</h2>
+<section id="uniq---finding-unique-values" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="uniq---finding-unique-values"><span class="header-section-number">9</span> uniq - finding unique values</h2>
 <p>The <code>uniq</code> command extracts unique lines from the input. It is usually used in combination with <code>sort</code> to count unique values in the input.</p>
 <p>To get the list of chromosomes in the Pfalciparum bed file type:</p>
 <div id="cell-53" class="cell">
@@ -775,8 +775,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">'{ print $1 }'</span> Pfalciparum.bed <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> <span class="kw">|</span> <span class="fu">less</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<section id="exercises" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="exercises"><span class="header-section-number">10</span> Exercises</h2>
 <p>Open up a new terminal window, navigate to the <code>files</code> directory under the <code>unix</code> directory and complete the following exercises:</p>
 <ol type="1">
 <li>Use the <code>head</code> command to extract the first 500 lines of the file <code>Styphi.gff</code> and store the output in a new file called <code>Styphi.500.gff</code>.</li>

@@ -583,11 +583,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#repeating-analysis-with-loops" id="toc-repeating-analysis-with-loops" class="nav-link active" data-scroll-target="#repeating-analysis-with-loops">Repeating analysis with loops</a></li>
-  <li><a href="#getting-options-from-the-terminal-and-printing-a-help-message" id="toc-getting-options-from-the-terminal-and-printing-a-help-message" class="nav-link" data-scroll-target="#getting-options-from-the-terminal-and-printing-a-help-message">Getting options from the terminal and printing a help message</a></li>
-  <li><a href="#checking-options-from-the-user" id="toc-checking-options-from-the-user" class="nav-link" data-scroll-target="#checking-options-from-the-user">Checking options from the user</a></li>
-  <li><a href="#using-variables-to-store-output-from-commands" id="toc-using-variables-to-store-output-from-commands" class="nav-link" data-scroll-target="#using-variables-to-store-output-from-commands">Using variables to store output from commands</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#repeating-analysis-with-loops" id="toc-repeating-analysis-with-loops" class="nav-link active" data-scroll-target="#repeating-analysis-with-loops"><span class="header-section-number">1</span> Repeating analysis with loops</a></li>
+  <li><a href="#getting-options-from-the-terminal-and-printing-a-help-message" id="toc-getting-options-from-the-terminal-and-printing-a-help-message" class="nav-link" data-scroll-target="#getting-options-from-the-terminal-and-printing-a-help-message"><span class="header-section-number">2</span> Getting options from the terminal and printing a help message</a></li>
+  <li><a href="#checking-options-from-the-user" id="toc-checking-options-from-the-user" class="nav-link" data-scroll-target="#checking-options-from-the-user"><span class="header-section-number">3</span> Checking options from the user</a></li>
+  <li><a href="#using-variables-to-store-output-from-commands" id="toc-using-variables-to-store-output-from-commands" class="nav-link" data-scroll-target="#using-variables-to-store-output-from-commands"><span class="header-section-number">4</span> Using variables to store output from commands</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -618,15 +618,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="cell-2" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../advanced_bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="repeating-analysis-with-loops" class="level2">
-<h2 class="anchored" data-anchor-id="repeating-analysis-with-loops">Repeating analysis with loops</h2>
+<section id="repeating-analysis-with-loops" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="repeating-analysis-with-loops"><span class="header-section-number">1</span> Repeating analysis with loops</h2>
 <p>It is common in Bioinformatics to run the same analysis on many files. Suppose we had a script that ran one type of analysis, and wanted to repeat the same analysis on 100 different files. It would be tedious, and error-prone, to write the same command 100 times. Instead we can use a loop. As an example, we will just run the Unix command <code>wc</code> on each file but instead, in reality this would be a script that runs in-depth analysis. We can run <code>wc</code> on each of the files in the directory <code>loop_files/</code> with the following command.</p>
 <div id="cell-4" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> loop_files/<span class="pp">*</span><span class="kw">;</span> <span class="cf">do</span> <span class="fu">wc</span> <span class="va">$filename</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="getting-options-from-the-terminal-and-printing-a-help-message" class="level2">
-<h2 class="anchored" data-anchor-id="getting-options-from-the-terminal-and-printing-a-help-message">Getting options from the terminal and printing a help message</h2>
+<section id="getting-options-from-the-terminal-and-printing-a-help-message" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="getting-options-from-the-terminal-and-printing-a-help-message"><span class="header-section-number">2</span> Getting options from the terminal and printing a help message</h2>
 <p>Usually, we would like a script to read in options from the user, such as the name of an input file. This would mean a script can be run like this:</p>
 <pre><code>my_script.sh input_file</code></pre>
 <p>Inside the script, the parameters provided by the user are given the names <code>$1</code>, <code>$2</code>, <code>$3</code> etc (do not confuse these with column names used by <code>awk</code>!). Here is a simple example that expects the user to provide a filename and a number. The script simply prints the filename to the screen, and then the first few lines of the file (the number of lines is determined by the number given by the user).</p>
@@ -641,8 +641,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> options_example.2.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="checking-options-from-the-user" class="level2">
-<h2 class="anchored" data-anchor-id="checking-options-from-the-user">Checking options from the user</h2>
+<section id="checking-options-from-the-user" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="checking-options-from-the-user"><span class="header-section-number">3</span> Checking options from the user</h2>
 <p>The previous scripts will have strange behaviour if the input is not as expected by the script. Many things could go wrong. For example:</p>
 <ul>
 <li>The wrong number of options are given by the user</li>
@@ -691,8 +691,8 @@ fi</code></pre>
 <li>Process the input.</li>
 </ol>
 </section>
-<section id="using-variables-to-store-output-from-commands" class="level2">
-<h2 class="anchored" data-anchor-id="using-variables-to-store-output-from-commands">Using variables to store output from commands</h2>
+<section id="using-variables-to-store-output-from-commands" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="using-variables-to-store-output-from-commands"><span class="header-section-number">4</span> Using variables to store output from commands</h2>
 <p>It can be useful to run a command and put the results into a variable. Recall that we stored the input from the user in sensibly named variables:</p>
 <pre><code>filename=$1</code></pre>
 <p>The part after the equals sign could actually be any command that returns some output. For example, running this in Unix</p>
@@ -711,8 +711,8 @@ fi</code></pre>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> There are <span class="va">$line_count</span> lines in the file <span class="va">$filename</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<section id="exercises" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">5</span> Exercises</h2>
 <ol type="1">
 <li>Write a script that gets a filename from the user. If the file exists, it prints a nice human-readable message telling the user how many lines are in the file.</li>
 <li>Use a loop to run the script from Exercise 1 on the files in the directory <code>loop_files/</code>.</li>
