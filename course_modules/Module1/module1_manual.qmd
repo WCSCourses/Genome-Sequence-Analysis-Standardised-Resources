@@ -489,3 +489,37 @@ GA4GH maintains file format standards through resources like the **HTS Specifica
 **Additional Resources:**\
 1. [[UCSC Galaxy - Data file formats]{.underline}](https://genome.ucsc.edu/FAQ/FAQformat.html)[\
 ]{.underline}2. [[12 Common Bioinformatics Files Types Explained]{.underline}](https://www.youtube.com/watch?v=fQqhKOtostg) (Youtube Video)\
+
+## Quality control
+
+Here are some important questions:
+
+-   Do I have enough read coverage with my reads?
+
+-   Was the library creation process efficient and problem-free?
+
+-   Did the sequencing process create artefacts?
+
+To assess the quality of your aligned sequencing data, you can use `samtools stats` to generate a comprehensive summary of your BAM file, followed by `plot-bamstats` to visualise key metrics. For example, running `samtools stats file.bam > file.bam.stats` produces a detailed report, which can then be converted into a series of plots with `plot-bamstats -p plots/ file.bam.stats`. These outputs help you evaluate whether your dataset has sufficient read coverage, identify potential issues during library preparation (such as low complexity or duplication), and detect sequencing artefacts. Interpreting these metrics is an essential step in ensuring that your data are suitable for downstream analyses like variant calling.
+
+### Read coverage
+
+![](images/read_coverage.png){width="409"}
+
+When evaluating read coverage, key questions to consider are: is every genomic position covered to a sufficient depth, and is the overall sequencing effort adequate for your analysis goals? Coverage (or depth) refers to how many times each base in the reference genome is represented in your reads. It can be estimated using metrics such as the maximum theoretical depth, calculated as (number of reads × read length) divided by the target genome size, and the average mapped depth, which uses only successfully aligned reads. For a typical bacterial genome (e.g. \~4 Mbp), these values help determine whether sequencing has achieved uniform and sufficient representation. In practice, around 10× coverage may be sufficient for basic variant calling, while 30× is generally considered reliable for most applications, including assembly. Higher coverage (e.g. 100×) often exceeds requirements, and many analysis pipelines will downsample the data to reduce computational burden without compromising results.
+
+### Library prep biases
+
+![Library prep biases](images/library_prep.png){width="493"}
+
+When assessing library preparation biases, important questions to ask are: was the library creation process efficient, and are there signs of over-amplification such as excessive duplicate reads? Because sequencing experiments often start with small amounts of DNA, a PCR amplification step is typically required (e.g. in Illumina workflows), where a single DNA molecule can generate many identical copies. However, these PCR duplicates do not provide additional biological information and can bias downstream analyses if not accounted for. Duplicate reads are usually identified by having the same start position (and orientation) as other reads or read pairs. To address this, duplicates can be inferred and marked using tools such as *picard MarkDuplicates* or *samtools markdup*, allowing them to be excluded or down-weighted in later analyses. Typical duplication rates vary by experiment type, with exome data often showing \~15–20% duplicates, while whole-genome datasets are generally lower (\<5%). Monitoring and managing duplication levels is therefore an important part of quality control.
+
+### Base quality
+
+![](images/base_quality2.png){width="508"}
+
+When assessing base quality, key questions to consider are: how does sequencing accuracy change along the length of the reads, and are there positions where error rates become too high for reliable analysis? In Illumina sequencing, base quality typically decreases with increasing cycle number due to a process known as dephasing, where DNA strands within a cluster gradually fall out of synchrony. As a result, later bases in a read are more prone to errors.
+
+Base quality is commonly summarised using Phred scores, which relate to the probability of an incorrect base call (e.g. Q20 = 1 error in 100, Q30 = 1 in 1000). By calculating the average quality at each position across all reads, you can visualise how quality changes over sequencing cycles. These plots often show high quality at the start of reads, followed by a gradual decline toward the end.
+
+In practice, good-quality datasets show relatively stable, high scores (e.g. around Q30 or above) across most of the read length, with only a modest drop at the end. In contrast, a sharp decline in quality—especially early in the read—indicates potential problems with the sequencing run. Such cases may require trimming low-quality bases or filtering reads before downstream analysis to avoid introducing errors.

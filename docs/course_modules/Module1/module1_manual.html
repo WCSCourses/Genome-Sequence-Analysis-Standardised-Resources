@@ -594,6 +594,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#key-projects-of-the-data-working-group" id="toc-key-projects-of-the-data-working-group" class="nav-link" data-scroll-target="#key-projects-of-the-data-working-group"><span class="header-section-number">5.2</span> <strong>Key Projects of the Data Working Group</strong></a></li>
   <li><a href="#file-format-standards" id="toc-file-format-standards" class="nav-link" data-scroll-target="#file-format-standards"><span class="header-section-number">5.3</span> <strong>File Format Standards</strong></a></li>
   </ul></li>
+  <li><a href="#quality-control" id="toc-quality-control" class="nav-link" data-scroll-target="#quality-control"><span class="header-section-number">6</span> Quality control</a>
+  <ul class="collapse">
+  <li><a href="#read-coverage" id="toc-read-coverage" class="nav-link" data-scroll-target="#read-coverage"><span class="header-section-number">6.1</span> Read coverage</a></li>
+  <li><a href="#library-prep-biases" id="toc-library-prep-biases" class="nav-link" data-scroll-target="#library-prep-biases"><span class="header-section-number">6.2</span> Library prep biases</a></li>
+  <li><a href="#base-quality" id="toc-base-quality" class="nav-link" data-scroll-target="#base-quality"><span class="header-section-number">6.3</span> Base quality</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1074,6 +1080,38 @@ Example: <code>100N</code> = 100 bases skipped in the reference (e.g., introns i
 1. <a href="https://genome.ucsc.edu/FAQ/FAQformat.html"><u>UCSC Galaxy - Data file formats</u></a><u><br>
 </u>2. <a href="https://www.youtube.com/watch?v=fQqhKOtostg"><u>12 Common Bioinformatics Files Types Explained</u></a>&nbsp;(Youtube Video)<br>
 </p>
+</section>
+</section>
+<section id="quality-control" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="quality-control"><span class="header-section-number">6</span> Quality control</h2>
+<p>Here are some important questions:</p>
+<ul>
+<li><p>Do I have enough read coverage with my reads?</p></li>
+<li><p>Was the library creation process efficient and problem-free?</p></li>
+<li><p>Did the sequencing process create artefacts?</p></li>
+</ul>
+<p>To assess the quality of your aligned sequencing data, you can use <code>samtools stats</code> to generate a comprehensive summary of your BAM file, followed by <code>plot-bamstats</code> to visualise key metrics. For example, running <code>samtools stats file.bam &gt; file.bam.stats</code> produces a detailed report, which can then be converted into a series of plots with <code>plot-bamstats -p plots/ file.bam.stats</code>. These outputs help you evaluate whether your dataset has sufficient read coverage, identify potential issues during library preparation (such as low complexity or duplication), and detect sequencing artefacts. Interpreting these metrics is an essential step in ensuring that your data are suitable for downstream analyses like variant calling.</p>
+<section id="read-coverage" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="read-coverage"><span class="header-section-number">6.1</span> Read coverage</h3>
+<p><img src="images/read_coverage.png" class="img-fluid" width="409"></p>
+<p>When evaluating read coverage, key questions to consider are: is every genomic position covered to a sufficient depth, and is the overall sequencing effort adequate for your analysis goals? Coverage (or depth) refers to how many times each base in the reference genome is represented in your reads. It can be estimated using metrics such as the maximum theoretical depth, calculated as (number of reads × read length) divided by the target genome size, and the average mapped depth, which uses only successfully aligned reads. For a typical bacterial genome (e.g.&nbsp;~4 Mbp), these values help determine whether sequencing has achieved uniform and sufficient representation. In practice, around 10× coverage may be sufficient for basic variant calling, while 30× is generally considered reliable for most applications, including assembly. Higher coverage (e.g.&nbsp;100×) often exceeds requirements, and many analysis pipelines will downsample the data to reduce computational burden without compromising results.</p>
+</section>
+<section id="library-prep-biases" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="library-prep-biases"><span class="header-section-number">6.2</span> Library prep biases</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/library_prep.png" class="img-fluid figure-img" width="493"></p>
+<figcaption>Library prep biases</figcaption>
+</figure>
+</div>
+<p>When assessing library preparation biases, important questions to ask are: was the library creation process efficient, and are there signs of over-amplification such as excessive duplicate reads? Because sequencing experiments often start with small amounts of DNA, a PCR amplification step is typically required (e.g.&nbsp;in Illumina workflows), where a single DNA molecule can generate many identical copies. However, these PCR duplicates do not provide additional biological information and can bias downstream analyses if not accounted for. Duplicate reads are usually identified by having the same start position (and orientation) as other reads or read pairs. To address this, duplicates can be inferred and marked using tools such as <em>picard MarkDuplicates</em> or <em>samtools markdup</em>, allowing them to be excluded or down-weighted in later analyses. Typical duplication rates vary by experiment type, with exome data often showing ~15–20% duplicates, while whole-genome datasets are generally lower (&lt;5%). Monitoring and managing duplication levels is therefore an important part of quality control.</p>
+</section>
+<section id="base-quality" class="level3" data-number="6.3">
+<h3 data-number="6.3" class="anchored" data-anchor-id="base-quality"><span class="header-section-number">6.3</span> Base quality</h3>
+<p><img src="images/base_quality2.png" class="img-fluid" width="508"></p>
+<p>When assessing base quality, key questions to consider are: how does sequencing accuracy change along the length of the reads, and are there positions where error rates become too high for reliable analysis? In Illumina sequencing, base quality typically decreases with increasing cycle number due to a process known as dephasing, where DNA strands within a cluster gradually fall out of synchrony. As a result, later bases in a read are more prone to errors.</p>
+<p>Base quality is commonly summarised using Phred scores, which relate to the probability of an incorrect base call (e.g.&nbsp;Q20 = 1 error in 100, Q30 = 1 in 1000). By calculating the average quality at each position across all reads, you can visualise how quality changes over sequencing cycles. These plots often show high quality at the start of reads, followed by a gradual decline toward the end.</p>
+<p>In practice, good-quality datasets show relatively stable, high scores (e.g.&nbsp;around Q30 or above) across most of the read length, with only a modest drop at the end. In contrast, a sharp decline in quality—especially early in the read—indicates potential problems with the sequencing run. Such cases may require trimming low-quality bases or filtering reads before downstream analysis to avoid introducing errors.</p>
 
 
 </section>
