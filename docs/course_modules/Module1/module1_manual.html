@@ -594,11 +594,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#key-projects-of-the-data-working-group" id="toc-key-projects-of-the-data-working-group" class="nav-link" data-scroll-target="#key-projects-of-the-data-working-group"><span class="header-section-number">5.2</span> <strong>Key Projects of the Data Working Group</strong></a></li>
   <li><a href="#file-format-standards" id="toc-file-format-standards" class="nav-link" data-scroll-target="#file-format-standards"><span class="header-section-number">5.3</span> <strong>File Format Standards</strong></a></li>
   </ul></li>
-  <li><a href="#quality-control" id="toc-quality-control" class="nav-link" data-scroll-target="#quality-control"><span class="header-section-number">6</span> Quality control</a>
+  <li><a href="#qc" id="toc-qc" class="nav-link" data-scroll-target="#qc"><span class="header-section-number">6</span> QC</a>
   <ul class="collapse">
   <li><a href="#read-coverage" id="toc-read-coverage" class="nav-link" data-scroll-target="#read-coverage"><span class="header-section-number">6.1</span> Read coverage</a></li>
   <li><a href="#library-prep-biases" id="toc-library-prep-biases" class="nav-link" data-scroll-target="#library-prep-biases"><span class="header-section-number">6.2</span> Library prep biases</a></li>
   <li><a href="#base-quality" id="toc-base-quality" class="nav-link" data-scroll-target="#base-quality"><span class="header-section-number">6.3</span> Base quality</a></li>
+  <li><a href="#fragment-size" id="toc-fragment-size" class="nav-link" data-scroll-target="#fragment-size"><span class="header-section-number">6.4</span> Fragment size</a></li>
+  <li><a href="#other-considerations" id="toc-other-considerations" class="nav-link" data-scroll-target="#other-considerations"><span class="header-section-number">6.5</span> Other considerations</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1082,8 +1084,8 @@ Example: <code>100N</code> = 100 bases skipped in the reference (e.g., introns i
 </p>
 </section>
 </section>
-<section id="quality-control" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="quality-control"><span class="header-section-number">6</span> Quality control</h2>
+<section id="qc" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="qc"><span class="header-section-number">6</span> QC</h2>
 <p>Here are some important questions:</p>
 <ul>
 <li><p>Do I have enough read coverage with my reads?</p></li>
@@ -1112,6 +1114,54 @@ Example: <code>100N</code> = 100 bases skipped in the reference (e.g., introns i
 <p>When assessing base quality, key questions to consider are: how does sequencing accuracy change along the length of the reads, and are there positions where error rates become too high for reliable analysis? In Illumina sequencing, base quality typically decreases with increasing cycle number due to a process known as dephasing, where DNA strands within a cluster gradually fall out of synchrony. As a result, later bases in a read are more prone to errors.</p>
 <p>Base quality is commonly summarised using Phred scores, which relate to the probability of an incorrect base call (e.g.&nbsp;Q20 = 1 error in 100, Q30 = 1 in 1000). By calculating the average quality at each position across all reads, you can visualise how quality changes over sequencing cycles. These plots often show high quality at the start of reads, followed by a gradual decline toward the end.</p>
 <p>In practice, good-quality datasets show relatively stable, high scores (e.g.&nbsp;around Q30 or above) across most of the read length, with only a modest drop at the end. In contrast, a sharp decline in quality—especially early in the read—indicates potential problems with the sequencing run. Such cases may require trimming low-quality bases or filtering reads before downstream analysis to avoid introducing errors.</p>
+<p>GC bias</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/GS_bias1.png" class="img-fluid figure-img"></p>
+<figcaption>GS bias</figcaption>
+</figure>
+</div>
+<p>When assessing GC bias, an important question is whether the observed GC content of your reads matches what is expected from the reference genome. Both GC-rich and AT-rich regions can be difficult to amplify during library preparation, leading to uneven representation of these regions in the sequencing data. This bias can be visualised by comparing the distribution of GC content in your reads to the expected distribution from the reference sequence. Ideally, the observed curves should closely follow the reference; strong deviations or shifts indicate preferential amplification or underrepresentation of certain regions. Detecting GC bias is important, as it can affect coverage uniformity and potentially impact downstream analyses such as variant calling or genome assembly.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/GS_bias2.png" class="img-fluid figure-img" width="495"></p>
+<figcaption>GS bias example</figcaption>
+</figure>
+</div>
+<p>When interpreting GC content plots, it is important to look for consistency between different subsets of reads (e.g.&nbsp;first vs last fragments) as well as agreement with the reference distribution. In a well-behaved dataset, these curves should largely overlap, indicating that sequencing and library preparation have not introduced strong biases. In contrast, clear shifts, multiple peaks, or separation between curves suggest systematic issues, such as preferential amplification of certain fragments or loss of others. These distortions can lead to uneven genome representation, which may affect downstream analyses by reducing sensitivity in underrepresented regions or inflating signal in overrepresented ones.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/GS_bias3.png" class="img-fluid figure-img" width="534"></p>
+<figcaption>GS bias example</figcaption>
+</figure>
+</div>
+<p>These examples illustrate how GC bias can vary between datasets and how to interpret the resulting distributions. In the first case, the GC content of the reads closely follows a single, smooth distribution, with good agreement between read subsets, suggesting relatively uniform amplification despite a slight shift from the reference. In the second case, although the read distributions are consistent with each other, they are clearly shifted relative to the expected reference profile, indicating a systematic bias toward GC-rich fragments. Such deviations highlight how technical effects during library preparation can distort the representation of genomic regions, and emphasise the importance of comparing observed data to the expected reference when assessing sequencing quality.</p>
+<p><img src="images/GS_content_depth.png" class="img-fluid" width="536"></p>
+<p>These plots show how sequencing depth varies as a function of GC content, helping to identify biases in genome coverage. In an ideal dataset, coverage should remain relatively constant across all GC percentages, indicating that regions of different composition are equally represented. This is illustrated in the second plot, where the median depth is stable across the GC range, suggesting minimal bias.</p>
+<p>In contrast, the first plot shows a clear trend where coverage increases with GC content, indicating that GC-rich regions are overrepresented while AT-rich regions are undercovered. Such patterns reflect biases introduced during library preparation or sequencing and can lead to uneven genome coverage. Detecting this relationship is important, as strong GC-dependent variation in depth may affect the reliability of downstream analyses, particularly in regions with extreme base composition.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/GS_content_cycle.png" class="img-fluid figure-img" width="488"></p>
+<figcaption>GS content by cycle</figcaption>
+</figure>
+</div>
+<p>When examining GC content by cycle, an important question to ask is whether base composition remains stable across the length of the reads, or if there are unexpected deviations at specific positions. In well-processed data, the proportions of A, C, G, and T should remain relatively constant across cycles, reflecting a balanced and unbiased representation of the genome. This is illustrated in the first plot, where base composition is stable throughout the read.</p>
+<p>In contrast, strong fluctuations in base composition at the beginning or end of reads often indicate technical artefacts, such as the presence of untrimmed adapter sequences or other contaminants. The second plot shows clear irregularities at early cycles, which then stabilise, suggesting that residual adapter or primer sequences may still be present in the data. Identifying these patterns is important, as they can impact downstream analyses and should typically be addressed through additional trimming or preprocessing steps.</p>
+</section>
+<section id="fragment-size" class="level3" data-number="6.4">
+<h3 data-number="6.4" class="anchored" data-anchor-id="fragment-size"><span class="header-section-number">6.4</span> Fragment size</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fragment_size.png" class="img-fluid figure-img" width="475"></p>
+<figcaption>Fragment size</figcaption>
+</figure>
+</div>
+<p>When evaluating fragment size in paired-end sequencing, an important question is whether the insert size distribution matches expectations from library preparation. The fragment (insert) size determines how far apart read pairs map on the reference genome and should typically form a single, well-defined peak. In a good-quality dataset, as shown in the second plot, the distribution is smooth and unimodal, indicating a consistent and well-controlled library.</p>
+<p>In contrast, irregular or multi-peaked distributions, as seen in the first plot, suggest problems during library preparation, such as incomplete size selection or the presence of mixed fragment populations. These issues can affect mapping behaviour and downstream analyses, particularly structural variant detection or assembly. Monitoring fragment size distributions therefore provides an additional check on library quality and consistency.</p>
+</section>
+<section id="other-considerations" class="level3" data-number="6.5">
+<h3 data-number="6.5" class="anchored" data-anchor-id="other-considerations"><span class="header-section-number">6.5</span> Other considerations</h3>
+<p>In addition to standard quality control metrics, it is important to verify the biological validity of your sequencing data. This includes confirming that the reads originate from the expected species and checking for potential contamination. Tools such as <em>kraken</em> can be used for taxonomic classification of sequencing reads, while <em>bactinspector</em> helps identify the most likely species present in the sample. Contamination can be further assessed using tools like <em>confindr</em>, which detects both intraspecies contamination (e.g.&nbsp;unexpected heterozygous SNPs in bacterial genomes) and cross-species contamination. Together, these approaches provide an additional layer of quality assurance, ensuring that your dataset is both technically sound and biologically meaningful before proceeding with downstream analyses.</p>
 
 
 </section>
