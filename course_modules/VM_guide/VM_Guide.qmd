@@ -16,7 +16,7 @@
 
 ## Introduction to Virtual Box and Virtual Machine {#introduction-to-virtual-box-and-virtual-machine}
 
-### Concept of VirtualBox and How It Works
+### Concept of VirtualBox and How It Works (1)
 
 VirtualBox is a powerful open-source virtualization software that enables users to run multiple operating systems on a single physical machine. This concept of virtualization allows users to create a virtual environment, or Virtual Machine (VM), that emulates the hardware of a computer, enabling the installation of guest operating systems like Linux or Windows alongside the host operating system.
 

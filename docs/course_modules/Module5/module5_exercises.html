@@ -736,7 +736,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong><code>velveth k.assembly.55 55 -shortPaired -fastq IT.Chr5_1.fastq IT.Chr5_2.fastq</code></strong></p>
 <p><strong><code>velvetg k.assembly.55 -exp_cov auto -ins_length 350 -min_contig_lgth 200 -cov_cutoff 5</code></strong></p>
 <p>Note: If you find that you are having trouble running the velvet assemblies or if it is running for longer than 10-15 mins then quit the command (Ctrl-C). A pre-generated set of Illumina assemblies can be found at:</p>
-<p><code>ls ~/course_data/assembly/data/backup/illumina_assemblies</code></p>
+<p><code>ls ~/course_data/assembly/data/assembly_backups</code></p>
 </section>
 </section>
 <section id="assembly-metrics" class="level2" data-number="5">
@@ -841,7 +841,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="7.1" class="anchored" data-anchor-id="generating-pacbio-assemblies"><span class="header-section-number">7.1</span> Generating PacBio assemblies</h3>
 <p>The <strong>canu</strong> pacbio assembly should have hopefully finished by now. You can check the log using <strong>less</strong>, i.e.&nbsp;<code>less canu_log.txt</code>.</p>
 <p>If it has not finished, you can find a pre-generated canu assembly at:</p>
-<p><code>ls ~/course_data/assembly/data/backup/pacbio_assemblies</code></p>
+<p><code>ls ~/course_data/assembly/data/assembly_backups</code></p>
 <p>Now use the assembly-stats script to look at the assembly statistics.</p>
 <p><code>assembly-stats canu-assembly/PB.contigs.fasta</code></p>
 <p><strong>How does it compare to the Illumina assembly?</strong></p>
@@ -863,7 +863,7 @@ ul.task-list li input[type="checkbox"] {
 <p><code>samtools faidx wtdbg.ctg.lay.fasta</code></p>
 <p><code>bwa mem -t2 wtdbg.ctg.lay.fasta IT.Chr5_1.fastq IT.Chr5_2.fastq &gt; wtdbg.sam</code></p>
 <p><code>samtools sort -@2 -o wtdbg.sorted.bam wtdbg.sam</code></p>
-<p><code>samtools mpileup -f wtdbg.ctg.lay.fasta -Ou wtdbg.sorted.bam | bcftools call -mv -Ov -o wtdbg.vcf</code></p>
+<p><code>bcftools mpileup -f wtdbg.ctg.lay.fasta -Ou wtdbg.sorted.bam | bcftools call -mv -Ov -o wtdbg.vcf</code></p>
 <p>And now compare some basic statistics using <strong>bcftools stats</strong>.</p>
 <p><code>bcftools stats canu.vcf | grep ^SN</code></p>
 <p><code>bcftools stats wtdbg.vcf | grep ^SN</code></p>

@@ -660,7 +660,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="1.4" class="anchored" data-anchor-id="running-the-commands-from-this-tutorial"><span class="header-section-number">1.4</span> Running the commands from this tutorial</h3>
 <p>You can follow this tutorial by typing all the commands you see into a terminal window. This is similar to the “Command Prompt” window on MS Windows systems, which allows the user to type DOS commands to manage files.</p>
 <p>To get started, open a new terminal on your computer and type the command below:</p>
-<p><code>cd /home/manager/course_data/read_alignment</code> Now you can follow the instructions in the tutorial from here.</p>
+<p><code>cd ~/course_data/read_alignment</code> Now you can follow the instructions in the tutorial from here.</p>
 </section>
 <section id="lets-get-started" class="level3" data-number="1.5">
 <h3 data-number="1.5" class="anchored" data-anchor-id="lets-get-started"><span class="header-section-number">1.5</span> Let’s get started!</h3>
@@ -898,7 +898,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The figure below outlines a typical NGS workflow:</p>
 <p><img src="images/ngs workflow.png" class="img-fluid"> In this part of the tutotial, we have two lanes of Illumina sequencing data produced from a single library of yeast. We will use the BWA aligner to align the data to the <a href="https://ftp.ensembl.org/pub/current_fasta/saccharomyces_cerevisiae/dna/"><em>Saccromyces cerevisiae</em> genome</a> and produce a merged BAM file for the library.</p>
 <p>To begin go to the following directory:</p>
-<p><code>cd /home/manager/course_data/read_alignment/data/Exercise2/60A_Sc_DBVPG6044/library1</code></p>
+<p><code>cd ~/course_data/read_alignment/data/Exercise2/60A_Sc_DBVPG6044/library1</code></p>
 <section id="index-the-reference" class="level3" data-number="4.1">
 <h3 data-number="4.1" class="anchored" data-anchor-id="index-the-reference"><span class="header-section-number">4.1</span> Index the reference</h3>
 <p><code>bwa index ../../../ref/Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa.gz</code></p>
@@ -959,7 +959,8 @@ ul.task-list li input[type="checkbox"] {
 <p>You will notice that there are two directories called <em>lane1</em> and <em>lane2</em>. There were two sequencing lanes produced from this sequencing library. In order to mark library PCR duplicates, we need to merge the two lane BAM files together to produce a single BAM file. We will use the picard tool called <strong>MergeSamFiles</strong> to merge the lane BAM files.</p>
 <p>To find the options for MergeSamFiles command, type:</p>
 <p><code>picard MergeSamFiles</code></p>
-<p>Now use the ‘<em>-I</em>’ option to specify both the input BAM files and the ‘<em>-I</em>’ option to specify the outputfile (e.g.&nbsp;<em>library1.bam</em>). Note: Multiple input files can be specified using multiple ‘<em>-I</em>’ options</p>
+<p>Now use the ‘<em>-I</em>’ option to specify both the input BAM files and the ‘<em>-O</em>’ option to specify the outputfile (e.g.&nbsp;<em>library1.bam</em>). Note: Multiple input files can be specified using multiple ‘<em>-I</em>’ options.</p>
+<p>Finally, index the merged BAM file. (As the two input BAM files were already sorted before merging, re-sorting the merged file shouldn’t be necessary.)</p>
 </section>
 <section id="mark-pcr-duplicates-1" class="level3" data-number="4.8">
 <h3 data-number="4.8" class="anchored" data-anchor-id="mark-pcr-duplicates-1"><span class="header-section-number">4.8</span> Mark PCR duplicates</h3>
@@ -971,7 +972,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="visualise-the-alignment" class="level3" data-number="4.9">
 <h3 data-number="4.9" class="anchored" data-anchor-id="visualise-the-alignment"><span class="header-section-number">4.9</span> Visualise the alignment</h3>
 <p>Go to the directory containing the reference genome and uncompress the file as IGV cannot read a compressed file.</p>
-<p><code>cd /home/manager/course_data/read_alignment/data/ref</code></p>
+<p><code>cd ~/course_data/read_alignment/data/ref</code></p>
 <p><code>gunzip Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa.gz</code></p>
 <p>Start IGV by typing:</p>
 <p><code>igv.sh &amp;</code></p>
