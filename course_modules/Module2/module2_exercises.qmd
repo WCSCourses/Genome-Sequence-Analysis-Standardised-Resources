@@ -41,7 +41,7 @@ You can follow this tutorial by typing all the commands you see into a terminal 
 
 To get started, open a new terminal on your computer and type the command below:
 
-`cd /home/manager/course_data/read_alignment` Now you can follow the instructions in the tutorial from here.
+`cd ~/course_data/read_alignment` Now you can follow the instructions in the tutorial from here.
 
 ### Let’s get started!
 
@@ -221,21 +221,21 @@ Once the genome has loaded, the chromosomes will be shown on the genome ruler wi
 
 Above the genome ruler is the toolbar which has a variety controls for navigating the genome:
 
--   **Genome drop-down** - load a genome
+- **Genome drop-down** - load a genome
 
--   **Chromosome drop-down** - zoom to a chromosome
+- **Chromosome drop-down** - zoom to a chromosome
 
--   **Search** - zoom to a chromosome, locus or gene
+- **Search** - zoom to a chromosome, locus or gene
 
 There are several other buttons which can be used to control the visible portion of the genome.
 
--   **Whole genome** - zoom back out to whole genome view
+- **Whole genome** - zoom back out to whole genome view
 
--   **Previous/next view** - move backward/forward through views (like the back/forward buttons in a web browser)
+- **Previous/next view** - move backward/forward through views (like the back/forward buttons in a web browser)
 
--   **Refresh** - refresh the display
+- **Refresh** - refresh the display
 
--   **Zoom** - zooms in (+) / out (-) on a chromosome
+- **Zoom** - zooms in (+) / out (-) on a chromosome
 
 ![](images/igv%20menu.png)
 
@@ -249,11 +249,11 @@ The sequence viewer shows the genome at the single nucleotide level. You won’t
 
 There are several views in IGV
 
--   Genome view
+- Genome view
 
--   Chromosome view
+- Chromosome view
 
--   Region view
+- Region view
 
 There are several ways to to zoom in and out to these views to look at specific regions or base level information.
 
@@ -301,9 +301,9 @@ Note: BAM files and their corresponding index files must be in the same director
 
 For each read alignment, a major track will appear containing two minor tracks for that sample:
 
--   coverage information
+- coverage information
 
--   read alignments
+- read alignments
 
 For the total number of visible tracks, see the bottom left of main window.
 
@@ -391,7 +391,7 @@ The figure below outlines a typical NGS workflow:
 
 To begin go to the following directory:
 
-`cd /home/manager/course_data/read_alignment/data/Exercise2/60A_Sc_DBVPG6044/library1`
+`cd ~/course_data/read_alignment/data/Exercise2/60A_Sc_DBVPG6044/library1`
 
 ### Index the reference
 
@@ -487,7 +487,9 @@ To find the options for MergeSamFiles command, type:
 
 `picard MergeSamFiles`
 
-Now use the ‘*-I*’ option to specify both the input BAM files and the ‘*-I*’ option to specify the outputfile (e.g. *library1.bam*). Note: Multiple input files can be specified using multiple ‘*-I*’ options
+Now use the ‘*-I*’ option to specify both the input BAM files and the ‘*-O*’ option to specify the outputfile (e.g. *library1.bam*). Note: Multiple input files can be specified using multiple ‘*-I*’ options.
+
+Finally, index the merged BAM file. (As the two input BAM files were already sorted before merging, re-sorting the merged file shouldn't be necessary.)
 
 ### Mark PCR duplicates
 
@@ -503,7 +505,7 @@ Don’t forget to index your final BAM file using samtools index.
 
 Go to the directory containing the reference genome and uncompress the file as IGV cannot read a compressed file.
 
-`cd /home/manager/course_data/read_alignment/data/ref`
+`cd ~/course_data/read_alignment/data/ref`
 
 `gunzip Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa.gz`
 

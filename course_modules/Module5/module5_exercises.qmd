@@ -71,13 +71,13 @@ This should return the help message for software canu, jellyfish, velvet, assemb
 
 If after this course you would like to download and install this software the instructions can be found at the links below, alternatively we recommend **bioconda** for the installation and management of your bioinformatics software.
 
--   [The canu website](https://canu.readthedocs.io/en/latest/)
+- [The canu website](https://canu.readthedocs.io/en/latest/)
 
--   [The jellyfish github page](https://github.com/gmarcais/Jellyfish)
+- [The jellyfish github page](https://github.com/gmarcais/Jellyfish)
 
--   [The velvet website](https://www.ebi.ac.uk/~zerbino/velvet/)
+- [The velvet website](https://www.ebi.ac.uk/~zerbino/velvet/)
 
--   [The wtdbg2 github page](https://github.com/ruanjue/wtdbg2)
+- [The wtdbg2 github page](https://github.com/ruanjue/wtdbg2)
 
 To get started with the tutorial, go to the first section: Pacbio genome assembly.
 
@@ -217,7 +217,7 @@ Generally, the k-mer size has the biggest impact on assembly results. Let us mak
 
 Note: If you find that you are having trouble running the velvet assemblies or if it is running for longer than 10-15 mins then quit the command (Ctrl-C). A pre-generated set of Illumina assemblies can be found at:
 
-`ls ~/course_data/assembly/data/backup/illumina_assemblies`
+`ls ~/course_data/assembly/data/assembly_backups`
 
 ## Assembly metrics
 
@@ -345,7 +345,7 @@ The **canu** pacbio assembly should have hopefully finished by now. You can chec
 
 If it has not finished, you can find a pre-generated canu assembly at:
 
-`ls ~/course_data/assembly/data/backup/pacbio_assemblies`
+`ls ~/course_data/assembly/data/assembly_backups`
 
 Now use the assembly-stats script to look at the assembly statistics.
 
@@ -385,7 +385,7 @@ Do the same for *wtdbg.ctg.lay.fasta*:
 
 `samtools sort -@2 -o wtdbg.sorted.bam wtdbg.sam`
 
-`samtools mpileup -f wtdbg.ctg.lay.fasta -Ou wtdbg.sorted.bam | bcftools call -mv -Ov -o wtdbg.vcf`
+`bcftools mpileup -f wtdbg.ctg.lay.fasta -Ou wtdbg.sorted.bam | bcftools call -mv -Ov -o wtdbg.vcf`
 
 And now compare some basic statistics using **bcftools stats**.
 
