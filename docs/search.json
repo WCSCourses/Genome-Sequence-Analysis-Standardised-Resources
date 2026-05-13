@@ -4,12 +4,7 @@
     "href": "meet the team.html",
     "title": "Acknowledgements",
     "section": "",
-    "text": "As included in ANSI/NISO Z39.104-2022, CRediT, Contributor Roles Taxonomy https://www.niso.org/publications/z39104-2022-credit\n\n0.1 Contributor Roles\n\nConceptualization\n(Ideas; formulation or evolution of overarching research goals and aims.)\nData curation\n(Management activities to annotate (produce metadata), scrub data and maintain research data (including software code, where it is necessary for interpreting the data itself) for initial use and later re-use.)\nFormal analysis\n(Application of statistical, mathematical, computational, or other formal techniques to analyze or synthesize study data.)\nMethodology\n(Development or design of methodology; creation of models)\nResources\n(Provision of study materials, reagents, materials, patients, laboratory samples, animals, instrumentation, computing resources, or other analysis tools.)\nSupervision\n(Oversight and leadership responsibility for the research activity planning and execution, including mentorship external to the core team)\nValidation\n(Verification, whether as a part of the activity or separate, of the overall replication/reproducibility of results/experiments and other research outputs. )\nVisualization\n(Preparation, creation and/or presentation of the published work, specifically visualization/data presentation)\n\n© Wellcome Connecting Science",
-    "crumbs": [
-      "Home",
-      "Contributors",
-      "Acknowledgements"
-    ]
+    "text": "As included in ANSI/NISO Z39.104-2022, CRediT, Contributor Roles Taxonomy https://www.niso.org/publications/z39104-2022-credit\n\n0.1 Contributor Roles\n\nConceptualization\n(Ideas; formulation or evolution of overarching research goals and aims.)\nData curation\n(Management activities to annotate (produce metadata), scrub data and maintain research data (including software code, where it is necessary for interpreting the data itself) for initial use and later re-use.)\nFormal analysis\n(Application of statistical, mathematical, computational, or other formal techniques to analyze or synthesize study data.)\nMethodology\n(Development or design of methodology; creation of models)\nResources\n(Provision of study materials, reagents, materials, patients, laboratory samples, animals, instrumentation, computing resources, or other analysis tools.)\nSupervision\n(Oversight and leadership responsibility for the research activity planning and execution, including mentorship external to the core team)\nValidation\n(Verification, whether as a part of the activity or separate, of the overall replication/reproducibility of results/experiments and other research outputs. )\nVisualization\n(Preparation, creation and/or presentation of the published work, specifically visualization/data presentation)\n\n© Wellcome Connecting Science"
   },
   {
     "objectID": "course_modules/Module1/module1_instructor_notes.html",
@@ -1143,6 +1138,54 @@
     ]
   },
   {
+    "objectID": "course_modules/Projects/project2/project2.html",
+    "href": "course_modules/Projects/project2/project2.html",
+    "title": "project2",
+    "section": "",
+    "text": "Recommended number of participants per group: 4 to 6.\nProject work running time: 1.5h, on Friday.\nEach group will present their work in max 7 minutes, with 3 minutes left for question. Each member of the group would be expected to present at least one slide.",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "project2"
+    ]
+  },
+  {
+    "objectID": "course_modules/Projects/project2/project2.html#data-download",
+    "href": "course_modules/Projects/project2/project2.html#data-download",
+    "title": "project2",
+    "section": "1.1 Data download",
+    "text": "1.1 Data download\nDownload the sequencing data\n\nOpen the Firefox browser in the VM\nNavigate to … \nPress “Download all”. \nWait for the file to be zipped and downloaded (&lt; 5 minutes)\nProcess this file further in the command line\n\n    **\\# Create project directory and change to it**\n\n    mkdir \\$HOME/Project2 && cd \"\\$\\_\"\n\n    **\\# Extract downloaded zip file and cleanup**\n\n    unzip -j \\$HOME/Downloads/QC_Project\\*.zip -d Data\n\n    rm \\$HOME/Downloads/QC_Project\\*.zip\nDownload the FASTA file. Note: The Salmonella enterica subsp. enterica serovar Paratyphi B strain SPB7 reference genome is from NCBI",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "project2"
+    ]
+  },
+  {
+    "objectID": "course_modules/Projects/project2/project2.html#tools-to-be-used",
+    "href": "course_modules/Projects/project2/project2.html#tools-to-be-used",
+    "title": "project2",
+    "section": "2.1 Tools to be used",
+    "text": "2.1 Tools to be used\n\nBwa mem\nSamtools stats\nBcftools",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "project2"
+    ]
+  },
+  {
+    "objectID": "course_modules/Projects/project2/project2.html#tasks",
+    "href": "course_modules/Projects/project2/project2.html#tasks",
+    "title": "project2",
+    "section": "2.2 Tasks",
+    "text": "2.2 Tasks\nUse your knowledge from the QC, alignment and variant calling modules. \nTask 1: Align the reads to the reference genome with bwa mem for each group.\nTask 2: Collect the statistics about the alignments (‘samtools stats’ command) and produce QC plots? Can you spot any problems in the QC plots?\nTask 3: Call variants with bcftools to produce a VCF file (~5 min per group)\n\nFilter variants that pass QUAL&gt;=30 and DP&gt;=20.\nWhat is the number of SNPs, indels and TS/TV before and after filtering in Group2 and Group4 samples?\nCan you draw any conclusions about the first sequencing run. Was it a success? Should the institute keep the sequencing instrument? What are your recommendations moving forward.",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "project2"
+    ]
+  },
+  {
     "objectID": "course_modules/VM_guide/VM_Guide.html#introduction-to-virtual-box-and-virtual-machine",
     "href": "course_modules/VM_guide/VM_Guide.html#introduction-to-virtual-box-and-virtual-machine",
     "title": "1 Oracle VM VirtualBox Installation Guide",
@@ -1798,6 +1841,54 @@
       "Home",
       "How to setup your VM",
       "Software list"
+    ]
+  },
+  {
+    "objectID": "course_modules/Projects/project1/project1.html",
+    "href": "course_modules/Projects/project1/project1.html",
+    "title": "project1",
+    "section": "",
+    "text": "Recommended number of participants per group: 4 to 6.\nProject work running time: 1.5h, on Friday.\nEach group will present their work in max 7 minutes, with 3 minutes left for question. Each member of the group would be expected to present at least one slide.",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "project1"
+    ]
+  },
+  {
+    "objectID": "course_modules/Projects/project1/project1.html#data-download",
+    "href": "course_modules/Projects/project1/project1.html#data-download",
+    "title": "project1",
+    "section": "1.1 Data download",
+    "text": "1.1 Data download\nYou will use two iPS cell lineages kolf and kolf_2 from the HipSci project. Download a tarball from … with the scripts and unpack and prepare the data as follows\n**\\# Create project directory and change to it**\n\nmkdir \\$HOME/Project1 && cd \"\\$\\_\"\n\n**\\# Download and extract the files**\n\nwget -O variant-calling-comparison.tgz &lt;https://tinyurl.com/y3srttso&gt;\n\ntar xvfz variant-calling-comparison.tgz \n\nrm variant-calling-comparison.tgz\nLet us look into the data\n\n\n\ndata\n\n\nInside the folder you will have the reference fasta file (.fa) with its corresponding index (.fai) and dictionary (.dict) files. And two bam files with their index file (.bai)",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "project1"
+    ]
+  },
+  {
+    "objectID": "course_modules/Projects/project1/project1.html#variant-calling-tools-to-be-used",
+    "href": "course_modules/Projects/project1/project1.html#variant-calling-tools-to-be-used",
+    "title": "project1",
+    "section": "1.2 Variant calling tools to be used",
+    "text": "1.2 Variant calling tools to be used\n\nbcftools mpileup\nfreebayes\nGATK HaplotypeCaller",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "project1"
+    ]
+  },
+  {
+    "objectID": "course_modules/Projects/project1/project1.html#tasks",
+    "href": "course_modules/Projects/project1/project1.html#tasks",
+    "title": "project1",
+    "section": "1.3 Tasks",
+    "text": "1.3 Tasks\nTask 1: Run the three variant callers (should take 20 - 25min):\n\n\n\n\n\n\nbcftools mpileup -r 6 -f data/hs37d5.fa data/kolf.bam data/kolf_2.bam -Ou | bcftools call -mv -Oz -o bcftools.vcf.gz\nfreebayes -r 6 -f data/hs37d5.fa data/kolf.bam data/kolf_2.bam | bcftools view -Oz -o freebayes.vcf.gz\njava -Xms4g -Xmx4g -jar bin.part/gatk.jar HaplotypeCaller -R data/hs37d5.fa -I data/kolf.bam -I data/kolf_2.bam -L 6 -O /dev/stdout | bcftools view -Oz -o gatk.vcf.gz\n\n\n\nTask 2: Create stats for the raw callsets, note the number of SNPs, indels, and ts/tv ratio.\nTask 3: Filter the calls, require QUAL&gt;20 and note the number of SNPs, indels and ts/tv of the filtered callset. Can you explain the differences, especially the GATK tool?\nTask 4: Use the command bcftools isec on the to find variants with QUAL&gt;20 called by all three tools (presumably the highest-confidence calls). Explore the output. What is the ts/tv of variants in the intersection?\nTask 5: The variants called by one program only (presumably enriched for errors). What is the ts/tv of variants private to the callers?",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "project1"
     ]
   },
   {

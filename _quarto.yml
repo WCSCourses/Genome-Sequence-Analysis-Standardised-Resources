@@ -29,6 +29,12 @@ website:
             text: "Genome assembly"
           - href: course_modules/Glossary/glossary.qmd
             text: "Glossary of terms"
+      - text: Projects
+        menu:
+          - href: course_modules/Projects/project1/project1.qmd
+            text: "Project 1"
+          - href: course_modules/Projects/project2/project2.qmd
+            text: "Project 2"
       - text: Informatics Guide
         menu:
           - href: course_modules/VM_guide/VM_Guide.qmd
@@ -94,13 +100,14 @@ website:
           - course_modules/Module5/module5_instructor_notes.qmd
           - course_modules/Module5/module5_datasets.qmd
           - course_modules/Module5/module5_platform_guidance.qmd
+      - section: "Projects"
+        contents:
+          - course_modules/Projects/project1/project1.qmd
+          - course_modules/Projects/project2/project2.qmd
       - section: "How to setup your VM"
         contents:
           - course_modules/VM_guide/VM_Guide.qmd
           - course_modules/VM_guide/Software_list.qmd
-      - section: 'Contributors'
-        contents:
-          - "meet the team.qmd"
   
   page-navigation: true 
   page-footer: 
