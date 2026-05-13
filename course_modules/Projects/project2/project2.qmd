@@ -1,5 +1,5 @@
 ---
-title: "project2"
+title: "Project 2: QC Project evaluation of a novel sequencing platform"
 format: html
 ---
 
@@ -11,39 +11,15 @@ Project work running time: 1.5h, on Friday.
 
 Each group will present their work in max 7 minutes, with 3 minutes left for question. Each member of the group would be expected to present at least one slide.
 
-# **Project 2: QC Project evaluation of a novel sequencing platform**
+## **Introduction**
 
 Your research institute has just acquired a new Illumina sequencing machine and they have recently performed their first sequencing run. As you are the only person in your institute that has attended an NGS course and have the skills to analyse NGS data, the head of your department has volunteered you to analyse the data and present your findings to the head of the institute. The sequencing data consists of 2 lanes of Illumina data for two Salmonella Paratyphi B isolates and your task is to download the sequencing data for the run, QC and analyse it. Prepare a short presentationfor the head of the institute describing the results of your analyses. 
 
-## **Data download**
+## **Download sequencing data**
 
-Download the sequencing data
+Download the sequencing data from Github: <https://github.com/WCSCourses/Genome-Sequence-Analysis-Standardised-Resources/tree/main/course_modules/Projects/project2/data>
 
-1.  Open the Firefox browser in the VM
-
-2.  Navigate to ... 
-
-3.  Press “Download all”. 
-
-4.  Wait for the file to be zipped and downloaded (\< 5 minutes)
-
-5.  Process this file further in the command line
-
-```         
-    **\# Create project directory and change to it**
-
-    mkdir \$HOME/Project2 && cd "\$\_"
-
-    **\# Extract downloaded zip file and cleanup**
-
-    unzip -j \$HOME/Downloads/QC_Project\*.zip -d Data
-
-    rm \$HOME/Downloads/QC_Project\*.zip
-```
-
-Download the FASTA file. Note: The Salmonella enterica subsp. enterica serovar Paratyphi B strain SPB7 reference genome is from NCBI
-
-# Download the FASTA
+## Download the FASTA
 
 `wget -O CP000886.fasta  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=CP000886&rettype=fasta&retmode=text"`
 

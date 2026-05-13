@@ -313,7 +313,7 @@ The `find` command can be used to find files matching a given pattern. It can be
 
 To find all files in the current directory and all its subdirectories that end with the suffix gff:
 
-`find . -name *.gff`
+`find . -name "*.gff"`
 
 *How many gff files did you find?*
 
@@ -1467,6 +1467,3 @@ You should write a script if:
 • you’re doing something sensitive (e.g. deleting loads of files)
 
 • you’re doing something lots of times
-
-
-

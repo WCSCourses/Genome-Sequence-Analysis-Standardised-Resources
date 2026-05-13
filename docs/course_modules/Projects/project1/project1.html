@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>project1 – Genome Sequence Analysis Course</title>
+<title>Project 1: Comparison of variant callers – Genome Sequence Analysis Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -134,13 +134,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../../../course_modules/Glossary/glossary.html">
  <span class="dropdown-text">Glossary of terms</span></a>
   </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Projects</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-projects">    
         <li>
     <a class="dropdown-item" href="../../../course_modules/Projects/project1/project1.html">
  <span class="dropdown-text">Project 1</span></a>
@@ -156,6 +149,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Informatics Guide</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-informatics-guide">    
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/VM_guide/student-guide-computing-environment.html">
+ <span class="dropdown-text">Student guide for the computing environment</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="../../../course_modules/VM_guide/VM_Guide.html">
  <span class="dropdown-text">How to setup a VM</span></a>
@@ -178,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../course_modules/Projects/project1/project1.html">Projects</a></li><li class="breadcrumb-item"><a href="../../../course_modules/Projects/project1/project1.html">project1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../course_modules/Projects/project1/project1.html">Projects</a></li><li class="breadcrumb-item"><a href="../../../course_modules/Projects/project1/project1.html">Project 1: Comparison of variant callers</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -528,13 +525,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../course_modules/Projects/project1/project1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">project1</span></a>
+ <span class="menu-text">Project 1: Comparison of variant callers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../course_modules/Projects/project2/project2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">project2</span></a>
+ <span class="menu-text">Project 2: QC Project evaluation of a novel sequencing platform</span></a>
   </div>
 </li>
       </ul>
@@ -548,6 +545,12 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../course_modules/VM_guide/student-guide-computing-environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Student Guide: Computing Environment for the Course</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../course_modules/VM_guide/VM_Guide.html" class="sidebar-item-text sidebar-link">
@@ -572,22 +575,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#general-guidance-for-project" id="toc-general-guidance-for-project" class="nav-link active" data-scroll-target="#general-guidance-for-project"><span class="header-section-number">0.0.1</span> General guidance for project</a></li>
-  <li><a href="#project-1-comparison-of-variant-callers" id="toc-project-1-comparison-of-variant-callers" class="nav-link" data-scroll-target="#project-1-comparison-of-variant-callers"><span class="header-section-number">1</span> <strong>Project 1: Comparison of variant callers</strong></a>
-  <ul class="collapse">
-  <li><a href="#data-download" id="toc-data-download" class="nav-link" data-scroll-target="#data-download"><span class="header-section-number">1.1</span> <strong>Data download</strong></a></li>
-  <li><a href="#variant-calling-tools-to-be-used" id="toc-variant-calling-tools-to-be-used" class="nav-link" data-scroll-target="#variant-calling-tools-to-be-used"><span class="header-section-number">1.2</span> <strong>Variant calling tools to be used</strong></a></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">1.3</span> <strong>Tasks</strong></a></li>
-  </ul></li>
+  <li><a href="#general-guidance-for-project" id="toc-general-guidance-for-project" class="nav-link active" data-scroll-target="#general-guidance-for-project"><span class="header-section-number">0.1</span> General guidance for project</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#data-download" id="toc-data-download" class="nav-link" data-scroll-target="#data-download"><span class="header-section-number">2</span> <strong>Data download</strong></a></li>
+  <li><a href="#variant-calling-tools-to-be-used" id="toc-variant-calling-tools-to-be-used" class="nav-link" data-scroll-target="#variant-calling-tools-to-be-used"><span class="header-section-number">3</span> <strong>Variant calling tools to be used</strong></a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">4</span> <strong>Tasks</strong></a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../course_modules/Projects/project1/project1.html">Projects</a></li><li class="breadcrumb-item"><a href="../../../course_modules/Projects/project1/project1.html">project1</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../course_modules/Projects/project1/project1.html">Projects</a></li><li class="breadcrumb-item"><a href="../../../course_modules/Projects/project1/project1.html">Project 1: Comparison of variant callers</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">project1</h1>
+<h1 class="title">Project 1: Comparison of variant callers</h1>
 </div>
 
 
@@ -604,14 +605,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="general-guidance-for-project" class="level3" data-number="0.0.1">
-<h3 data-number="0.0.1" class="anchored" data-anchor-id="general-guidance-for-project"><span class="header-section-number">0.0.1</span> General guidance for project</h3>
+<section id="general-guidance-for-project" class="level3" data-number="0.1">
+<h3 data-number="0.1" class="anchored" data-anchor-id="general-guidance-for-project"><span class="header-section-number">0.1</span> General guidance for project</h3>
 <p>Recommended number of participants per group: 4 to 6.</p>
 <p>Project work running time: 1.5h, on Friday.</p>
 <p>Each group will present their work in max 7 minutes, with 3 minutes left for question. Each member of the group would be expected to present at least one slide.</p>
 </section>
-<section id="project-1-comparison-of-variant-callers" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> <strong>Project 1: Comparison of variant callers</strong></h1>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>In this project you will compare three widely used variant callers: BCFtools, FreeBayes and GATK using a 50 Mb region from human chr6.</p>
 <p>You will</p>
 <ul>
@@ -622,16 +623,15 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Identify shared and private variants using bcftools isec</p></li>
 <li><p>Interpret how filtering and caller choice affect variant discovery</p></li>
 </ul>
-<section id="data-download" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="data-download"><span class="header-section-number">1.1</span> <strong>Data download</strong></h2>
-<p>You will use two iPS cell lineages kolf and kolf_2 from the <a href="http://www.hipsci.org">HipSci project</a>. Download a tarball from … with the scripts and unpack and prepare the data as follows</p>
+</section>
+<section id="data-download" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="data-download"><span class="header-section-number">2</span> <strong>Data download</strong></h2>
+<p>You will use two iPS cell lineages kolf and kolf_2 from the <a href="http://www.hipsci.org">HipSci project</a>. Download a tarball from the <a href="https://drive.google.com/file/d/10Y72tqP42LouHu5PVKcP2arn4J7Yar1-/view?usp=drive_link">course Google Drive folder (using the browser in your VM)</a>, with the scripts and unpack and prepare the data as follows:</p>
 <pre><code>**\# Create project directory and change to it**
 
 mkdir \$HOME/Project1 &amp;&amp; cd "\$\_"
 
-**\# Download and extract the files**
-
-wget -O variant-calling-comparison.tgz &lt;https://tinyurl.com/y3srttso&gt;
+**\# Extract the files**
 
 tar xvfz variant-calling-comparison.tgz&nbsp;
 
@@ -645,16 +645,16 @@ rm variant-calling-comparison.tgz</code></pre>
 </div>
 <p>Inside the folder you will have the reference fasta file (.fa) with its corresponding index (.fai) and dictionary (.dict) files. And two bam files with their index file (.bai)</p>
 </section>
-<section id="variant-calling-tools-to-be-used" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="variant-calling-tools-to-be-used"><span class="header-section-number">1.2</span> <strong>Variant calling tools to be used</strong></h2>
+<section id="variant-calling-tools-to-be-used" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="variant-calling-tools-to-be-used"><span class="header-section-number">3</span> <strong>Variant calling tools to be used</strong></h2>
 <ul>
 <li><p><a href="https://samtools.github.io/bcftools/bcftools.html#mpileup">bcftools mpileup</a></p></li>
 <li><p><a href="https://github.com/freebayes/freebayes">freebayes</a></p></li>
 <li><p><a href="https://gatk.broadinstitute.org/hc/en-us/articles/360037225632-HaplotypeCaller">GATK HaplotypeCaller</a></p></li>
 </ul>
 </section>
-<section id="tasks" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="tasks"><span class="header-section-number">1.3</span> <strong>Tasks</strong></h2>
+<section id="tasks" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="tasks"><span class="header-section-number">4</span> <strong>Tasks</strong></h2>
 <p><strong>Task 1:</strong> Run the three variant callers (should take 20 - 25min):</p>
 <table class="caption-top table">
 <colgroup>
@@ -674,7 +674,6 @@ rm variant-calling-comparison.tgz</code></pre>
 <p><strong>Task 5:</strong> The variants called by one program only (presumably enriched for errors). What is the ts/tv of variants private to the callers?</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1254,8 +1253,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../course_modules/Projects/project2/project2.html" class="pagination-link" aria-label="project2">
-        <span class="nav-page-text">project2</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../course_modules/Projects/project2/project2.html" class="pagination-link" aria-label="Project 2: QC Project evaluation of a novel sequencing platform">
+        <span class="nav-page-text">Project 2: QC Project evaluation of a novel sequencing platform</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

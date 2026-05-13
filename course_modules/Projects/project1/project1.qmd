@@ -1,5 +1,5 @@
 ---
-title: "project1"
+title: "Project 1: Comparison of variant callers"
 format: html
 ---
 
@@ -11,7 +11,7 @@ Project work running time: 1.5h, on Friday.
 
 Each group will present their work in max 7 minutes, with 3 minutes left for question. Each member of the group would be expected to present at least one slide.
 
-# **Project 1: Comparison of variant callers**
+## Introduction
 
 In this project you will compare three widely used variant callers: BCFtools, FreeBayes and GATK using a 50 Mb region from human chr6.
 
@@ -31,16 +31,14 @@ You will
 
 ## **Data download**
 
-You will use two iPS cell lineages kolf and kolf_2 from the [HipSci project](http://www.hipsci.org). Download a tarball from ... with the scripts and unpack and prepare the data as follows
+You will use two iPS cell lineages kolf and kolf_2 from the [HipSci project](http://www.hipsci.org). Download a tarball from the [course Google Drive folder (using the browser in your VM)](https://drive.google.com/file/d/10Y72tqP42LouHu5PVKcP2arn4J7Yar1-/view?usp=drive_link), with the scripts and unpack and prepare the data as follows:
 
 ```         
 **\# Create project directory and change to it**
 
 mkdir \$HOME/Project1 && cd "\$\_"
 
-**\# Download and extract the files**
-
-wget -O variant-calling-comparison.tgz <https://tinyurl.com/y3srttso>
+**\# Extract the files**
 
 tar xvfz variant-calling-comparison.tgz 
 

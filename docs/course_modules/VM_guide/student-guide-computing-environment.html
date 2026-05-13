@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Student Guide: Computing Environment for the Course – Genome Sequence Analysis Course</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../course_modules/VM_guide/VM_Guide.html" rel="next">
+<link href="../../course_modules/Projects/project2/project2.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../site_libs/quarto-contrib/quarto-project/img/WCS_Logo-Primary_Black.jpg" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Genome Sequence Analysis Course</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../welcome.html"> 
+<span class="menu-text">Learning paths</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-modules" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Modules</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-modules">    
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Introduction-to-linux/module0.html">
+ <span class="dropdown-text">Introduction to Linux</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module1/module1.html">
+ <span class="dropdown-text">File formats and QC</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module2/module2.html">
+ <span class="dropdown-text">Reads alignment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module3/module3.html">
+ <span class="dropdown-text">Variant calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module4/module4.html">
+ <span class="dropdown-text">Structural Variation Calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Module5/module5.html">
+ <span class="dropdown-text">Genome assembly</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Glossary/glossary.html">
+ <span class="dropdown-text">Glossary of terms</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Projects/project1/project1.html">
+ <span class="dropdown-text">Project 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Projects/project2/project2.html">
+ <span class="dropdown-text">Project 2</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-informatics-guide" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Informatics Guide</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-informatics-guide">    
+        <li>
+    <a class="dropdown-item" href="../../course_modules/VM_guide/student-guide-computing-environment.html">
+ <span class="dropdown-text">Student guide for the computing environment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/VM_guide/VM_Guide.html">
+ <span class="dropdown-text">How to setup a VM</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/VM_guide/Software_list.html">
+ <span class="dropdown-text">Software list</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../course_modules/VM_guide/student-guide-computing-environment.html">How to setup your VM</a></li><li class="breadcrumb-item"><a href="../../course_modules/VM_guide/student-guide-computing-environment.html">Student Guide: Computing Environment for the Course</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Introduction to Linux</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Introduction-to-linux/module0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Introduction-to-linux/module0_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Introduction-to-linux/module0_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Introduction-to-linux/module0_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Introduction-to-linux/module0_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor’s notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Introduction-to-linux/module0_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Introduction-to-linux/module0_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">File formats</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module1/module1_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Read alignment</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module2/module2_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Variant calling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module3/module3_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Structural Variation Calling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module4/module4_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Genome Assembly</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_instructor_notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor notes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Module5/module5_platform_guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Platform guidance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Projects</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Projects/project1/project1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project 1: Comparison of variant callers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/Projects/project2/project2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project 2: QC Project evaluation of a novel sequencing platform</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">How to setup your VM</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/VM_guide/student-guide-computing-environment.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Student Guide: Computing Environment for the Course</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/VM_guide/VM_Guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Oracle VM VirtualBox Installation Guide</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../course_modules/VM_guide/Software_list.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Software list</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-a-virtual-machine" id="toc-what-is-a-virtual-machine" class="nav-link active" data-scroll-target="#what-is-a-virtual-machine"><span class="header-section-number">1</span> What is a Virtual Machine?</a></li>
+  <li><a href="#two-available-computing-setups" id="toc-two-available-computing-setups" class="nav-link" data-scroll-target="#two-available-computing-setups"><span class="header-section-number">2</span> Two Available Computing Setups</a>
+  <ul class="collapse">
+  <li><a href="#google-cloud-platform-gcp" id="toc-google-cloud-platform-gcp" class="nav-link" data-scroll-target="#google-cloud-platform-gcp"><span class="header-section-number">2.1</span> Google Cloud Platform (GCP)</a>
+  <ul class="collapse">
+  <li><a href="#how-it-works-and-how-to-access-it" id="toc-how-it-works-and-how-to-access-it" class="nav-link" data-scroll-target="#how-it-works-and-how-to-access-it"><span class="header-section-number">2.1.1</span> How it works and how to access it</a></li>
+  <li><a href="#copy-and-paste-bidirectional-and-screen-setup" id="toc-copy-and-paste-bidirectional-and-screen-setup" class="nav-link" data-scroll-target="#copy-and-paste-bidirectional-and-screen-setup"><span class="header-section-number">2.1.2</span> Copy and paste (bidirectional) and screen setup</a></li>
+  <li><a href="#using-a-split-screen-view" id="toc-using-a-split-screen-view" class="nav-link" data-scroll-target="#using-a-split-screen-view"><span class="header-section-number">2.1.3</span> Using a split screen view</a></li>
+  </ul></li>
+  <li><a href="#virtualbox-setup" id="toc-virtualbox-setup" class="nav-link" data-scroll-target="#virtualbox-setup"><span class="header-section-number">2.2</span> VirtualBox setup</a>
+  <ul class="collapse">
+  <li><a href="#system-requirements" id="toc-system-requirements" class="nav-link" data-scroll-target="#system-requirements"><span class="header-section-number">2.2.1</span> System requirements</a></li>
+  <li><a href="#download-the-virtual-machine" id="toc-download-the-virtual-machine" class="nav-link" data-scroll-target="#download-the-virtual-machine"><span class="header-section-number">2.2.2</span> Download the Virtual Machine</a></li>
+  <li><a href="#install-virtualbox" id="toc-install-virtualbox" class="nav-link" data-scroll-target="#install-virtualbox"><span class="header-section-number">2.2.3</span> Install VirtualBox</a></li>
+  <li><a href="#working-on-a-linux-virtualbox-vm" id="toc-working-on-a-linux-virtualbox-vm" class="nav-link" data-scroll-target="#working-on-a-linux-virtualbox-vm"><span class="header-section-number">2.2.4</span> Working on a Linux VirtualBox VM</a></li>
+  </ul></li>
+  <li><a href="#course-materials-on-github" id="toc-course-materials-on-github" class="nav-link" data-scroll-target="#course-materials-on-github"><span class="header-section-number">2.3</span> Course materials on GitHub</a>
+  <ul class="collapse">
+  <li><a href="#recommended-setup" id="toc-recommended-setup" class="nav-link" data-scroll-target="#recommended-setup"><span class="header-section-number">2.3.1</span> Recommended setup</a></li>
+  <li><a href="#frequently-asked-questions-about-github-course-materials" id="toc-frequently-asked-questions-about-github-course-materials" class="nav-link" data-scroll-target="#frequently-asked-questions-about-github-course-materials"><span class="header-section-number">2.3.2</span> Frequently asked questions about GitHub course materials</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../course_modules/VM_guide/student-guide-computing-environment.html">How to setup your VM</a></li><li class="breadcrumb-item"><a href="../../course_modules/VM_guide/student-guide-computing-environment.html">Student Guide: Computing Environment for the Course</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Student Guide: Computing Environment for the Course</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This guide explains how you will access and use the computing environment during the course.</p>
+<section id="what-is-a-virtual-machine" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> What is a Virtual Machine?</h1>
+<p>A <strong>Virtual Machine (often shortened to VM)</strong> is a complete computer system that runs inside your own computer. It behaves like a separate laptop with its own operating system, software, and files.</p>
+<p>For this course:</p>
+<ul>
+<li>The VM already has <strong>all the required bioinformatics tools installed, and the course data downloaded</strong>.</li>
+<li>Everyone uses the <strong>same setup</strong>, so the results are consistent.</li>
+<li>You do not need to install software manually.</li>
+</ul>
+</section>
+<section id="two-available-computing-setups" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Two Available Computing Setups</h1>
+<p>This course provides two ways to access the computing environment:</p>
+<ul>
+<li>VirtualBox runs locally on your laptop.</li>
+<li>Google Cloud Platform (GCP) runs remotely in your browser.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image6.png" class="img-fluid figure-img" alt="Comparison between VirtualBox and Google Cloud Platform virtual machine setups."></p>
+<figcaption>Comparison between VirtualBox and Google Cloud Platform virtual machine setups.</figcaption>
+</figure>
+</div>
+<p>Different classrooms in this course will have a different setup for the course participants. Please check the table below to see which classroom settings you will be using.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Platform</th>
+<th>Classroom</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>VirtualBox setup</td>
+<td>Khon Kaen University - Thailand</td>
+</tr>
+<tr class="even">
+<td>Google Cloud Platform setup</td>
+<td>All India Institute of Medical Sciences - India; Cancer Research Malaysia - Malaysia; Philippine Genome Center Visayas - Philippines; A*STAR and National Institute of Singapore - Singapore</td>
+</tr>
+</tbody>
+</table>
+<section id="google-cloud-platform-gcp" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="google-cloud-platform-gcp"><span class="header-section-number">2.1</span> Google Cloud Platform (GCP)</h2>
+<p>The Google Cloud Platform (GCP) Virtual Machine is a remote version of the course environment that runs on cloud servers rather than on your local computer. You access it through your web browser, so no installation is required on your laptop. It provides the same tools and setup as the VirtualBox VM, but everything runs remotely.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image5.png" class="img-fluid figure-img" alt="Information slide on Google Cloud Platform setup."></p>
+<figcaption>Information slide on Google Cloud Platform setup.</figcaption>
+</figure>
+</div>
+<section id="how-it-works-and-how-to-access-it" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="how-it-works-and-how-to-access-it"><span class="header-section-number">2.1.1</span> How it works and how to access it</h3>
+<p>The local trainer will provide a URL (web link) and login details. Open this link in your browser (Firefox recommended), enter the password when prompted, and wait for the virtual desktop to load. Once connected, you will see a full desktop environment in your browser and can interact with it as you would on a normal computer, using your mouse and keyboard. Think of it as controlling another computer through your browser.</p>
+<p>If the page does not load when you click on the web link:</p>
+<ul>
+<li>Refresh the page.</li>
+<li>Try opening it in Firefox or any other browser in incognito mode.</li>
+<li>Check your internet connection.</li>
+<li>Ensure you are using the correct URL.</li>
+<li>Contact your local trainer if the issue persists.</li>
+</ul>
+<p>Optional: enable auto-reconnect in noVNC on the student side:</p>
+<ul>
+<li>Inside the noVNC interface, click <strong>Settings</strong>.</li>
+<li>Enable <strong>Reconnect automatically</strong>.</li>
+<li>Set the reconnect delay to 2-5 seconds.</li>
+<li>If the browser briefly pauses, it should reconnect automatically.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image7.png" class="img-fluid figure-img" alt="Lock screen shown when accessing the GCP VM."></p>
+<figcaption>Lock screen shown when accessing the GCP VM.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image9.png" class="img-fluid figure-img" alt="Homepage after logging in to the GCP VM, showing the Xfce Terminal option."></p>
+<figcaption>Homepage after logging in to the GCP VM. To open the terminal, click Xfce Terminal.</figcaption>
+</figure>
+</div>
+</section>
+<section id="copy-and-paste-bidirectional-and-screen-setup" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="copy-and-paste-bidirectional-and-screen-setup"><span class="header-section-number">2.1.2</span> Copy and paste (bidirectional) and screen setup</h3>
+<p>When using the GCP Virtual Machine through your browser, copy and paste works via the built-in noVNC clipboard. This allows you to transfer text both ways between your computer and the VM. Please refer to the screenshots below.</p>
+<p>To copy text from your computer to the VM:</p>
+<ul>
+<li>Copy the text on your computer using <kbd>Ctrl</kbd> + <kbd>C</kbd> or <kbd>Cmd</kbd> + <kbd>C</kbd>.</li>
+<li>In the noVNC window, click the clipboard icon on the left toolbar.</li>
+<li>Paste the text into the clipboard panel.</li>
+<li>Inside the VM, paste it into the terminal or application using <kbd>Ctrl</kbd> + <kbd>V</kbd>.</li>
+</ul>
+<p>To copy text from the VM to your computer:</p>
+<ul>
+<li>Select and copy the text inside the VM.</li>
+<li>Open the noVNC clipboard panel.</li>
+<li>Copy the text from the panel to your computer.</li>
+</ul>
+</section>
+<section id="using-a-split-screen-view" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="using-a-split-screen-view"><span class="header-section-number">2.1.3</span> Using a split screen view</h3>
+<p>To work efficiently during the course, it is recommended to use a <strong>split screen layout</strong>:</p>
+<ul>
+<li>One half of your screen for the <strong>GCP VM terminal</strong>.</li>
+<li>The other half for the <strong>browser with course materials on GitHub</strong>.</li>
+</ul>
+<p>This allows you to:</p>
+<ul>
+<li>Read instructions while typing commands.</li>
+<li>Reduce switching between windows.</li>
+<li>Follow practical steps more easily.</li>
+</ul>
+<p>Keeping the terminal and course materials visible at the same time will make the practical sessions smoother and faster.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image3.png" class="img-fluid figure-img" alt="Opening the noVNC side menu by clicking the three floating dots on the left-hand side of the screen."></p>
+<figcaption>Opening the noVNC side menu by clicking the three floating dots on the left-hand side of the screen.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image8.png" class="img-fluid figure-img" alt="Browser clipboard permission prompt shown when copy-pasting from the clipboard."></p>
+<figcaption>Browser clipboard permission prompt shown when copy-pasting from the clipboard. Click Paste.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="virtualbox-setup" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="virtualbox-setup"><span class="header-section-number">2.2</span> VirtualBox setup</h2>
+<p>The Virtual Machine (VM) is a pre-configured Linux system that contains all the tools and datasets required for the course. It runs on your own computer using VirtualBox.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image4.png" class="img-fluid figure-img" alt="Information slide on VirtualBox setup."></p>
+<figcaption>Information slide on VirtualBox setup.</figcaption>
+</figure>
+</div>
+<section id="system-requirements" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="system-requirements"><span class="header-section-number">2.2.1</span> System requirements</h3>
+<p>The VM file is large and requires sufficient system resources to run smoothly.</p>
+<p>Minimum requirements:</p>
+<ul>
+<li>Disk space: at least 60 GB available. The VM file is approximately 40 GB unzipped.</li>
+<li>RAM: 8 GB minimum. 16 GB is recommended for better performance.</li>
+<li>Processor: multi-core CPU. 4 cores are recommended.</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The VM is not compatible with ARM-based MacBooks, such as Apple M1, M2, or M3 devices.</p>
+</div>
+</div>
+</section>
+<section id="download-the-virtual-machine" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="download-the-virtual-machine"><span class="header-section-number">2.2.2</span> Download the Virtual Machine</h3>
+<p>The Virtual Machine (VM) file is hosted on Globus, a platform designed for reliable transfer of large files. To download it, you will need to create a Globus account and access the file through the provided link. Globus is used because it allows downloads to resume if interrupted, making it more reliable than standard downloads for large files.</p>
+<ul>
+<li>Create a Globus account at <a href="https://www.globus.org" class="uri">https://www.globus.org</a>.</li>
+<li>Access the VM file using this link: <a href="https://g-0329b9.4c5f14.75bc.data.globus.org/GSA2026.vdi.zip" class="uri">https://g-0329b9.4c5f14.75bc.data.globus.org/GSA2026.vdi.zip</a>.</li>
+<li>File size: approximately 20 GB zipped and 40 GB unzipped.</li>
+<li>Download time will depend on your internet speed.</li>
+<li>Ensure you have at least 60-80 GB of free disk space before downloading.</li>
+<li>Use a stable internet connection for the best results.</li>
+<li>Globus allows downloads to resume from where they stopped if interrupted.</li>
+<li>After downloading, unzip the file to obtain the <code>.vdi</code> file.</li>
+<li>Import the <code>.vdi</code> file into VirtualBox to start using the VM.</li>
+</ul>
+</section>
+<section id="install-virtualbox" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="install-virtualbox"><span class="header-section-number">2.2.3</span> Install VirtualBox</h3>
+<p>VirtualBox is a free and open-source software that allows you to run a Virtual Machine (VM) on your computer. It creates a virtual environment where you can run a separate operating system, in this case Linux, without affecting your main system. This is how you will access the pre-configured course environment.</p>
+<p>VirtualBox software can be downloaded from <a href="https://www.virtualbox.org/" class="uri">https://www.virtualbox.org/</a>.</p>
+<p>Please note that you will need administrator access on your laptop to install VirtualBox. If you are using a work-managed device, you may need to request installation through your IT support team. Additionally, the current shared <code>.vdi</code> file is not compatible with Apple Silicon-based VirtualBox installation.</p>
+<p>Detailed setup instructions with images are available in the <a href="https://wcscourses.github.io/Genome-Sequence-Analysis-Standardised-Resources/course_modules/VM_guide/VM_Guide.html">Oracle VM VirtualBox Installation Guide</a>.</p>
+</section>
+<section id="working-on-a-linux-virtualbox-vm" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="working-on-a-linux-virtualbox-vm"><span class="header-section-number">2.2.4</span> Working on a Linux VirtualBox VM</h3>
+<p>Once the Virtual Machine is running, you will see a Linux desktop environment.</p>
+<ul>
+<li>Log in to the virtual machine with the password: <code>manager</code>.</li>
+<li>On the left-hand side, there is a taskbar with commonly used applications pinned for easy access.</li>
+<li>The Terminal, shown as a black icon, is the main tool you will use during practical sessions to run commands and complete exercises.</li>
+<li>A Firefox browser is available, with bookmarks already set up for:
+<ul>
+<li>The course GitHub repository with slides, exercises, and guides.</li>
+<li>The Learning Management System (LMS) for course access and communication.</li>
+</ul></li>
+<li>Most of your work during the course will take place in the terminal, with the browser used alongside it to follow instructions and access materials. We recommend keeping your screen split, with half the terminal open and half the browser open, so you can read the manual while typing commands more easily.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/image2.png" class="img-fluid figure-img" alt="VirtualBox interface."></p>
+<figcaption>VirtualBox interface.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="course-materials-on-github" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="course-materials-on-github"><span class="header-section-number">2.3</span> Course materials on GitHub</h2>
+<p>All course materials are hosted on GitHub and can be accessed here: <a href="https://wcscourses.github.io/Genome-Sequence-Analysis-Standardised-Resources/" class="uri">https://wcscourses.github.io/Genome-Sequence-Analysis-Standardised-Resources/</a>.</p>
+<p>This website will be your main reference throughout the course and includes:</p>
+<ul>
+<li>Lecture slides for each topic.</li>
+<li>Practical exercises with step-by-step instructions.</li>
+<li>Tutorials and walkthroughs for key analyses.</li>
+<li>Helpful guides and supporting documentation.</li>
+</ul>
+<p>How you will use it:</p>
+<ul>
+<li>Follow the practical instructions during sessions.</li>
+<li>Copy and run commands directly in your terminal.</li>
+<li>Refer back to slides and notes for clarification.</li>
+<li>Use it as a reference during and after the course.</li>
+</ul>
+<section id="recommended-setup" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="recommended-setup"><span class="header-section-number">2.3.1</span> Recommended setup</h3>
+<p>Keep the GitHub page open alongside your Virtual Machine:</p>
+<ul>
+<li>One half of your screen: Terminal (VM).</li>
+<li>Other half: GitHub course materials.</li>
+</ul>
+<p>This allows you to read instructions while typing commands, making the workflow much easier.</p>
+</section>
+<section id="frequently-asked-questions-about-github-course-materials" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="frequently-asked-questions-about-github-course-materials"><span class="header-section-number">2.3.2</span> Frequently asked questions about GitHub course materials</h3>
+<p><strong>Do I need to log in to access the GitHub materials?</strong></p>
+<p>No, all course materials are publicly available. You can access them directly without creating a GitHub account.</p>
+<p><strong>When will the lecture slides be available?</strong></p>
+<p>Slides will be available on GitHub after each session.</p>
+<p><strong>When will answers to practical exercises be shared?</strong></p>
+<p>Answers will typically be uploaded to GitHub the following day. In addition, walkthroughs and explanations may also be shared during the course sessions.</p>
+<p><strong>How long will I have access to the materials?</strong></p>
+<p>You will have access indefinitely, as long as the website is available online. We recommend bookmarking the page so you can easily return to it.</p>
+<p><strong>Can I download and reuse the materials?</strong></p>
+<p>Yes, you are free to download and reuse the materials for teaching or learning purposes. However:</p>
+<ul>
+<li>You must credit Wellcome Sanger Institute.</li>
+<li>The materials are shared under a Creative Commons licence.</li>
+<li>Commercial use is not permitted.</li>
+</ul>
+<p><strong>Will session recordings be available?</strong></p>
+<p>Yes, lectures will be recorded, but they may not be available immediately. There will be a delay while videos are edited, uploaded, and reviewed for consent before sharing.</p>
+<p><strong>Who should I contact if I face an issue at any point?</strong></p>
+<p>Your first point of contact should be your local instructors and classroom assistants. You can also reach out via the WhatsApp group for support.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../course_modules/Projects/project2/project2.html" class="pagination-link" aria-label="Project 2: QC Project evaluation of a novel sequencing platform">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Project 2: QC Project evaluation of a novel sequencing platform</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../course_modules/VM_guide/VM_Guide.html" class="pagination-link" aria-label="Oracle VM VirtualBox Installation Guide">
+        <span class="nav-page-text">Oracle VM VirtualBox Installation Guide</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>This work is licensed under a Creative Commons Attribution 4.0 International License. Reuse is encouraged with acknowledgement</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
