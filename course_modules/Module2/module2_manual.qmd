@@ -17,15 +17,17 @@ For DNA, aligning short reads to a reference allows researchers to **identify va
 
 Although sequencing technologies have advanced dramatically, the core principles of sequence alignment have remained largely unchanged since the 1980s. Tools like **BLAST (Basic Local Alignment Search Tool)** introduced the foundational **"seed-and-extend"** strategy, where short matching subsequences (typically \~10 bp) from a query are used to identify candidate regions in a larger database, which are then extended to find high-scoring alignments. In the context of next-generation sequencing (NGS), alignment is performed at the **nucleotide level**, often between closely related sequences (e.g., human-to-human or microbial strains), which allows algorithms to assume a limited number of mismatches and optimize performance accordingly. Alignment tools also distinguish between **gapped and ungapped** approaches, with gapped alignment being essential for detecting **insertions and deletions (indels)**. While the methods are conceptually similar to early tools, NGS has vastly increased the scale and complexity of alignment, requiring highly efficient algorithms to process millions to billions of short reads rapidly.
 
-### **Hash Table-Based Alignment**
+### Hash-Based (Seed-and-Extend) Alignment
 
-![**Hash table-based alignment**](images/hash%20table%20alignment.png){width="399"}
+![**Hash-based alignment**](images/hash%20table%20alignment.png){width="399"}
 
-**Hash Table-Based Alignment** is a common approach in next-generation sequencing for mapping short reads to a reference genome. It relies on indexing short, fixed-length nucleotide sequences called **k-mers** (e.g., a 31-mer is a string of 31 nucleotides). The algorithm typically begins by building a **hash table index** of all possible k-mers in the reference genome along with their genomic positions—a process that can generate several gigabytes of data for the human genome. During alignment, each sequencing read is broken into k-mers, and the index is used to rapidly find candidate mapping positions (**the seed phase**). The location with the most matching k-mers is selected, and a **Smith-Waterman alignment** is then performed to fine-tune the placement of the read. The final alignments are typically saved in formats like **BAM** and **CRAM**. Tools differ in whether they hash the reads or the reference: **MAQ, ELAND, ZOOM, and SHRiMP** hash the reads (offering flexibility but variable memory usage), while **SOAP, BFAST, and MOSAIK** hash the reference, providing more consistent memory usage.
+**Hash-Based Alignment** is a widely used strategy in early and some modern short-read mappers. It relies on breaking sequencing reads into short, fixed-length substrings called **k-mers** (e.g., a 31-mer is a string of 31 nucleotides), and using a hash table to index either the reference genome or the read-derived k-mer.
 
-### **Suffix/Prefix Tree-Based Aligners**
+During alignment, reads are decomposed into short k-mer "seeds", which serve as initial exact matches used to anchor the read to candidate genomic locations. These candidate regions are then *extended* (hence, **seed-and-extend**) and refined us a local alignment algorithm such as Smith-Waterman, to account for mismatches and small insertions or deletions. The final alignments are typically saved in formats like **BAM** and **CRAM**. Tools may differ in whether they hash the reads or the reference: **MAQ, ELAND, ZOOM, and SHRiMP** hash the reads (offering flexibility but variable memory usage), while **SOAP, BFAST, and MOSAIK** hash the reference, providing more consistent memory usage.
 
-**Suffix/Prefix Tree-Based Aligners** use specialized data structures to enable rapid and efficient string matching during sequence alignment. A common structure is the **suffix tree (or simply tree)**, which stores all possible suffixes (or prefixes) of a reference genome, allowing for fast lookup of sequence patterns. Modern implementations typically rely on a more compact and memory-efficient structure known as the **FM-index**, which is built on the **Burrows-Wheeler Transform (BWT)**. FM-index-based aligners significantly reduce memory usage while maintaining high alignment speed. Tools such as **MUMmer**, **BWA**, and **Bowtie** use these methods to quickly identify candidate mapping locations. However, they still require a **final local alignment step** (e.g., Smith-Waterman) to accurately map reads and account for mismatches and small insertions or deletions.
+### FM-index / BWT-Based Alignment
+
+**FM-index-Based Alignment** uses a compressed full-text indexing structure derived from the **Burrows-Wheeler Transform (BWT)** to enable fast and memory-efficient searching of sequencing reads against a reference genome. Unlike hash-based approaches, FM-index methods do not explicitly store k-mer lookup tables. Instead, they enable exact or near-exact pattern matching by performing backward search over a compressed representation of all suffixes of the reference genome. This approach significantly reduces memory usage while maintaining high alignment speed, and tools such as **MUMmer**, **BWA**, and **Bowtie** use it to quickly identify candidate mapping locations. However, they still require a **final local alignment step** (e.g., Smith-Waterman) to accurately map reads and account for mismatches and small insertions or deletions.
 
 ### The Smith-Waterman Algorithm
 
@@ -39,17 +41,17 @@ The **fragment length** refers to the full DNA segment between the sequencing ad
 
 ### Glossary
 
--   **Fragment Length**: The total length of the DNA molecule from adapter to adapter.
+- **Fragment Length**: The total length of the DNA molecule from adapter to adapter.
 
--   **Insert Size**: The distance between the start of Read 1 and the end of Read 2 (excluding adapter sequences).
+- **Insert Size**: The distance between the start of Read 1 and the end of Read 2 (excluding adapter sequences).
 
--   **Inner Distance**: The portion of the insert that is not covered by either read; relevant in estimating library insert size.
+- **Inner Distance**: The portion of the insert that is not covered by either read; relevant in estimating library insert size.
 
--   **Read 1 / Read 2**: The two ends of the same DNA fragment that are sequenced separately. **Read 1** typically starts at the 5′ end of the fragment. **Read 2** starts from the opposite end (3′).
+- **Read 1 / Read 2**: The two ends of the same DNA fragment that are sequenced separately. **Read 1** typically starts at the 5′ end of the fragment. **Read 2** starts from the opposite end (3′).
 
--   **Adapter**: Synthetic DNA sequences ligated to fragment ends to allow for sequencing; sometimes appear in reads when insert size is small.
+- **Adapter**: Synthetic DNA sequences ligated to fragment ends to allow for sequencing; sometimes appear in reads when insert size is small.
 
--   **Same Name**: Both reads in a pair receive the same identifier in FASTQ or BAM files, enabling correct pairing during alignment.
+- **Same Name**: Both reads in a pair receive the same identifier in FASTQ or BAM files, enabling correct pairing during alignment.
 
 ### Mapping qualities
 
