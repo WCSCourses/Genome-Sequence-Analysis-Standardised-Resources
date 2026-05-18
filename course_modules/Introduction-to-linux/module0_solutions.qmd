@@ -3,4 +3,4 @@ title: "Solutions"
 format: html
 ---
 
-The solutions to the exercises can be found on the [LMS](https://lms.wellcomeconnectingscience.org/course/view.php?id=347&sectionid=2594).
+The solutions to the exercises can be found on the [LMS](https://lms.wellcomeconnectingscience.org/mod/page/view.php?id=11520).

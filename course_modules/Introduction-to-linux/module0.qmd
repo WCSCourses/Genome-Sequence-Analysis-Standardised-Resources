@@ -37,6 +37,8 @@ This tutorial was written by Jacqui Keane.
 
 [Exercises](module0_exercises.qmd)
 
+[Solutions](module0_solutions.qmd)
+
 # Teaching guidance
 
 [Instructor notes](module0_instructor_notes.qmd)
