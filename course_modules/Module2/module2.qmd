@@ -45,6 +45,8 @@ On completion of the tutorial, you can expect to be able to:
 
 -   Practical exercises: 2 hours
 
+-   Solutions: 30 minutes
+
 # Manual and practical execises
 
 [Module manual](module2_manual.qmd)

@@ -13,7 +13,7 @@ This tutorial was written by Jacqui Keane and Thomas Keane.
 
 # Duration
 
-3.5 hours
+2.5 hours
 
 # Key topics
 
@@ -31,9 +31,11 @@ This tutorial was written by Jacqui Keane and Thomas Keane.
 
 # Activities
 
--   Lecture: 1 hour
+-   Lecture: .5 hours
 
--   Practical exercises: 2.5 hours
+-   Practical exercises: 1 hour
+
+-   Solutions: .5 hours
 
 # Manual
 

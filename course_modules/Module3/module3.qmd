@@ -13,7 +13,7 @@ Content by Qasim Ayub
 
 # Duration
 
-2.5h
+1.5h
 
 # Key topics
 
@@ -40,7 +40,9 @@ By the end of this module, you should be able to:
 
 -   Lecture 0.5h
 
--   Practical exercises 2h
+-   Practical exercises 0.5h
+
+-   Solutions 0.5h
 
 # Manual and practical exercises
 

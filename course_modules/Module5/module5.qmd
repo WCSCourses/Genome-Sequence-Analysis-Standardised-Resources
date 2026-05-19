@@ -35,7 +35,9 @@ On completion of the tutorial, you can expect to be able to:
 
 -   Lecture: .5 hours
 
--   Practical exercises: 2 hours
+-   Practical exercises: 1.5 hours
+
+-   Solutions: .5 hours
 
 # Manual
 
