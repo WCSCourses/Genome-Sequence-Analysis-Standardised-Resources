@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>QC assessment of NGS data – Genome Sequence Analysis Course</title>
+<title>Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients – Genome Sequence Analysis Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../../">
-<script src="../../../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -112,10 +78,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../../site_libs/quarto-contrib/quarto-project/img/WCS_Logo-Primary_Black.jpg" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../site_libs/quarto-contrib/quarto-project/img/WCS_Logo-Primary_Black.jpg" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Genome Sequence Analysis Course</span>
     </a>
   </div>
@@ -126,11 +92,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../../welcome.html"> 
+    <a class="nav-link" href="../../../welcome.html"> 
 <span class="menu-text">Learning paths</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -139,47 +105,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-modules">    
         <li>
-    <a class="dropdown-item" href="../../../../course_modules/Introduction-to-linux/module0.html">
+    <a class="dropdown-item" href="../../../course_modules/Introduction-to-linux/module0.html">
  <span class="dropdown-text">Introduction to Linux</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../../course_modules/Module1/module1.html">
+    <a class="dropdown-item" href="../../../course_modules/Module1/module1.html">
  <span class="dropdown-text">File formats and QC</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../../course_modules/Module2/module2.html">
+    <a class="dropdown-item" href="../../../course_modules/Module2/module2.html">
  <span class="dropdown-text">Reads alignment</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../../course_modules/Module3/module3.html">
+    <a class="dropdown-item" href="../../../course_modules/Module3/module3.html">
  <span class="dropdown-text">Variant calling</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../../course_modules/Module4/module4.html">
+    <a class="dropdown-item" href="../../../course_modules/Module4/module4.html">
  <span class="dropdown-text">Structural Variation Calling</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../../course_modules/Module5/module5.html">
+    <a class="dropdown-item" href="../../../course_modules/Module5/module5.html">
  <span class="dropdown-text">Genome assembly</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../../course_modules/Glossary/glossary.html">
+    <a class="dropdown-item" href="../../../course_modules/Glossary/glossary.html">
  <span class="dropdown-text">Glossary of terms</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../../course_modules/Projects/project1/project1.html">
+    <a class="dropdown-item" href="../../../course_modules/Projects/project1/project1.html">
  <span class="dropdown-text">Project 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../../course_modules/Projects/project2/project2.html">
+    <a class="dropdown-item" href="../../../course_modules/Projects/project2/project2.html">
  <span class="dropdown-text">Project 2</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../../course_modules/Projects/project3/project3.html">
+    <a class="dropdown-item" href="../../../course_modules/Projects/project3/project3.html">
  <span class="dropdown-text">Project 3</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../../course_modules/Projects/project4/project4.html">
+    <a class="dropdown-item" href="../../../course_modules/Projects/project4/project4.html">
  <span class="dropdown-text">Project 4</span></a>
   </li>  
     </ul>
@@ -190,15 +156,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-informatics-guide">    
         <li>
-    <a class="dropdown-item" href="../../../../course_modules/VM_guide/student-guide-computing-environment.html">
+    <a class="dropdown-item" href="../../../course_modules/VM_guide/student-guide-computing-environment.html">
  <span class="dropdown-text">Student guide for the computing environment</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../../course_modules/VM_guide/VM_Guide.html">
+    <a class="dropdown-item" href="../../../course_modules/VM_guide/VM_Guide.html">
  <span class="dropdown-text">How to setup a VM</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../../course_modules/VM_guide/Software_list.html">
+    <a class="dropdown-item" href="../../../course_modules/VM_guide/Software_list.html">
  <span class="dropdown-text">Software list</span></a>
   </li>  
     </ul>
@@ -215,7 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">QC assessment of NGS data</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -246,43 +212,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Introduction-to-linux/module0.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Introduction-to-linux/module0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Introduction-to-linux/module0_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Introduction-to-linux/module0_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Introduction-to-linux/module0_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Introduction-to-linux/module0_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Introduction-to-linux/module0_solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Introduction-to-linux/module0_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Introduction-to-linux/module0_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Introduction-to-linux/module0_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor’s notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Introduction-to-linux/module0_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Introduction-to-linux/module0_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Introduction-to-linux/module0_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Introduction-to-linux/module0_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -299,43 +265,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module1/module1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module1/module1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module1/module1_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module1/module1_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module1/module1_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module1/module1_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module1/module1_solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module1/module1_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module1/module1_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module1/module1_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module1/module1_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module1/module1_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module1/module1_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module1/module1_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -352,43 +318,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module2/module2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module2/module2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module2/module2_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module2/module2_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module2/module2_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module2/module2_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module2/module2_solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module2/module2_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module2/module2_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module2/module2_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module2/module2_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module2/module2_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module2/module2_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module2/module2_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -405,43 +371,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module3/module3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module3/module3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module3/module3_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module3/module3_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module3/module3_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module3/module3_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module3/module3_solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module3/module3_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module3/module3_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module3/module3_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module3/module3_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module3/module3_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module3/module3_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module3/module3_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -458,43 +424,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module4/module4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module4/module4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module4/module4_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module4/module4_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module4/module4_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module4/module4_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module4/module4_solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module4/module4_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module4/module4_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module4/module4_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module4/module4_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module4/module4_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module4/module4_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module4/module4_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -511,43 +477,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module5/module5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module5/module5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module5/module5_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module5/module5_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module5/module5_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module5/module5_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module5/module5_solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module5/module5_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module5/module5_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module5/module5_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module5/module5_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module5/module5_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Module5/module5_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module5/module5_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -564,19 +530,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Projects/project1/project1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Projects/project1/project1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project 1: Comparison of variant callers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Projects/project2/project2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Projects/project2/project2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project 2: QC Project evaluation of a novel sequencing platform</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/Projects/project3/project3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Projects/project3/project3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project 3: Identifying host genetic factors for resistance to SARS-CoV</span></a>
   </div>
 </li>
@@ -596,19 +562,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/VM_guide/student-guide-computing-environment.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/VM_guide/student-guide-computing-environment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Student Guide: Computing Environment for the Course</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/VM_guide/VM_Guide.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/VM_guide/VM_Guide.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Oracle VM VirtualBox Installation Guide</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../course_modules/VM_guide/Software_list.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/VM_guide/Software_list.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Software list</span></a>
   </div>
 </li>
@@ -624,22 +590,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#base-quality" id="toc-base-quality" class="nav-link active" data-scroll-target="#base-quality"><span class="header-section-number">1</span> Base quality</a></li>
-  <li><a href="#other-base-calling-errors" id="toc-other-base-calling-errors" class="nav-link" data-scroll-target="#other-base-calling-errors"><span class="header-section-number">2</span> Other base calling errors</a></li>
-  <li><a href="#mismatches-per-cycle" id="toc-mismatches-per-cycle" class="nav-link" data-scroll-target="#mismatches-per-cycle"><span class="header-section-number">3</span> Mismatches per cycle</a></li>
-  <li><a href="#gc-content" id="toc-gc-content" class="nav-link" data-scroll-target="#gc-content"><span class="header-section-number">4</span> GC content</a></li>
-  <li><a href="#gc-content-by-cycle" id="toc-gc-content-by-cycle" class="nav-link" data-scroll-target="#gc-content-by-cycle"><span class="header-section-number">5</span> GC content by cycle</a></li>
-  <li><a href="#fragment-size" id="toc-fragment-size" class="nav-link" data-scroll-target="#fragment-size"><span class="header-section-number">6</span> Fragment size</a>
-  <ul class="collapse">
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">6.1</span> Exercises</a></li>
-  </ul></li>
-  <li><a href="#insertionsdeletions-per-cycle" id="toc-insertionsdeletions-per-cycle" class="nav-link" data-scroll-target="#insertionsdeletions-per-cycle"><span class="header-section-number">7</span> Insertions/Deletions per cycle</a></li>
-  <li><a href="#generating-qc-stats" id="toc-generating-qc-stats" class="nav-link" data-scroll-target="#generating-qc-stats"><span class="header-section-number">8</span> Generating QC stats</a>
-  <ul class="collapse">
-  <li><a href="#summary-numbers-sn" id="toc-summary-numbers-sn" class="nav-link" data-scroll-target="#summary-numbers-sn"><span class="header-section-number">8.1</span> Summary Numbers (SN)</a></li>
-  <li><a href="#exercises-1" id="toc-exercises-1" class="nav-link" data-scroll-target="#exercises-1"><span class="header-section-number">8.2</span> Exercises</a></li>
-  <li><a href="#generating-qc-plots" id="toc-generating-qc-plots" class="nav-link" data-scroll-target="#generating-qc-plots"><span class="header-section-number">8.3</span> Generating QC plots</a></li>
-  </ul></li>
+  <li><a href="#case-scenario" id="toc-case-scenario" class="nav-link active" data-scroll-target="#case-scenario"><span class="header-section-number">1</span> <strong>Case Scenario</strong></a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">2</span> <strong>Learning Objectives</strong></a></li>
+  <li><a href="#data-download" id="toc-data-download" class="nav-link" data-scroll-target="#data-download"><span class="header-section-number">3</span> Data download</a></li>
+  <li><a href="#tools-to-be-used" id="toc-tools-to-be-used" class="nav-link" data-scroll-target="#tools-to-be-used"><span class="header-section-number">4</span> Tools to be used</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">5</span> Tasks</a></li>
   </ul>
 </nav>
     </div>
@@ -648,7 +603,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">QC assessment of NGS data</h1>
+<h1 class="title">Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients</h1>
 </div>
 
 
@@ -665,137 +620,68 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>QC is an important part of any analysis. In this section we are going to look at some of the metrics and graphs that can be used to assess the QC of NGS data.</p>
-<section id="base-quality" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="base-quality"><span class="header-section-number">1</span> Base quality</h2>
-<p><a href="https://en.wikipedia.org/wiki/Illumina_dye_sequencing">Illumina sequencing</a> technology relies on sequencing by synthesis. One of the most common problems with this is <strong>dephasing</strong>. For each sequencing cycle, there is a possibility that the replication machinery slips and either incorporates more than one nucleotide or perhaps misses to incorporate one at all. The more cycles that are run (i.e.&nbsp;the longer the read length gets), the greater the accumulation of these types of errors gets. This leads to a heterogeneous population in the cluster, and a decreased signal purity, which in turn reduces the precision of the base calling. The figure below shows an example of this.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/base_qual.png" class="img-fluid figure-img"></p>
-<figcaption>Mean Base Quality</figcaption>
-</figure>
-</div>
-<p>Because of dephasing, it is possible to have high-quality data at the beginning of the read but really low-quality data towards the end of the read. In those cases you can decide to trim off the low-quality reads, for example using a tool called <a href="http://www.usadellab.org/cms/?page=trimmomatic">Trimmomatic</a>.</p>
-<p>The figures below shows an example of a good sequencing run (left) and a poor sequencing run (right).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/base_qual_comparison.png" class="img-fluid figure-img"></p>
-<figcaption>Base quality</figcaption>
-</figure>
-</div>
+<section id="case-scenario" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="case-scenario"><span class="header-section-number">1</span> <strong>Case Scenario</strong></h2>
+<p>During the COVID-19 pandemic, additional investigations on the nasal microbiome of SARS-CoV-2 positive patients were conducted at your facility to better understand possible secondary bacterial infections associated with disease progression. Among the collected samples, one patient exhibited a dominant bacterial isolate recovered from a nasal swab culture. Due to the potential clinical significance of bacterial co-infections in COVID-19 patients, the isolate was subjected to whole genome sequencing using Illumina paired-end sequencing technology. Insert size estimate was 150 bp before sequencing,&nbsp;</p>
+<p>As a bioinformatics analyst in the laboratory, the task is to process the sequencing data, assemble the bacterial genome, evaluate the quality of the assembly, and determine the taxonomic identity of the isolate. Correct identification of the organism is important for understanding possible secondary infections and their implications in patient management and antimicrobial surveillance.</p>
 </section>
-<section id="other-base-calling-errors" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="other-base-calling-errors"><span class="header-section-number">2</span> Other base calling errors</h2>
-<p>There are several different reasons for a base to be called incorrectly, as shown in the figure below. <strong>Phasing noise</strong> and <strong>signal decay</strong> is a result of the dephasing issue described above. During library preparation, <strong>mixed clusters</strong> can occur if multiple templates get co-located. These clusters should be removed from the downstream analysis. <strong>Boundary effects</strong> occur due to optical effects when the intensity is uneven across each tile, resulting in higher intensity found toward the center. <strong>Cross-talk</strong> occurs because the emission frequency spectra for each of the four base dyes partly overlap, creating uncertainty. Finally, for previous sequencing cycle methods <strong>T fluorophore accumulation</strong> was an issue, where incomplete removal of the dye coupled to thymine lead to an ambient accumulation the nucleotides, causing a false high Thymine trend.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/base_calling_errors.jpg" class="img-fluid figure-img"></p>
-<figcaption>Base Calling Errors</figcaption>
-</figure>
-</div>
-<p><em>Base-calling for next-generation sequencing platforms</em>, doi: <a href="https://academic.oup.com/bib/article/12/5/489/268399">10.1093/bib/bbq077</a></p>
+<section id="learning-objectives" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">2</span> <strong>Learning Objectives</strong></h2>
+<p>At the end of this exercise, participants should be able to:</p>
+<ul>
+<li><p>Assemble a bacterial genome from Illumina paired-end sequencing reads</p></li>
+<li><p>Evaluate and interpret genome assembly statistics</p></li>
+<li><p>Identify bacterial taxa using sequence similarity searches</p></li>
+<li><p>Interpret results within the context of secondary bacterial infection</p></li>
+</ul>
 </section>
-<section id="mismatches-per-cycle" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="mismatches-per-cycle"><span class="header-section-number">3</span> Mismatches per cycle</h2>
-<p>Aligning reads to a high-quality reference genome can provide insight to the quality of a sequencing run by showing you the mismatches to the reference sequence. This can help you detect cycle-specific errors. Mismatches can occur due to two main causes, sequencing errors and differences between your sample and the reference genome, which is important to bear in mind when interpreting mismatch graphs. The figure below shows an example of a good run (left) and a bad one (right). In the graph on the left, the distribution of the number of mismatches is even between the cycles, which is what we would expect from a good run. However, in the graph on the right, two cycles stand out with a lot of mismatches compared to the other cycles.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/mismatch_per_cycle_comparison.png" class="img-fluid figure-img"></p>
-<figcaption>Mismatches per cycle</figcaption>
-</figure>
-</div>
+<section id="data-download" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="data-download"><span class="header-section-number">3</span> Data download</h2>
+<p>Sequencing data consists of cleaned Illumina paired-end reads generated from a bacterial isolate recovered from a COVID-19 positive patient. Download the dataset using the provided link in the data directory: <a href="https://ln.run/G8con" class="uri">https://ln.run/G8con</a></p>
+<p>Files included:</p>
+<p>- Isolate_1.fastq.gz</p>
+<p>- Isolate_2.fastq.gz</p>
 </section>
-<section id="gc-content" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="gc-content"><span class="header-section-number">4</span> GC content</h2>
-<p>It is a good idea to compare the GC content of the reads against the expected distribution in a reference sequence. The GC content varies between species, so a shift in GC content like the one seen below could be an indication of sample contamination. In the left graph below, we can see that the GC content of the sample is about the same as for the reference, at ~38%. However, in the right graph, the GC content of the sample is closer to 55%, indicating that there is an issue with this sample.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/gc_bias.png" class="img-fluid figure-img"></p>
-<figcaption>GC Content</figcaption>
-</figure>
-</div>
+<section id="tools-to-be-used" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="tools-to-be-used"><span class="header-section-number">4</span> Tools to be used</h2>
+<ul>
+<li><p>Velvet</p></li>
+<li><p>Assembly-stats</p></li>
+<li><p>Seqtk</p></li>
+<li><p>Blastn</p></li>
+</ul>
 </section>
-<section id="gc-content-by-cycle" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="gc-content-by-cycle"><span class="header-section-number">5</span> GC content by cycle</h2>
-<p>Looking at the GC content per cycle can help detect if the adapter sequence was trimmed. For a random library, it is expected to be little to no difference between the different bases of a sequence run, so the lines in this plot should be parallel with each other like in the graph on the left below. In the graph on the right, the initial spikes are likely due to adapter sequences that have not been removed.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/acgt_per_cycle_comparison.png" class="img-fluid figure-img"></p>
-<figcaption>GC content by cycle</figcaption>
-</figure>
-</div>
-</section>
-<section id="fragment-size" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="fragment-size"><span class="header-section-number">6</span> Fragment size</h2>
-<p>For paired-end sequencing the size of DNA fragments also matters. In the first of the examples below, the fragment size peaks around 440 bp. In the second however, there is also a peak at around 200 bp. This indicates that there was an issue with the fragment size selection during library prep.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/fragment_size_comparison.png" class="img-fluid figure-img"></p>
-<figcaption>Fragment size distribution</figcaption>
-</figure>
-</div>
-<section id="exercises" class="level3" data-number="6.1">
-<h3 data-number="6.1" class="anchored" data-anchor-id="exercises"><span class="header-section-number">6.1</span> Exercises</h3>
-<p><strong>Q1: The figure below is from a 100bp paired-end sequencing. Can you spot any problems?</strong></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/insert_size_quiz.png" class="img-fluid figure-img"></p>
-<figcaption>Q1 Insert size distribution</figcaption>
-</figure>
-</div>
-</section>
-</section>
-<section id="insertionsdeletions-per-cycle" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="insertionsdeletions-per-cycle"><span class="header-section-number">7</span> Insertions/Deletions per cycle</h2>
-<p>Sometimes, air bubbles occur in the flow cell, which can manifest as false indels. The spike in the right image provides an example of how this can look.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/indels_per_cycle_comparison.png" class="img-fluid figure-img"></p>
-<figcaption>Indels per cycle</figcaption>
-</figure>
-</div>
-</section>
-<section id="generating-qc-stats" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="generating-qc-stats"><span class="header-section-number">8</span> Generating QC stats</h2>
-<p>Now let’s try this out! We will generate QC stats for two lanes of Illumina paired-end sequencing data from yeast. The reads have already been aligned to the <a href="ftp://ftp.ensembl.org/pub/current_fasta/saccharomyces_cerevisiae/dna">Saccromyces cerevisiae reference genome</a> to produce the BAM file lane1.sorted.bam.</p>
-<p>Now we will use <strong><code>samtools stats</code></strong> to generate the stats for the primary alignments. The option <strong><code>-f</code></strong> can be used to filter reads with specific tags, while <strong><code>-F</code></strong> can be used to <em>filter out</em> reads with specific tags. The following command will include only primary alignments:</p>
-<div id="cell-21" class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> stats <span class="at">-F</span> SECONDARY data/lane1.sorted.bam <span class="op">&gt;</span> data/lane1.sorted.bam.bchk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Have a look at the first 47 lines of the statistics file that was generated:</p>
-<div id="cell-23" class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-n</span> 47 data/lane1.sorted.bam.bchk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>This file contains a number of useful stats that we can use to get a better picture of our data, and it can even be plotted with <strong><code>plot-bamstats</code></strong>, as you will see soon. First let’s have a closer look at some of the different stats. Each part of the file starts with a <code>#</code> followed by a description of the section and how to extract it from the file. Let’s have a look at all the sections in the file:</p>
-<div id="cell-25" class="cell" data-scrolled="false">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> ^<span class="st">'#'</span> data/lane1.sorted.bam.bchk <span class="kw">|</span> <span class="fu">grep</span> <span class="st">'Use'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="summary-numbers-sn" class="level3" data-number="8.1">
-<h3 data-number="8.1" class="anchored" data-anchor-id="summary-numbers-sn"><span class="header-section-number">8.1</span> Summary Numbers (SN)</h3>
-<p>This initial section contains a summary of the alignment and includes some general statistics. In particular, you can see how many bases mapped, and how much of the genome that was covered.</p>
-</section>
-<section id="exercises-1" class="level3" data-number="8.2">
-<h3 data-number="8.2" class="anchored" data-anchor-id="exercises-1"><span class="header-section-number">8.2</span> Exercises</h3>
-<p>Now look at the output and try to answer the questions below.</p>
-<p><strong>Q2: What is the total number of reads?</strong></p>
-<p><strong>Q3: What proportion of the reads were mapped?</strong></p>
-<p><strong>Q4: How many pairs were mapped to a different chromosome?</strong></p>
-<p><strong>Q5: What is the insert size mean and standard deviation?</strong></p>
-<p><strong>Q6: How many reads were paired properly?</strong></p>
-</section>
-<section id="generating-qc-plots" class="level3" data-number="8.3">
-<h3 data-number="8.3" class="anchored" data-anchor-id="generating-qc-plots"><span class="header-section-number">8.3</span> Generating QC plots</h3>
-<p>Finally, we will create some QC plots from the output of the stats command using the command <strong>plot-bamstats</strong> which is included in the samtools package:</p>
-<div id="cell-38" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">plot-bamstats</span> <span class="at">-p</span> data/lane1-plots/ data/lane1.sorted.bam.bchk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Now in your web browser open the file lane1-plots/index.html to view the QC information.</p>
-<p><strong>Q7: How many reads have zero mapping quality?</strong></p>
-<p><strong>Q8: Which read (forward/reverse) of the first fragments and second fragments are higher base quality on average?</strong></p>
-<p>Now continue to the next section of the tutorial: <a href="../../../../course_modules/NGS_Data_Formats_and_QC/practical/Notebooks/conversion.html">File conversion</a>.</p>
+<section id="tasks" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="tasks"><span class="header-section-number">5</span> Tasks</h2>
+<p><strong>Task 1 - Genome Assembly</strong>&nbsp;</p>
+<ul>
+<li><p>Try odd-numbered k-mer lengths between 71 and 99 (e.g., 71, 81, 91, and 99).</p></li>
+<li><p>Try also k-mer length 31, for comparison with the ones above.</p></li>
+</ul>
+<p><strong>Task 2 - Assembly Assessment</strong></p>
+<p><strong>Task 3 - Taxonomic Identification Using BLASTn</strong></p>
+<ul>
+<li><p>Open the assembled contigs file</p></li>
+<li><p>Select a long sequence.</p></li>
+<li><p>Copy the FASTA sequence.</p></li>
+<li><p>Open the NCBI BLAST website (https://www.ncbi.nlm.nih.gov/geo/query/blast.html).&nbsp;</p></li>
+<li><p>Use BLASTn against the nucleotide database.</p></li>
+<li><p>Record the top matches.</p></li>
+</ul>
+<p><strong>Guide Questions</strong></p>
+<ol type="1">
+<li><p>Determine the total assembly size of the bacterial genome.</p></li>
+<li><p>Determine the total number of contigs generated.</p></li>
+<li><p>Identify the N50 value of the assembly.</p></li>
+<li><p>Does the assembly size appear reasonable for a bacterial genome?</p></li>
+<li><p>Is the assembly fragmented or relatively contiguous?</p></li>
+<li><p>What might affect assembly quality?</p></li>
+<li><p>Which assembly would you choose as the final assembly and why?</p></li>
+<li><p>What is the most likely taxonomic identity of the isolate?</p></li>
+<li><p>Does the identified organism have known associations with respiratory or opportunistic infections?</p></li>
+</ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

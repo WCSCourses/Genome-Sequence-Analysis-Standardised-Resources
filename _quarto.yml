@@ -35,6 +35,8 @@ website:
             text: "Project 2"
           - href: course_modules/Projects/project3/project3.qmd
             text: "Project 3"
+          - href: course_modules/Projects/project4/project4.qmd
+            text: "Project 4"
       - text: Informatics Guide
         menu:
           - href: course_modules/VM_guide/student-guide-computing-environment.qmd
@@ -107,6 +109,7 @@ website:
           - course_modules/Projects/project1/project1.qmd
           - course_modules/Projects/project2/project2.qmd
           - course_modules/Projects/project3/project3.qmd
+          - course_modules/Projects/project3/project4.qmd
       - section: "How to setup your VM"
         contents:
           - course_modules/VM_guide/student-guide-computing-environment.qmd
