@@ -31,6 +31,14 @@ You can follow this tutorial by typing all the commands you see into a terminal 
 
 This tutorial requires that you have **breakdancer**, **lumpy**, **minimap2**, **sniffles**, **bedtools** and **igv** installed on your computer.
 
+**On the VM which runs on Google Cloud Platform, you can run breakdancer by activating its conda environment:**
+
+**`conda activate breakdancer_env`**
+
+**`breakdancer-max`**
+
+**Don't forget to deactivate this conda environment when you are done with breakdancer, using `conda deactivate`**
+
 These are already installed on the virtual machine you are using. To check that these are installed, run the following commands:
 
 `breakdancer-max -h`
