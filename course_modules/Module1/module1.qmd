@@ -41,7 +41,7 @@ In this module, learners will look at data formats in detail. At the end of the 
 
 -   Practical exercises: 1 hour
 
--   Assessment quiz: 30 minutes
+-   Solutions discussion: 30 minutes
 
 # Manual and practical execises
 
