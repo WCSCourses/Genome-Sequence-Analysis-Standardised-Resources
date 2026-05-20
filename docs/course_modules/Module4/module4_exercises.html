@@ -712,6 +712,11 @@ ul.task-list li input[type="checkbox"] {
 <p>There are several software tools available for calling structural variants. We will use two callers in this part of the tutorial, <strong>breakdancer</strong> and <strong>lumpy</strong></p>
 <section id="breakdancer" class="level3" data-number="3.1">
 <h3 data-number="3.1" class="anchored" data-anchor-id="breakdancer"><span class="header-section-number">3.1</span> Breakdancer</h3>
+<p><span style="color: red;">On the VM which runs on Google Cloud Platform, you can run breakdancer by activating its conda environment:</span></p>
+<p><strong><code>conda activate breakdancer_env</code></strong></p>
+<p><strong><code>breakdancer-max</code></strong></p>
+<p><span style="color: red;">Don’t forget to deactivate this conda environment when you are done with breakdancer, using <code>conda deactivate</code></span></p>
+<p></p>
 <p>BreakDancer predicts five types of structural variants: insertions (INS), deletions (DEL), inversions (INV), inter-chromosomal translocations (CTX) and intra-chromosomal translocations (ITX) from next-generation short paired-end sequencing reads using read pairs that are mapped with unexpected separation distances or orientation.</p>
 <p>Navigate to the exercise2 directory:</p>
 <p><code>cd ../exercise2</code></p>

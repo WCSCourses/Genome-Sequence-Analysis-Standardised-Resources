@@ -109,6 +109,18 @@ There are several software tools available for calling structural variants. We w
 
 ### Breakdancer
 
+
+
+[On the VM which runs on Google Cloud Platform, you can run breakdancer by activating its conda environment:]{style="color: red;"}
+
+**`conda activate breakdancer_env`**
+
+**`breakdancer-max`**
+
+[Don’t forget to deactivate this conda environment when you are done with breakdancer, using `conda deactivate`]{style="color: red;"}
+
+</span>
+
 BreakDancer predicts five types of structural variants: insertions (INS), deletions (DEL), inversions (INV), inter-chromosomal translocations (CTX) and intra-chromosomal translocations (ITX) from next-generation short paired-end sequencing reads using read pairs that are mapped with unexpected separation distances or orientation.
 
 Navigate to the exercise2 directory:
