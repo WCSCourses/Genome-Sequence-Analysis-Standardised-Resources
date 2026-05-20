@@ -185,21 +185,21 @@ As you can see, the command expanded the formatting expression ***POS=%POS***\n 
 
 Now add the reference and the alternate allele to the output. They are stored in the REF and ALT column in the VCF, and let’s separate them by a comma:
 
-**`bcftools query -f'%POS %REF,%ALT`**`\n' out.vcf | head`
+**`bcftools query -f '%POS %REF,%ALT`**`\n' out.vcf | head`
 
 In the next step add the quality (%QUAL), genotype (%GT) and sequencing depth (%AD) to the output. Note that FORMAT tags must be enclosed within square brackets \[…\] to iterate over all samples in the VCF. (Check the Extracting per-sample tags section in the manual https://samtools.github.io/bcftools/howtos/query.html for a more detailed explanation why the square brackets are needed.)
 
-`bcftools query -f'%POS %QUAL [%GT %AD] %REF %ALT\n' out.vcf | head`
+`bcftools query -f '%POS %QUAL [%GT %AD] %REF %ALT\n' out.vcf | head`
 
 Now we are able to quickly extract important information from the VCFs. Now let’s filter rows with QUAL smaller than 30 by adding the filtering expression –exclude ‘QUAL\<30’ or –include ‘QUAL\>=30’ like this:
 
-`bcftools query -f'%POS %QUAL [%GT %AD] %REF %ALT\n' -i'QUAL>=30' out.vcf | head`
+`bcftools query -f '%POS %QUAL [%GT %AD] %REF %ALT\n' -i 'QUAL>=30' out.vcf | head`
 
 Now compare the result with the output from the previous command, were the low-quality lines removed?
 
 In the next step limit the output to SNPs and ignore indels by adding the type=“snp” condition to the filtering expression. Because both conditions must be valid at the same time, we request the AND logic using the && operator:
 
-`bcftools query -f'%POS %QUAL [%GT %AD] %REF %ALT\n' -i'QUAL>=30 && type="snp"'out.vcf | head`
+`bcftools query -f '%POS %QUAL [%GT %AD] %REF %ALT\n' -i 'QUAL>=30 && type="snp" 'out.vcf | head`
 
 ### 3.1 Exercises
 
