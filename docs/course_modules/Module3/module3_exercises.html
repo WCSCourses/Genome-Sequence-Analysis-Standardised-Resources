@@ -764,7 +764,7 @@ ul.task-list li input[type="checkbox"] {
 <p><code>bcftools query -f '%POS %QUAL [%GT %AD] %REF %ALT\n' -i 'QUAL&gt;=30' out.vcf | head</code></p>
 <p>Now compare the result with the output from the previous command, were the low-quality lines removed?</p>
 <p>In the next step limit the output to SNPs and ignore indels by adding the type=“snp” condition to the filtering expression. Because both conditions must be valid at the same time, we request the AND logic using the &amp;&amp; operator:</p>
-<p><code>bcftools query -f '%POS %QUAL [%GT %AD] %REF %ALT\n' -i 'QUAL&gt;=30 &amp;&amp; type="snp" 'out.vcf | head</code></p>
+<p><code>bcftools query -f '%POS %QUAL [%GT %AD] %REF %ALT\n' -i 'QUAL&gt;=30 &amp;&amp; type="snp"' out.vcf | head</code></p>
 </section>
 <section id="exercises-2" class="level3" data-number="0.16">
 <h3 data-number="0.16" class="anchored" data-anchor-id="exercises-2"><span class="header-section-number">0.16</span> 3.1 Exercises</h3>
@@ -789,7 +789,7 @@ ul.task-list li input[type="checkbox"] {
 <p>POS=1 T–TC</p>
 <p>POS=3 TTC–</p>
 <p>In order to be able to compare indels between two datasets, we left-align such variants.</p>
-<p><strong>Q5: Use the bcftools norm command to normalize the filtered callset. Note that you will need to provide the –fasta-ref option. Check in the output how many indels were realigned.</strong></p>
+<p><strong>Q5: Use the bcftools norm command to normalize the filtered callset. Note that you will need to provide the <code>--fasta-ref</code> option. Check in the output how many indels were realigned.</strong></p>
 <p>Now continue to the next section of the tutorial: Multi-sample variant calling</p>
 <p><strong>4 Calling Variants Across Multiple Samples</strong></p>
 <p>In many types of experiments we sequence multiple samples and compare their genetic variation across samples. The single-sample variant calling we have done so far has the disadvantage of not providing information about reference genotypes. Because only variant sites are stored, we are not able to distinguish between records missing due to reference genotypes versus records missing due to lack of coverage.</p>

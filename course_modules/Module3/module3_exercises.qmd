@@ -199,7 +199,7 @@ Now compare the result with the output from the previous command, were the low-q
 
 In the next step limit the output to SNPs and ignore indels by adding the type=“snp” condition to the filtering expression. Because both conditions must be valid at the same time, we request the AND logic using the && operator:
 
-`bcftools query -f '%POS %QUAL [%GT %AD] %REF %ALT\n' -i 'QUAL>=30 && type="snp" 'out.vcf | head`
+`bcftools query -f '%POS %QUAL [%GT %AD] %REF %ALT\n' -i 'QUAL>=30 && type="snp"' out.vcf | head`
 
 ### 3.1 Exercises
 
@@ -241,7 +241,7 @@ POS=3 TTC--
 
 In order to be able to compare indels between two datasets, we left-align such variants.
 
-**Q5: Use the bcftools norm command to normalize the filtered callset. Note that you will need to provide the --fasta-ref option. Check in the output how many indels were realigned.**
+**Q5: Use the bcftools norm command to normalize the filtered callset. Note that you will need to provide the `--fasta-ref` option. Check in the output how many indels were realigned.**
 
 Now continue to the next section of the tutorial: Multi-sample variant calling
 
