@@ -1214,7 +1214,19 @@
     "href": "course_modules/Projects/project3/project3.html",
     "title": "Project 3: Identifying host genetic factors for resistance to SARS-CoV",
     "section": "",
-    "text": "In this project, you’ll look for genetic mutations that make mice more or less susceptible to COVID-like infection. By the end, you’ll understand how to:\nBackground: Why this matters?\nHumans get COVID at different severity levels. Some people barely get sick; others get severe disease. Part of this comes from host genetics—variations in our DNA that affect how our immune system fights the virus.\nTo study this safely, researchers use mice. Different mouse strains (like different ethnic backgrounds in humans, but more extreme) respond very differently to SARS-CoV:\nResearchers found four major genomic regions (called QTLs) linked to disease severity. In this project, you will focus specifically on the HrS1 locus and characterize genetic variants within Trim55 across 52 inbred mouse strains to identify candidate mutations which could be driving susceptibility or resistance SARS-CoV infection.\nReferences\nGenome Wide Identification of SARS-CoV Susceptibility Loci Using the Collaborative Cross\nhttps://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1005504",
+    "text": "General guidance for project\nRecommended number of participants per group: 4 to 6.\nProject work running time: 1.5h, on Friday.\nEach group will present their work in max 7 minutes, with 3 minutes left for question. Each member of the group would be expected to present at least one slide.",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "Project 3:  Identifying host genetic factors for resistance to SARS-CoV"
+    ]
+  },
+  {
+    "objectID": "course_modules/Projects/project3/project3.html#introduction",
+    "href": "course_modules/Projects/project3/project3.html#introduction",
+    "title": "Project 3: Identifying host genetic factors for resistance to SARS-CoV",
+    "section": "1 Introduction",
+    "text": "1 Introduction\nIn this project, you’ll look for genetic mutations that make mice more or less susceptible to COVID-like infection. By the end, you’ll understand how to:\n\nExtract variants from genomic databases\nInterpret what variants do to proteins\nLink genetic changes to disease risk\n\nBackground: Why this matters?\nHumans get COVID at different severity levels. Some people barely get sick; others get severe disease. Part of this comes from host genetics—variations in our DNA that affect how our immune system fights the virus.\nTo study this safely, researchers use mice. Different mouse strains (like different ethnic backgrounds in humans, but more extreme) respond very differently to SARS-CoV:\n\nNOD/ShiLtJ: Resistant, barely gets sick\nA/J, C57BL/6J: Moderate disease, recovers fine\nCAST/EiJ, PWK/PhJ, WSB/EiJ: Severe disease, lose weight, sometimes die\n\nResearchers found four major genomic regions (called QTLs) linked to disease severity. In this project, you will focus specifically on the HrS1 locus and characterize genetic variants within Trim55 across 52 inbred mouse strains to identify candidate mutations which could be driving susceptibility or resistance SARS-CoV infection.\nReferences\nGenome Wide Identification of SARS-CoV Susceptibility Loci Using the Collaborative Cross\nhttps://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1005504",
     "crumbs": [
       "Home",
       "Projects",
@@ -1225,8 +1237,8 @@
     "objectID": "course_modules/Projects/project3/project3.html#data-download",
     "href": "course_modules/Projects/project3/project3.html#data-download",
     "title": "Project 3: Identifying host genetic factors for resistance to SARS-CoV",
-    "section": "1 Data download",
-    "text": "1 Data download\n\nOpen the Firefox browser in the VM\nDownload VCF with SNPs and indels of the 52 mouse strains. (Note: The full VCF is available from the European Variation Archive under PRJEB43298. However, the VCF file for the whole genome is very large. In this project, we will only focus on chromosome 3, which can be downloaded https://drive.google.com/file/d/1dNfcO49nov0MzA2UIuOStJIlc1y_oZ3w/view?usp=sharing\n\nExplanation: You can download the files manually through the Firefox browser in the VM and move it to project folder. Alternatively, you can download using wget like this\n# Create project directorymkdir $HOME/Project3 && cd \"$_\"\n# Download the VCF directly from Google Drive\nwget -O \"mgp_REL2005_snps_indels.3.18000000-22000000.vcf.gz\" \"https://drive.google.com/uc?export=download&id=1dNfcO49nov0MzA2UIuOStJIlc1y_oZ3w\"",
+    "section": "2 Data download",
+    "text": "2 Data download\n\nOpen the Firefox browser in the VM\nDownload VCF with SNPs and indels of the 52 mouse strains. (Note: The full VCF is available from the European Variation Archive under PRJEB43298. However, the VCF file for the whole genome is very large. In this project, we will only focus on chromosome 3, which can be downloaded https://drive.google.com/file/d/1dNfcO49nov0MzA2UIuOStJIlc1y_oZ3w/view?usp=sharing\n\nExplanation: You can download the files manually through the Firefox browser in the VM and move it to project folder. Alternatively, you can download using wget like this\n# Create project directorymkdir $HOME/Project3 && cd \"$_\"\n# Download the VCF directly from Google Drive\nwget -O \"mgp_REL2005_snps_indels.3.18000000-22000000.vcf.gz\" \"https://drive.google.com/uc?export=download&id=1dNfcO49nov0MzA2UIuOStJIlc1y_oZ3w\"",
     "crumbs": [
       "Home",
       "Projects",
@@ -1237,8 +1249,8 @@
     "objectID": "course_modules/Projects/project3/project3.html#tasks",
     "href": "course_modules/Projects/project3/project3.html#tasks",
     "title": "Project 3: Identifying host genetic factors for resistance to SARS-CoV",
-    "section": "2 Tasks",
-    "text": "2 Tasks\nTask 1: Confirm that you have 52 samples (i.e. strains) in this VCF. Extract the SNP and indel variants in the Trim55 gene into another VCF file\nTask 2 Identify variants that are most likely to affect the function of the gene.\nHint:\n\nPrint the CSQ at position 3:19671000 to understand more about the variant. \nRepeat again for position 3:19694085. Can you explain this? \nHint: comma in the CSQ field?\n\nTask 3 (optional): Tabulate the different CSQ predictions (Consequence|Impact|Symbol) and their counts. There should be a total of 4659 CSQ predictions.\nHint: \n\nyou can use sed ‘s/,/\\n/g’ to replace comma (,) in the CSQ field with a new line character (\\n) (i.e. start a new line whenever there is comma in the CSQ field)\nthen capture the column that you are interested in using cut command, then explore the CSQ type of interest\nHere is a guide which describes the CSQ annotations of the variants: https://m.ensembl.org/info/genome/variation/prediction/predicted_data.html \n\nTask 4: Most variants are harmless (intronic, downstream). We want to focus on the ones that change proteins (missense). Find only the missense variants present in Trim55 and save into a text file. There should be 11 such variants.\nTask 5: Find the strains that have missense mutations in the Trim55 gene. Ths gives you a clue to find potential mutations in Trim55 that may mediate response to SARS-CoV pathogenesis in mice.",
+    "section": "3 Tasks",
+    "text": "3 Tasks\nTask 1: Confirm that you have 52 samples (i.e. strains) in this VCF. Extract the SNP and indel variants in the Trim55 gene into another VCF file\nTask 2 Identify variants that are most likely to affect the function of the gene.\nHint:\n\nPrint the CSQ at position 3:19671000 to understand more about the variant. \nRepeat again for position 3:19694085. Can you explain this? \nHint: comma in the CSQ field?\n\nTask 3 (optional): Tabulate the different CSQ predictions (Consequence|Impact|Symbol) and their counts. There should be a total of 4659 CSQ predictions.\nHint: \n\nyou can use sed ‘s/,/\\n/g’ to replace comma (,) in the CSQ field with a new line character (\\n) (i.e. start a new line whenever there is comma in the CSQ field)\nthen capture the column that you are interested in using cut command, then explore the CSQ type of interest\nHere is a guide which describes the CSQ annotations of the variants: https://m.ensembl.org/info/genome/variation/prediction/predicted_data.html \n\nTask 4: Most variants are harmless (intronic, downstream). We want to focus on the ones that change proteins (missense). Find only the missense variants present in Trim55 and save into a text file. There should be 11 such variants.\nTask 5: Find the strains that have missense mutations in the Trim55 gene. Ths gives you a clue to find potential mutations in Trim55 that may mediate response to SARS-CoV pathogenesis in mice.",
     "crumbs": [
       "Home",
       "Projects",
@@ -1249,8 +1261,8 @@
     "objectID": "course_modules/Projects/project3/project3.html#recommended-tools",
     "href": "course_modules/Projects/project3/project3.html#recommended-tools",
     "title": "Project 3: Identifying host genetic factors for resistance to SARS-CoV",
-    "section": "3 Recommended tools",
-    "text": "3 Recommended tools\n\nbcftools view\nbcftools query\nInterproscan, or any other tools that let you explore structures and function of proteins (optional)",
+    "section": "4 Recommended tools",
+    "text": "4 Recommended tools\n\nbcftools view\nbcftools query\nInterproscan, or any other tools that let you explore structures and function of proteins (optional)",
     "crumbs": [
       "Home",
       "Projects",
@@ -2028,42 +2040,72 @@
     "href": "course_modules/Projects/project4/project4.html",
     "title": "Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients",
     "section": "",
-    "text": "During the COVID-19 pandemic, additional investigations on the nasal microbiome of SARS-CoV-2 positive patients were conducted at your facility to better understand possible secondary bacterial infections associated with disease progression. Among the collected samples, one patient exhibited a dominant bacterial isolate recovered from a nasal swab culture. Due to the potential clinical significance of bacterial co-infections in COVID-19 patients, the isolate was subjected to whole genome sequencing using Illumina paired-end sequencing technology. Insert size estimate was 150 bp before sequencing, \nAs a bioinformatics analyst in the laboratory, the task is to process the sequencing data, assemble the bacterial genome, evaluate the quality of the assembly, and determine the taxonomic identity of the isolate. Correct identification of the organism is important for understanding possible secondary infections and their implications in patient management and antimicrobial surveillance."
+    "text": "General guidance for project\nRecommended number of participants per group: 4 to 6.\nProject work running time: 1.5h, on Friday.\nEach group will present their work in max 7 minutes, with 3 minutes left for question. Each member of the group would be expected to present at least one slide.",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients"
+    ]
   },
   {
     "objectID": "course_modules/Projects/project4/project4.html#case-scenario",
     "href": "course_modules/Projects/project4/project4.html#case-scenario",
     "title": "Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients",
-    "section": "",
-    "text": "During the COVID-19 pandemic, additional investigations on the nasal microbiome of SARS-CoV-2 positive patients were conducted at your facility to better understand possible secondary bacterial infections associated with disease progression. Among the collected samples, one patient exhibited a dominant bacterial isolate recovered from a nasal swab culture. Due to the potential clinical significance of bacterial co-infections in COVID-19 patients, the isolate was subjected to whole genome sequencing using Illumina paired-end sequencing technology. Insert size estimate was 150 bp before sequencing, \nAs a bioinformatics analyst in the laboratory, the task is to process the sequencing data, assemble the bacterial genome, evaluate the quality of the assembly, and determine the taxonomic identity of the isolate. Correct identification of the organism is important for understanding possible secondary infections and their implications in patient management and antimicrobial surveillance."
+    "section": "1 Case Scenario",
+    "text": "1 Case Scenario\nDuring the COVID-19 pandemic, additional investigations on the nasal microbiome of SARS-CoV-2 positive patients were conducted at your facility to better understand possible secondary bacterial infections associated with disease progression. Among the collected samples, one patient exhibited a dominant bacterial isolate recovered from a nasal swab culture. Due to the potential clinical significance of bacterial co-infections in COVID-19 patients, the isolate was subjected to whole genome sequencing using Illumina paired-end sequencing technology. Insert size estimate was 150 bp before sequencing, \nAs a bioinformatics analyst in the laboratory, the task is to process the sequencing data, assemble the bacterial genome, evaluate the quality of the assembly, and determine the taxonomic identity of the isolate. Correct identification of the organism is important for understanding possible secondary infections and their implications in patient management and antimicrobial surveillance.",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients"
+    ]
   },
   {
     "objectID": "course_modules/Projects/project4/project4.html#learning-objectives",
     "href": "course_modules/Projects/project4/project4.html#learning-objectives",
     "title": "Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients",
     "section": "2 Learning Objectives",
-    "text": "2 Learning Objectives\nAt the end of this exercise, participants should be able to:\n\nAssemble a bacterial genome from Illumina paired-end sequencing reads\nEvaluate and interpret genome assembly statistics\nIdentify bacterial taxa using sequence similarity searches\nInterpret results within the context of secondary bacterial infection"
+    "text": "2 Learning Objectives\nAt the end of this exercise, participants should be able to:\n\nAssemble a bacterial genome from Illumina paired-end sequencing reads\nEvaluate and interpret genome assembly statistics\nIdentify bacterial taxa using sequence similarity searches\nInterpret results within the context of secondary bacterial infection",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients"
+    ]
   },
   {
     "objectID": "course_modules/Projects/project4/project4.html#data-download",
     "href": "course_modules/Projects/project4/project4.html#data-download",
     "title": "Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients",
     "section": "3 Data download",
-    "text": "3 Data download\nSequencing data consists of cleaned Illumina paired-end reads generated from a bacterial isolate recovered from a COVID-19 positive patient. Download the dataset using the provided link in the data directory: https://ln.run/G8con\nFiles included:\n- Isolate_1.fastq.gz\n- Isolate_2.fastq.gz"
+    "text": "3 Data download\nSequencing data consists of cleaned Illumina paired-end reads generated from a bacterial isolate recovered from a COVID-19 positive patient. Download the dataset using the provided link in the data directory: https://ln.run/G8con\nFiles included:\n- Isolate_1.fastq.gz\n- Isolate_2.fastq.gz",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients"
+    ]
   },
   {
     "objectID": "course_modules/Projects/project4/project4.html#tools-to-be-used",
     "href": "course_modules/Projects/project4/project4.html#tools-to-be-used",
     "title": "Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients",
     "section": "4 Tools to be used",
-    "text": "4 Tools to be used\n\nVelvet\nAssembly-stats\nSeqtk\nBlastn"
+    "text": "4 Tools to be used\n\nVelvet\nAssembly-stats\nSeqtk\nBlastn",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients"
+    ]
   },
   {
     "objectID": "course_modules/Projects/project4/project4.html#tasks",
     "href": "course_modules/Projects/project4/project4.html#tasks",
     "title": "Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients",
     "section": "5 Tasks",
-    "text": "5 Tasks\nTask 1 - Genome Assembly \n\nTry odd-numbered k-mer lengths between 71 and 99 (e.g., 71, 81, 91, and 99).\nTry also k-mer length 31, for comparison with the ones above.\n\nTask 2 - Assembly Assessment\nTask 3 - Taxonomic Identification Using BLASTn\n\nOpen the assembled contigs file\nSelect a long sequence.\nCopy the FASTA sequence.\nOpen the NCBI BLAST website (https://www.ncbi.nlm.nih.gov/geo/query/blast.html). \nUse BLASTn against the nucleotide database.\nRecord the top matches.\n\nGuide Questions\n\nDetermine the total assembly size of the bacterial genome.\nDetermine the total number of contigs generated.\nIdentify the N50 value of the assembly.\nDoes the assembly size appear reasonable for a bacterial genome?\nIs the assembly fragmented or relatively contiguous?\nWhat might affect assembly quality?\nWhich assembly would you choose as the final assembly and why?\nWhat is the most likely taxonomic identity of the isolate?\nDoes the identified organism have known associations with respiratory or opportunistic infections?"
+    "text": "5 Tasks\nTask 1 - Genome Assembly \n\nTry odd-numbered k-mer lengths between 71 and 99 (e.g., 71, 81, 91, and 99).\nTry also k-mer length 31, for comparison with the ones above.\n\nTask 2 - Assembly Assessment\nTask 3 - Taxonomic Identification Using BLASTn\n\nOpen the assembled contigs file\nSelect a long sequence.\nCopy the FASTA sequence.\nOpen the NCBI BLAST website (https://www.ncbi.nlm.nih.gov/geo/query/blast.html). \nUse BLASTn against the nucleotide database.\nRecord the top matches.\n\nGuide Questions\n\nDetermine the total assembly size of the bacterial genome.\nDetermine the total number of contigs generated.\nIdentify the N50 value of the assembly.\nDoes the assembly size appear reasonable for a bacterial genome?\nIs the assembly fragmented or relatively contiguous?\nWhat might affect assembly quality?\nWhich assembly would you choose as the final assembly and why?\nWhat is the most likely taxonomic identity of the isolate?\nDoes the identified organism have known associations with respiratory or opportunistic infections?",
+    "crumbs": [
+      "Home",
+      "Projects",
+      "Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients"
+    ]
   },
   {
     "objectID": "course_modules/Module2/module2_instructor_notes.html",

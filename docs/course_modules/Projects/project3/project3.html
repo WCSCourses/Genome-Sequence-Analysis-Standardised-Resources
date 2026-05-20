@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../course_modules/VM_guide/student-guide-computing-environment.html" rel="next">
+<link href="../../../course_modules/Projects/project4/project4.html" rel="next">
 <link href="../../../course_modules/Projects/project2/project2.html" rel="prev">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -549,8 +549,11 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">course_modules/Projects/project3/project4.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../../../course_modules/Projects/project4/project4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -592,9 +595,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-download" id="toc-data-download" class="nav-link active" data-scroll-target="#data-download"><span class="header-section-number">1</span> Data download</a></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">2</span> Tasks</a></li>
-  <li><a href="#recommended-tools" id="toc-recommended-tools" class="nav-link" data-scroll-target="#recommended-tools"><span class="header-section-number">3</span> Recommended tools</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#data-download" id="toc-data-download" class="nav-link" data-scroll-target="#data-download"><span class="header-section-number">2</span> Data download</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">3</span> Tasks</a></li>
+  <li><a href="#recommended-tools" id="toc-recommended-tools" class="nav-link" data-scroll-target="#recommended-tools"><span class="header-section-number">4</span> Recommended tools</a></li>
   </ul>
 </nav>
     </div>
@@ -620,6 +624,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><strong>General guidance for project</strong></p>
+<p>Recommended number of participants per group: 4 to 6.</p>
+<p>Project work running time: 1.5h, on Friday.</p>
+<p>Each group will present their work in max 7 minutes, with 3 minutes left for question. Each member of the group would be expected to present at least one slide.</p>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>In this project, you’ll look for genetic mutations that make mice more or less susceptible to COVID-like infection. By the end, you’ll understand how to:</p>
 <ul>
 <li><p>Extract variants from genomic databases</p></li>
@@ -638,8 +648,9 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>References</strong></p>
 <p>Genome Wide Identification of SARS-CoV Susceptibility Loci Using the Collaborative Cross</p>
 <p><a href="https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1005504" class="uri">https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1005504</a>&nbsp;</p>
-<section id="data-download" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="data-download"><span class="header-section-number">1</span> Data download</h2>
+</section>
+<section id="data-download" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="data-download"><span class="header-section-number">2</span> Data download</h2>
 <ol type="1">
 <li><p>Open the Firefox browser in the VM</p></li>
 <li><p>Download VCF with SNPs and indels of the 52 mouse strains. (Note: The full VCF is available from the European Variation Archive under PRJEB43298. However, the VCF file for the whole genome is very large. In this project, we will only focus on chromosome 3, which can be downloaded <a href="https://drive.google.com/file/d/1dNfcO49nov0MzA2UIuOStJIlc1y_oZ3w/view?usp=sharing" class="uri">https://drive.google.com/file/d/1dNfcO49nov0MzA2UIuOStJIlc1y_oZ3w/view?usp=sharing</a></p></li>
@@ -649,8 +660,8 @@ ul.task-list li input[type="checkbox"] {
 <p><strong><code># Download the VCF directly from Google Drive</code></strong></p>
 <p><code>wget -O "mgp_REL2005_snps_indels.3.18000000-22000000.vcf.gz" "https://drive.google.com/uc?export=download&amp;id=1dNfcO49nov0MzA2UIuOStJIlc1y_oZ3w"</code></p>
 </section>
-<section id="tasks" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="tasks"><span class="header-section-number">2</span> Tasks</h2>
+<section id="tasks" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="tasks"><span class="header-section-number">3</span> Tasks</h2>
 <p><strong>Task 1:</strong> Confirm that you have 52 samples (i.e.&nbsp;strains) in this VCF. Extract the SNP and indel variants in the Trim55 gene into another VCF file</p>
 <p><strong>Task 2</strong> Identify variants that are most likely to affect the function of the gene.</p>
 <p>Hint:</p>
@@ -669,8 +680,8 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Task 4:</strong> Most variants are harmless (intronic, downstream). We want to focus on the ones that change proteins (missense). Find <strong>only</strong> the missense variants present in Trim55 and save into a text file. There should be 11 such variants.</p>
 <p><strong>Task 5:</strong> Find the strains that have missense mutations in the Trim55 gene. Ths gives you a clue to find potential mutations in Trim55 that may mediate response to SARS-CoV pathogenesis in mice.</p>
 </section>
-<section id="recommended-tools" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="recommended-tools"><span class="header-section-number">3</span> Recommended tools</h2>
+<section id="recommended-tools" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="recommended-tools"><span class="header-section-number">4</span> Recommended tools</h2>
 <ul>
 <li><p>bcftools view</p></li>
 <li><p>bcftools query</p></li>
@@ -1257,8 +1268,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../course_modules/VM_guide/student-guide-computing-environment.html" class="pagination-link" aria-label="Student Guide: Computing Environment for the Course">
-        <span class="nav-page-text">Student Guide: Computing Environment for the Course</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../course_modules/Projects/project4/project4.html" class="pagination-link" aria-label="Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients">
+        <span class="nav-page-text">Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

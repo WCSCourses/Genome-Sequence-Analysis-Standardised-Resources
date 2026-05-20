@@ -109,7 +109,7 @@ website:
           - course_modules/Projects/project1/project1.qmd
           - course_modules/Projects/project2/project2.qmd
           - course_modules/Projects/project3/project3.qmd
-          - course_modules/Projects/project3/project4.qmd
+          - course_modules/Projects/project4/project4.qmd
       - section: "How to setup your VM"
         contents:
           - course_modules/VM_guide/student-guide-computing-environment.qmd

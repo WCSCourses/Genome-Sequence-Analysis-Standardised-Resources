@@ -3,6 +3,16 @@ title: "Project 3:  Identifying host genetic factors for resistance to SARS-CoV"
 format: html
 ---
 
+**General guidance for project**
+
+Recommended number of participants per group: 4 to 6.
+
+Project work running time: 1.5h, on Friday.
+
+Each group will present their work in max 7 minutes, with 3 minutes left for question. Each member of the group would be expected to present at least one slide.
+
+## Introduction
+
 In this project, you'll look for genetic mutations that make mice more or less susceptible to COVID-like infection. By the end, you'll understand how to:
 
 -   Extract variants from genomic databases

@@ -3,6 +3,14 @@ title: "Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection i
 format: html
 ---
 
+**General guidance for project**
+
+Recommended number of participants per group: 4 to 6.
+
+Project work running time: 1.5h, on Friday.
+
+Each group will present their work in max 7 minutes, with 3 minutes left for question. Each member of the group would be expected to present at least one slide.
+
 ## **Case Scenario**
 
 During the COVID-19 pandemic, additional investigations on the nasal microbiome of SARS-CoV-2 positive patients were conducted at your facility to better understand possible secondary bacterial infections associated with disease progression. Among the collected samples, one patient exhibited a dominant bacterial isolate recovered from a nasal swab culture. Due to the potential clinical significance of bacterial co-infections in COVID-19 patients, the isolate was subjected to whole genome sequencing using Illumina paired-end sequencing technology. Insert size estimate was 150 bp before sequencing, 
