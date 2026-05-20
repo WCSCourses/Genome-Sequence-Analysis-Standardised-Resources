@@ -3,7 +3,7 @@ title: "Project 2: QC Project evaluation of a novel sequencing platform"
 format: html
 ---
 
-### General guidance for project
+**General guidance for project**
 
 Recommended number of participants per group: 4 to 6.
 
