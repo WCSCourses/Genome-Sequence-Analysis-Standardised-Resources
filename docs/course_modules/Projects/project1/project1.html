@@ -585,8 +585,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#general-guidance-for-project" id="toc-general-guidance-for-project" class="nav-link active" data-scroll-target="#general-guidance-for-project"><span class="header-section-number">0.1</span> General guidance for project</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
   <li><a href="#data-download" id="toc-data-download" class="nav-link" data-scroll-target="#data-download"><span class="header-section-number">2</span> <strong>Data download</strong></a></li>
   <li><a href="#variant-calling-tools-to-be-used" id="toc-variant-calling-tools-to-be-used" class="nav-link" data-scroll-target="#variant-calling-tools-to-be-used"><span class="header-section-number">3</span> <strong>Variant calling tools to be used</strong></a></li>
   <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">4</span> <strong>Tasks</strong></a></li>
@@ -615,12 +614,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="general-guidance-for-project" class="level3" data-number="0.1">
-<h3 data-number="0.1" class="anchored" data-anchor-id="general-guidance-for-project"><span class="header-section-number">0.1</span> General guidance for project</h3>
+<p><strong>General guidance for project</strong></p>
 <p>Recommended number of participants per group: 4 to 6.</p>
 <p>Project work running time: 1.5h, on Friday.</p>
 <p>Each group will present their work in max 7 minutes, with 3 minutes left for question. Each member of the group would be expected to present at least one slide.</p>
-</section>
 <section id="introduction" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>In this project you will compare three widely used variant callers: BCFtools, FreeBayes and GATK using a 50 Mb region from human chr6.</p>
@@ -637,22 +634,13 @@ ul.task-list li input[type="checkbox"] {
 <section id="data-download" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="data-download"><span class="header-section-number">2</span> <strong>Data download</strong></h2>
 <p>You will use two iPS cell lineages kolf and kolf_2 from the <a href="http://www.hipsci.org">HipSci project</a>. Download a tarball from the <a href="https://drive.google.com/file/d/10Y72tqP42LouHu5PVKcP2arn4J7Yar1-/view?usp=drive_link">course Google Drive folder (using the browser in your VM)</a>, with the scripts and unpack and prepare the data as follows:</p>
-<pre><code>**\# Create project directory and change to it**
-
-mkdir \$HOME/Project1 &amp;&amp; cd "\$\_"
-
-**\# Extract the files**
-
-tar xvfz variant-calling-comparison.tgz&nbsp;
-
-rm variant-calling-comparison.tgz</code></pre>
-<p>Let us look into the data</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/data.png" class="img-fluid figure-img" width="425"></p>
-<figcaption>data</figcaption>
-</figure>
-</div>
+<p><strong># Create project directory and change to it</strong></p>
+<p><code>mkdir $HOME/Project1 &amp;&amp; cd "$_"</code></p>
+<p><strong><code># Extract the files</code></strong></p>
+<p><code>tar xvfz variant-calling-comparison.tgz</code></p>
+<p><code>rm variant-calling-comparison.tgz</code></p>
+<p><code>Let us look into the data</code></p>
+<p><img src="images/data.png" class="img-fluid" width="425"></p>
 <p>Inside the folder you will have the reference fasta file (.fa) with its corresponding index (.fai) and dictionary (.dict) files. And two bam files with their index file (.bai)</p>
 </section>
 <section id="variant-calling-tools-to-be-used" class="level2" data-number="3">
@@ -665,22 +653,13 @@ rm variant-calling-comparison.tgz</code></pre>
 </section>
 <section id="tasks" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="tasks"><span class="header-section-number">4</span> <strong>Tasks</strong></h2>
-<p><strong>Task 1:</strong> Run the three variant callers (should take 20 - 25min):</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>bcftools mpileup -r 6 -f data/hs37d5.fa data/kolf.bam data/kolf_2.bam -Ou | bcftools call -mv -Oz -o bcftools.vcf.gz</p>
-<p>freebayes -r 6 -f data/hs37d5.fa data/kolf.bam data/kolf_2.bam | bcftools view -Oz -o freebayes.vcf.gz</p>
-<p>java -Xms4g -Xmx4g -jar bin.part/gatk.jar HaplotypeCaller -R data/hs37d5.fa -I data/kolf.bam -I data/kolf_2.bam -L 6 -O /dev/stdout | bcftools view -Oz -o gatk.vcf.gz</p></td>
-</tr>
-</tbody>
-</table>
+<p><strong>Task 1:</strong> Run the three variant callers (should take 20 - 25min).</p>
+<p><code>bcftools mpileup -r 6 -f data/hs37d5.fa data/kolf.bam data/kolf_2.bam -Ou | bcftools call -mv -Oz -o bcftools.vcf.gz</code></p>
+<p><code>freebayes -r 6 -f data/hs37d5.fa data/kolf.bam data/kolf_2.bam | bcftools view -Oz -o freebayes.vcf.gz</code></p>
+<p><code>java -Xms4g -Xmx4g -jar bin.part/gatk.jar HaplotypeCaller -R data/hs37d5.fa -I data/kolf.bam -I data/kolf_2.bam -L 6 -O /dev/stdout | bcftools view -Oz -o gatk.vcf.gz</code></p>
 <p><strong>Task 2:</strong> Create stats for the raw callsets, note the number of SNPs, indels, and ts/tv ratio.</p>
 <p><strong>Task 3:</strong> Filter the calls, require QUAL&gt;20 and note the number of SNPs, indels and ts/tv of the filtered callset. Can you explain the differences, especially the GATK tool?</p>
-<p><strong>Task 4:</strong> Use the command bcftools isec on the to find variants with QUAL&gt;20 called by all three tools (presumably the highest-confidence calls). Explore the output. What is the ts/tv of variants in the intersection?</p>
+<p><strong>Task 4:</strong> Use the command bcftools isec to find variants with QUAL&gt;20 called by all three tools (presumably the highest-confidence calls). Explore the output. What is the ts/tv of variants in the intersection?</p>
 <p><strong>Task 5:</strong> The variants called by one program only (presumably enriched for errors). What is the ts/tv of variants private to the callers?</p>
 
 

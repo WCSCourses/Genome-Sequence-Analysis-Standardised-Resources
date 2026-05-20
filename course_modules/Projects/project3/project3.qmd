@@ -3,17 +3,27 @@ title: "Project 3:  Identifying host genetic factors for resistance to SARS-CoV"
 format: html
 ---
 
-Understanding how host genetic variation influences coronavirus disease severity is challenging in humans because outbreaks are sporadic, acute-phase samples are limited, and human populations are genetically heterogeneous. To address this, researchers developed the Collaborative Cross (CC), a genetically diverse mouse resource generated from eight founder inbred strains: A/J, C57BL/6J, 129S1/SvImJ, NOD/ShiLtJ, NZO/HILtJ, CAST/EiJ, PWK/PhJ, and WSB/EiJ. These founder strains showed markedly different responses to SARS-CoV infection.
+In this project, you'll look for genetic mutations that make mice more or less susceptible to COVID-like infection. By the end, you'll understand how to:
 
--   NOD/ShiLtJ being resistant, 
+-   Extract variants from genomic databases
 
--   A/J, C57BL/6J, 129S1/SvImJ, and NZO/HILtJ showing moderate transient disease,
+-   Interpret what variants do to proteins
 
--   CAST/EiJ, PWK/PhJ, and WSB/EiJ exhibiting severe susceptibility characterized by substantial weight loss and mortality. 
+-   Link genetic changes to disease risk
 
-In a previous study, researchers used the eight founder strains and over 140 other strains to perform quantitative trait loci (QTLs) to identify loci contributing to SARS-CoV pathogenesis. 
+**Background: Why this matters?**
 
-Four loci were identified as major contributor to host response to SARS-CoV (HrS); these are HrS1, HrS2, HrS3, and HrS4, located on chromosomes 3, 16, 15, and 13, respectively. Among these, the HrS1 locus was linked to vascular cuffing severity and was refined to a region containing a strong candidate gene, Trim55, the principle regulator of vascular cuffing after infection. Fluid vascular cuffing has been reported to decrease lung compliance suggesting an important physiologic consequence of this response. 
+Humans get COVID at different severity levels. Some people barely get sick; others get severe disease. Part of this comes from **host genetics**—variations in our DNA that affect how our immune system fights the virus.
+
+To study this safely, researchers use mice. Different mouse strains (like different ethnic backgrounds in humans, but more extreme) respond very differently to SARS-CoV:
+
+-   **NOD/ShiLtJ**: Resistant, barely gets sick
+
+-   **A/J, C57BL/6J**: Moderate disease, recovers fine
+
+-   **CAST/EiJ, PWK/PhJ, WSB/EiJ**: Severe disease, lose weight, sometimes die
+
+Researchers found **four major genomic regions** (called QTLs) linked to disease severity. In this project, you will focus specifically on the HrS1 locus and characterize genetic variants within Trim55 across 52 inbred mouse strains to identify candidate mutations which could be driving susceptibility or resistance SARS-CoV infection.
 
 **References**
 
@@ -21,30 +31,47 @@ Genome Wide Identification of SARS-CoV Susceptibility Loci Using the Collaborati
 
 <https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1005504> 
 
-In this project, you will focus specifically on the HrS1 locus and characterize genetic variants within Trim55 across 52 inbred mouse strains to identify candidate mutations which could be driving susceptibility or resistance SARS-CoV infection.
-
 ## Data download
 
 1.  Open the Firefox browser in the VM
 
-2.  Download VCF with SNPs and indels of the 52 mouse strains. (Note: The full VCF is available from the European Variation Archive under PRJEB43298. However, the VCF file for the whole genome is very large. In this project, we will only focus on chromosome 3, which can be downloaded [here](https://drive.google.com/file/d/1dNfcO49nov0MzA2UIuOStJIlc1y_oZ3w/view?usp=sharing)) 
+2.  Download VCF with SNPs and indels of the 52 mouse strains. (Note: The full VCF is available from the European Variation Archive under PRJEB43298. However, the VCF file for the whole genome is very large. In this project, we will only focus on chromosome 3, which can be downloaded <https://drive.google.com/file/d/1dNfcO49nov0MzA2UIuOStJIlc1y_oZ3w/view?usp=sharing>
 
-3.  Download reference for chromosome 3 of mouse [here](https://ftp.ensembl.org/pub/current_fasta/mus_musculus/dna/Mus_musculus.GRCm39.dna.chromosome.3.fa.gz).
+**Explanation:** You can download the files manually through the Firefox browser in the VM and move it to project folder. Alternatively, you can download using wget like this
+
+**`# Create project directory`**`mkdir $HOME/Project3 && cd "$_"`
+
+**`# Download the VCF directly from Google Drive`**
+
+`wget -O "mgp_REL2005_snps_indels.3.18000000-22000000.vcf.gz" "https://drive.google.com/uc?export=download&id=1dNfcO49nov0MzA2UIuOStJIlc1y_oZ3w"`
 
 ## Tasks
 
-**Task 1** Using the VCF file, extract the SNP and indel variants found in the Trim55 gene
+**Task 1:** Confirm that you have 52 samples (i.e. strains) in this VCF. Extract the SNP and indel variants in the Trim55 gene into another VCF file
 
-**Task 2** Identify variants that are most likely to affect the function of the gene (see the CSQ tag). Which strains have missense mutations in the gene? 
+**Task 2** Identify variants that are most likely to affect the function of the gene.
 
-Here is a guide which describes the CSQ annotations of the variants: <https://m.ensembl.org/info/genome/variation/prediction/predicted_data.html> 
+Hint:
 
-**Task 3** Summarise your findings of potential mutations in Trim55 that mediate response to SARS-CoV pathogenesis in mice
+-   Print the CSQ at position 3:19671000 to understand more about the variant. 
 
-\
-**Task 4** (Extra) If there is time, can you look for potential causative mutations in other quantitative trait loci identified in the table below (Table 1 from the reference paper). You will need the full VCF file to extract only the chromosome of interest, and also the matching reference genome.
+-   Repeat again for position 3:19694085. Can you explain this? 
 
-![](images/task4.png)
+-   Hint: comma in the CSQ field?
+
+**Task 3 (optional)**: Tabulate the different CSQ predictions (Consequence\|Impact\|Symbol) and their counts. There should be a total of 4659 CSQ predictions.
+
+Hint: 
+
+-   you can use sed ‘s/,/\\n/g’ to replace comma (,) in the CSQ field with a new line character (\\n) (i.e. start a new line whenever there is comma in the CSQ field)
+
+-   then capture the column that you are interested in using cut command, then explore the CSQ type of interest
+
+-   Here is a guide which describes the CSQ annotations of the variants: <https://m.ensembl.org/info/genome/variation/prediction/predicted_data.html> 
+
+**Task 4:** Most variants are harmless (intronic, downstream). We want to focus on the ones that change proteins (missense). Find **only** the missense variants present in Trim55 and save into a text file. There should be 11 such variants.
+
+**Task 5:** Find the strains that have missense mutations in the Trim55 gene. Ths gives you a clue to find potential mutations in Trim55 that may mediate response to SARS-CoV pathogenesis in mice.
 
 ## Recommended tools
 
@@ -52,6 +79,4 @@ Here is a guide which describes the CSQ annotations of the variants: <https://m.
 
 -   bcftools query
 
--   tabix
-
--   IGV
+-   Interproscan, or any other tools that let you explore structures and function of proteins (optional)

@@ -3,7 +3,7 @@ title: "Project 1: Comparison of variant callers"
 format: html
 ---
 
-### General guidance for project
+**General guidance for project**
 
 Recommended number of participants per group: 4 to 6.
 
@@ -33,21 +33,19 @@ You will
 
 You will use two iPS cell lineages kolf and kolf_2 from the [HipSci project](http://www.hipsci.org). Download a tarball from the [course Google Drive folder (using the browser in your VM)](https://drive.google.com/file/d/10Y72tqP42LouHu5PVKcP2arn4J7Yar1-/view?usp=drive_link), with the scripts and unpack and prepare the data as follows:
 
-```         
 **\# Create project directory and change to it**
 
-mkdir \$HOME/Project1 && cd "\$\_"
+`mkdir $HOME/Project1 && cd "$_"`
 
-**\# Extract the files**
+**`# Extract the files`**
 
-tar xvfz variant-calling-comparison.tgz 
+`tar xvfz variant-calling-comparison.tgz`
 
-rm variant-calling-comparison.tgz
-```
+`rm variant-calling-comparison.tgz`
 
-Let us look into the data
+`Let us look into the data`
 
-![data](images/data.png){width="425"}
+![](images/data.png){width="425"}
 
 Inside the folder you will have the reference fasta file (.fa) with its corresponding index (.fai) and dictionary (.dict) files. And two bam files with their index file (.bai)
 
@@ -61,20 +59,18 @@ Inside the folder you will have the reference fasta file (.fa) with its correspo
 
 ## **Tasks**
 
-**Task 1:** Run the three variant callers (should take 20 - 25min):
+**Task 1:** Run the three variant callers (should take 20 - 25min).
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| bcftools mpileup -r 6 -f data/hs37d5.fa data/kolf.bam data/kolf_2.bam -Ou \| bcftools call -mv -Oz -o bcftools.vcf.gz                                                   |
-|                                                                                                                                                                         |
-| freebayes -r 6 -f data/hs37d5.fa data/kolf.bam data/kolf_2.bam \| bcftools view -Oz -o freebayes.vcf.gz                                                                 |
-|                                                                                                                                                                         |
-| java -Xms4g -Xmx4g -jar bin.part/gatk.jar HaplotypeCaller -R data/hs37d5.fa -I data/kolf.bam -I data/kolf_2.bam -L 6 -O /dev/stdout \| bcftools view -Oz -o gatk.vcf.gz |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+`bcftools mpileup -r 6 -f data/hs37d5.fa data/kolf.bam data/kolf_2.bam -Ou | bcftools call -mv -Oz -o bcftools.vcf.gz`
+
+`freebayes -r 6 -f data/hs37d5.fa data/kolf.bam data/kolf_2.bam | bcftools view -Oz -o freebayes.vcf.gz`
+
+`java -Xms4g -Xmx4g -jar bin.part/gatk.jar HaplotypeCaller -R data/hs37d5.fa -I data/kolf.bam -I data/kolf_2.bam -L 6 -O /dev/stdout | bcftools view -Oz -o gatk.vcf.gz`
 
 **Task 2:** Create stats for the raw callsets, note the number of SNPs, indels, and ts/tv ratio.
 
 **Task 3:** Filter the calls, require QUAL\>20 and note the number of SNPs, indels and ts/tv of the filtered callset. Can you explain the differences, especially the GATK tool?
 
-**Task 4:** Use the command bcftools isec on the to find variants with QUAL\>20 called by all three tools (presumably the highest-confidence calls). Explore the output. What is the ts/tv of variants in the intersection?
+**Task 4:** Use the command bcftools isec to find variants with QUAL\>20 called by all three tools (presumably the highest-confidence calls). Explore the output. What is the ts/tv of variants in the intersection?
 
 **Task 5:** The variants called by one program only (presumably enriched for errors). What is the ts/tv of variants private to the callers?
