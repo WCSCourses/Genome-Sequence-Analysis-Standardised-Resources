@@ -753,7 +753,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The BED format is explained here: <a href="https://genome.ucsc.edu/FAQ/FAQformat.html#format1"><strong><em>https://genome.ucsc.edu/FAQ/FAQformat.html#format1</em></strong></a></p>
 <p>To complete this task, create a command that:</p>
 <p>1. Extracts all the deletions from the <strong><em>breakdancer.out</em></strong> file (Hint: use <strong><em>grep</em></strong>)</p>
-<p>2. Prints columns: 1, 2, 5, 7, and 9 to create a BED file with columns: chromosome, start, end, name, and score. (Hint: use <strong><em>awk</em></strong> to do this, e.g.&nbsp;<strong><em>awk ’{print $1”</em></strong><em>*</em>”$2}’)***</p>
+<p>2. Prints columns: 1, 2, 5, 7, and 9 to create a BED file with columns: chromosome, start, end, name, and score. (Hint: use <strong><em>awk</em></strong> to do this, e.g.&nbsp;<code>awk ’{print $1”\t”$2}’</code> )</p>
 <p>3. Print the resulting bed output into a file called: <strong><em>breakdancer.dels.bed</em></strong></p>
 <p>Now we will open the IGV genome browser and inspect some of the predicted structural variants. To do this type:</p>
 <p><code>igv</code></p>
