@@ -31,7 +31,7 @@ At the end of this exercise, participants should be able to:
 
 ## Data download
 
-Sequencing data consists of cleaned Illumina paired-end reads generated from a bacterial isolate recovered from a COVID-19 positive patient. Download the dataset using the provided link in the data directory: <https://ln.run/G8con>
+Sequencing data consists of cleaned Illumina paired-end reads generated from a bacterial isolate recovered from a COVID-19 positive patient. Download the dataset using the provided link in the data directory: <https://drive.google.com/drive/folders/1gnTinSC0oEkYvVLKbWEHQOrzaxFjT_lA>
 
 Files included:
 
