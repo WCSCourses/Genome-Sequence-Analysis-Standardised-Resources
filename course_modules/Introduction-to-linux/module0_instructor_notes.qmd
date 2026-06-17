@@ -5,25 +5,25 @@ format: html
 
 ## How to deliver the Linux for Bioinformatics module (by Jacqui Keane)
 
-1.  **Prioritize Confidence Over Expertise:** The primary goal is to build the learners' confidence with the command line rather than making them experts. Success is measured by whether a beginner is willing to open a terminal window again after the session.
+**Prioritize Confidence Over Expertise:** The primary goal is to build the learners' confidence with the command line rather than making them experts. Success is measured by whether a beginner is willing to open a terminal window again after the session.
 
-2.  **Focus on Foundational Concepts Early:** Spend the first hour or two covering "foundational" concepts like file structures, data hierarchy, and how to invoke commands, as these are essential for all subsequent genomics modules.
+**Focus on Foundational Concepts Early:** Spend the first hour or two covering "foundational" concepts like file structures, data hierarchy, and how to invoke commands, as these are essential for all subsequent genomics modules.
 
-3.  **Keep Lectures Short and Prioritize Hands-on Time:** Limit introductory talks to 15–20 minutes. Because Linux is best learned by "doing," the majority of the session should be dedicated to practical, hands-on exercises.
+**Keep Lectures Short and Prioritize Hands-on Time:** Limit introductory talks to 15–20 minutes. Because Linux is best learned by "doing," the majority of the session should be dedicated to practical, hands-on exercises.
 
-4.  **Manage Mixed Abilities with "Core" and "Additional" Content:** To handle groups with varying experience levels, clearly distinguish between **core sections** (essential for the rest of the course) and **additional sections** (for advanced or fast learners). Ensure beginners know it is normal not to finish everything.
+**Manage Mixed Abilities with "Core" and "Additional" Content:** To handle groups with varying experience levels, clearly distinguish between **core sections** (essential for the rest of the course) and **additional sections** (for advanced or fast learners). Ensure beginners know it is normal not to finish everything.
 
-5.  **Reassure Learners and Mitigate Fear:** Many beginners fear they will "break the computer". Instructors must reassure them that they cannot break the system and that the command line is a tool they can master through repetition.
+**Reassure Learners and Mitigate Fear:** Many beginners fear they will "break the computer". Instructors must reassure them that they cannot break the system and that the command line is a tool they can master through repetition.
 
-6.  **Discourage Copy-Pasting:** Encourage learners to **manually type commands** rather than copying and pasting from the manual. Typing helps them better process the commands they are using, even if it is a slower process.
+**Discourage Copy-Pasting:** Encourage learners to **manually type commands** rather than copying and pasting from the manual. Typing helps them better process the commands they are using, even if it is a slower process.
 
-7.  **Frame Mistakes as Learning Moments:** Normalize making mistakes on the command line. When demonstrating solutions, instructors should occasionally **deliberately introduce small errors** to show that even experts make mistakes and to model how to fix them.
+**Frame Mistakes as Learning Moments:** Normalize making mistakes on the command line. When demonstrating solutions, instructors should occasionally **deliberately introduce small errors** to show that even experts make mistakes and to model how to fix them.
 
-8.  **Use Probing Questions Instead of Providing Answers:** When learners ask for help, avoid giving them the solution immediately. Instead, ask probing questions—such as "What does this command do?"—to encourage them to solve the problem themselves.
+**Use Probing Questions Instead of Providing Answers:** When learners ask for help, avoid giving them the solution immediately. Instead, ask probing questions—such as "What does this command do?"—to encourage them to solve the problem themselves.
 
-9.  **Build Commands Incrementally During Demonstrations:** When showing solutions, especially for complex piped commands, build them one step at a time. Ask learners to **predict the output** before running the command to check their understanding.
+**Build Commands Incrementally During Demonstrations:** When showing solutions, especially for complex piped commands, build them one step at a time. Ask learners to **predict the output** before running the command to check their understanding.
 
-10. **Incorporate Low-Stakes, Fun Assessments:** End the session with a fun, non-graded quiz (such as a **Kahoot quiz**). This allows learners to assess their own understanding and gives trainers a sense of how well the material was grasped without the pressure of formal grading.
+**Incorporate Low-Stakes, Fun Assessments:** End the session with a fun, non-graded quiz (such as a **Kahoot quiz**). This allows learners to assess their own understanding and gives trainers a sense of how well the material was grasped without the pressure of formal grading.
 
 ## Common hurdles encountered by course participants
 
@@ -76,3 +76,15 @@ format: html
 -   **"Why did copy-pasting fail?"** Copying commands from manuals can convert double-dashes (`--`) into **em-dashes**, causing commands like `--help` to fail.
 
 -   **"What is the difference between a redirect (`>`) and a pipe (`|`)?"** Beginners struggle to distinguish between sending output to a file versus sending it to another command.
+
+### FAQs
+
+-   What about if I put a space in the file name or a directory name?
+
+-   How to specify the path of any directory and utilize tab completion?
+
+-   How to import data into a Linux environment?
+
+-   How to remember all the command flags (e.g., `-k`, `-n`, `-l`)?
+
+-   Can AI tools like Codex or Claude be used for Linux coding?

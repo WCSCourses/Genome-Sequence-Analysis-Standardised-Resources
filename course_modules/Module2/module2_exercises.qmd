@@ -221,21 +221,21 @@ Once the genome has loaded, the chromosomes will be shown on the genome ruler wi
 
 Above the genome ruler is the toolbar which has a variety controls for navigating the genome:
 
-- **Genome drop-down** - load a genome
+-   **Genome drop-down** - load a genome
 
-- **Chromosome drop-down** - zoom to a chromosome
+-   **Chromosome drop-down** - zoom to a chromosome
 
-- **Search** - zoom to a chromosome, locus or gene
+-   **Search** - zoom to a chromosome, locus or gene
 
 There are several other buttons which can be used to control the visible portion of the genome.
 
-- **Whole genome** - zoom back out to whole genome view
+-   **Whole genome** - zoom back out to whole genome view
 
-- **Previous/next view** - move backward/forward through views (like the back/forward buttons in a web browser)
+-   **Previous/next view** - move backward/forward through views (like the back/forward buttons in a web browser)
 
-- **Refresh** - refresh the display
+-   **Refresh** - refresh the display
 
-- **Zoom** - zooms in (+) / out (-) on a chromosome
+-   **Zoom** - zooms in (+) / out (-) on a chromosome
 
 ![](images/igv%20menu.png)
 
@@ -249,11 +249,11 @@ The sequence viewer shows the genome at the single nucleotide level. You won’t
 
 There are several views in IGV
 
-- Genome view
+-   Genome view
 
-- Chromosome view
+-   Chromosome view
 
-- Region view
+-   Region view
 
 There are several ways to to zoom in and out to these views to look at specific regions or base level information.
 
@@ -301,9 +301,9 @@ Note: BAM files and their corresponding index files must be in the same director
 
 For each read alignment, a major track will appear containing two minor tracks for that sample:
 
-- coverage information
+-   coverage information
 
-- read alignments
+-   read alignments
 
 For the total number of visible tracks, see the bottom left of main window.
 

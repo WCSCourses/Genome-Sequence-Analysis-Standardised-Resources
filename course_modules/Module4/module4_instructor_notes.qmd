@@ -9,7 +9,7 @@ Teaching the structural variants (SV) module involves transitioning students fro
 
 The key lessons for teaching this module include:
 
-### **1. Conceptual Foundations and Theory**
+### **Conceptual Foundations and Theory**
 
 -   **Defining Structural Variation:** Introduce SVs as variations that are much larger than SNPs, often spanning **kilobases** (e.g., 10kb to 50kb).
 
@@ -19,7 +19,7 @@ The key lessons for teaching this module include:
 
 -   **Short Reads vs. Long Reads:** Teach the fundamental differences between these technologies, specifically explaining why **long reads are generally more accurate** for structural variation calling.
 
-### **2. Advanced Visualization in IGV**
+### **Advanced Visualization in IGV**
 
 The core of this module is moving from theoretical schematics to **real sequencing data**.
 
@@ -35,7 +35,7 @@ The core of this module is moving from theoretical schematics to **real sequenci
 
 -   **Pattern Recognition:** Use "fun" interactive quizzes and screenshots to help students figure out what type of variant they are looking at based on **read colours and alignment patterns**.
 
-### **3. Technical Workflow and Tools**
+### **Technical Workflow and Tools**
 
 -   **Simplified Commands:** Unlike other modules, the command-line syntax here is relatively straightforward, so the focus should remain on **understanding the output** rather than memorizing flags.
 
@@ -49,7 +49,7 @@ The core of this module is moving from theoretical schematics to **real sequenci
 
     -   Use **bedtools** for regional comparisons of call sets.
 
-### **4. Teaching Strategies and Expectations**
+### **Teaching Strategies and Expectations**
 
 -   **Prerequisites:** Ensure students are proficient in **Linux, data QC, and read alignment** before starting, as this module builds directly on those skills.
 
@@ -63,7 +63,7 @@ The core of this module is moving from theoretical schematics to **real sequenci
 
 In the **structural variation (SV)** module, students encounter several hurdles that stem from the transition from small-scale variants to large-scale genomic changes. These challenges range from conceptual shifts to technical configuration and visualization issues.
 
-### **1. Conceptual and Theoretical Shifts**
+### **Conceptual and Theoretical Shifts**
 
 -   **Scale of Variation:** Students must move from thinking about single-base changes (SNPs) to understanding **much larger variations** that span kilobases, typically ranging from 10kb to 50kb.
 
@@ -71,7 +71,7 @@ In the **structural variation (SV)** module, students encounter several hurdles 
 
 -   **Translating Theory to Data:** A major hurdle is the difficulty of **translating theoretical schematics** or simplified diagrams shown in lectures into the "messy" reality of actual sequencing data.
 
-### **2. Visualization and IGV Interpretation**
+### **Visualization and IGV Interpretation**
 
 -   **Navigating Regional Views:** Students often struggle with moving from a single-base view to a **regional genomic view**, which requires adjusting their perspective to look at much larger sections of the genome.
 
@@ -79,7 +79,7 @@ In the **structural variation (SV)** module, students encounter several hurdles 
 
 -   **Pattern Recognition:** Distinguishing between different types of variants (insertions, deletions, and inversions) based on the **complex patterns of colours and read alignments** in IGV can be very difficult.
 
-### **3. Technical and Tool-Based Challenges**
+### **Technical and Tool-Based Challenges**
 
 -   **VCF Format Differences:** Students must learn how the **VCF format** is adapted to represent large structural changes, which differs from how it handles standard SNPs.
 
@@ -87,6 +87,17 @@ In the **structural variation (SV)** module, students encounter several hurdles 
 
 -   **Prerequisite Knowledge:** To succeed, students must already be proficient in **Linux, data quality control, and read alignment**; a lack of these foundational skills acts as a barrier to progressing through the SV module.
 
-### **4. Practical and Infrastructural Issues**
+### **Practical and Infrastructural Issues**
 
 -   **Time Constraints:** Due to the complexity of the material, almost all students find it difficult to complete the full practical exercise; most only reach the **halfway or two-thirds point**.
+
+### FAQs
+
+-   **Detection Methods:**
+    -   "Is it possible to detect these structural variants and the larger chromosomal rearrangements from assembled data as well as from raw reads?"
+    -   "Which one do you prefer for detecting the structural variants? The raw data or the assembled files?"
+    -   What should be done if SV calls from read alignment and from assemblies do not match?
+-   **Technology Comparisons:**
+    -   "Are there any benefits or maybe limitations of using minimap for routinely aligning your short reads?"
+    -   Will long-read sequencing eventually be used as a single technique for SNVs, SNPs, and SVs?
+    -   What are the fundamental differences between structural and functional variants?

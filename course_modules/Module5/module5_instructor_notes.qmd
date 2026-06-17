@@ -66,3 +66,15 @@ Students participating in the genome assembly module encounter several hurdles, 
 -   **Scale of the Task:** Students often hold the "misguided idea" that the simplified classroom exercises represent the entire assembly process, whereas producing a reference-quality genome is a much **larger and more complex endeavor**.
 
 -   **Sample Data Confusion:** In specific exercises, such as those involving *Plasmodium falciparum*, students may become confused when their estimated genome size is much shorter than expected because they are **assembling only a single chromosome** rather than the entire genome.
+
+### FAQs
+
+-   **Metrics and Planning:**
+    -   "How accurate is the pseudochromosome approximation across short read and long read sequencing?"
+    -   "When planning or budgeting for genome assembly studies, what coverage can you recommend?"
+    -   What factors (besides budget) should be considered when deciding to use hybrid assembly approaches?
+    -   "How did you distinguish haploid and diploid genome in GenomeScope?"
+-   **Specific Organisms:**
+    -   What tools or pipelines are preferred for the de novo assembly of exotic segmented RNA viruses that mutate rapidly?
+    -   What are the considerations for genome analysis of mostly haploid organisms like *Plasmodium* spp.?
+    -   How do you assemble a genome when the existing reference genome is currently incomplete?

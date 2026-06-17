@@ -9,7 +9,7 @@ The variant calling module is structured to move students from core fundamentals
 
 The key lessons and topics for teaching this module include:
 
-### **1. Core Fundamentals and Jargon**
+### **Core Fundamentals and Jargon**
 
 -   **Terminology:** Familiarise students with a wide range of "jargons" and definitions, such as **germline vs somatic mutations**, **ploidy**, and specific variant types like **SNV, SNP, and Indels**.
 
@@ -17,7 +17,7 @@ The key lessons and topics for teaching this module include:
 
 -   **Software Tools:** The primary software used is **BCFtools** (with some mention of SAMtools for handling input from the read alignment module).
 
-### **2. The Variant Calling Workflow**
+### **The Variant Calling Workflow**
 
 -   **Step-by-Step Commands:** Students should learn the progression of BCFtools commands: starting with `mpileup`, followed by `call`, then exploring and filtering the variants.
 
@@ -25,7 +25,7 @@ The key lessons and topics for teaching this module include:
 
 -   **Individual vs Joint Calling:** Teach the practicalities of performing variant calling on individual samples versus **joint calling** on multiple samples simultaneously, including the benefits of the latter.
 
-### **3. Biological and Technical Complexities**
+### **Biological and Technical Complexities**
 
 -   **Biological Factors:** Discuss how **mutation rates**, **ploidy**, and **genomic regions** (e.g., difficult-to-map areas) affect calling.
 
@@ -33,7 +33,7 @@ The key lessons and topics for teaching this module include:
 
 -   **Mathematical Concepts:** Introduce the underlying **Bayesian thinking** and probabilities used in statistical models to assess quality, though the module avoids going too deep into complex equations.
 
-### **4. Assessment and Visualization**
+### **Assessment and Visualization**
 
 -   **Reliability Criteria:** Teach students how to assess whether called variants are reliable by looking at quality scores and specific criteria.
 
@@ -41,7 +41,7 @@ The key lessons and topics for teaching this module include:
 
 -   **Annotation (Bonus):** Advanced sessions may cover how to annotate variants to assess their biological consequences.
 
-### **5. Common Pitfalls and Misconceptions**
+### **Common Pitfalls and Misconceptions**
 
 -   **The "Pass" Filter:** Clarify that a "Pass" status only means a variant met specific user-defined criteria and does not guarantee it is real.
 
@@ -61,7 +61,7 @@ The key lessons and topics for teaching this module include:
 
 ## Common hurdles encountered by course participants
 
-### **1. Terminology and Jargon Overload**
+### **Terminology and Jargon Overload**
 
 -   **Vocabulary Burdens:** One of the primary challenges is the sheer volume of **new jargons and terms** students must learn, such as germline vs. somatic mutations, ploidy, and various mutation types like SNV, SNP, and Indels.
 
@@ -69,7 +69,7 @@ The key lessons and topics for teaching this module include:
 
 -   **Inconsistent Tool Language:** Different software tools often use **different terminologies** to describe the same biological variants, adding to the confusion.
 
-### **2. Technical and Command-Line Challenges**
+### **Technical and Command-Line Challenges**
 
 -   **Counterintuitive Syntax:** Students often find BCFtools commands **counterintuitive**; for example, using a query to explore a file, while "filters" are used for annotation rather than actual filtering.
 
@@ -79,7 +79,7 @@ The key lessons and topics for teaching this module include:
 
 -   **VCF Formatting:** The structure and formatting of **VCF files** themselves can appear confusing to beginners.
 
-### **3. Biological and Mathematical Complexity**
+### **Biological and Mathematical Complexity**
 
 -   **Messy Data:** Sequencing data is inherently messy due to **biological complexities** like varying mutation rates across the genome and different ploidy levels.
 
@@ -89,7 +89,7 @@ The key lessons and topics for teaching this module include:
 
 -   **Context-Specific Interpretation:** Determining if a variant is "real" requires specific knowledge of the disease or organism, which can be overwhelming for students.
 
-### **4. Visualization and Practical Implementation**
+### **Visualization and Practical Implementation**
 
 -   **IGV Configuration:** In the structural variation module, a major hurdle is learning how to **reconfigure IGV settings** (e.g., grouping alignments by strand or squishing views) to properly visualize large-scale variants.
 
@@ -97,8 +97,19 @@ The key lessons and topics for teaching this module include:
 
 -   **Infrastructure Issues:** Technical difficulties, such as **difficulties loading reference files** into IGV when using cloud-based environments, can stall practical progress.
 
-### **5. Common Misconceptions**
+### **Common Misconceptions**
 
 -   **The "Pass" Filter Myth:** A common misconception is that any variant marked with a **"Pass" filter** is definitively real, when it actually only means the variant met the specific (and potentially low) criteria set by the user.
 
 -   **Reference Mismatches:** A frequent error involves using **mismatched versions of a reference genome** between the mapping and annotation stages.
+
+### FAQs
+
+-   In ambiguous genotypes, can one genotype (e.g., G/T) result in four possible haplotypes?
+-   How to filter for multi-allelic sites if you are unsure if a position is biallelic or has multiple alternative alleles?
+-   How to filter *de novo* or inherited variants from a VCF file in trio analysis?
+-   **Cancer and Population Genomics specific questions:**
+    -   How can carrier and driver mutations with low frequency be detected in post-chemotherapy samples where the overall mutation burden is low?
+    -   If comparing VCF files from two different populations, what is the procedure to find specific C to T mutations at CpG sites?
+-   **Visualization:**
+    -   "Apart from IGV, is there any other easy to handle tools for visualising variants, can we visualize it in R?"

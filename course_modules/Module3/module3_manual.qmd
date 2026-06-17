@@ -112,7 +112,7 @@ In genetic analysis, we ascertain the **genetic makeup of an individual**, which
 
 ![**Genotypes and haplotypes.** This image illustrates the distinction between **genotypes** and **haplotypes**, showing how **phasing and imputation** resolve which alleles are inherited together on the same chromosome. The process identifies paternal and maternal **haplotypes** from genotype data, enabling a clearer understanding of genetic inheritance and variation across linked loci.](images/Genotypes%20and%20haplotypes.png){width="478"}
 
-### 3. Practical Applications of Variant Calling
+### Practical Applications of Variant Calling
 
 Genetic data is essential for a wide range of applications that help us understand and utilize biological diversity. It enables **disease diagnosis** by identifying genetic mutations linked to specific conditions, supports **genotype-phenotype association studies** to uncover the genetic basis of traits, and advances **pharmacogenomics** by guiding personalized medicine based on genetic profiles. In **DNA forensics**, genetic markers are used for individual identification, while in **population genetics** and **evolutionary studies**, they reveal patterns of ancestry, migration, and species divergence. Additionally, **marker-assisted selection** leverages genetic information to improve breeding outcomes in agriculture by selecting individuals with desirable traits.
 
@@ -128,7 +128,7 @@ The image above compares **next-generation sequencing (NGS)** and **traditional 
 
 ![**Gel image. This image shows an ABI 377 4% denaturing PAGE gel, used for analyzing microsatellite markers (STRs) in a DNA fragment analysis experiment. Different colors represent different markers: DYS19 and DYS388 (green), and DYS391 (blue), while TAMRA350 (red) serves as the internal lane standard for sizing. DNA fragments are separated by size in base pairs (bp), visible along the vertical axis. Each lane represents a different individual or sample, and the discrete colored bands indicate alleles of varying repeat lengths. This high-resolution method allows precise genotyping of STR loci, widely used in forensics, population genetics, and Y-chromosome haplotyping.**](images/gel%20image.png){width="505"}
 
-### 4. Variant Calling Basics
+### Variant Calling Basics
 
 **Variant calling** is the process of identifying differences in DNA sequences by comparing a sample's sequence to a **reference genome**. The goal is to determine the **genotype**—the specific combination of alleles—at each genomic position. In diploid organisms, which carry two copies of each chromosome, genotypes are classified as **RR** (homozygous reference), **RA** (heterozygous), or **AA** (homozygous alternate), based on whether the alleles match the reference (**Ref**) or differ (**Alt**). This analysis provides insight into an organism’s **genetic makeup**, enabling downstream applications such as disease association studies, ancestry inference, and personalized medicine.
 
@@ -303,7 +303,7 @@ You can read more about the typical variant calling process in the following art
 <https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html>
 
 |  |  |  |  |  |
-|-------------|--------------------|-------------|-------------|-------------|
+|--------------|----------------|--------------|--------------|--------------|
 | SO Term | SO Description | SO Accession | Display Term | IMPACT |
 | transcript_ablation | A feature ablation whereby the deleted region includes a transcript feature | SO:0001893 | Transcript ablation | HIGH |
 | splice_acceptor_variant | A splice variant that changes the 2 base region at the 3' end of an intron | SO:0001574 | Splice acceptor variant | HIGH |
@@ -335,7 +335,7 @@ Variant pathogenicity refers to the classification of genetic variants based on 
 (Richards S, Aziz N, Bale S, et al. (2015). Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation. *Genetics in Medicine*, 17(5), 405–424. <https://doi.org/10.1038/gim.2015.30>)
 
 |  |  |  |  |
-|-----------------|-----------------------|-----------------|-----------------|
+|-----------------|---------------------|-----------------|-----------------|
 | Category | Description | Interpretation | Clinical Actionability |
 | Pathogenic | Strong evidence supports a disease-causing role. | Disease-causing | Yes |
 | Likely Pathogenic | Evidence suggests the variant is likely to cause disease. | Probably disease-causing | Often |

@@ -5,7 +5,7 @@ format: html
 
 ## How to deliver the File Formats and QC module (by Gokce Oguz and Burton Chia Kuan Hui)
 
-### **1. Content-Specific Teaching Tips**
+### **Content-Specific Teaching Tips**
 
 Instructors should highlight these common areas of confusion for each format:
 
@@ -25,7 +25,7 @@ Instructors should highlight these common areas of confusion for each format:
 
 -   **VCF & BCF:** Explain genotype representations (e.g., 0/0 for homozygous reference, 1/1 for homozygous alternate, and 0/1 for heterozygous). For tumor-specific files, clarify terms like **AF** (allelic frequency) and **PON** (Panel of Normals).
 
-### **2. Practical Session Delivery**
+### **Practical Session Delivery**
 
 -   **Discourage Copy-Pasting:** Encourage students to **type out commands** from the code blocks. Copying and pasting can lead to encoding errors, such as a double dash (`--`) being converted into an em dash (—), which will cause the command to fail.
 
@@ -35,7 +35,7 @@ Instructors should highlight these common areas of confusion for each format:
 
 -   **Use Visual Aids:** Utilize the **Cheat Sheet** provided in the LMS as a summary table for students. Additionally, use visual figures to show the data flow from the sequencing instrument (FASTQ) to alignment (BAM) and variant calling (VCF).
 
-### **3. General Facilitation Advice**
+### **General Facilitation Advice**
 
 -   **Peer Support:** If you have experienced or fast learners, encourage them to provide peer support to their neighbors.
 
@@ -64,3 +64,17 @@ Instructors should highlight these common areas of confusion for each format:
 -   **"What do the fields in a VCF file signify?"** Students often ask for clarification on genotype fields such as **GT (Genotype), DP (Read Depth), and GQ (Genotype Quality)**.
 
 -   **"What is the difference between VCF and BCF (or SAM and BAM)?"** Learners often ask about the distinction between **human-readable text formats** and their **compressed binary versions** used by computers.
+
+-   "What's different between GTF and GFF?"
+
+-   "If BAM and CRAM are just compressed SAM, why indexing files at each conversion step?"
+
+-   "How to use the CRAM format specifically?"
+
+-   "Why is it necessary to remove or mark PCR duplicates, and what is the effect of having them in the data?"
+
+-   "Could you explain difference in duplicated in RNA-Seq vs WGS/WES? Are they treated the same way...?"
+
+-   "How are PCR duplicates handled in amplicon sequencing where products are intentionally amplified?"
+
+-   "Why do clusters become desynchronized over time in sequencing by synthesis?"
