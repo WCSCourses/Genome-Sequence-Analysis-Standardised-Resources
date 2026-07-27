@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Solutions – Genome Sequence Analysis Course</title>
+<title>Project 9: De Novo Assembly and Identification of a Fungal Pathogen Genome – Genome Sequence Analysis Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../course_modules/Module4/module4_instructor_notes.html" rel="next">
-<link href="../../course_modules/Module4/module4_exercises.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -80,10 +112,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../site_libs/quarto-contrib/quarto-project/img/WCS_Logo-Primary_Black.jpg" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../site_libs/quarto-contrib/quarto-project/img/WCS_Logo-Primary_Black.jpg" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Genome Sequence Analysis Course</span>
     </a>
   </div>
@@ -94,11 +126,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../welcome.html"> 
+    <a class="nav-link" href="../../../welcome.html"> 
 <span class="menu-text">Learning paths</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -107,51 +139,51 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-modules">    
         <li>
-    <a class="dropdown-item" href="../../course_modules/Introduction-to-linux/module0.html">
+    <a class="dropdown-item" href="../../../course_modules/Introduction-to-linux/module0.html">
  <span class="dropdown-text">Introduction to Linux</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course_modules/Module1/module1.html">
+    <a class="dropdown-item" href="../../../course_modules/Module1/module1.html">
  <span class="dropdown-text">File formats and QC</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course_modules/Module2/module2.html">
+    <a class="dropdown-item" href="../../../course_modules/Module2/module2.html">
  <span class="dropdown-text">Reads alignment</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course_modules/Module3/module3.html">
+    <a class="dropdown-item" href="../../../course_modules/Module3/module3.html">
  <span class="dropdown-text">Variant calling</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course_modules/Module4/module4.html">
+    <a class="dropdown-item" href="../../../course_modules/Module4/module4.html">
  <span class="dropdown-text">Structural Variation Calling</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course_modules/Module5/module5.html">
+    <a class="dropdown-item" href="../../../course_modules/Module5/module5.html">
  <span class="dropdown-text">Genome assembly</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course_modules/Glossary/glossary.html">
+    <a class="dropdown-item" href="../../../course_modules/Glossary/glossary.html">
  <span class="dropdown-text">Glossary of terms</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course_modules/Projects/project1/project1.html">
+    <a class="dropdown-item" href="../../../course_modules/Projects/project1/project1.html">
  <span class="dropdown-text">Project 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course_modules/Projects/project2/project2.html">
+    <a class="dropdown-item" href="../../../course_modules/Projects/project2/project2.html">
  <span class="dropdown-text">Project 2</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course_modules/Projects/project3/project3.html">
+    <a class="dropdown-item" href="../../../course_modules/Projects/project3/project3.html">
  <span class="dropdown-text">Project 3</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course_modules/Projects/project4/project4.html">
+    <a class="dropdown-item" href="../../../course_modules/Projects/project4/project4.html">
  <span class="dropdown-text">Project 4</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course_modules/Projects/project5/project5.html">
+    <a class="dropdown-item" href="../../../course_modules/Projects/project5/project5.html">
  <span class="dropdown-text">Project 5</span></a>
   </li>  
     </ul>
@@ -162,15 +194,15 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-informatics-guide">    
         <li>
-    <a class="dropdown-item" href="../../course_modules/VM_guide/student-guide-computing-environment.html">
+    <a class="dropdown-item" href="../../../course_modules/VM_guide/student-guide-computing-environment.html">
  <span class="dropdown-text">Student guide for the computing environment</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course_modules/VM_guide/VM_Guide.html">
+    <a class="dropdown-item" href="../../../course_modules/VM_guide/VM_Guide.html">
  <span class="dropdown-text">How to setup a VM</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course_modules/VM_guide/Software_list.html">
+    <a class="dropdown-item" href="../../../course_modules/VM_guide/Software_list.html">
  <span class="dropdown-text">Software list</span></a>
   </li>  
     </ul>
@@ -187,7 +219,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../course_modules/Module4/module4.html">Structural Variation Calling</a></li><li class="breadcrumb-item"><a href="../../course_modules/Module4/module4_solutions.html">Solutions</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Project 9: De Novo Assembly and Identification of a Fungal Pathogen Genome</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -218,43 +250,43 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Introduction-to-linux/module0.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Introduction-to-linux/module0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Introduction-to-linux/module0_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Introduction-to-linux/module0_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Introduction-to-linux/module0_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Introduction-to-linux/module0_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Introduction-to-linux/module0_solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Introduction-to-linux/module0_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Introduction-to-linux/module0_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Introduction-to-linux/module0_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor’s notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Introduction-to-linux/module0_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Introduction-to-linux/module0_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Introduction-to-linux/module0_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Introduction-to-linux/module0_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -271,43 +303,43 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module1/module1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module1/module1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module1/module1_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module1/module1_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module1/module1_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module1/module1_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module1/module1_solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module1/module1_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module1/module1_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module1/module1_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module1/module1_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module1/module1_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module1/module1_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module1/module1_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -324,43 +356,43 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module2/module2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module2/module2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module2/module2_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module2/module2_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module2/module2_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module2/module2_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module2/module2_solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module2/module2_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module2/module2_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module2/module2_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module2/module2_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module2/module2_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module2/module2_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module2/module2_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -377,43 +409,43 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module3/module3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module3/module3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module3/module3_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module3/module3_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module3/module3_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module3/module3_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module3/module3_solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module3/module3_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module3/module3_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module3/module3_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module3/module3_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module3/module3_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module3/module3_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module3/module3_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -421,52 +453,52 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Structural Variation Calling</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module4/module4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module4/module4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module4/module4_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module4/module4_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module4/module4_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module4/module4_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module4/module4_solutions.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../course_modules/Module4/module4_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module4/module4_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module4/module4_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module4/module4_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module4/module4_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module4/module4_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module4/module4_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -483,43 +515,43 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module5/module5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module5/module5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module5/module5_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module5/module5_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module5/module5_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module5/module5_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module5/module5_solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module5/module5_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module5/module5_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module5/module5_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module5/module5_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module5/module5_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Module5/module5_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Module5/module5_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -536,31 +568,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Projects/project1/project1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Projects/project1/project1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project 1: Comparison of variant callers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Projects/project2/project2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Projects/project2/project2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project 2: QC Project evaluation of a novel sequencing platform</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Projects/project3/project3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Projects/project3/project3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project 3: Identifying host genetic factors for resistance to SARS-CoV</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Projects/project4/project4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Projects/project4/project4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/Projects/project5/project5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/Projects/project5/project5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project 5: QC Project evaluation of a novel sequencing platform</span></a>
   </div>
 </li>
@@ -577,19 +609,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/VM_guide/student-guide-computing-environment.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/VM_guide/student-guide-computing-environment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Student Guide: Computing Environment for the Course</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/VM_guide/VM_Guide.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/VM_guide/VM_Guide.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Oracle VM VirtualBox Installation Guide</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../course_modules/VM_guide/Software_list.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../course_modules/VM_guide/Software_list.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Software list</span></a>
   </div>
 </li>
@@ -605,38 +637,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#structural-variation-calling---solutions" id="toc-structural-variation-calling---solutions" class="nav-link active" data-scroll-target="#structural-variation-calling---solutions"><span class="header-section-number">1</span> 1 Structural Variation Calling - Solutions</a></li>
-  <li><a href="#looking-at-structural-variants-in-vcf" id="toc-looking-at-structural-variants-in-vcf" class="nav-link" data-scroll-target="#looking-at-structural-variants-in-vcf"><span class="header-section-number">2</span> 2 Looking at Structural Variants in VCF</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#tools-to-be-used" id="toc-tools-to-be-used" class="nav-link" data-scroll-target="#tools-to-be-used"><span class="header-section-number">2</span> Tools to be used</a></li>
+  <li><a href="#data-download" id="toc-data-download" class="nav-link" data-scroll-target="#data-download"><span class="header-section-number">3</span> Data Download</a>
   <ul class="collapse">
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">2.1</span> 2.1 Exercises</a></li>
+  <li><a href="#raw-sequencing-reads" id="toc-raw-sequencing-reads" class="nav-link" data-scroll-target="#raw-sequencing-reads"><span class="header-section-number">3.1</span> Raw Sequencing Reads</a></li>
   </ul></li>
-  <li><a href="#calling-structural-variants" id="toc-calling-structural-variants" class="nav-link" data-scroll-target="#calling-structural-variants"><span class="header-section-number">3</span> 3 Calling Structural Variants</a>
-  <ul class="collapse">
-  <li><a href="#breakdancer" id="toc-breakdancer" class="nav-link" data-scroll-target="#breakdancer"><span class="header-section-number">3.1</span> 3.1 Breakdancer</a></li>
-  <li><a href="#exercises-1" id="toc-exercises-1" class="nav-link" data-scroll-target="#exercises-1"><span class="header-section-number">3.2</span> 3.1.1 Exercises</a></li>
-  </ul></li>
-  <li><a href="#calling-structural-variants-from-long-reads" id="toc-calling-structural-variants-from-long-reads" class="nav-link" data-scroll-target="#calling-structural-variants-from-long-reads"><span class="header-section-number">4</span> 4 Calling Structural Variants from Long Reads</a>
-  <ul class="collapse">
-  <li><a href="#inspecting-svs-with-igv" id="toc-inspecting-svs-with-igv" class="nav-link" data-scroll-target="#inspecting-svs-with-igv"><span class="header-section-number">4.1</span> 3.2 Inspecting SVs with IGV</a></li>
-  <li><a href="#exercises-2" id="toc-exercises-2" class="nav-link" data-scroll-target="#exercises-2"><span class="header-section-number">4.2</span> 3.2.1 Exercises</a></li>
-  <li><a href="#lumpy" id="toc-lumpy" class="nav-link" data-scroll-target="#lumpy"><span class="header-section-number">4.3</span> 3.3 Lumpy</a></li>
-  <li><a href="#exercises-3" id="toc-exercises-3" class="nav-link" data-scroll-target="#exercises-3"><span class="header-section-number">4.4</span> 3.3.1 Exercises</a></li>
-  <li><a href="#calling-structural-variants-from-long-reads-1" id="toc-calling-structural-variants-from-long-reads-1" class="nav-link" data-scroll-target="#calling-structural-variants-from-long-reads-1"><span class="header-section-number">4.5</span> 4 Calling Structural Variants from Long Reads</a></li>
-  <li><a href="#bedtools" id="toc-bedtools" class="nav-link" data-scroll-target="#bedtools"><span class="header-section-number">4.6</span> 5 Bedtools</a></li>
-  <li><a href="#call-svs-with-sniffles" id="toc-call-svs-with-sniffles" class="nav-link" data-scroll-target="#call-svs-with-sniffles"><span class="header-section-number">4.7</span> 4.0.4 Call SVs with sniffles</a></li>
-  <li><a href="#exercises-4" id="toc-exercises-4" class="nav-link" data-scroll-target="#exercises-4"><span class="header-section-number">4.8</span> 4.0.5 Exercises</a></li>
-  <li><a href="#bedtools-1" id="toc-bedtools-1" class="nav-link" data-scroll-target="#bedtools-1"><span class="header-section-number">4.9</span> 5 Bedtools</a></li>
-  <li><a href="#exercises-5" id="toc-exercises-5" class="nav-link" data-scroll-target="#exercises-5"><span class="header-section-number">4.10</span> 5.1 Exercises</a></li>
-  </ul></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">4</span> Tasks</a></li>
+  <li><a href="#guide-questions" id="toc-guide-questions" class="nav-link" data-scroll-target="#guide-questions"><span class="header-section-number">5</span> Guide Questions</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../course_modules/Module4/module4.html">Structural Variation Calling</a></li><li class="breadcrumb-item"><a href="../../course_modules/Module4/module4_solutions.html">Solutions</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Solutions</h1>
+<h1 class="title">Project 9: De Novo Assembly and Identification of a Fungal Pathogen Genome</h1>
 </div>
 
 
@@ -653,125 +670,74 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="structural-variation-calling---solutions" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="structural-variation-calling---solutions"><span class="header-section-number">1</span> 1 Structural Variation Calling - Solutions</h2>
-<p>No questions in this section.</p>
+<p><strong>General guidance for project</strong></p>
+<p>Recommended number of participants per group: 4 to 6.</p>
+<p>Project work running time: 1.5h (intended to be solved in under 1 hour by a human without AI assistance).</p>
+<p>Each group will present their work in their respective classroom.</p>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p>Fungal infections present a growing challenge in clinical settings, with emerging opportunistic pathogens like <em>Candida auris</em> causing outbreaks. Early detection, assembly, and taxonomic identification of fungal isolates from hospital wards are key steps in epidemiology.</p>
+<p>In this project, you will act as a clinical microbiologist. A yeast-like fungus has been isolated from a blood culture of an immunocompromised patient. The isolate was sequenced using Illumina technology. Your task is to: - Perform de novo genome assembly of the isolate using <strong>Velvet</strong>. - Assess the quality and continuity of your assemblies using different k-mer values. - Identify the taxonomic species of the isolate using a sequence similarity search (BLASTn).</p>
 </section>
-<section id="looking-at-structural-variants-in-vcf" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="looking-at-structural-variants-in-vcf"><span class="header-section-number">2</span> 2 Looking at Structural Variants in VCF</h2>
-<section id="exercises" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2.1</span> 2.1 Exercises</h3>
-<p>1. What does the CIPOS format tag indicate? <strong>Confidence interval around POS for imprecise variants</strong></p>
-<p>2. What does the PE tag indicate? <strong>Number of paired-end reads supporting the variant across all samples</strong></p>
-<p>3. What tag is used to describe an inversion event? <strong>INV</strong></p>
-<p>4. What tag is used to describe a duplication event? <strong>DUP</strong></p>
-<p>5. How many deletions were called in total? <strong>(Hint:</strong> DEL is the info field for a deletion. The -c option of the grep command can be used to return a count of matches.), try</p>
-<p><code>grep -c "&lt;DEL&gt;" ERR1015121.vcf</code></p>
-<p>6. What type of event is predicted at <strong>IV:437148?</strong> What is the length of the SV? How many paired-end reads and split-reads support this SV variant call? Deletion <strong>-370 20 PE 21 split</strong></p>
-<p><code>grep "437148" ERR1015121.vcf</code></p>
-<p>7. What is the total number of SV calls predicted on the IV chromosome? <strong>10, try</strong></p>
-<p><code>grep -c "^IV" ERR1015121.vcf</code></p>
+<section id="tools-to-be-used" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="tools-to-be-used"><span class="header-section-number">2</span> Tools to be used</h2>
+<ul>
+<li><code>velveth</code> and <code>velvetg</code> (Velvet assembler)</li>
+<li><code>assembly-stats</code></li>
+<li><code>seqtk</code></li>
+<li>NCBI BLASTn (online)</li>
+</ul>
+</section>
+<section id="data-download" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="data-download"><span class="header-section-number">3</span> Data Download</h2>
+<p>Create a project directory and navigate to it:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$HOME</span>/Project9 <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> <span class="st">"</span><span class="va">$_</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="raw-sequencing-reads" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="raw-sequencing-reads"><span class="header-section-number">3.1</span> Raw Sequencing Reads</h3>
+<p>Download the raw reads from ENA for Yeast sample run <strong>ERR1015121</strong>. We will subsample 80,000 read pairs using <code>seqtk</code> to ensure the de novo assembly runs fast on the VM (within 2 minutes):</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download reads from ENA</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> raw_1.fastq.gz <span class="st">"https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR101/021/ERR1015121/ERR1015121_1.fastq.gz"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> raw_2.fastq.gz <span class="st">"https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR101/021/ERR1015121/ERR1015121_2.fastq.gz"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Subsample 80,000 read pairs</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">seqtk</span> sample <span class="at">-s100</span> raw_1.fastq.gz 80000 <span class="kw">|</span> <span class="fu">gzip</span> <span class="op">&gt;</span> reads_1.fastq.gz</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">seqtk</span> sample <span class="at">-s100</span> raw_2.fastq.gz 80000 <span class="kw">|</span> <span class="fu">gzip</span> <span class="op">&gt;</span> reads_2.fastq.gz</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean up raw files</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> raw_1.fastq.gz raw_2.fastq.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="calling-structural-variants" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="calling-structural-variants"><span class="header-section-number">3</span> 3 Calling Structural Variants</h2>
-<p>Q: mean=454.87 std=86.29</p>
-<section id="breakdancer" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="breakdancer"><span class="header-section-number">3.1</span> 3.1 Breakdancer</h3>
+<section id="tasks" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="tasks"><span class="header-section-number">4</span> Tasks</h2>
+<p><strong>Task 1: Run Genome Assembly with Different K-mers</strong> Assemble the genome using <strong>Velvet</strong> with three different odd-numbered k-mer lengths (e.g., <code>31</code>, <code>55</code>, and <code>75</code>). Remember that Velvet requires running <code>velveth</code> first to create the hash table, followed by <code>velvetg</code> to build the graph:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run Velvet with k=31</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">velveth</span> assembly_k31 31 <span class="at">-fastq.gz</span> <span class="at">-paired</span> <span class="at">-shortPaired</span> reads_1.fastq.gz reads_2.fastq.gz</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">velvetg</span> assembly_k31 <span class="at">-exp_cov</span> auto <span class="at">-cov_cutoff</span> auto</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Run Velvet with k=55</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">velveth</span> assembly_k55 55 <span class="at">-fastq.gz</span> <span class="at">-paired</span> <span class="at">-shortPaired</span> reads_1.fastq.gz reads_2.fastq.gz</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">velvetg</span> assembly_k55 <span class="at">-exp_cov</span> auto <span class="at">-cov_cutoff</span> auto</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Run Velvet with k=75</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="ex">velveth</span> assembly_k75 75 <span class="at">-fastq.gz</span> <span class="at">-paired</span> <span class="at">-shortPaired</span> reads_1.fastq.gz reads_2.fastq.gz</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">velvetg</span> assembly_k75 <span class="at">-exp_cov</span> auto <span class="at">-cov_cutoff</span> auto</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Task 2: Evaluate Assembly Quality Metrics</strong> Use the <code>assembly-stats</code> tool to get details about the three assemblies. Compare their N50 values, total lengths, and number of contigs:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">assembly-stats</span> assembly_k31/contigs.fa</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">assembly-stats</span> assembly_k55/contigs.fa</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">assembly-stats</span> assembly_k75/contigs.fa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><em>Create a small table of N50, total assembly size, and contig count for the three assemblies. Which k-mer produced the best assembly?</em></p>
+<p><strong>Task 3: Taxonomic Identification Using BLASTn</strong> Identify the fungal species of the isolate: 1. Print the first few long contigs from your best assembly (e.g.&nbsp;<code>assembly_k55/contigs.fa</code>). 2. Copy one of the long contig sequences (at least 1,000 bp long). 3. Open the NCBI BLAST website in your browser: <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" class="uri">https://blast.ncbi.nlm.nih.gov/Blast.cgi</a> 4. Run a <code>blastn</code> search against the nucleotide collection (<code>nr/nt</code>) database. 5. Record the top taxonomic match and its percentage identity.</p>
 </section>
-<section id="exercises-1" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="exercises-1"><span class="header-section-number">3.2</span> 3.1.1 Exercises</h3>
-<p><code>grep "83065" ERR1015121.breakdancer.out</code></p>
-<p>1. Inversion</p>
-<p>2. -116,</p>
-<p>3. 42</p>
-<p><code>grep "258766" ERR1015121.breakdancer.out</code></p>
-<p>4. Deletion (7325, 99)</p>
-<p>5. <code>grep DEL | awk OFS= breakdancer.dels.bed | awk '{print $1"\t"$2"\t"$5"\t"$7"\t"$9}' &gt; breakdancer.dels.bed</code></p>
-</section>
-</section>
-<section id="calling-structural-variants-from-long-reads" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="calling-structural-variants-from-long-reads"><span class="header-section-number">4</span> 4 Calling Structural Variants from Long Reads</h2>
-<section id="inspecting-svs-with-igv" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="inspecting-svs-with-igv"><span class="header-section-number">4.1</span> 3.2 Inspecting SVs with IGV</h3>
-</section>
-<section id="exercises-2" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="exercises-2"><span class="header-section-number">4.2</span> 3.2.1 Exercises</h3>
-<p>1. Yes, a deletion (view as paired, sort by insert size, squish).</p>
-<p>2. There are very few reads mapping, the reads that are mapped are of low mapQ and it has a SV score = 99</p>
-<p>3. Size estimate? ~7.5k</p>
-<p>Was the deletion at II:258766 also called by the other structural variant software and was the predicted size?</p>
-<p>5. Yes, SVTYPE=DEL, SVLEN=-7438</p>
-<p>6. DEL called by breakdancer (score=59). Not found by other caller Lumpy.</p>
-<p>7. Yes, 2 reads support (red).</p>
-</section>
-<section id="lumpy" class="level3" data-number="4.3">
-<h3 data-number="4.3" class="anchored" data-anchor-id="lumpy"><span class="header-section-number">4.3</span> 3.3 Lumpy</h3>
-</section>
-<section id="exercises-3" class="level3" data-number="4.4">
-<h3 data-number="4.4" class="anchored" data-anchor-id="exercises-3"><span class="header-section-number">4.4</span> 3.3.1 Exercises</h3>
-<p>1. The -F option in samtools view excludes reads matching the specified flag</p>
-<p>2. reads in proper pair | read unmapped | mate unmapped | not primary alignment | PCR optical duplicate</p>
-<p>3. Deletion -625</p>
-<p>4. Deletion -369</p>
-</section>
-<section id="calling-structural-variants-from-long-reads-1" class="level3" data-number="4.5">
-<h3 data-number="4.5" class="anchored" data-anchor-id="calling-structural-variants-from-long-reads-1"><span class="header-section-number">4.5</span> 4 Calling Structural Variants from Long Reads</h3>
-<p>4.0.1 Align the reads with minimap and convert to bam</p>
-<p><code>minimap2 -t 2 -x map-pb -a ../ref/Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa.gz YPS128.filtered_subreads.10x.fastq.gz | samtools view -b -o YPS128.filtered_subreads.10x.bam -</code></p>
-<p>4.0.2 Sort the bam</p>
-<p><code>samtools sort -T temp -o YPS128.filtered_subreads.10x.sorted.bam YPS128.filtered_subreads.10x.bam</code></p>
-<p><code>samtools calmd -b YPS128.filtered_subreads.10x.sorted.bam ../ref/Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa.gz &gt; YPS128.filtered_subreads.10x.sorted.calmd.bam</code></p>
-<p>4.0.3 Index the sorted bam</p>
-<p><code>samtools index YPS128.filtered_subreads.10x.sorted.calmd.bam</code></p>
-</section>
-<section id="bedtools" class="level3" data-number="4.6">
-<h3 data-number="4.6" class="anchored" data-anchor-id="bedtools"><span class="header-section-number">4.6</span> 5 Bedtools</h3>
-</section>
-<section id="call-svs-with-sniffles" class="level3" data-number="4.7">
-<h3 data-number="4.7" class="anchored" data-anchor-id="call-svs-with-sniffles"><span class="header-section-number">4.7</span> 4.0.4 Call SVs with sniffles</h3>
-<p><code>sniffles -m YPS128.filtered_subreads.10x.sorted.calmd.bam -v YPS128.filtered_subreads.10x.vcf</code></p>
-</section>
-<section id="exercises-4" class="level3" data-number="4.8">
-<h3 data-number="4.8" class="anchored" data-anchor-id="exercises-4"><span class="header-section-number">4.8</span> 4.0.5 Exercises</h3>
-<p>1. What sort of SV was called at on chromosome ‘XV’ at position 854271? <strong>__Deletion_</strong></p>
-<p>2. What is the length of the SV? <strong>345</strong></p>
-<p>3. How many reads are supporting the SV? <strong>17 (RE tag)</strong></p>
-<p>4. What sort of SV was called at on chromosome ‘XI’ at position 74608? <strong>__Insertion_</strong></p>
-<p>5. What is the length of the SV? <strong>358</strong></p>
-<p>6. How many reads are supporting the SV? <strong>15</strong></p>
-<p>7. How many inversions were called in the VCF? Note inversions are denoted by the type ‘<strong>INV</strong>’.</p>
-<p>None - no inversions were called</p>
-<p>8. How many duplications were called in the VCF? Note duplications are denoted by the type ‘DUP’. <strong>2</strong></p>
-</section>
-<section id="bedtools-1" class="level3" data-number="4.9">
-<h3 data-number="4.9" class="anchored" data-anchor-id="bedtools-1"><span class="header-section-number">4.9</span> 5 Bedtools</h3>
-</section>
-<section id="exercises-5" class="level3" data-number="4.10">
-<h3 data-number="4.10" class="anchored" data-anchor-id="exercises-5"><span class="header-section-number">4.10</span> 5.1 Exercises</h3>
-<p>1. How many SVs found in ERR1015069.dels.vcf overlap with a gene? (Hint: Use bedtools intersect command) <strong>18, try (note the -u parameter is required to get the unique number of SVs)</strong></p>
-<p><code>bedtools intersect -u -a ERR1015069.dels.vcf -b Saccharomyces_cerevisiae.R64-1-1.82.genes.gff3 | wc -l</code></p>
-<p>2. How many SVs found in ERR1015069.dels.vcf do not overlap with a gene? (<strong>Hint</strong>: note the -v parameter to bedtools intersect) <strong>9, try</strong></p>
-<p><code>bedtools intersect -v -a ERR1015069.dels.vcf -b Saccharomyces_cerevisiae.R64-1-1.82.genes.gff3 | wc -l</code></p>
-<p>3. How many SVs found in ERR1015069.dels.vcf overlap with a more strict definition of 50%?</p>
-<p><strong>14, try</strong></p>
-<p><code>bedtools intersect -u -f 0.5 -a ERR1015069.dels.vcf -b Saccharomyces_cerevisiae.R64-1-1.82.genes.gff3 | wc -l</code></p>
-<p>4. How many features does the deletion at <strong>VII:811446</strong> overlap with? What type of genes? Note you will need to also use the -wb option in bedtools intersect.</p>
-<p><code>bedtools intersect -wb -a ERR1015069.dels.vcf -b Saccharomyces_cerevisiae.R64-1-1.82.genes.gff3 | grep 811446</code></p>
-<p><strong>4 features, all of them are protein coding genes (biotype=protein_coding)</strong></p>
-<p>5. How many features does the deletion at XII:650823 overlap with? What type of genes? Note you will need to also use the -wb option in bedtools intersect.</p>
-<p><code>bedtools intersect -wb -a ERR1015069.dels.vcf -b Saccharomyces_cerevisiae.R64-1-1.82.genes.gff3 | grep 811446</code></p>
-<p><strong>2 features, all of them are protein coding genes (biotype=protein_coding)</strong></p>
-<p>6. What is the closest gene to the structural variant at IV:384220 in ERR1015069.dels.vcf?</p>
-<p><strong>YDL037C, try</strong></p>
-<p><code>bedtools closest -d -a ERR1015069.dels.vcf -b Saccharomyces_cerevisiae.R64-1-1.82.genes.gff3| grep IV | grep 384220</code></p>
-<p>5. How many SVs overlap between the two files ERR1015069.dels.vcf and ERR1015121.dels.vcf? <strong>27, try</strong></p>
-<p><code>bedtools intersect -u -a ERR1015069.dels.vcf -b ERR1015121.dels.vcf | wc -l</code></p>
-<p>6. How many SVs have a 90% reciprocal overlap between the two files ERR1015069.dels.vcf and ERR1015121.dels.vcf (<strong>Hint</strong>: first find the option for reciprocal overlap by typing: bedtools intersect -h) <strong>24, try</strong></p>
-<p><code>bedtools intersect -u -r -f 0.9 -a ERR1015069.dels.vcf -b ERR1015121.dels.vcf | wc -l</code></p>
+<section id="guide-questions" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="guide-questions"><span class="header-section-number">5</span> Guide Questions</h2>
+<ol type="1">
+<li>Fill out the assembly comparison table below: | k-mer | Total Length (bp) | Number of Contigs | N50 (bp) | Longest Contig (bp) | | :— | :— | :— | :— | :— | | 31 | | | | | | 55 | | | | | | 75 | | | | |</li>
+<li>How does the choice of k-mer size affect the assembly’s total length and N50? Why?</li>
+<li>What is the species identity of the sequenced yeast isolate based on your BLASTn search?</li>
+<li>Is this identified fungus known to be a common human pathogen or food contaminate? Does it pose a clinical concern?</li>
+</ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1344,18 +1310,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../course_modules/Module4/module4_exercises.html" class="pagination-link" aria-label="Exercises">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Exercises</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../course_modules/Module4/module4_instructor_notes.html" class="pagination-link" aria-label="Instructor notes">
-        <span class="nav-page-text">Instructor notes</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

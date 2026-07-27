@@ -606,6 +606,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#read-alignment" id="toc-read-alignment" class="nav-link active" data-scroll-target="#read-alignment"><span class="header-section-number">0.1</span> Read Alignment</a></li>
+  <li><a href="#performing-read-alignment" id="toc-performing-read-alignment" class="nav-link" data-scroll-target="#performing-read-alignment"><span class="header-section-number">0.2</span> Performing Read Alignment</a></li>
+  <li><a href="#alignment-visualisation" id="toc-alignment-visualisation" class="nav-link" data-scroll-target="#alignment-visualisation"><span class="header-section-number">0.3</span> Alignment Visualisation</a></li>
+  <li><a href="#alignment-workflows" id="toc-alignment-workflows" class="nav-link" data-scroll-target="#alignment-workflows"><span class="header-section-number">0.4</span> Alignment workflows</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">0.5</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -633,7 +637,66 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="read-alignment" class="level3" data-number="0.1">
 <h3 data-number="0.1" class="anchored" data-anchor-id="read-alignment"><span class="header-section-number">0.1</span> Read Alignment</h3>
-<p>The solutions to the exercises can be found on the <a href="https://lms.wellcomeconnectingscience.org/course/view.php?id=347&amp;sectionid=2595">LMS</a>.</p>
+<p>There are no questions in this section.</p>
+</section>
+<section id="performing-read-alignment" class="level3" data-number="0.2">
+<h3 data-number="0.2" class="anchored" data-anchor-id="performing-read-alignment"><span class="header-section-number">0.2</span> Performing Read Alignment</h3>
+<p>1. 145441459</p>
+<p>2. The sam is ~ 157M and the bam is ~ 25M</p>
+<p>3. 67,461 (17.2%) or 359 + (33551 * 2)</p>
+<p>4. 392,820</p>
+<p>5. 391603/392820 (99.7%)</p>
+<p>6. 389410</p>
+<p>7. 0</p>
+<p>8. 419 (mean) 113.9 (standard deviation)</p>
+<p>9. 7,853 (2.0%)</p>
+<p>10. First/Forward read</p>
+</section>
+<section id="alignment-visualisation" class="level3" data-number="0.3">
+<h3 data-number="0.3" class="anchored" data-anchor-id="alignment-visualisation"><span class="header-section-number">0.3</span> Alignment Visualisation</h3>
+<p>1. This exercise is just asking you to explore the genome and become familiar with navigating in IGV.</p>
+<p>2. 23X-57X</p>
+<p>3. There is a 1bp insertion (at “T)” at position 87,483,966. This is supported by 9 reads.</p>
+<p>There is a 28bp deletion at position 87,483,966. This is supported by 3 reads.</p>
+<p>The third mutation is a bit harder to spot, because it’s bigger than the read length (so no single read will span it). Look first at the coverage track, and notice a sharp coverage drop between chr7:87,483,833 and chr7:87,484,169. That suggests that one of the two alleles have been deleted across that position. Notice also the soft-clipping of some reads “entering” chr7:87,483,833 from the left, and the same softclipping of reads entering chr7:87,484,169 from the right. This soft-clipping shows up as reads being partly multi-coloured. That’s happening because the physical genome between those points has been excised for one allele, causing the mis-alignment when we attempt to align some reads to the reference genome. That mis-alignment causes the bwa aligner to “give up” and mark a part of the read as soft-clipped.</p>
+<p>4. This mouse was bred from a zygote which was mutagenised with Crispr-Cas9, targeted at the Tyr locus. You are watching the zygote DNA-repair machinery panicking and grabbing at straws when trying to repair double-stranded DNA breaks. In the process, it makes mistakes, and those mistakes are propagated into the mouse genome: different zygote cells received different mutations, which is why some reads reflect different mutations to others. Specifically - The CRISPR-Cas9 has acted on the zygote at this locus to create Non-Homologous-End-Join-based damage around 87,483,960: that resulted in a subclonal 1bp insertion and a 28bp deletion. Also, a related DNA repair process has resulted in the a 336bp deletion across the same area.</p>
+</section>
+<section id="alignment-workflows" class="level3" data-number="0.4">
+<h3 data-number="0.4" class="anchored" data-anchor-id="alignment-workflows"><span class="header-section-number">0.4</span> Alignment workflows</h3>
+<p>1. -M marks shorter split hits as secondary and -R adds the read group to the header of the BAM file</p>
+<p>2. -b means create a BAM as output and -S indicates that the input files is a SAM file. The -S option is now ignored by samtools as it can now autodetect the input file type.</p>
+<p>3. 397506</p>
+<p>4. 303036/397506 (76.2%)</p>
+<p>5. 282478</p>
+<p>6. 2239</p>
+<p>7. 275.9 (mean) and 47.7 (standard deviation)</p>
+<p>8. 23,789 (7.9%)</p>
+<p>9. First</p>
+<p>10.</p>
+<p><code>bwa mem -M -R ”@RG\tID:lane2\tSM:60A_Sc_DBVPG6044” ../../../../ref/Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa.gz s_7_1.fastq.gz s_7_2.fastq.gz | samtools view -bS - | samtools sort -T temp -O bam -o lane1.sorted.bam -</code></p>
+<p>~22M</p>
+<p>Merge: ~/course_data/read_alignment/data/Exercise2/60A_Sc_DBVPG6044/library1$ picard</p>
+<p>MergeSamFiles -I lane1/lane1.sorted.bam -I lane2/lane1.sorted.bam -O library1.bam</p>
+<p>Markdup: ~/course_data/read_alignment/data/Exercise2/60A_Sc_DBVPG6044/library1$ picard</p>
+<p>MarkDuplicates -I library1.bam -O library1.markdup.bam -M library1.metrics.txt</p>
+<p>11. 12399 or 3115 + (4642 * 2) = unpaired read dups + (paired read dups *2)</p>
+<p>12. 2.5%</p>
+</section>
+<section id="exercises" class="level3" data-number="0.5">
+<h3 data-number="0.5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">0.5</span> Exercises</h3>
+<p>1. No answer needed</p>
+<p>2. The reference base is C</p>
+<p>3. No (the reads call T)</p>
+<p>4. The reference base is G and all reads agree</p>
+<p>5. No answer</p>
+<p>6. An insertion</p>
+<p>7. No answer</p>
+<p>8. A deletion. This is unlikely to be a true variant and may be due to misalignment due the run of T’s in the flanking region.</p>
+<p>9. The following command procuces a cram file which should be ~29MB in size.</p>
+<p><code>samtools view -C -T ../../../ref/Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa -o library1.markdup.cram library1.markdup.bam</code></p>
+<p>-C means create a CRAM file as output</p>
+<p>-T is the reference file to use for the compression</p>
+<p>-o is the name of CRAM file to create</p>
 
 
 </section>

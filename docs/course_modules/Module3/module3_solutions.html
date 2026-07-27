@@ -605,7 +605,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#variant-calling" id="toc-variant-calling" class="nav-link active" data-scroll-target="#variant-calling"><span class="header-section-number">0.1</span> Variant calling</a></li>
+  <li><a href="#variant-calling---solutions" id="toc-variant-calling---solutions" class="nav-link active" data-scroll-target="#variant-calling---solutions"><span class="header-section-number">0.1</span> Variant Calling - Solutions</a></li>
+  <li><a href="#performing-variant-calling" id="toc-performing-variant-calling" class="nav-link" data-scroll-target="#performing-variant-calling"><span class="header-section-number">0.2</span> Performing variant calling</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">0.3</span> Exercises</a></li>
+  <li><a href="#variant-filtering" id="toc-variant-filtering" class="nav-link" data-scroll-target="#variant-filtering"><span class="header-section-number">0.4</span> Variant Filtering</a></li>
+  <li><a href="#calling-variants-across-multiple-samples" id="toc-calling-variants-across-multiple-samples" class="nav-link" data-scroll-target="#calling-variants-across-multiple-samples"><span class="header-section-number">0.5</span> Calling Variants Across Multiple Samples</a></li>
+  <li><a href="#visualising-alignments" id="toc-visualising-alignments" class="nav-link" data-scroll-target="#visualising-alignments"><span class="header-section-number">0.6</span> Visualising Alignments</a></li>
+  <li><a href="#variant-annotation" id="toc-variant-annotation" class="nav-link" data-scroll-target="#variant-annotation"><span class="header-section-number">0.7</span> Variant annotation</a></li>
   </ul>
 </nav>
     </div>
@@ -631,9 +637,69 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="variant-calling" class="level3" data-number="0.1">
-<h3 data-number="0.1" class="anchored" data-anchor-id="variant-calling"><span class="header-section-number">0.1</span> Variant calling</h3>
-<p>The solutions to the exercises can be found on the <a href="https://lms.wellcomeconnectingscience.org/mod/page/view.php?id=10767&amp;forceview=1">LMS</a>.</p>
+<section id="variant-calling---solutions" class="level3" data-number="0.1">
+<h3 data-number="0.1" class="anchored" data-anchor-id="variant-calling---solutions"><span class="header-section-number">0.1</span> Variant Calling - Solutions</h3>
+<p>No exercises in this section.</p>
+</section>
+<section id="performing-variant-calling" class="level3" data-number="0.2">
+<h3 data-number="0.2" class="anchored" data-anchor-id="performing-variant-calling"><span class="header-section-number">0.2</span> Performing variant calling</h3>
+<p><strong>Q1</strong> 66 reads</p>
+<p><strong>Q2</strong> The reference allele is A and the alternate allele is G. The upper/lower case letters indicate the forward/reverse orientation of the read.</p>
+<p><strong>Q3</strong> 0 reads calling reference allelle and 66 reads calling the alternate allele</p>
+<p><strong>Q4</strong> Add the <strong><em>-v</em></strong> option to the command:</p>
+<p><code>bcftools mpileup -f GRCm38_68.19.fa A_J.bam | bcftools call -mv | less -S</code></p>
+</section>
+<section id="exercises" class="level3" data-number="0.3">
+<h3 data-number="0.3" class="anchored" data-anchor-id="exercises"><span class="header-section-number">0.3</span> Exercises</h3>
+<p><strong>Q1</strong> The reference allele is A and the alternate allele is G.</p>
+<p><strong>Q2</strong> Look up the tag DP in the INFO column: there were 69 raw reads at the position.</p>
+<p><strong>Q3</strong> There are 0 reads calling the reference and 66 high-quality reads calling the alternate.</p>
+<p><strong>Q4</strong> An indel. Five bases TGTGG were inserted after the T at position 10003649</p>
+</section>
+<section id="variant-filtering" class="level3" data-number="0.4">
+<h3 data-number="0.4" class="anchored" data-anchor-id="variant-filtering"><span class="header-section-number">0.4</span> Variant Filtering</h3>
+<p><strong>Q1</strong> The complete command is:</p>
+<p><code>bcftools query -f'%POS %QUAL [%GT %AD] %REF %ALT\n' -i'QUAL&gt;=30 &amp;&amp; type="snp" &amp;&amp; AD[*:1]&gt;=25' out.vcf | head</code></p>
+<p><strong>Q2</strong> The complete command is:</p>
+<p><code>bcftools stats -i'QUAL&gt;=30 &amp;&amp; AD[*:1]&gt;=25' out.vcf | grep TSTV | cut -f5</code></p>
+<p><strong>Q3</strong> The complete command is:</p>
+<p><code>bcftools stats -e'QUAL&gt;=30 &amp;&amp; AD[*:1]&gt;=25' out.vcf | grep TSTV | cut -f5</code></p>
+<p><strong>Q4</strong> The complete command is:</p>
+<p><code>bcftools stats -i 'GT="het"' out.vcf | grep TSTV | cut -f5</code></p>
+<p><strong>Q5</strong> The complete command is:</p>
+<p><code>bcftools norm -f GRCm38_68.19.fa out.flt.vcf -o out.flt.norm.vcf</code></p>
+</section>
+<section id="calling-variants-across-multiple-samples" class="level3" data-number="0.5">
+<h3 data-number="0.5" class="anchored" data-anchor-id="calling-variants-across-multiple-samples"><span class="header-section-number">0.5</span> Calling Variants Across Multiple Samples</h3>
+<p><strong>Q1</strong> Use the commands:</p>
+<p><code>bcftools mpileup -a AD -f GRCm38_68.19.fa *.bam -Ou | bcftools call -mv -Ob -o multi.bcf bcftools index multi.bcf</code></p>
+<p><strong>Q2</strong> Use the commands</p>
+<p><code>bcftools filter -s LowQual -i'QUAL&gt;=30 &amp;&amp; AD[*:1]&gt;=25' -g8 -G10 multi.bcf -Ob -o multi.filt.bcf bcftools index multi.filt.bcf</code></p>
+<p><strong>Q3</strong> Use the commands:</p>
+<p><code>bcftools stats multi.filt.bcf | grep TSTV | cut -f5 (raw calls)</code></p>
+<p><code>bcftools stats -i 'FILTER="PASS"' multi.filt.bcf | grep TSTV | cut -f5 (only filtered set)</code></p>
+<p><strong>Q4</strong> Use the commands:</p>
+<p><code>bcftools stats -e 'FILTER="PASS"' multi.filt.bcf | grep TSTV | cut -f5</code></p>
+</section>
+<section id="visualising-alignments" class="level3" data-number="0.6">
+<h3 data-number="0.6" class="anchored" data-anchor-id="visualising-alignments"><span class="header-section-number">0.6</span> Visualising Alignments</h3>
+<p><strong>Q1</strong> 75 in total, 39 on the forward and 36 on the reverse strand.</p>
+<p><strong>Q2</strong> Yes. Use the command:</p>
+<p><code>bcftools view -H -r 19:10001946 multi.filt.bcf</code></p>
+<p><strong>Q3</strong> Yes.</p>
+<p><strong>Q4</strong> Yes. Use the command:</p>
+<p><code>bcftools view -H -r 19:10072443 multi.filt.bcf</code></p>
+<p><strong>Q5</strong> No.&nbsp;It fails due to lowQual and snpGap, this means the call was removed by filtering because the quality of the call falls below the treshold set and the call is in close proximity to an indel.</p>
+<p><strong>Q6</strong> No.&nbsp;It is an alignment artefact, the aligner prefered two SNPs instead of a long deletion.</p>
+</section>
+<section id="variant-annotation" class="level3" data-number="0.7">
+<h3 data-number="0.7" class="anchored" data-anchor-id="variant-annotation"><span class="header-section-number">0.7</span> Variant annotation</h3>
+<p><strong>Q1</strong> Use the command:</p>
+<p><code>bcftools query -f '%BCSQ' -r 19:10088937 multi.filt.annot.bcf</code></p>
+<p>to return</p>
+<p><code>missense|Fads2|ENSMUST00000025567|protein_coding|-|163V&gt;163I|10088937C&gt;T(base)</code></p>
+<p><strong>Q2</strong> A missense mutation</p>
+<p><strong>Q3</strong> The C&gt;T mutation changes the amino acid at position 163 in the protein sequence, from valine to isoleucine.</p>
 
 
 </section>

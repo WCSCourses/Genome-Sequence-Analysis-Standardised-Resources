@@ -1,0 +1,4 @@
+10 + 0 in total (QC-passed reads + QC-failed reads)
+7 + 0 mapped (70.00% : N/A)
+4 + 0 properly paired (40.00% : N/A)
+3 + 0 singletons (30.00% : N/A)

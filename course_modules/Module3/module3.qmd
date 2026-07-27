@@ -50,6 +50,8 @@ By the end of this module, you should be able to:
 
 [Exercises](module3_exercises.qmd)
 
+[Solutions to exercises](module3_solutions.qmd)
+
 # Lecture notes or scripts
 
 [Recording of the Variant Calling module from the 2022 NGS Asia Course delivered by Petr Danecek.](https://www.youtube.com/watch?v=2l3vbLyO8Sg&list=PLfovZnX0TvKtCjKYWitzUN6f_PwdUHeSu&index=6)

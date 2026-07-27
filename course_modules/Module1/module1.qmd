@@ -49,6 +49,8 @@ In this module, learners will look at data formats in detail. At the end of the 
 
 [Exercises](module1_exercises.qmd)
 
+[Solutions to exercises](module1_solutions.qmd)
+
 # Lecture recording, notes and scripts
 
 [Lecture on Data Formats and QC from the 2022 NGS Asia course, delivered by Petr Danacek](https://www.youtube.com/watch?v=mmjzJ0OjSow&list=PLfovZnX0TvKtCjKYWitzUN6f_PwdUHeSu&index=4)

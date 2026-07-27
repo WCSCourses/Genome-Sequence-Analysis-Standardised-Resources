@@ -43,6 +43,8 @@ This tutorial was written by Jacqui Keane and Thomas Keane.
 
 [Exercises](module4_exercises.qmd)
 
+[Solutions to exercises](module4_solutions.qmd)
+
 # Lecture recording, notes and scripts
 
 [Lecture on Structural Variant Calling from the 2022 NGS Asia course, delivered by Thomas Keane](https://www.youtube.com/watch?v=80tpolAIJ8E&list=PLfovZnX0TvKtCjKYWitzUN6f_PwdUHeSu&index=7)

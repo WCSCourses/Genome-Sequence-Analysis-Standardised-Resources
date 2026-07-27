@@ -53,6 +53,8 @@ On completion of the tutorial, you can expect to be able to:
 
 [Exercises](module2_exercises.qmd)
 
+[Solutions to exercises](module2_solutions.qmd)
+
 # Lecture notes or scripts
 
 [Recording of the Read Alignment module from the 2022 NGS Asia Course, delivered by Thomas Keane.](https://www.youtube.com/watch?v=o6MefkXfL2A&list=PLfovZnX0TvKtCjKYWitzUN6f_PwdUHeSu&index=5)
