@@ -45,6 +45,8 @@ On completion of the tutorial, you can expect to be able to:
 
 [Exercises](module5_exercises.qmd)
 
+[Solutions to exercises](module5_solutions.qmd)
+
 # Lecture recording, notes and scripts
 
 [Lecture on Genome Assembly from the 2022 NGS Asia course, delivered by Thomas Keane](https://www.youtube.com/watch?v=xE9pxUs_wHE&list=PLfovZnX0TvKtCjKYWitzUN6f_PwdUHeSu&index=8)
