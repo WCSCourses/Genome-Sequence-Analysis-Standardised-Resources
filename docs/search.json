@@ -1478,7 +1478,7 @@
     "href": "course_modules/VM_guide/VM_Guide.html#downloading-virtual-machine-vm-image-via-globus",
     "title": "1 Oracle VM VirtualBox Installation Guide",
     "section": "2.5 Downloading Virtual Machine (VM) Image via Globus",
-    "text": "2.5 Downloading Virtual Machine (VM) Image via Globus\nThe Virtual Machine (VM) is a large download that many users find challenging. To address this, we use Globus software to facilitate the process. Globus is a research-oriented file transfer tool that offers the advantage of resuming downloads from the same position in case of an internet connection failure, instead of starting over.\n\nGlobus Website: https://www.globus.org",
+    "text": "2.5 Downloading Virtual Machine (VM) Image via Globus\nThe Virtual Machine (VM) is a large download that many users find challenging. To address this, we use Globus software to facilitate the process. Globus is a research-oriented file transfer tool that offers the advantage of resuming downloads from the same position in case of an internet connection failure, instead of starting over.\n\nGlobus Website: https://www.globus.org\nThe VM for this course can be downloaded from here.",
     "crumbs": [
       "Home",
       "How to setup your VM",

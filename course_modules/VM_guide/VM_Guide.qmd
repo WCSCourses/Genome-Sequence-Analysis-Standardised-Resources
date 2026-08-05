@@ -120,6 +120,7 @@ This information will guide you on the compatibility of VirtualBox with your sys
 The Virtual Machine (VM) is a large download that many users find challenging. To address this, we use Globus software to facilitate the process. Globus is a research-oriented file transfer tool that offers the advantage of resuming downloads from the same position in case of an internet connection failure, instead of starting over.
 
 -   **Globus Website:** <https://www.globus.org>
+-   **The VM for this course can be downloaded from [here](https://g-0329b9.4c5f14.75bc.data.globus.org/GSA2026.vdi.zip).**
 
 ## Globus VM Downloading Steps: {#globus-vm-downloading-steps}
 

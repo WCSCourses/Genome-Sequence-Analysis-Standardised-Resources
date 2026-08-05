@@ -30,11 +30,6 @@ This course provides two ways to access the computing environment:
 
 Different classrooms in this course will have a different setup for the course participants. Please check the table below to see which classroom settings you will be using.
 
-| Platform | Classroom |
-|----|----|
-| VirtualBox setup | Khon Kaen University - Thailand |
-| Google Cloud Platform setup | All India Institute of Medical Sciences - India; Cancer Research Malaysia - Malaysia; Philippine Genome Center Visayas - Philippines; A\*STAR and National Institute of Singapore - Singapore |
-
 ## Google Cloud Platform (GCP)
 
 The Google Cloud Platform (GCP) Virtual Machine is a remote version of the course environment that runs on cloud servers rather than on your local computer. You access it through your web browser, so no installation is required on your laptop. It provides the same tools and setup as the VirtualBox VM, but everything runs remotely.
