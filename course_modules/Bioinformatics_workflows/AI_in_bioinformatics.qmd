@@ -1,0 +1,18 @@
+---
+title: "AI in Bioinformatics"
+format: html
+---
+
+AI is already changing both how bioinformatics is taught and how it's practiced — this session surfaces what trainers are already doing, what a shared curriculum should cover, and uses a live case to think through a harder question: when AI output is better than a human's, and when it isn't, what does that mean for how we teach workflows?
+
+## AI versus Human in Bioinformatics workflows
+
+Useful links:
+
+-   [Project 1, Solution 1](Project1/v1.html)
+
+-   [Project 1, Solution 2](Project1/v2.html)
+
+-   [Project 2, Solution 1](Project2/v1.html)
+
+-   [Project 2, Solution 2](Project2/v2.html)

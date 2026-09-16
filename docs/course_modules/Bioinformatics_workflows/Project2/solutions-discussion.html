@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project 8: Detecting Drug Resistance in Mycobacterium tuberculosis – Genome Sequence Analysis Course</title>
+<title>solutions-discussion – Genome Sequence Analysis Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -207,6 +173,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-train-the-trainer" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Train-the-trainer</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-train-the-trainer">    
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Train-the-trainer/teach-as-you-go.html">
+ <span class="dropdown-text">Teach-as-you-go sessions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Bioinformatics_workflows/AI_in_bioinformatics.html">
+ <span class="dropdown-text">AI in Bioinformatics Workflows</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -219,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Project 8: Detecting Drug Resistance in Mycobacterium tuberculosis</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -637,123 +618,129 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#tools-to-be-used" id="toc-tools-to-be-used" class="nav-link" data-scroll-target="#tools-to-be-used"><span class="header-section-number">2</span> Tools to be used</a></li>
-  <li><a href="#data-download" id="toc-data-download" class="nav-link" data-scroll-target="#data-download"><span class="header-section-number">3</span> Data Download</a>
+  <li><a href="#project-2-qc-evaluation-solution-1-answer-key-v1-vs.-solution-2-student-v2" id="toc-project-2-qc-evaluation-solution-1-answer-key-v1-vs.-solution-2-student-v2" class="nav-link active" data-scroll-target="#project-2-qc-evaluation-solution-1-answer-key-v1-vs.-solution-2-student-v2"><span class="header-section-number">1</span> Project 2 QC Evaluation: Solution 1 (Answer Key, v1) vs.&nbsp;Solution 2 (Student, v2)</a>
   <ul class="collapse">
-  <li><a href="#reference-genome" id="toc-reference-genome" class="nav-link" data-scroll-target="#reference-genome"><span class="header-section-number">3.1</span> 1. Reference Genome</a></li>
-  <li><a href="#raw-sequencing-reads" id="toc-raw-sequencing-reads" class="nav-link" data-scroll-target="#raw-sequencing-reads"><span class="header-section-number">3.2</span> 2. Raw Sequencing Reads</a></li>
+  <li><a href="#overall" id="toc-overall" class="nav-link" data-scroll-target="#overall"><span class="header-section-number">1.1</span> Overall</a></li>
   </ul></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">4</span> Tasks</a></li>
-  <li><a href="#guide-questions" id="toc-guide-questions" class="nav-link" data-scroll-target="#guide-questions"><span class="header-section-number">5</span> Guide Questions</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Project 8: Detecting Drug Resistance in Mycobacterium tuberculosis</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
+<section id="project-2-qc-evaluation-solution-1-answer-key-v1-vs.-solution-2-student-v2" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Project 2 QC Evaluation: Solution 1 (Answer Key, v1) vs.&nbsp;Solution 2 (Student, v2)</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task / Metric</th>
+<th>Solution 1 — v1 (Answer Key)</th>
+<th>Solution 2 — v2 (Student)</th>
+<th>Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Alignment workflow</strong></td>
+<td><code>bwa mem</code> → <code>samtools sort</code> → <strong><code>picard MarkDuplicates</code></strong> → <code>samtools stats</code></td>
+<td><code>bwa mem</code> → <code>samtools sort</code> → <code>samtools stats</code> (no duplicate marking)</td>
+<td>❌ v2 is missing the dedup step present in the official workflow — a methodological gap.</td>
+</tr>
+<tr class="even">
+<td><strong>Group 2 mapping / error rate</strong></td>
+<td>Lower mapping rate and higher base error rate (shown via QC plot, no exact numbers in text)</td>
+<td>92.5% mapped, 91.2% properly paired, 7.5% unmapped, error rate 0.95%</td>
+<td>✅ Matches the key’s qualitative finding (Group 2 worse than Group 4).</td>
+</tr>
+<tr class="odd">
+<td><strong>Group 4 mapping / error rate</strong></td>
+<td>High mapping rate, low error rate (shown via QC plot)</td>
+<td>99.5% mapped, 99.0% properly paired, 0.5% unmapped, error rate 0.099%</td>
+<td>✅ Matches the key — Group 4 is clean.</td>
+</tr>
+<tr class="even">
+<td><strong>Insert size QC</strong></td>
+<td>Group 2 flagged as <strong>abnormal</strong>: large plateau of outward-facing pairs in first 100 bp with an abrupt cutoff — suggests mate-pair contamination/adapter issues</td>
+<td>Both libraries described as having “correct and tight” insert size distributions — <strong>no anomaly noted</strong></td>
+<td>❌ v2 misses this QC signal entirely; contradicts the key.</td>
+</tr>
+<tr class="odd">
+<td><strong>GC content QC</strong></td>
+<td>Group 2 flagged as <strong>abnormal</strong>: ~65% GC bump in first fragment — suggests minor contamination with a higher-GC organism</td>
+<td>Not assessed/mentioned</td>
+<td>❌ v2 doesn’t perform or discuss this check.</td>
+</tr>
+<tr class="even">
+<td><strong>Mismatches-per-cycle QC</strong></td>
+<td>Group 2 flagged as <strong>abnormal</strong>: high-quality mismatches (Q&gt;30) elevated and flat across all cycles — suggests true sequence divergence or contamination</td>
+<td>Not assessed/mentioned</td>
+<td>❌ v2 doesn’t perform or discuss this check.</td>
+</tr>
+<tr class="odd">
+<td><strong>Homopolymer/poly-G reads</strong></td>
+<td>Not explicitly discussed in this section (covered via QC plots)</td>
+<td>Explicitly notes low-complexity poly-T/poly-G reads in unmapped Group 2 reads, correctly attributes to dark-cluster/2-channel chemistry artifacts</td>
+<td>✅ v2 adds a correct, relevant observation consistent with the key’s overall QC narrative.</td>
+</tr>
+<tr class="even">
+<td><strong>Group 2 variants</strong></td>
+<td>Raw: 38,993 SNPs / 356 indels; Filtered: 14,030 SNPs / 95 indels; ts/tv 3.38 → 3.83</td>
+<td>Raw: 39,317 SNPs / 397 indels; Filtered: 17,160 SNPs / 153 indels; ts/tv 3.33 → 3.75</td>
+<td>⚠️ Same order of magnitude and trend, but filtered SNP count is ~20% higher than the key — consistent with the missing dedup step.</td>
+</tr>
+<tr class="odd">
+<td><strong>Group 4 variants</strong></td>
+<td>Raw: 40 SNPs / 16 indels; Filtered: 7 SNPs / 4 indels; ts/tv 0.90 → 1.33</td>
+<td>Raw: 105 SNPs / 24 indels; Filtered: 17 SNPs / 6 indels; ts/tv 1.28 → 1.12</td>
+<td>❌ Meaningful mismatch — v2’s numbers are roughly 2–3x higher than the key’s for a sample that should be near-identical to the reference.</td>
+</tr>
+<tr class="even">
+<td><strong>Interpretation of Group 2’s high SNP count</strong></td>
+<td>Framed as a likely <strong>QC/contamination artifact</strong> producing <strong>high false positive variant calls</strong>, not confirmed biological divergence</td>
+<td>Framed as a <strong>genuinely divergent strain</strong>; high ts/tv (3.75) is said to “confirm” the SNPs are real biological variation</td>
+<td>❌ Direct contradiction — this is the key scientific disagreement between the two solutions.</td>
+</tr>
+<tr class="odd">
+<td><strong>Was the run a success?</strong></td>
+<td>Implied yes, but tempered by the Group 2 QC concerns</td>
+<td>Yes — explicitly stated</td>
+<td>⚠️ Same overall verdict, different confidence/reasoning.</td>
+</tr>
+<tr class="even">
+<td><strong>Keep the instrument?</strong></td>
+<td>Yes — Group 4 proves the instrument works</td>
+<td>Yes — explicitly stated, same reasoning</td>
+<td>✅ Agreement.</td>
+</tr>
+<tr class="odd">
+<td><strong>Cause of Group 2 issues</strong></td>
+<td>QC/contamination issues with the sample</td>
+<td>Library prep issues or sample-specific contamination (not a hardware defect) — but this is inconsistent with also treating the SNPs as “real”</td>
+<td>⚠️ Right diagnosis for the unmapped reads, but not carried through consistently to the variant-calling conclusion.</td>
+</tr>
+<tr class="even">
+<td><strong>Recommendations</strong></td>
+<td>Review sample-prep training; repeat the run, possibly with more samples</td>
+<td>Strengthen library QC (Bioanalyzer/TapeStation), optimize cluster density, review SAV/interop run reports, add read trimming (<code>fastp</code>/<code>trimmomatic</code>)</td>
+<td>✅ v2’s recommendations are more detailed and specific, and don’t conflict with the key.</td>
+</tr>
+</tbody>
+</table>
+<section id="overall" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="overall"><span class="header-section-number">1.1</span> Overall</h2>
+<p>Solution 2 (v2) is strong on lab workflow and reporting granularity — real numbers, a correct explanation for the poly-G artifacts, and solid forward-looking recommendations. It falls short in two ways: it skips a step in the official protocol (duplicate marking), and it reaches the <strong>opposite conclusion</strong> from the answer key on the central biological question — whether Group 2’s ~17,000 SNPs reflect a real divergent strain or QC/contamination-driven false positives. The answer key treats this as an artifact; v2 treats it as confirmed biology.</p>
 
-    
-  
-    
-  </div>
-  
 
-
-</header>
-
-
-<p><strong>General guidance for project</strong></p>
-<p>Recommended number of participants per group: 4 to 6.</p>
-<p>Project work running time: 1.5h (intended to be solved in under 1 hour by a human without AI assistance).</p>
-<p>Each group will present their work in their respective classroom.</p>
-<section id="introduction" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
-<p>Multidrug-resistant tuberculosis (MDR-TB) is defined as resistance to at least isoniazid and rifampicin, two of the most powerful first-line anti-TB drugs. Rapid detection of drug resistance is critical for patient management. Resistance is primarily caused by specific single nucleotide polymorphisms (SNPs) in the bacterial genome: - <strong>Isoniazid (INH) resistance</strong> is commonly associated with mutations in the <code>katG</code> gene (specifically codon 315, position <code>2155168</code> on the H37Rv reference genome). - <strong>Rifampicin (RIF) resistance</strong> is commonly associated with mutations in the rifampicin resistance-determining region (RRDR) of the <code>rpoB</code> gene (specifically codon 450, position <code>761155</code> on the H37Rv reference genome).</p>
-<p>In this project, you will analyze clinical isolates from a patient showing poor response to standard TB therapy. You will align the reads to the <em>M. tuberculosis</em> H37Rv reference, call variants, and determine if the isolate is multidrug-resistant.</p>
 </section>
-<section id="tools-to-be-used" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="tools-to-be-used"><span class="header-section-number">2</span> Tools to be used</h2>
-<ul>
-<li><code>bwa mem</code> for alignment.</li>
-<li><code>samtools</code> for BAM file processing and coverage analysis.</li>
-<li><code>bcftools</code> for variant calling, filtering, and querying.</li>
-</ul>
-</section>
-<section id="data-download" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="data-download"><span class="header-section-number">3</span> Data Download</h2>
-<p>Create a project directory and navigate to it:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$HOME</span>/Project8 <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> <span class="st">"</span><span class="va">$_</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="reference-genome" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="reference-genome"><span class="header-section-number">3.1</span> 1. Reference Genome</h3>
-<p>Download the <em>Mycobacterium tuberculosis</em> H37Rv reference genome (NC_000962.3) from NCBI:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> mtb_ref.fasta <span class="st">"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&amp;id=NC_000962.3&amp;rettype=fasta&amp;retmode=text"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="raw-sequencing-reads" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="raw-sequencing-reads"><span class="header-section-number">3.2</span> 2. Raw Sequencing Reads</h3>
-<p>Download the raw reads from ENA for clinical isolate run <strong>ERR552140</strong>. We will subsample 100,000 read pairs using <code>seqtk</code> to ensure the analysis completes within the hour:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download reads from ENA</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> raw_1.fastq.gz <span class="st">"https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR552/ERR552140/ERR552140_1.fastq.gz"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> raw_2.fastq.gz <span class="st">"https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR552/ERR552140/ERR552140_2.fastq.gz"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Subsample 100,000 read pairs</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">seqtk</span> sample <span class="at">-s100</span> raw_1.fastq.gz 100000 <span class="kw">|</span> <span class="fu">gzip</span> <span class="op">&gt;</span> reads_1.fastq.gz</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">seqtk</span> sample <span class="at">-s100</span> raw_2.fastq.gz 100000 <span class="kw">|</span> <span class="fu">gzip</span> <span class="op">&gt;</span> reads_2.fastq.gz</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean up raw files</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> raw_1.fastq.gz raw_2.fastq.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="tasks" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="tasks"><span class="header-section-number">4</span> Tasks</h2>
-<p><strong>Task 1: Index the Reference Genome</strong> Prepare the reference sequence:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bwa</span> index mtb_ref.fasta</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> faidx mtb_ref.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Task 2: Align the Reads and Process the BAM</strong> Align the paired-end reads, sort, and index the alignment:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Align reads</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">bwa</span> mem mtb_ref.fasta reads_1.fastq.gz reads_2.fastq.gz <span class="kw">|</span> <span class="ex">samtools</span> view <span class="at">-bS</span> <span class="at">-</span> <span class="kw">|</span> <span class="ex">samtools</span> sort <span class="at">-o</span> aligned_sorted.bam</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Index the BAM</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> index aligned_sorted.bam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Task 3: Check Coverage at Loci of Interest</strong> Use <code>samtools depth</code> to check the depth of coverage at the target positions for <code>katG</code> (<code>2155168</code>) and <code>rpoB</code> (<code>761155</code>):</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> depth <span class="at">-r</span> NC_000962.3:2155168-2155168 aligned_sorted.bam</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> depth <span class="at">-r</span> NC_000962.3:761155-761155 aligned_sorted.bam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><em>Is the sequencing depth sufficient at both positions to trust a variant call (typically &gt;=10x)?</em></p>
-<p><strong>Task 4: Variant Calling</strong> Call variants across the whole reference genome:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> mpileup <span class="at">-a</span> AD <span class="at">-f</span> mtb_ref.fasta aligned_sorted.bam <span class="at">-Ou</span> <span class="kw">|</span> <span class="ex">bcftools</span> call <span class="at">-mv</span> <span class="at">-o</span> raw_calls.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Task 5: Filter and Query Resistance Mutations</strong> Filter calls for <code>QUAL &gt;= 30</code> and <code>DP &gt;= 10</code>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> view <span class="at">-i</span> <span class="st">'QUAL&gt;=30 &amp;&amp; DP&gt;=10'</span> raw_calls.vcf <span class="at">-o</span> filtered_calls.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Query the genotypes specifically at the two target loci:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Query the katG locus</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> view <span class="at">-r</span> NC_000962.3:2155168 filtered_calls.vcf <span class="kw">|</span> <span class="ex">bcftools</span> query <span class="at">-f</span> <span class="st">'%POS %REF %ALT [%GT %AD]\n'</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Query the rpoB locus</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> view <span class="at">-r</span> NC_000962.3:761155 filtered_calls.vcf <span class="kw">|</span> <span class="ex">bcftools</span> query <span class="at">-f</span> <span class="st">'%POS %REF %ALT [%GT %AD]\n'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="guide-questions" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="guide-questions"><span class="header-section-number">5</span> Guide Questions</h2>
-<ol type="1">
-<li>Did you find a variant at position <code>2155168</code> (<code>katG</code> gene)? If so, what is the reference and alternate allele? Does this SNP correspond to the codon 315 GGC to AGC (Ser315Thr) mutation?</li>
-<li>Did you find a variant at position <code>761155</code> (<code>rpoB</code> gene)? If so, what is the reference and alternate allele? Does this correspond to the codon 450 TCG to TTG (Ser450Leu) mutation?</li>
-<li>Based on your genotyping results, is the patient’s isolate classified as:
-<ul>
-<li>Susceptible to both drugs</li>
-<li>Resistant to Isoniazid only</li>
-<li>Resistant to Rifampicin only</li>
-<li>Multidrug-resistant (MDR-TB)</li>
-</ul></li>
-<li>What is the clinical implication of your findings for this patient’s treatment regimen?</li>
-</ol>
-
-
 </section>
 
 </main> <!-- /main -->

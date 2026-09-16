@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project 7: Tracking SARS-CoV-2 Lineages and Mutations of Concern – Genome Sequence Analysis Course</title>
+<title>AI vs Human in Bioinformatics Workflows: Project 1 - Solution 2 – Genome Sequence Analysis Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -207,6 +173,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-train-the-trainer" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Train-the-trainer</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-train-the-trainer">    
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Train-the-trainer/teach-as-you-go.html">
+ <span class="dropdown-text">Teach-as-you-go sessions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Bioinformatics_workflows/AI_in_bioinformatics.html">
+ <span class="dropdown-text">AI in Bioinformatics Workflows</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -219,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Project 7: Tracking SARS-CoV-2 Lineages and Mutations of Concern</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AI vs Human in Bioinformatics Workflows: Project 1 - Solution 2</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -637,15 +618,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#tools-to-be-used" id="toc-tools-to-be-used" class="nav-link" data-scroll-target="#tools-to-be-used"><span class="header-section-number">2</span> Tools to be used</a></li>
-  <li><a href="#data-download" id="toc-data-download" class="nav-link" data-scroll-target="#data-download"><span class="header-section-number">3</span> Data Download</a>
+  <li><a href="#raw-callsets-before-filtering" id="toc-raw-callsets-before-filtering" class="nav-link active" data-scroll-target="#raw-callsets-before-filtering"><span class="header-section-number">1</span> Raw Callsets (Before Filtering)</a></li>
+  <li><a href="#filtered-callsets-qual-20" id="toc-filtered-callsets-qual-20" class="nav-link" data-scroll-target="#filtered-callsets-qual-20"><span class="header-section-number">2</span> Filtered Callsets (QUAL &gt; 20)</a>
   <ul class="collapse">
-  <li><a href="#reference-genome" id="toc-reference-genome" class="nav-link" data-scroll-target="#reference-genome"><span class="header-section-number">3.1</span> 1. Reference Genome</a></li>
-  <li><a href="#raw-sequencing-reads" id="toc-raw-sequencing-reads" class="nav-link" data-scroll-target="#raw-sequencing-reads"><span class="header-section-number">3.2</span> 2. Raw Sequencing Reads</a></li>
+  <li><a href="#key-observations" id="toc-key-observations" class="nav-link" data-scroll-target="#key-observations"><span class="header-section-number">2.1</span> Key Observations:</a></li>
   </ul></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">4</span> Tasks</a></li>
-  <li><a href="#guide-questions" id="toc-guide-questions" class="nav-link" data-scroll-target="#guide-questions"><span class="header-section-number">5</span> Guide Questions</a></li>
+  <li><a href="#intersection-private-callsets" id="toc-intersection-private-callsets" class="nav-link" data-scroll-target="#intersection-private-callsets"><span class="header-section-number">3</span> Intersection &amp; Private Callsets</a>
+  <ul class="collapse">
+  <li><a href="#method-a-exact-allele-matching" id="toc-method-a-exact-allele-matching" class="nav-link" data-scroll-target="#method-a-exact-allele-matching"><span class="header-section-number">3.1</span> Method A: Exact Allele Matching</a></li>
+  <li><a href="#method-b-collapsed-position-matching--c-both" id="toc-method-b-collapsed-position-matching--c-both" class="nav-link" data-scroll-target="#method-b-collapsed-position-matching--c-both"><span class="header-section-number">3.2</span> Method B: Collapsed Position Matching (<code>-c both</code>)</a></li>
+  </ul></li>
+  <li><a href="#discussion-of-the-results" id="toc-discussion-of-the-results" class="nav-link" data-scroll-target="#discussion-of-the-results"><span class="header-section-number">4</span> Discussion of the Results</a>
+  <ul class="collapse">
+  <li><a href="#indel-representation-discrepancies" id="toc-indel-representation-discrepancies" class="nav-link" data-scroll-target="#indel-representation-discrepancies"><span class="header-section-number">4.1</span> Indel Representation Discrepancies</a></li>
+  <li><a href="#transitiontransversion-tstv-ratio-as-a-quality-metric" id="toc-transitiontransversion-tstv-ratio-as-a-quality-metric" class="nav-link" data-scroll-target="#transitiontransversion-tstv-ratio-as-a-quality-metric"><span class="header-section-number">4.2</span> Transition/Transversion (ts/tv) Ratio as a Quality Metric</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -654,7 +641,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project 7: Tracking SARS-CoV-2 Lineages and Mutations of Concern</h1>
+<h1 class="title">AI vs Human in Bioinformatics Workflows: Project 1 - Solution 2</h1>
 </div>
 
 
@@ -671,82 +658,228 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>General guidance for project</strong></p>
-<p>Recommended number of participants per group: 4 to 6.</p>
-<p>Project work running time: 1.5h (intended to be solved in under 1 hour by a human without AI assistance).</p>
-<p>Each group will present their work in their respective classroom.</p>
-<section id="introduction" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
-<p>During the COVID-19 pandemic, genomic surveillance was vital to track the evolution of SARS-CoV-2 and identify emerging Variants of Concern (VOCs) such as Alpha, Delta, and Omicron. These variants carry specific mutations in the <strong>Spike (S) gene</strong> that affect transmissibility and immune evasion.</p>
-<p>In this project, you will act as a public health bioinformatician. You have received sequencing reads from a nasal swab of a patient who tested positive for COVID-19. Your task is to process the raw reads, map them to the SARS-CoV-2 reference genome, call variants, and determine which lineage this sample belongs to.</p>
+<p>The description of this project can be found <a href="https://wcscourses.github.io/Genome-Sequence-Analysis-Standardised-Resources/course_modules/Projects/project1/project1.html">here</a>.</p>
+<p><strong>Solution number 2 is is below.</strong></p>
+<hr>
+<section id="raw-callsets-before-filtering" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="raw-callsets-before-filtering"><span class="header-section-number">1</span> Raw Callsets (Before Filtering)</h2>
+<p>The raw variant calls from each tool were saved to the following files: * BCFtools Raw VCF: <a href="file:///Users/ma14/Project1/calls/bcftools.vcf.gz">bcftools.vcf.gz</a> * FreeBayes Raw VCF: <a href="file:///Users/ma14/Project1/calls/freebayes.vcf.gz">freebayes.vcf.gz</a> * GATK Raw VCF: <a href="file:///Users/ma14/Project1/calls/gatk.vcf.gz">gatk.vcf.gz</a></p>
+<p>Below is a summary of the raw callset statistics:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variant Caller</th>
+<th style="text-align: left;">Number of SNPs</th>
+<th style="text-align: left;">Number of Indels</th>
+<th style="text-align: left;">ts/tv Ratio</th>
+<th style="text-align: left;">Minimum QUAL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>BCFtools</strong></td>
+<td style="text-align: left;">22,125</td>
+<td style="text-align: left;">1,073</td>
+<td style="text-align: left;">1.84</td>
+<td style="text-align: left;">3.02</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>FreeBayes</strong></td>
+<td style="text-align: left;">9,051</td>
+<td style="text-align: left;">794</td>
+<td style="text-align: left;">1.98</td>
+<td style="text-align: left;">0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>GATK HaplotypeCaller</strong></td>
+<td style="text-align: left;">8,393</td>
+<td style="text-align: left;">964</td>
+<td style="text-align: left;">2.14</td>
+<td style="text-align: left;">30.0</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>[!NOTE] BCFtools identified more than twice as many SNPs as FreeBayes and GATK in its raw callset. This is because BCFtools does not apply strict internal quality cutoffs by default and outputs low-confidence candidate sites, whereas GATK and FreeBayes have default filtering thresholds built into their candidate generation.</p>
+</blockquote>
+<hr>
 </section>
-<section id="tools-to-be-used" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="tools-to-be-used"><span class="header-section-number">2</span> Tools to be used</h2>
+<section id="filtered-callsets-qual-20" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="filtered-callsets-qual-20"><span class="header-section-number">2</span> Filtered Callsets (QUAL &gt; 20)</h2>
+<p>We filtered each callset to retain only variants with <code>QUAL &gt; 20</code>. The filtered files are: * BCFtools Filtered: <a href="file:///Users/ma14/Project1/calls/bcftools.filtered.vcf.gz">bcftools.filtered.vcf.gz</a> * FreeBayes Filtered: <a href="file:///Users/ma14/Project1/calls/freebayes.filtered.vcf.gz">freebayes.filtered.vcf.gz</a> * GATK Filtered: <a href="file:///Users/ma14/Project1/calls/gatk.filtered.vcf.gz">gatk.filtered.vcf.gz</a></p>
+<p>Below is a summary of the filtered callset statistics:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variant Caller</th>
+<th style="text-align: left;">Number of SNPs</th>
+<th style="text-align: left;">Number of Indels</th>
+<th style="text-align: left;">ts/tv Ratio</th>
+<th style="text-align: left;">SNP Reduction (%)</th>
+<th style="text-align: left;">Indel Reduction (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>BCFtools</strong></td>
+<td style="text-align: left;">10,182</td>
+<td style="text-align: left;">906</td>
+<td style="text-align: left;">2.14</td>
+<td style="text-align: left;">-54.0%</td>
+<td style="text-align: left;">-15.6%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>FreeBayes</strong></td>
+<td style="text-align: left;">7,674</td>
+<td style="text-align: left;">643</td>
+<td style="text-align: left;">2.26</td>
+<td style="text-align: left;">-15.2%</td>
+<td style="text-align: left;">-19.0%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>GATK HaplotypeCaller</strong></td>
+<td style="text-align: left;">8,393</td>
+<td style="text-align: left;">964</td>
+<td style="text-align: left;">2.14</td>
+<td style="text-align: left;">0.0%</td>
+<td style="text-align: left;">0.0%</td>
+</tr>
+</tbody>
+</table>
+<section id="key-observations" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="key-observations"><span class="header-section-number">2.1</span> Key Observations:</h3>
 <ul>
-<li><code>bwa mem</code> for alignment.</li>
-<li><code>samtools</code> for BAM file sorting, indexing, and statistics.</li>
-<li><code>bcftools</code> for variant calling and filtering.</li>
+<li><strong>The GATK Anomaly:</strong> GATK HaplotypeCaller showed exactly <strong>0% reduction</strong> in variant count after filtering for <code>QUAL &gt; 20</code>.</li>
+<li><strong>Explanation:</strong> GATK’s default calling threshold (<code>-stand-call-conf</code>) is set to <code>30.0</code>. It does not report any variants with a quality score lower than 30 in the output VCF. Consequently, every variant in the “raw” GATK VCF already satisfies <code>QUAL &gt;= 30</code> (min QUAL observed was <code>30.0</code>), rendering the <code>QUAL &gt; 20</code> filter completely redundant.</li>
+<li><strong>Callset Quality Improvement:</strong> For both BCFtools and FreeBayes, filtering drastically increased the <code>ts/tv</code> ratio (BCFtools: 1.84 → 2.14, FreeBayes: 1.98 → 2.26), confirming that the removed low-quality calls were enriched for false positives.</li>
 </ul>
-</section>
-<section id="data-download" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="data-download"><span class="header-section-number">3</span> Data Download</h2>
-<p>Create a project directory and navigate to it:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$HOME</span>/Project7 <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> <span class="st">"</span><span class="va">$_</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="reference-genome" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="reference-genome"><span class="header-section-number">3.1</span> 1. Reference Genome</h3>
-<p>Download the SARS-CoV-2 reference genome (NC_045512.2) from NCBI:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> sarscov2_ref.fasta <span class="st">"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&amp;id=NC_045512.2&amp;rettype=fasta&amp;retmode=text"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="raw-sequencing-reads" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="raw-sequencing-reads"><span class="header-section-number">3.2</span> 2. Raw Sequencing Reads</h3>
-<p>Download the raw paired-end sequencing reads for the SARS-CoV-2 sample (Run ID: <strong>SRR11528307</strong>). Because viral genomes are small, the file size is tiny, but we will subsample 30,000 reads to make it run in seconds:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download reads from ENA</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> raw_1.fastq.gz <span class="st">"https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR115/007/SRR11528307/SRR11528307_1.fastq.gz"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> raw_2.fastq.gz <span class="st">"https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR115/007/SRR11528307/SRR11528307_2.fastq.gz"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Subsample 30,000 read pairs using seqtk</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">seqtk</span> sample <span class="at">-s100</span> raw_1.fastq.gz 30000 <span class="kw">|</span> <span class="fu">gzip</span> <span class="op">&gt;</span> reads_1.fastq.gz</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">seqtk</span> sample <span class="at">-s100</span> raw_2.fastq.gz 30000 <span class="kw">|</span> <span class="fu">gzip</span> <span class="op">&gt;</span> reads_2.fastq.gz</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean up raw files</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> raw_1.fastq.gz raw_2.fastq.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
 </section>
 </section>
-<section id="tasks" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="tasks"><span class="header-section-number">4</span> Tasks</h2>
-<p><strong>Task 1: Index the Reference Genome</strong> Create the BWA index and fasta index for the SARS-CoV-2 reference genome:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bwa</span> index sarscov2_ref.fasta</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> faidx sarscov2_ref.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Task 2: Align the Reads and Process the BAM</strong> Align the paired-end reads to the reference genome, sort the alignment, and index the output BAM:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Align reads</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">bwa</span> mem sarscov2_ref.fasta reads_1.fastq.gz reads_2.fastq.gz <span class="kw">|</span> <span class="ex">samtools</span> view <span class="at">-bS</span> <span class="at">-</span> <span class="kw">|</span> <span class="ex">samtools</span> sort <span class="at">-o</span> aligned_sorted.bam</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Index the BAM</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> index aligned_sorted.bam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Task 3: Alignment QC</strong> Run <code>samtools flagstat</code> to examine the alignment rate:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> flagstat aligned_sorted.bam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><em>What is the overall mapping rate of the reads? Is this expected for a clinical sample?</em></p>
-<p><strong>Task 4: Variant Calling</strong> Call single nucleotide variants (SNVs) and indels:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> mpileup <span class="at">-a</span> AD <span class="at">-f</span> sarscov2_ref.fasta aligned_sorted.bam <span class="at">-Ou</span> <span class="kw">|</span> <span class="ex">bcftools</span> call <span class="at">-mv</span> <span class="at">-o</span> raw_calls.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Task 5: Filter and Analyze Mutations</strong> Filter variants for quality (<code>QUAL &gt;= 30</code>) and depth (<code>DP &gt;= 10</code>):</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> view <span class="at">-i</span> <span class="st">'QUAL&gt;=30 &amp;&amp; DP&gt;=10'</span> raw_calls.vcf <span class="at">-o</span> filtered_calls.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Print the variant details:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> query <span class="at">-f</span> <span class="st">'%POS %REF %ALT %QUAL\n'</span> filtered_calls.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="intersection-private-callsets" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="intersection-private-callsets"><span class="header-section-number">3</span> Intersection &amp; Private Callsets</h2>
+<p>We compared the filtered callsets using <code>bcftools isec</code> to identify shared (intersection) and caller-specific (private) variants. We analyzed these sets using two matching methods: <strong>Exact Allele Matching</strong> (default) and <strong>Collapsed Position Matching</strong> (<code>-c both</code>).</p>
+<section id="method-a-exact-allele-matching" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="method-a-exact-allele-matching"><span class="header-section-number">3.1</span> Method A: Exact Allele Matching</h3>
+<p>This method requires exact matches for the position, REF, and ALT alleles. * Exact Intersection VCF: <a href="file:///Users/ma14/Project1/calls/intersection.vcf.gz">intersection.vcf.gz</a></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 21%">
+<col style="width: 24%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Callset</th>
+<th style="text-align: left;">Number of SNPs</th>
+<th style="text-align: left;">Number of Indels</th>
+<th style="text-align: left;">ts/tv Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Intersection (All 3)</strong></td>
+<td style="text-align: left;">6,728</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2.27</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>BCFtools Private</strong></td>
+<td style="text-align: left;">1,786</td>
+<td style="text-align: left;">727</td>
+<td style="text-align: left;">1.96</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>FreeBayes Private</strong></td>
+<td style="text-align: left;">274</td>
+<td style="text-align: left;">555</td>
+<td style="text-align: left;">1.77</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>GATK Private</strong></td>
+<td style="text-align: left;">543</td>
+<td style="text-align: left;">873</td>
+<td style="text-align: left;">1.55</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="guide-questions" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="guide-questions"><span class="header-section-number">5</span> Guide Questions</h2>
-<ol type="1">
-<li>How many variants were called in total? How many remain after applying the quality and depth filters?</li>
-<li>The S-gene (Spike gene) spans coordinates <code>21563</code> to <code>25384</code> in the SARS-CoV-2 genome. How many filtered variants did you find in the S-gene?</li>
-<li>Check the mutations at the following positions:
-<ul>
-<li>Position <code>23063</code> (corresponds to S-gene codon 501, which is key for ACE2 receptor binding). What is the nucleotide change?</li>
-<li>Position <code>23403</code> (corresponds to S-gene codon 614, associated with increased infectivity). What is the nucleotide change?</li>
-</ul></li>
-<li>Using your findings, research whether these mutations correspond to the key lineage-defining mutations like N501Y or D614G. Which lineage or variant type is this sample?</li>
-</ol>
+<section id="method-b-collapsed-position-matching--c-both" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="method-b-collapsed-position-matching--c-both"><span class="header-section-number">3.2</span> Method B: Collapsed Position Matching (<code>-c both</code>)</h3>
+<p>This method collapses and matches indels and SNPs by position/overlap, ignoring representational differences. * Collapsed Intersection VCF: <a href="file:///Users/ma14/Project1/calls/intersection_collapsed.vcf.gz">intersection_collapsed.vcf.gz</a></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 21%">
+<col style="width: 24%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Callset</th>
+<th style="text-align: left;">Number of SNPs</th>
+<th style="text-align: left;">Number of Indels</th>
+<th style="text-align: left;">ts/tv Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Intersection (All 3)</strong></td>
+<td style="text-align: left;">7,088</td>
+<td style="text-align: left;">504</td>
+<td style="text-align: left;">2.23</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>BCFtools Private</strong></td>
+<td style="text-align: left;">1,688</td>
+<td style="text-align: left;">207</td>
+<td style="text-align: left;">2.03</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>FreeBayes Private</strong></td>
+<td style="text-align: left;">190</td>
+<td style="text-align: left;">43</td>
+<td style="text-align: left;">1.77</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>GATK Private</strong></td>
+<td style="text-align: left;">492</td>
+<td style="text-align: left;">302</td>
+<td style="text-align: left;">1.62</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="discussion-of-the-results" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="discussion-of-the-results"><span class="header-section-number">4</span> Discussion of the Results</h2>
+<section id="indel-representation-discrepancies" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="indel-representation-discrepancies"><span class="header-section-number">4.1</span> Indel Representation Discrepancies</h3>
+<p>In <strong>Method A (Exact Match)</strong>, we found <strong>0 indels</strong> in the intersection. This is a common artifact when comparing VCF files. * <strong>Reason:</strong> Different variant callers represent insertions and deletions differently. For example, a deletion of three nucleotides <code>TGC</code> can be annotated at different base coordinates, or with different reference/alternate allele representations (e.g.&nbsp;left-alignment variations). * <strong>Solution:</strong> By applying <strong>Method B (Collapsed Match)</strong> using <code>bcftools isec -c both</code>, we resolved these discrepancies, rescuing <strong>504 high-confidence indels</strong> called by all three programs, and significantly reducing the number of apparently “private” indels (e.g., FreeBayes private indels dropped from 555 to 43).</p>
+</section>
+<section id="transitiontransversion-tstv-ratio-as-a-quality-metric" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="transitiontransversion-tstv-ratio-as-a-quality-metric"><span class="header-section-number">4.2</span> Transition/Transversion (ts/tv) Ratio as a Quality Metric</h3>
+<p>In human genomes, the biological ratio of transitions (A↔︎G, C↔︎T) to transversions (other changes) is expected to be ~2.0–2.1 for whole-genome sequencing (WGS) and ~3.0–3.2 for exome sequencing due to CpG methylation in coding regions. * <strong>Intersection Calls (Highest Confidence):</strong> The intersection callset has the highest <code>ts/tv</code> ratio (2.27 for exact, 2.23 for collapsed), confirming that variants agreed upon by all three callers are highly enriched for true biological variants. * <strong>Private Calls (Low Confidence / Errors):</strong> Caller-specific private variants show much lower <code>ts/tv</code> ratios (GATK private: 1.55 / 1.62; FreeBayes private: 1.77; BCFtools private: 1.96 / 2.03). Since random sequencing and calling errors are equally likely to create transitions or transversions (yielding a baseline ratio of ~0.5), a depressed <code>ts/tv</code> ratio in the private callset indicates a strong enrichment for false positives.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

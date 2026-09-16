@@ -1,0 +1,51 @@
+---
+title: "Teach-As-You-Go Sessions"
+---
+
+![teach-as-you-go sessions](img/teach-as-you-go.png)
+
+**Teach-as-you-go sessions** are a peer-learning format built around a simple idea: the best way to find out whether you really understand something is to try explaining it to someone else.
+
+In groups of five, participants take turns explaining a concept from the Genome Sequence Analysis pipeline in just three minutes, then open the floor for a short structured discussion. Two listeners play the role of curious students, asking clarifying questions to test the explanation. The other two act as feedback-givers, reflecting back what was clear and what wasn't. A facilitator sets the tone up front — making clear this isn't a test of knowledge, just a space to practice explaining and get useful feedback — and quietly observes throughout to capture how the session unfolds.
+
+The format works because it separates *understanding* from *performing*. Stumbling over an explanation doesn't mean you don't know the material; it just shows you where the gaps in your mental model are, which is exactly the point. Visual aids — a whiteboard sketch, a diagram on screen — help explanations land, and participants are welcome to lean on AI tools if they need a quick way to clarify a concept before presenting it.
+
+Over a few rounds, everyone gets a turn to teach, to question, and to give feedback — turning what could be a one-way lecture into a shared, low-stakes way of reinforcing the pipeline concepts as a group.
+
+**How the activity works**
+
+-   Split into groups of 5
+
+-   **The facilitator** sets the expectations:
+
+    -   “This is not a test”, “If you cannot explain the concept perfectly at this point, this does not mean that you do not know the concepts, or that you won’t be able to learn them later”
+
+    -   Explains how the session will work: “In this session, participants will take turns to explain one concept of the Genome Sequence Analysis pipeline and then they will receive feedback.”
+
+Roles rotate.
+
+**Format**
+
+-   3 min: A participant explains a concept from a list
+
+-   3 min discussion:
+
+    -   Two participants, listeners 1 and 2 act as students (ask clarifying questions)
+
+    -   Two other participants, Listeners 3 and 4 (give feedback using prompts), ie, ask listeners 1 and 2: “What was clear?” “What was confusing?”
+
+**The facilitator observes and takes notes on how the activity goes.**
+
+**How to offer feedback on an explanation**
+
+-   We are giving feedback on the explanation, not the person
+
+-   Mention: What worked well? What was clear? What helped understanding? What examples were effective? Was the structure logical?
+
+-   Give one suggestion for improvement
+
+**Other aspects**
+
+-   Visual aids are really important. People that they can demonstrate things on screen or using flip charts and whiteboards.
+
+-   Participants can resort to AI tools to clarify concepts

@@ -1,0 +1,11 @@
+Strain	Species	ST	K_locus	O_locus	Yersiniabactin	Colibactin	Aerobactin	Virulence_Score	Carbapenemase	ESBL	Colistin_Resistance	Resistance_Score
+Kp_clinical_ST258_NY	Klebsiella pneumoniae	ST258	KL107	O2v2	ybt 17 (lvl 1)	absent	absent	1	blaKPC-2	blaSHV-11 (intrinsic)	Susceptible	2
+Kp_clinical_ST11_Beijing	Klebsiella pneumoniae	ST11	KL209	O1/O2v1	ybt 9 (lvl 1)	absent	iuc 1 (lvl 3)	4	blaNDM-1; blaOXA-48	blaCTX-M-15	Susceptible	3
+Kp_clinical_ST307_Rome	Klebsiella pneumoniae	ST307	KL102	O2v1	absent	absent	absent	0	none	blaCTX-M-15	Susceptible	1
+Kp_clinical_ST15_London	Klebsiella pneumoniae	ST15	KL24	O1/O2v1	ybt 10 (lvl 1)	absent	absent	1	none	blaCTX-M-15; blaSHV-28	Susceptible	1
+Kp_clinical_ST147_Athens	Klebsiella pneumoniae	ST147	KL64	O1/O2v2	ybt 16 (lvl 2)	absent	absent	1	blaNDM-5	blaCTX-M-15	Resistant (mcr-1)	3
+Kp_hypervirulent_ST23	Klebsiella pneumoniae	ST23	KL1	O1/O2v1	ybt 1 (lvl 1)	clb 2 (lvl 2)	iuc 1 (lvl 3)	5	none	blaSHV-1 (intrinsic)	Susceptible	0
+Kp_hypervirulent_ST86	Klebsiella pneumoniae	ST86	KL2	O1/O2v2	absent	absent	iuc 2 (lvl 3)	3	none	blaSHV-11 (intrinsic)	Susceptible	0
+Kp_clinical_ST39_Paris	Klebsiella pneumoniae	ST39	KL15	O4	absent	absent	absent	0	none	none (susceptible)	Susceptible	0
+Kp_clinical_ST101_Madrid	Klebsiella pneumoniae	ST101	KL17	O1/O2v1	ybt 9 (lvl 1)	absent	absent	1	blaKPC-3	blaCTX-M-15	Susceptible	2
+Kp_clinical_ST258_TX	Klebsiella pneumoniae	ST258	KL107	O2v2	ybt 17 (lvl 1)	absent	absent	1	blaKPC-2	blaSHV-11 (intrinsic)	Resistant (mgrB mutation)	3

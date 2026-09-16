@@ -1,0 +1,88 @@
+---
+title: "AI vs Human in Bioinformatics Workflows: Project 2 - Solution 2"
+---
+
+The description of this project can be found here.
+
+Solution number 2 is is below.
+
+This project evaluates the performance of a newly acquired Illumina sequencing platform at our institute. We analyzed two Salmonella Paratyphi B isolates (**Group 2** and **Group 4**) sequenced in a single run. The reads were aligned to the complete reference genome of *Salmonella enterica* serovar Paratyphi B str. SPB7 ([CP000886.fasta](file:///Users/ma14/Project2/CP000886.fasta)).
+
+------------------------------------------------------------------------
+
+## Alignment Statistics (QC Evaluation)
+
+The raw reads were aligned to the reference genome using `bwa mem` and analyzed using `samtools stats`. \* Group 2 Sorted BAM: [Group2.sorted.bam](file:///Users/ma14/Project2/Group2.sorted.bam) \* Group 4 Sorted BAM: [Group4.sorted.bam](file:///Users/ma14/Project2/Group4.sorted.bam)
+
+Below is a comparison of the alignment QC metrics:
+
+| Metric                       | Group 2 (Sample S2)   | Group 4 (Sample S4)    |
+|:-----------------------|:-----------------------|:-----------------------|
+| **Total Reads**              | 1,019,342             | 941,442                |
+| **Reads Mapped**             | 942,884 (**92.5%**)   | 936,751 (**99.5%**)    |
+| **Reads Properly Paired**    | 929,774 (**91.2%**)   | 931,840 (**99.0%**)    |
+| **Reads Unmapped**           | 76,458 (**7.5%**)     | 4,691 (**0.5%**)       |
+| **Estimated Coverage**       | \~18.5x               | \~19.3x                |
+| **Total Mismatches**         | 861,448               | 92,930                 |
+| **Alignment Error Rate**     | **0.95%** (`9.55e-3`) | **0.099%** (`9.90e-4`) |
+| **Average Base Quality (Q)** | 36.2                  | 36.4                   |
+| **Average Insert Size**      | 266.7 bp (SD: 125.9)  | 246.5 bp (SD: 91.3)    |
+
+### Key Observations from QC:
+
+1.  **High Unmapped Reads in Group 2:** Group 2 has a high rate of unmapped reads (7.5% vs 0.5% in Group 4).
+2.  **Elevated Error Rate in Group 2:** The alignment error rate in Group 2 is **10 times higher** than in Group 4 (0.95% vs 0.099%).
+3.  **Homopolymer Reads:** Inspection of the unmapped reads in Group 2 revealed a significant number of low-complexity, homopolymeric sequences (e.g. poly-T and poly-G runs). On Illumina 2-channel chemistry platforms, failed or dark clusters (where no signal is detected) default to calling `G` bases, leading to artificial poly-G/low-complexity reads.
+4.  **Insert Sizes:** Both libraries have correct and tight insert size distributions, indicating successful fragmentation and sizing.
+
+------------------------------------------------------------------------
+
+## Variant Calling & Filtering Results
+
+We performed variant calling using `bcftools mpileup | bcftools call` and filtered the resulting VCF files using a stringent threshold of `QUAL >= 30` and `DP >= 20`.
+
+-   Group 2 Raw VCF: [Group2.vcf.gz](file:///Users/ma14/Project2/Group2.vcf.gz)
+-   Group 2 Filtered VCF: [Group2.filtered.vcf.gz](file:///Users/ma14/Project2/Group2.filtered.vcf.gz)
+-   Group 4 Raw VCF: [Group4.vcf.gz](file:///Users/ma14/Project2/Group4.vcf.gz)
+-   Group 4 Filtered VCF: [Group4.filtered.vcf.gz](file:///Users/ma14/Project2/Group4.filtered.vcf.gz)
+
+Below is the comparison of variant counts before and after filtering:
+
+| Sample | SNPs (Raw) | SNPs (Filtered) | Indels (Raw) | Indels (Filtered) | ts/tv (Raw) | ts/tv (Filtered) |
+|:----------|:----------|:----------|:----------|:----------|:----------|:----------|
+| **Group 2** | 39,317 | **17,160** | 397 | **153** | 3.33 | **3.75** |
+| **Group 4** | 105 | **17** | 24 | **6** | 1.28 | **1.12** |
+
+### Insights:
+
+-   **Strain Divergence vs. Reference Identity:**
+    -   **Group 4** has only **17 high-confidence SNPs** relative to the *Salmonella Paratyphi B* str. SPB7 reference genome. This isolate is virtually identical to the reference strain.
+    -   **Group 2** has **17,160 high-confidence SNPs** even after strict filtering. This indicates that Group 2 is a genetically distinct strain of *Salmonella Paratyphi B* that is divergent from the SPB7 reference.
+-   **Transition/Transversion (ts/tv) Ratio:**
+    -   Group 2's filtered callset has a ts/tv ratio of **3.75**. In bacteria, a high ts/tv ratio (\> 3.0) indicates real biological variants, particularly transitions driven by selective pressure or CpG biases.
+    -   The high ts/tv ratio confirms that the 17,160 SNPs called in Group 2 are **real biological variations** and not sequencing errors.
+
+------------------------------------------------------------------------
+
+## Conclusions and Recommendations for the Head of the Institute
+
+We can draw the following conclusions and formulate recommendations for the head of the institute:
+
+### Was the sequencing run a success?
+
+**Yes, it was a success.** \* Group 4 produced exceptionally clean data (99.5% mapping rate, 99.0% properly paired reads, and a very low error rate of 0.099%). \* While Group 2 had higher unmapped reads (7.5%) and a higher raw error rate (0.95%), it still successfully generated enough coverage (\~18.5x) to call 17,160 high-confidence SNPs with a highly biological ts/tv ratio of 3.75.
+
+### Should the institute keep the sequencing instrument?
+
+**Yes, absolutely.** \* The Group 4 metrics demonstrate that the sequencing instrument is fully capable of producing high-throughput, extremely high-quality NGS data (error rate \< 0.1% and mapping rate \> 99%). The instrument itself is functional and meets Illumina's standard specifications.
+
+### What caused the issues in Group 2?
+
+The lower performance of Group 2 is likely due to **library preparation issues** or **sample-specific contamination**, rather than a hardware defect of the sequencer: \* The presence of low-complexity, homopolymeric unmapped reads suggests a library concentration issue (low input DNA) or adapter-dimer contamination, which causes clusters to drop signal early, leading to poly-G calls on 2-channel chemistry machines. \* If the two samples were run in different lanes, a lane-specific fluidics clog or bubble could also explain the elevated error rate in that lane.
+
+### Recommendations Moving Forward
+
+1.  **Strengthen Library QC:** Implement strict quality control steps (e.g., library concentration and size checking via Bioanalyzer/TapeStation) before loading libraries onto the flowcell.
+2.  **Optimize Cluster Density:** Ensure proper loading concentrations to avoid under-clustering or over-clustering.
+3.  **Review Run Reports:** Inspect the instrument's run reports (SAV / interop files) to compare Lane 1 vs. Lane 2 metrics (e.g., %PF clusters, phasing/prephasing) to rule out lane-specific hardware issues.
+4.  **Pre-processing/Trimming:** Implement a standard pre-processing trimming step (using `fastp` or `trimmomatic`) in our analysis pipeline. Trimming adapters and low-quality bases before alignment will reduce the unmapped reads and error rate for libraries like Group 2.

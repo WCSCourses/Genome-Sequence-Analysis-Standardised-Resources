@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klebsiella Genomic AMR & Virulence Dashboard</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #151f32;
+            --accent: #38bdf8;
+            --accent-green: #34d399;
+            --text: #f1f5f9;
+            --text-muted: #64748b;
+            --success: #10b981;
+            --warning: #fbbf24;
+            --danger: #f87171;
+            --danger-dark: #dc2626;
+            --border: #1e293b;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 24px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 16px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            color: var(--accent);
+            letter-spacing: -0.025em;
+        }
+        h2 {
+            color: var(--accent);
+            font-size: 1.4rem;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            background-color: rgba(30, 41, 59, 0.8);
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            text-align: center;
+        }
+        .badge.success { background-color: rgba(16, 185, 129, 0.2); color: var(--success); }
+        .badge.info { background-color: rgba(56, 189, 248, 0.2); color: var(--accent); }
+        .badge.warning { background-color: rgba(251, 191, 36, 0.2); color: var(--warning); }
+        .badge.danger { background-color: rgba(248, 113, 113, 0.2); color: var(--danger); }
+        .badge.danger-dark { background-color: var(--danger-dark); color: white; }
+        
+        .gene-positive {
+            color: var(--danger);
+            background-color: rgba(248, 113, 113, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+        .gene-negative {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .vir-pos {
+            background-color: rgba(52, 211, 153, 0.15);
+            color: var(--accent-green);
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            margin-right: 2px;
+            font-weight: bold;
+        }
+        .vir-pos.clb {
+            background-color: rgba(251, 191, 36, 0.15);
+            color: var(--warning);
+        }
+        .vir-pos.iuc {
+            background-color: rgba(244, 63, 94, 0.15);
+            color: #f43f5e;
+        }
+        .vir-neg {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            margin-right: 2px;
+        }
+        .log-section {
+            background-color: #0f172a;
+            border-left: 4px solid var(--accent);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            font-family: monospace;
+            overflow-x: auto;
+            color: #38bdf8;
+            margin-top: 20px;
+        }
+        .log-title {
+            font-weight: bold;
+            color: white;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Klebsiella Clinical Genomic Surveillance Dashboard</h1>
+            <p style="color: var(--text-muted); margin: 4px 0 0 0;">10 Isolates Screening Run (Kleborate Output Parser)</p>
+        </header>
+
+        <div class="card">
+            <h3>🔬 Surveillance Summary</h3>
+            <p>This screen checks clinical isolates of <em>Klebsiella pneumoniae</em> for critical <strong>Carbapenemase genes</strong> (e.g., KPC, NDM, OXA-48), <strong>ESBL genes</strong> (e.g., CTX-M), <strong>Colistin resistance</strong> (mgrB mutations, mcr plasmids), and key <strong>Virulence factors</strong> (Yersiniabactin, Colibactin, Aerobactin) that cause hypervirulent infections.</p>
+        </div>
+
+        <h2>Isolate Profile Summary</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Strain ID</th>
+                    <th>MLST (ST)</th>
+                    <th>Capsule (K/O Type)</th>
+                    <th>Virulence Profile</th>
+                    <th>Resistance Profile</th>
+                    <th>Carbapenemase(s)</th>
+                    <th>ESBL Genes</th>
+                    <th>Colistin Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td><strong>Kp_clinical_ST258_NY</strong></td>
+            <td><code>ST258</code></td>
+            <td>KL107 / O2v2</td>
+            <td><span class="badge info">Score 1-2 (ybt/clb)</span> <small>(<span class='vir-pos'>ybt</span> <span class='vir-neg'>-</span> <span class='vir-neg'>-</span>)</small></td>
+            <td><span class="badge danger">Score 2 (Carbapenemase)</span></td>
+            <td><code class='gene-positive'>blaKPC-2</code></td>
+            <td><code class='gene-positive'>blaSHV-11 (intrinsic)</code></td>
+            <td><span class='gene-negative'>Susceptible</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Kp_clinical_ST11_Beijing</strong></td>
+            <td><code>ST11</code></td>
+            <td>KL209 / O1/O2v1</td>
+            <td><span class="badge warning">Score 3-4 (aerobactin)</span> <small>(<span class='vir-pos'>ybt</span> <span class='vir-neg'>-</span> <span class='vir-pos iuc'>iuc</span>)</small></td>
+            <td><span class="badge danger-dark">Score 3 (Carbapenemase + Colistin)</span></td>
+            <td><code class='gene-positive'>blaNDM-1; blaOXA-48</code></td>
+            <td><code class='gene-positive'>blaCTX-M-15</code></td>
+            <td><span class='gene-negative'>Susceptible</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Kp_clinical_ST307_Rome</strong></td>
+            <td><code>ST307</code></td>
+            <td>KL102 / O2v1</td>
+            <td><span class="badge success">Score 0 (None)</span> <small>(<span class='vir-neg'>-</span> <span class='vir-neg'>-</span> <span class='vir-neg'>-</span>)</small></td>
+            <td><span class="badge warning">Score 1 (ESBL)</span></td>
+            <td><span class='gene-negative'>None</span></td>
+            <td><code class='gene-positive'>blaCTX-M-15</code></td>
+            <td><span class='gene-negative'>Susceptible</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Kp_clinical_ST15_London</strong></td>
+            <td><code>ST15</code></td>
+            <td>KL24 / O1/O2v1</td>
+            <td><span class="badge info">Score 1-2 (ybt/clb)</span> <small>(<span class='vir-pos'>ybt</span> <span class='vir-neg'>-</span> <span class='vir-neg'>-</span>)</small></td>
+            <td><span class="badge warning">Score 1 (ESBL)</span></td>
+            <td><span class='gene-negative'>None</span></td>
+            <td><code class='gene-positive'>blaCTX-M-15; blaSHV-28</code></td>
+            <td><span class='gene-negative'>Susceptible</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Kp_clinical_ST147_Athens</strong></td>
+            <td><code>ST147</code></td>
+            <td>KL64 / O1/O2v2</td>
+            <td><span class="badge info">Score 1-2 (ybt/clb)</span> <small>(<span class='vir-pos'>ybt</span> <span class='vir-neg'>-</span> <span class='vir-neg'>-</span>)</small></td>
+            <td><span class="badge danger-dark">Score 3 (Carbapenemase + Colistin)</span></td>
+            <td><code class='gene-positive'>blaNDM-5</code></td>
+            <td><code class='gene-positive'>blaCTX-M-15</code></td>
+            <td><code class='gene-positive'>Resistant (mcr-1)</code></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Kp_hypervirulent_ST23</strong></td>
+            <td><code>ST23</code></td>
+            <td>KL1 / O1/O2v1</td>
+            <td><span class="badge danger">Score 5 (Hypervirulent)</span> <small>(<span class='vir-pos'>ybt</span> <span class='vir-pos clb'>clb</span> <span class='vir-pos iuc'>iuc</span>)</small></td>
+            <td><span class="badge success">Score 0 (Susceptible)</span></td>
+            <td><span class='gene-negative'>None</span></td>
+            <td><code class='gene-positive'>blaSHV-1 (intrinsic)</code></td>
+            <td><span class='gene-negative'>Susceptible</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Kp_hypervirulent_ST86</strong></td>
+            <td><code>ST86</code></td>
+            <td>KL2 / O1/O2v2</td>
+            <td><span class="badge warning">Score 3-4 (aerobactin)</span> <small>(<span class='vir-neg'>-</span> <span class='vir-neg'>-</span> <span class='vir-pos iuc'>iuc</span>)</small></td>
+            <td><span class="badge success">Score 0 (Susceptible)</span></td>
+            <td><span class='gene-negative'>None</span></td>
+            <td><code class='gene-positive'>blaSHV-11 (intrinsic)</code></td>
+            <td><span class='gene-negative'>Susceptible</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Kp_clinical_ST39_Paris</strong></td>
+            <td><code>ST39</code></td>
+            <td>KL15 / O4</td>
+            <td><span class="badge success">Score 0 (None)</span> <small>(<span class='vir-neg'>-</span> <span class='vir-neg'>-</span> <span class='vir-neg'>-</span>)</small></td>
+            <td><span class="badge success">Score 0 (Susceptible)</span></td>
+            <td><span class='gene-negative'>None</span></td>
+            <td><span class='gene-negative'>None</span></td>
+            <td><span class='gene-negative'>Susceptible</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Kp_clinical_ST101_Madrid</strong></td>
+            <td><code>ST101</code></td>
+            <td>KL17 / O1/O2v1</td>
+            <td><span class="badge info">Score 1-2 (ybt/clb)</span> <small>(<span class='vir-pos'>ybt</span> <span class='vir-neg'>-</span> <span class='vir-neg'>-</span>)</small></td>
+            <td><span class="badge danger">Score 2 (Carbapenemase)</span></td>
+            <td><code class='gene-positive'>blaKPC-3</code></td>
+            <td><code class='gene-positive'>blaCTX-M-15</code></td>
+            <td><span class='gene-negative'>Susceptible</span></td>
+        </tr>
+        
+        <tr>
+            <td><strong>Kp_clinical_ST258_TX</strong></td>
+            <td><code>ST258</code></td>
+            <td>KL107 / O2v2</td>
+            <td><span class="badge info">Score 1-2 (ybt/clb)</span> <small>(<span class='vir-pos'>ybt</span> <span class='vir-neg'>-</span> <span class='vir-neg'>-</span>)</small></td>
+            <td><span class="badge danger-dark">Score 3 (Carbapenemase + Colistin)</span></td>
+            <td><code class='gene-positive'>blaKPC-2</code></td>
+            <td><code class='gene-positive'>blaSHV-11 (intrinsic)</code></td>
+            <td><code class='gene-positive'>Resistant (mgrB mutation)</code></td>
+        </tr>
+        
+            </tbody>
+        </table>
+
+        <h2>🤖 How Antigravity Guided This Workflow</h2>
+        <div class="log-section">
+            <div class="log-title">Antigravity Execution Log</div>
+            $ agy run "screen_genomes.sh"<br>
+            [14:39:41] Parsing genomes directory for assemblies... (Detected 10 Klebsiella FASTA files)<br>
+            [14:39:42] Initializing Kleborate blast database against CARD/VFDB...<br>
+            [14:39:43] Running MLST and K-locus predictions...<br>
+            [14:39:44] Running AMR gene screening (blastn)...<br>
+            [14:39:45] Parsing outputs into kleborate_results.txt...<br>
+            [14:39:45] Successfully generated HTML Dashboard.<br>
+            [14:39:46] Done! Saved dashboard to amr_dashboard.html
+        </div>
+    </div>
+</body>
+</html>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project 6: Identifying Artemisinin Drug Resistance in the Malaria Parasite Plasmodium falciparum – Genome Sequence Analysis Course</title>
+<title>AI vs Human in Bioinformatics Workflows: Project 2 - Solution 2 – Genome Sequence Analysis Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -207,6 +173,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-train-the-trainer" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Train-the-trainer</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-train-the-trainer">    
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Train-the-trainer/teach-as-you-go.html">
+ <span class="dropdown-text">Teach-as-you-go sessions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Bioinformatics_workflows/AI_in_bioinformatics.html">
+ <span class="dropdown-text">AI in Bioinformatics Workflows</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -219,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Project 6: Identifying Artemisinin Drug Resistance in the Malaria Parasite Plasmodium falciparum</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AI vs Human in Bioinformatics Workflows: Project 2 - Solution 2</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -637,15 +618,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#tools-to-be-used" id="toc-tools-to-be-used" class="nav-link" data-scroll-target="#tools-to-be-used"><span class="header-section-number">2</span> Tools to be used</a></li>
-  <li><a href="#data-download" id="toc-data-download" class="nav-link" data-scroll-target="#data-download"><span class="header-section-number">3</span> Data Download</a>
+  <li><a href="#alignment-statistics-qc-evaluation" id="toc-alignment-statistics-qc-evaluation" class="nav-link active" data-scroll-target="#alignment-statistics-qc-evaluation"><span class="header-section-number">1</span> Alignment Statistics (QC Evaluation)</a>
   <ul class="collapse">
-  <li><a href="#reference-sequence" id="toc-reference-sequence" class="nav-link" data-scroll-target="#reference-sequence"><span class="header-section-number">3.1</span> 1. Reference Sequence</a></li>
-  <li><a href="#raw-sequencing-reads" id="toc-raw-sequencing-reads" class="nav-link" data-scroll-target="#raw-sequencing-reads"><span class="header-section-number">3.2</span> 2. Raw Sequencing Reads</a></li>
+  <li><a href="#key-observations-from-qc" id="toc-key-observations-from-qc" class="nav-link" data-scroll-target="#key-observations-from-qc"><span class="header-section-number">1.1</span> Key Observations from QC:</a></li>
   </ul></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">4</span> Tasks</a></li>
-  <li><a href="#guide-questions" id="toc-guide-questions" class="nav-link" data-scroll-target="#guide-questions"><span class="header-section-number">5</span> Guide Questions</a></li>
+  <li><a href="#variant-calling-filtering-results" id="toc-variant-calling-filtering-results" class="nav-link" data-scroll-target="#variant-calling-filtering-results"><span class="header-section-number">2</span> Variant Calling &amp; Filtering Results</a>
+  <ul class="collapse">
+  <li><a href="#insights" id="toc-insights" class="nav-link" data-scroll-target="#insights"><span class="header-section-number">2.1</span> Insights:</a></li>
+  </ul></li>
+  <li><a href="#conclusions-and-recommendations-for-the-head-of-the-institute" id="toc-conclusions-and-recommendations-for-the-head-of-the-institute" class="nav-link" data-scroll-target="#conclusions-and-recommendations-for-the-head-of-the-institute"><span class="header-section-number">3</span> Conclusions and Recommendations for the Head of the Institute</a>
+  <ul class="collapse">
+  <li><a href="#was-the-sequencing-run-a-success" id="toc-was-the-sequencing-run-a-success" class="nav-link" data-scroll-target="#was-the-sequencing-run-a-success"><span class="header-section-number">3.1</span> Was the sequencing run a success?</a></li>
+  <li><a href="#should-the-institute-keep-the-sequencing-instrument" id="toc-should-the-institute-keep-the-sequencing-instrument" class="nav-link" data-scroll-target="#should-the-institute-keep-the-sequencing-instrument"><span class="header-section-number">3.2</span> Should the institute keep the sequencing instrument?</a></li>
+  <li><a href="#what-caused-the-issues-in-group-2" id="toc-what-caused-the-issues-in-group-2" class="nav-link" data-scroll-target="#what-caused-the-issues-in-group-2"><span class="header-section-number">3.3</span> What caused the issues in Group 2?</a></li>
+  <li><a href="#recommendations-moving-forward" id="toc-recommendations-moving-forward" class="nav-link" data-scroll-target="#recommendations-moving-forward"><span class="header-section-number">3.4</span> Recommendations Moving Forward</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -654,7 +641,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project 6: Identifying Artemisinin Drug Resistance in the Malaria Parasite Plasmodium falciparum</h1>
+<h1 class="title">AI vs Human in Bioinformatics Workflows: Project 2 - Solution 2</h1>
 </div>
 
 
@@ -671,79 +658,181 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>General guidance for project</strong></p>
-<p>Recommended number of participants per group: 4 to 6.</p>
-<p>Project work running time: 1.5h (intended to be solved in under 1 hour by a human without AI assistance).</p>
-<p>Each group will present their work in their respective classroom.</p>
-<section id="introduction" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
-<p>Artemisinin-based combination therapies (ACTs) are the frontline treatments for malaria caused by <em>Plasmodium falciparum</em>. However, resistance to artemisinin has emerged in Southeast Asia and recently in Africa, threatening global malaria control efforts. Resistance is primarily mediated by mutations in the <strong>Kelch13 (K13)</strong> gene (PF3D7_1343700) located on Chromosome 13.</p>
-<p>In this project, you will analyze genomic sequencing data from a clinical isolate collected from a patient showing delayed clearance of malaria parasites. Your goal is to: - Align sequencing reads to the reference <em>P. falciparum</em> Kelch13 locus. - Call genomic variants. - Identify whether the parasite carries a known artemisinin resistance mutation (e.g., C580Y, R539T, Y493H) in the Kelch13 gene.</p>
-</section>
-<section id="tools-to-be-used" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="tools-to-be-used"><span class="header-section-number">2</span> Tools to be used</h2>
-<ul>
-<li><code>bwa mem</code> for reads alignment.</li>
-<li><code>samtools</code> for BAM file sorting, indexing, and QC stats.</li>
-<li><code>bcftools</code> for variant calling, filtering, and querying.</li>
-</ul>
-</section>
-<section id="data-download" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="data-download"><span class="header-section-number">3</span> Data Download</h2>
-<p>First, create a project directory and navigate to it:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$HOME</span>/Project6 <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> <span class="st">"</span><span class="va">$_</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="reference-sequence" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="reference-sequence"><span class="header-section-number">3.1</span> 1. Reference Sequence</h3>
-<p>Download the coding sequence of the <em>P. falciparum</em> Kelch13 gene (XM_001350122.1) from NCBI:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> kelch13_ref.fasta <span class="st">"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&amp;id=XM_001350122.1&amp;rettype=fasta&amp;retmode=text"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="raw-sequencing-reads" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="raw-sequencing-reads"><span class="header-section-number">3.2</span> 2. Raw Sequencing Reads</h3>
-<p>Download the raw paired-end sequencing reads from the European Nucleotide Archive (ENA) for run <strong>ERR11254083</strong> (a MalariaGEN clinical isolate). Since this is a whole-genome run, we will download a small subset of reads using the first 50,000 read pairs to keep the analysis under 1 hour:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download reads directly from ENA</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> raw_1.fastq.gz <span class="st">"https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR112/083/ERR11254083/ERR11254083_1.fastq.gz"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> raw_2.fastq.gz <span class="st">"https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR112/083/ERR11254083/ERR11254083_2.fastq.gz"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Use seqtk to subsample 50,000 reads for quick processing</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">seqtk</span> sample <span class="at">-s100</span> raw_1.fastq.gz 50000 <span class="kw">|</span> <span class="fu">gzip</span> <span class="op">&gt;</span> reads_1.fastq.gz</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">seqtk</span> sample <span class="at">-s100</span> raw_2.fastq.gz 50000 <span class="kw">|</span> <span class="fu">gzip</span> <span class="op">&gt;</span> reads_2.fastq.gz</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean up raw files</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> raw_1.fastq.gz raw_2.fastq.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="tasks" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="tasks"><span class="header-section-number">4</span> Tasks</h2>
-<p><strong>Task 1: Index the Reference Genome</strong> Prepare the reference sequence for alignment using <code>bwa index</code> and <code>samtools faidx</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bwa</span> index kelch13_ref.fasta</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> faidx kelch13_ref.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Task 2: Align the Reads and Process the BAM</strong> Align the paired-end reads to the Kelch13 reference sequence, convert the alignment to BAM, sort, and index it:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Align reads</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">bwa</span> mem kelch13_ref.fasta reads_1.fastq.gz reads_2.fastq.gz <span class="kw">|</span> <span class="ex">samtools</span> view <span class="at">-bS</span> <span class="at">-</span> <span class="kw">|</span> <span class="ex">samtools</span> sort <span class="at">-o</span> aligned_sorted.bam</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Index the sorted BAM file</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> index aligned_sorted.bam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Task 3: Run Alignment Quality Control</strong> Generate alignment statistics to ensure reads successfully mapped to the reference:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> flagstat aligned_sorted.bam</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> stats aligned_sorted.bam <span class="op">&gt;</span> alignment.stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><em>Look at <code>alignment.stats</code>. What percentage of reads mapped to the Kelch13 reference? Is this coverage sufficient for variant calling?</em></p>
-<p><strong>Task 4: Variant Calling</strong> Call single nucleotide polymorphisms (SNPs) and small indels using <code>bcftools</code>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> mpileup <span class="at">-a</span> AD <span class="at">-f</span> kelch13_ref.fasta aligned_sorted.bam <span class="at">-Ou</span> <span class="kw">|</span> <span class="ex">bcftools</span> call <span class="at">-mv</span> <span class="at">-o</span> raw_calls.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Task 5: Filter and Query Variants</strong> Filter the VCF file to retain only high-quality variant calls (<code>QUAL &gt;= 30</code> and read depth <code>DP &gt;= 10</code>):</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> view <span class="at">-i</span> <span class="st">'QUAL&gt;=30 &amp;&amp; DP&gt;=10'</span> raw_calls.vcf <span class="at">-o</span> filtered_calls.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Use <code>bcftools query</code> to print the position, reference allele, alternate allele, and quality score of the filtered variants:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> query <span class="at">-f</span> <span class="st">'%POS %REF %ALT %QUAL\n'</span> filtered_calls.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="guide-questions" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="guide-questions"><span class="header-section-number">5</span> Guide Questions</h2>
+<p>The description of this project can be found here.</p>
+<p>Solution number 2 is is below.</p>
+<p>This project evaluates the performance of a newly acquired Illumina sequencing platform at our institute. We analyzed two Salmonella Paratyphi B isolates (<strong>Group 2</strong> and <strong>Group 4</strong>) sequenced in a single run. The reads were aligned to the complete reference genome of <em>Salmonella enterica</em> serovar Paratyphi B str. SPB7 (<a href="file:///Users/ma14/Project2/CP000886.fasta">CP000886.fasta</a>).</p>
+<hr>
+<section id="alignment-statistics-qc-evaluation" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="alignment-statistics-qc-evaluation"><span class="header-section-number">1</span> Alignment Statistics (QC Evaluation)</h2>
+<p>The raw reads were aligned to the reference genome using <code>bwa mem</code> and analyzed using <code>samtools stats</code>. * Group 2 Sorted BAM: <a href="file:///Users/ma14/Project2/Group2.sorted.bam">Group2.sorted.bam</a> * Group 4 Sorted BAM: <a href="file:///Users/ma14/Project2/Group4.sorted.bam">Group4.sorted.bam</a></p>
+<p>Below is a comparison of the alignment QC metrics:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Group 2 (Sample S2)</th>
+<th style="text-align: left;">Group 4 (Sample S4)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Total Reads</strong></td>
+<td style="text-align: left;">1,019,342</td>
+<td style="text-align: left;">941,442</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Reads Mapped</strong></td>
+<td style="text-align: left;">942,884 (<strong>92.5%</strong>)</td>
+<td style="text-align: left;">936,751 (<strong>99.5%</strong>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Reads Properly Paired</strong></td>
+<td style="text-align: left;">929,774 (<strong>91.2%</strong>)</td>
+<td style="text-align: left;">931,840 (<strong>99.0%</strong>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Reads Unmapped</strong></td>
+<td style="text-align: left;">76,458 (<strong>7.5%</strong>)</td>
+<td style="text-align: left;">4,691 (<strong>0.5%</strong>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Estimated Coverage</strong></td>
+<td style="text-align: left;">~18.5x</td>
+<td style="text-align: left;">~19.3x</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Total Mismatches</strong></td>
+<td style="text-align: left;">861,448</td>
+<td style="text-align: left;">92,930</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Alignment Error Rate</strong></td>
+<td style="text-align: left;"><strong>0.95%</strong> (<code>9.55e-3</code>)</td>
+<td style="text-align: left;"><strong>0.099%</strong> (<code>9.90e-4</code>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Average Base Quality (Q)</strong></td>
+<td style="text-align: left;">36.2</td>
+<td style="text-align: left;">36.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Average Insert Size</strong></td>
+<td style="text-align: left;">266.7 bp (SD: 125.9)</td>
+<td style="text-align: left;">246.5 bp (SD: 91.3)</td>
+</tr>
+</tbody>
+</table>
+<section id="key-observations-from-qc" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="key-observations-from-qc"><span class="header-section-number">1.1</span> Key Observations from QC:</h3>
 <ol type="1">
-<li>How many variants were called before and after filtering?</li>
-<li>Locate the amino acid change for your variants. (Hint: The reference coding sequence XM_001350122.1 starts at codon 1. Check if there are any SNPs in the Kelch13 propeller domain, specifically codons 440–720).</li>
-<li>If you find a mutation at codon 580 (position 1738 in the coding sequence sequence), what is the nucleotide change? Does it translate to the known C580Y resistance mutation (Cysteine to Tyrosine)?</li>
-<li>Based on your results, what clinical recommendation would you give regarding the patient’s treatment regimen?</li>
+<li><strong>High Unmapped Reads in Group 2:</strong> Group 2 has a high rate of unmapped reads (7.5% vs 0.5% in Group 4).</li>
+<li><strong>Elevated Error Rate in Group 2:</strong> The alignment error rate in Group 2 is <strong>10 times higher</strong> than in Group 4 (0.95% vs 0.099%).</li>
+<li><strong>Homopolymer Reads:</strong> Inspection of the unmapped reads in Group 2 revealed a significant number of low-complexity, homopolymeric sequences (e.g.&nbsp;poly-T and poly-G runs). On Illumina 2-channel chemistry platforms, failed or dark clusters (where no signal is detected) default to calling <code>G</code> bases, leading to artificial poly-G/low-complexity reads.</li>
+<li><strong>Insert Sizes:</strong> Both libraries have correct and tight insert size distributions, indicating successful fragmentation and sizing.</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="variant-calling-filtering-results" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="variant-calling-filtering-results"><span class="header-section-number">2</span> Variant Calling &amp; Filtering Results</h2>
+<p>We performed variant calling using <code>bcftools mpileup | bcftools call</code> and filtered the resulting VCF files using a stringent threshold of <code>QUAL &gt;= 30</code> and <code>DP &gt;= 20</code>.</p>
+<ul>
+<li>Group 2 Raw VCF: <a href="file:///Users/ma14/Project2/Group2.vcf.gz">Group2.vcf.gz</a></li>
+<li>Group 2 Filtered VCF: <a href="file:///Users/ma14/Project2/Group2.filtered.vcf.gz">Group2.filtered.vcf.gz</a></li>
+<li>Group 4 Raw VCF: <a href="file:///Users/ma14/Project2/Group4.vcf.gz">Group4.vcf.gz</a></li>
+<li>Group 4 Filtered VCF: <a href="file:///Users/ma14/Project2/Group4.filtered.vcf.gz">Group4.filtered.vcf.gz</a></li>
+</ul>
+<p>Below is the comparison of variant counts before and after filtering:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Sample</th>
+<th style="text-align: left;">SNPs (Raw)</th>
+<th style="text-align: left;">SNPs (Filtered)</th>
+<th style="text-align: left;">Indels (Raw)</th>
+<th style="text-align: left;">Indels (Filtered)</th>
+<th style="text-align: left;">ts/tv (Raw)</th>
+<th style="text-align: left;">ts/tv (Filtered)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Group 2</strong></td>
+<td style="text-align: left;">39,317</td>
+<td style="text-align: left;"><strong>17,160</strong></td>
+<td style="text-align: left;">397</td>
+<td style="text-align: left;"><strong>153</strong></td>
+<td style="text-align: left;">3.33</td>
+<td style="text-align: left;"><strong>3.75</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Group 4</strong></td>
+<td style="text-align: left;">105</td>
+<td style="text-align: left;"><strong>17</strong></td>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;"><strong>6</strong></td>
+<td style="text-align: left;">1.28</td>
+<td style="text-align: left;"><strong>1.12</strong></td>
+</tr>
+</tbody>
+</table>
+<section id="insights" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="insights"><span class="header-section-number">2.1</span> Insights:</h3>
+<ul>
+<li><strong>Strain Divergence vs.&nbsp;Reference Identity:</strong>
+<ul>
+<li><strong>Group 4</strong> has only <strong>17 high-confidence SNPs</strong> relative to the <em>Salmonella Paratyphi B</em> str. SPB7 reference genome. This isolate is virtually identical to the reference strain.</li>
+<li><strong>Group 2</strong> has <strong>17,160 high-confidence SNPs</strong> even after strict filtering. This indicates that Group 2 is a genetically distinct strain of <em>Salmonella Paratyphi B</em> that is divergent from the SPB7 reference.</li>
+</ul></li>
+<li><strong>Transition/Transversion (ts/tv) Ratio:</strong>
+<ul>
+<li>Group 2’s filtered callset has a ts/tv ratio of <strong>3.75</strong>. In bacteria, a high ts/tv ratio (&gt; 3.0) indicates real biological variants, particularly transitions driven by selective pressure or CpG biases.</li>
+<li>The high ts/tv ratio confirms that the 17,160 SNPs called in Group 2 are <strong>real biological variations</strong> and not sequencing errors.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="conclusions-and-recommendations-for-the-head-of-the-institute" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="conclusions-and-recommendations-for-the-head-of-the-institute"><span class="header-section-number">3</span> Conclusions and Recommendations for the Head of the Institute</h2>
+<p>We can draw the following conclusions and formulate recommendations for the head of the institute:</p>
+<section id="was-the-sequencing-run-a-success" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="was-the-sequencing-run-a-success"><span class="header-section-number">3.1</span> Was the sequencing run a success?</h3>
+<p><strong>Yes, it was a success.</strong> * Group 4 produced exceptionally clean data (99.5% mapping rate, 99.0% properly paired reads, and a very low error rate of 0.099%). * While Group 2 had higher unmapped reads (7.5%) and a higher raw error rate (0.95%), it still successfully generated enough coverage (~18.5x) to call 17,160 high-confidence SNPs with a highly biological ts/tv ratio of 3.75.</p>
+</section>
+<section id="should-the-institute-keep-the-sequencing-instrument" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="should-the-institute-keep-the-sequencing-instrument"><span class="header-section-number">3.2</span> Should the institute keep the sequencing instrument?</h3>
+<p><strong>Yes, absolutely.</strong> * The Group 4 metrics demonstrate that the sequencing instrument is fully capable of producing high-throughput, extremely high-quality NGS data (error rate &lt; 0.1% and mapping rate &gt; 99%). The instrument itself is functional and meets Illumina’s standard specifications.</p>
+</section>
+<section id="what-caused-the-issues-in-group-2" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="what-caused-the-issues-in-group-2"><span class="header-section-number">3.3</span> What caused the issues in Group 2?</h3>
+<p>The lower performance of Group 2 is likely due to <strong>library preparation issues</strong> or <strong>sample-specific contamination</strong>, rather than a hardware defect of the sequencer: * The presence of low-complexity, homopolymeric unmapped reads suggests a library concentration issue (low input DNA) or adapter-dimer contamination, which causes clusters to drop signal early, leading to poly-G calls on 2-channel chemistry machines. * If the two samples were run in different lanes, a lane-specific fluidics clog or bubble could also explain the elevated error rate in that lane.</p>
+</section>
+<section id="recommendations-moving-forward" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="recommendations-moving-forward"><span class="header-section-number">3.4</span> Recommendations Moving Forward</h3>
+<ol type="1">
+<li><strong>Strengthen Library QC:</strong> Implement strict quality control steps (e.g., library concentration and size checking via Bioanalyzer/TapeStation) before loading libraries onto the flowcell.</li>
+<li><strong>Optimize Cluster Density:</strong> Ensure proper loading concentrations to avoid under-clustering or over-clustering.</li>
+<li><strong>Review Run Reports:</strong> Inspect the instrument’s run reports (SAV / interop files) to compare Lane 1 vs.&nbsp;Lane 2 metrics (e.g., %PF clusters, phasing/prephasing) to rule out lane-specific hardware issues.</li>
+<li><strong>Pre-processing/Trimming:</strong> Implement a standard pre-processing trimming step (using <code>fastp</code> or <code>trimmomatic</code>) in our analysis pipeline. Trimming adapters and low-quality bases before alignment will reduce the unmapped reads and error rate for libraries like Group 2.</li>
 </ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -1,0 +1,83 @@
+---
+title: "AI vs Human in Bioinformatics Workflows: Project 1 - Solution 2"
+---
+
+The description of this project can be found [here](https://wcscourses.github.io/Genome-Sequence-Analysis-Standardised-Resources/course_modules/Projects/project1/project1.html).
+
+**Solution number 2 is is below.**
+
+------------------------------------------------------------------------
+
+## Raw Callsets (Before Filtering)
+
+The raw variant calls from each tool were saved to the following files: \* BCFtools Raw VCF: [bcftools.vcf.gz](file:///Users/ma14/Project1/calls/bcftools.vcf.gz) \* FreeBayes Raw VCF: [freebayes.vcf.gz](file:///Users/ma14/Project1/calls/freebayes.vcf.gz) \* GATK Raw VCF: [gatk.vcf.gz](file:///Users/ma14/Project1/calls/gatk.vcf.gz)
+
+Below is a summary of the raw callset statistics:
+
+| Variant Caller | Number of SNPs | Number of Indels | ts/tv Ratio | Minimum QUAL |
+|:--------------|:--------------|:--------------|:--------------|:--------------|
+| **BCFtools** | 22,125 | 1,073 | 1.84 | 3.02 |
+| **FreeBayes** | 9,051 | 794 | 1.98 | 0.0 |
+| **GATK HaplotypeCaller** | 8,393 | 964 | 2.14 | 30.0 |
+
+> \[!NOTE\] BCFtools identified more than twice as many SNPs as FreeBayes and GATK in its raw callset. This is because BCFtools does not apply strict internal quality cutoffs by default and outputs low-confidence candidate sites, whereas GATK and FreeBayes have default filtering thresholds built into their candidate generation.
+
+------------------------------------------------------------------------
+
+## Filtered Callsets (QUAL \> 20)
+
+We filtered each callset to retain only variants with `QUAL > 20`. The filtered files are: \* BCFtools Filtered: [bcftools.filtered.vcf.gz](file:///Users/ma14/Project1/calls/bcftools.filtered.vcf.gz) \* FreeBayes Filtered: [freebayes.filtered.vcf.gz](file:///Users/ma14/Project1/calls/freebayes.filtered.vcf.gz) \* GATK Filtered: [gatk.filtered.vcf.gz](file:///Users/ma14/Project1/calls/gatk.filtered.vcf.gz)
+
+Below is a summary of the filtered callset statistics:
+
+| Variant Caller | Number of SNPs | Number of Indels | ts/tv Ratio | SNP Reduction (%) | Indel Reduction (%) |
+|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|
+| **BCFtools** | 10,182 | 906 | 2.14 | -54.0% | -15.6% |
+| **FreeBayes** | 7,674 | 643 | 2.26 | -15.2% | -19.0% |
+| **GATK HaplotypeCaller** | 8,393 | 964 | 2.14 | 0.0% | 0.0% |
+
+### Key Observations:
+
+-   **The GATK Anomaly:** GATK HaplotypeCaller showed exactly **0% reduction** in variant count after filtering for `QUAL > 20`.
+-   **Explanation:** GATK's default calling threshold (`-stand-call-conf`) is set to `30.0`. It does not report any variants with a quality score lower than 30 in the output VCF. Consequently, every variant in the "raw" GATK VCF already satisfies `QUAL >= 30` (min QUAL observed was `30.0`), rendering the `QUAL > 20` filter completely redundant.
+-   **Callset Quality Improvement:** For both BCFtools and FreeBayes, filtering drastically increased the `ts/tv` ratio (BCFtools: 1.84 → 2.14, FreeBayes: 1.98 → 2.26), confirming that the removed low-quality calls were enriched for false positives.
+
+------------------------------------------------------------------------
+
+## Intersection & Private Callsets
+
+We compared the filtered callsets using `bcftools isec` to identify shared (intersection) and caller-specific (private) variants. We analyzed these sets using two matching methods: **Exact Allele Matching** (default) and **Collapsed Position Matching** (`-c both`).
+
+### Method A: Exact Allele Matching
+
+This method requires exact matches for the position, REF, and ALT alleles. \* Exact Intersection VCF: [intersection.vcf.gz](file:///Users/ma14/Project1/calls/intersection.vcf.gz)
+
+| Callset                  | Number of SNPs | Number of Indels | ts/tv Ratio |
+|:-------------------------|:---------------|:-----------------|:------------|
+| **Intersection (All 3)** | 6,728          | 0                | 2.27        |
+| **BCFtools Private**     | 1,786          | 727              | 1.96        |
+| **FreeBayes Private**    | 274            | 555              | 1.77        |
+| **GATK Private**         | 543            | 873              | 1.55        |
+
+### Method B: Collapsed Position Matching (`-c both`)
+
+This method collapses and matches indels and SNPs by position/overlap, ignoring representational differences. \* Collapsed Intersection VCF: [intersection_collapsed.vcf.gz](file:///Users/ma14/Project1/calls/intersection_collapsed.vcf.gz)
+
+| Callset                  | Number of SNPs | Number of Indels | ts/tv Ratio |
+|:-------------------------|:---------------|:-----------------|:------------|
+| **Intersection (All 3)** | 7,088          | 504              | 2.23        |
+| **BCFtools Private**     | 1,688          | 207              | 2.03        |
+| **FreeBayes Private**    | 190            | 43               | 1.77        |
+| **GATK Private**         | 492            | 302              | 1.62        |
+
+------------------------------------------------------------------------
+
+## Discussion of the Results
+
+### Indel Representation Discrepancies
+
+In **Method A (Exact Match)**, we found **0 indels** in the intersection. This is a common artifact when comparing VCF files. \* **Reason:** Different variant callers represent insertions and deletions differently. For example, a deletion of three nucleotides `TGC` can be annotated at different base coordinates, or with different reference/alternate allele representations (e.g. left-alignment variations). \* **Solution:** By applying **Method B (Collapsed Match)** using `bcftools isec -c both`, we resolved these discrepancies, rescuing **504 high-confidence indels** called by all three programs, and significantly reducing the number of apparently "private" indels (e.g., FreeBayes private indels dropped from 555 to 43).
+
+### Transition/Transversion (ts/tv) Ratio as a Quality Metric
+
+In human genomes, the biological ratio of transitions (A↔G, C↔T) to transversions (other changes) is expected to be \~2.0–2.1 for whole-genome sequencing (WGS) and \~3.0–3.2 for exome sequencing due to CpG methylation in coding regions. \* **Intersection Calls (Highest Confidence):** The intersection callset has the highest `ts/tv` ratio (2.27 for exact, 2.23 for collapsed), confirming that variants agreed upon by all three callers are highly enriched for true biological variants. \* **Private Calls (Low Confidence / Errors):** Caller-specific private variants show much lower `ts/tv` ratios (GATK private: 1.55 / 1.62; FreeBayes private: 1.77; BCFtools private: 1.96 / 2.03). Since random sequencing and calling errors are equally likely to create transitions or transversions (yielding a baseline ratio of \~0.5), a depressed `ts/tv` ratio in the private callset indicates a strong enrichment for false positives.

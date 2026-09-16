@@ -1,0 +1,13 @@
+=== QUALITY CONTROL REPORT ===
+
+Reads File 1: data/reads_R1.fastq
+Total Reads: 5
+Avg Read Length: 20.0 bp
+Avg GC Content: 39.0%
+Avg Phred Score: 29.6
+
+Reads File 2: data/reads_R2.fastq
+Total Reads: 5
+Avg Read Length: 20.0 bp
+Avg GC Content: 44.0%
+Avg Phred Score: 24.0

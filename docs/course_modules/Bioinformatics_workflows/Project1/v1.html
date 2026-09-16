@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project 9: De Novo Assembly and Identification of a Fungal Pathogen Genome – Genome Sequence Analysis Course</title>
+<title>AI vs Human in Bioinformatics Workflows: Project 1 - Solution 1 – Genome Sequence Analysis Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -207,6 +173,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-train-the-trainer" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Train-the-trainer</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-train-the-trainer">    
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Train-the-trainer/teach-as-you-go.html">
+ <span class="dropdown-text">Teach-as-you-go sessions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Bioinformatics_workflows/AI_in_bioinformatics.html">
+ <span class="dropdown-text">AI in Bioinformatics Workflows</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -219,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Project 9: De Novo Assembly and Identification of a Fungal Pathogen Genome</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AI vs Human in Bioinformatics Workflows: Project 1 - Solution 1</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -637,14 +618,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#tools-to-be-used" id="toc-tools-to-be-used" class="nav-link" data-scroll-target="#tools-to-be-used"><span class="header-section-number">2</span> Tools to be used</a></li>
-  <li><a href="#data-download" id="toc-data-download" class="nav-link" data-scroll-target="#data-download"><span class="header-section-number">3</span> Data Download</a>
+  <li><a href="#task-1-run-the-three-variant-callers" id="toc-task-1-run-the-three-variant-callers" class="nav-link active" data-scroll-target="#task-1-run-the-three-variant-callers"><span class="header-section-number">1</span> Task 1: Run the three variant callers:</a>
   <ul class="collapse">
-  <li><a href="#raw-sequencing-reads" id="toc-raw-sequencing-reads" class="nav-link" data-scroll-target="#raw-sequencing-reads"><span class="header-section-number">3.1</span> Raw Sequencing Reads</a></li>
+  <li><a href="#bcftools-mpileup-used-command-line-information" id="toc-bcftools-mpileup-used-command-line-information" class="nav-link" data-scroll-target="#bcftools-mpileup-used-command-line-information"><span class="header-section-number">1.1</span> bcftools mpileup used command line information</a></li>
+  <li><a href="#bcftools-call-used-command-line-information" id="toc-bcftools-call-used-command-line-information" class="nav-link" data-scroll-target="#bcftools-call-used-command-line-information"><span class="header-section-number">1.2</span> bcftools call used command line information</a></li>
+  <li><a href="#explanations-for-gatk" id="toc-explanations-for-gatk" class="nav-link" data-scroll-target="#explanations-for-gatk"><span class="header-section-number">1.3</span> Explanations for gatk:</a></li>
   </ul></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">4</span> Tasks</a></li>
-  <li><a href="#guide-questions" id="toc-guide-questions" class="nav-link" data-scroll-target="#guide-questions"><span class="header-section-number">5</span> Guide Questions</a></li>
+  <li><a href="#task-2-create-stats-for-the-raw-callsets-note-the-number-of-snps-indels-and-tstv-ratio." id="toc-task-2-create-stats-for-the-raw-callsets-note-the-number-of-snps-indels-and-tstv-ratio." class="nav-link" data-scroll-target="#task-2-create-stats-for-the-raw-callsets-note-the-number-of-snps-indels-and-tstv-ratio."><span class="header-section-number">2</span> Task 2: Create stats for the raw callsets, note the number of SNPs, indels, and ts/tv ratio.</a></li>
+  <li><a href="#task-3-filter-the-calls-require-qual20-and-note-the-number-of-snps-indels-and-tstv-of-the-filtered-callset.-can-you-explain-the-differences-especially-the-gatk-tool" id="toc-task-3-filter-the-calls-require-qual20-and-note-the-number-of-snps-indels-and-tstv-of-the-filtered-callset.-can-you-explain-the-differences-especially-the-gatk-tool" class="nav-link" data-scroll-target="#task-3-filter-the-calls-require-qual20-and-note-the-number-of-snps-indels-and-tstv-of-the-filtered-callset.-can-you-explain-the-differences-especially-the-gatk-tool"><span class="header-section-number">3</span> Task 3: Filter the calls, require QUAL&gt;20 and note the number of SNPs, indels and ts/tv of the filtered callset. Can you explain the differences, especially the GATK tool?</a></li>
+  <li><a href="#task-4-use-the-command-bcftools-isec-on-the-to-find-variants-with-qual20-called-by-all-three-tools-presumably-the-highest-confidence-calls.-explore-the-output.-what-is-the-tstv-of-variants-in-the-intersection" id="toc-task-4-use-the-command-bcftools-isec-on-the-to-find-variants-with-qual20-called-by-all-three-tools-presumably-the-highest-confidence-calls.-explore-the-output.-what-is-the-tstv-of-variants-in-the-intersection" class="nav-link" data-scroll-target="#task-4-use-the-command-bcftools-isec-on-the-to-find-variants-with-qual20-called-by-all-three-tools-presumably-the-highest-confidence-calls.-explore-the-output.-what-is-the-tstv-of-variants-in-the-intersection"><span class="header-section-number">4</span> Task 4: Use the command bcftools isec on the to find variants with QUAL&gt;20 called by all three tools (presumably the highest-confidence calls). Explore the output. What is the ts/tv of variants in the intersection?</a>
+  <ul class="collapse">
+  <li><a href="#explanation" id="toc-explanation" class="nav-link" data-scroll-target="#explanation"><span class="header-section-number">4.1</span> Explanation:&nbsp;</a></li>
+  </ul></li>
+  <li><a href="#task-5-the-variants-called-by-one-program-only-presumably-enriched-for-errors.-what-is-the-tstv-of-variants-private-to-the-callers" id="toc-task-5-the-variants-called-by-one-program-only-presumably-enriched-for-errors.-what-is-the-tstv-of-variants-private-to-the-callers" class="nav-link" data-scroll-target="#task-5-the-variants-called-by-one-program-only-presumably-enriched-for-errors.-what-is-the-tstv-of-variants-private-to-the-callers"><span class="header-section-number">5</span> Task 5: The variants called by one program only (presumably enriched for errors). What is the ts/tv of variants private to the callers?</a></li>
   </ul>
 </nav>
     </div>
@@ -653,7 +639,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project 9: De Novo Assembly and Identification of a Fungal Pathogen Genome</h1>
+<h1 class="title">AI vs Human in Bioinformatics Workflows: Project 1 - Solution 1</h1>
 </div>
 
 
@@ -670,72 +656,289 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>General guidance for project</strong></p>
-<p>Recommended number of participants per group: 4 to 6.</p>
-<p>Project work running time: 1.5h (intended to be solved in under 1 hour by a human without AI assistance).</p>
-<p>Each group will present their work in their respective classroom.</p>
-<section id="introduction" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
-<p>Fungal infections present a growing challenge in clinical settings, with emerging opportunistic pathogens like <em>Candida auris</em> causing outbreaks. Early detection, assembly, and taxonomic identification of fungal isolates from hospital wards are key steps in epidemiology.</p>
-<p>In this project, you will act as a clinical microbiologist. A yeast-like fungus has been isolated from a blood culture of an immunocompromised patient. The isolate was sequenced using Illumina technology. Your task is to: - Perform de novo genome assembly of the isolate using <strong>Velvet</strong>. - Assess the quality and continuity of your assemblies using different k-mer values. - Identify the taxonomic species of the isolate using a sequence similarity search (BLASTn).</p>
-</section>
-<section id="tools-to-be-used" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="tools-to-be-used"><span class="header-section-number">2</span> Tools to be used</h2>
+<p>The description of this project can be found <a href="https://wcscourses.github.io/Genome-Sequence-Analysis-Standardised-Resources/course_modules/Projects/project1/project1.html">here</a>.</p>
+<p><strong>Solution number 1 is is below.</strong></p>
+<section id="task-1-run-the-three-variant-callers" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="task-1-run-the-three-variant-callers"><span class="header-section-number">1</span> Task 1: Run the three variant callers:</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p>bcftools mpileup -r 6 -f data/hs37d5.fa data/kolf.bam data/kolf_2.bam -Ou | bcftools call -mv -Oz -o bcftools.vcf.gz</p>
+<p>freebayes -r 6 -f data/hs37d5.fa data/kolf.bam data/kolf_2.bam | bcftools view -Oz -o freebayes.vcf.gz</p>
+<p>java -Xms4g -Xmx4g -jar bin.part/gatk.jar HaplotypeCaller -R data/hs37d5.fa -I data/kolf.bam -I data/kolf_2.bam -L 6 -O /dev/stdout | bcftools view -Oz -o gatk.vcf.gz</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Explanations for bcftools:</strong> The code “bcftools mpileup” outputs values for all positions (similar to gvcf) – see below.</p>
+<p>&nbsp;Therefore, we pipe the output to “bcftools call” to extract only the variants.</p>
+<section id="bcftools-mpileup-used-command-line-information" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="bcftools-mpileup-used-command-line-information"><span class="header-section-number">1.1</span> bcftools mpileup used command line information</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 87%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Flag</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr class="even">
+<td><p>-r</p>
+<p>–regions</p></td>
+<td><p>&nbsp; &nbsp; Region to be used. Format that you can use:</p>
 <ul>
-<li><code>velveth</code> and <code>velvetg</code> (Velvet assembler)</li>
-<li><code>assembly-stats</code></li>
-<li><code>seqtk</code></li>
-<li>NCBI BLASTn (online)</li>
-</ul>
+<li><p>Chromosome number (eg: 1 or chr1, depend on how your fasta or&nbsp; bam file looks like)</p></li>
+<li><p>Chr:pos (eg: chr1:37832 or 1:37832)</p></li>
+<li><p>Chr:start-end (eg: chr1:37832-40000 or 1:37832-40000)</p></li>
+<li><p>Chr:start- (eg: chr1:37832- or 1:37832-) *means start from chr1 at 37832 pos and the rest)</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td><p>-f</p>
+<p>–fasta-ref</p></td>
+<td><p>&nbsp;&nbsp; The reference fasta file (unzip or bgzip)</p>
+<p>&nbsp;&nbsp;&nbsp;Must be indexed (.fai extension)</p></td>
+</tr>
+<tr class="even">
+<td>-Ou</td>
+<td>&nbsp;&nbsp; -O refer to Output type. The u refers to uncompressed</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="data-download" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="data-download"><span class="header-section-number">3</span> Data Download</h2>
-<p>Create a project directory and navigate to it:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$HOME</span>/Project9 <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> <span class="st">"</span><span class="va">$_</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="raw-sequencing-reads" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="raw-sequencing-reads"><span class="header-section-number">3.1</span> Raw Sequencing Reads</h3>
-<p>Download the raw reads from ENA for Yeast sample run <strong>ERR1015121</strong>. We will subsample 80,000 read pairs using <code>seqtk</code> to ensure the de novo assembly runs fast on the VM (within 2 minutes):</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download reads from ENA</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> raw_1.fastq.gz <span class="st">"https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR101/021/ERR1015121/ERR1015121_1.fastq.gz"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> raw_2.fastq.gz <span class="st">"https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR101/021/ERR1015121/ERR1015121_2.fastq.gz"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Subsample 80,000 read pairs</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">seqtk</span> sample <span class="at">-s100</span> raw_1.fastq.gz 80000 <span class="kw">|</span> <span class="fu">gzip</span> <span class="op">&gt;</span> reads_1.fastq.gz</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">seqtk</span> sample <span class="at">-s100</span> raw_2.fastq.gz 80000 <span class="kw">|</span> <span class="fu">gzip</span> <span class="op">&gt;</span> reads_2.fastq.gz</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean up raw files</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> raw_1.fastq.gz raw_2.fastq.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="bcftools-call-used-command-line-information" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="bcftools-call-used-command-line-information"><span class="header-section-number">1.2</span> bcftools call used command line information</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 75%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Flag</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr class="even">
+<td><p>-m</p>
+<p>–multiallelic-caller</p></td>
+<td>An alternative model for multialleleic and rare-variant calling method</td>
+</tr>
+<tr class="odd">
+<td><p>-v</p>
+<p>–variant-only</p></td>
+<td>To keep the variant only for the output file</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Explanations for bcftools</strong>: The output of freebayes is an uncompressed vcf files. So we pipe the output to “bcftools view” to generate the compressed vcf file.</p>
+</section>
+<section id="explanations-for-gatk" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="explanations-for-gatk"><span class="header-section-number">1.3</span> Explanations for gatk:</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 87%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Flag</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr class="even">
+<td>HaplotypeCaller</td>
+<td>One of the modules in the gatk</td>
+</tr>
+<tr class="odd">
+<td><p>-R</p>
+<p>–reference</p></td>
+<td>Reference file</td>
+</tr>
+<tr class="even">
+<td><p>-I</p>
+<p>–input</p></td>
+<td>Bam/sam/cram file</td>
+</tr>
+<tr class="odd">
+<td><p>-L</p>
+<p>–intervals</p></td>
+<td><p>The region you can specify</p>
+<p>(eg: 1 or 1:200-300)</p></td>
+</tr>
+<tr class="even">
+<td><p>-O</p>
+<p>–output</p></td>
+<td>Output file where the results should be written. The “/dev/stdout” means print to terminal rather than saving to a file.</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
-<section id="tasks" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="tasks"><span class="header-section-number">4</span> Tasks</h2>
-<p><strong>Task 1: Run Genome Assembly with Different K-mers</strong> Assemble the genome using <strong>Velvet</strong> with three different odd-numbered k-mer lengths (e.g., <code>31</code>, <code>55</code>, and <code>75</code>). Remember that Velvet requires running <code>velveth</code> first to create the hash table, followed by <code>velvetg</code> to build the graph:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run Velvet with k=31</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">velveth</span> assembly_k31 31 <span class="at">-fastq.gz</span> <span class="at">-paired</span> <span class="at">-shortPaired</span> reads_1.fastq.gz reads_2.fastq.gz</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">velvetg</span> assembly_k31 <span class="at">-exp_cov</span> auto <span class="at">-cov_cutoff</span> auto</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Run Velvet with k=55</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">velveth</span> assembly_k55 55 <span class="at">-fastq.gz</span> <span class="at">-paired</span> <span class="at">-shortPaired</span> reads_1.fastq.gz reads_2.fastq.gz</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">velvetg</span> assembly_k55 <span class="at">-exp_cov</span> auto <span class="at">-cov_cutoff</span> auto</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Run Velvet with k=75</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="ex">velveth</span> assembly_k75 75 <span class="at">-fastq.gz</span> <span class="at">-paired</span> <span class="at">-shortPaired</span> reads_1.fastq.gz reads_2.fastq.gz</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">velvetg</span> assembly_k75 <span class="at">-exp_cov</span> auto <span class="at">-cov_cutoff</span> auto</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Task 2: Evaluate Assembly Quality Metrics</strong> Use the <code>assembly-stats</code> tool to get details about the three assemblies. Compare their N50 values, total lengths, and number of contigs:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">assembly-stats</span> assembly_k31/contigs.fa</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">assembly-stats</span> assembly_k55/contigs.fa</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">assembly-stats</span> assembly_k75/contigs.fa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><em>Create a small table of N50, total assembly size, and contig count for the three assemblies. Which k-mer produced the best assembly?</em></p>
-<p><strong>Task 3: Taxonomic Identification Using BLASTn</strong> Identify the fungal species of the isolate: 1. Print the first few long contigs from your best assembly (e.g.&nbsp;<code>assembly_k55/contigs.fa</code>). 2. Copy one of the long contig sequences (at least 1,000 bp long). 3. Open the NCBI BLAST website in your browser: <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" class="uri">https://blast.ncbi.nlm.nih.gov/Blast.cgi</a> 4. Run a <code>blastn</code> search against the nucleotide collection (<code>nr/nt</code>) database. 5. Record the top taxonomic match and its percentage identity.</p>
+<section id="task-2-create-stats-for-the-raw-callsets-note-the-number-of-snps-indels-and-tstv-ratio." class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="task-2-create-stats-for-the-raw-callsets-note-the-number-of-snps-indels-and-tstv-ratio."><span class="header-section-number">2</span> Task 2: Create stats for the raw callsets, note the number of SNPs, indels, and ts/tv ratio.</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>FILE=bcftools.vcf.gz</strong></p>
+<p>bcftools query -f’%POS \n’ -i ‘type=“SNP”’ &nbsp; $FILE | wc -l</p>
+<p>bcftools query -f’%POS \n’ -i ‘type=“indel”’ $FILE | wc -l</p>
+<p>bcftools stats $FILE | grep TSTV | cut -f5</p>
+<p><strong>FILE=freebayes.vcf.gz</strong></p>
+<p>bcftools query -f’%POS \n’ -i ‘type=“SNP”’ &nbsp; $FILE | wc -l</p>
+<p>bcftools query -f’%POS \n’ -i ‘type=“indel”’ $FILE | wc -l</p>
+<p>bcftools stats $FILE | grep TSTV | cut -f5</p>
+<p><strong>FILE=gatk.vcf.gz</strong></p>
+<p>bcftools query -f’%POS \n’ -i ‘type=“SNP”’ &nbsp; $FILE | wc -l</p>
+<p>bcftools query -f’%POS \n’ -i ‘type=“indel”’ $FILE | wc -l</p>
+<p>bcftools stats $FILE | grep TSTV | cut -f5</p></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Unfiltered VCF</strong></td>
+<td><strong># SNPs</strong></td>
+<td><strong># indels</strong></td>
+<td><strong>TS/TV</strong></td>
+</tr>
+<tr class="even">
+<td>bcftools</td>
+<td>20,862</td>
+<td>1,811</td>
+<td>1.88</td>
+</tr>
+<tr class="odd">
+<td>freebayes</td>
+<td>11,034</td>
+<td>778</td>
+<td>1.49</td>
+</tr>
+<tr class="even">
+<td>gatk</td>
+<td>8,384</td>
+<td>948</td>
+<td>2.14</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="guide-questions" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="guide-questions"><span class="header-section-number">5</span> Guide Questions</h2>
-<ol type="1">
-<li>Fill out the assembly comparison table below: | k-mer | Total Length (bp) | Number of Contigs | N50 (bp) | Longest Contig (bp) | | :— | :— | :— | :— | :— | | 31 | | | | | | 55 | | | | | | 75 | | | | |</li>
-<li>How does the choice of k-mer size affect the assembly’s total length and N50? Why?</li>
-<li>What is the species identity of the sequenced yeast isolate based on your BLASTn search?</li>
-<li>Is this identified fungus known to be a common human pathogen or food contaminate? Does it pose a clinical concern?</li>
-</ol>
+<section id="task-3-filter-the-calls-require-qual20-and-note-the-number-of-snps-indels-and-tstv-of-the-filtered-callset.-can-you-explain-the-differences-especially-the-gatk-tool" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="task-3-filter-the-calls-require-qual20-and-note-the-number-of-snps-indels-and-tstv-of-the-filtered-callset.-can-you-explain-the-differences-especially-the-gatk-tool"><span class="header-section-number">3</span> Task 3: Filter the calls, require QUAL&gt;20 and note the number of SNPs, indels and ts/tv of the filtered callset. Can you explain the differences, especially the GATK tool?</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 101%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>FILE=bcftools.vcf.gz</strong></p>
+<p>bcftools query -f’%POS\n’ -i ‘type=“SNP” &nbsp; &amp;&amp; QUAL &gt; 20’&nbsp; $FILE | wc -l</p>
+<p>bcftools query -f’%POS\n’ -i ‘type=“indel” &amp;&amp; QUAL &gt; 20’&nbsp; $FILE | wc -l</p>
+<p>bcftools stats -i’QUAL&gt;20’ $FILE | grep TSTV | cut -f5</p>
+<p><strong>FILE=freebayes.vcf.gz</strong></p>
+<p>bcftools query -f’%POS\n’ -i ‘type=“SNP” &nbsp; &amp;&amp; QUAL &gt; 20’&nbsp; $FILE | wc -l</p>
+<p>bcftools query -f’%POS\n’ -i ‘type=“indel” &amp;&amp; QUAL &gt; 20’&nbsp; $FILE | wc -l</p>
+<p>bcftools stats -i’QUAL&gt;20’ $FILE | grep TSTV | cut -f5</p>
+<p><strong>FILE=gatk.vcf.gz</strong></p>
+<p>bcftools query -f’%POS\n’ -i ‘type=“SNP” &nbsp; &amp;&amp; QUAL &gt; 20’&nbsp; $FILE | wc -l</p>
+<p>bcftools query -f’%POS\n’ -i ‘type=“indel” &amp;&amp; QUAL &gt; 20’&nbsp; $FILE | wc -l</p>
+<p>bcftools stats -i’QUAL&gt;20’ $FILE | grep TSTV | cut -f5</p></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Filtered VCF</strong></td>
+<td><strong># SNPs</strong></td>
+<td><strong># indels</strong></td>
+<td><strong>TS/TV</strong></td>
+</tr>
+<tr class="even">
+<td>bcftools</td>
+<td>9.684</td>
+<td>1,054</td>
+<td>2.17</td>
+</tr>
+<tr class="odd">
+<td>freebayes</td>
+<td>7,571</td>
+<td>635</td>
+<td>2.27</td>
+</tr>
+<tr class="even">
+<td>gatk</td>
+<td>8,384</td>
+<td>948</td>
+<td>2.14</td>
+</tr>
+</tbody>
+</table>
+<p>The number of SNPs and indels reduces and TS/TV ratio improves with QUAL&gt;20 indicating a higher quality filtered whole-genome calls.</p>
+<p>GATK outputs are unchanged because it already filters for QUAL ≥ 30 by default. You can fact check this via <a href="https://gatk.broadinstitute.org/hc/en-us/articles/360036889312-HaplotypeCaller">GATK HaplotypeCaller documentation</a> or check the VCF directly:</p>
+</section>
+<section id="task-4-use-the-command-bcftools-isec-on-the-to-find-variants-with-qual20-called-by-all-three-tools-presumably-the-highest-confidence-calls.-explore-the-output.-what-is-the-tstv-of-variants-in-the-intersection" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="task-4-use-the-command-bcftools-isec-on-the-to-find-variants-with-qual20-called-by-all-three-tools-presumably-the-highest-confidence-calls.-explore-the-output.-what-is-the-tstv-of-variants-in-the-intersection"><span class="header-section-number">4</span> Task 4: Use the command bcftools isec on the to find variants with QUAL&gt;20 called by all three tools (presumably the highest-confidence calls). Explore the output. What is the ts/tv of variants in the intersection?</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 101%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong># Index the VCF callsets</strong></p>
+<p>bcftools index bcftools.vcf.gz</p>
+<p>bcftools index freebayes.vcf.gz</p>
+<p>bcftools index gatk.vcf.gz</p>
+<p><strong># Filtered variants that is called by all three tools</strong></p>
+<p>bcftools isec -i ‘QUAL&gt;20’ -c all -n =3 bcftools.vcf.gz freebayes.vcf.gz gatk.vcf.gz -p isec_all/</p>
+<p><strong># Calculate the TS/TV ratio</strong></p>
+<p>bcftools stats isec_all/0000.vcf | grep TSTV | cut -f5</p>
+<p>bcftools stats isec_all/0001.vcf | grep TSTV | cut -f5</p>
+<p>bcftools stats isec_all/0002.vcf | grep TSTV | cut -f5</p></td>
+</tr>
+</tbody>
+</table>
+<p>The TS/TV ratios are between 2.25 - 2.29.</p>
+<section id="explanation" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="explanation"><span class="header-section-number">4.1</span> Explanation:&nbsp;</h3>
+<p>·&nbsp;&nbsp;&nbsp; The flag -c (collapse) is how to match variants across files. -c all says match any variant at the same POS regardless of ALT alleles</p>
+<p>·&nbsp;&nbsp;&nbsp; The flag -n (number of files) says which variants to output based on how many files they appear in. -n =3 means exactly in 3 files (i.e.&nbsp;all callers)</p>
+<p>Looking inside isec_all/ shows three vcf files which have the exact same number of variants inside each file.</p>
+</section>
+</section>
+<section id="task-5-the-variants-called-by-one-program-only-presumably-enriched-for-errors.-what-is-the-tstv-of-variants-private-to-the-callers" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="task-5-the-variants-called-by-one-program-only-presumably-enriched-for-errors.-what-is-the-tstv-of-variants-private-to-the-callers"><span class="header-section-number">5</span> Task 5: The variants called by one program only (presumably enriched for errors). What is the ts/tv of variants private to the callers?</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong># Filtered variants that is called by all three tools</strong></p>
+<p>bcftools isec -i ‘QUAL&gt;20’ -c all -n =1 bcftools.vcf.gz freebayes.vcf.gz gatk.vcf.gz -p isec_private/</p>
+<p><strong>cat isec_private/README.txt</strong></p>
+<p># This file was produced by vcfisec.</p>
+<p># The command line was:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bcftools isec&nbsp; -i QUAL&gt;20 -c all -n =1 -p</p>
+<p># isec_private/ bcftools.vcf.gz freebayes.vcf.gz gatk.vcf.gz</p>
+<p># Using the following file names:</p>
+<p># isec_private//0000.vcf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for stripped&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bcftools.vcf.gz</p>
+<p># isec_private//0001.vcf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for stripped&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; freebayes.vcf.gz</p>
+<p># isec_private//0002.vcf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for stripped&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gatk.vcf.gz</p>
+<p><strong># Calculate the TS/TV ratio</strong></p>
+<p>bcftools stats isec_private/0000.vcf | grep TSTV | cut -f5</p>
+<p>bcftools stats isec_private/0001.vcf | grep TSTV | cut -f5</p>
+<p>bcftools stats isec_private/0002.vcf | grep TSTV | cut -f5</p></td>
+</tr>
+</tbody>
+</table>
+<p>The values for the variants private to each callers are 2.12 (bcftools), 2.01 (freebayes) and 1.66 (GATK).</p>
+<p><strong>Explanation:</strong> -n =1 means exactly in 1 file (i.e.&nbsp;private to one of the caller)</p>
 
 
 </section>

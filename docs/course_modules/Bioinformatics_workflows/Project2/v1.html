@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project 10: Identifying Insecticide Resistance in the Malaria Vector Anopheles gambiae – Genome Sequence Analysis Course</title>
+<title>AI vs Human in Bioinformatics Workflows: Project 2 - Solution 1 – Genome Sequence Analysis Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -207,6 +207,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-train-the-trainer" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Train-the-trainer</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-train-the-trainer">    
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Train-the-trainer/teach-as-you-go.html">
+ <span class="dropdown-text">Teach-as-you-go sessions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Bioinformatics_workflows/AI_in_bioinformatics.html">
+ <span class="dropdown-text">AI in Bioinformatics Workflows</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -219,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Project 10: Identifying Insecticide Resistance in the Malaria Vector Anopheles gambiae</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AI vs Human in Bioinformatics Workflows: Project 2 - Solution 1</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -637,15 +652,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#tools-to-be-used" id="toc-tools-to-be-used" class="nav-link" data-scroll-target="#tools-to-be-used"><span class="header-section-number">2</span> Tools to be used</a></li>
-  <li><a href="#data-download" id="toc-data-download" class="nav-link" data-scroll-target="#data-download"><span class="header-section-number">3</span> Data Download</a>
-  <ul class="collapse">
-  <li><a href="#reference-vgsc-sequence" id="toc-reference-vgsc-sequence" class="nav-link" data-scroll-target="#reference-vgsc-sequence"><span class="header-section-number">3.1</span> 1. Reference VGSC Sequence</a></li>
-  <li><a href="#raw-sequencing-reads" id="toc-raw-sequencing-reads" class="nav-link" data-scroll-target="#raw-sequencing-reads"><span class="header-section-number">3.2</span> 2. Raw Sequencing Reads</a></li>
-  </ul></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">4</span> Tasks</a></li>
-  <li><a href="#guide-questions" id="toc-guide-questions" class="nav-link" data-scroll-target="#guide-questions"><span class="header-section-number">5</span> Guide Questions</a></li>
+  <li><a href="#task-1-align-reads-to-the-reference-genome" id="toc-task-1-align-reads-to-the-reference-genome" class="nav-link active" data-scroll-target="#task-1-align-reads-to-the-reference-genome"><span class="header-section-number">0.1</span> Task 1: Align reads to the reference genome</a></li>
+  <li><a href="#task-2-assess-alignment-quality" id="toc-task-2-assess-alignment-quality" class="nav-link" data-scroll-target="#task-2-assess-alignment-quality"><span class="header-section-number">0.2</span> Task 2: Assess alignment quality</a></li>
+  <li><a href="#task-3-call-and-filter-variants" id="toc-task-3-call-and-filter-variants" class="nav-link" data-scroll-target="#task-3-call-and-filter-variants"><span class="header-section-number">0.3</span> Task 3: Call and filter variants</a></li>
+  <li><a href="#task-4-evaluate-the-sequencing-run" id="toc-task-4-evaluate-the-sequencing-run" class="nav-link" data-scroll-target="#task-4-evaluate-the-sequencing-run"><span class="header-section-number">0.4</span> Task 4: Evaluate the sequencing run</a></li>
   </ul>
 </nav>
     </div>
@@ -654,7 +664,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project 10: Identifying Insecticide Resistance in the Malaria Vector Anopheles gambiae</h1>
+<h1 class="title">AI vs Human in Bioinformatics Workflows: Project 2 - Solution 1</h1>
 </div>
 
 
@@ -671,81 +681,218 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>General guidance for project</strong></p>
-<p>Recommended number of participants per group: 4 to 6.</p>
-<p>Project work running time: 1.5h (intended to be solved in under 1 hour by a human without AI assistance).</p>
-<p>Each group will present their work in their respective classroom.</p>
-<section id="introduction" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
-<p>Malaria control relies heavily on pyrethroid-treated insecticide bed nets (ITNs) and indoor residual spraying (IRS) to target the <em>Anopheles gambiae</em> mosquito vector. However, widespread insecticide use has driven the selection of <strong>knockdown resistance (kdr)</strong> mutations. The most critical mutations occur in the <strong>voltage-gated sodium channel (VGSC)</strong> gene on chromosome 2L (locus AGAP004707).</p>
-<p>The classic kdr mutation is <strong>L1014F</strong> (a Leucine-to-Phenylalanine mutation at codon 1014, corresponding to nucleotide position <code>2422651</code> on chromosome 2L). Alternatively, the <strong>L1014S</strong> (Leucine-to-Serine) mutation is also observed.</p>
-<p>In this project, you will analyze genomic sequencing data from a wild-caught mosquito isolate collected in an area reporting reduced efficacy of bed nets. Your task is to: - Map sequencing reads to the reference VGSC coding sequence. - Process the BAM alignment files. - Call genomic variants. - Determine the genotype of the mosquito at codon 1014 and report whether it carries insecticide resistance alleles.</p>
+<p>The description of this project can be found <a href="https://wcscourses.github.io/Genome-Sequence-Analysis-Standardised-Resources/course_modules/Projects/project2/project2.html">here</a>.</p>
+<p><strong>Solution number 1 is is below.</strong></p>
+<section id="task-1-align-reads-to-the-reference-genome" class="level3" data-number="0.1">
+<h3 data-number="0.1" class="anchored" data-anchor-id="task-1-align-reads-to-the-reference-genome"><span class="header-section-number">0.1</span> Task 1: Align reads to the reference genome</h3>
+<p>Align the reads for each group with <code>bwa mem</code>, sort the alignments, mark duplicate reads, and index the resulting BAM files.</p>
+<section id="group-2" class="level4" data-number="0.1.1">
+<h4 data-number="0.1.1" class="anchored" data-anchor-id="group-2"><span class="header-section-number">0.1.1</span> Group 2</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bwa</span> mem <span class="at">-M</span> <span class="at">-t</span> 4 CP000886.fasta <span class="dt">\</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  Data/Group2_S2_L001_R1_001.fastq.gz <span class="dt">\</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  Data/Group2_S2_L001_R2_001.fastq.gz <span class="dt">\</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span> <span class="ex">samtools</span> sort <span class="at">-@</span> 4 <span class="at">-O</span> bam <span class="at">-o</span> Group2.sorted.bam</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> index Group2.sorted.bam</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">picard</span> MarkDuplicates <span class="dt">\</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">-I</span> Group2.sorted.bam <span class="dt">\</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">-O</span> Group2.markdup.bam <span class="dt">\</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">-M</span> Group2.picard_metrics.txt</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> index Group2.markdup.bam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="tools-to-be-used" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="tools-to-be-used"><span class="header-section-number">2</span> Tools to be used</h2>
+<section id="group-4" class="level4" data-number="0.1.2">
+<h4 data-number="0.1.2" class="anchored" data-anchor-id="group-4"><span class="header-section-number">0.1.2</span> Group 4</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bwa</span> mem <span class="at">-M</span> <span class="at">-t</span> 4 CP000886.fasta <span class="dt">\</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  Data/Group4_S4_L001_R1_001.fastq.gz <span class="dt">\</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  Data/Group4_S4_L001_R2_001.fastq.gz <span class="dt">\</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span> <span class="ex">samtools</span> sort <span class="at">-@</span> 4 <span class="at">-O</span> bam <span class="at">-o</span> Group4.sorted.bam</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> index Group4.sorted.bam</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">picard</span> MarkDuplicates <span class="dt">\</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">-I</span> Group4.sorted.bam <span class="dt">\</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">-O</span> Group4.markdup.bam <span class="dt">\</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">-M</span> Group4.picard_metrics.txt</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> index Group4.markdup.bam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="task-2-assess-alignment-quality" class="level3" data-number="0.2">
+<h3 data-number="0.2" class="anchored" data-anchor-id="task-2-assess-alignment-quality"><span class="header-section-number">0.2</span> Task 2: Assess alignment quality</h3>
+<p>Collect alignment statistics with <code>samtools stats</code> and generate QC reports with <code>plot-bamstats</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> stats Group2.markdup.bam <span class="dt">\</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span> <span class="ex">plot-bamstats</span> <span class="at">-p</span> Group2_plot/alignment/ <span class="at">-</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> stats Group4.markdup.bam <span class="dt">\</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span> <span class="ex">plot-bamstats</span> <span class="at">-p</span> Group4_plot/alignment/ <span class="at">-</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Open <code>Group2_plot/alignment/index.html</code> and <code>Group4_plot/alignment/index.html</code> in Firefox. Compare the reports and identify potential problems.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Expected observations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Expected observations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Group 2 sample shows several abnormal QC patterns. Together, they suggest that its sequence differs substantially from the chosen reference and that contamination or library-preparation issues may also be present.</p>
+</div>
+</div>
+<section id="metrics-summary" class="level4" data-number="0.2.1">
+<h4 data-number="0.2.1" class="anchored" data-anchor-id="metrics-summary"><span class="header-section-number">0.2.1</span> Metrics summary</h4>
+<p>Group 2 has a lower mapping rate at both the read and base levels and a higher base-error rate.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/metrics-summary.png" class="img-fluid figure-img" style="width:70.0%" alt="Alignment metrics summary comparing Group 2 and Group 4"></p>
+<figcaption>Alignment metrics summary for Group 2 and Group 4.</figcaption>
+</figure>
+</div>
+</section>
+<section id="mismatches-per-cycle" class="level4" data-number="0.2.2">
+<h4 data-number="0.2.2" class="anchored" data-anchor-id="mismatches-per-cycle"><span class="header-section-number">0.2.2</span> Mismatches per cycle</h4>
+<p>Group 2 is abnormal. High-quality mismatches (<code>Q &gt; 30</code>, red line) are elevated and remain flat across all cycles, suggesting that the true sequence differs substantially from the reference. The isolate may be a different strain.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mismatches-per-cycle.png" class="img-fluid figure-img" style="width:74.0%" alt="Mismatches per cycle plots comparing Group 2 and Group 4"></p>
+<figcaption>Mismatches per cycle for Group 2 and Group 4.</figcaption>
+</figure>
+</div>
+</section>
+<section id="insert-size" class="level4" data-number="0.2.3">
+<h4 data-number="0.2.3" class="anchored" data-anchor-id="insert-size"><span class="header-section-number">0.2.3</span> Insert size</h4>
+<p>Group 2 is abnormal. A large plateau of outward-facing read pairs appears within the first 100 bases, followed by an abrupt cutoff. This pattern suggests mate-pair contamination or adapter-related issues.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/insert-size.png" class="img-fluid figure-img" style="width:74.0%" alt="Insert-size plots comparing Group 2 and Group 4"></p>
+<figcaption>Insert-size distributions for Group 2 and Group 4.</figcaption>
+</figure>
+</div>
+</section>
+<section id="gc-content" class="level4" data-number="0.2.4">
+<h4 data-number="0.2.4" class="anchored" data-anchor-id="gc-content"><span class="header-section-number">0.2.4</span> GC content</h4>
+<p>Group 2 is abnormal. A small but visible peak near 65% GC in the first fragment (purple) suggests minor contamination by an organism with higher GC content.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gc-content.png" class="img-fluid figure-img" style="width:95.0%" alt="GC-content plots comparing Group 2 and Group 4"></p>
+<figcaption>GC-content distributions for Group 2 and Group 4.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="task-3-call-and-filter-variants" class="level3" data-number="0.3">
+<h3 data-number="0.3" class="anchored" data-anchor-id="task-3-call-and-filter-variants"><span class="header-section-number">0.3</span> Task 3: Call and filter variants</h3>
+<p>Call variants with BCFtools to produce a VCF file for each group. This step should take approximately five minutes per group.</p>
+<p>Filter the calls using <code>QUAL &gt;= 30</code> and <code>DP &gt;= 20</code>.</p>
+<section id="group-2-1" class="level4" data-number="0.3.1">
+<h4 data-number="0.3.1" class="anchored" data-anchor-id="group-2-1"><span class="header-section-number">0.3.1</span> Group 2</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> mpileup <span class="at">-a</span> AD <span class="at">-f</span> CP000886.fasta Group2.markdup.bam <span class="at">-Ou</span> <span class="dt">\</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span> <span class="ex">bcftools</span> call <span class="at">-mv</span> <span class="at">-o</span> Group2.vcf</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> filter <span class="at">-s</span> LowQual <span class="at">-i</span> <span class="st">'QUAL&gt;=30 &amp;&amp; DP&gt;=20'</span> <span class="dt">\</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  Group2.vcf <span class="at">-o</span> Group2.filtered.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="group-4-1" class="level4" data-number="0.3.2">
+<h4 data-number="0.3.2" class="anchored" data-anchor-id="group-4-1"><span class="header-section-number">0.3.2</span> Group 4</h4>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> mpileup <span class="at">-a</span> AD <span class="at">-f</span> CP000886.fasta Group4.markdup.bam <span class="at">-Ou</span> <span class="dt">\</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span> <span class="ex">bcftools</span> call <span class="at">-mv</span> <span class="at">-o</span> Group4.vcf</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> filter <span class="at">-s</span> LowQual <span class="at">-i</span> <span class="st">'QUAL&gt;=30 &amp;&amp; DP&gt;=20'</span> <span class="dt">\</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  Group4.vcf <span class="at">-o</span> Group4.filtered.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="command-explanation" class="level4" data-number="0.3.3">
+<h4 data-number="0.3.3" class="anchored" data-anchor-id="command-explanation"><span class="header-section-number">0.3.3</span> Command explanation</h4>
 <ul>
-<li><code>bwa mem</code> for reads alignment.</li>
-<li><code>samtools</code> for sorting, indexing, and QC stats.</li>
-<li><code>bcftools</code> for variant calling and genotype querying.</li>
+<li><code>bcftools mpileup</code> computes per-base alignment statistics. The <code>-a AD</code> option adds allele-depth information, while <code>-Ou</code> produces an uncompressed BCF stream for piping.</li>
+<li><code>bcftools call</code> performs variant calling. The <code>-m</code> option uses the multiallelic calling model, and <code>-v</code> outputs variant sites only.</li>
+<li><code>bcftools filter -s LowQual</code> soft-filters variants. Instead of removing low-quality records, it labels them <code>LowQual</code> in the VCF <code>FILTER</code> column; passing records are labelled <code>PASS</code>. Retaining all records allows filtered variants to be revisited later.</li>
 </ul>
 </section>
-<section id="data-download" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="data-download"><span class="header-section-number">3</span> Data Download</h2>
-<p>Create a project directory and navigate to it:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$HOME</span>/Project10 <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> <span class="st">"</span><span class="va">$_</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="reference-vgsc-sequence" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="reference-vgsc-sequence"><span class="header-section-number">3.1</span> 1. Reference VGSC Sequence</h3>
-<p>Download the coding sequence of the <em>Anopheles gambiae</em> voltage-gated sodium channel (VGSC) gene (XM_001235127.5) from NCBI:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> vgsc_ref.fasta <span class="st">"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&amp;id=XM_001235127.5&amp;rettype=fasta&amp;retmode=text"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="compare-statistics-before-and-after-filtering" class="level4" data-number="0.3.4">
+<h4 data-number="0.3.4" class="anchored" data-anchor-id="compare-statistics-before-and-after-filtering"><span class="header-section-number">0.3.4</span> Compare statistics before and after filtering</h4>
+<p>Calculate the numbers of SNPs and indels and the transition/transversion ratio before and after filtering.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group 2</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> stats Group2.vcf <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-E</span> <span class="st">'^SN|^TSTV'</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> stats <span class="at">-i</span> <span class="st">'QUAL&gt;=30 &amp;&amp; DP&gt;=20'</span> Group2.vcf <span class="dt">\</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-E</span> <span class="st">'^SN|^TSTV'</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Group 4</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> stats Group4.vcf <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-E</span> <span class="st">'^SN|^TSTV'</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> stats <span class="at">-i</span> <span class="st">'QUAL&gt;=30 &amp;&amp; DP&gt;=20'</span> Group4.vcf <span class="dt">\</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-E</span> <span class="st">'^SN|^TSTV'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Sample</th>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: right;">Before filtering</th>
+<th style="text-align: right;">After filtering</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Group 2</strong></td>
+<td style="text-align: left;">SNPs</td>
+<td style="text-align: right;">38,993</td>
+<td style="text-align: right;">14,030</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Indels</td>
+<td style="text-align: right;">356</td>
+<td style="text-align: right;">95</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">TS/TV</td>
+<td style="text-align: right;">3.38</td>
+<td style="text-align: right;">3.83</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Group 4</strong></td>
+<td style="text-align: left;">SNPs</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Indels</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">TS/TV</td>
+<td style="text-align: right;">0.90</td>
+<td style="text-align: right;">1.33</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="raw-sequencing-reads" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="raw-sequencing-reads"><span class="header-section-number">3.2</span> 2. Raw Sequencing Reads</h3>
-<p>Download the raw reads from ENA for the <em>Anopheles gambiae</em> sequencing run <strong>ERR347035</strong> (a MalariaGEN vector sample). We will subsample 100,000 read pairs using <code>seqtk</code> to keep the processing time short:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download reads from ENA</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> raw_1.fastq.gz <span class="st">"https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR347/ERR347035/ERR347035_1.fastq.gz"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> raw_2.fastq.gz <span class="st">"https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR347/ERR347035/ERR347035_2.fastq.gz"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Subsample 100,000 read pairs</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">seqtk</span> sample <span class="at">-s100</span> raw_1.fastq.gz 100000 <span class="kw">|</span> <span class="fu">gzip</span> <span class="op">&gt;</span> reads_1.fastq.gz</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">seqtk</span> sample <span class="at">-s100</span> raw_2.fastq.gz 100000 <span class="kw">|</span> <span class="fu">gzip</span> <span class="op">&gt;</span> reads_2.fastq.gz</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean up raw files</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> raw_1.fastq.gz raw_2.fastq.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</section>
-<section id="tasks" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="tasks"><span class="header-section-number">4</span> Tasks</h2>
-<p><strong>Task 1: Index the Reference Sequence</strong> Index the VGSC reference gene using BWA and Samtools:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bwa</span> index vgsc_ref.fasta</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> faidx vgsc_ref.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Task 2: Align the Reads and Process the BAM</strong> Align the mosquito sequencing reads, sort the BAM file, and index it:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Align reads</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">bwa</span> mem vgsc_ref.fasta reads_1.fastq.gz reads_2.fastq.gz <span class="kw">|</span> <span class="ex">samtools</span> view <span class="at">-bS</span> <span class="at">-</span> <span class="kw">|</span> <span class="ex">samtools</span> sort <span class="at">-o</span> aligned_sorted.bam</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Index the BAM</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> index aligned_sorted.bam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Task 3: Run Alignment Quality Control</strong> Generate mapping statistics:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> flagstat aligned_sorted.bam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><em>What proportion of reads mapped to the VGSC gene sequence?</em></p>
-<p><strong>Task 4: Variant Calling</strong> Call single nucleotide variants and indels:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> mpileup <span class="at">-a</span> AD <span class="at">-f</span> vgsc_ref.fasta aligned_sorted.bam <span class="at">-Ou</span> <span class="kw">|</span> <span class="ex">bcftools</span> call <span class="at">-mv</span> <span class="at">-o</span> raw_calls.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Task 5: Filter and Query Variants</strong> Filter for variants with <code>QUAL &gt;= 30</code> and read depth <code>DP &gt;= 10</code>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> view <span class="at">-i</span> <span class="st">'QUAL&gt;=30 &amp;&amp; DP&gt;=10'</span> raw_calls.vcf <span class="at">-o</span> filtered_calls.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Use <code>bcftools query</code> to print the variants:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> query <span class="at">-f</span> <span class="st">'%POS %REF %ALT %QUAL [%GT %AD]\n'</span> filtered_calls.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="guide-questions" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="guide-questions"><span class="header-section-number">5</span> Guide Questions</h2>
+<section id="task-4-evaluate-the-sequencing-run" class="level3" data-number="0.4">
+<h3 data-number="0.4" class="anchored" data-anchor-id="task-4-evaluate-the-sequencing-run"><span class="header-section-number">0.4</span> Task 4: Evaluate the sequencing run</h3>
+<p>Use the QC and variant-calling results to answer the following questions:</p>
 <ol type="1">
-<li>How many variants passed the quality and depth filters?</li>
-<li>The codon 1014 of the VGSC coding sequence (XM_001235127.5) corresponds to coordinates <code>3040</code> to <code>3042</code> (specifically position <code>3040</code>). Did you find any variant at or near position <code>3040</code>? If so, what is the nucleotide change?</li>
-<li>The wild-type codon at 1014 is <strong>TTA</strong> (coding for Leucine).
-<ul>
-<li>If position 3040 is changed to <strong>T</strong> or <strong>A</strong> (causing a codon change to <strong>TTT</strong> or <strong>TTC</strong>), it codes for Phenylalanine (L1014F mutation).</li>
-<li>If changed to Serine (<strong>TCG</strong> or <strong>TCA</strong>), it codes for L1014S. What amino acid is predicted at codon 1014 for your sequenced mosquito?</li>
-</ul></li>
-<li>Is the mosquito homozygous wild-type, heterozygous, or homozygous resistant? What are the implications of this genotype for the efficacy of bed nets in this mosquito population?</li>
+<li>Was the first sequencing run successful?</li>
+<li>Should the institute keep the sequencing instrument?</li>
+<li>What actions should the institute take before the next run?</li>
 </ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Interpretation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Interpretation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Group 2 shows QC or contamination problems that produce a large number of likely false-positive variant calls. Review sample-preparation training and procedures, then repeat the sequencing run, ideally with several additional samples to help distinguish sample-specific problems from instrument-level problems.</p>
+</div>
+</div>
 
 
 </section>
