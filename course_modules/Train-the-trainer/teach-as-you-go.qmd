@@ -49,3 +49,61 @@ Roles rotate.
 -   Visual aids are really important. People that they can demonstrate things on screen or using flip charts and whiteboards.
 
 -   Participants can resort to AI tools to clarify concepts
+
+## Questions for the "How to teach: Introduction to Linux": 
+
+1.  What is an operating system, and what role does it play between hardware and the user?
+
+2.  What is Linux, and how does it differ from other operating systems like Windows or macOS?
+
+3.  What are the key components of a Linux system (hardware, kernel, system libraries, system utilities), and how do they relate to each other?
+
+4.  What's the difference between a terminal, a shell, and a command line interface?
+
+5.  What is the Linux file system structure, and why is it described as "hierarchical" or "tree-like"?
+
+6.  What's the difference between an absolute path, a relative path, and a path using \~?
+
+7.  What do pwd and ls do, and why are they usually the first commands you run?
+
+8.  What do ., .., \~ and / mean in Linux paths?
+
+9.  What is an "option" in a Unix command (e.g. -l, -a, -h), and how can multiple single-letter options be combined?
+
+10. How does cd work, and what do the shortcuts ., .., \~, and / mean?
+
+11. What's the difference between cp and mv, and why should you be careful with rm?
+
+12. What does the find command do, and how is it different from ls?
+
+13. What are file permissions (read, write, execute), and how are they organized for owner/group/others?
+
+14. What are Linux file permissions, and what do r, w and x mean?
+
+15. What's the difference between cat, less, head, and tail for viewing file contents?
+
+16. What does the man command do, and why is it useful?
+
+17. What does the \> symbol do, and how is that different from what \| (pipe) does?
+
+18.  What do wc, sort, and uniq do, and why are sort and uniq often used together?
+
+19. What does grep do, and why do regular expressions (like \^, \$, ., \*, \[ \]) make it more powerful and precise?
+
+20. What is the difference between an absolute and a relative path?
+
+21. What is a pipe (\|), and why is piping one of the most useful ideas in Unix/Linux?
+
+22. What is awk, and how does it use patterns and actions (columns like \$1, \$2) to filter or process data?
+
+23.  What is a for loop used for in Bash, and why is it useful for running the same analysis on many files?
+
+24. What is a Bash script, and what makes a script "well-behaved" (e.g. checking \$# for the right number of arguments, using set -eu, printing a usage/help message)?
+
+25. What happens if I put a space in the file name or a directory name?
+
+26. How to specify the path of any directory and utilize tab completion?
+
+27. How to import data into a Linux environment?
+
+28. Can AI tools like Codex or Claude be used for Linux coding?
