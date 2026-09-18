@@ -111,3 +111,69 @@ Roles rotate.
 23\. What is a Bash script, and what makes it "well-behaved" (e.g. checking \$# for the right number of arguments)?
 
 24\. How does awk use patterns and actions (pattern {action}) to filter or process data?
+
+## Questions for the "How to teach: File Formats & QC":
+
+**File Formats and data structures**
+
+1. What are index files and why are they needed?
+2. How is the flag constructed in a BAM file?
+3. What does flag 99 mean, and how to decode it?
+4. What is the difference between a sorted and an unsorted BAM file?
+5. What does RG stand for in SAM/BAM file? What happen if the RG is missing?
+6. In CIGAR string, what is the difference between 'M' and 'X'?
+
+**Quality Control (QC)**
+
+7. How are quality scores calculated?
+8. What is a Phred quality score and how is it interpreted?
+9. Should you perform the adapter trimming step? If yes, why?
+10. What are adapters and why must they be removed?
+11. What are PCR duplicates? How are they calculated and marked in a BAM? Does it reduce read depth?
+12. When could be the reasons for seeing over-represented sequences?
+13. What is GC content and why do we check it in quality control?
+14. What is the difference between raw reads and cleaned reads?
+15. What is sequencing coverage and why is it important?
+16. What is the difference between a SNP and an indel?
+
+**Sequencing and library prep**
+
+17. What is a mate-pair library?
+18. What is the difference between single-end and paired-end sequencing?
+
+## Questions for "How to teach: Read alignment":
+
+**Reference genome**
+
+1. What qualities would you look for in a reference genome?
+2. What happens if you don't index your reference sequence?
+3. What happens if there is mismatch chromosome identifier between BAM and reference genome, for example 'chr1' vs '1'? 
+
+**Read alignment**
+
+4. What happens if you don't sort your BAM file? If you don't index it?
+5. If you don't mark duplicates, how might that affect variant calling later on?
+
+**Post-alignment QC**
+
+6.	What causes adapter sequences to be included at the ends of reads (adapter contamination)?
+7.	What mapping quality (MAPQ) score is considered acceptable?
+8. What it is mean if the base-calling score is Q30 but mapping quality score is Q0?
+9.	What causes library duplicates to appear? What might be indicated by a very high duplication rate?	 
+10.	What's the difference between soft clipping and hard clipping?
+11.	What SAM flags are you likely to get for a pair of reads that mapped properly?
+12.	What's the difference between a secondary alignment (SAM flag 256) and a supplementary alignment (flag 2048)?
+
+**IGV**
+
+13. I've just loaded my alignment in IGV. What do I do or look for next?
+14. In IGV, some reads are red, others have bands with many colors, and most are gray. What does that mean?
+15. If you don't filter out duplicate reads in the view settings of IGV, what would you expect to see, and why?
+
+**NGS workflow**
+
+16. If a sample isn't split across multiple sequencing runs, would merging still be necessary? Why or why not?
+17. What happens if you performed de-duplication before merging?
+
+
+

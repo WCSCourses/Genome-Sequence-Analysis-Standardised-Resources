@@ -619,6 +619,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#questions-for-the-how-to-teach-introduction-to-linux" id="toc-questions-for-the-how-to-teach-introduction-to-linux" class="nav-link active" data-scroll-target="#questions-for-the-how-to-teach-introduction-to-linux"><span class="header-section-number">1</span> Questions for the “How to teach: Introduction to Linux”:</a></li>
+  <li><a href="#questions-for-the-how-to-teach-file-formats-qc" id="toc-questions-for-the-how-to-teach-file-formats-qc" class="nav-link" data-scroll-target="#questions-for-the-how-to-teach-file-formats-qc"><span class="header-section-number">2</span> Questions for the “How to teach: File Formats &amp; QC”:</a></li>
+  <li><a href="#questions-for-how-to-teach-read-alignment" id="toc-questions-for-how-to-teach-read-alignment" class="nav-link" data-scroll-target="#questions-for-how-to-teach-read-alignment"><span class="header-section-number">3</span> Questions for “How to teach: Read alignment”:</a></li>
   </ul>
 </nav>
     </div>
@@ -717,6 +719,72 @@ ul.task-list li input[type="checkbox"] {
 <p>22. What is a for loop used for in Bash, and why is it useful for running the same analysis on many files?</p>
 <p>23. What is a Bash script, and what makes it “well-behaved” (e.g.&nbsp;checking $# for the right number of arguments)?</p>
 <p>24. How does awk use patterns and actions (pattern {action}) to filter or process data?</p>
+</section>
+<section id="questions-for-the-how-to-teach-file-formats-qc" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="questions-for-the-how-to-teach-file-formats-qc"><span class="header-section-number">2</span> Questions for the “How to teach: File Formats &amp; QC”:</h2>
+<p><strong>File Formats and data structures</strong></p>
+<ol type="1">
+<li>What are index files and why are they needed?</li>
+<li>How is the flag constructed in a BAM file?</li>
+<li>What does flag 99 mean, and how to decode it?</li>
+<li>What is the difference between a sorted and an unsorted BAM file?</li>
+<li>What does RG stand for in SAM/BAM file? What happen if the RG is missing?</li>
+<li>In CIGAR string, what is the difference between ‘M’ and ‘X’?</li>
+</ol>
+<p><strong>Quality Control (QC)</strong></p>
+<ol start="7" type="1">
+<li>How are quality scores calculated?</li>
+<li>What is a Phred quality score and how is it interpreted?</li>
+<li>Should you perform the adapter trimming step? If yes, why?</li>
+<li>What are adapters and why must they be removed?</li>
+<li>What are PCR duplicates? How are they calculated and marked in a BAM? Does it reduce read depth?</li>
+<li>When could be the reasons for seeing over-represented sequences?</li>
+<li>What is GC content and why do we check it in quality control?</li>
+<li>What is the difference between raw reads and cleaned reads?</li>
+<li>What is sequencing coverage and why is it important?</li>
+<li>What is the difference between a SNP and an indel?</li>
+</ol>
+<p><strong>Sequencing and library prep</strong></p>
+<ol start="17" type="1">
+<li>What is a mate-pair library?</li>
+<li>What is the difference between single-end and paired-end sequencing?</li>
+</ol>
+</section>
+<section id="questions-for-how-to-teach-read-alignment" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="questions-for-how-to-teach-read-alignment"><span class="header-section-number">3</span> Questions for “How to teach: Read alignment”:</h2>
+<p><strong>Reference genome</strong></p>
+<ol type="1">
+<li>What qualities would you look for in a reference genome?</li>
+<li>What happens if you don’t index your reference sequence?</li>
+<li>What happens if there is mismatch chromosome identifier between BAM and reference genome, for example ‘chr1’ vs ‘1’?</li>
+</ol>
+<p><strong>Read alignment</strong></p>
+<ol start="4" type="1">
+<li>What happens if you don’t sort your BAM file? If you don’t index it?</li>
+<li>If you don’t mark duplicates, how might that affect variant calling later on?</li>
+</ol>
+<p><strong>Post-alignment QC</strong></p>
+<ol start="6" type="1">
+<li>What causes adapter sequences to be included at the ends of reads (adapter contamination)?</li>
+<li>What mapping quality (MAPQ) score is considered acceptable?</li>
+<li>What it is mean if the base-calling score is Q30 but mapping quality score is Q0?</li>
+<li>What causes library duplicates to appear? What might be indicated by a very high duplication rate?<br>
+</li>
+<li>What’s the difference between soft clipping and hard clipping?</li>
+<li>What SAM flags are you likely to get for a pair of reads that mapped properly?</li>
+<li>What’s the difference between a secondary alignment (SAM flag 256) and a supplementary alignment (flag 2048)?</li>
+</ol>
+<p><strong>IGV</strong></p>
+<ol start="13" type="1">
+<li>I’ve just loaded my alignment in IGV. What do I do or look for next?</li>
+<li>In IGV, some reads are red, others have bands with many colors, and most are gray. What does that mean?</li>
+<li>If you don’t filter out duplicate reads in the view settings of IGV, what would you expect to see, and why?</li>
+</ol>
+<p><strong>NGS workflow</strong></p>
+<ol start="16" type="1">
+<li>If a sample isn’t split across multiple sequencing runs, would merging still be necessary? Why or why not?</li>
+<li>What happens if you performed de-duplication before merging?</li>
+</ol>
 
 
 </section>
