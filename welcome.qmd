@@ -7,4 +7,4 @@ format: html
 
 This practical course will take you through the complete workflow of genome sequence data analysis. You’ll learn key steps including quality assessment, read alignment, variant calling, annotation, genome assembly, RNA-seq data analysis and ChIP-seq data analysis. By the end, you'll be equipped with the skills to confidently process and interpret various genomic datasets in research and clinical contexts.
 
-![](images/learning paths.jpg)
+![](images/learning%20paths.jpg)
