@@ -52,58 +52,62 @@ Roles rotate.
 
 ## Questions for the "How to teach: Introduction to Linux": 
 
-1.  What is an operating system, and what role does it play between hardware and the user?
+**Foundations**
 
-2.  What is Linux, and how does it differ from other operating systems like Windows or macOS?
+1\. What is an operating system, and what role does it play between hardware and the user?
 
-3.  What are the key components of a Linux system (hardware, kernel, system libraries, system utilities), and how do they relate to each other?
+2\. What is Linux, and how does it differ from Windows or macOS?
 
-4.  What's the difference between a terminal, a shell, and a command line interface?
+3\. What's the difference between a terminal, a shell, and a command-line interface?
 
-5.  What is the Linux file system structure, and why is it described as "hierarchical" or "tree-like"?
+**Navigation & the file system**
 
-6.  What's the difference between an absolute path, a relative path, and a path using \~?
+4\. What is the Linux file system structure, and why is it described as "hierarchical" or "tree-like"?
 
-7.  What do pwd and ls do, and why are they usually the first commands you run?
+5\. What's the difference between an absolute path, a relative path, and a path using \~?
 
-8.  What do ., .., \~ and / mean in Linux paths?
+6\. What do ., .., \~, and / mean in a path, and how does cd use them?
 
-9.  What is an "option" in a Unix command (e.g. -l, -a, -h), and how can multiple single-letter options be combined?
+7\. What do pwd and ls do, and why are they usually the first two commands you run?
 
-10. How does cd work, and what do the shortcuts ., .., \~, and / mean?
+8\. Is Linux case-sensitive, and why does that trip up almost every beginner?
 
-11. What's the difference between cp and mv, and why should you be careful with rm?
+**Files, permissions, and options**
 
-12. What does the find command do, and how is it different from ls?
+9\. What is an "option" in a Unix command (e.g. -l, -a, -h), and how can single-letter options be combined?
 
-13. What are file permissions (read, write, execute), and how are they organized for owner/group/others?
+10\. What's the difference between cp and mv, and why should you be careful with rm?
 
-14. What are Linux file permissions, and what do r, w and x mean?
+11\. What does find do, and how is it different from ls?
 
-15. What's the difference between cat, less, head, and tail for viewing file contents?
+12\. What are file permissions, and how are they organized for owner, group, and others?
 
-16. What does the man command do, and why is it useful?
+13\. What's the difference between cat, less, head, and tail for viewing file contents?
 
-17. What does the \> symbol do, and how is that different from what \| (pipe) does?
+14\. What does man do, and why is it useful?
 
-18.  What do wc, sort, and uniq do, and why are sort and uniq often used together?
+**Viewing and searching file content**
 
-19. What does grep do, and why do regular expressions (like \^, \$, ., \*, \[ \]) make it more powerful and precise?
+15\. What does grep do?
 
-20. What is the difference between an absolute and a relative path?
+16\. Why do regular expressions like \^, \$, ., and \* make grep more powerful and precise?
 
-21. What is a pipe (\|), and why is piping one of the most useful ideas in Unix/Linux?
+**Combining commands & processing data**
 
-22. What is awk, and how does it use patterns and actions (columns like \$1, \$2) to filter or process data?
+17\. What does the \> symbol do, and how is that different from what \| (pipe) does?
 
-23.  What is a for loop used for in Bash, and why is it useful for running the same analysis on many files?
+18\. What's the difference between sort file.txt \> out.txt and sort file.txt \>\> out.txt?
 
-24. What is a Bash script, and what makes a script "well-behaved" (e.g. checking \$# for the right number of arguments, using set -eu, printing a usage/help message)?
+19\. What do wc, sort, and uniq do, and why are sort and uniq often used together?
 
-25. What happens if I put a space in the file name or a directory name?
+20\. What is awk, and how does it use columns (\$1, \$2) to process data?
 
-26. How to specify the path of any directory and utilize tab completion?
+21\. What does a wildcard like \* do in a command such as ls \*.txt?
 
-27. How to import data into a Linux environment?
+**Bash scripting**
 
-28. Can AI tools like Codex or Claude be used for Linux coding?
+22\. What is a for loop used for in Bash, and why is it useful for running the same analysis on many files?
+
+23\. What is a Bash script, and what makes it "well-behaved" (e.g. checking \$# for the right number of arguments)?
+
+24\. How does awk use patterns and actions (pattern {action}) to filter or process data?
