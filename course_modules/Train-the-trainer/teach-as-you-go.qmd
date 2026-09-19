@@ -175,6 +175,42 @@ Roles rotate.
 16. If a sample isn't split across multiple sequencing runs, would merging still be necessary? Why or why not?
 17. What happens if you performed de-duplication before merging?
 
+## Questions for "How to teach: Variant Calling and Structural Variation"
+
+1.  What is the difference between a SNP, an Indel, and an MNP?
+
+2.  When should I use samtools mpileup versus bcftools mpileup?
+
+3.  What do the VCF genotypes 0/0, 0/1, and 1/1 represent?
+
+4.  Why is it important to filter based on Phred quality scores (like Q20 or Q30)?
+
+5.  What is the difference between Depth (DP) and Allelic Depth (AD) in a VCF file?
+
+6.  Why do we use the Transitions-to-Transversions (Ts/Tv) ratio to evaluate a SNP callset?
+
+7.  What is "strand bias" and why is it a red flag for a variant call?
+
+8.  Why do we need to normalize variants?
+
+9.  What is the difference between calling germline variants and somatic variants?
+
+10. Do we need to manually check every variant using IGV?
+
+11. What are the main types of structural variants and the differences in the read pair patterns?
+
+12. What are the three main sources of evidence for detecting SVs from short reads?
+
+13. What is the main difference between the breakdancer SV software vs. Dysgu (pronounced duss-key)?
+
+14. How can you filter SV calls?
+
+15. Why are long reads better for calling structural variants?
+
+16. How can you assess the accuracy of structural variant calls?
+
+17. IGV inspection: How do we tell that this IGV is showing.... (go to this [link](https://docs.google.com/presentation/d/1Qd7n4HSNXh8X1eUANzzFW2efUiVXWebnaqXzGKd0Cnc/edit?usp=sharing) to pick an IGV screenshot to explain)
+
 ## Questions for "How to teach: Genome Assembly"
 
 ### Assembly Concepts and Algorithms
