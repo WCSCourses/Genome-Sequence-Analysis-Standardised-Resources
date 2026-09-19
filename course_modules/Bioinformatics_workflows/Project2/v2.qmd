@@ -17,7 +17,7 @@ The raw reads were aligned to the reference genome using `bwa mem` and analyzed 
 Below is a comparison of the alignment QC metrics:
 
 | Metric                       | Group 2 (Sample S2)   | Group 4 (Sample S4)    |
-|:-----------------------|:-----------------------|:-----------------------|
+|:-----------------------------|:----------------------|:-----------------------|
 | **Total Reads**              | 1,019,342             | 941,442                |
 | **Reads Mapped**             | 942,884 (**92.5%**)   | 936,751 (**99.5%**)    |
 | **Reads Properly Paired**    | 929,774 (**91.2%**)   | 931,840 (**99.0%**)    |
@@ -49,7 +49,7 @@ We performed variant calling using `bcftools mpileup | bcftools call` and filter
 Below is the comparison of variant counts before and after filtering:
 
 | Sample | SNPs (Raw) | SNPs (Filtered) | Indels (Raw) | Indels (Filtered) | ts/tv (Raw) | ts/tv (Filtered) |
-|:----------|:----------|:----------|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|:---|:---|:---|
 | **Group 2** | 39,317 | **17,160** | 397 | **153** | 3.33 | **3.75** |
 | **Group 4** | 105 | **17** | 24 | **6** | 1.28 | **1.12** |
 

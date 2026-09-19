@@ -76,8 +76,16 @@ This method collapses and matches indels and SNPs by position/overlap, ignoring 
 
 ### Indel Representation Discrepancies
 
-In **Method A (Exact Match)**, we found **0 indels** in the intersection. This is a common artifact when comparing VCF files. \* **Reason:** Different variant callers represent insertions and deletions differently. For example, a deletion of three nucleotides `TGC` can be annotated at different base coordinates, or with different reference/alternate allele representations (e.g. left-alignment variations). \* **Solution:** By applying **Method B (Collapsed Match)** using `bcftools isec -c both`, we resolved these discrepancies, rescuing **504 high-confidence indels** called by all three programs, and significantly reducing the number of apparently "private" indels (e.g., FreeBayes private indels dropped from 555 to 43).
+In **Method A (Exact Match)**, we found **0 indels** in the intersection. This is a common artifact when comparing VCF files.
+
+**Reason:** Different variant callers represent insertions and deletions differently. For example, a deletion of three nucleotides `TGC` can be annotated at different base coordinates, or with different reference/alternate allele representations (e.g. left-alignment variations).
+
+**Solution:** By applying **Method B (Collapsed Match)** using `bcftools isec -c both`, we resolved these discrepancies, rescuing **504 high-confidence indels** called by all three programs, and significantly reducing the number of apparently "private" indels (e.g., FreeBayes private indels dropped from 555 to 43).
 
 ### Transition/Transversion (ts/tv) Ratio as a Quality Metric
 
-In human genomes, the biological ratio of transitions (A↔G, C↔T) to transversions (other changes) is expected to be \~2.0–2.1 for whole-genome sequencing (WGS) and \~3.0–3.2 for exome sequencing due to CpG methylation in coding regions. \* **Intersection Calls (Highest Confidence):** The intersection callset has the highest `ts/tv` ratio (2.27 for exact, 2.23 for collapsed), confirming that variants agreed upon by all three callers are highly enriched for true biological variants. \* **Private Calls (Low Confidence / Errors):** Caller-specific private variants show much lower `ts/tv` ratios (GATK private: 1.55 / 1.62; FreeBayes private: 1.77; BCFtools private: 1.96 / 2.03). Since random sequencing and calling errors are equally likely to create transitions or transversions (yielding a baseline ratio of \~0.5), a depressed `ts/tv` ratio in the private callset indicates a strong enrichment for false positives.
+In human genomes, the biological ratio of transitions (A↔G, C↔T) to transversions (other changes) is expected to be \~2.0–2.1 for whole-genome sequencing (WGS) and \~3.0–3.2 for exome sequencing due to CpG methylation in coding regions.
+
+**Intersection Calls (Highest Confidence):** The intersection callset has the highest `ts/tv` ratio (2.27 for exact, 2.23 for collapsed), confirming that variants agreed upon by all three callers are highly enriched for true biological variants.
+
+**Private Calls (Low Confidence / Errors):** Caller-specific private variants show much lower `ts/tv` ratios (GATK private: 1.55 / 1.62; FreeBayes private: 1.77; BCFtools private: 1.96 / 2.03). Since random sequencing and calling errors are equally likely to create transitions or transversions (yielding a baseline ratio of \~0.5), a depressed `ts/tv` ratio in the private callset indicates a strong enrichment for false positives.
