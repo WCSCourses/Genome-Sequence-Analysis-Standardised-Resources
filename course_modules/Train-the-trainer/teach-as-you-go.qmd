@@ -50,7 +50,7 @@ Roles rotate.
 
 -   Participants can resort to AI tools to clarify concepts
 
-## Questions for the "How to teach: Introduction to Linux": 
+## Questions for the "How to teach: Introduction to Linux":
 
 **Foundations**
 
@@ -116,18 +116,18 @@ Roles rotate.
 
 **File Formats and data structures**
 
-1. What are index files and why are they needed?
-2. How is the flag constructed in a BAM file?
-3. What does flag 99 mean, and how to decode it?
-4. What is the difference between a sorted and an unsorted BAM file?
-5. What does RG stand for in SAM/BAM file? What happen if the RG is missing?
-6. In CIGAR string, what is the difference between 'M' and 'X'?
+1.  What are index files and why are they needed?
+2.  How is the flag constructed in a BAM file?
+3.  What does flag 99 mean, and how to decode it?
+4.  What is the difference between a sorted and an unsorted BAM file?
+5.  What does RG stand for in SAM/BAM file? What happen if the RG is missing?
+6.  In CIGAR string, what is the difference between 'M' and 'X'?
 
 **Quality Control (QC)**
 
-7. How are quality scores calculated?
-8. What is a Phred quality score and how is it interpreted?
-9. Should you perform the adapter trimming step? If yes, why?
+7.  How are quality scores calculated?
+8.  What is a Phred quality score and how is it interpreted?
+9.  Should you perform the adapter trimming step? If yes, why?
 10. What are adapters and why must they be removed?
 11. What are PCR duplicates? How are they calculated and marked in a BAM? Does it reduce read depth?
 12. When could be the reasons for seeing over-represented sequences?
@@ -145,24 +145,24 @@ Roles rotate.
 
 **Reference genome**
 
-1. What qualities would you look for in a reference genome?
-2. What happens if you don't index your reference sequence?
-3. What happens if there is mismatch chromosome identifier between BAM and reference genome, for example 'chr1' vs '1'? 
+1.  What qualities would you look for in a reference genome?
+2.  What happens if you don't index your reference sequence?
+3.  What happens if there is mismatch chromosome identifier between BAM and reference genome, for example 'chr1' vs '1'?
 
 **Read alignment**
 
-4. What happens if you don't sort your BAM file? If you don't index it?
-5. If you don't mark duplicates, how might that affect variant calling later on?
+4.  What happens if you don't sort your BAM file? If you don't index it?
+5.  If you don't mark duplicates, how might that affect variant calling later on?
 
 **Post-alignment QC**
 
-6.	What causes adapter sequences to be included at the ends of reads (adapter contamination)?
-7.	What mapping quality (MAPQ) score is considered acceptable?
-8. What it is mean if the base-calling score is Q30 but mapping quality score is Q0?
-9.	What causes library duplicates to appear? What might be indicated by a very high duplication rate?	 
-10.	What's the difference between soft clipping and hard clipping?
-11.	What SAM flags are you likely to get for a pair of reads that mapped properly?
-12.	What's the difference between a secondary alignment (SAM flag 256) and a supplementary alignment (flag 2048)?
+6.  What causes adapter sequences to be included at the ends of reads (adapter contamination)?
+7.  What mapping quality (MAPQ) score is considered acceptable?
+8.  What it is mean if the base-calling score is Q30 but mapping quality score is Q0?
+9.  What causes library duplicates to appear? What might be indicated by a very high duplication rate?\
+10. What's the difference between soft clipping and hard clipping?
+11. What SAM flags are you likely to get for a pair of reads that mapped properly?
+12. What's the difference between a secondary alignment (SAM flag 256) and a supplementary alignment (flag 2048)?
 
 **IGV**
 
@@ -175,5 +175,42 @@ Roles rotate.
 16. If a sample isn't split across multiple sequencing runs, would merging still be necessary? Why or why not?
 17. What happens if you performed de-duplication before merging?
 
+## Questions for "How to teach: Genome Assembly"
 
+### Assembly Concepts and Algorithms
 
+1.  What is a contig and how is it different from a scaffold?
+
+2.  What are de Bruijn graphs and why are they used in short-read genome assembly?
+
+3.  What is the Overlap-Layout-Consensus (OLC) algorithm? When would you use it?
+
+4.  Why are paired-end and linked-read data useful for scaffolding genome assemblies?
+
+### Sequencing Data and Assembly Challenges
+
+5.  What challenges do repetitive sequences pose to genome assembly?
+
+6.  How does read length and coverage affect genome assembly?
+
+7.  How does heterozygosity affect genome assembly?
+
+8.  Why is metagenomic assembly generally more difficult than single-organism assembly?
+
+9.  When running Velvet, I try k=31 and get an N50 of 5 Kb, and then I try k=55 and get an N50 of 8 Kb. Should I keep increasing the k value?
+
+10. In my GenomeScope profile (k-mer plot), I observe distinct peaks at 20X and 40X coverage. What does that say about my genome’s heterozygosity?
+
+### Assembly Quality Assessment
+
+11. How do I assess the quality of a genome assembly?
+
+12. What does N50 mean, and why is a higher N50 generally better?
+
+13. What is BUSCO, and when should I use it, and when not to use it (or interpret it with care)?
+
+### Genome Representation and Assembly Strategy
+
+14. What is diploid assembly and how does it differ from haploid consensus assembly?
+
+15. Is it better to produce a reference genome from one individual, or a pool of multiple individuals? Why?

@@ -621,6 +621,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#questions-for-the-how-to-teach-introduction-to-linux" id="toc-questions-for-the-how-to-teach-introduction-to-linux" class="nav-link active" data-scroll-target="#questions-for-the-how-to-teach-introduction-to-linux"><span class="header-section-number">1</span> Questions for the “How to teach: Introduction to Linux”:</a></li>
   <li><a href="#questions-for-the-how-to-teach-file-formats-qc" id="toc-questions-for-the-how-to-teach-file-formats-qc" class="nav-link" data-scroll-target="#questions-for-the-how-to-teach-file-formats-qc"><span class="header-section-number">2</span> Questions for the “How to teach: File Formats &amp; QC”:</a></li>
   <li><a href="#questions-for-how-to-teach-read-alignment" id="toc-questions-for-how-to-teach-read-alignment" class="nav-link" data-scroll-target="#questions-for-how-to-teach-read-alignment"><span class="header-section-number">3</span> Questions for “How to teach: Read alignment”:</a></li>
+  <li><a href="#questions-for-how-to-teach-genome-assembly" id="toc-questions-for-how-to-teach-genome-assembly" class="nav-link" data-scroll-target="#questions-for-how-to-teach-genome-assembly"><span class="header-section-number">4</span> Questions for “How to teach: Genome Assembly”</a>
+  <ul class="collapse">
+  <li><a href="#assembly-concepts-and-algorithms" id="toc-assembly-concepts-and-algorithms" class="nav-link" data-scroll-target="#assembly-concepts-and-algorithms"><span class="header-section-number">4.1</span> Assembly Concepts and Algorithms</a></li>
+  <li><a href="#sequencing-data-and-assembly-challenges" id="toc-sequencing-data-and-assembly-challenges" class="nav-link" data-scroll-target="#sequencing-data-and-assembly-challenges"><span class="header-section-number">4.2</span> Sequencing Data and Assembly Challenges</a></li>
+  <li><a href="#assembly-quality-assessment" id="toc-assembly-quality-assessment" class="nav-link" data-scroll-target="#assembly-quality-assessment"><span class="header-section-number">4.3</span> Assembly Quality Assessment</a></li>
+  <li><a href="#genome-representation-and-assembly-strategy" id="toc-genome-representation-and-assembly-strategy" class="nav-link" data-scroll-target="#genome-representation-and-assembly-strategy"><span class="header-section-number">4.4</span> Genome Representation and Assembly Strategy</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -785,8 +792,46 @@ ul.task-list li input[type="checkbox"] {
 <li>If a sample isn’t split across multiple sequencing runs, would merging still be necessary? Why or why not?</li>
 <li>What happens if you performed de-duplication before merging?</li>
 </ol>
+</section>
+<section id="questions-for-how-to-teach-genome-assembly" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="questions-for-how-to-teach-genome-assembly"><span class="header-section-number">4</span> Questions for “How to teach: Genome Assembly”</h2>
+<section id="assembly-concepts-and-algorithms" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="assembly-concepts-and-algorithms"><span class="header-section-number">4.1</span> Assembly Concepts and Algorithms</h3>
+<ol type="1">
+<li><p>What is a contig and how is it different from a scaffold?</p></li>
+<li><p>What are de Bruijn graphs and why are they used in short-read genome assembly?</p></li>
+<li><p>What is the Overlap-Layout-Consensus (OLC) algorithm? When would you use it?</p></li>
+<li><p>Why are paired-end and linked-read data useful for scaffolding genome assemblies?</p></li>
+</ol>
+</section>
+<section id="sequencing-data-and-assembly-challenges" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="sequencing-data-and-assembly-challenges"><span class="header-section-number">4.2</span> Sequencing Data and Assembly Challenges</h3>
+<ol start="5" type="1">
+<li><p>What challenges do repetitive sequences pose to genome assembly?</p></li>
+<li><p>How does read length and coverage affect genome assembly?</p></li>
+<li><p>How does heterozygosity affect genome assembly?</p></li>
+<li><p>Why is metagenomic assembly generally more difficult than single-organism assembly?</p></li>
+<li><p>When running Velvet, I try k=31 and get an N50 of 5 Kb, and then I try k=55 and get an N50 of 8 Kb. Should I keep increasing the k value?</p></li>
+<li><p>In my GenomeScope profile (k-mer plot), I observe distinct peaks at 20X and 40X coverage. What does that say about my genome’s heterozygosity?</p></li>
+</ol>
+</section>
+<section id="assembly-quality-assessment" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="assembly-quality-assessment"><span class="header-section-number">4.3</span> Assembly Quality Assessment</h3>
+<ol start="11" type="1">
+<li><p>How do I assess the quality of a genome assembly?</p></li>
+<li><p>What does N50 mean, and why is a higher N50 generally better?</p></li>
+<li><p>What is BUSCO, and when should I use it, and when not to use it (or interpret it with care)?</p></li>
+</ol>
+</section>
+<section id="genome-representation-and-assembly-strategy" class="level3" data-number="4.4">
+<h3 data-number="4.4" class="anchored" data-anchor-id="genome-representation-and-assembly-strategy"><span class="header-section-number">4.4</span> Genome Representation and Assembly Strategy</h3>
+<ol start="14" type="1">
+<li><p>What is diploid assembly and how does it differ from haploid consensus assembly?</p></li>
+<li><p>Is it better to produce a reference genome from one individual, or a pool of multiple individuals? Why?</p></li>
+</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
