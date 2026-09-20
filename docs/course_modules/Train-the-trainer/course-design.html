@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Bedtools – Genome Sequence Analysis Course</title>
+<title>Course Design – Genome Sequence Analysis Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -112,10 +78,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../site_libs/quarto-contrib/quarto-project/img/sanger.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../site_libs/quarto-contrib/quarto-project/img/sanger.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Genome Sequence Analysis Course</span>
     </a>
   </div>
@@ -126,11 +92,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../welcome.html"> 
+    <a class="nav-link" href="../../welcome.html"> 
 <span class="menu-text">Learning paths</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -139,51 +105,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-modules">    
         <li>
-    <a class="dropdown-item" href="../../../course_modules/Introduction-to-linux/module0.html">
+    <a class="dropdown-item" href="../../course_modules/Introduction-to-linux/module0.html">
  <span class="dropdown-text">Introduction to Linux</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../course_modules/Module1/module1.html">
+    <a class="dropdown-item" href="../../course_modules/Module1/module1.html">
  <span class="dropdown-text">File formats and QC</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../course_modules/Module2/module2.html">
+    <a class="dropdown-item" href="../../course_modules/Module2/module2.html">
  <span class="dropdown-text">Reads alignment</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../course_modules/Module3/module3.html">
+    <a class="dropdown-item" href="../../course_modules/Module3/module3.html">
  <span class="dropdown-text">Variant calling</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../course_modules/Module4/module4.html">
+    <a class="dropdown-item" href="../../course_modules/Module4/module4.html">
  <span class="dropdown-text">Structural Variation Calling</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../course_modules/Module5/module5.html">
+    <a class="dropdown-item" href="../../course_modules/Module5/module5.html">
  <span class="dropdown-text">Genome assembly</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../course_modules/Glossary/glossary.html">
+    <a class="dropdown-item" href="../../course_modules/Glossary/glossary.html">
  <span class="dropdown-text">Glossary of terms</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../course_modules/Projects/project1/project1.html">
+    <a class="dropdown-item" href="../../course_modules/Projects/project1/project1.html">
  <span class="dropdown-text">Project 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../course_modules/Projects/project2/project2.html">
+    <a class="dropdown-item" href="../../course_modules/Projects/project2/project2.html">
  <span class="dropdown-text">Project 2</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../course_modules/Projects/project3/project3.html">
+    <a class="dropdown-item" href="../../course_modules/Projects/project3/project3.html">
  <span class="dropdown-text">Project 3</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../course_modules/Projects/project4/project4.html">
+    <a class="dropdown-item" href="../../course_modules/Projects/project4/project4.html">
  <span class="dropdown-text">Project 4</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../course_modules/Projects/project5/project5.html">
+    <a class="dropdown-item" href="../../course_modules/Projects/project5/project5.html">
  <span class="dropdown-text">Project 5</span></a>
   </li>  
     </ul>
@@ -194,15 +160,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-informatics-guide">    
         <li>
-    <a class="dropdown-item" href="../../../course_modules/VM_guide/student-guide-computing-environment.html">
+    <a class="dropdown-item" href="../../course_modules/VM_guide/student-guide-computing-environment.html">
  <span class="dropdown-text">Student guide for the computing environment</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../course_modules/VM_guide/VM_Guide.html">
+    <a class="dropdown-item" href="../../course_modules/VM_guide/VM_Guide.html">
  <span class="dropdown-text">How to setup a VM</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../course_modules/VM_guide/Software_list.html">
+    <a class="dropdown-item" href="../../course_modules/VM_guide/Software_list.html">
  <span class="dropdown-text">Software list</span></a>
   </li>  
     </ul>
@@ -213,15 +179,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-train-the-trainer">    
         <li>
-    <a class="dropdown-item" href="../../../course_modules/Train-the-trainer/teach-as-you-go.html">
+    <a class="dropdown-item" href="../../course_modules/Train-the-trainer/teach-as-you-go.html">
  <span class="dropdown-text">Teach-as-you-go sessions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../course_modules/Bioinformatics_workflows/AI_in_bioinformatics.html">
+    <a class="dropdown-item" href="../../course_modules/Bioinformatics_workflows/AI_in_bioinformatics.html">
  <span class="dropdown-text">AI in Bioinformatics Workflows</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../course_modules/Train-the-trainer/course-design.html">
+    <a class="dropdown-item" href="../../course_modules/Train-the-trainer/course-design.html">
  <span class="dropdown-text">Teach-as-you-go sessions</span></a>
   </li>  
     </ul>
@@ -238,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Bedtools</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Course Design</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -269,43 +235,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Introduction-to-linux/module0.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Introduction-to-linux/module0.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Introduction-to-linux/module0_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Introduction-to-linux/module0_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Introduction-to-linux/module0_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Introduction-to-linux/module0_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Introduction-to-linux/module0_solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Introduction-to-linux/module0_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Introduction-to-linux/module0_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Introduction-to-linux/module0_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor’s notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Introduction-to-linux/module0_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Introduction-to-linux/module0_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Introduction-to-linux/module0_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Introduction-to-linux/module0_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -322,43 +288,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module1/module1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module1/module1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module1/module1_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module1/module1_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module1/module1_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module1/module1_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module1/module1_solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module1/module1_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module1/module1_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module1/module1_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module1/module1_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module1/module1_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module1/module1_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module1/module1_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -375,43 +341,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module2/module2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module2/module2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module2/module2_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module2/module2_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module2/module2_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module2/module2_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module2/module2_solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module2/module2_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module2/module2_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module2/module2_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module2/module2_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module2/module2_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module2/module2_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module2/module2_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -428,43 +394,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module3/module3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module3/module3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module3/module3_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module3/module3_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module3/module3_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module3/module3_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module3/module3_solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module3/module3_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module3/module3_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module3/module3_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module3/module3_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module3/module3_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module3/module3_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module3/module3_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -481,43 +447,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module4/module4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module4/module4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module4/module4_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module4/module4_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module4/module4_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module4/module4_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module4/module4_solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module4/module4_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module4/module4_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module4/module4_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module4/module4_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module4/module4_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module4/module4_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module4/module4_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -534,43 +500,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module5/module5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module5/module5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module5/module5_manual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module5/module5_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module5/module5_exercises.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module5/module5_exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module5/module5_solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module5/module5_solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module5/module5_instructor_notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module5/module5_instructor_notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module5/module5_datasets.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module5/module5_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Datasets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Module5/module5_platform_guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Module5/module5_platform_guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platform guidance</span></a>
   </div>
 </li>
@@ -587,31 +553,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Projects/project1/project1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Projects/project1/project1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project 1: Comparison of variant callers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Projects/project2/project2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Projects/project2/project2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project 2: QC Project evaluation of a novel sequencing platform</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Projects/project3/project3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Projects/project3/project3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project 3: Identifying host genetic factors for resistance to SARS-CoV</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Projects/project4/project4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Projects/project4/project4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project 4: Identifying the Taxonomy of a Bacterial Secondary Infection in COVID-19 Patients</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/Projects/project5/project5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/Projects/project5/project5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project 5: QC Project evaluation of a novel sequencing platform</span></a>
   </div>
 </li>
@@ -628,19 +594,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/VM_guide/student-guide-computing-environment.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/VM_guide/student-guide-computing-environment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Student Guide: Computing Environment for the Course</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/VM_guide/VM_Guide.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/VM_guide/VM_Guide.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Oracle VM VirtualBox Installation Guide</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course_modules/VM_guide/Software_list.html" class="sidebar-item-text sidebar-link">
+  <a href="../../course_modules/VM_guide/Software_list.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Software list</span></a>
   </div>
 </li>
@@ -656,12 +622,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bedtools-intersect" id="toc-bedtools-intersect" class="nav-link active" data-scroll-target="#bedtools-intersect"><span class="header-section-number">1</span> bedtools intersect</a>
-  <ul class="collapse">
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">1.1</span> Exercises</a></li>
-  </ul></li>
-  <li><a href="#bedtools-closest" id="toc-bedtools-closest" class="nav-link" data-scroll-target="#bedtools-closest"><span class="header-section-number">2</span> bedtools closest</a></li>
-  <li><a href="#exercises-1" id="toc-exercises-1" class="nav-link" data-scroll-target="#exercises-1"><span class="header-section-number">3</span> Exercises</a></li>
+  <li><a href="#the-flight-plan-and-the-group-course-design-project" id="toc-the-flight-plan-and-the-group-course-design-project" class="nav-link active" data-scroll-target="#the-flight-plan-and-the-group-course-design-project"><span class="header-section-number">1</span> The Flight Plan and the group Course Design Project</a></li>
   </ul>
 </nav>
     </div>
@@ -670,7 +631,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Bedtools</h1>
+<h1 class="title">Course Design</h1>
 </div>
 
 
@@ -687,85 +648,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Bedtools is an extremely useful tool for doing regional comparisons over genomic co-ordinates. It has many commands for doing region based comparisons with BAM, VCF, GFF, BED file formats.</p>
-<p>To see the list of commands available, on the command line type:</p>
-<div id="cell-2" class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>bedtools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Navigate to the <code>exercise5</code> directory.</p>
-<div id="cell-4" class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cd ..<span class="op">/</span>exercise5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-5" class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>In this directory, there are two VCF files and the yeast genome annotation in GFF3 format <code>Saccharomyces_cerevisiae.R64-1-1.82.genes.gff3</code>.</p>
-<section id="bedtools-intersect" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="bedtools-intersect"><span class="header-section-number">1</span> bedtools intersect</h2>
-<p>Given two sets of genomic features, the <code>bedtools intersect</code> command can be used to determine whether or not any of the features in the two sets “overlap” with one another. For the intersect command, the -a and -b parameters are used to denote the input files A and B.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/bedtools.png" title="IGV - main window" class="img-fluid figure-img"></p>
-<figcaption>IGV - main window</figcaption>
-</figure>
-</div>
-<p>(Credit to Aaron Quinlan for original source of figure: http://quinlanlab.org/tutorials/bedtools/bedtools.html)</p>
-<p>For example, to find out the overlap between the SVs in <code>ERR1015069.dels.vcf</code> and the annotated region of the yeast genome try</p>
-<p>This command reports the variant in the file <code>ERR1015069.dels.vcf</code> every time it overlaps with a feature in <code>Saccharomyces_cerevisiae.R64-1-1.82.genes.gff3</code>. Therefore if a variant overlaps more than one feature it will be reported more than once. To report the unique set of variants use:</p>
-<div id="cell-10" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>bedtools intersect <span class="op">-</span>a ERR1015069.dels.vcf <span class="op">-</span>b Saccharomyces_cerevisiae.R64<span class="op">-</span><span class="dv">1</span><span class="op">-</span><span class="fl">1.82</span>.genes.gff3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-11" class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>bedtools intersect <span class="op">-</span>u <span class="op">-</span>a ERR1015069.dels.vcf <span class="op">-</span>b Saccharomyces_cerevisiae.R64<span class="op">-</span><span class="dv">1</span><span class="op">-</span><span class="fl">1.82</span>.genes.gff3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The default is to report overlaps between features in A and B so long as at least one base pair of overlap exists. However, the <code>-f</code> option allows you to specify what fraction of each feature in A should be overlapped by a feature in B before it is reported.</p>
-<p>To specify a more strict intersect and require at least 25% of overlap of the SV with the genes use the command:</p>
-<div id="cell-13" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>bedtools intersect <span class="op">-</span>u <span class="op">-</span>f <span class="fl">0.25</span> <span class="op">-</span>a ERR1015069.dels.vcf <span class="op">-</span>b Saccharomyces_cerevisiae.R64<span class="op">-</span><span class="dv">1</span><span class="op">-</span><span class="fl">1.82</span>.genes.gff3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The <code>bedtools intersect</code> command can also be used to determine how many SVs overlap between two VCF files. For more information about <code>bedtools intersect</code> see the help:</p>
-<div id="cell-15" class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>bedtools intersect <span class="op">-</span>h</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="exercises" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.1</span> Exercises</h3>
-<ol type="1">
-<li><p>How many SVs found in <code>ERR1015069.dels.vcf</code> overlap with a gene? (<strong>Hint:</strong> Use bedtools intersect command)</p></li>
-<li><p>How many SVs found in <code>ERR1015069.dels.vcf</code> do not overlap with a gene? (<strong>Hint:</strong> note the -v parameter to bedtools intersect)</p></li>
-<li><p>How many SVs found in <code>ERR1015069.dels.vcf</code> overlap with a more strict definition of 50%?</p></li>
-<li><p>How many features does the deletion at VII:811446 overlap with? What type of genes? Note you will need to also use the -wb option in bedtools intersect.</p></li>
-<li><p>How many features does the deletion at XII:650823 overlap with? What type of genes? Note you will need to also use the -wb option in bedtools intersect.</p></li>
-</ol>
+<section id="the-flight-plan-and-the-group-course-design-project" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> The Flight Plan and the group Course Design Project</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 79%">
+<col style="width: 20%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Individual Flight Plan</strong></td>
+<td><strong>Group Course Design Project</strong></td>
+</tr>
+<tr class="even">
+<td>Your own locally grounded idea or aspiration. It may begin as a wish, need or opportunity and should be close enough to your context that you can speak with relevant people after the course.</td>
+<td>A larger course or curriculum idea developed collaboratively around a defined theme during the course.</td>
+</tr>
+<tr class="odd">
+<td>Emphasises reflection, stakeholder engagement, evidence, feasibility, revision and readiness for a future next step.</td>
+<td>Emphasises collaborative course design, shared decisions, educational structure and a collective output.</td>
+</tr>
+<tr class="even">
+<td>You submit your own work at three intervals and remain the owner of the plan.</td>
+<td>The group develops and presents the work together under the group-project brief.</td>
+</tr>
+</tbody>
+</table>
+<p>The projects may inform one another, but they do not need to use the same topic or produce the same output.</p>
+<p>What belongs in each project:</p>
+<section id="use-the-individual-flight-plan-when" class="level4" data-number="1.0.0.1">
+<h4 data-number="1.0.0.1" class="anchored" data-anchor-id="use-the-individual-flight-plan-when"><span class="header-section-number">1.0.0.1</span> Use the Individual Flight Plan when</h4>
+<p>· The idea comes from your own role, interests, institution or community.</p>
+<p>· You need to explore a need or opportunity before deciding what response would help.</p>
+<p>· You want to engage stakeholders and consider feasibility, permission or support.</p>
+<p>· The eventual response might be a course, but it could instead become mentoring, a resource, a community activity or another intervention.</p>
+<p>· You want to develop an idea that you may later propose to a manager, head of department, partner or funder.</p>
 </section>
+<section id="use-the-group-course-design-challenge-when" class="level4" data-number="1.0.0.2">
+<h4 data-number="1.0.0.2" class="anchored" data-anchor-id="use-the-group-course-design-challenge-when"><span class="header-section-number">1.0.0.2</span> Use the group Course Design Challenge when</h4>
+<p>· The group makes design decisions collaboratively.</p>
+<p>· The intended output is a course, curriculum or structured learning experience.</p>
+<p>· The purpose is to practise applying the course design process with others.</p>
+<p>· The group will explain or present one collective design.</p>
 </section>
-<section id="bedtools-closest" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="bedtools-closest"><span class="header-section-number">2</span> bedtools closest</h2>
-<p>Similar to intersect, <code>bedtools closest</code> searches for overlapping features in A and B. In the event that no feature in B overlaps the current feature in A, closest will report the nearest (that is, least genomic distance from the start or end of A) feature in B.</p>
-<p>An example of the usage of <code>bedtools closest</code> is:</p>
-<div id="cell-18" class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>bedtools closest <span class="op">-</span>d <span class="op">-</span>a ERR1015069.dels.vcf <span class="op">-</span>b Saccharomyces_cerevisiae.R64<span class="op">-</span><span class="dv">1</span><span class="op">-</span><span class="fl">1.82</span>.genes.gff3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>This command will list all the features in the file <code>Saccharomyces_cerevisiae.R64-1-1.82.genes.gff3</code> that are closest to each of the variants in <code>ERR1015069.dels.vcf</code>.</p>
-<p>The <code>-d</code> option means that in addition to the closest feature in <code>Saccharomyces_cerevisiae.R64-1-1.82.genes.gff3</code>, the distance to the variant in <code>ERR1015069.dels.vcf</code> will be reported as an extra column. The reported distance for any overlapping features will be 0.</p>
-<p>For example, to find the closest gene to the variant found at position 43018 on chromosome XV, try</p>
-<div id="cell-20" class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>bedtools closest <span class="op">-</span>d <span class="op">-</span>a ERR1015069.dels.vcf <span class="op">-</span>b Saccharomyces_cerevisiae.R64<span class="op">-</span><span class="dv">1</span><span class="op">-</span><span class="fl">1.82</span>.genes.gff3<span class="op">|</span> grep XV <span class="op">|</span> grep <span class="dv">43018</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>For more information about <code>bedtools closest</code> see the help:</p>
-<div id="cell-22" class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>bedtools closest <span class="op">-</span>h</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="exercises-1" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="exercises-1"><span class="header-section-number">3</span> Exercises</h2>
-<ol start="6" type="1">
-<li><p>What is the closest gene to the structural variant at IV:384220 in <code>ERR1015069.dels.vcf</code>?</p></li>
-<li><p>How many SVs overlap between the two files <code>ERR1015069.dels.vcf</code> and <code>ERR1015121.dels.vcf</code>?</p></li>
-<li><p>How many SVs have a 50% reciprocal overlap between the two files <code>ERR1015069.dels.vcf</code> and <code>ERR1015121.dels.vcf</code> (<strong>Hint:</strong> first find the option for reciprocal overlap by typing: bedtools intersect -h)</p></li>
-</ol>
-<p>Congratulations, you have reached the end of the tutorial.</p>
+<section id="if-the-ideas-overlap" class="level4" data-number="1.0.0.3">
+<h4 data-number="1.0.0.3" class="anchored" data-anchor-id="if-the-ideas-overlap"><span class="header-section-number">1.0.0.3</span> If the ideas overlap</h4>
+<p>You may reuse relevant learning, evidence or insights across the two projects. Do not submit the group output as your Individual Flight Plan. Your Flight Plan must show your own context, reasoning, engagement, decisions and next action.</p>
+<p>A useful distinction is: the Course Design Challenge asks how the group can design a strong learning experience together. The Individual Flight Plan asks what idea you want to explore and advance in your own setting.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

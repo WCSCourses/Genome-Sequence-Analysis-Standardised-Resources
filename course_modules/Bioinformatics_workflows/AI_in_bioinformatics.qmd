@@ -5,9 +5,59 @@ format: html
 
 AI is already changing both how bioinformatics is taught and how it's practiced — this session surfaces what trainers are already doing, what a shared curriculum should cover, and uses a live case to think through a harder question: when AI output is better than a human's, and when it isn't, what does that mean for how we teach workflows?
 
-## AI versus Human in Bioinformatics workflows
+## Learning outcome 
 
-Useful links:
+-   Critically evaluate bioinformatics solutions using criteria such as accuracy, reproducibility, clarity, and fitness for purpose.
+
+## Session plan
+
+### **Step 1** 
+
+(15 min): Remind yourselves about the projects: 
+
+[Project 1](https://wcscourses.github.io/Genome-Sequence-Analysis-Standardised-Resources/course_modules/Projects/project1/project1.html)
+
+[Project 2](https://wcscourses.github.io/Genome-Sequence-Analysis-Standardised-Resources/course_modules/Projects/project2/project2.html)\
+
+### **Step 2**
+
+(20 minutes): Define a rubric: How would you assess the projects?
+
+Here are two examples.
+
+**Example for a rubric for Project 1, "Comparison of Variant Callers"**
+
+Each criterion is scored 1 to 4, for a total of 20 points.
+
+| Criterion | 4 - Excellent | 3 - Proficient | 2 - Developing | 1 - Insufficient |
+|---------------|---------------|---------------|---------------|---------------|
+| **1. Running the variant callers (Task 1)** | BCFtools, FreeBayes and GATK all run correctly on both samples (kolf, kolf_2) over the chr6 region. Outputs are valid, compressed VCFs, and commands are documented and reproducible. | All three callers run successfully, with minor issues in documentation or file handling. | Only two callers run, or there are errors in parameters, inputs or outputs. | Callers are not run, or outputs are unusable. |
+| **2. Raw callset statistics (Task 2)** | Accurately reports SNP count, indel count and ts/tv ratio for each raw callset (e.g., via `bcftools stats`). Results are clearly tabulated and compared across callers. | Statistics are mostly accurate and presented, with limited comparison. | Statistics are incomplete or contain errors, with little or no comparison. | Statistics are missing or incorrect. |
+| **3. Filtering and interpretation (Task 3)** | Correctly filters at QUAL\>20 and reports SNPs, indels and ts/tv after filtering. Clearly explains the differences between raw and filtered callsets, including why GATK behaves differently (e.g., how each caller reports low-confidence calls). | Filtering is correct and results reported, with a partial or general explanation of the differences. | Filtering is partly incorrect or results incomplete, with a weak or missing explanation. | Filtering is not done, or there is no interpretation. |
+| **4. Shared and private variants (Tasks 4-5)** | Uses `bcftools isec` correctly to identify variants shared by all three callers and those private to each. Reports ts/tv for each set and explains that shared calls are higher confidence while private calls are likely enriched for errors. | `bcftools isec` is used correctly and ts/tv reported, with limited interpretation. | `bcftools isec` is used with errors, or only some sets are analysed, with little interpretation. | Intersection and private-variant analysis is missing or incorrect. |
+| **5. Overall conclusions and presentation** | Synthesises findings into clear conclusions on how caller choice and filtering affect variant discovery, with justified recommendations. The presentation is well organised, uses clear tables or figures, and every group member presents at least one slide. | Conclusions are supported by the data and the presentation is clear, with minor weaknesses in synthesis, visuals or participation. | Conclusions are vague or only partly supported. The presentation is disorganised or not all members contribute. | No clear conclusions, or the presentation is incomplete. |
+
+**Scoring guide:** 18-20 Outstanding \| 14-17 Good \| 10-13 Satisfactory \| below 10 Needs improvement
+
+**Example for a rubric for Project 2, "QC Evaluation of a Novel Sequencing Platform"**
+
+Each criterion is scored 1 to 4, for a total of 20 points.
+
+| Criterion | 4 - Excellent | 3 - Proficient | 2 - Developing | 1 - Insufficient |
+|---------------|---------------|---------------|---------------|---------------|
+| **1. Read alignment (Task 1)** | Reads correctly aligned with `bwa mem` for all samples and lanes. The reference is indexed and the SAM/BAM is sorted and indexed. Commands are documented and reproducible. | Alignment is complete and correct, with minor gaps in documentation or file handling. | Alignment is done for only some samples or lanes, or has errors such as a missing index or unsorted BAM. | Alignment is missing or fails. |
+| **2. Alignment QC and problem detection (Task 2)** | Runs `samtools stats` and produces clear QC plots. Correctly identifies and interprets problems (e.g., coverage, insert size, mismatch rate, base quality, or a poorly performing lane) and links them to possible causes. | Produces QC stats and plots and spots the main problems, with limited interpretation. | Produces stats or plots but misses key problems, or describes them without interpretation. | No meaningful QC, or the plots are unreadable or wrong. |
+| **3. Variant calling and filtering (Task 3.1)** | Variants called with `bcftools` and filtered correctly (QUAL\>=30, DP\>=20). Filtering is verified and the pipeline runs for both required samples. | Calling and filtering are mostly correct, with minor errors or incomplete verification. | Calling or filtering is partly incorrect (wrong thresholds or filter syntax), or done for only one sample. | Variant calling or filtering is missing or unusable. |
+| **4. Quantitative results and interpretation (Task 3.2)** | Accurately reports SNP, indel and Ts/Tv counts before and after filtering for Group 2 and Group 4. Compares them and explains the effect of filtering and any sample differences. | Counts are mostly accurate and compared, with limited explanation. | Counts are incomplete or contain errors, with little interpretation. | Counts are missing or incorrect, with no interpretation. |
+| **5. Conclusions, recommendations and presentation (Task 3.3)** | Gives a clear, evidence-based verdict on the run's success and on keeping the instrument, plus actionable next steps. The presentation suits a non-specialist audience, is well organised and concise, and every member presents. | Conclusions are supported by the data and the presentation is clear, with minor weaknesses in evidence, clarity or participation. | Conclusions are vague or only partly supported by the data. The presentation is disorganised or pitched at the wrong level. | No clear conclusion or recommendation, or the presentation is incomplete. |
+
+**Scoring guide:** 18-20 Outstanding \| 14-17 Good \| 10-13 Satisfactory \| below 10 Needs improvement
+
+### **Step 3**
+
+(45 minutes)
+
+Assess the solutions based on the rubric. Here are two solutions for each project:
 
 -   [Project 1, Solution 1](Project1/v1.html)
 
@@ -16,3 +66,31 @@ Useful links:
 -   [Project 2, Solution 1](Project2/v1.html)
 
 -   [Project 2, Solution 2](Project2/v2.html)
+
+### **Step 4**
+
+**(on Thursday)**
+
+The BIG reveal!
+
+1\. Which solutions scored higher, for each of the projects?
+
+2\. Which solution do you think is human or AI?
+
+###  **Step 5**
+
+Discussion in groups: what made “the winning” solutions better? Go back to the rubric!
+
+### **Step 6**
+
+What are the decision factors that influence what methods you are using running bioinformatics workflows?
+
+Think: which method (human or AI) would you use: 
+
+-   to solve a project for the GSA course in 30 minutes?
+
+-   to run a bioinformatics workflow in a clinic?
+
+### **Step 7**
+
+Group discussion: How would you integrate AI in teaching bioinformatics workflows?

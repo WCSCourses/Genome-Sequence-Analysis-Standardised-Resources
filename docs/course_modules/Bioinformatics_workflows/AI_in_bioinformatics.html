@@ -186,6 +186,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../../course_modules/Bioinformatics_workflows/AI_in_bioinformatics.html">
  <span class="dropdown-text">AI in Bioinformatics Workflows</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../course_modules/Train-the-trainer/course-design.html">
+ <span class="dropdown-text">Teach-as-you-go sessions</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -618,7 +622,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ai-versus-human-in-bioinformatics-workflows" id="toc-ai-versus-human-in-bioinformatics-workflows" class="nav-link active" data-scroll-target="#ai-versus-human-in-bioinformatics-workflows"><span class="header-section-number">1</span> AI versus Human in Bioinformatics workflows</a></li>
+  <li><a href="#learning-outcome" id="toc-learning-outcome" class="nav-link active" data-scroll-target="#learning-outcome"><span class="header-section-number">1</span> Learning outcome&nbsp;</a></li>
+  <li><a href="#session-plan" id="toc-session-plan" class="nav-link" data-scroll-target="#session-plan"><span class="header-section-number">2</span> Session plan</a>
+  <ul class="collapse">
+  <li><a href="#step-1" id="toc-step-1" class="nav-link" data-scroll-target="#step-1"><span class="header-section-number">2.1</span> <strong>Step 1</strong></a></li>
+  <li><a href="#step-2" id="toc-step-2" class="nav-link" data-scroll-target="#step-2"><span class="header-section-number">2.2</span> <strong>Step 2</strong></a></li>
+  <li><a href="#step-3" id="toc-step-3" class="nav-link" data-scroll-target="#step-3"><span class="header-section-number">2.3</span> <strong>Step 3</strong></a></li>
+  <li><a href="#step-4" id="toc-step-4" class="nav-link" data-scroll-target="#step-4"><span class="header-section-number">2.4</span> <strong>Step 4</strong></a></li>
+  <li><a href="#step-5" id="toc-step-5" class="nav-link" data-scroll-target="#step-5"><span class="header-section-number">2.5</span> <strong>Step 5</strong></a></li>
+  <li><a href="#step-6" id="toc-step-6" class="nav-link" data-scroll-target="#step-6"><span class="header-section-number">2.6</span> <strong>Step 6</strong></a></li>
+  <li><a href="#step-7" id="toc-step-7" class="nav-link" data-scroll-target="#step-7"><span class="header-section-number">2.7</span> <strong>Step 7</strong></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -645,17 +659,179 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>AI is already changing both how bioinformatics is taught and how it’s practiced — this session surfaces what trainers are already doing, what a shared curriculum should cover, and uses a live case to think through a harder question: when AI output is better than a human’s, and when it isn’t, what does that mean for how we teach workflows?</p>
-<section id="ai-versus-human-in-bioinformatics-workflows" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="ai-versus-human-in-bioinformatics-workflows"><span class="header-section-number">1</span> AI versus Human in Bioinformatics workflows</h2>
-<p>Useful links:</p>
+<section id="learning-outcome" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="learning-outcome"><span class="header-section-number">1</span> Learning outcome&nbsp;</h2>
+<ul>
+<li>Critically evaluate bioinformatics solutions using criteria such as accuracy, reproducibility, clarity, and fitness for purpose.</li>
+</ul>
+</section>
+<section id="session-plan" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="session-plan"><span class="header-section-number">2</span> Session plan</h2>
+<section id="step-1" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="step-1"><span class="header-section-number">2.1</span> <strong>Step 1</strong></h3>
+<p>(15 min): Remind yourselves about the projects:&nbsp;</p>
+<p><a href="https://wcscourses.github.io/Genome-Sequence-Analysis-Standardised-Resources/course_modules/Projects/project1/project1.html">Project 1</a></p>
+<p><a href="https://wcscourses.github.io/Genome-Sequence-Analysis-Standardised-Resources/course_modules/Projects/project2/project2.html">Project 2</a><br>
+</p>
+</section>
+<section id="step-2" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="step-2"><span class="header-section-number">2.2</span> <strong>Step 2</strong></h3>
+<p>(20 minutes): Define a rubric: How would you assess the projects?</p>
+<p>Here are two examples.</p>
+<p><strong>Example for a rubric for Project 1, “Comparison of Variant Callers”</strong></p>
+<p>Each criterion is scored 1 to 4, for a total of 20 points.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>4 - Excellent</th>
+<th>3 - Proficient</th>
+<th>2 - Developing</th>
+<th>1 - Insufficient</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1. Running the variant callers (Task 1)</strong></td>
+<td>BCFtools, FreeBayes and GATK all run correctly on both samples (kolf, kolf_2) over the chr6 region. Outputs are valid, compressed VCFs, and commands are documented and reproducible.</td>
+<td>All three callers run successfully, with minor issues in documentation or file handling.</td>
+<td>Only two callers run, or there are errors in parameters, inputs or outputs.</td>
+<td>Callers are not run, or outputs are unusable.</td>
+</tr>
+<tr class="even">
+<td><strong>2. Raw callset statistics (Task 2)</strong></td>
+<td>Accurately reports SNP count, indel count and ts/tv ratio for each raw callset (e.g., via <code>bcftools stats</code>). Results are clearly tabulated and compared across callers.</td>
+<td>Statistics are mostly accurate and presented, with limited comparison.</td>
+<td>Statistics are incomplete or contain errors, with little or no comparison.</td>
+<td>Statistics are missing or incorrect.</td>
+</tr>
+<tr class="odd">
+<td><strong>3. Filtering and interpretation (Task 3)</strong></td>
+<td>Correctly filters at QUAL&gt;20 and reports SNPs, indels and ts/tv after filtering. Clearly explains the differences between raw and filtered callsets, including why GATK behaves differently (e.g., how each caller reports low-confidence calls).</td>
+<td>Filtering is correct and results reported, with a partial or general explanation of the differences.</td>
+<td>Filtering is partly incorrect or results incomplete, with a weak or missing explanation.</td>
+<td>Filtering is not done, or there is no interpretation.</td>
+</tr>
+<tr class="even">
+<td><strong>4. Shared and private variants (Tasks 4-5)</strong></td>
+<td>Uses <code>bcftools isec</code> correctly to identify variants shared by all three callers and those private to each. Reports ts/tv for each set and explains that shared calls are higher confidence while private calls are likely enriched for errors.</td>
+<td><code>bcftools isec</code> is used correctly and ts/tv reported, with limited interpretation.</td>
+<td><code>bcftools isec</code> is used with errors, or only some sets are analysed, with little interpretation.</td>
+<td>Intersection and private-variant analysis is missing or incorrect.</td>
+</tr>
+<tr class="odd">
+<td><strong>5. Overall conclusions and presentation</strong></td>
+<td>Synthesises findings into clear conclusions on how caller choice and filtering affect variant discovery, with justified recommendations. The presentation is well organised, uses clear tables or figures, and every group member presents at least one slide.</td>
+<td>Conclusions are supported by the data and the presentation is clear, with minor weaknesses in synthesis, visuals or participation.</td>
+<td>Conclusions are vague or only partly supported. The presentation is disorganised or not all members contribute.</td>
+<td>No clear conclusions, or the presentation is incomplete.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Scoring guide:</strong> 18-20 Outstanding | 14-17 Good | 10-13 Satisfactory | below 10 Needs improvement</p>
+<p><strong>Example for a rubric for Project 2, “QC Evaluation of a Novel Sequencing Platform”</strong></p>
+<p>Each criterion is scored 1 to 4, for a total of 20 points.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>4 - Excellent</th>
+<th>3 - Proficient</th>
+<th>2 - Developing</th>
+<th>1 - Insufficient</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1. Read alignment (Task 1)</strong></td>
+<td>Reads correctly aligned with <code>bwa mem</code> for all samples and lanes. The reference is indexed and the SAM/BAM is sorted and indexed. Commands are documented and reproducible.</td>
+<td>Alignment is complete and correct, with minor gaps in documentation or file handling.</td>
+<td>Alignment is done for only some samples or lanes, or has errors such as a missing index or unsorted BAM.</td>
+<td>Alignment is missing or fails.</td>
+</tr>
+<tr class="even">
+<td><strong>2. Alignment QC and problem detection (Task 2)</strong></td>
+<td>Runs <code>samtools stats</code> and produces clear QC plots. Correctly identifies and interprets problems (e.g., coverage, insert size, mismatch rate, base quality, or a poorly performing lane) and links them to possible causes.</td>
+<td>Produces QC stats and plots and spots the main problems, with limited interpretation.</td>
+<td>Produces stats or plots but misses key problems, or describes them without interpretation.</td>
+<td>No meaningful QC, or the plots are unreadable or wrong.</td>
+</tr>
+<tr class="odd">
+<td><strong>3. Variant calling and filtering (Task 3.1)</strong></td>
+<td>Variants called with <code>bcftools</code> and filtered correctly (QUAL&gt;=30, DP&gt;=20). Filtering is verified and the pipeline runs for both required samples.</td>
+<td>Calling and filtering are mostly correct, with minor errors or incomplete verification.</td>
+<td>Calling or filtering is partly incorrect (wrong thresholds or filter syntax), or done for only one sample.</td>
+<td>Variant calling or filtering is missing or unusable.</td>
+</tr>
+<tr class="even">
+<td><strong>4. Quantitative results and interpretation (Task 3.2)</strong></td>
+<td>Accurately reports SNP, indel and Ts/Tv counts before and after filtering for Group 2 and Group 4. Compares them and explains the effect of filtering and any sample differences.</td>
+<td>Counts are mostly accurate and compared, with limited explanation.</td>
+<td>Counts are incomplete or contain errors, with little interpretation.</td>
+<td>Counts are missing or incorrect, with no interpretation.</td>
+</tr>
+<tr class="odd">
+<td><strong>5. Conclusions, recommendations and presentation (Task 3.3)</strong></td>
+<td>Gives a clear, evidence-based verdict on the run’s success and on keeping the instrument, plus actionable next steps. The presentation suits a non-specialist audience, is well organised and concise, and every member presents.</td>
+<td>Conclusions are supported by the data and the presentation is clear, with minor weaknesses in evidence, clarity or participation.</td>
+<td>Conclusions are vague or only partly supported by the data. The presentation is disorganised or pitched at the wrong level.</td>
+<td>No clear conclusion or recommendation, or the presentation is incomplete.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Scoring guide:</strong> 18-20 Outstanding | 14-17 Good | 10-13 Satisfactory | below 10 Needs improvement</p>
+</section>
+<section id="step-3" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="step-3"><span class="header-section-number">2.3</span> <strong>Step 3</strong></h3>
+<p>(45 minutes)</p>
+<p>Assess the solutions based on the rubric. Here are two solutions for each project:</p>
 <ul>
 <li><p><a href="Project1/v1.html">Project 1, Solution 1</a></p></li>
 <li><p><a href="Project1/v2.html">Project 1, Solution 2</a></p></li>
 <li><p><a href="Project2/v1.html">Project 2, Solution 1</a></p></li>
 <li><p><a href="Project2/v2.html">Project 2, Solution 2</a></p></li>
 </ul>
+</section>
+<section id="step-4" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="step-4"><span class="header-section-number">2.4</span> <strong>Step 4</strong></h3>
+<p><strong>(on Thursday)</strong></p>
+<p>The BIG reveal!</p>
+<p>1. Which solutions scored higher, for each of the projects?</p>
+<p>2. Which solution do you think is human or AI?</p>
+</section>
+<section id="step-5" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="step-5"><span class="header-section-number">2.5</span> <strong>Step 5</strong></h3>
+<p>Discussion in groups: what made “the winning” solutions better? Go back to the rubric!</p>
+</section>
+<section id="step-6" class="level3" data-number="2.6">
+<h3 data-number="2.6" class="anchored" data-anchor-id="step-6"><span class="header-section-number">2.6</span> <strong>Step 6</strong></h3>
+<p>What are the decision factors that influence what methods you are using running bioinformatics workflows?</p>
+<p>Think: which method (human or AI) would you use:&nbsp;</p>
+<ul>
+<li><p>to solve a project for the GSA course in 30 minutes?</p></li>
+<li><p>to run a bioinformatics workflow in a clinic?</p></li>
+</ul>
+</section>
+<section id="step-7" class="level3" data-number="2.7">
+<h3 data-number="2.7" class="anchored" data-anchor-id="step-7"><span class="header-section-number">2.7</span> <strong>Step 7</strong></h3>
+<p>Group discussion: How would you integrate AI in teaching bioinformatics workflows?</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
