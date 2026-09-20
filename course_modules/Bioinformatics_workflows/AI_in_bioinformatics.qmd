@@ -5,13 +5,13 @@ format: html
 
 AI is already changing both how bioinformatics is taught and how it's practiced — this session surfaces what trainers are already doing, what a shared curriculum should cover, and uses a live case to think through a harder question: when AI output is better than a human's, and when it isn't, what does that mean for how we teach workflows?
 
-## Learning outcome 
+**Learning outcome** 
 
 -   Critically evaluate bioinformatics solutions using criteria such as accuracy, reproducibility, clarity, and fitness for purpose.
 
 ## Session plan
 
-### **Step 1** 
+### **Step 1**
 
 (15 min): Remind yourselves about the projects: 
 
@@ -77,7 +77,7 @@ The BIG reveal!
 
 2\. Which solution do you think is human or AI?
 
-###  **Step 5**
+### **Step 5**
 
 Discussion in groups: what made “the winning” solutions better? Go back to the rubric!
 
