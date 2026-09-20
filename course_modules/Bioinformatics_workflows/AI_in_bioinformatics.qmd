@@ -5,9 +5,10 @@ format: html
 
 AI is already changing both how bioinformatics is taught and how it's practiced — this session surfaces what trainers are already doing, what a shared curriculum should cover, and uses a live case to think through a harder question: when AI output is better than a human's, and when it isn't, what does that mean for how we teach workflows?
 
-**Learning outcome** 
+**Learning outcomes** 
 
 -   Critically evaluate bioinformatics solutions using criteria such as accuracy, reproducibility, clarity, and fitness for purpose.
+-   Judge how you can integrate AI in bioinformatics workflow
 
 ## Session plan
 
@@ -21,7 +22,7 @@ AI is already changing both how bioinformatics is taught and how it's practiced 
 
 ### **Step 2**
 
-(20 minutes): Define a rubric: How would you assess the projects?
+(15 minutes): Define a rubric: How would you assess the projects?
 
 Here are two examples.
 
@@ -55,7 +56,7 @@ Each criterion is scored 1 to 4, for a total of 20 points.
 
 ### **Step 3**
 
-(45 minutes)
+(30 minutes)
 
 Assess the solutions based on the rubric. Here are two solutions for each project:
 
