@@ -6,11 +6,11 @@ format: html
 # The Flight Plan and the group Course Design Project
 
 |  |  |
-|---------------------------------------------------------|---------------|
-|  **Individual Flight Plan** |  **Group Course Design Project** |
-| Your own locally grounded idea or aspiration. It may begin as a   wish, need or opportunity and should be close enough to your context that you   can speak with relevant people after the course. | A larger course or curriculum idea developed collaboratively   around a defined theme during the course. |
-| Emphasises reflection, stakeholder engagement, evidence,   feasibility, revision and readiness for a future next step. | Emphasises collaborative course design, shared decisions,   educational structure and a collective output. |
-| You submit your own work at three intervals and remain the owner   of the plan. |  The group develops and presents the work together under the   group-project brief. |
+|---------------------------------|-------------------------------|
+| **Individual Flight Plan** | **Group Course Design Project** |
+| Your own locally grounded idea or aspiration. It may begin as a wish, need or opportunity and should be close enough to your context that you can speak with relevant people after the course. | A larger course or curriculum idea developed collaboratively around a defined theme during the course. |
+| Emphasises reflection, stakeholder engagement, evidence, feasibility, revision and readiness for a future next step. | Emphasises collaborative course design, shared decisions, educational structure and a collective output. |
+| You submit your own work at three intervals and remain the owner of the plan. | The group develops and presents the work together under the group-project brief. |
 
 The projects may inform one another, but they do not need to use the same topic or produce the same output.
 
