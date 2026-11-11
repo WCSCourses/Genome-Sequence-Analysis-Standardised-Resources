@@ -1,0 +1,22 @@
+---
+title: "Instructor path"
+---
+
+Prepare each session using the participant materials together with the instructor notes and solutions.
+
+## Preparing to teach
+
+- [Teach-as-you-go sessions](course_modules/Train-the-trainer/teach-as-you-go.qmd)
+- [Course design](course_modules/Train-the-trainer/course-design.qmd)
+- [AI in bioinformatics workflows](course_modules/Bioinformatics_workflows/AI_in_bioinformatics.qmd)
+
+## Modules
+
+| Module | Participant material | Instructor notes | Solutions | Platform guidance |
+|---|---|---|---|---|
+| Introduction to Linux | [Overview](course_modules/Introduction-to-linux/module0.qmd) | [Notes](course_modules/Introduction-to-linux/module0_instructor_notes.qmd) | [Solutions](course_modules/Introduction-to-linux/module0_solutions.qmd) | [Platform](course_modules/Introduction-to-linux/module0_platform_guidance.qmd) |
+| File formats and QC | [Overview](course_modules/Module1/module1.qmd) | [Notes](course_modules/Module1/module1_instructor_notes.qmd) | [Solutions](course_modules/Module1/module1_solutions.qmd) | [Platform](course_modules/Module1/module1_platform_guidance.qmd) |
+| Read alignment | [Overview](course_modules/Module2/module2.qmd) | [Notes](course_modules/Module2/module2_instructor_notes.qmd) | [Solutions](course_modules/Module2/module2_solutions.qmd) | [Platform](course_modules/Module2/module2_platform_guidance.qmd) |
+| Variant calling | [Overview](course_modules/Module3/module3.qmd) | [Notes](course_modules/Module3/module3_instructor_notes.qmd) | [Solutions](course_modules/Module3/module3_solutions.qmd) | [Platform](course_modules/Module3/module3_platform_guidance.qmd) |
+| Structural variation | [Overview](course_modules/Module4/module4.qmd) | [Notes](course_modules/Module4/module4_instructor_notes.qmd) | [Solutions](course_modules/Module4/module4_solutions.qmd) | [Platform](course_modules/Module4/module4_platform_guidance.qmd) |
+| Genome assembly | [Overview](course_modules/Module5/module5.qmd) | [Notes](course_modules/Module5/module5_instructor_notes.qmd) | [Solutions](course_modules/Module5/module5_solutions.qmd) | [Platform](course_modules/Module5/module5_platform_guidance.qmd) |

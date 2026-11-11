@@ -1,0 +1,29 @@
+---
+title: "Participant path"
+---
+
+Work through the modules in order. For each one, read the overview, follow the manual, then try the exercises.
+
+## Before the course
+
+- [Set up your computing environment](course_modules/VM_guide/student-guide-computing-environment.qmd)
+- [Glossary of terms](course_modules/Glossary/glossary.qmd)
+
+## Modules
+
+| Module |Manual | Exercises | Datasets |
+|---|---|---|---|---|
+| Introduction to Linux |[Manual](course_modules/Introduction-to-linux/module0_manual.qmd) | [Exercises](course_modules/Introduction-to-linux/module0_exercises.qmd) | [Datasets](course_modules/Introduction-to-linux/module0_datasets.qmd) |
+| File formats and QC | [Manual](course_modules/Module1/module1_manual.qmd) | [Exercises](course_modules/Module1/module1_exercises.qmd) | [Datasets](course_modules/Module1/module1_datasets.qmd) |
+| Read alignment | [Manual](course_modules/Module2/module2_manual.qmd) | [Exercises](course_modules/Module2/module2_exercises.qmd) | [Datasets](course_modules/Module2/module2_datasets.qmd) |
+| Variant calling | [Manual](course_modules/Module3/module3_manual.qmd) | [Exercises](course_modules/Module3/module3_exercises.qmd) | [Datasets](course_modules/Module3/module3_datasets.qmd) |
+| Structural variation |[Manual](course_modules/Module4/module4_manual.qmd) | [Exercises](course_modules/Module4/module4_exercises.qmd) | [Datasets](course_modules/Module4/module4_datasets.qmd) |
+| Genome assembly | [Manual](course_modules/Module5/module5_manual.qmd) | [Exercises](course_modules/Module5/module5_exercises.qmd) | [Datasets](course_modules/Module5/module5_datasets.qmd) |
+
+## Projects
+
+- [Project 1: Comparison of variant callers](course_modules/Projects/project1/project1.qmd)
+- [Project 2: QC evaluation of a novel sequencing platform](course_modules/Projects/project2/project2.qmd)
+- [Project 3: Host genetic factors for resistance to SARS-CoV](course_modules/Projects/project3/project3.qmd)
+- [Project 4: Taxonomy of a bacterial secondary infection](course_modules/Projects/project4/project4.qmd)
+- [Project 5: QC evaluation of a novel sequencing platform](course_modules/Projects/project5/project5.qmd)

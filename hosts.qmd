@@ -1,0 +1,38 @@
+---
+title: "Host path"
+---
+
+Guidance for institutions hosting the Genome Sequence Analysis course.
+
+## Computing environment
+
+- [How to set up a VM](course_modules/VM_guide/VM_Guide.qmd)
+- [Software list](course_modules/VM_guide/Software_list.qmd)
+- [Student guide to the computing environment](course_modules/VM_guide/student-guide-computing-environment.qmd) (to share with participants)
+
+## Platform requirements by module
+
+- [Introduction to Linux](course_modules/Introduction-to-linux/module0_platform_guidance.qmd)
+- [File formats and QC](course_modules/Module1/module1_platform_guidance.qmd)
+- [Read alignment](course_modules/Module2/module2_platform_guidance.qmd)
+- [Variant calling](course_modules/Module3/module3_platform_guidance.qmd)
+- [Structural variation](course_modules/Module4/module4_platform_guidance.qmd)
+- [Genome assembly](course_modules/Module5/module5_platform_guidance.qmd)
+
+## Datasets to stage before the course
+
+Download and test these on the course machines before the first day:
+[Linux](course_modules/Introduction-to-linux/module0_datasets.qmd) ·
+[Module 1](course_modules/Module1/module1_datasets.qmd) ·
+[Module 2](course_modules/Module2/module2_datasets.qmd) ·
+[Module 3](course_modules/Module3/module3_datasets.qmd) ·
+[Module 4](course_modules/Module4/module4_datasets.qmd) ·
+[Module 5](course_modules/Module5/module5_datasets.qmd)
+
+## Course design
+
+- [Course design guide](course_modules/Train-the-trainer/course-design.qmd)
+
+## Logistics
+
+*To add: host readiness checklist, venue and connectivity requirements, timeline, and who to contact.*

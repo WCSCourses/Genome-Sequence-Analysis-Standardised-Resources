@@ -1,10 +1,42 @@
 ---
 title: "Welcome"
-format: html
+sidebar: false
 ---
 
-**Welcome to the course on Genome Sequence Analysis!**\
+---
+title: "Welcome"
+sidebar: false
+---
 
-This practical course will take you through the complete workflow of genome sequence data analysis. You’ll learn key steps including quality assessment, read alignment, variant calling, annotation, genome assembly, RNA-seq data analysis and ChIP-seq data analysis. By the end, you'll be equipped with the skills to confidently process and interpret various genomic datasets in research and clinical contexts.
+**Welcome to the course on Genome Sequence Analysis!**
 
-![](images/learning%20paths.jpg)
+This practical course will take you through the complete workflow of genome sequence data analysis. You'll learn key steps including quality assessment, read alignment, variant calling, annotation and genome assembly.
+
+## Choose your path
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+### 👩‍🎓 Participants
+Course material, exercises and datasets for each module.
+
+[Start here →](participants.qmd){.btn .btn-primary}
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### 🧑‍🏫 Instructors
+Instructor notes, solutions and train-the-trainer resources.
+
+[Start here →](instructors.qmd){.btn .btn-primary}
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### 🏛️ Hosts
+Computing setup, platform requirements and course logistics.
+
+[Start here →](hosts.qmd){.btn .btn-primary}
+:::
+
+:::
+
+![](images/learning paths.jpg)

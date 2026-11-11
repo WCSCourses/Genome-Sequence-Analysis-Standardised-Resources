@@ -31,7 +31,7 @@ Here are two examples.
 Each criterion is scored 1 to 4, for a total of 20 points.
 
 | Criterion | 4 - Excellent | 3 - Proficient | 2 - Developing | 1 - Insufficient |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | **1. Running the variant callers (Task 1)** | BCFtools, FreeBayes and GATK all run correctly on both samples (kolf, kolf_2) over the chr6 region. Outputs are valid, compressed VCFs, and commands are documented and reproducible. | All three callers run successfully, with minor issues in documentation or file handling. | Only two callers run, or there are errors in parameters, inputs or outputs. | Callers are not run, or outputs are unusable. |
 | **2. Raw callset statistics (Task 2)** | Accurately reports SNP count, indel count and ts/tv ratio for each raw callset (e.g., via `bcftools stats`). Results are clearly tabulated and compared across callers. | Statistics are mostly accurate and presented, with limited comparison. | Statistics are incomplete or contain errors, with little or no comparison. | Statistics are missing or incorrect. |
 | **3. Filtering and interpretation (Task 3)** | Correctly filters at QUAL\>20 and reports SNPs, indels and ts/tv after filtering. Clearly explains the differences between raw and filtered callsets, including why GATK behaves differently (e.g., how each caller reports low-confidence calls). | Filtering is correct and results reported, with a partial or general explanation of the differences. | Filtering is partly incorrect or results incomplete, with a weak or missing explanation. | Filtering is not done, or there is no interpretation. |
@@ -45,7 +45,7 @@ Each criterion is scored 1 to 4, for a total of 20 points.
 Each criterion is scored 1 to 4, for a total of 20 points.
 
 | Criterion | 4 - Excellent | 3 - Proficient | 2 - Developing | 1 - Insufficient |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | **1. Read alignment (Task 1)** | Reads correctly aligned with `bwa mem` for all samples and lanes. The reference is indexed and the SAM/BAM is sorted and indexed. Commands are documented and reproducible. | Alignment is complete and correct, with minor gaps in documentation or file handling. | Alignment is done for only some samples or lanes, or has errors such as a missing index or unsorted BAM. | Alignment is missing or fails. |
 | **2. Alignment QC and problem detection (Task 2)** | Runs `samtools stats` and produces clear QC plots. Correctly identifies and interprets problems (e.g., coverage, insert size, mismatch rate, base quality, or a poorly performing lane) and links them to possible causes. | Produces QC stats and plots and spots the main problems, with limited interpretation. | Produces stats or plots but misses key problems, or describes them without interpretation. | No meaningful QC, or the plots are unreadable or wrong. |
 | **3. Variant calling and filtering (Task 3.1)** | Variants called with `bcftools` and filtered correctly (QUAL\>=30, DP\>=20). Filtering is verified and the pipeline runs for both required samples. | Calling and filtering are mostly correct, with minor errors or incomplete verification. | Calling or filtering is partly incorrect (wrong thresholds or filter syntax), or done for only one sample. | Variant calling or filtering is missing or unusable. |

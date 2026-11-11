@@ -1,8 +1,8 @@
 project:
   type: website
   output-dir: docs
-  
-  
+
+
 website:
   title: "Genome Sequence Analysis Course"
   navbar:
@@ -11,125 +11,139 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: welcome.qmd
-        text: Learning paths
-      - text: Modules
+      - text: "Roles"
         menu:
-          - href: course_modules/Introduction-to-linux/module0.qmd
-            text: "Introduction to Linux"
-          - href: course_modules/Module1/module1.qmd
-            text: "File formats and QC"
-          - href: course_modules/Module2/module2.qmd
-            text: "Reads alignment"
-          - href: course_modules/Module3/module3.qmd
-            text: "Variant calling"
-          - href: course_modules/Module4/module4.qmd
-            text: "Structural Variation Calling"
-          - href: course_modules/Module5/module5.qmd
-            text: "Genome assembly"
-          - href: course_modules/Glossary/glossary.qmd
-            text: "Glossary of terms"
-          - href: course_modules/Projects/project1/project1.qmd
-            text: "Project 1"
-          - href: course_modules/Projects/project2/project2.qmd
-            text: "Project 2"
-          - href: course_modules/Projects/project3/project3.qmd
-            text: "Project 3"
-          - href: course_modules/Projects/project4/project4.qmd
-            text: "Project 4"
-          - href: course_modules/Projects/project5/project5.qmd
-            text: "Project 5"
-      - text: Informatics Guide
-        menu:
-          - href: course_modules/VM_guide/student-guide-computing-environment.qmd
-            text: "Student guide for the computing environment"
-          - href: course_modules/VM_guide/VM_Guide.qmd
-            text: "How to setup a VM"
-          - href: course_modules/VM_guide/Software_list.qmd
-            text: "Software list"
-      - text: Train-the-trainer
-        menu:
-          - href: course_modules/Train-the-trainer/teach-as-you-go.qmd
-            text: "Teach-as-you-go sessions"
-          - href: course_modules/Bioinformatics_workflows/AI_in_bioinformatics.qmd
-            text: "AI in Bioinformatics Workflows"
-          - href: course_modules/Train-the-trainer/course-design.qmd
-            text: "Course design"
+          - href: welcome.qmd
+            text: "Choose your role"
+          - text: "---"
+          - href: participants.qmd
+            text: "I'm a participant"
+          - href: instructors.qmd
+            text: "I'm an instructor"
+          - href: hosts.qmd
+            text: "I'm hosting the course"
+  # One sidebar per audience. A page shows the FIRST sidebar that lists it,
+  # so each page appears in only one sidebar below. Landing pages
+  # (paths/*.qmd) link across to pages that live in another role's sidebar.
   sidebar:
-    style: "docked"
-    search: true
-    collapse-level: 1
-    contents:
-      - section: "Introduction to Linux"
-        contents:
-          - course_modules/Introduction-to-linux/module0.qmd
-          - course_modules/Introduction-to-linux/module0_manual.qmd
-          - course_modules/Introduction-to-linux/module0_exercises.qmd
-          - course_modules/Introduction-to-linux/module0_solutions.qmd
-          - course_modules/Introduction-to-linux/module0_instructor_notes.qmd
-          - course_modules/Introduction-to-linux/module0_datasets.qmd
-          - course_modules/Introduction-to-linux/module0_platform_guidance.qmd
-      - section: "File formats"
-        contents:
-          - course_modules/Module1/module1.qmd
-          - course_modules/Module1/module1_manual.qmd
-          - course_modules/Module1/module1_exercises.qmd
-          - course_modules/Module1/module1_solutions.qmd
-          - course_modules/Module1/module1_instructor_notes.qmd
-          - course_modules/Module1/module1_datasets.qmd
-          - course_modules/Module1/module1_platform_guidance.qmd
-      - section: "Read alignment"
-        contents:
-          - course_modules/Module2/module2.qmd
-          - course_modules/Module2/module2_manual.qmd
-          - course_modules/Module2/module2_exercises.qmd
-          - course_modules/Module2/module2_solutions.qmd
-          - course_modules/Module2/module2_instructor_notes.qmd
-          - course_modules/Module2/module2_datasets.qmd
-          - course_modules/Module2/module2_platform_guidance.qmd
-      - section: "Variant calling"
-        contents:
-          - course_modules/Module3/module3.qmd
-          - course_modules/Module3/module3_manual.qmd
-          - course_modules/Module3/module3_exercises.qmd
-          - course_modules/Module3/module3_solutions.qmd
-          - course_modules/Module3/module3_instructor_notes.qmd
-          - course_modules/Module3/module3_datasets.qmd
-          - course_modules/Module3/module3_platform_guidance.qmd
-      - section: "Structural Variation Calling"
-        contents:
-          - course_modules/Module4/module4.qmd
-          - course_modules/Module4/module4_manual.qmd
-          - course_modules/Module4/module4_exercises.qmd
-          - course_modules/Module4/module4_solutions.qmd
-          - course_modules/Module4/module4_instructor_notes.qmd
-          - course_modules/Module4/module4_datasets.qmd
-          - course_modules/Module4/module4_platform_guidance.qmd
-      - section: "Genome Assembly"
-        contents:
-          - course_modules/Module5/module5.qmd
-          - course_modules/Module5/module5_manual.qmd
-          - course_modules/Module5/module5_exercises.qmd
-          - course_modules/Module5/module5_solutions.qmd
-          - course_modules/Module5/module5_instructor_notes.qmd
-          - course_modules/Module5/module5_datasets.qmd
-          - course_modules/Module5/module5_platform_guidance.qmd
-      - section: "Projects"
-        contents:
-          - course_modules/Projects/project1/project1.qmd
-          - course_modules/Projects/project2/project2.qmd
-          - course_modules/Projects/project3/project3.qmd
-          - course_modules/Projects/project4/project4.qmd
-          - course_modules/Projects/project5/project5.qmd
-      - section: "How to setup your VM"
-        contents:
-          - course_modules/VM_guide/student-guide-computing-environment.qmd
-          - course_modules/VM_guide/VM_Guide.qmd
-          - course_modules/VM_guide/Software_list.qmd
-  
-  page-navigation: true 
-  page-footer: 
-    left: "This work is licensed under a Creative Commons Attribution 4.0 International License. Reuse is encouraged with acknowledgement" 
+    # ---------------- PARTICIPANTS ----------------
+    - id: participants
+      title: "Participants"
+      style: "docked"
+      search: true
+      collapse-level: 1
+      contents:
+        - paths/participants.qmd
+        - section: "Before the course"
+          contents:
+            - course_modules/VM_guide/student-guide-computing-environment.qmd
+        - section: "Introduction to Linux"
+          contents:
+            - course_modules/Introduction-to-linux/module0.qmd
+            - course_modules/Introduction-to-linux/module0_manual.qmd
+            - course_modules/Introduction-to-linux/module0_exercises.qmd
+            - course_modules/Introduction-to-linux/module0_datasets.qmd
+        - section: "File formats"
+          contents:
+            - course_modules/Module1/module1.qmd
+            - course_modules/Module1/module1_manual.qmd
+            - course_modules/Module1/module1_exercises.qmd
+            - course_modules/Module1/module1_datasets.qmd
+        - section: "Read alignment"
+          contents:
+            - course_modules/Module2/module2.qmd
+            - course_modules/Module2/module2_manual.qmd
+            - course_modules/Module2/module2_exercises.qmd
+            - course_modules/Module2/module2_datasets.qmd
+        - section: "Variant calling"
+          contents:
+            - course_modules/Module3/module3.qmd
+            - course_modules/Module3/module3_manual.qmd
+            - course_modules/Module3/module3_exercises.qmd
+            - course_modules/Module3/module3_datasets.qmd
+        - section: "Structural Variation Calling"
+          contents:
+            - course_modules/Module4/module4.qmd
+            - course_modules/Module4/module4_manual.qmd
+            - course_modules/Module4/module4_exercises.qmd
+            - course_modules/Module4/module4_datasets.qmd
+        - section: "Genome Assembly"
+          contents:
+            - course_modules/Module5/module5.qmd
+            - course_modules/Module5/module5_manual.qmd
+            - course_modules/Module5/module5_exercises.qmd
+            - course_modules/Module5/module5_datasets.qmd
+        - section: "Projects"
+          contents:
+            - course_modules/Projects/project1/project1.qmd
+            - course_modules/Projects/project2/project2.qmd
+            - course_modules/Projects/project3/project3.qmd
+            - course_modules/Projects/project4/project4.qmd
+            - course_modules/Projects/project5/project5.qmd
+        - course_modules/Glossary/glossary.qmd
+
+    # ---------------- INSTRUCTORS ----------------
+    - id: instructors
+      title: "Instructors"
+      style: "docked"
+      search: true
+      collapse-level: 1
+      contents:
+        - paths/instructors.qmd
+        - section: "Introduction to Linux"
+          contents:
+            - course_modules/Introduction-to-linux/module0_instructor_notes.qmd
+            - course_modules/Introduction-to-linux/module0_solutions.qmd
+        - section: "File formats"
+          contents:
+            - course_modules/Module1/module1_instructor_notes.qmd
+            - course_modules/Module1/module1_solutions.qmd
+        - section: "Read alignment"
+          contents:
+            - course_modules/Module2/module2_instructor_notes.qmd
+            - course_modules/Module2/module2_solutions.qmd
+        - section: "Variant calling"
+          contents:
+            - course_modules/Module3/module3_instructor_notes.qmd
+            - course_modules/Module3/module3_solutions.qmd
+        - section: "Structural Variation Calling"
+          contents:
+            - course_modules/Module4/module4_instructor_notes.qmd
+            - course_modules/Module4/module4_solutions.qmd
+        - section: "Genome Assembly"
+          contents:
+            - course_modules/Module5/module5_instructor_notes.qmd
+            - course_modules/Module5/module5_solutions.qmd
+        - section: "Train-the-trainer"
+          contents:
+            - course_modules/Train-the-trainer/teach-as-you-go.qmd
+            - course_modules/Train-the-trainer/course-design.qmd
+            - course_modules/Bioinformatics_workflows/AI_in_bioinformatics.qmd
+
+    # ---------------- HOSTS ----------------
+    - id: hosts
+      title: "Hosts"
+      style: "docked"
+      search: true
+      collapse-level: 1
+      contents:
+        - paths/hosts.qmd
+        - section: "Computing environment"
+          contents:
+            - course_modules/VM_guide/VM_Guide.qmd
+            - course_modules/VM_guide/Software_list.qmd
+        - section: "Platform guidance by module"
+          contents:
+            - course_modules/Introduction-to-linux/module0_platform_guidance.qmd
+            - course_modules/Module1/module1_platform_guidance.qmd
+            - course_modules/Module2/module2_platform_guidance.qmd
+            - course_modules/Module3/module3_platform_guidance.qmd
+            - course_modules/Module4/module4_platform_guidance.qmd
+            - course_modules/Module5/module5_platform_guidance.qmd
+
+  page-navigation: true
+  page-footer:
+    left: "This work is licensed under a Creative Commons Attribution 4.0 International License. Reuse is encouraged with acknowledgement"
   search:
     location: navbar
     type: textbox
@@ -165,8 +179,5 @@ editor: visual
 
 execute:
   freeze: auto
-  
-sidebar:
-  contents: auto
 
 link-external-newwindow: true
