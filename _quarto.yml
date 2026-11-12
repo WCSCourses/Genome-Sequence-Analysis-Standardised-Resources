@@ -16,10 +16,10 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - text: "Learning paths"
+      - text: "Roles"
         menu:
           - href: welcome.qmd
-            text: "Choose your path"
+            text: "Choose your role"
           - text: "---"
           - href: participants.qmd
             text: "I'm a participant"
@@ -27,50 +27,6 @@ website:
             text: "I'm an instructor"
           - href: hosts.qmd
             text: "I'm hosting the course"
-      - text: "Course content"
-        menu:
-          - href: course_modules/Introduction-to-linux/module0.qmd
-            text: "Introduction to Linux"
-          - href: course_modules/Module1/module1.qmd
-            text: "File formats and QC"
-          - href: course_modules/Module2/module2.qmd
-            text: "Reads alignment"
-          - href: course_modules/Module3/module3.qmd
-            text: "Variant calling"
-          - href: course_modules/Module4/module4.qmd
-            text: "Structural Variation Calling"
-          - href: course_modules/Module5/module5.qmd
-            text: "Genome assembly"
-          - text: "---"
-          - href: course_modules/Projects/project1/project1.qmd
-            text: "Project 1"
-          - href: course_modules/Projects/project2/project2.qmd
-            text: "Project 2"
-          - href: course_modules/Projects/project3/project3.qmd
-            text: "Project 3"
-          - href: course_modules/Projects/project4/project4.qmd
-            text: "Project 4"
-          - href: course_modules/Projects/project5/project5.qmd
-            text: "Project 5"
-          - text: "---"
-          - href: course_modules/Glossary/glossary.qmd
-            text: "Glossary of terms"
-      - text: Informatics Guide
-        menu:
-          - href: course_modules/VM_guide/student-guide-computing-environment.qmd
-            text: "Student guide for the computing environment"
-          - href: course_modules/VM_guide/VM_Guide.qmd
-            text: "How to setup a VM"
-          - href: course_modules/VM_guide/Software_list.qmd
-            text: "Software list"
-      - text: Train-the-trainer
-        menu:
-          - href: course_modules/Train-the-trainer/teach-as-you-go.qmd
-            text: "Teach-as-you-go sessions"
-          - href: course_modules/Bioinformatics_workflows/AI_in_bioinformatics.qmd
-            text: "AI in Bioinformatics Workflows"
-          - href: course_modules/Train-the-trainer/course-design.qmd
-            text: "Course design"
 
   # One sidebar per audience. A page shows the FIRST sidebar that lists it,
   # so each page appears in only one sidebar below. Landing pages
