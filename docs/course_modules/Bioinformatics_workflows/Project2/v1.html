@@ -58,7 +58,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
@@ -69,8 +68,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -101,6 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
@@ -130,13 +128,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-roles" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Roles</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-learning-paths" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Learning paths</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-roles">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-learning-paths">    
         <li>
     <a class="dropdown-item" href="../../../welcome.html">
- <span class="dropdown-text">Choose your role</span></a>
+ <span class="dropdown-text">Choose your path</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
@@ -153,6 +151,108 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-content" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Course content</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-course-content">    
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Introduction-to-linux/module0.html">
+ <span class="dropdown-text">Introduction to Linux</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Module1/module1.html">
+ <span class="dropdown-text">File formats and QC</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Module2/module2.html">
+ <span class="dropdown-text">Reads alignment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Module3/module3.html">
+ <span class="dropdown-text">Variant calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Module4/module4.html">
+ <span class="dropdown-text">Structural Variation Calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Module5/module5.html">
+ <span class="dropdown-text">Genome assembly</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Projects/project1/project1.html">
+ <span class="dropdown-text">Project 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Projects/project2/project2.html">
+ <span class="dropdown-text">Project 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Projects/project3/project3.html">
+ <span class="dropdown-text">Project 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Projects/project4/project4.html">
+ <span class="dropdown-text">Project 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Projects/project5/project5.html">
+ <span class="dropdown-text">Project 5</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Glossary/glossary.html">
+ <span class="dropdown-text">Glossary of terms</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-informatics-guide" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Informatics Guide</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-informatics-guide">    
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/VM_guide/student-guide-computing-environment.html">
+ <span class="dropdown-text">Student guide for the computing environment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/VM_guide/VM_Guide.html">
+ <span class="dropdown-text">How to setup a VM</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/VM_guide/Software_list.html">
+ <span class="dropdown-text">Software list</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-train-the-trainer" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Train-the-trainer</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-train-the-trainer">    
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Train-the-trainer/teach-as-you-go.html">
+ <span class="dropdown-text">Teach-as-you-go sessions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Bioinformatics_workflows/AI_in_bioinformatics.html">
+ <span class="dropdown-text">AI in Bioinformatics Workflows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Train-the-trainer/course-design.html">
+ <span class="dropdown-text">Course design</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/WCSCourses/Genome-Sequence-Analysis-Standardised-Resources"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -170,10 +270,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#task-1-align-reads-to-the-reference-genome" id="toc-task-1-align-reads-to-the-reference-genome" class="nav-link active" data-scroll-target="#task-1-align-reads-to-the-reference-genome"><span class="header-section-number">0.1</span> Task 1: Align reads to the reference genome</a></li>
-  <li><a href="#task-2-assess-alignment-quality" id="toc-task-2-assess-alignment-quality" class="nav-link" data-scroll-target="#task-2-assess-alignment-quality"><span class="header-section-number">0.2</span> Task 2: Assess alignment quality</a></li>
-  <li><a href="#task-3-call-and-filter-variants" id="toc-task-3-call-and-filter-variants" class="nav-link" data-scroll-target="#task-3-call-and-filter-variants"><span class="header-section-number">0.3</span> Task 3: Call and filter variants</a></li>
-  <li><a href="#task-4-evaluate-the-sequencing-run" id="toc-task-4-evaluate-the-sequencing-run" class="nav-link" data-scroll-target="#task-4-evaluate-the-sequencing-run"><span class="header-section-number">0.4</span> Task 4: Evaluate the sequencing run</a></li>
+  <li><a href="#task-1-align-reads-to-the-reference-genome" id="toc-task-1-align-reads-to-the-reference-genome" class="nav-link active" data-scroll-target="#task-1-align-reads-to-the-reference-genome">Task 1: Align reads to the reference genome</a></li>
+  <li><a href="#task-2-assess-alignment-quality" id="toc-task-2-assess-alignment-quality" class="nav-link" data-scroll-target="#task-2-assess-alignment-quality">Task 2: Assess alignment quality</a></li>
+  <li><a href="#task-3-call-and-filter-variants" id="toc-task-3-call-and-filter-variants" class="nav-link" data-scroll-target="#task-3-call-and-filter-variants">Task 3: Call and filter variants</a></li>
+  <li><a href="#task-4-evaluate-the-sequencing-run" id="toc-task-4-evaluate-the-sequencing-run" class="nav-link" data-scroll-target="#task-4-evaluate-the-sequencing-run">Task 4: Evaluate the sequencing run</a></li>
   </ul>
 </nav>
     </div>
@@ -201,11 +301,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>The description of this project can be found <a href="https://wcscourses.github.io/Genome-Sequence-Analysis-Standardised-Resources/course_modules/Projects/project2/project2.html">here</a>.</p>
 <p><strong>Solution number 1 is is below.</strong></p>
-<section id="task-1-align-reads-to-the-reference-genome" class="level3" data-number="0.1">
-<h3 data-number="0.1" class="anchored" data-anchor-id="task-1-align-reads-to-the-reference-genome"><span class="header-section-number">0.1</span> Task 1: Align reads to the reference genome</h3>
+<section id="task-1-align-reads-to-the-reference-genome" class="level3">
+<h3 class="anchored" data-anchor-id="task-1-align-reads-to-the-reference-genome">Task 1: Align reads to the reference genome</h3>
 <p>Align the reads for each group with <code>bwa mem</code>, sort the alignments, mark duplicate reads, and index the resulting BAM files.</p>
-<section id="group-2" class="level4" data-number="0.1.1">
-<h4 data-number="0.1.1" class="anchored" data-anchor-id="group-2"><span class="header-section-number">0.1.1</span> Group 2</h4>
+<section id="group-2" class="level4">
+<h4 class="anchored" data-anchor-id="group-2">Group 2</h4>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bwa</span> mem <span class="at">-M</span> <span class="at">-t</span> 4 CP000886.fasta <span class="dt">\</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  Data/Group2_S2_L001_R1_001.fastq.gz <span class="dt">\</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  Data/Group2_S2_L001_R2_001.fastq.gz <span class="dt">\</span></span>
@@ -220,8 +320,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> index Group2.markdup.bam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="group-4" class="level4" data-number="0.1.2">
-<h4 data-number="0.1.2" class="anchored" data-anchor-id="group-4"><span class="header-section-number">0.1.2</span> Group 4</h4>
+<section id="group-4" class="level4">
+<h4 class="anchored" data-anchor-id="group-4">Group 4</h4>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bwa</span> mem <span class="at">-M</span> <span class="at">-t</span> 4 CP000886.fasta <span class="dt">\</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  Data/Group4_S4_L001_R1_001.fastq.gz <span class="dt">\</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  Data/Group4_S4_L001_R2_001.fastq.gz <span class="dt">\</span></span>
@@ -237,8 +337,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> index Group4.markdup.bam</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="task-2-assess-alignment-quality" class="level3" data-number="0.2">
-<h3 data-number="0.2" class="anchored" data-anchor-id="task-2-assess-alignment-quality"><span class="header-section-number">0.2</span> Task 2: Assess alignment quality</h3>
+<section id="task-2-assess-alignment-quality" class="level3">
+<h3 class="anchored" data-anchor-id="task-2-assess-alignment-quality">Task 2: Assess alignment quality</h3>
 <p>Collect alignment statistics with <code>samtools stats</code> and generate QC reports with <code>plot-bamstats</code>.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> stats Group2.markdup.bam <span class="dt">\</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span> <span class="ex">plot-bamstats</span> <span class="at">-p</span> Group2_plot/alignment/ <span class="at">-</span></span>
@@ -259,8 +359,8 @@ Expected observations
 <p>The Group 2 sample shows several abnormal QC patterns. Together, they suggest that its sequence differs substantially from the chosen reference and that contamination or library-preparation issues may also be present.</p>
 </div>
 </div>
-<section id="metrics-summary" class="level4" data-number="0.2.1">
-<h4 data-number="0.2.1" class="anchored" data-anchor-id="metrics-summary"><span class="header-section-number">0.2.1</span> Metrics summary</h4>
+<section id="metrics-summary" class="level4">
+<h4 class="anchored" data-anchor-id="metrics-summary">Metrics summary</h4>
 <p>Group 2 has a lower mapping rate at both the read and base levels and a higher base-error rate.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -269,8 +369,8 @@ Expected observations
 </figure>
 </div>
 </section>
-<section id="mismatches-per-cycle" class="level4" data-number="0.2.2">
-<h4 data-number="0.2.2" class="anchored" data-anchor-id="mismatches-per-cycle"><span class="header-section-number">0.2.2</span> Mismatches per cycle</h4>
+<section id="mismatches-per-cycle" class="level4">
+<h4 class="anchored" data-anchor-id="mismatches-per-cycle">Mismatches per cycle</h4>
 <p>Group 2 is abnormal. High-quality mismatches (<code>Q &gt; 30</code>, red line) are elevated and remain flat across all cycles, suggesting that the true sequence differs substantially from the reference. The isolate may be a different strain.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -279,8 +379,8 @@ Expected observations
 </figure>
 </div>
 </section>
-<section id="insert-size" class="level4" data-number="0.2.3">
-<h4 data-number="0.2.3" class="anchored" data-anchor-id="insert-size"><span class="header-section-number">0.2.3</span> Insert size</h4>
+<section id="insert-size" class="level4">
+<h4 class="anchored" data-anchor-id="insert-size">Insert size</h4>
 <p>Group 2 is abnormal. A large plateau of outward-facing read pairs appears within the first 100 bases, followed by an abrupt cutoff. This pattern suggests mate-pair contamination or adapter-related issues.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -289,8 +389,8 @@ Expected observations
 </figure>
 </div>
 </section>
-<section id="gc-content" class="level4" data-number="0.2.4">
-<h4 data-number="0.2.4" class="anchored" data-anchor-id="gc-content"><span class="header-section-number">0.2.4</span> GC content</h4>
+<section id="gc-content" class="level4">
+<h4 class="anchored" data-anchor-id="gc-content">GC content</h4>
 <p>Group 2 is abnormal. A small but visible peak near 65% GC in the first fragment (purple) suggests minor contamination by an organism with higher GC content.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -300,36 +400,36 @@ Expected observations
 </div>
 </section>
 </section>
-<section id="task-3-call-and-filter-variants" class="level3" data-number="0.3">
-<h3 data-number="0.3" class="anchored" data-anchor-id="task-3-call-and-filter-variants"><span class="header-section-number">0.3</span> Task 3: Call and filter variants</h3>
+<section id="task-3-call-and-filter-variants" class="level3">
+<h3 class="anchored" data-anchor-id="task-3-call-and-filter-variants">Task 3: Call and filter variants</h3>
 <p>Call variants with BCFtools to produce a VCF file for each group. This step should take approximately five minutes per group.</p>
 <p>Filter the calls using <code>QUAL &gt;= 30</code> and <code>DP &gt;= 20</code>.</p>
-<section id="group-2-1" class="level4" data-number="0.3.1">
-<h4 data-number="0.3.1" class="anchored" data-anchor-id="group-2-1"><span class="header-section-number">0.3.1</span> Group 2</h4>
+<section id="group-2-1" class="level4">
+<h4 class="anchored" data-anchor-id="group-2-1">Group 2</h4>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> mpileup <span class="at">-a</span> AD <span class="at">-f</span> CP000886.fasta Group2.markdup.bam <span class="at">-Ou</span> <span class="dt">\</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span> <span class="ex">bcftools</span> call <span class="at">-mv</span> <span class="at">-o</span> Group2.vcf</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> filter <span class="at">-s</span> LowQual <span class="at">-i</span> <span class="st">'QUAL&gt;=30 &amp;&amp; DP&gt;=20'</span> <span class="dt">\</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  Group2.vcf <span class="at">-o</span> Group2.filtered.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="group-4-1" class="level4" data-number="0.3.2">
-<h4 data-number="0.3.2" class="anchored" data-anchor-id="group-4-1"><span class="header-section-number">0.3.2</span> Group 4</h4>
+<section id="group-4-1" class="level4">
+<h4 class="anchored" data-anchor-id="group-4-1">Group 4</h4>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> mpileup <span class="at">-a</span> AD <span class="at">-f</span> CP000886.fasta Group4.markdup.bam <span class="at">-Ou</span> <span class="dt">\</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span> <span class="ex">bcftools</span> call <span class="at">-mv</span> <span class="at">-o</span> Group4.vcf</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> filter <span class="at">-s</span> LowQual <span class="at">-i</span> <span class="st">'QUAL&gt;=30 &amp;&amp; DP&gt;=20'</span> <span class="dt">\</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  Group4.vcf <span class="at">-o</span> Group4.filtered.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="command-explanation" class="level4" data-number="0.3.3">
-<h4 data-number="0.3.3" class="anchored" data-anchor-id="command-explanation"><span class="header-section-number">0.3.3</span> Command explanation</h4>
+<section id="command-explanation" class="level4">
+<h4 class="anchored" data-anchor-id="command-explanation">Command explanation</h4>
 <ul>
 <li><code>bcftools mpileup</code> computes per-base alignment statistics. The <code>-a AD</code> option adds allele-depth information, while <code>-Ou</code> produces an uncompressed BCF stream for piping.</li>
 <li><code>bcftools call</code> performs variant calling. The <code>-m</code> option uses the multiallelic calling model, and <code>-v</code> outputs variant sites only.</li>
 <li><code>bcftools filter -s LowQual</code> soft-filters variants. Instead of removing low-quality records, it labels them <code>LowQual</code> in the VCF <code>FILTER</code> column; passing records are labelled <code>PASS</code>. Retaining all records allows filtered variants to be revisited later.</li>
 </ul>
 </section>
-<section id="compare-statistics-before-and-after-filtering" class="level4" data-number="0.3.4">
-<h4 data-number="0.3.4" class="anchored" data-anchor-id="compare-statistics-before-and-after-filtering"><span class="header-section-number">0.3.4</span> Compare statistics before and after filtering</h4>
+<section id="compare-statistics-before-and-after-filtering" class="level4">
+<h4 class="anchored" data-anchor-id="compare-statistics-before-and-after-filtering">Compare statistics before and after filtering</h4>
 <p>Calculate the numbers of SNPs and indels and the transition/transversion ratio before and after filtering.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group 2</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> stats Group2.vcf <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-E</span> <span class="st">'^SN|^TSTV'</span></span>
@@ -390,8 +490,8 @@ Expected observations
 </table>
 </section>
 </section>
-<section id="task-4-evaluate-the-sequencing-run" class="level3" data-number="0.4">
-<h3 data-number="0.4" class="anchored" data-anchor-id="task-4-evaluate-the-sequencing-run"><span class="header-section-number">0.4</span> Task 4: Evaluate the sequencing run</h3>
+<section id="task-4-evaluate-the-sequencing-run" class="level3">
+<h3 class="anchored" data-anchor-id="task-4-evaluate-the-sequencing-run">Task 4: Evaluate the sequencing run</h3>
 <p>Use the QC and variant-calling results to answer the following questions:</p>
 <ol type="1">
 <li>Was the first sequencing run successful?</li>
@@ -1003,4 +1103,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

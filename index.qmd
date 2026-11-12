@@ -1,14 +1,57 @@
 ---
-title: "Introduction"
+title: "Genome Sequence Analysis Course"
+page-layout: full
+title-block-banner: false
+toc: false
+number-sections: false
 sidebar: false
 ---
 
-***The materials provided in this repository are FREE to use.*** ***This work is licensed under a Creative Commons Attribution 4.0 International License. Reuse is encouraged with acknowledgement.***
+::: hero
+[Open educational resources]{.badge-pill}
 
--   All materials to be added in markdown (with extension .qmd), except for recorded lectures.
+# Learn genome sequence analysis, end to end
 
--   There are no slides on this website. Instead, you will find instructions on how to generate slides from the markdown content.
+Free, standardised course materials — from your first Linux command to assembling a genome. Licensed CC BY 4.0, reuse encouraged.
 
-[Welcome to the course](welcome.qmd)
+[Choose your path](welcome.qmd){.btn .btn-light} [Browse modules](course_modules/Introduction-to-linux/module0.qmd){.btn .btn-outline-light}
+:::
 
-[Glossary](course_modules/Glossary/glossary.qmd)
+## Who are you?
+
+```{=html}
+<div class="card-grid">
+  <a class="gsa-card" href="participants.html">
+    <span class="icon"><i class="bi bi-mortarboard"></i></span>
+    <h3>Participant</h3>
+    <p>Lectures, manuals, exercises and datasets for every module.</p>
+  </a>
+  <a class="gsa-card" href="instructors.html">
+    <span class="icon"><i class="bi bi-easel"></i></span>
+    <h3>Instructor</h3>
+    <p>Instructor notes, solutions and train-the-trainer guides.</p>
+  </a>
+  <a class="gsa-card" href="hosts.html">
+    <span class="icon"><i class="bi bi-building"></i></span>
+    <h3>Host</h3>
+    <p>Computing environment setup and platform guidance.</p>
+  </a>
+</div>
+```
+
+## Course modules
+
+::: module-list
+-   [Introduction to Linux](course_modules/Introduction-to-linux/module0.qmd)
+-   [File formats and QC](course_modules/Module1/module1.qmd)
+-   [Read alignment](course_modules/Module2/module2.qmd)
+-   [Variant calling](course_modules/Module3/module3.qmd)
+-   [Structural variation calling](course_modules/Module4/module4.qmd)
+-   [Genome assembly](course_modules/Module5/module5.qmd)
+:::
+
+## About these materials
+
+-   All materials are written in Markdown (`.qmd`), except recorded lectures.
+-   There are no slides on this website — each module explains how to generate slides from its Markdown.
+-   New to the terminology? See the [Glossary](course_modules/Glossary/glossary.qmd).

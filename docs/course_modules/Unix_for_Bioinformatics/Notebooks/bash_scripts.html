@@ -58,7 +58,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
@@ -69,8 +68,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -101,6 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
@@ -130,13 +128,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-roles" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Roles</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-learning-paths" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Learning paths</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-roles">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-learning-paths">    
         <li>
     <a class="dropdown-item" href="../../../welcome.html">
- <span class="dropdown-text">Choose your role</span></a>
+ <span class="dropdown-text">Choose your path</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
@@ -153,6 +151,108 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-content" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Course content</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-course-content">    
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Introduction-to-linux/module0.html">
+ <span class="dropdown-text">Introduction to Linux</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Module1/module1.html">
+ <span class="dropdown-text">File formats and QC</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Module2/module2.html">
+ <span class="dropdown-text">Reads alignment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Module3/module3.html">
+ <span class="dropdown-text">Variant calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Module4/module4.html">
+ <span class="dropdown-text">Structural Variation Calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Module5/module5.html">
+ <span class="dropdown-text">Genome assembly</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Projects/project1/project1.html">
+ <span class="dropdown-text">Project 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Projects/project2/project2.html">
+ <span class="dropdown-text">Project 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Projects/project3/project3.html">
+ <span class="dropdown-text">Project 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Projects/project4/project4.html">
+ <span class="dropdown-text">Project 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Projects/project5/project5.html">
+ <span class="dropdown-text">Project 5</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Glossary/glossary.html">
+ <span class="dropdown-text">Glossary of terms</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-informatics-guide" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Informatics Guide</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-informatics-guide">    
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/VM_guide/student-guide-computing-environment.html">
+ <span class="dropdown-text">Student guide for the computing environment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/VM_guide/VM_Guide.html">
+ <span class="dropdown-text">How to setup a VM</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/VM_guide/Software_list.html">
+ <span class="dropdown-text">Software list</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-train-the-trainer" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Train-the-trainer</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-train-the-trainer">    
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Train-the-trainer/teach-as-you-go.html">
+ <span class="dropdown-text">Teach-as-you-go sessions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Bioinformatics_workflows/AI_in_bioinformatics.html">
+ <span class="dropdown-text">AI in Bioinformatics Workflows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Train-the-trainer/course-design.html">
+ <span class="dropdown-text">Course design</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/WCSCourses/Genome-Sequence-Analysis-Standardised-Resources"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -170,8 +270,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#first-script" id="toc-first-script" class="nav-link active" data-scroll-target="#first-script"><span class="header-section-number">1</span> First script</a></li>
-  <li><a href="#setting-up-a-scripts-directory" id="toc-setting-up-a-scripts-directory" class="nav-link" data-scroll-target="#setting-up-a-scripts-directory"><span class="header-section-number">2</span> Setting up a scripts directory</a></li>
+  <li><a href="#first-script" id="toc-first-script" class="nav-link active" data-scroll-target="#first-script">First script</a></li>
+  <li><a href="#setting-up-a-scripts-directory" id="toc-setting-up-a-scripts-directory" class="nav-link" data-scroll-target="#setting-up-a-scripts-directory">Setting up a scripts directory</a></li>
   </ul>
 </nav>
     </div>
@@ -198,8 +298,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>So far, we have run single commands in a terminal. However, it is useful to be able to run multiple commands that process some data and produce output. These commands can be put into a file (i.e.&nbsp;a script), and run on input data. This has the advantage of reproducibility, so that the same analysis can be run on many input data sets.</p>
-<section id="first-script" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="first-script"><span class="header-section-number">1</span> First script</h2>
+<section id="first-script" class="level2">
+<h2 class="anchored" data-anchor-id="first-script">First script</h2>
 <p>It is traditional when learning a new language (in this case BASH), to write a script that says “Hello World!”. Open a terminal and make a new directory in your home called <code>scripts</code>, by typing</p>
 <div id="cell-2" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span></span>
@@ -223,8 +323,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> hello.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="setting-up-a-scripts-directory" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="setting-up-a-scripts-directory"><span class="header-section-number">2</span> Setting up a scripts directory</h2>
+<section id="setting-up-a-scripts-directory" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-a-scripts-directory">Setting up a scripts directory</h2>
 <p>It would be nice if our scripts could be run from anywhere in the filesystem, without having to tell Unix where the script is, or that it is a BASH script. This is how built-in commands work, like <code>cd</code> or <code>ls</code>.</p>
 <p>To tell Unix that the script is a BASH script, make this the first line of the script:</p>
 <pre><code>#!/usr/bin/env bash</code></pre>
@@ -852,4 +952,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

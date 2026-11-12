@@ -58,7 +58,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
@@ -69,8 +68,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -101,6 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
@@ -130,13 +128,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-roles" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Roles</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-learning-paths" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Learning paths</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-roles">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-learning-paths">    
         <li>
     <a class="dropdown-item" href="../../../../welcome.html">
- <span class="dropdown-text">Choose your role</span></a>
+ <span class="dropdown-text">Choose your path</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
@@ -153,6 +151,108 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-content" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Course content</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-course-content">    
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Introduction-to-linux/module0.html">
+ <span class="dropdown-text">Introduction to Linux</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Module1/module1.html">
+ <span class="dropdown-text">File formats and QC</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Module2/module2.html">
+ <span class="dropdown-text">Reads alignment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Module3/module3.html">
+ <span class="dropdown-text">Variant calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Module4/module4.html">
+ <span class="dropdown-text">Structural Variation Calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Module5/module5.html">
+ <span class="dropdown-text">Genome assembly</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Projects/project1/project1.html">
+ <span class="dropdown-text">Project 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Projects/project2/project2.html">
+ <span class="dropdown-text">Project 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Projects/project3/project3.html">
+ <span class="dropdown-text">Project 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Projects/project4/project4.html">
+ <span class="dropdown-text">Project 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Projects/project5/project5.html">
+ <span class="dropdown-text">Project 5</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Glossary/glossary.html">
+ <span class="dropdown-text">Glossary of terms</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-informatics-guide" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Informatics Guide</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-informatics-guide">    
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/VM_guide/student-guide-computing-environment.html">
+ <span class="dropdown-text">Student guide for the computing environment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/VM_guide/VM_Guide.html">
+ <span class="dropdown-text">How to setup a VM</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/VM_guide/Software_list.html">
+ <span class="dropdown-text">Software list</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-train-the-trainer" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Train-the-trainer</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-train-the-trainer">    
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Train-the-trainer/teach-as-you-go.html">
+ <span class="dropdown-text">Teach-as-you-go sessions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Bioinformatics_workflows/AI_in_bioinformatics.html">
+ <span class="dropdown-text">AI in Bioinformatics Workflows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../../course_modules/Train-the-trainer/course-design.html">
+ <span class="dropdown-text">Course design</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/WCSCourses/Genome-Sequence-Analysis-Standardised-Resources"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -170,11 +270,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#setting-up-a-database" id="toc-setting-up-a-database" class="nav-link active" data-scroll-target="#setting-up-a-database"><span class="header-section-number">1</span> Setting up a database</a></li>
-  <li><a href="#running-kraken" id="toc-running-kraken" class="nav-link" data-scroll-target="#running-kraken"><span class="header-section-number">2</span> Running Kraken</a></li>
-  <li><a href="#looking-at-the-results" id="toc-looking-at-the-results" class="nav-link" data-scroll-target="#looking-at-the-results"><span class="header-section-number">3</span> Looking at the results</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">4</span> Exercises</a></li>
-  <li><a href="#heterozygous-snps" id="toc-heterozygous-snps" class="nav-link" data-scroll-target="#heterozygous-snps"><span class="header-section-number">5</span> Heterozygous SNPs</a></li>
+  <li><a href="#setting-up-a-database" id="toc-setting-up-a-database" class="nav-link active" data-scroll-target="#setting-up-a-database">Setting up a database</a></li>
+  <li><a href="#running-kraken" id="toc-running-kraken" class="nav-link" data-scroll-target="#running-kraken">Running Kraken</a></li>
+  <li><a href="#looking-at-the-results" id="toc-looking-at-the-results" class="nav-link" data-scroll-target="#looking-at-the-results">Looking at the results</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#heterozygous-snps" id="toc-heterozygous-snps" class="nav-link" data-scroll-target="#heterozygous-snps">Heterozygous SNPs</a></li>
   </ul>
 </nav>
     </div>
@@ -202,8 +302,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>It is always a good idea to check that your data is from the species you expect it to be. A very useful tool for this is <a href="https://www.ebi.ac.uk/research/enright/software/kraken">Kraken</a>. In this tutorial we will go through how you can use Kraken to check your samples for contamination.</p>
 <p><strong>Note if using the Sanger cluster:</strong> Kraken is run as part of the automatic qc pipeline and you can retreive the results using the <code>pf qc</code> script. For more information, run <code>pf man qc</code>.</p>
-<section id="setting-up-a-database" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="setting-up-a-database"><span class="header-section-number">1</span> Setting up a database</h2>
+<section id="setting-up-a-database" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-a-database">Setting up a database</h2>
 <p>To run Kraken you need to either build a database or download an existing one. The standard database is very large (33 GB), but thankfully there are some smaller, pre-built databased available. To download the smallest of them, the 4 GB MiniKraken. If you don’t already have a kraken database set up, run:</p>
 <div id="cell-2" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://ccb.jhu.edu/software/kra<span class="dt">\</span></span>
@@ -216,8 +316,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This version of the database is constructed from complete bacterial, archaeal, and viral genomes in RefSeq, however it contains only around 3 percent of the kmers from the original kraken database (more information <a href="https://ccb.jhu.edu/software/kraken/">here</a>). If the pre-packaged databases are not quite what you are looking for, you can create your own customized database instead. Details about this can be found <a href="http://ccb.jhu.edu/software/kraken/MANUAL.html#custom-databases">here</a>.</p>
 <p><strong>Note if using the Sanger cluster:</strong> There are several pre-built databases available centrally on the Sanger cluster. For more information, please contact the Pathogen Informatics team.</p>
 </section>
-<section id="running-kraken" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="running-kraken"><span class="header-section-number">2</span> Running Kraken</h2>
+<section id="running-kraken" class="level2">
+<h2 class="anchored" data-anchor-id="running-kraken">Running Kraken</h2>
 <p>To run Kraken, you need to provide the path to the database you just created. By default, the input files are assumed to be in FASTA format, so in this case we also need to tell Kraken that our input files are in FASTQ format, gzipped, and that they are paired end reads:</p>
 <div id="cell-7" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kraken</span> <span class="at">--db</span> ./minikraken_20171013_4GB <span class="at">--output</span> kraken_results <span class="dt">\</span></span>
@@ -238,8 +338,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    kraken_results <span class="op">&gt;</span> kraken-report</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="looking-at-the-results" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="looking-at-the-results"><span class="header-section-number">3</span> Looking at the results</h2>
+<section id="looking-at-the-results" class="level2">
+<h2 class="anchored" data-anchor-id="looking-at-the-results">Looking at the results</h2>
 <p>Let’s have a closer look at the kraken_report for the sample. If for some reason your kraken-run failed there is a prebaked kraken-report at data/kraken-report</p>
 <div id="cell-11" class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-n</span> 20 kraken-report</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -254,14 +354,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Scientific name</li>
 </ol>
 </section>
-<section id="exercises" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="exercises"><span class="header-section-number">4</span> Exercises</h2>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
 <p><strong>Q1: What is the most prevalent species in this sample?</strong></p>
 <p><strong>Q2: Are there clear signs of contamination?</strong></p>
 <p><strong>Q3: What percentage of reads could not be classified?</strong></p>
 </section>
-<section id="heterozygous-snps" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="heterozygous-snps"><span class="header-section-number">5</span> Heterozygous SNPs</h2>
+<section id="heterozygous-snps" class="level2">
+<h2 class="anchored" data-anchor-id="heterozygous-snps">Heterozygous SNPs</h2>
 <p>For bacteria, another thing that you can look at to detect contamination is if there are heterozygous SNPs in your samples. Simply put, if you align your reads to a reference, you would expect any snps to be homozygous, i.e.&nbsp;if one read differs from the reference genome, then the rest of the reads that map to that same location will also do so:</p>
 <p><strong>Homozygous SNP</strong><br>
 Ref:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CTTGAGACGAAATCACTAAAAAACGTGACGACTTG<br>
@@ -871,4 +971,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="../../../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

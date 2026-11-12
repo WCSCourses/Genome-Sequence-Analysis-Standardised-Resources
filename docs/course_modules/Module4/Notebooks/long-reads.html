@@ -58,7 +58,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
@@ -69,8 +68,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -101,6 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
@@ -130,13 +128,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-roles" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Roles</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-learning-paths" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Learning paths</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-roles">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-learning-paths">    
         <li>
     <a class="dropdown-item" href="../../../welcome.html">
- <span class="dropdown-text">Choose your role</span></a>
+ <span class="dropdown-text">Choose your path</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
@@ -153,6 +151,108 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-content" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Course content</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-course-content">    
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Introduction-to-linux/module0.html">
+ <span class="dropdown-text">Introduction to Linux</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Module1/module1.html">
+ <span class="dropdown-text">File formats and QC</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Module2/module2.html">
+ <span class="dropdown-text">Reads alignment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Module3/module3.html">
+ <span class="dropdown-text">Variant calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Module4/module4.html">
+ <span class="dropdown-text">Structural Variation Calling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Module5/module5.html">
+ <span class="dropdown-text">Genome assembly</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Projects/project1/project1.html">
+ <span class="dropdown-text">Project 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Projects/project2/project2.html">
+ <span class="dropdown-text">Project 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Projects/project3/project3.html">
+ <span class="dropdown-text">Project 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Projects/project4/project4.html">
+ <span class="dropdown-text">Project 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Projects/project5/project5.html">
+ <span class="dropdown-text">Project 5</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Glossary/glossary.html">
+ <span class="dropdown-text">Glossary of terms</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-informatics-guide" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Informatics Guide</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-informatics-guide">    
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/VM_guide/student-guide-computing-environment.html">
+ <span class="dropdown-text">Student guide for the computing environment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/VM_guide/VM_Guide.html">
+ <span class="dropdown-text">How to setup a VM</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/VM_guide/Software_list.html">
+ <span class="dropdown-text">Software list</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-train-the-trainer" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Train-the-trainer</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-train-the-trainer">    
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Train-the-trainer/teach-as-you-go.html">
+ <span class="dropdown-text">Teach-as-you-go sessions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Bioinformatics_workflows/AI_in_bioinformatics.html">
+ <span class="dropdown-text">AI in Bioinformatics Workflows</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../course_modules/Train-the-trainer/course-design.html">
+ <span class="dropdown-text">Course design</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/WCSCourses/Genome-Sequence-Analysis-Standardised-Resources"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -170,11 +270,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introducing-the-dataset" id="toc-introducing-the-dataset" class="nav-link active" data-scroll-target="#introducing-the-dataset"><span class="header-section-number">1</span> Introducing the dataset</a></li>
-  <li><a href="#align-the-data" id="toc-align-the-data" class="nav-link" data-scroll-target="#align-the-data"><span class="header-section-number">2</span> Align the data</a></li>
-  <li><a href="#call-structural-variants" id="toc-call-structural-variants" class="nav-link" data-scroll-target="#call-structural-variants"><span class="header-section-number">3</span> Call structural variants</a></li>
-  <li><a href="#inspecting-svs-with-igv" id="toc-inspecting-svs-with-igv" class="nav-link" data-scroll-target="#inspecting-svs-with-igv"><span class="header-section-number">4</span> Inspecting SVs with IGV</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5</span> Exercises</a></li>
+  <li><a href="#introducing-the-dataset" id="toc-introducing-the-dataset" class="nav-link active" data-scroll-target="#introducing-the-dataset">Introducing the dataset</a></li>
+  <li><a href="#align-the-data" id="toc-align-the-data" class="nav-link" data-scroll-target="#align-the-data">Align the data</a></li>
+  <li><a href="#call-structural-variants" id="toc-call-structural-variants" class="nav-link" data-scroll-target="#call-structural-variants">Call structural variants</a></li>
+  <li><a href="#inspecting-svs-with-igv" id="toc-inspecting-svs-with-igv" class="nav-link" data-scroll-target="#inspecting-svs-with-igv">Inspecting SVs with IGV</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -208,16 +308,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="cell-4" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="introducing-the-dataset" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="introducing-the-dataset"><span class="header-section-number">1</span> Introducing the dataset</h2>
+<section id="introducing-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="introducing-the-dataset">Introducing the dataset</h2>
 <p>We will use data from a Saccharomyces cerevisiae strain (YPS128) that was sequenced at the Wellcome Sanger Institute and deposited in the ENA (Project: PRJEB7245, sample: SAMEA2757770, analysis: ERZ448241).</p>
 <p>The sequencing reads are contained in a fastq file:</p>
 <p><code>YPS128.filtered_subreads.10x.fastq.gz</code></p>
 <p>The reference genome is in the <code>../ref</code> directory in a fasta file:</p>
 <p><code>Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa</code></p>
 </section>
-<section id="align-the-data" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="align-the-data"><span class="header-section-number">2</span> Align the data</h2>
+<section id="align-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="align-the-data">Align the data</h2>
 <p>Before you can use Sniffles to call SVs, it is very important that the reads are aligned with an aligner suitable for long reads.</p>
 <p>The software minimap2 is a long-read aligner designed to align PacBio or Oxford Nanopore (standard and ultra-long) to a reference genome.</p>
 <p>You can find the usage of minimap2 by typing:</p>
@@ -234,8 +334,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Finally, use samtools to index this BAM file. <strong>Hint</strong> Use samtools index</p>
 </section>
-<section id="call-structural-variants" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="call-structural-variants"><span class="header-section-number">3</span> Call structural variants</h2>
+<section id="call-structural-variants" class="level2">
+<h2 class="anchored" data-anchor-id="call-structural-variants">Call structural variants</h2>
 <p>Sniffles is a structural variation (SV) caller that is designed for long reads (Pacbio or Oxford Nanopore). It detects all types of SVs (10bp+) using evidence from split-read alignments, high-mismatch regions, and coverage analysis. Sniffles takes the BAM file as input and outputs VCF.</p>
 <p>To find the usage for Sniffles, type:</p>
 <div id="cell-20" class="cell">
@@ -244,16 +344,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Using the default parameters, call SVs with Sniffles and output the results to a VCF file called <code>YPS128.10x.vcf</code>.</p>
 <p><strong>Hint:</strong> You don’t need to change any of the default parameters, but you will need to work out how to provide the input BAM file and specify the output VCF file. The documentation on sniffles is here : <a href="https://github.com/fritzsedlazeck/Sniffles/wiki/Parameter">https://github.com/fritzsedlazeck/Sniffles/wiki/Parameter</a>.</p>
 </section>
-<section id="inspecting-svs-with-igv" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="inspecting-svs-with-igv"><span class="header-section-number">4</span> Inspecting SVs with IGV</h2>
+<section id="inspecting-svs-with-igv" class="level2">
+<h2 class="anchored" data-anchor-id="inspecting-svs-with-igv">Inspecting SVs with IGV</h2>
 <p>Open IGV:</p>
 <div id="cell-25" class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>igv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Open the reference genome <code>ref/Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa</code> and load the BAM file <code>YPS128.filtered_subreads.10x.fastq.sorted.calmd.bam</code> and the VCF file <code>YPS128.filtered_subreads.10x.vcf</code>. Now answer the questions that follow using either the command line or IGV.</p>
 </section>
-<section id="exercises" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">5</span> Exercises</h2>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
 <ol type="1">
 <li>What sort of SV was called at on chromosome ‘XV’ at position 854272?</li>
 <li>What is the length of the SV?</li>
@@ -857,4 +957,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
